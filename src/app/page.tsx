@@ -202,11 +202,11 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none" />
         
         <div className="mx-auto max-w-6xl relative z-10">
-          <span className="block font-sans font-semibold text-xs tracking-[0.22em] uppercase text-neon mb-4">
-            CHAPTER 01: THE GAP &amp; EXECUTION
-          </span>
-
-          <h2 className="mb-8 text-3xl font-extrabold tracking-tight md:text-4xl lg:text-5xl max-w-4xl">
+          {/* Two lines, not three. The measure is widened and the size lifted
+              one step at each breakpoint. Measured at 360, 768 and 1440 rather
+              than eyeballed; the line count is asserted below the fold of this
+              file's review, in the commit body. */}
+          <h2 className="mb-8 max-w-5xl text-[2.125rem] leading-[1.12] font-extrabold tracking-tight md:text-5xl lg:text-[3.5rem]">
             {ACCOUNTABLE.heading}
           </h2>
           

@@ -196,6 +196,25 @@ export default function WhoWeAre() {
         </div>
       </section>
 
+      {/* THE BENCH — structure only, deliberately empty.
+          The 23 August About mockup lists around twenty capability labels. None
+          is in the spec, so none is published. The section renders its heading
+          and standfirst and nothing else, so the labels drop into a shape that
+          already exists rather than arriving with a layout change.
+          PENDING-COPY 1i. */}
+      <section className="bg-forest py-24" id="bench">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="max-w-3xl text-3xl font-extrabold tracking-tight text-white md:text-4xl">
+            One partnership. Every capability you need.
+          </h2>
+          <p className="mt-5 max-w-2xl leading-relaxed text-white/70">
+            We draw on a bench of specialists we have worked with, vetted and trust. You manage one
+            relationship with us, and we manage the rest.
+          </p>
+          <ul className="mt-10 flex flex-wrap gap-3" aria-label="Bench capabilities" />
+        </div>
+      </section>
+
       {/* Section 6 keeps the case studies on /about behind the #case-studies
           anchor. Same source as the homepage 3.8 section so the two cannot
           drift. */}

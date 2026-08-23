@@ -207,11 +207,15 @@ const DECISIONS = [
     where: "REVISIONS-2208, 23 August section",
     run: async (get) => {
       const html = await (await get("/")).text();
-      // The metric cards render their approved copy; only the numbers are held.
-      // Matched inside a tag so a figure in a case-study sentence does not
-      // register as the metric card publishing one.
+      // SCOPED TO THE METRIC CARDS, structurally, via data-metric-cards.
+      // Matching the whole document was wrong: 67% is also a case study result,
+      // which the master table explicitly sanctions and attributes, so the
+      // assertion fired on a figure that is allowed to be there. It has to be
+      // able to tell the two apart.
+      const block = html.match(/<ul[^>]*data-metric-cards[\s\S]*?<\/ul>/);
+      if (!block) return "the metric card list is not in the served HTML at all";
       const leaked = [53, 62, 16, 27, 67].filter((n) =>
-        new RegExp(`>\\s*${n}%?\\s*<`).test(html),
+        new RegExp(`>\\s*${n}%?\\s*<`).test(block[0]),
       );
       if (leaked.length) {
         return `${leaked.join(", ")} published, but spec 3.3 says "IRAM TO CONFIRM the five ranges above against the master table in Section 9 before they go live"`;

@@ -29,7 +29,7 @@ export default function KpiCards() {
   const cards = METRICS.filter((m) => m.pending !== "not-yet-supplied");
 
   return (
-    <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <ul data-metric-cards className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {cards.map((metric) => (
         <li
           key={metric.label}

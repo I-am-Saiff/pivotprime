@@ -16,13 +16,33 @@
  * rather than named.
  */
 
+/**
+ * A result line. The figure is separated from the sentence so it can be withheld
+ * without losing the claim.
+ *
+ * Spec section 1: "Any result figure or percentage must come from the master
+ * table in Section 9 and nowhere else." Section 9 is a table of contradictions
+ * for Iram to resolve, not a list of approved numbers, so only the figures it
+ * actually carries are published: 67% transaction processing, 13% retention,
+ * 17% profit margin, and up to 2 days a week of founder time.
+ *
+ * Everything else keeps its narrative and shows an empty slot, the same
+ * treatment as the homepage metric cards. The claim survives; the unverified
+ * number does not go out.
+ */
+export type Result = {
+  /** Null where the figure is not in the master table. The label still renders. */
+  figure: string | null;
+  label: string;
+};
+
 export type CaseStudy = {
   id: string;
   sector: string;
   challenge: string;
   pivotLead: string;
   pivot: string[];
-  results: string[];
+  results: Result[];
 };
 
 export const CASE_STUDIES: CaseStudy[] = [
@@ -39,10 +59,10 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Built real-time dashboards tracking cost per client, transaction time, CAC, and LTV",
     ],
     results: [
-      "67% faster transaction processing per customer",
-      "KYC completion time reduced from an average of 10 days to 3 days",
-      "25% reduction in operational waste across onboarding and processing",
-      "2 to 3 FTE roles removed from high-cost locations",
+      { figure: "67%", label: "faster transaction processing per customer" },
+      { figure: null, label: "KYC completion time reduced substantially" },
+      { figure: null, label: "reduction in operational waste across onboarding and processing" },
+      { figure: null, label: "FTE roles removed from high-cost locations" },
     ],
   },
   {
@@ -58,9 +78,9 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Introduced simple operating rhythms to reduce ad-hoc interruptions and constant checking.",
     ],
     results: [
-      "Up to 2 days a week returned to the founder by removing admin work and decision drag",
-      "Fewer escalations and faster team decisions",
-      "Greater confidence in delegation without loss of quality or control",
+      { figure: "Up to 2 days a week", label: "returned to the founder by removing admin work and decision drag" },
+      { figure: null, label: "Fewer escalations and faster team decisions" },
+      { figure: null, label: "Greater confidence in delegation without loss of quality or control" },
     ],
   },
   {
@@ -76,9 +96,69 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Introduced simple dashboards tracking attendance patterns, engagement drop-off, and early churn signals.",
     ],
     results: [
-      "13% increase in member retention",
-      "17% improvement in profit margin through reduced churn and better utilisation",
-      "Clear visibility on why members stayed, allowing teams to act before churn occurred",
+      { figure: "13%", label: "increase in member retention" },
+      { figure: "17%", label: "improvement in profit margin through reduced churn and better utilisation" },
+      { figure: null, label: "Clear visibility on why members stayed, allowing teams to act before churn occurred" },
+    ],
+  },
+  /**
+   * The three below come from the 23 August About mockup. Not one of their
+   * figures appears in the section 9 master table, so every figure slot is
+   * empty and only the narrative renders. They are built rather than dropped,
+   * on Saif's instruction, and their wording is unconfirmed: PENDING-COPY 1i.
+   *
+   * Their attributed testimonial quotes are NOT carried. A quote signed by a
+   * named role at a named client is a commercial claim, and none is in the spec.
+   */
+  {
+    id: "professional-services",
+    sector: "Professional Services, UAE",
+    challenge:
+      "Rapid growth exposed pricing gaps and an unstructured delivery process. The business was winning work but the margin on it varied engagement to engagement, and nobody could say reliably which work was profitable.",
+    pivotLead: "We rebuilt pricing and standardised how delivery runs.",
+    pivot: [
+      "Rebuilt the pricing model against the actual cost of delivery.",
+      "Standardised the delivery process across all client engagements.",
+      "Separated billable work from admin so the split was visible.",
+    ],
+    results: [
+      { figure: null, label: "improvement in gross margin after the pricing reset" },
+      { figure: null, label: "reduction in time spent on non-billable admin" },
+      { figure: null, label: "Delivery process standardised across all client engagements" },
+    ],
+  },
+  {
+    id: "retail-consumer",
+    sector: "Retail and Consumer, Gulf",
+    challenge:
+      "Inventory was misaligned with demand and markdowns were consuming margin quietly. Buying decisions were made on instinct and the cost of getting them wrong only showed up at the end of a season.",
+    pivotLead: "We put demand planning in front of the buying decision.",
+    pivot: [
+      "Introduced and embedded a demand planning process.",
+      "Tracked sell-through by product line rather than in aggregate.",
+      "Made markdown exposure visible before the season rather than after it.",
+    ],
+    results: [
+      { figure: null, label: "reduction in markdown losses over two seasons" },
+      { figure: null, label: "Sell-through rate improved across core product lines" },
+      { figure: null, label: "Demand planning process introduced and embedded" },
+    ],
+  },
+  {
+    id: "technology-saas",
+    sector: "Technology and SaaS, MENA",
+    challenge:
+      "The sales pipeline looked healthy but conversion was slow and the reasons were unclear. Deals were being lost in follow-up rather than on price or product.",
+    pivotLead: "We rebuilt the CRM around the sales motion that actually happens.",
+    pivot: [
+      "Rebuilt the CRM around the real sales motion rather than an idealised one.",
+      "Made the follow-up stage explicit and owned.",
+      "Tracked cycle time by stage so the delay had a location.",
+    ],
+    results: [
+      { figure: null, label: "improvement in pipeline-to-close conversion rate" },
+      { figure: null, label: "Average sales cycle reduced" },
+      { figure: null, label: "CRM rebuilt around actual sales motion, not guesswork" },
     ],
   },
 ];

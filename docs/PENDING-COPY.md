@@ -461,6 +461,61 @@ confirmed by you. That confirmation is still owed. Item 1.5.
 
 ---
 
+## 1i. The About page, reduced — **for Iram**
+
+Your new About design is not built in full. What is built is the part that needs
+nobody's permission: the opening statement, who we are, the founder, and the
+client stories folded onto the same page.
+
+**Two things are deliberately empty, waiting for you.**
+
+*The team.* Your design names three more people with titles and biographies. None
+of them is in your copy document, and a name and a job title on a live website is
+not something we will publish on anyone's say-so but yours. The section is built
+and currently shows the founder only. Send the wording and the others drop in.
+
+*The bench.* Your design lists around twenty capability labels. The section is
+built with its heading and its introduction, and the list itself is empty. Same
+reason: send the labels and they appear.
+
+**The client stories.** All six are on the page, including the three new ones from
+your design. **Their numbers are not.** Your document is explicit, in section 1:
+*"Any result figure or percentage must come from the master table in Section 9 and
+nowhere else."* Only four figures actually appear in that table, and those four are
+published: 67% faster transaction processing, 13% retention, 17% profit margin, and
+up to two days a week returned to the founder.
+
+Every other figure shows as an empty space with the sentence intact, so the story
+still reads and the unverified number stays off the site. That covers 25%
+operational waste, the KYC day count, the FTE reduction, and everything in the
+three new stories: gross margin, non-billable admin, markdown losses, pipeline
+conversion and sales cycle. **Send the numbers, or confirm they belong in the
+master table, and they appear.**
+
+We have not carried the testimonial quotes from your design. A quote signed by a
+named role at a named client is a claim we are not able to verify.
+
+**One correction, and the cause is in your own document.** Your credential appears
+twice in the copy document with two different figures:
+
+| | |
+|---|---|
+| Section 3.7, the homepage | a multi-line book worth more than **$120 million** |
+| Section 6.3, the About page | **$100 million** |
+
+Both are final-copy blocks, so the site reproduced both and the two pages
+disagreed about the same fact. Your new About design says $100 million, which
+matches 6.3.
+
+We have standardised on **$120 million** across the site rather than quietly
+taking the lower one. That means the About page no longer matches section 6.3
+word for word, which is recorded against that section.
+
+**Please confirm which figure is right.** It is a fact about you, it is on the
+site now, and it is the one thing here that the document cannot settle for us.
+
+---
+
 ## 2. Spec contradictions, logged and worked around
 
 ### 2.1 The fractional service slug — **logged, decided**

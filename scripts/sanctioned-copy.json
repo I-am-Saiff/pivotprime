@@ -659,6 +659,38 @@
       "status": "traced",
       "kind": "ui-chrome",
       "why": "Functional interface copy, not a copy decision. The spec never names interface controls."
+    },
+    {
+      "text": "Professional Services, UAE",
+      "status": "awaiting-client",
+      "kind": "authored",
+      "why": "From the 23 August About mockup. Narrative built, every figure withheld because none appears in the section 9 master table. Wording unconfirmed. PENDING-COPY 1i.",
+      "route": "/",
+      "element": "heading"
+    },
+    {
+      "text": "Retail and Consumer, Gulf",
+      "status": "awaiting-client",
+      "kind": "authored",
+      "why": "From the 23 August About mockup. Narrative built, every figure withheld because none appears in the section 9 master table. Wording unconfirmed. PENDING-COPY 1i.",
+      "route": "/",
+      "element": "heading"
+    },
+    {
+      "text": "Technology and SaaS, MENA",
+      "status": "awaiting-client",
+      "kind": "authored",
+      "why": "From the 23 August About mockup. Narrative built, every figure withheld because none appears in the section 9 master table. Wording unconfirmed. PENDING-COPY 1i.",
+      "route": "/",
+      "element": "heading"
+    },
+    {
+      "text": "One partnership. Every capability you need.",
+      "status": "awaiting-client",
+      "kind": "authored",
+      "why": "From the 23 August About mockup. Narrative built, every figure withheld because none appears in the section 9 master table. Wording unconfirmed. PENDING-COPY 1i.",
+      "route": "/about",
+      "element": "heading"
     }
   ]
 }

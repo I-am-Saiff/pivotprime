@@ -81,6 +81,48 @@ const stripInstructions = (block) =>
 const EXPECTED_ABSENT = [
   {
     section: "3.3",
+    match: "53%",
+    why: 'spec 3.3 ends "IRAM TO CONFIRM the five ranges above against the master table in Section 9 before they go live", and section 1 says every result figure must come from that table. 53 is not in it: the table says 30 to 50',
+    appearsWhen: "Iram confirms one figure per row of the section 9 master table",
+    tracked: "PENDING-COPY, and docs/FOR-IRAM-results-figures.md",
+  },
+  {
+    section: "3.3",
+    match: "62%",
+    why: "not in the section 9 master table, whose row for operational waste her own document marks as a direct contradiction to be reconciled before launch",
+    appearsWhen: "Iram confirms one figure per row of the section 9 master table",
+    tracked: "PENDING-COPY, and docs/FOR-IRAM-results-figures.md",
+  },
+  {
+    section: "3.3",
+    match: "16%",
+    why: "not in the section 9 master table, which carries a 10 to 15 band and 13 in a case study",
+    appearsWhen: "Iram confirms one figure per row of the section 9 master table",
+    tracked: "PENDING-COPY, and docs/FOR-IRAM-results-figures.md",
+  },
+  {
+    section: "3.3",
+    match: "27%",
+    why: "not in the section 9 master table, which carries 17, and 13 described as projected",
+    appearsWhen: "Iram confirms one figure per row of the section 9 master table",
+    tracked: "PENDING-COPY, and docs/FOR-IRAM-results-figures.md",
+  },
+  {
+    section: "6.3",
+    match: "Fellow of the Institute and Faculty of Actuaries",
+    why:
+      "THE SPEC CONTRADICTS ITSELF ON THIS FIGURE. Line 901, section 3.7, says the " +
+      "multi-line book was worth more than $120 million. Line 2175, section 6.3, says " +
+      "$100 million. Both are green blocks and the build had faithfully reproduced " +
+      "both, so the homepage and the About page disagreed about the same credential. " +
+      "Standardised on $120m on Saif's instruction, which matches the live site and " +
+      "3.7, so this block no longer matches 6.3 verbatim. Everything else in it is " +
+      "unchanged",
+    appearsWhen: "Iram confirms which figure is right, at which point both sections agree",
+    tracked: "PENDING-COPY 1i",
+  },
+  {
+    section: "3.3",
     match: "Bespoke software and automation builds delivered",
     why: 'metric 6 has no figure, and spec 3.3 says "Do not launch this card with a placeholder"',
     appearsWhen: "the count of bespoke builds shipped is supplied",

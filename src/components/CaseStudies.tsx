@@ -164,11 +164,19 @@ export default function CaseStudies({
 
                   <ul className="space-y-4">
                     {study.results.map((result) => (
-                      <li key={result} className="flex items-start text-sm sm:text-base font-medium text-white/95 leading-snug">
+                      <li key={result.label} className="flex items-start text-sm sm:text-base font-medium text-white/95 leading-snug">
                         <span aria-hidden="true" className="mr-3 mt-0.5 font-bold text-neon text-base leading-none">
                           ✓
                         </span>
-                        <span>{result}</span>
+                        {/* The figure is withheld where it is not in the section 9
+                            master table. The claim still renders, so the case study
+                            reads as a result awaiting a number rather than as nothing. */}
+                        <span>
+                          {result.figure ? (
+                            <strong className="font-extrabold text-neon">{result.figure} </strong>
+                          ) : null}
+                          {result.label}
+                        </span>
                       </li>
                     ))}
                   </ul>

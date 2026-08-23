@@ -63,11 +63,21 @@ export type Person = { name: string; role: string; credential: string };
  * why this is a list rather than a fixed layout. Tracked in
  * docs/PENDING-COPY.md item 1.6.
  */
+/**
+ * $120 MILLION, NOT $100 MILLION.
+ *
+ * This file said $100m while src/content/homepage.ts said $120m, so the two
+ * pages disagreed about the same credential. The live site and the homepage
+ * both say $120m, and the 23 August About mockup says $100m. Standardised on
+ * $120m rather than quietly taking the lower one, and logged for Iram to
+ * confirm: PENDING-COPY 1i. It is a factual claim about a named person, so it
+ * is hers to settle, not ours.
+ */
 export const PEOPLE: Person[] = [
   {
     name: "Iram Kauser",
     role: "Founder and CEO",
     credential:
-      "Fellow of the Institute and Faculty of Actuaries and one of roughly 75,000 qualified actuaries worldwide. Sixteen years in senior operating roles at AIG, MetLife and Gallagher across the UK, the Middle East and Africa, including Chief of Staff to a regional CEO across more than 150 staff, and pricing and portfolio strategy for a multi-line book worth more than $100 million. Founded Pivot Prime to close the gap between what a business decides and what it actually delivers.",
+      "Fellow of the Institute and Faculty of Actuaries and one of roughly 75,000 qualified actuaries worldwide. Sixteen years in senior operating roles at AIG, MetLife and Gallagher across the UK, the Middle East and Africa, including Chief of Staff to a regional CEO across more than 150 staff, and pricing and portfolio strategy for a multi-line book worth more than $120 million. Founded Pivot Prime to close the gap between what a business decides and what it actually delivers.",
   },
 ];
