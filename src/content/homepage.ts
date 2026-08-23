@@ -88,12 +88,29 @@ export const RESULTS = {
 };
 
 export type Metric = {
-  /** Null where the figure is not yet supplied. Spec 3.4 card 6: "Do not launch
-   *  this card with a placeholder." A card with no figure is not rendered. */
   figure: number | null;
   suffix: string;
   label: string;
   context: string;
+  /**
+   * Why there is no figure, and therefore what the card does.
+   *
+   * "client-confirmation": the document carries a number but it is not cleared
+   *   to publish. Spec 3.3 ends with "IRAM TO CONFIRM the five ranges above
+   *   against the master table in Section 9 before they go live", and spec
+   *   section 1 says every result figure must come from that table and nowhere
+   *   else. Four of the five do not appear in it: 53 against a stated 30 to 50,
+   *   62 against a row her own document marks as a direct contradiction, 16
+   *   against 10 to 15, and 27 against 17 or 13 projected. Only 67 matches.
+   *   The card RENDERS with its approved copy and an empty figure slot.
+   *
+   * "not-yet-supplied": nobody has the number. Spec 3.4 card 6 says "Do not
+   *   launch this card with a placeholder", so the card does NOT render.
+   *
+   * The two cases used to be one `null` and were not distinguishable. They lead
+   * to opposite behaviour, so they are named.
+   */
+  pending: "client-confirmation" | "not-yet-supplied" | null;
 };
 
 /**
@@ -112,39 +129,45 @@ export type Metric = {
  */
 export const METRICS: Metric[] = [
   {
-    figure: 53,
+    figure: null,
     suffix: "%",
+    pending: "client-confirmation",
     label: "Faster execution across teams",
     context: "Decision rights, operating rhythm and delivery ownership rebuilt.",
   },
   {
-    figure: 62,
+    figure: null,
     suffix: "%",
+    pending: "client-confirmation",
     label: "Reduction in duplicated work, rework and inefficiency",
     context:
       "Processes mapped end to end and redesigned around how the work actually flows.",
   },
   {
-    figure: 16,
+    figure: null,
     suffix: "%",
+    pending: "client-confirmation",
     label: "Increase in customer retention",
     context: "Service cancellation drivers identified and addressed.",
   },
   {
-    figure: 27,
+    figure: null,
     suffix: "%",
+    pending: "client-confirmation",
     label: "Increase in profit",
     context: "Pricing, margin and commercial model redesigned.",
   },
   {
-    figure: 67,
+    figure: null,
     suffix: "%",
+    pending: "client-confirmation",
     label: "Faster transaction processing",
     context: "End to end customer and transaction workflows mapped and rebuilt.",
   },
   {
     figure: null,
     suffix: "",
+    pending: "not-yet-supplied",
     label: "Bespoke software and automation builds delivered",
     context: "Custom systems, CRMs, dashboards and automations built for clients.",
   },

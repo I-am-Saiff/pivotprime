@@ -18,7 +18,7 @@ import ServiceCards from "@/components/ServiceCards";
 import PatternsList from "@/components/PatternsList";
 import CaseStudies from "@/components/CaseStudies";
 import PersonaSwitcher from "@/components/PersonaSwitcher";
-import ResultsGraphic from "@/components/ResultsGraphic";
+import KpiCards from "@/components/KpiCards";
 import type { Metadata } from "next";
 import { pageMetadata } from "@/content/metadata";
 
@@ -162,7 +162,7 @@ export default function Home() {
             <p className="mt-4 text-lg text-neutral-600 md:text-xl">{RESULTS.standfirst}</p>
           </header>
 
-          <ResultsGraphic />
+          <KpiCards />
         </div>
       </section>
 

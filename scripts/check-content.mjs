@@ -47,11 +47,13 @@ const EXPECTATIONS = [
       { spec: "3.3", text: "This is what our team has delivered", why: "results heading" },
       { spec: "3.3", text: "We do not measure success in slide decks", why: "results standfirst" },
       // The figures are the content. All five were "0" before the CountUp fix.
-      { spec: "3.3", html: ">53<", why: "faster execution figure" },
-      { spec: "3.3", html: ">62<", why: "duplicated work figure" },
-      { spec: "3.3", html: ">16<", why: "retention figure" },
-      { spec: "3.3", html: ">27<", why: "profit figure" },
-      { spec: "3.3", html: ">67<", why: "transaction processing figure" },
+      // The five figures are NOT asserted present. They are asserted ABSENT,
+      // in DECISIONS below. Spec 3.3 does not clear them to publish.
+      { spec: "3.3", text: "Faster execution across teams", why: "metric 1 label" },
+      { spec: "3.3", text: "Reduction in duplicated work, rework and inefficiency", why: "metric 2 label" },
+      { spec: "3.3", text: "Increase in customer retention", why: "metric 3 label" },
+      { spec: "3.3", text: "Increase in profit", why: "metric 4 label" },
+      { spec: "3.3", text: "Faster transaction processing", why: "metric 5 label" },
       { spec: "3.4", text: "What do we actually do", why: "services heading" },
       { spec: "3.4", html: 'id="services"', why: "the hero secondary CTA anchors here" },
       { spec: "pricing rule", text: "From AED 15,000", why: "the only price on the site" },
@@ -200,6 +202,25 @@ const EXPECTATIONS = [
  * notices when it stops being true.
  */
 const DECISIONS = [
+  {
+    what: "the five result figures are withheld while spec section 9 is unresolved",
+    where: "REVISIONS-2208, 23 August section",
+    run: async (get) => {
+      const html = await (await get("/")).text();
+      // The metric cards render their approved copy; only the numbers are held.
+      // Matched inside a tag so a figure in a case-study sentence does not
+      // register as the metric card publishing one.
+      const leaked = [53, 62, 16, 27, 67].filter((n) =>
+        new RegExp(`>\\s*${n}%?\\s*<`).test(html),
+      );
+      if (leaked.length) {
+        return `${leaked.join(", ")} published, but spec 3.3 says "IRAM TO CONFIRM the five ranges above against the master table in Section 9 before they go live"`;
+      }
+      return /Faster execution across teams/.test(html)
+        ? null
+        : "figures withheld but the approved copy went with them, so the section is empty rather than pending";
+    },
+  },
   {
     what: "/diagnostic 404s while the flag is off",
     where: "PENDING-COPY 0.1",

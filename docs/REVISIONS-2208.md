@@ -233,3 +233,261 @@ This needs fixing before any of the work below, or the round lands unaudited.
 3. `#c8af50` and `#3a3510`: new sanctioned pair, or an error?
 4. The four wrong-hue near-matches.
 5. The em and en dashes: her own house rule bans the em dash.
+
+---
+---
+
+# Client revisions, 23 August 2026 — audit
+
+Audit only. No code was written in this pass. Appended rather than filed
+separately, so the round reads as one thing.
+
+## The batch
+
+Six files touched 22:53–22:58. **Three are byte-identical re-copies** of the 22
+August batch, verified by checksum: `Website Revisions - 2208v1.pptx`,
+`pivot-prime-kpi-cards_3.html`, `pp-services_11.html`. Only their timestamps moved.
+
+Genuinely new: `Website Revisions - 2208v3.pptx` (22 slides, 47 images, **2 text
+runs, no speaker notes** — again almost entirely pictures), `pp-about-v2_2.html`,
+`JUSTIN PHOTO.jpg` (1280x1600).
+
+Slides 1–8 of v3 repeat v1. Slides 9–22 are page-level redesign, confirmed.
+
+> ### JUSTIN PHOTO.jpg — received and parked
+> Not wired in, nothing built around it, no slot created. It belongs to the team
+> page, which is in CONFLICT below and is not being built.
+
+> ### No PDFs, no logo file
+> There is no PDF anywhere in the working folder and no logo asset in the batch.
+> Logo direction and a background-colour instruction were expected and **neither
+> arrived as an asset**. Where a slide implies one, it is tagged below as an
+> instruction without an asset. Nothing has been inferred.
+
+---
+
+## The finding that governs everything else
+
+**It is not in this batch. It is in spec v1.7.1, and it applies to the figures
+already live.**
+
+Spec section 3.3, immediately under the five metric blocks:
+
+> *IRAM TO CONFIRM the five ranges above against the master table in Section 9
+> before they go live. The current site publishes two different figures for
+> reduction in operational waste, and both cannot be right.*
+
+And the governing rule, spec section 1:
+
+> - Any result figure or percentage must come from the master table in Section 9
+>   and nowhere else.
+
+Section 9 is **not a list of approved figures**. It is a table of contradictions
+for Iram to resolve, one figure per row. Checking what the site publishes today
+against it:
+
+| Live now (spec 3.3) | Master table says | |
+|---|---|---|
+| 53% faster execution | 30 to 50% | **outside** |
+| 62% waste reduction | 40 to 60% *or* 10 to 40% — row marked "Direct contradiction. Must be reconciled before launch" | **outside both** |
+| 16% retention | 10 to 15% band, 13% in case study 3 | **outside** |
+| 27% profit | 17%, or 13% projected | **outside** |
+| 67% transaction processing | 67% | matches |
+
+**Four of the five figures on the homepage today are outside the table that
+governs them, and spec 3.3 says none of the five is cleared to go live.**
+
+This changes the build instruction. Rebuilding the KPI cards with "the existing
+spec 3.3 figures" ships four numbers the document itself has not approved. The
+layout can be built; the figures cannot come from either source without her.
+
+For completeness, the v3 mockup's figures are closer to the master table on one
+row and further on two:
+
+| v3 mockup | vs master table |
+|---|---|
+| +7% execution | **not in the table at all** (30–50%) |
+| 40–60% waste | matches the homepage row, which is the contested one |
+| +13% retention | **matches** case study 3 |
+| +27% profit margin | **not in the table** (17% / 13%) |
+| 67% | matches |
+
+---
+
+## The fees chapter, slide 10 — one correction and one hard conflict
+
+**Correction: there is no AED anywhere on slide 10.** Both redesign variants quote
+the worked example in dollars throughout, and the arithmetic is internally
+consistent: target $400,000, fee 20% of savings delivered, you keep $320,000, we
+earn $80,000. Nothing is mixed within the example.
+
+The currency problem is real but sits one level up: the services cards price the
+audit **"From AED 15,000"** while the fees chapter works its example in **dollars**.
+Same page set, two currencies, no stated rate.
+
+**The harder conflict is the pricing rule.** Spec section 1:
+
+> - One price only appears on the site: the Operational Clarity Audit floor. No
+>   other figure and no upper limit appears anywhere.
+
+The fees chapter as drawn publishes **four more figures**: $400,000, 20%, $320,000,
+$80,000. That breaks the rule as written, regardless of whether Iram confirms the
+numbers. She has to either amend the rule or drop the worked example. **This is not
+a numbers question she can answer with a figure; it is a policy question.**
+
+The commitment wording — "If we haven't moved your numbers, most of our fee doesn't
+get paid" — is new copy with no spec block behind it. Spec 3.10 as written carries
+"We are paid partly on whether the numbers move." The new line is a stronger claim.
+
+---
+
+## Every figure, name and claim needing Iram — the single list
+
+**Fees, slide 10**
+1. The worked example figures: $400,000 target, 20%, $320,000 kept, $80,000 earned.
+2. Whether the pricing rule changes to permit them, or the example is dropped.
+3. AED for the audit price versus dollars for the fee example.
+4. "most of our fee doesn't get paid" — a stronger claim than spec 3.10.
+
+**Result figures**
+5. The five in spec 3.3, none cleared: 53, 62, 16, 27, 67.
+6. The five in the v3 mockup: +7, 40–60, +13, +27, 67.
+7. Section 9 row by row, especially operational waste, marked in her own document
+   as needing reconciliation before launch.
+
+**About page, new case studies.** Three clients that appear in no spec section —
+Professional Services UAE, Retail & Consumer Gulf, Technology & SaaS MENA — with
+figures in none of the master table: +22% gross margin, 40% less non-billable
+admin, 31% markdown reduction, +38% pipeline conversion, −19 days sales cycle.
+Plus, in existing case studies: 25% operational waste, 2–3 FTE roles removed,
+90 days to launch.
+
+**A changed credential.** The site says Iram's book was worth **more than $120
+million**. The About mockup says **over $100 million**. One is wrong and it is a
+factual claim about a named person. The mockup also adds "Fellow of the Institute
+and Faculty of Actuaries", which appears nowhere in the spec.
+
+**Named people.** Justin Ford (Finance Seat, Fractional CFO), Saif Ur Rehman
+(Technology Seat), Khushi Popat (Content & Social Seat), each with a title, a bio
+and a seat tag. None are in the spec. Nothing built.
+
+**The bench.** Twenty capability labels, no spec source.
+
+---
+
+## Colours
+
+**Four more off-swatch values in the About mockup**, none on her ten-value swatch:
+
+| Hex | Role | Nearest token | Δ | |
+|---|---|---|---|---|
+| `#f5f5f3` | `--paper`, the page background | shell `#fefbf8` | 21 | map |
+| `#dde6e0` | `--line`, borders | linen `#efeae0` | 32 | map |
+| `#0a1a12` | `--ink`, body text | forest `#013325` | 61 | REVIEW |
+| `#4a6657` | `--muted`, secondary text | bronze `#9f7a3d` | 145 | **CANNOT MAP** — a desaturated green whose nearest token is a gold |
+
+**Fifteen off-swatch values across the three mockups now.** No eleventh token has
+been added. `#f5f5f3` as `--paper` is a **page background change** and is the closest
+thing in the batch to the background instruction that was expected — but it arrives
+as a CSS variable in a mockup, not as an instruction, and it is not on the swatch.
+Flagged, not applied.
+
+---
+
+## Change list
+
+| # | Item | Slide | Component | Tag | Launch |
+|---|---|---|---|---|---|
+| 17 | Fees chapter, worked example | 10 | new | **CONFLICT** — breaks the pricing rule | **BLOCKS** |
+| 18 | Fees chapter, layout and commitment panel | 10 | new | NEW | CAN FOLLOW |
+| 19 | KPI cards, layout only | 8 | `ResultsGraphic.tsx` | REPLACE | **BLOCKS** |
+| 20 | KPI figures, either source | 8 | `content/homepage.ts` | **CONFLICT** vs spec 9 | **BLOCKS** |
+| 21 | About page redesign, structure | 21–22 | `app/about/page.tsx` | REPLACE | CAN FOLLOW |
+| 22 | About, three new case studies | 21–22 | `content/case-studies.ts` | **CONFLICT** | CAN FOLLOW |
+| 23 | Iram's book: $120M vs $100M | 21–22 | `content/homepage.ts` | **CONFLICT** | **BLOCKS** |
+| 24 | Team page, three named people | 21–22 | `content/team.ts` | **CONFLICT** | CAN FOLLOW |
+| 25 | Bench, twenty labels | 21–22 | new | NEW, unsourced | CAN FOLLOW |
+| 26 | Four persona pages redesigned | 12–19 | four page files | REPLACE | CAN FOLLOW |
+| 27 | Services dropdown redesign | 11 | `Navbar.tsx` | REPLACE | CAN FOLLOW |
+| 28 | As-it-runs-today process map | 13 | `Service1ClarityAudit.tsx` | NEW | CAN FOLLOW |
+| 29 | Fractional leadership page, seats diagram | 14–15 | `Service2FractionalLeadership.tsx` | REPLACE | CAN FOLLOW |
+| 30 | Technology Builds redesign | 16 | `Service4TechBuilds.tsx` | REPLACE | CAN FOLLOW |
+| 31 | UAE Market Entry redesign | 17 | `Service5MarketEntry.tsx` | REPLACE | CAN FOLLOW |
+| 32 | How We Work redesign | 18 | `services/how-we-work` | REPLACE | CAN FOLLOW |
+| 33 | Four off-swatch colours | 21–22 | `globals.css` | **CONFLICT** | CAN FOLLOW |
+| 34 | Page background `#f5f5f3` | 21–22 | `globals.css` | NEW, off-swatch | CAN FOLLOW |
+| 35 | Logo direction | — | nav, footer, favicon, OG | **instruction without an asset** | **BLOCKS if wanted** |
+| 36 | Justin photo | — | none | received, parked | CAN FOLLOW |
+
+
+---
+
+## Decisions taken 23 August, written down so they are not re-litigated
+
+### The fees chapter is not being built. Not even the layout.
+
+The layout exists only to display four figures the pricing rule forbids, so
+building it would produce a component with nothing it is allowed to show. It is
+not blocked on the numbers.
+
+**The choice in front of Iram is not "are these the right figures". It is:**
+
+> Spec section 1 permits **exactly one price on the entire site**: the
+> Operational Clarity Audit floor. *"No other figure and no upper limit appears
+> anywhere."*
+>
+> The fees chapter publishes four more: a $400,000 target, a 20% fee, $320,000
+> kept and $80,000 earned.
+>
+> **Either the rule changes, or the worked example goes.** Confirming the numbers
+> does not resolve it, because the rule bars them whatever they are.
+
+Two smaller things ride on the same answer: the audit is priced in **AED** while
+the fee example is worked in **dollars**, in the same page set with no stated
+rate; and the new line *"If we haven't moved your numbers, most of our fee
+doesn't get paid"* is a stronger claim than spec 3.10's *"We are paid partly on
+whether the numbers move."*
+
+### The KPI cards are built. The figures are not.
+
+`ResultsGraphic` is gone. Five cards render at once as a server component, so the
+served-HTML defect closes with it: 62%, 16% and 27% were previously absent from
+the HTML entirely. The approved labels and context render verbatim; every figure
+slot is empty.
+
+Card 6 still does not render, which is a different case and now a named one.
+`Metric.pending` distinguishes `"client-confirmation"` (a number exists but is not
+cleared, so the card renders with an empty slot) from `"not-yet-supplied"` (nobody
+has the number, so spec 3.4 says do not launch the card). The two used to be a
+single `null` and lead to opposite behaviour.
+
+Guarded by a `DECISIONS` entry in `check-content.mjs` that fails if any of the
+five appears in the served HTML, and also fails if the copy disappears with them.
+Proved by putting 53 back and watching it fail.
+
+### PHASE TWO — cut from this launch, by decision, not by oversight
+
+Everything in the CAN FOLLOW column above is **out of scope for the current
+launch**. Recorded here so the boundary is written down rather than assumed:
+
+- the four persona pages (slides 12–19)
+- the services dropdown redesign (slide 11)
+- the as-it-runs-today process map (slide 13)
+- the fractional leadership page and seats diagram (slides 14–15)
+- Technology Builds (slide 16)
+- UAE Market Entry (slide 17)
+- How We Work (slide 18)
+- **the entire About redesign** (slides 21–22 and `pp-about-v2_2.html`), which
+  carries with it the three named team members, the twenty bench labels, the
+  three new case studies and the $120M/$100M discrepancy
+
+The current pages ship as they are. Nothing above is abandoned; it is sequenced.
+
+### Still blocking, and not ours to unblock
+
+| | |
+|---|---|
+| The five result figures | with Iram, `docs/FOR-IRAM-results-figures.md` |
+| The pricing rule versus the fees example | with Iram, policy not figures |
+| Iram's book: $120M or $100M | with Iram, a factual claim about her |
+| Logo | no asset exists anywhere in either batch |
