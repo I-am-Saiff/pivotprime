@@ -38,7 +38,18 @@ const TOKEN_SOURCE = "src/app/globals.css";
  * to shrink to empty. Do not add to it without a reason recorded in
  * docs/PENDING-COPY.md.
  */
-const GRANDFATHERED = ["src/components/services/", "src/components/diagnostic/"];
+const GRANDFATHERED = [
+  // Service4TechBuilds was removed from this list on 23 August when it was
+  // rebuilt on tokens. That is what removing a path here is for.
+  "src/components/services/Service1ClarityAudit.tsx",
+  "src/components/services/Service2FractionalLeadership.tsx",
+  "src/components/services/Service3BuildPlace.tsx",
+  "src/components/services/Service5MarketEntry.tsx",
+  // Surfaced by that removal: the directory-wide entry had been hiding this
+  // file, which nobody had ever listed. Still owed, now visible.
+  "src/components/services/SpecCopyBlocks.tsx",
+  "src/components/diagnostic/",
+];
 
 // Negative lookbehind for &, so HTML entities are not mistaken for colours.
 // &#10003; is a checkmark, not #10003.
@@ -149,7 +160,7 @@ function main() {
   for (const f of findings) {
     console.error(`${f.rel}:${f.line}:${f.column}  raw hex ${f.hex}`);
     console.error(
-      `  use a palette token (forest, neon, mid, background, foreground), or derive from one ` +
+      `  use a palette token (forest, neon, mid, background, foreground, shell, mist, sand, bronze, linen), or derive from one ` +
         `with white alpha as the mockups do. If this value is genuinely correct, add it to ` +
         `scripts/palette-allow.json with a reason.`,
     );

@@ -374,6 +374,12 @@ either approve it or replace it.
 | `/services/technology-builds` | "An app you want built, or a process that is eating your team." |
 | `/services/uae-market-entry` | "Where it ends up" |
 
+**Three of these are already gone.** Rebuilding the Technology Builds page on
+your document's own words retired copy we had written to fill gaps: the heading
+"An app you want built, or a process that is eating your team", and the two
+toggle labels "Automate everything" and "Fix the constraint first". Nothing was
+lost: every sentence on that page is now yours, from section 4.4.
+
 **One thing to correct rather than approve.** Section 6.2 says to keep the About
 content as it stands. We kept the sense but expanded two contractions:
 

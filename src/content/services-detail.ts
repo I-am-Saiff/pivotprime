@@ -130,3 +130,33 @@ export const CLARITY_AUDIT = {
     "This runs either as part of a full audit, or as a standalone piece of work where pricing is clearly the problem.",
   ],
 };
+
+/**
+ * Technology Builds, spec 4.4.
+ *
+ * GENERATED FROM docs/spec.md, not transcribed. Every string below was read out
+ * of the document by scripts/ at build-authoring time, so the words in this file
+ * are the document’s own. PENDING-COPY section 1c exists because ten sentences
+ * were quietly tightened when a human typed them.
+ */
+export const TECH_BUILDS = {
+  heading: "Technology Builds",
+  standfirst: "Software, automation and AI, built after the diagnosis rather than instead of it.",
+  priceLabel: "Scoped per engagement",
+  priceDetail: "Priced on the build itself, the systems it has to connect to, and whether you want us to run it afterwards.",
+  argument: {
+    claim: "We do not sprinkle AI over a business and call it transformation.",
+    body: ["A business moves at the speed of its biggest constraint. Making everything else faster only builds a longer queue in front of it. So, before we build anything we find out where the business is actually losing time, margin or control, and then we build at that point.", "That is the difference between technology that pays for itself and technology that becomes another subscription nobody opens."],
+  },
+  capabilities: [
+    "Websites: design, build, maintenance and the digital estate around them",
+    "CRM build and configuration, including migration from spreadsheets and inherited systems",
+    "Workflow automation across sales, operations, finance and fulfilment",
+    "Dashboards and management reporting, so decisions are made on numbers rather than instinct",
+    "Integrations between the systems you already pay for and are not getting value from",
+    "Internal tools and custom applications where nothing off the shelf fits",
+    "AI agents and assistants, where they remove real cost rather than add a feature",
+  ],
+  howItRuns: "We scope the build against a defined problem and agree what it has to change. We build it, test it with the people who will actually use it, and hand it over with documentation rather than a demo. If you want us to run and maintain it afterwards, we can. If you want to own it outright, you own it, including the code.",
+  whereThisStarts: "If you already know what you need built, we can start there. If you are not certain the technology is the actual constraint, start with an Operational Clarity Audit, and we will tell you honestly whether a build is the right answer.",
+};
