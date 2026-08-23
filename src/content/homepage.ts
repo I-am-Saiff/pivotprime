@@ -243,9 +243,36 @@ export const HOW_WE_ARE_PAID = {
     "Before anything changes we baseline it: how long each step takes, pass and fail rates, man hours per function, cost per transaction. Then we agree which of those numbers has to move and by when, and a meaningful part of our fee sits on the other side of them moving.",
     "It is a discipline rather than a sales device. You cannot bill on outcomes unless you were serious about measuring in the first place.",
   ],
-  // Spec 3.10: "Do not publish a specific percentage or a formula here." None is
-  // published. The section is built from the spec's own block and awaits Iram's
-  // confirmation before launch, not before build. Item 1.5.
+  /**
+   * THE REDUCED FORM OF THE FEES CHAPTER.
+   *
+   * The 23 August design carries a worked example: a target, a percentage, a
+   * figure the client keeps and a figure Pivot Prime earns. It cannot be built,
+   * and not because the numbers are unconfirmed. Two rules bar it independently:
+   *
+   *   Spec section 1: "One price only appears on the site: the Operational
+   *   Clarity Audit floor. No other figure and no upper limit appears anywhere."
+   *
+   *   Spec 3.10's own instruction: "Do not publish a specific percentage or a
+   *   formula here."
+   *
+   * So the model is stated in prose. A fixed element, a results element tied to
+   * an agreed target, and the audit floor as the only figure. No percentage, no
+   * formula, no worked example. Naming the floor in AED also removes the clash
+   * where the design priced the audit in AED and the example in dollars.
+   *
+   * The two sentences below are NOT from the spec. They are ours, written to
+   * state the model without breaking either rule, and logged in
+   * docs/PENDING-COPY.md 1h for Iram to approve or replace.
+   */
+  structure: [
+    "Every engagement has two parts. A fixed element covers the work itself, and a results element sits against a target we agree with you before anything starts.",
+    "The Operational Clarity Audit starts at AED 15,000. Everything else is scoped per engagement, because the shape of the work decides the cost.",
+  ],
+
+  // Spec 3.10 also says "Iram to confirm final wording before this section goes
+  // live." That applies to the block copy above, which is already built and
+  // deployed. Tracked as item 1.5.
 };
 
 // 3.11 CLOSE

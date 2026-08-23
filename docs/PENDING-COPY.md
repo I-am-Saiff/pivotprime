@@ -417,6 +417,44 @@ have left all of them out and the audit lists each one. See `docs/REVISIONS-2208
 
 ---
 
+## 1h. How we are paid, in words rather than a worked example — **for Iram**
+
+Your 23 August design for the fees chapter works through an example: a target, a
+percentage, the amount you keep and the amount we earn. **We have not built it,
+and the reason is not the numbers.**
+
+Two rules in your own document stop it, independently of each other:
+
+> Section 1: *"One price only appears on the site: the Operational Clarity Audit
+> floor. No other figure and no upper limit appears anywhere."*
+
+> Section 3.10: *"Do not publish a specific percentage or a formula here."*
+
+The worked example publishes four figures and a percentage. Confirming that the
+numbers are correct does not help, because both rules bar them whatever they are.
+**This is a decision about the rule, not about the numbers.** Either section 1 is
+amended to allow a worked example, or the example stays off the site.
+
+So the page now states the model in words. Two sentences, ours rather than yours,
+for you to approve or rewrite:
+
+> Every engagement has two parts. A fixed element covers the work itself, and a
+> results element sits against a target we agree with you before anything starts.
+
+> The Operational Clarity Audit starts at AED 15,000. Everything else is scoped
+> per engagement, because the shape of the work decides the cost.
+
+This also settles something the design left open. It priced the audit in **AED**
+and worked the fee example in **dollars**, on the same page, with no rate between
+them. Naming only the audit floor, in AED, removes the question.
+
+**Separately, and already on the site:** section 3.10 ends *"Iram to confirm final
+wording before this section goes live."* The four sentences of that section are
+your document's own words and are built exactly as written, but they have not been
+confirmed by you. That confirmation is still owed. Item 1.5.
+
+---
+
 ## 2. Spec contradictions, logged and worked around
 
 ### 2.1 The fractional service slug — **logged, decided**

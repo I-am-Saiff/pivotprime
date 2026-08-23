@@ -426,6 +426,24 @@ export default function Home() {
                   </p>
                 ))}
 
+                {/* The pricing model, stated in prose. Spec section 1 allows one
+                    price on the whole site and spec 3.10 bars a percentage or a
+                    formula here, so the model is described rather than worked
+                    through. PENDING-COPY 1h. */}
+                <div className="mt-8 rounded-2xl border border-neon/25 bg-neon/[0.07] p-5">
+                  <p className="text-xs font-bold tracking-[0.18em] text-neon uppercase">
+                    How the fee is built
+                  </p>
+                  {HOW_WE_ARE_PAID.structure.map((paragraph) => (
+                    <p
+                      key={paragraph.slice(0, 40)}
+                      className="mt-3 text-sm leading-relaxed text-white/80 sm:text-base"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+
                 {/* Bottom strip — what it means in practice */}
                 <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.06] p-5 flex gap-4 items-start">
                   <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-neon/15 text-neon">
