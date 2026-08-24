@@ -42,6 +42,9 @@ const GRANDFATHERED = [
   // Service4TechBuilds was removed from this list on 23 August when it was
   // rebuilt on tokens. That is what removing a path here is for.
   "src/components/services/Service1ClarityAudit.tsx",
+  // Extracted from Service1ClarityAudit and carrying its raw hexes with it, so
+  // the debt moved with the markup rather than being paid off. Still owed.
+  "src/components/services/ClarityAuditProcessMap.tsx",
   "src/components/services/Service2FractionalLeadership.tsx",
   "src/components/services/Service3BuildPlace.tsx",
   "src/components/services/Service5MarketEntry.tsx",
