@@ -114,7 +114,7 @@ export default function Navbar() {
         <Link
           key={item.label}
           href={item.href}
-          className="rounded-md px-3 py-1.5 text-xs font-semibold tracking-wider text-white/80 uppercase transition-colors hover:text-neon focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
+          className="rounded-xl px-3 py-1.5 text-xs font-semibold tracking-wider text-white/80 uppercase transition-colors hover:text-neon focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
         >
           {item.label}
         </Link>
@@ -155,7 +155,7 @@ export default function Navbar() {
               setPinned(true);
             }
           }}
-          className="flex items-center rounded-md px-3 py-1.5 text-xs font-semibold tracking-wider text-white/80 uppercase transition-colors hover:text-neon focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
+          className="flex items-center rounded-xl px-3 py-1.5 text-xs font-semibold tracking-wider text-white/80 uppercase transition-colors hover:text-neon focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
         >
           {item.label}
           <svg
@@ -181,7 +181,7 @@ export default function Navbar() {
                 <Link
                   href={child.href}
                   onClick={closeAll}
-                  className="block mx-1.5 rounded-md px-3.5 py-2 text-xs font-medium text-white/85 transition-colors hover:bg-white/10 hover:text-neon focus-visible:bg-white/10 focus-visible:text-neon focus-visible:outline-none"
+                  className="block mx-1.5 rounded-xl px-3.5 py-2 text-xs font-medium text-white/85 transition-colors hover:bg-white/10 hover:text-neon focus-visible:bg-white/10 focus-visible:text-neon focus-visible:outline-none"
                 >
                   {child.label}
                 </Link>
@@ -195,7 +195,7 @@ export default function Navbar() {
 
   return (
     <nav ref={navRef} data-site-header className="fixed top-4 right-4 left-4 z-50">
-      <div className="mx-auto max-w-6xl rounded-md glass-nav px-4 sm:px-6">
+      <div className="mx-auto max-w-6xl rounded-xl glass-nav px-4 sm:px-6">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex flex-shrink-0 items-center" onClick={closeAll}>
             <PivotLogo />
@@ -207,7 +207,7 @@ export default function Navbar() {
               href={HEADER_CTA.href}
               target={HEADER_CTA.external ? "_blank" : undefined}
               rel={HEADER_CTA.external ? "noopener noreferrer" : undefined}
-              className="ml-3 inline-flex items-center justify-center rounded-md bg-neon px-5 py-2 text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none"
+              className="ml-3 inline-flex items-center justify-center rounded-xl bg-neon px-5 py-2 text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none"
             >
               {HEADER_CTA.label}
             </a>
@@ -218,7 +218,7 @@ export default function Navbar() {
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
-            className="inline-flex items-center justify-center rounded-md p-2 text-white/80 hover:bg-white/10 hover:text-white focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none lg:hidden"
+            className="inline-flex items-center justify-center rounded-xl p-2 text-white/80 hover:bg-white/10 hover:text-white focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none lg:hidden"
           >
             <span className="sr-only">{mobileOpen ? "Close main menu" : "Open main menu"}</span>
             <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -246,7 +246,7 @@ export default function Navbar() {
                     key={item.label}
                     href={item.href}
                     onClick={closeAll}
-                    className="block rounded-md px-3.5 py-2 text-sm font-medium text-white/90 hover:bg-white/10 hover:text-neon"
+                    className="block rounded-xl px-3.5 py-2 text-sm font-medium text-white/90 hover:bg-white/10 hover:text-neon"
                   >
                     {item.label}
                   </Link>
@@ -260,7 +260,7 @@ export default function Navbar() {
                     type="button"
                     aria-expanded={expanded}
                     onClick={() => setMobileSection(expanded ? null : item.label)}
-                    className="flex w-full items-center justify-between rounded-md px-3.5 py-2 text-sm font-medium text-white/90 hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
+                    className="flex w-full items-center justify-between rounded-xl px-3.5 py-2 text-sm font-medium text-white/90 hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
                   >
                     {item.label}
                     <svg
@@ -299,7 +299,7 @@ export default function Navbar() {
                 target={HEADER_CTA.external ? "_blank" : undefined}
                 rel={HEADER_CTA.external ? "noopener noreferrer" : undefined}
                 onClick={closeAll}
-                className="flex w-full items-center justify-center rounded-md bg-neon px-5 py-3 text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-white"
+                className="flex w-full items-center justify-center rounded-xl bg-neon px-5 py-3 text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-white"
               >
                 {HEADER_CTA.label}
               </a>
