@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { PATTERNS } from "@/content/homepage";
+import { CONTACT_CTA } from "@/content/cta";
 
 /**
  * The patterns list, spec 3.5.
@@ -87,7 +88,8 @@ export default function PatternsList() {
             href={contactHref}
             className="inline-flex w-full sm:w-auto flex-shrink-0 items-center justify-center px-6 py-3 rounded-full text-sm font-bold bg-neon text-forest hover:bg-white transition-all shadow-md"
           >
-            Discuss Your Fix →
+            {CONTACT_CTA.label}
+            <span aria-hidden="true" className="ml-2">→</span>
           </Link>
         </div>
       </div>

@@ -73,7 +73,7 @@ export default function Home() {
               href={HERO_CTA.href}
               className="inline-flex items-center justify-center rounded-full bg-neon px-7 py-3.5 text-xs font-bold tracking-wider text-forest uppercase shadow-lg transition-all duration-200 hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none"
             >
-              Book a Consultation
+              {HERO_CTA.label}
             </Link>
 
             <a
@@ -324,38 +324,18 @@ export default function Home() {
 
           {/* Portrait column — right on desktop, top on mobile */}
           <div className="order-first md:order-last">
-            {FOUNDER.portrait ? (
-              <Image
+            {/* The portrait is supplied and committed, so there is no longer a
+                placeholder branch. The one that stood here rendered an initials
+                badge reading "Portrait coming soon" and became dead the moment
+                the client sent the file. Removing it also clears the last
+                inherited em dash, which lived in its aria-label. */}
+            <Image
                 src={FOUNDER.portrait.src}
                 alt={FOUNDER.portrait.alt}
                 width={720}
                 height={900}
                 className="aspect-[4/5] w-full rounded-2xl object-cover object-top"
               />
-            ) : (
-              /* Placeholder: shown until Iram supplies the Arabian Mirror
-                 portrait at full resolution (spec 8.1 / item 1.9).
-                 Uses brand colours and initials — no stock imagery. */
-              <div
-                aria-label="Portrait of Iram Kauser — image coming soon"
-                className="relative flex aspect-[4/5] w-full items-center justify-center overflow-hidden rounded-2xl bg-forest"
-              >
-                {/* Subtle dot-grid texture, matching the dark section above */}
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.07)_1px,transparent_1px)] [background-size:24px_24px]"
-                />
-                <div className="relative z-10 flex flex-col items-center gap-5 text-center px-8">
-                  {/* Initials badge */}
-                  <div className="flex h-24 w-24 items-center justify-center rounded-full border-2 border-neon/60 bg-neon/10 text-3xl font-extrabold tracking-tight text-neon select-none">
-                    IK
-                  </div>
-                  <p className="text-sm font-semibold text-white/60 uppercase tracking-widest">
-                    Portrait coming soon
-                  </p>
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </section>
@@ -393,9 +373,6 @@ export default function Home() {
             <div className="relative z-10 grid gap-10 md:grid-cols-2 md:gap-16 md:items-start">
               {/* Left — heading block */}
               <div>
-                <span className="block text-xs font-bold tracking-[0.22em] text-neon uppercase mb-4">
-                  Chapter 04 — Fees
-                </span>
                 <div className="mb-5 h-[3px] w-10 rounded-full bg-neon" aria-hidden="true" />
                 <h2 className="text-3xl font-extrabold tracking-tight text-white leading-tight md:text-4xl">
                   {HOW_WE_ARE_PAID.heading}
@@ -467,10 +444,6 @@ export default function Home() {
           <div aria-hidden="true" className="absolute inset-0 z-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none" />
 
           <div className="relative z-10 mx-auto w-full max-w-4xl text-center text-white">
-            <span className="block font-sans font-semibold text-xs tracking-[0.22em] uppercase text-neon mb-4">
-              CHAPTER 05: GET STARTED
-            </span>
-
             <h2 className="mb-6 text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl leading-tight">
               {CLOSE.heading}
             </h2>

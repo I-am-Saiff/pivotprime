@@ -17,10 +17,10 @@ export function CopyProse({
 }) {
   return (
     <div className="mx-auto max-w-3xl">
-      <h2 className="mb-6 text-2xl font-bold text-[#0c1a15] md:text-3xl">{heading}</h2>
+      <h2 className="mb-6 text-2xl font-bold text-forest md:text-3xl">{heading}</h2>
       <div className="space-y-5">
         {paragraphs.map((p) => (
-          <p key={p.slice(0, 40)} className="leading-relaxed text-[#5e6f68]">
+          <p key={p.slice(0, 40)} className="leading-relaxed text-forest/70">
             {p}
           </p>
         ))}
@@ -32,12 +32,12 @@ export function CopyProse({
 export function CopyCards({ heading, cards }: { heading: string; cards: ServiceDetailCard[] }) {
   return (
     <div className="mx-auto max-w-5xl">
-      <h2 className="mb-8 text-2xl font-bold text-[#0c1a15] md:text-3xl">{heading}</h2>
+      <h2 className="mb-8 text-2xl font-bold text-forest md:text-3xl">{heading}</h2>
       <ul className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {cards.map((card) => (
-          <li key={card.title} className="rounded-xl border border-[#e3eae6] bg-white p-7">
-            <h3 className="mb-3 font-bold text-[#013325]">{card.title}</h3>
-            <p className="leading-relaxed text-[#5e6f68]">{card.body}</p>
+          <li key={card.title} className="rounded-xl border border-forest/10 bg-white p-7">
+            <h3 className="mb-3 font-bold text-forest">{card.title}</h3>
+            <p className="leading-relaxed text-forest/70">{card.body}</p>
           </li>
         ))}
       </ul>
@@ -48,11 +48,11 @@ export function CopyCards({ heading, cards }: { heading: string; cards: ServiceD
 export function CopyList({ heading, items }: { heading: string; items: string[] }) {
   return (
     <div className="mx-auto max-w-3xl">
-      <h2 className="mb-6 text-2xl font-bold text-[#0c1a15] md:text-3xl">{heading}</h2>
+      <h2 className="mb-6 text-2xl font-bold text-forest md:text-3xl">{heading}</h2>
       <ul className="space-y-3">
         {items.map((item) => (
-          <li key={item} className="flex items-start gap-3 text-[#0c1a15]">
-            <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#009f50]" />
+          <li key={item} className="flex items-start gap-3 text-forest">
+            <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-mid" />
             <span className="leading-relaxed">{item}</span>
           </li>
         ))}

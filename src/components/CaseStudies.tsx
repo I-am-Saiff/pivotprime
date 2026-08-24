@@ -66,9 +66,6 @@ export default function CaseStudies({
       {showHeading && (
         <header className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-3xl">
-            <span className="block font-sans font-semibold text-xs tracking-[0.22em] uppercase text-mid mb-3">
-              CHAPTER 02: PROVEN OUTCOMES
-            </span>
             <Heading className="text-3xl font-extrabold tracking-tight text-foreground md:text-4xl lg:text-5xl">
               {CASE_STUDIES_HEADING}
             </Heading>
@@ -159,7 +156,13 @@ export default function CaseStudies({
                     <h4 className="font-bold text-neon text-sm sm:text-base uppercase tracking-wider">
                       The Results
                     </h4>
+                    {/* "Verified" is only true of a figure the master table
+                        carries. On a card whose figures are all withheld it was
+                        asserting the opposite of the truth, so it renders only
+                        when the card actually publishes one. */}
+                    {study.results.some((r) => r.figure) ? (
                     <span className="text-xs font-semibold text-white/60">Verified</span>
+                    ) : null}
                   </div>
 
                   <ul className="space-y-4">

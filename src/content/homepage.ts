@@ -1,3 +1,5 @@
+import { CONTACT_CTA } from "@/content/cta";
+
 /**
  * Homepage copy, spec section 3.
  *
@@ -202,7 +204,9 @@ export const ACCOUNTABLE = {
   ],
   pullQuote:
     "A consultant tells you what to do. A recruiter finds you someone. Neither one is accountable for whether it worked.",
-  ctaLabel: "Talk to our team",
+  // Spec 2.2's own wording. It read "Talk to our team", which is not in the
+  // document, and the arrow was glued to it with no space.
+  ctaLabel: CONTACT_CTA.label,
 };
 
 // 3.7 THE PERSON BEHIND IT
@@ -229,10 +233,9 @@ export const FOUNDER = {
    * head. The replacement has the same aspect and framing, so object-top
    * carries over unchanged.
    */
-  portrait: { src: "/iram-kauser.jpg", alt: "Iram Kauser, Founder and CEO of Pivot Prime" } as {
-    src: string;
-    alt: string;
-  } | null,
+  // No longer nullable. It was `| null` while the asset was owed and the page
+  // carried a placeholder branch; both the file and the branch are gone.
+  portrait: { src: "/iram-kauser.jpg", alt: "Iram Kauser, Founder and CEO of Pivot Prime" },
 };
 
 // 3.10 HOW WE ARE PAID

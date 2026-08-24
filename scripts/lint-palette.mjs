@@ -45,9 +45,6 @@ const GRANDFATHERED = [
   "src/components/services/Service2FractionalLeadership.tsx",
   "src/components/services/Service3BuildPlace.tsx",
   "src/components/services/Service5MarketEntry.tsx",
-  // Surfaced by that removal: the directory-wide entry had been hiding this
-  // file, which nobody had ever listed. Still owed, now visible.
-  "src/components/services/SpecCopyBlocks.tsx",
   "src/components/diagnostic/",
 ];
 

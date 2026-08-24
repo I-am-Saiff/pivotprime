@@ -33,6 +33,20 @@
 export type Result = {
   /** Null where the figure is not in the master table. The label still renders. */
   figure: string | null;
+  /**
+   * MUST READ AS A COMPLETE LINE WITH NO FIGURE IN FRONT OF IT.
+   *
+   * Where a figure is published the label continues from it, so "67%" plus
+   * "faster transaction processing per customer" reads as one sentence. Where
+   * the figure is withheld the label is all there is, and a continuation
+   * stranded on its own reads as a bug: the first pass shipped "reduction in
+   * operational waste across onboarding and processing" and "improvement in
+   * gross margin after the pricing reset", which look like something failed to
+   * load rather than like a number awaiting confirmation.
+   *
+   * So a withheld line is written as a statement in its own right. Adding a
+   * figure back later means rewording the label to continue from it.
+   */
   label: string;
 };
 
@@ -61,8 +75,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     results: [
       { figure: "67%", label: "faster transaction processing per customer" },
       { figure: null, label: "KYC completion time reduced substantially" },
-      { figure: null, label: "reduction in operational waste across onboarding and processing" },
-      { figure: null, label: "FTE roles removed from high-cost locations" },
+      { figure: null, label: "Operational waste reduced across onboarding and processing" },
+      { figure: null, label: "Roles removed from high-cost locations" },
     ],
   },
   {
@@ -122,8 +136,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Separated billable work from admin so the split was visible.",
     ],
     results: [
-      { figure: null, label: "improvement in gross margin after the pricing reset" },
-      { figure: null, label: "reduction in time spent on non-billable admin" },
+      { figure: null, label: "Gross margin improved after the pricing reset" },
+      { figure: null, label: "Time spent on non-billable admin reduced" },
       { figure: null, label: "Delivery process standardised across all client engagements" },
     ],
   },
@@ -139,7 +153,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Made markdown exposure visible before the season rather than after it.",
     ],
     results: [
-      { figure: null, label: "reduction in markdown losses over two seasons" },
+      { figure: null, label: "Markdown losses reduced over two seasons" },
       { figure: null, label: "Sell-through rate improved across core product lines" },
       { figure: null, label: "Demand planning process introduced and embedded" },
     ],
@@ -156,7 +170,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Tracked cycle time by stage so the delay had a location.",
     ],
     results: [
-      { figure: null, label: "improvement in pipeline-to-close conversion rate" },
+      { figure: null, label: "Pipeline-to-close conversion rate improved" },
       { figure: null, label: "Average sales cycle reduced" },
       { figure: null, label: "CRM rebuilt around actual sales motion, not guesswork" },
     ],

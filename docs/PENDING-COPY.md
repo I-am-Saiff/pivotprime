@@ -492,8 +492,21 @@ three new stories: gross margin, non-billable admin, markdown losses, pipeline
 conversion and sales cycle. **Send the numbers, or confirm they belong in the
 master table, and they appear.**
 
-We have not carried the testimonial quotes from your design. A quote signed by a
-named role at a named client is a claim we are not able to verify.
+**The testimonial quotes are owed, not dropped.** Your design carries a quote under
+each new client story, signed by a role and a company type: a Managing Partner, a
+Commercial Director, a CEO. None is on the site. This is not a design decision we
+have taken; it is a gap waiting on you.
+
+Send each quote with confirmation that the client has agreed to it being published,
+and we will put them in. Until then the stories run without them. A quote
+attributed to a named role at a named client is a claim neither we nor a visitor
+can check, and if the client has not agreed to it, publishing it is a problem
+whatever the words say.
+
+**One thing that follows from the withheld figures.** The results panel on each
+story carried a "Verified" label. On the three new stories, where every figure is
+waiting on you, that label was asserting the opposite of the truth. It now appears
+only on a story that actually publishes a confirmed figure.
 
 **One correction, and the cause is in your own document.** Your credential appears
 twice in the copy document with two different figures:
@@ -513,6 +526,27 @@ word for word, which is recorded against that section.
 
 **Please confirm which figure is right.** It is a fact about you, it is on the
 site now, and it is the one thing here that the document cannot settle for us.
+
+---
+
+## 1j. Work items carried forward, not for Iram
+
+Internal. Recorded so they are not rediscovered.
+
+**Cleared 24 August:** `SpecCopyBlocks.tsx` tokenised, its nine raw hexes gone and
+the file removed from the palette guard's grandfathered list. The three
+unsanctioned calls to action wired to the content layer. The inherited em dashes
+cleared, one by removing the "Chapter 04 — Fees" eyebrow and one by deleting the
+dead portrait placeholder. Every check is now clean.
+
+**Open: four service page components are client components without needing to be.**
+`Service1ClarityAudit`, `Service2FractionalLeadership`, `Service3BuildPlace` and
+`Service5MarketEntry` all carry `"use client"`. This is NOT the Technology Builds
+defect: their content is fully present in the served HTML, measured on all nine
+service and audience pages by comparing the raw HTML against the page with every
+toggle clicked open. Zero words missing on any of them. It is a hydration cost and
+a shape that invites the defect back, not a live defect. The four audience pages
+are already server components.
 
 ---
 
