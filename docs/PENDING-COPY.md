@@ -650,6 +650,45 @@ reworded.
 
 ---
 
+## 1o. Alt text swept by eye, and the logo strip cross-checked
+
+**Every image the site serves was opened and compared with its description.**
+Nine carry a description; the rest are decorative. Two descriptions are wrong,
+and both are wrong the same way "Stydio" was: taken from the filename rather
+than from the image.
+
+| Image | Description says | The wordmark actually reads |
+|---|---|---|
+| InsuranceHub logo | Insurance Hub | **InsuranceHub.ae** — one word, and it carries the domain |
+| Man Cave logo | Man Cave | **MANCAVE PROJECT** — one word, and "Project" is dropped |
+
+Correct and confirmed: Democrance, Birds of Paradise Foundation, Nivishe, Women
+Who Thrive, studio88, and the founder portrait. The homepage hero photograph is
+decorative and correctly carries no description.
+
+**Not fixed, reported for a decision**, because "Man Cave Project" and
+"InsuranceHub.ae" are company names and we have been wrong about company names on
+this page twice already.
+
+### None of the logos repeats the Gallagher problem
+
+Gallagher came out because it appeared twice on the same page saying two
+different things. **Every remaining logo was checked for the same shape across all
+sixteen pages, and none of them appears anywhere on the site except as its own
+logo.** Gallagher and MetLife still appear in Iram's credential, which is how we
+know the check works.
+
+**One adjacency worth her attention, not a contradiction.** Two of the seven
+logos are insurance businesses: InsuranceHub.ae, and Democrance, whose own
+strapline is "Democratizing Insurance". The first client story on the site is an
+anonymous **"Financial Services Company"** whose detail is KYC timelines, policy
+processing and onboarding. The About page promises that clients are anonymised.
+With seven named logos and six anonymous stories in overlapping sectors, anyone
+in that market could make a reasonable guess. **The anonymity is thinner than it
+reads.** Nothing has been changed; this goes to Iram with the naming decision.
+
+---
+
 ## 2. Spec contradictions, logged and worked around
 
 ### 2.1 The fractional service slug — **logged, decided**

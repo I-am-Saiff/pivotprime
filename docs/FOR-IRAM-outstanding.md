@@ -251,6 +251,32 @@ client, say so and it goes back the same day.
 
 ---
 
+## 6b. Two company names to confirm, and one thing about anonymity
+
+**Two logos are described using the wrong name.** We opened every image on the
+site and compared it with the description a screen reader would read out. Two do
+not match, and both were taken from a filename rather than from the picture:
+
+| We currently say | The logo actually reads |
+|---|---|
+| Insurance Hub | **InsuranceHub.ae** |
+| Man Cave | **MANCAVE PROJECT** |
+
+We have not changed these, because they are company names and we would rather you
+confirm them than guess twice. Tell us the correct form for each and we will
+update them.
+
+**And one thing to think about while you settle the naming question.** Your About
+page says client stories are anonymised, and they are. But two of the seven logos
+on the homepage are insurance businesses, and the first client story is an
+anonymous financial services company described through KYC timelines and policy
+processing. Anyone working in that market could join those up. That is not a
+mistake in anything we have built, and we are not suggesting a change. It is
+simply worth knowing that naming logos and anonymising stories protects less than
+it appears to when the two overlap.
+
+---
+
 ## 7. Two sign-offs, whenever you can
 
 | What | Why |
