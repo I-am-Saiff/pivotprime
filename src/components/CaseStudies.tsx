@@ -115,9 +115,24 @@ export default function CaseStudies({
             key={study.id}
             className="flex-shrink-0 w-full snap-center frosted-card-light rounded-[28px] p-6 sm:p-10 md:p-12 shadow-sm"
           >
-            <div className="flex flex-col gap-8 lg:grid lg:grid-cols-12 lg:gap-12 items-start">
+            {/* Two columns only while the results panel has figures to carry.
+                With every figure withheld the panel is three short lines, so the
+                right column ended well above the left and the card looked
+                unfinished. Those cards run in one column and end level.
+                The split returns with the numbers. PENDING-COPY 1i. */}
+            <div
+              className={
+                study.results.some((r) => r.figure)
+                  ? "flex flex-col gap-8 lg:grid lg:grid-cols-12 lg:gap-12 items-start"
+                  : "flex flex-col gap-8"
+              }
+            >
               {/* Left Column: Challenge & The Pivot */}
-              <div className="lg:col-span-7 space-y-7">
+              <div
+                className={
+                  study.results.some((r) => r.figure) ? "lg:col-span-7 space-y-7" : "space-y-7"
+                }
+              >
                 <div>
                   <span className="mb-2 inline-flex items-center px-3 py-1 rounded-full bg-forest/5 text-xs font-bold tracking-wider text-forest uppercase">
                     Case Study {i + 1}
@@ -149,7 +164,11 @@ export default function CaseStudies({
               </div>
 
               {/* Right Column: The Results Card */}
-              <div className="lg:col-span-5 w-full rounded-2xl bg-forest p-6 sm:p-8 text-white shadow-xl border border-white/10 relative overflow-hidden">
+              <div
+                className={`w-full rounded-2xl bg-forest p-6 sm:p-8 text-white shadow-xl border border-white/10 relative overflow-hidden ${
+                  study.results.some((r) => r.figure) ? "lg:col-span-5" : ""
+                }`}
+              >
                 <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-4 border-b border-white/15 pb-3">

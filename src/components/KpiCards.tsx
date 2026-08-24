@@ -35,22 +35,19 @@ export default function KpiCards() {
           key={metric.label}
           className="flex flex-col rounded-2xl bg-forest p-6 ring-1 ring-neon/20"
         >
-          <p className="font-sans text-[11px] font-bold tracking-[0.18em] text-neon uppercase">
-            Measured impact
-          </p>
+          {/* The figure, or nothing at all. No zero, no dash, no "coming soon":
+              a placeholder in a results section reads as a result.
+              The slot used to reserve 3.5rem so a confirmed figure would not
+              reflow the section. It reserved a visible void instead, and a card
+              that reflows once beats a card that looks broken for a week. */}
+          {metric.figure !== null && (
+            <p className="mb-4 font-sans text-5xl leading-none font-extrabold tracking-tight text-linen">
+              {metric.figure}
+              {metric.suffix}
+            </p>
+          )}
 
-          {/* The figure slot. Empty until spec section 9 is resolved: no zero, no
-              dash and no "coming soon", because a placeholder in a results
-              section reads as a result. It keeps its height so confirming a
-              figure does not reflow the section. */}
-          <p
-            aria-hidden={metric.figure === null}
-            className="mt-6 min-h-[3.5rem] font-sans text-5xl leading-none font-extrabold tracking-tight text-linen"
-          >
-            {metric.figure === null ? "" : `${metric.figure}${metric.suffix}`}
-          </p>
-
-          <p className="mt-4 text-base font-medium text-white">{metric.label}</p>
+          <p className="text-base font-medium text-white">{metric.label}</p>
           <p className="mt-3 border-t border-neon/15 pt-3 text-sm leading-relaxed text-sand/80">
             {metric.context}
           </p>

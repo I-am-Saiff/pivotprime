@@ -180,8 +180,17 @@ export default function WhoWeAre() {
 
           {/* Spec 6.3 requires this grid to render correctly with an empty
               bench, so the remaining people can drop in without a layout change. */}
+          {/* One person renders as one centred card rather than as a lone item in
+              a row built for several, which read as a grid with a gap in it. The
+              grid returns as soon as there is more than one. PENDING-COPY 1i. */}
           {PEOPLE.length > 0 && (
-            <ul className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2">
+            <ul
+              className={
+                PEOPLE.length === 1
+                  ? "mx-auto mt-14 max-w-2xl"
+                  : "mt-14 grid grid-cols-1 gap-6 md:grid-cols-2"
+              }
+            >
               {PEOPLE.map((person) => (
                 <li key={person.name} className="rounded-xl border border-neutral-200 p-8">
                   <h3 className="text-xl font-extrabold text-foreground">{person.name}</h3>
@@ -196,24 +205,12 @@ export default function WhoWeAre() {
         </div>
       </section>
 
-      {/* THE BENCH — structure only, deliberately empty.
-          The 23 August About mockup lists around twenty capability labels. None
-          is in the spec, so none is published. The section renders its heading
-          and standfirst and nothing else, so the labels drop into a shape that
-          already exists rather than arriving with a layout change.
-          PENDING-COPY 1i. */}
-      <section className="bg-forest py-24" id="bench">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="max-w-3xl text-3xl font-extrabold tracking-tight text-white md:text-4xl">
-            One partnership. Every capability you need.
-          </h2>
-          <p className="mt-5 max-w-2xl leading-relaxed text-white/70">
-            We draw on a bench of specialists we have worked with, vetted and trust. You manage one
-            relationship with us, and we manage the rest.
-          </p>
-          <ul className="mt-10 flex flex-wrap gap-3" aria-label="Bench capabilities" />
-        </div>
-      </section>
+      {/* THE BENCH does not render while it is empty.
+          It was built as a heading, a standfirst and an empty list so the labels
+          could drop into a shape that already existed. On the page that read as
+          a section that had failed to load: a dark band with 300px of nothing
+          under it. Same rule as metric 6, spec 3.4: nothing beats a slot that
+          looks broken. The markup returns with the copy. PENDING-COPY 1i. */}
 
       {/* Section 6 keeps the case studies on /about behind the #case-studies
           anchor. Same source as the homepage 3.8 section so the two cannot

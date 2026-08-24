@@ -206,7 +206,7 @@ export default function Home() {
               one step at each breakpoint. Measured at 360, 768 and 1440 rather
               than eyeballed; the line count is asserted below the fold of this
               file's review, in the commit body. */}
-          <h2 className="mb-8 max-w-5xl text-[2.125rem] leading-[1.12] font-extrabold tracking-tight md:text-5xl lg:text-[3.5rem]">
+          <h2 className="mb-8 max-w-5xl text-[1.625rem] leading-[1.15] font-extrabold tracking-tight sm:text-[2.125rem] md:text-5xl lg:text-[3.5rem]">
             {ACCOUNTABLE.heading}
           </h2>
           

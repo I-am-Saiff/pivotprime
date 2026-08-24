@@ -491,3 +491,43 @@ The current pages ship as they are. Nothing above is abandoned; it is sequenced.
 | The pricing rule versus the fees example | with Iram, policy not figures |
 | Iram's book: $120M or $100M | with Iram, a factual claim about her |
 | Logo | no asset exists anywhere in either batch |
+
+
+---
+
+## Delivered beyond the client's phase one — for the record
+
+No action. Written down so the difference between what was asked for and what
+exists is not discovered later.
+
+**The client's own definition of phase one was a single long homepage** covering
+pages 1 to 16 of the copy document. **Seventeen routes were built:**
+
+```
+/                              /about        /contact     /insights   /privacy
+/services  + six service pages
+/for-smes  /for-founders  /for-corporate-leaders  /for-pl-owners
+```
+
+Everything on them traces to the document, and the spec's own instructions ask
+for several of them by URL, notably 4.4 requiring /services/technology-builds to
+stand alone for paid traffic. So this is not invented scope. It is more scope
+than the client scoped, and it has never been priced or signed off as such.
+
+---
+
+## Service components: closed by decision, not outstanding
+
+`Service1ClarityAudit` was converted to a server component with the process map
+as a client island. `Service2FractionalLeadership`, `Service3BuildPlace` and
+`Service5MarketEntry` **stay as client components and that is the final answer**,
+not an open item.
+
+Two mechanical extractions produced broken JSX because those files interleave
+computed data with markup, and each split is bespoke rather than scriptable. The
+cost exceeded the benefit: this is a hydration cost, not a defect. All nine
+service and audience pages serve their full copy, measured against raw HTML with
+every toggle clicked open.
+
+`src/components/Reveal.tsx` exists for any future case that is a plain fade
+rather than an animation threaded through an SVG.

@@ -102,3 +102,18 @@
   50% { transform: scale(1.08) translate(-1%, 1%); }
   100% { transform: scale(1.05) translate(1%, -1%); }
 }
+
+
+/* Headings balance their line lengths rather than leaving a one-word last line.
+   Applied site-wide rather than per-heading: the orphan showed up on eight
+   headings across five pages, and a utility class on each is a rule nobody
+   remembers to apply to the ninth.
+
+   text-wrap: balance is capped by browsers at a few lines, so long mobile
+   headings fall back to normal wrapping on their own. Verified at 360, 768 and
+   1440 after applying it. */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
