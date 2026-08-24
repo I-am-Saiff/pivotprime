@@ -151,12 +151,6 @@
       "why": "Functional interface copy, not a copy decision. The spec never names interface controls."
     },
     {
-      "text": "Read more",
-      "status": "traced",
-      "kind": "ui-chrome",
-      "why": "Functional interface copy, not a copy decision. The spec never names interface controls."
-    },
-    {
       "text": "How the work runs today, and what it becomes.",
       "status": "awaiting-client",
       "kind": "authored",

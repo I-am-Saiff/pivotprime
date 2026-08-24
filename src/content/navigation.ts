@@ -52,13 +52,25 @@ export const NAVIGATION: NavItem[] = [
       { label: "Case Studies", href: "/about#case-studies", anchor: true },
     ],
   },
-  { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact" },
 ];
 
 /** Spec 3.12: the footer link list matches the top level of the navigation. */
+/**
+ * /insights is deliberately NOT in the main navigation and IS in the footer.
+ *
+ * The page has a heading and three lines on it, because the first article has
+ * not been written. In the header that is an empty page offered to every
+ * visitor; in the footer it is a route that resolves for anyone who already has
+ * the link, which is what was asked for. It also keeps the page reachable, so
+ * the crawl check does not report it as an orphan.
+ *
+ * It goes back into the header when there is a first piece to read.
+ * PENDING-COPY 1k.
+ */
 export const FOOTER_LINKS: NavLink[] = [
   ...NAVIGATION.map(({ label, href }) => ({ label, href })),
+  { label: "Insights", href: "/insights" },
   { label: "Privacy", href: "/privacy" },
 ];
 

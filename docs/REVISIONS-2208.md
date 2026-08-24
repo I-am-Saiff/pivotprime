@@ -487,7 +487,7 @@ The current pages ship as they are. Nothing above is abandoned; it is sequenced.
 
 | | |
 |---|---|
-| The five result figures | with Iram, `docs/FOR-IRAM-results-figures.md` |
+| The five result figures | with Iram, `docs/FOR-IRAM-outstanding.md` |
 | The pricing rule versus the fees example | with Iram, policy not figures |
 | Iram's book: $120M or $100M | with Iram, a factual claim about her |
 | Logo | no asset exists anywhere in either batch |

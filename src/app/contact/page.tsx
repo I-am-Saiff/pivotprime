@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/content/metadata";
 import EnquiryForm from "@/components/EnquiryForm";
 import { WHATSAPP_URL } from "@/lib/flags";
+import { CONTACT_PAGE } from "@/content/contact";
 
 export const metadata: Metadata = pageMetadata("contact");
 
@@ -25,15 +26,11 @@ export default async function Contact({
             {/* Left Column: Chapter header & Discovery call pitch */}
             <div className="lg:col-span-6 flex flex-col justify-between h-full">
               <div>
-                <span className="block font-sans font-semibold text-xs tracking-[0.22em] uppercase text-mid mb-3">
-                  CHAPTER 05: START HERE
-                </span>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-forest tracking-tight leading-tight mb-5">
+                <h1 className="text-[1.75rem] sm:text-4xl md:text-5xl font-extrabold text-forest tracking-tight leading-tight mb-5">
                   Tell us what’s slowing you down.
                 </h1>
                 <p className="text-base sm:text-lg text-neutral-600 leading-relaxed mb-8">
-                  Three fields, thirty seconds. We reply with a first read on your bottleneck and a time
-                  for a 30-minute discovery call, with no pitch deck.
+                  {CONTACT_PAGE.standfirst}
                 </p>
               </div>
 

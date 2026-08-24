@@ -550,6 +550,65 @@ are already server components.
 
 ---
 
+## 1k. Two lines of ours on the contact page, and where Insights went
+
+**The contact page opening.** It read: *"Three fields, thirty seconds. We reply
+with a first read on your bottleneck and a time for a 30-minute discovery call,
+with no pitch deck."* Two problems. It used **discovery call**, which section 2.2
+of your document instructs off the site. And it promised three fields when the
+message box is optional, so it was describing a form that no longer exists.
+
+It now reads:
+
+> Name and email is enough to start. We reply with a first read on your
+> bottleneck and a time to talk it through, with no pitch deck.
+
+Ours, not yours. Replace it if you would rather it said something else.
+
+**Insights is no longer in the top menu.** The page has a heading and three lines
+on it, because the first article has not been written. In the menu that offered
+every visitor an empty page. The page is still there and any link to it still
+works, and it is still listed in the footer. **It goes back in the menu the day
+there is a first piece to read.**
+
+---
+
+## 1l. The privacy policy no longer mentions the diagnostic — text kept
+
+The policy described completing a diagnostic, how individual answers are held and
+how long they are kept. The diagnostic is not part of this phase, so readers were
+being told how their data is handled for something they cannot find on the site.
+
+Those clauses are removed from the page and preserved here word for word. They go
+back when the diagnostic ships. **Nothing has been lost.**
+
+> **What we collect.** When you contact us or complete a diagnostic, we collect
+> the name, email address, business name and answers you give us.
+
+> **Diagnostic responses.** Individual diagnostic answers are held by Pivot Prime
+> and are not shared with anyone else in your business. Where several people from
+> the same business complete a diagnostic, only the aggregate result is shared.
+
+> **How long we keep it.** Enquiries and diagnostic responses are kept for
+> twenty-four months, then deleted, unless you become a client and we need them
+> for the engagement.
+
+The page now describes only the contact form, which is the only thing on the site
+that collects anything.
+
+---
+
+## 1m. Ruling: en dashes are fine, em dashes are not
+
+Settled 24 August, recorded so it is not raised again.
+
+Section 1 of the copy document bans the em dash. It says nothing about the en
+dash, and an en dash in a numeric range, "1–2 weeks", "12–14 hours", is correct
+typography rather than a violation. **They stay.** The copy checker only ever
+tested for em dashes and is correct as written.
+
+---
+
 ## 2. Spec contradictions, logged and worked around
 
 ### 2.1 The fractional service slug — **logged, decided**

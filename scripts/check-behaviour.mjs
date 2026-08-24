@@ -166,6 +166,55 @@ const openPanels = (page) =>
   await context.close();
 }
 
+
+// LAYOUT DEFECTS THAT PASS EVERY OTHER CHECK.
+//
+// Both shipped and were found by looking rather than measuring.
+//
+// The first version of these assertions was wrong and passed with both defects
+// deliberately reinstated. It looked for an ellipsis in innerText: CSS
+// line-clamp RENDERS an ellipsis but does not put one in the text, so the
+// clamped copy reads as complete to the DOM. That is the same reason the clamp
+// was invisible to every other check. These measure the condition instead.
+{
+  const page = await browser.newPage();
+  await page.setViewportSize({ width: 1440, height: 1200 });
+  await page.goto(`${BASE}/services`, { waitUntil: "networkidle" });
+
+  const grid = await page.evaluate(() => {
+    const ul = [...document.querySelectorAll("ul")].find(
+      (u) =>
+        getComputedStyle(u).display.includes("grid") &&
+        /Operational Clarity Audit/.test(u.textContent),
+    );
+    if (!ul) return null;
+    const items = [...ul.children];
+
+    // A clamp is a computed style, not a character in the text.
+    const clamped = items.filter((el) =>
+      [...el.querySelectorAll("*")].some((n) => {
+        const c = getComputedStyle(n).webkitLineClamp;
+        return c && c !== "none";
+      }),
+    ).length;
+
+    // An empty trailing cell shows as a last row that stops short of the grid's
+    // right edge. Measured in pixels rather than inferred from column counts.
+    const gridRight = Math.round(ul.getBoundingClientRect().right);
+    const lastTop = Math.max(...items.map((el) => Math.round(el.getBoundingClientRect().top)));
+    const lastRow = items.filter((el) => Math.round(el.getBoundingClientRect().top) === lastTop);
+    const lastRowRight = Math.round(Math.max(...lastRow.map((el) => el.getBoundingClientRect().right)));
+
+    return { clamped, shortfall: gridRight - lastRowRight, count: items.length };
+  });
+
+  expect("the services grid leaves no empty trailing cell", grid !== null && grid.shortfall <= 2, grid ? `last row stops ${grid.shortfall}px short of the grid edge` : "grid not found");
+
+  expect("no service card clamps its copy", grid !== null && grid.clamped === 0, grid ? `${grid.clamped} cards carry a line-clamp` : "grid not found");
+
+  await page.close();
+}
+
 await browser.close();
 
 if (failures.length === 0) {

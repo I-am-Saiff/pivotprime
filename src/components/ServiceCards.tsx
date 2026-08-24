@@ -16,21 +16,14 @@ import { DIAGNOSTIC_ENABLED } from "@/lib/flags";
  * prevent excessive vertical scrolling.
  * On desktop (md+): Renders as a clean, balanced responsive grid.
  *
- * Cards use 2-line clamping with an inline "Read more" toggle to keep the section
+ * Cards run to their natural length and are equalised by the grid; the section
  * compact and uniform while preserving 100% crawlable markup in the HTML.
  */
 export default function ServiceCards() {
   const scrollRef = useRef<HTMLUListElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [expandedCards, setExpandedCards] = useState<Record<string, boolean>>({});
 
   const totalCards = SERVICES.length + (DIAGNOSTIC_ENABLED ? 1 : 0);
-
-  const toggleExpand = (slug: string, e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setExpandedCards((prev) => ({ ...prev, [slug]: !prev[slug] }));
-  };
 
   const handleScroll = () => {
     if (!scrollRef.current) return;
@@ -58,15 +51,25 @@ export default function ServiceCards() {
       <ul
         ref={scrollRef}
         onScroll={handleScroll}
-        className="flex overflow-x-auto snap-x snap-mandatory gap-5 pb-4 pt-1 -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 md:pb-0 md:pt-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible md:snap-none"
+        className="flex overflow-x-auto snap-x snap-mandatory gap-5 pb-4 pt-1 -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 md:pb-0 md:pt-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:items-stretch md:overflow-visible md:snap-none"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
-        {SERVICES.map((service) => {
-          const isExpanded = !!expandedCards[service.slug];
+        {/* An odd count leaves the last grid cell empty, and the section reads
+            as a card that failed to render. Five services in three columns left
+            one gap at lg and one at md; the sixth card only exists when the
+            diagnostic ships, so the count is computed rather than assumed. */}
+        {SERVICES.map((service, i) => {
+          const total = SERVICES.length + (DIAGNOSTIC_ENABLED ? 1 : 0);
+          const isLast = i === SERVICES.length - 1 && !DIAGNOSTIC_ENABLED;
+          // Literal class strings only. Tailwind scans source text, so an
+          // interpolated `lg:col-span-${n}` is never generated and the cell
+          // silently stays empty.
+          const spanMd = isLast && total % 2 === 1 ? "md:col-span-2" : "";
+          const spanLg = !isLast || total % 3 === 0 ? "" : total % 3 === 2 ? "lg:col-span-2" : "lg:col-span-3";
           return (
             <li
               key={service.slug}
-              className="flex flex-shrink-0 w-[84vw] max-w-[340px] snap-center md:w-auto md:max-w-none md:flex-shrink"
+              className={`flex flex-shrink-0 w-[84vw] max-w-[340px] snap-center md:w-auto md:max-w-none md:flex-shrink ${spanMd} ${spanLg}`}
             >
               <Link
                 href={service.href}
@@ -85,41 +88,26 @@ export default function ServiceCards() {
                 {/* Price Line */}
                 <p className="mt-1.5 font-bold text-mid text-sm sm:text-base">{service.priceLine}</p>
 
-                {/* Clamped or Expanded Body Copy */}
+                {/* FULL BODY COPY, NO CLAMP.
+                    The card used to clamp to two lines with a "Read more"
+                    toggle. The copy was in the served HTML either way, so this
+                    was presentational only, but the cut landed mid-word:
+                    "founder dependency,..." and "the length o...". That reads as
+                    a rendering fault rather than a summary, and clamping copy
+                    the document sets verbatim is the wrong instinct anyway.
+                    Cards are stretched to a common height by the grid instead. */}
                 <div className="mt-4 space-y-3">
-                  {service.body.map((paragraph, pIdx) => (
+                  {service.body.map((paragraph) => (
                     <p
                       key={paragraph.slice(0, 40)}
-                      className={`leading-relaxed text-neutral-600 text-sm transition-all duration-200 ${
-                        !isExpanded && pIdx === 0
-                          ? "line-clamp-2"
-                          : !isExpanded && pIdx > 0
-                            ? "hidden"
-                            : "block"
-                      }`}
+                      className="leading-relaxed text-neutral-600 text-sm"
                     >
                       {paragraph}
                     </p>
                   ))}
                 </div>
 
-                {/* Read More / Read Less Inline Toggle */}
-                <div className="mt-2">
-                  <button
-                    type="button"
-                    onClick={(e) => toggleExpand(service.slug, e)}
-                    className="text-xs font-bold text-mid hover:underline focus:outline-none"
-                  >
-                    {isExpanded ? "Show less" : "Read more"}
-                  </button>
-                </div>
-
-                {/* Scope Line (compact font) */}
-                <p
-                  className={`mt-4 border-t border-neutral-200/80 pt-3 text-xs leading-relaxed text-neutral-500 ${
-                    !isExpanded ? "line-clamp-1" : ""
-                  }`}
-                >
+                <p className="mt-4 border-t border-neutral-200/80 pt-3 text-xs leading-relaxed text-neutral-500">
                   {service.scopeLine}
                 </p>
 
@@ -149,7 +137,7 @@ export default function ServiceCards() {
                 {DIAGNOSTIC_CARD.eyebrow}
               </span>
               <h3 className="text-xl font-bold">{DIAGNOSTIC_CARD.title}</h3>
-              <p className="mt-3 leading-relaxed text-white/80 text-sm line-clamp-3">{DIAGNOSTIC_CARD.body}</p>
+              <p className="mt-3 leading-relaxed text-white/80 text-sm">{DIAGNOSTIC_CARD.body}</p>
               <span className="mt-auto inline-flex items-center pt-6 text-sm font-bold text-neon">
                 {DIAGNOSTIC_CARD.ctaLabel}
                 <span

@@ -12,7 +12,15 @@
  * improved by a developer. Until it is signed off, the page carries a visible
  * draft notice and the diagnostic API stays behind DIAGNOSTIC_API_ENABLED.
  *
- * Required because the diagnostic captures an email address and returns a
+ * THE DIAGNOSTIC CLAUSES ARE REMOVED, NOT LOST.
+ *
+ * The policy described completing a diagnostic, how individual answers are held
+ * and how long they are kept. None of that is on the site in this phase, so a
+ * reader was being told how data is handled for something they cannot find. The
+ * wording is preserved in docs/PENDING-COPY.md 1l and comes back with the
+ * diagnostic.
+ *
+ * Required because the enquiry form captures an email address and returns a
  * report, which is processing of personal data under the UAE Personal Data
  * Protection Law. Tracked in docs/PENDING-COPY.md item 1.8.
  */
@@ -29,19 +37,15 @@ export type PrivacySection = { heading: string; body: string };
 export const PRIVACY_SECTIONS: PrivacySection[] = [
   {
     heading: "What we collect",
-    body: "When you contact us or complete a diagnostic, we collect the name, email address, business name and answers you give us. We do not collect payment details through this website.",
+    body: "When you contact us, we collect the name, email address and anything you choose to tell us in the message. We do not collect payment details through this website.",
   },
   {
     heading: "Why we collect it",
     body: "To reply to you, to produce and send the report you asked for, and to contact you about the work you enquired about. We do not sell your data and we do not share it with third parties for their own marketing.",
   },
   {
-    heading: "Diagnostic responses",
-    body: "Individual diagnostic answers are held by Pivot Prime and are not shared with anyone else in your business. Where several people from the same business complete a diagnostic, only the aggregate result is shared.",
-  },
-  {
     heading: "How long we keep it",
-    body: "Enquiries and diagnostic responses are kept for twenty-four months, then deleted, unless you become a client and we need them for the engagement.",
+    body: "Enquiries are kept for twenty-four months, then deleted, unless you become a client and we need them for the engagement.",
   },
   {
     heading: "Your rights",
