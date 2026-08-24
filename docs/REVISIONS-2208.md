@@ -531,3 +531,163 @@ every toggle clicked open.
 
 `src/components/Reveal.tsx` exists for any future case that is a plain fade
 rather than an animation threaded through an SVG.
+
+
+---
+---
+
+# Client assets, 24 August 2026 — audit
+
+Audit only. **Nothing was built and nothing was copied into the project.** The
+files remain where they arrived.
+
+## What came, and what each one is
+
+| File | Type | Resolution |
+|---|---|---|
+| `KHUSHI POPAT PHOTO.jpg` | portrait | 1086 x 1448 |
+| `Cinnacare Baby Oil Bottles.png` | product shot | 1536 x 1024 |
+| `Cinnacare Socials.png` | social imagery | 3000 x 2000 |
+| `Cinnacare PRIMARY LOGO V2 BG1.pdf` | vector logo | vector, 28 KB |
+| `CBF8B271-9E5E-4AD4-95A7-236F3DB87DFC.jpg` | **Cinnacare imagery, not the machine** | 1177 x 1122 |
+| `PHOTO-2026-04-07-02-18-16.jpg` | **the Scentmatic machine** | **808 x 540** |
+
+### The two unnamed files, identified by looking at them
+
+The brief said "the other one for Scentmatic which is the machine", implying one
+unnamed file. There are two, and only one is the machine.
+
+**`PHOTO-2026-04-07-02-18-16.jpg` is the machine.** A black free-standing unit on
+a bar counter, screen showing a fragrance bottle and four priced options, branded
+**"The Scentmatic Vendor®"** across the front with an SV monogram. Shot in a bar
+with glassware and a spirits shelf behind it.
+
+**`CBF8B271-...jpg` is not a machine.** It is a Cinnacare product photograph: an
+infant on a pale green background surrounded by skincare ingredients, aloe,
+apricot, pomegranate, cinnamon, rosemary, chamomile and beakers of oil. It
+belongs with the other Cinnacare files.
+
+**The Scentmatic photograph is the lowest-resolution file in the batch at 808 x
+540.** Every other image is at least 1086 wide. Spec 8.1 asks for imagery that
+"shows work, not stock" on a page built to carry paid traffic; at 808 wide this
+fills roughly half a desktop content column before it starts to soften. **Worth
+asking for the original.**
+
+---
+
+## Where the imagery is meant to go
+
+### Scentmatic: a destination exists, but not for this asset
+
+Spec section 8.1's asset table has a row for it:
+
+| Asset | Where it goes | Notes |
+|---|---|---|
+| Go-to-market strategy, Scentmatic | Technology Builds 4.4, About case studies | *"Blur or remove client-identifying figures unless permission is confirmed."* |
+
+So Scentmatic has a home. **But the asset the document asks for is a go-to-market
+strategy document, and what arrived is a product photograph of the vending unit.**
+Those are not the same thing, and the row's own note is about blurring figures in
+a document, which a photograph of a machine does not have. The photograph may
+still be wanted; it is simply not the thing 8.1 requests.
+
+### Cinnacare: no destination anywhere
+
+`Cinnacare` appears **once** in the entire document, in the open-decisions table:
+
+> **Decision 1.** Which clients can be named on the site, and confirmation in
+> writing from each. The referral deck already names Insurance Hub, Scentmatic,
+> Cinnacare, Democrance, Nivishe, Care Studio and Birds of Paradise, so most of
+> this may already be settled.
+
+It is named as a candidate in an **unresolved decision**, not assigned to any
+page. It appears in no asset table, in no case study, and nowhere in the 22 or 23
+August decks or the About mockup, both of which are images and contain no text at
+all.
+
+**Neither name maps to any existing case study.** The six on the site are labelled
+by sector: Financial Services, Founder-Led, Fitness and Wellness, Professional
+Services, Retail and Consumer, Technology and SaaS. Nothing in any source says
+which, if any, is Cinnacare or Scentmatic. Guessing that a baby-oil brand is the
+retail story would be inventing a client attribution.
+
+**Both go on the outstanding list, not into the build.**
+
+---
+
+## Naming clients is a decision, and the site is currently inconsistent
+
+The About copy says **"Clients are anonymised."** Every case study on the site
+follows that: sector labels, no names.
+
+**But the homepage already names five clients in its logo strip**: Insurance Hub,
+Stydio, Man Cave, Birds of Paradise Foundation and Nivishe.
+
+So the policy in practice is **case studies anonymous, logo strip named**. That is
+a coherent position, but it is not what the About page says, and nobody has
+written it down. It matters here because the two options for this batch fall on
+opposite sides of it:
+
+- A Cinnacare **logo in the strip** is consistent with what the site already does.
+- Cinnacare **product shots attached to a case study** names the client behind a
+  specific story, which is the thing the About copy says does not happen.
+
+Spec decision 1 is explicitly open, and its own wording, *"may already be
+settled"*, is not settlement. **Nothing that names a client is being built until
+she confirms in writing which clients may be named** — the same standard applied
+to the testimonial quotes.
+
+### Found while checking this: the logo strip has three problems
+
+Four logos were carrying the placeholder description "Client logo" because they
+could not be identified from their filenames. All four are now identified, by
+looking at them:
+
+| File | What it actually is |
+|---|---|
+| `clogo3a.jpg` | **Gallagher** |
+| `Frame-17.jpg` | **Democrance** |
+| `logo-text-block-2.jpg` | **not a logo.** A text panel reading "Companies we have delivered for" |
+| `instagram.jpg` | **Women Who Thrive.** Not Instagram; the filename is wrong |
+
+Three things follow, none of them urgent, none of them fixed here:
+
+1. **Gallagher is one of Iram's former employers**, named as such in her own
+   credential on the homepage and the About page. It is sitting in a strip of
+   companies Pivot Prime has delivered for. If Gallagher is not a client, this
+   implies a relationship that does not exist.
+2. **A section heading is being displayed as a logo.** "Companies we have
+   delivered for" is baked into an image and rendered as the first item in the
+   carousel.
+3. **Democrance and Women Who Thrive are named on the site already**, which adds
+   two to the five above and makes the naming question more pressing rather than
+   less.
+
+---
+
+## Khushi's photograph
+
+**Stored, wired to nothing**, as instructed. 1086 x 1448, comfortably enough for
+any avatar or card treatment.
+
+It is blocked behind the same thing as the other two names: the team entries are
+unconfirmed. Spec decision 2 notes that Saif and Reshma "have both been offered a
+named position on the website in their proposals, so those two are effectively
+agreed" and that Justin is a partner — but **Khushi is not mentioned in that
+decision at all**, and the only source naming her is the About mockup, which is
+unconfirmed. A photograph is not permission to publish a name, a job title and a
+biography.
+
+---
+
+## Change list
+
+| # | Item | Component | Tag | Launch |
+|---|---|---|---|---|
+| 37 | Khushi portrait | none, stored only | received, parked | CAN FOLLOW |
+| 38 | Scentmatic machine photograph | Technology Builds 4.4 | **CONFLICT** — 8.1 asks for a strategy document, not a product shot; and 808 x 540 | CAN FOLLOW |
+| 39 | Cinnacare logo, product and social imagery | none | **CONFLICT** — no destination in any source | CAN FOLLOW |
+| 40 | Naming any client | case studies, logo strip | **CONFLICT** — spec decision 1 open; About says clients are anonymised | **BLOCKS if any client is to be named** |
+| 41 | Gallagher in the client logo strip | `content/homepage.ts` | **CONFLICT** — former employer, not a known client | **BLOCKS** |
+| 42 | "Companies we have delivered for" rendered as a logo | `content/homepage.ts` | defect | CAN FOLLOW |
+| 43 | Four logo descriptions, now identified | `content/homepage.ts` | closes PENDING-COPY 1.14 once naming is settled | CAN FOLLOW |

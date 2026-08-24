@@ -196,6 +196,51 @@ returns when the labels do.
 
 ---
 
+## 6a. The pictures you sent on 24 August
+
+Thank you for these. **None of them is on the site yet**, and two questions have to
+be answered before any of them can be.
+
+**Which clients may we name?** Every client story on the site is anonymous today,
+by sector rather than by name, and your About copy says so in as many words:
+*"Clients are anonymised."* Putting up Cinnacare's logo and product photographs
+names a client. That may well be right, and your copy document notes that your
+referral deck already names several companies, but it also lists this as an open
+decision. **We need it in writing, per client**, before anything goes up.
+
+Worth knowing while you decide: the logo strip on the homepage **already names**
+Insurance Hub, Stydio, Man Cave, Birds of Paradise Foundation, Nivishe,
+Democrance and Women Who Thrive. So the site already names clients in one place
+while promising anonymity in another. Whichever way you go, those two should
+agree.
+
+**Where should the pictures go?** Your document gives Scentmatic a home, on the
+Technology Builds page and in the client stories, but what it asks for there is
+the **go-to-market strategy document**, not a photograph of the machine. The
+photograph is good and we can use it; it is just not the thing the document
+listed. **Cinnacare has no home anywhere in the document** and does not attach to
+any of the six client stories, so we do not know which story it illustrates, or
+whether it is meant to be a new one.
+
+Two smaller things:
+
+- The Scentmatic photograph is **808 by 540**, the smallest file in the batch and
+  well under everything else you sent. If there is a larger original, please send
+  it: this is for a page built to attract paid traffic.
+- Of the two unnamed files, only one is the machine. The other is Cinnacare
+  imagery. We have sorted them.
+
+**Khushi's photograph is stored and used nowhere**, because her name, title and
+biography are still unconfirmed along with the other two. Send those and the
+photograph goes in with them.
+
+**One thing for you to check.** The homepage logo strip includes **Gallagher**.
+Elsewhere on the site Gallagher is named as one of the companies you worked at
+before founding Pivot Prime. In a strip headed "companies we have delivered for",
+that reads as a client. If it is not one, tell us and we will take it out.
+
+---
+
 ## 7. Two sign-offs, whenever you can
 
 | What | Why |
