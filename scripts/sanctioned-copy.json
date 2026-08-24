@@ -677,6 +677,12 @@
       "why": "From the 23 August About mockup. Narrative built, every figure withheld because none appears in the section 9 master table. Wording unconfirmed. PENDING-COPY 1i.",
       "route": "/",
       "element": "heading"
+    },
+    {
+      "text": "Companies we have delivered for",
+      "status": "traced",
+      "kind": "live-site-keep",
+      "why": "The proof strip's own heading, carried over from the existing build. It was baked into logo-text-block-2.jpg and rendered as the first item in the logo carousel; the words are unchanged, they are now text. PENDING-COPY 1n."
     }
   ]
 }

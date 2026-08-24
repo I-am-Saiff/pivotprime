@@ -61,25 +61,38 @@ export const PROOF = {
  *
  * Alt text names the client rather than describing the file, per spec 4.5.
  */
+export const CLIENT_LOGOS_HEADING = "Companies we have delivered for";
+
 export const CLIENT_LOGOS = [
-  { src: "/logos/logo-text-block-2.jpg", alt: "Client logo" },
-  { src: "/logos/clogo3a.jpg", alt: "Client logo" },
-  { src: "/logos/Frame-17.jpg", alt: "Client logo" },
+  { src: "/logos/Frame-17.jpg", alt: "Democrance" },
   { src: "/logos/insurancehub-with-bg-white.jpg", alt: "Insurance Hub" },
-  { src: "/logos/stydio-with-bg.jpg", alt: "Stydio" },
-  { src: "/logos/instagram.jpg", alt: "Client logo" },
+  // The filename says stydio. The wordmark reads studio88.
+  { src: "/logos/stydio-with-bg.jpg", alt: "studio88" },
+  // The filename says instagram. The image is the Women Who Thrive wordmark.
+  { src: "/logos/instagram.jpg", alt: "Women Who Thrive" },
   { src: "/logos/man-cave-with-bg.jpg", alt: "Man Cave" },
   { src: "/logos/bop-foundation-with-bg-white.jpg", alt: "Birds of Paradise Foundation" },
   { src: "/logos/nivishe.jpg", alt: "Nivishe" },
 ];
 
 /**
- * TODO(client): five of the nine logo files are unidentifiable from their
- * filenames, so their alt text is a generic "Client logo". Spec 4.5 asks for
- * descriptive alt text naming what the image actually is. Iram to confirm which
- * client each of logo-text-block-2, clogo3a, Frame-17 and instagram belongs to,
- * alongside the spec 10 decision 1 sign-off on which clients may be named at
- * all. Tracked in docs/PENDING-COPY.md item 1.14.
+ * ALL FOUR PLACEHOLDER ENTRIES ARE RESOLVED, by opening the files rather than
+ * reading their names. Two are now named, and two are not logos at all.
+ *
+ * GALLAGHER IS REMOVED, and not because of the open naming decision.
+ * clogo3a.jpg is the Gallagher wordmark. Gallagher is one of Iram's former
+ * employers and is named as such in her credential further down this same page.
+ * Under a heading reading "Companies we have delivered for", that reads as a
+ * client. It goes back the day she confirms Gallagher is a delivery client.
+ * PENDING-COPY 1n.
+ *
+ * logo-text-block-2.jpg was never a logo. It is this section's heading, set as
+ * an image and rendered as the first item in the carousel: invisible to a
+ * screen reader, invisible to a crawler, and animating past the reader in a
+ * strip of company marks. It is CLIENT_LOGOS_HEADING above, as real text.
+ *
+ * instagram.jpg is the Women Who Thrive wordmark. The filename is simply wrong.
+ * Frame-17.jpg is Democrance.
  */
 export const LOGOS_NEED_ALT_TEXT = true;
 

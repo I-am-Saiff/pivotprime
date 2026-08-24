@@ -609,6 +609,47 @@ tested for em dashes and is correct as written.
 
 ---
 
+## 1n. Gallagher removed from the client strip, and a heading rescued from an image
+
+**Gallagher is off the homepage logo strip.** Not because of the open decision
+about which clients may be named. That decision is still open and nothing has
+been added.
+
+The strip is headed **"Companies we have delivered for"**. Two sections further
+down the same page, your own credential names **AIG, MetLife and Gallagher** as
+the companies you spent sixteen years working *at*. A reader who scrolls the
+homepage sees Gallagher described both ways within one screen.
+
+If Gallagher is a delivery client, say so and it goes straight back. If it is a
+former employer, it should not be in that strip at all. **Either way the page
+should not say both.**
+
+**Three logos we could not previously describe are now described.** They were
+labelled only "Client logo" because nobody could tell what they were from their
+filenames. Opening them settled it:
+
+| The file | What it actually is |
+|---|---|
+| `Frame-17` | **Democrance** |
+| `instagram` | **Women Who Thrive.** Nothing to do with Instagram; the filename is wrong |
+| `clogo3a` | **Gallagher.** Removed, see above |
+
+A fourth was described wrongly rather than not at all: `stydio-with-bg` was
+labelled **Stydio**, taken from its filename. The wordmark in the image reads
+**studio88**. Corrected.
+
+That leaves seven logos in the strip, each now named properly for anyone using a
+screen reader, and it closes the open item about their descriptions.
+
+**And one of them was never a logo.** The first item scrolling past in the strip
+was a picture of the words "Companies we have delivered for". A heading, set as
+an image, animating past the reader in a row of company marks. Anyone using a
+screen reader heard it announced as a client logo, and search engines could not
+read it at all. **The same words are now real text above the strip.** Nothing was
+reworded.
+
+---
+
 ## 2. Spec contradictions, logged and worked around
 
 ### 2.1 The fractional service slug — **logged, decided**

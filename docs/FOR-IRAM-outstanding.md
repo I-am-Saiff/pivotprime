@@ -222,22 +222,32 @@ listed. **Cinnacare has no home anywhere in the document** and does not attach t
 any of the six client stories, so we do not know which story it illustrates, or
 whether it is meant to be a new one.
 
-Two smaller things:
+**Two questions on the files themselves.**
 
-- The Scentmatic photograph is **808 by 540**, the smallest file in the batch and
-  well under everything else you sent. If there is a larger original, please send
-  it: this is for a page built to attract paid traffic.
-- Of the two unnamed files, only one is the machine. The other is Cinnacare
-  imagery. We have sorted them.
+**Is there a larger version of the Scentmatic photograph?** It is **808 by 540**,
+which is the smallest file you sent and well under half the size of the others.
+It would sit on the Technology Builds page, which is the page built to bring in
+paid traffic and the one that has to prove you build real things. At that size it
+starts to soften across a normal desktop column. **If the original exists, please
+send it.**
+
+**Was "the other one" meant to be two files?** Your note said the other one is
+Scentmatic, the machine. Two files arrived without names. One is the machine, in
+a bar, branded "The Scentmatic Vendor". **The other is a Cinnacare photograph**, a
+baby surrounded by ingredients, which belongs with the rest of the Cinnacare set
+rather than with Scentmatic. We have sorted them that way. **Tell us if that is
+wrong, or if a Scentmatic file is missing from the email.**
 
 **Khushi's photograph is stored and used nowhere**, because her name, title and
 biography are still unconfirmed along with the other two. Send those and the
 photograph goes in with them.
 
-**One thing for you to check.** The homepage logo strip includes **Gallagher**.
-Elsewhere on the site Gallagher is named as one of the companies you worked at
-before founding Pivot Prime. In a strip headed "companies we have delivered for",
-that reads as a client. If it is not one, tell us and we will take it out.
+**One thing we have already changed, and need you to settle.** The homepage logo
+strip included **Gallagher**, while your credential two sections below on the same
+page names Gallagher as one of the companies you worked at before founding Pivot
+Prime. Under a heading reading "Companies we have delivered for", the page was
+saying both things at once. **We have taken it out.** If Gallagher is a delivery
+client, say so and it goes back the same day.
 
 ---
 

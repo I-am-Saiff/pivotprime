@@ -5,6 +5,7 @@ import { CONTACT_CTA, HERO_CTA, JOURNEY_CTA, WHATSAPP_CTA } from "@/content/cta"
 import {
   ACCOUNTABLE,
   CLIENT_LOGOS,
+  CLIENT_LOGOS_HEADING,
   CLOSE,
   FOUNDER,
   HERO,
@@ -123,10 +124,17 @@ export default function Home() {
           </p>
         </div>
 
+        {/* The strip's heading, as text. It used to be the first image in the
+            carousel, so it was announced to a screen reader as a client logo and
+            read by a crawler as nothing at all. */}
+        <h2 className="mt-14 text-center font-sans text-xs font-bold tracking-[0.22em] text-neutral-500 uppercase">
+          {CLIENT_LOGOS_HEADING}
+        </h2>
+
         {/* Keeps scrolling on desktop and mobile, per spec 3.2: the movement
             holds attention and is one of the few animations doing a job.
             overflow-hidden clips the track so it cannot widen the document. */}
-        <div className="mt-10 w-full overflow-hidden">
+        <div className="mt-8 w-full overflow-hidden">
           <div className="flex w-max animate-[marquee_40s_linear_infinite] items-center motion-reduce:animate-none">
             {[0, 1].map((copy) => (
               <div key={copy} className="flex items-center space-x-12 px-6" aria-hidden={copy === 1}>

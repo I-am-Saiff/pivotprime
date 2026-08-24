@@ -379,6 +379,10 @@ const HEADING_ORDER = [
     route: "/",
     spec: "3",
     h2: [
+      // The proof strip's heading. It was an image inside the logo carousel
+      // until 24 August, so it counted as a logo rather than a heading and this
+      // list had nine entries.
+      "Companies we have delivered for", // 3.2
       "This is what our team has delivered", // 3.3
       "What do we actually do", // 3.4
       "These are the patterns before growth stalls", // 3.5
