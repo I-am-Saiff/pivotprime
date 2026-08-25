@@ -954,6 +954,157 @@ missing copy.
 
 ---
 
+## 1w. The section you asked us to remove, kept word for word
+
+Slide 6, your comment in full: *"Remove this section."* It is off the homepage.
+
+**Your own document asked for it.** Section 3.6 is tagged NEW, so this was written
+in for a reason. Your comment is dated 22 August and the document is version
+1.7.1, so the comment is the later instruction and we followed it. **If 3.6 is
+still what you want, say so and it comes straight back** — nothing was retyped or
+paraphrased, it is all here and still in the code, simply not rendered.
+
+**Heading**
+
+> Knowing what is wrong is hard. Being the one who has to fix it is harder.
+
+**Body**
+
+> Most engagements end with a report. The findings are correct, everyone agrees,
+> and the work goes back onto a team already at capacity.
+
+> So we finish it. We place a project manager, a fractional CFO, an engineer or a
+> marketer inside your business. Sourced, vetted and managed by us. They report to
+> us, not to you.
+
+> No visa, no end-of-service liability, no permanent salary for a temporary
+> problem.
+
+> One contract, one invoice, one accountable party. For exactly as long as you
+> need it.
+
+**Pull quote**
+
+> A consultant tells you what to do. A recruiter finds you someone. Neither one is
+> accountable for whether it worked.
+
+**The four steps**
+
+> **Diagnose** — We look at how decisions are made, how work flows, and where accountability quietly breaks down.
+> **Align** — Strategy stops living on paper. We connect it to owners, sequence, and the operating rhythm of the week.
+> **Rebuild** — We remove duplicated work and legacy drag, then rebuild the process so it holds without you.
+> **Embed** — We work alongside your team until the new way is the normal way, and growth becomes repeatable.
+
+**And the figure alongside them**
+
+> +40 to 60% reduction in duplicated work, rework and inefficiencies
+
+That figure is one of the five still waiting on section 1 of this document, so it
+was not being published anyway.
+
+---
+
+## 1x. How We Work, taken off the site and kept in full
+
+Slide 17: *"Hide this or delete for now but would like to save what it says in
+case we want to use later? For now its not needed."*
+
+The page is off the site. Visiting its address returns a not-found page, it is out
+of the menu, and it is out of the sitemap so search engines stop listing it. **It
+is hidden, not deleted.** The page and every sentence on it are still in the
+project and a single switch puts it back exactly as it was.
+
+Here is everything it said, so you can read it without the site:
+
+> How we work
+> How an engagement actually runs, from the first conversation to the point where the change holds without us.
+> At Pivot Prime, we help uncover what’s blocking progress, we align your teams and we turn strategy in to real results.
+> Without the fluff.
+> What we do:
+> Turn plans into outcomes.
+> Help teams translate strategy into clear actions.
+> Set decision rights, success standards, and operating rhythm so progress does not depend on one person pushing.
+> Make the business run cleanly.
+> Fix broken processes and unclear ownership.
+> Remove slow decisions, wasted time, and duplicated effort so work moves without friction.
+> Make data useful, not overwhelming.
+> Help teams capture the right data at source by redesigning workflows, decision points, and accountability.
+> Clean, structure, and visualise it so leaders can trust what they are seeing and act with confidence.
+> Build cultures that support performance.
+> Clarify expectations, standards, and accountability.
+> Help teams work with trust, pace, and ownership instead of burnout or confusion.
+> Most consultants stop at strategy.
+> We step into the messy middle and help you execute, adapt, and move the business forward.
+> Businesses don’t need more ideas, they need results. With Pivot Prime you get real support, real momentum, and real results.
+> of senior executives say they miss goals due to poor execution*
+> *Source: Robert S. Kaplan, David P. Norton, Balanced Scorecard
+> The Pivot Prime Method
+> We focus on what actually moves the business.
+> You can bring us in for the full journey or for a single step, we meet you where you need us most.
+> Discover
+> See what is really holding you back.
+> We go inside the business to understand how it truly runs.
+> • Structure and roles
+> • How decisions are made
+> • How work flows day to day
+> • Where time and effort are lost
+> This includes real conversations, process mapping, and close observation when needed.
+> You can stop here if clarity is what you need first.
+> Design
+> Decide what to fix and how.
+> We design a plan with both quick wins and long term moves:
+> • What matters now
+> • What can wait
+> • What will move results
+> • Who owns each decision
+> Plans are built for your people, pace, and reality.
+> You can start at this phase if the problems are already clear.
+> Deliver
+> Ensure there are measurable results.
+> We stay with you as plans turn into action.
+> • Execution support alongside your team
+> • Help hiring or reshaping roles
+> • Ongoing check-ins and accountability
+> We stay until progress is visible.
+> You can bring us in just for delivery if needed.
+> People, roles, and ways of working must support it.
+> Underpinning the Pivot Prime Method are two execution pillars that ensure delivery holds in the real world.
+> Executive coaching and leadership labs
+> Designed for founders, senior leaders, and managers navigating complex decisions and people dynamics.
+> Team building workshops and communication labs
+> When teams struggle to work well together, progress slows and effort is wasted.
+> Strategy sets direction, but execution is what creates results
+> At Pivot Prime, we do not give advice and walk away, we work with you to understand what is blocking progress, agree what matters most, and act on it together.
+> You may come to us at the start, in the middle, or under pressure. Wherever you are, we meet you there, define the work that will make the biggest difference, and stay with you as it gets done.
+> What is blocking progress
+> A short assessment that surfaces the real constraints in the business, not surface symptoms, and focuses attention on what is actually slowing results.
+> Outcome:
+> Clarity on the true blockers to performance.
+> First conversation
+> A focused conversation to understand your context, pressure points, and goals, and to determine whether working together is the right next step.
+> Clear alignment on the problem, the ambition, and whether Pivot Prime is the right fit.
+> Discover through a deep diagnostic
+> We examine strategy, operations, structure, culture, people, and numbers to identify where work is breaking down and where effort is not translating into results.
+> A clear, in-depth view of strengths, weaknesses, and the true sources of friction in the business.
+> Design the action plan
+> A focused plan that sets priorities, ownership, and sequencing, balancing immediate improvements with decisions that strengthen performance over time.
+> A practical plan built for execution and results, not presentation.
+> Deliver with hands-on support
+> We work alongside you and your team to turn the plan into action, remove obstacles, and maintain momentum through delivery.
+> Progress you can see and measure, whether that is revenue growth, improved margins, or a more controlled and effective operation.
+> Sustained results
+> A business that runs with clarity and control delivers stronger financial performance, and gives leaders confidence that effort and decisions are producing real outcomes.
+> Long term momentum, confidence, and a sustained strategic edge.
+> Where this starts
+> Almost every engagement begins with an Operational Clarity Audit, because we will not take responsibility for outcomes in a business we have not properly diagnosed.
+> See what the audit covers
+> →
+> Stop guessing what is holding growth back,
+> start with a proper diagnosis.
+> Book your first conversation
+
+---
+
 ## 2. Spec contradictions, logged and worked around
 
 ### 2.1 The fractional service slug — **logged, decided**

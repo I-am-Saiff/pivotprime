@@ -1,12 +1,16 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { pageMetadata } from "@/content/metadata";
+import { HOW_WE_WORK_PUBLISHED } from "@/lib/flags";
 import { CONTACT_CTA } from "@/content/cta";
 
 export const metadata: Metadata = pageMetadata("howWeWork");
 
 
 export default function WhatWeDo() {
+  if (!HOW_WE_WORK_PUBLISHED) notFound();
+
   return (
     <div className="flex flex-col min-h-screen pt-32 pb-16 overflow-x-clip">
       

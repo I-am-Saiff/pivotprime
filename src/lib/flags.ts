@@ -33,3 +33,17 @@ export const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "";
 export const WHATSAPP_URL = WHATSAPP_NUMBER ? `https://wa.me/${WHATSAPP_NUMBER}` : "/contact";
 
 export const HAS_WHATSAPP = WHATSAPP_NUMBER.length > 0;
+
+/**
+ * /services/how-we-work is unpublished.
+ *
+ * Slide 17 of Website Revisions 2208v3: "Hide this or delete for now but would
+ * like to save what it says in case we want to use later? For now its not
+ * needed." Hidden rather than deleted, because she asked for the words kept.
+ *
+ * The route returns 404 while this is false. The page component and every
+ * sentence on it stay in the tree, so turning this on republishes it unchanged.
+ * The copy is also transcribed into docs/PENDING-COPY.md 1x where she can read
+ * it without the site.
+ */
+export const HOW_WE_WORK_PUBLISHED = process.env.NEXT_PUBLIC_ENABLE_HOW_WE_WORK === "true";

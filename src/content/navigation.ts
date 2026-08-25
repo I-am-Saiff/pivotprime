@@ -35,7 +35,6 @@ export const NAVIGATION: NavItem[] = [
       { label: "Build and Place", href: "/services/build-and-place" },
       { label: "Technology Builds", href: "/services/technology-builds" },
       { label: "UAE Market Entry", href: "/services/uae-market-entry" },
-      { label: "How We Work", href: "/services/how-we-work" },
     ],
   },
   {

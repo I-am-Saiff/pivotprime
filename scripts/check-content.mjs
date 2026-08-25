@@ -60,8 +60,6 @@ const EXPECTATIONS = [
       { spec: "3.5", text: "These are the patterns before growth stalls", why: "patterns heading" },
       { spec: "3.5", text: "Sales sells things operations cannot deliver", why: "first pattern" },
       { spec: "3.5", text: "You keep losing customers", why: "tenth pattern, proves the whole list is served" },
-      { spec: "3.6", text: "Knowing what is wrong is hard", why: "one accountable party heading" },
-      { spec: "3.6", text: "A consultant tells you what to do. A recruiter finds you someone.", why: "pull quote" },
       { spec: "3.7", text: "Pivot Prime is led by a Mathematician", why: "founder section heading" },
       { spec: "3.7", text: "roughly 75,000 qualified actuaries worldwide", why: "founder credential" },
       { spec: "3.8", text: "What we have achieved", why: "case studies heading" },
@@ -102,14 +100,6 @@ const EXPECTATIONS = [
   { route: "/services/build-and-place", assert: [{ spec: "4.3", text: "Build and Place", why: "hero" }] },
   { route: "/services/technology-builds", assert: [{ spec: "4.4", text: "Technology Builds", why: "hero" }] },
   { route: "/services/uae-market-entry", assert: [{ spec: "4.5", text: "UAE Market Entry", why: "hero" }] },
-  {
-    route: "/services/how-we-work",
-    assert: [
-      { spec: "4.6", text: "How we work", why: "H1 renamed from 'How we support you'" },
-      { spec: "4.6", text: "Where this starts", why: "routing block at the end of the Pathway" },
-      { spec: "4.6", text: "See what the audit covers", why: "routing block CTA" },
-    ],
-  },
 
   // PERSONA PAGES, spec 5. Hero copy is KEEP; the sub-line under each block is
   // FIX and must name a real service.
@@ -199,6 +189,24 @@ const EXPECTATIONS = [
  */
 const DECISIONS = [
   {
+    what: "the spec 3.6 section is off the homepage, per her slide 6 comment",
+    where: "PENDING-COPY 1w",
+    run: async (get) => {
+      const html = await (await get("/")).text();
+      return /Knowing what is wrong is hard/.test(html)
+        ? "spec 3.6 is rendering again; her comment on slide 6 says remove it"
+        : null;
+    },
+  },
+  {
+    what: "/services/how-we-work is unpublished, per her slide 17 comment",
+    where: "PENDING-COPY 1x",
+    run: async (get) => {
+      const res = await get("/services/how-we-work");
+      return res.status === 404 ? null : `expected 404, got ${res.status}`;
+    },
+  },
+  {
     what: "the five result figures are withheld while spec section 9 is unresolved",
     where: "REVISIONS-2208, 23 August section",
     run: async (get) => {
@@ -271,7 +279,7 @@ const DECISIONS = [
     where: "spec 2.1 and 2.4",
     run: async (get) => {
       const pairs = [
-        ["/what-we-do", "/services/how-we-work"],
+        ["/what-we-do", "/services"],
         ["/who-we-are", "/about"],
         ["/our-blog", "/insights"],
         ["/for-corporate-owners", "/for-pl-owners"],
@@ -385,7 +393,6 @@ const HEADING_ORDER = [
       "This is what our team has delivered", // 3.3
       "What do we actually do", // 3.4
       "These are the patterns before growth stalls", // 3.5
-      "Knowing what is wrong is hard", // 3.6
       "Pivot Prime is led by a Mathematician", // 3.7
       "What we have achieved", // 3.8
       "You don", // 3.9, contraction differs by apostrophe encoding

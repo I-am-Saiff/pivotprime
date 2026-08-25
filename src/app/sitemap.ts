@@ -26,7 +26,6 @@ const ROUTES = [
   "/",
   "/services",
   ...SERVICES.map((s) => s.href),
-  "/services/how-we-work",
   "/for-founders",
   "/for-smes",
   "/for-corporate-leaders",

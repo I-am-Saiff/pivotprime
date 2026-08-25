@@ -38,7 +38,6 @@ const ROUTES = [
   "/services/build-and-place",
   "/services/technology-builds",
   "/services/uae-market-entry",
-  "/services/how-we-work",
   "/for-founders",
   "/for-smes",
   "/for-corporate-leaders",

@@ -3,7 +3,6 @@ import Link from "next/link";
 import { DIAGNOSTIC_ENABLED } from "@/lib/flags";
 import { CONTACT_CTA, HERO_CTA, JOURNEY_CTA, WHATSAPP_CTA } from "@/content/cta";
 import {
-  ACCOUNTABLE,
   LOGO_GROUPS,
   CLOSE,
   FOUNDER,
@@ -230,99 +229,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3.6 One accountable party / Chapter 01: The Gap */}
-      <section className="bg-forest px-4 py-24 text-white sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none" />
-        
-        <div className="mx-auto max-w-6xl relative z-10">
-          {/* Two lines, not three. The measure is widened and the size lifted
-              one step at each breakpoint. Measured at 360, 768 and 1440 rather
-              than eyeballed; the line count is asserted below the fold of this
-              file's review, in the commit body. */}
-          <h2 className="mb-8 max-w-5xl text-[1.625rem] leading-[1.15] font-extrabold tracking-tight sm:text-[2.125rem] md:text-5xl lg:text-[3.5rem]">
-            {ACCOUNTABLE.heading}
-          </h2>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mt-12">
-            {/* Left side: Body copy & Pull quote */}
-            <div className="lg:col-span-6 space-y-6">
-              {ACCOUNTABLE.body.map((paragraph) => (
-                <p key={paragraph.slice(0, 40)} className="leading-relaxed text-white/85 text-base md:text-lg">
-                  {paragraph}
-                </p>
-              ))}
+      {/* 3.6 One accountable party REMOVED, 25 August.
 
-              <blockquote className="my-8 border-l-2 border-neon pl-6 text-lg md:text-xl leading-snug font-semibold text-white/95">
-                {ACCOUNTABLE.pullQuote}
-              </blockquote>
+          Her comment on slide 6 of Website Revisions 2208v3 reads, in full:
+          "Remove this section". It covered the heading "Knowing what is wrong
+          is hard. Being the one who has to fix it is harder.", four body
+          paragraphs, the pull quote, the CTA, the Diagnose / Align / Rebuild /
+          Embed cards and the 40-60% badge.
 
-              <div className="pt-2">
-                <Link
-                  href={CONTACT_CTA.href}
-                  className="inline-flex items-center justify-center rounded-full bg-neon px-8 py-4 text-xs font-bold tracking-wider text-forest uppercase transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none"
-                >
-                  {ACCOUNTABLE.ctaLabel}
-                  <span aria-hidden="true" className="ml-2 text-base leading-none">
-                    →
-                  </span>
-                </Link>
-              </div>
-            </div>
+          SPEC 3.6 MARKS THIS SECTION "NEW", so the document asked for it and
+          her comment removes it. The comment is dated 22 August and the
+          document is v1.7.1, so the comment is the later instruction and wins.
 
-            {/* Right side: 2x2 Glassmorphic Feature Grid + Stat Badge */}
-            <div className="lg:col-span-6 space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="glass-card-dark rounded-2xl p-6">
-                  <span className="text-neon font-bold text-xs tracking-wider block mb-2">01</span>
-                  <h3 className="text-white font-bold text-lg mb-2">Diagnose</h3>
-                  <p className="text-white/75 text-xs md:text-sm leading-relaxed">
-                    We look at how decisions are made, how work flows, and where accountability quietly breaks down.
-                  </p>
-                </div>
-
-                <div className="glass-card-dark rounded-2xl p-6">
-                  <span className="text-neon font-bold text-xs tracking-wider block mb-2">02</span>
-                  <h3 className="text-white font-bold text-lg mb-2">Align</h3>
-                  <p className="text-white/75 text-xs md:text-sm leading-relaxed">
-                    Strategy stops living on paper. We connect it to owners, sequence, and the operating rhythm of the week.
-                  </p>
-                </div>
-
-                <div className="glass-card-dark rounded-2xl p-6">
-                  <span className="text-neon font-bold text-xs tracking-wider block mb-2">03</span>
-                  <h3 className="text-white font-bold text-lg mb-2">Rebuild</h3>
-                  <p className="text-white/75 text-xs md:text-sm leading-relaxed">
-                    We remove duplicated work and legacy drag, then rebuild the process so it holds without you.
-                  </p>
-                </div>
-
-                <div className="glass-card-dark rounded-2xl p-6">
-                  <span className="text-neon font-bold text-xs tracking-wider block mb-2">04</span>
-                  <h3 className="text-white font-bold text-lg mb-2">Embed</h3>
-                  <p className="text-white/75 text-xs md:text-sm leading-relaxed">
-                    We work alongside your team until the new way is the normal way, and growth becomes repeatable.
-                  </p>
-                </div>
-              </div>
-
-              {/* Glass Stat Badge */}
-              <div className="glass-badge-dark rounded-2xl p-6 flex items-center justify-between gap-4">
-                <div>
-                  <div className="text-3xl sm:text-4xl font-extrabold text-neon tracking-tight">+40–60%</div>
-                  <p className="text-xs text-white/80 font-medium mt-1">
-                    reduction in duplicated work, rework and inefficiencies
-                  </p>
-                </div>
-                <div className="h-10 w-10 rounded-full bg-neon/20 flex items-center justify-center text-neon shrink-0">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+          Every word is preserved in docs/PENDING-COPY.md 1w. ACCOUNTABLE stays
+          in the content layer, unused, so restoring it is a re-render rather
+          than a retype. */}
 
       {/* 3.7 The person behind it. Two columns always: portrait right on
           desktop, above the copy on mobile. When the portrait file has not

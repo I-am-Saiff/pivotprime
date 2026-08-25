@@ -226,7 +226,7 @@ const openPanels = (page) =>
   const context = await browser.newContext({ javaScriptEnabled: false });
   const routes = ["/", "/about", "/services", "/services/operational-clarity-audit",
     "/services/fractional-leadership", "/services/build-and-place", "/services/technology-builds",
-    "/services/uae-market-entry", "/services/how-we-work", "/for-smes", "/for-founders",
+    "/services/uae-market-entry", "/for-smes", "/for-founders",
     "/for-corporate-leaders", "/for-pl-owners", "/contact", "/insights", "/privacy"];
   const offenders = [];
   let images = 0;

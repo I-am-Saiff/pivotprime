@@ -74,7 +74,10 @@ const nextConfig: NextConfig = {
         destination: "/services/fractional-leadership",
         permanent: true,
       },
-      { source: "/what-we-do", destination: "/services/how-we-work", permanent: true },
+      // Repointed 25 August: /services/how-we-work is unpublished per slide 17,
+      // so the old WordPress path would have redirected into a 404. It goes to
+      // the services index instead, which is the nearest live equivalent.
+      { source: "/what-we-do", destination: "/services", permanent: true },
 
       // Spec 6: the About page absorbs Who We Are, with team and case studies
       // as in-page anchors. Anchors cannot be set from a config redirect, so
