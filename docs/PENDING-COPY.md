@@ -766,6 +766,54 @@ brief. No type sizes were changed in the attempt.
 
 ---
 
+## 1r. Three opening sentences we wrote — **for Iram**
+
+Three pages did not say what they were in their first line. That matters more
+than it used to: when someone asks an AI assistant about fractional COO support
+in Dubai, it quotes the first clear sentence it can find under a heading. These
+pages gave it a card title and a price.
+
+Ours, not yours. Approve or replace:
+
+**Services page.** Your document gives this page a heading and five cards and no
+sentence in between, so it went straight from a question to a price:
+
+> Five services, used on their own or together. Most engagements begin with the
+> audit, because we will not take responsibility for a fix we have not measured.
+
+**How we work.** It read "It's about doing what works", which claims something
+without saying what the page contains:
+
+> How an engagement actually runs, from the first conversation to the point where
+> the change holds without us.
+
+**For corporate leaders.** The line under the heading was the second half of the
+heading's own sentence, so read on its own it started mid-thought, "often without
+enough people or budget to do it properly":
+
+> You are often expected to do it without enough people or budget.
+
+---
+
+## 1s. Alt text, corrected finding
+
+An earlier audit of ours reported that fifteen pages carried images with no
+descriptions. **That was wrong, and the mistake was a misread column in our own
+report.** Every image on the site is on the homepage, all forty-four of them have
+descriptions, and the other fifteen pages contain no images at all.
+
+There is a real version of the finding underneath it. Those pages use inline
+graphics rather than image files, and most are unlabelled: small decorative icons
+that should be hidden from screen readers, and on the fractional leadership page
+one substantial diagram that carries meaning and needs a description. Between
+four and twenty-six per page. **Not fixed, and not urgent**, but it is the actual
+accessibility gap rather than the one we first reported.
+
+A check now runs on every route and fails if any image is missing its description
+attribute, so the homepage-only blind spot cannot come back.
+
+---
+
 ## 2. Spec contradictions, logged and worked around
 
 ### 2.1 The fractional service slug — **logged, decided**

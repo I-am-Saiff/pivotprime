@@ -215,6 +215,44 @@ const openPanels = (page) =>
   await page.close();
 }
 
+
+// EVERY IMAGE CARRIES AN ALT ATTRIBUTE, ON EVERY ROUTE.
+//
+// An empty alt is correct for a decorative image and is not a failure; a MISSING
+// attribute is, because a screen reader then falls back to reading the filename.
+// Asserted across the whole site rather than the homepage: the earlier alt work
+// covered / only, and nothing was checking the other fifteen routes.
+{
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  const routes = ["/", "/about", "/services", "/services/operational-clarity-audit",
+    "/services/fractional-coo", "/services/build-and-place", "/services/technology-builds",
+    "/services/uae-market-entry", "/services/how-we-work", "/for-smes", "/for-founders",
+    "/for-corporate-leaders", "/for-pl-owners", "/contact", "/insights", "/privacy"];
+  const offenders = [];
+  let images = 0;
+  for (const route of routes) {
+    const page = await context.newPage();
+    const res = await page.goto(`${BASE}${route}`, { waitUntil: "domcontentloaded", timeout: 15000 }).catch(() => null);
+    if (res?.ok()) {
+      const found = await page.evaluate(() =>
+        [...document.querySelectorAll("img")].map((i) => ({
+          missing: i.getAttribute("alt") === null,
+          src: (i.getAttribute("src") ?? "").slice(-40),
+        })),
+      );
+      images += found.length;
+      for (const f of found) if (f.missing) offenders.push(`${route} ${f.src}`);
+    }
+    await page.close();
+  }
+  await context.close();
+  expect(
+    `every image on all ${routes.length} routes has an alt attribute`,
+    offenders.length === 0,
+    offenders.length ? `${offenders.length} missing: ${offenders.slice(0, 4).join(", ")}` : `${images} images checked`,
+  );
+}
+
 await browser.close();
 
 if (failures.length === 0) {

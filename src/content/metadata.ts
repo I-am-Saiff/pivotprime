@@ -44,7 +44,7 @@ export const PAGES = {
   services: {
     title: "Services | Pivot Prime",
     description:
-      "Operational audits, fractional leadership, embedded delivery teams, technology builds and UAE market entry. We find what is holding the business back, then fix it.",
+      "Operational audits, fractional leadership, embedded delivery teams, technology builds and UAE market entry. We find what is holding you back, then fix it.",
     path: "/services",
   },
   clarityAudit: {
@@ -56,25 +56,25 @@ export const PAGES = {
   fractional: {
     title: "Fractional COO, CFO and Chief of Staff | Pivot Prime",
     description:
-      "Senior leadership for a season, not a lifetime. We build the operating model, run the weekly execution, then hand it to an operations lead so the structure holds.",
+      "Senior leadership for a season, not a lifetime. We build the operating model, run the weekly execution, then hand it to an operations lead so it holds.",
     path: "/services/fractional-coo",
   },
   buildAndPlace: {
     title: "Build and Place | Pivot Prime",
     description:
-      "We put project managers, fractional CFOs, engineers and marketers inside your business to execute the fix. Sourced, vetted and managed by us. One accountable party.",
+      "We put project managers, fractional CFOs, engineers and marketers inside your business to execute the fix. Sourced, vetted and managed by us.",
     path: "/services/build-and-place",
   },
   technologyBuilds: {
     title: "Technology Builds | Pivot Prime",
     description:
-      "Websites, CRMs, workflow automation, dashboards and AI, built after the diagnosis rather than instead of it. We build at the constraint, not over what already works.",
+      "Websites, CRMs, workflow automation, dashboards and AI, built after the diagnosis rather than instead of it. We build at the constraint, not over it.",
     path: "/services/technology-builds",
   },
   marketEntry: {
     title: "UAE Market Entry | Pivot Prime",
     description:
-      "Setting up a business in Dubai takes more than company formation. UAE market entry from licence to a functioning, properly priced operation, with the numbers first.",
+      "Setting up a business in Dubai takes more than company formation. Market entry from licence to a functioning, properly priced operation, numbers first.",
     path: "/services/uae-market-entry",
   },
   howWeWork: {

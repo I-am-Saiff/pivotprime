@@ -14,6 +14,10 @@ import { SITE_URL } from "@/content/metadata";
  * /about, not separate documents, and listing fragments as URLs misrepresents
  * the site's structure.
  *
+ * /insights is omitted for the same reason from 25 August: it carries noindex
+ * while it has no articles on it, so listing it would advertise a page we are
+ * asking search engines to skip. It returns with the first piece.
+ *
  * /privacy is omitted while its text is unsigned: the page carries noindex until
  * a UAE-qualified adviser has reviewed it, and a sitemap entry would contradict
  * that.
@@ -28,7 +32,6 @@ const ROUTES = [
   "/for-corporate-leaders",
   "/for-pl-owners",
   "/about",
-  "/insights",
   "/contact",
 ];
 

@@ -103,6 +103,16 @@ export const SERVICES_EYEBROW = "Our services";
 export const SERVICES_HEADING = "What do we actually do";
 
 /**
+ * AUTHORED, NOT FROM THE SPEC. Section 3.4 gives this page an eyebrow, a heading
+ * and five cards, and no sentence between them, so the page went straight from a
+ * question to a price. An answer engine quoting it got a card title and a number.
+ *
+ * One sentence saying what the page is. Logged for Iram in PENDING-COPY 1r.
+ */
+export const SERVICES_STANDFIRST =
+  "Five services, used on their own or together. Most engagements begin with the audit, because we will not take responsibility for a fix we have not measured.";
+
+/**
  * Spec 3.4 card 6.
  *
  * The spec reads "START WITH THE DIAGNOSTIC (TEXT AS PER CARD SHOWN)". The card

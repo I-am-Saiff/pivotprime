@@ -16,7 +16,7 @@ export default function ForCorporateLeaders() {
             You’re carrying delivery, risk, and outcomes
           </h1>
           <p className="text-lg md:text-xl text-neon font-semibold leading-relaxed max-w-3xl mx-auto mb-4">
-            often without enough people or budget to do it properly.
+            You are often expected to do it without enough people or budget.
           </p>
           <p className="text-base md:text-lg text-white/85 font-medium leading-relaxed max-w-3xl mx-auto">
             You’re expected to make things work across functions, vendors, and priorities, while keeping the organisation steady and your own credibility intact.

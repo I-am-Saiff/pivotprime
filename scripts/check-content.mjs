@@ -397,10 +397,18 @@ const HEADING_ORDER = [
   {
     route: "/services",
     spec: "4",
-    // The page heading is the H1 here; the shared card component renders service
-    // names as H3, so there are no H2s. Spec 4.5 requires headings nested
-    // properly with no level skipped for visual reasons.
-    h2: [],
+    // The five card titles are H2 here and H3 on the homepage, from the same
+    // component via headingLevel. On the homepage the section already carries
+    // its own H2 above the cards; here the page heading is the H1 and there was
+    // no H2 at all, so the cards sat under an H1 with a level skipped, which
+    // spec 4.5 forbids.
+    h2: [
+      "Operational Clarity Audit",
+      "Fractional COO, CFO and Chief of Staff",
+      "Build and Place",
+      "Technology Builds",
+      "UAE Market Entry",
+    ],
   },
 ];
 

@@ -19,7 +19,14 @@ import { DIAGNOSTIC_ENABLED } from "@/lib/flags";
  * Cards run to their natural length and are equalised by the grid; the section
  * compact and uniform while preserving 100% crawlable markup in the HTML.
  */
-export default function ServiceCards() {
+/**
+ * headingLevel exists because this component is both a section of the homepage
+ * and the whole of /services. On the homepage the section already has an h2, so
+ * the card titles are h3 beneath it. On /services the page heading is the h1 and
+ * there was no h2 at all, so the cards were h3 under an h1 with a level skipped.
+ */
+export default function ServiceCards({ headingLevel = "h3" }: { headingLevel?: "h2" | "h3" } = {}) {
+  const CardHeading = headingLevel;
   const scrollRef = useRef<HTMLUListElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -81,9 +88,9 @@ export default function ServiceCards() {
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-forest group-hover:text-mid transition-colors">
+                <CardHeading className="text-lg font-bold text-forest group-hover:text-mid transition-colors">
                   {service.title}
-                </h3>
+                </CardHeading>
 
                 {/* Price Line */}
                 <p className="mt-1.5 font-bold text-mid text-sm sm:text-base">{service.priceLine}</p>

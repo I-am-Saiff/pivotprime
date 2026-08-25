@@ -15,7 +15,13 @@ export default function WhatWeDo() {
         <h1 className="text-5xl md:text-6xl font-extrabold text-black mb-4 tracking-tight leading-tight">
           How we work
         </h1>
-        <p className="text-2xl md:text-3xl text-mid font-semibold mb-6">It’s about doing what works</p>
+        {/* AUTHORED. It read "It's about doing what works", which asserts without
+            saying what the page is, so the first quotable line under the H1 told a
+            reader nothing. PENDING-COPY 1r. */}
+        <p className="text-2xl md:text-3xl text-mid font-semibold mb-6">
+          How an engagement actually runs, from the first conversation to the point where the
+          change holds without us.
+        </p>
         <p className="text-xl md:text-2xl text-gray-600 font-medium leading-relaxed">
           At Pivot Prime, we help uncover what’s blocking progress, we align your teams and we turn strategy in to real results. <span className="text-primary font-bold">Without the fluff.</span>
         </p>

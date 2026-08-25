@@ -332,6 +332,50 @@ tell us otherwise.
 
 ---
 
+## 6d. Why the blank figures now cost you more than a blank space
+
+This is the strongest reason to answer section 1 of this document.
+
+When someone asks an AI assistant, or Google's own answer box, something like
+*"which consultancies in the UAE actually deliver rather than advise"*, the answer
+is assembled by quoting sentences from websites. What gets quoted is short,
+specific and checkable. **A number is the most quotable thing a page can carry.**
+
+The most quotable section on your site is the results band on the homepage: five
+short claims, each with a figure. **Every one of those figures is currently
+blank**, because your document says results may only come from the master table
+and four of the five are not in it.
+
+So today an answer engine looking at Pivot Prime finds strong positioning and
+**no performance number it can cite**. Your competitors' pages have numbers on
+them, whether or not those numbers are as carefully governed as yours.
+
+Five figures, one sitting, and the most valuable section on the site starts
+working.
+
+---
+
+## 6e. One small thing worth approving on its own
+
+**Organization schema.** A short, invisible block of information in the page code
+that tells Google and AI assistants, in a form they read directly: this is a
+company, this is its name, this is its logo, these are its official social
+profiles. It does not change anything a visitor sees.
+
+We can add it truthfully today from what is already on the site. **About an hour.**
+
+Two related ones we cannot add yet, and why:
+
+- **Local business listing**, the version that can produce a map card, needs a
+  street address. The site currently gives Ras Al Khaimah and an email.
+- **Founder profile**, which is how an assistant learns Iram Kauser is the person
+  behind Pivot Prime, would have to state the value of that multi-line book. Your
+  document gives two different figures, so it waits on section 3 above.
+
+Everything else in this area was agreed as a later phase and stays there.
+
+---
+
 ## 7. Two sign-offs, whenever you can
 
 | What | Why |

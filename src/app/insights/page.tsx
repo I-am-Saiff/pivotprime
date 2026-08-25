@@ -5,7 +5,24 @@ import { pageMetadata } from "@/content/metadata";
 // simple listing of existing posts, no new editorial features". There are no
 // posts yet and the spec supplies no copy for this page, so it states that
 // plainly rather than inventing an editorial promise.
-export const metadata: Metadata = pageMetadata("insights");
+/**
+ * NOINDEX WHILE THERE IS NOTHING TO READ.
+ *
+ * The page is a heading and two sentences, roughly two hundred words including
+ * the footer. Indexed, that is a thin-content signal against the whole domain
+ * for no gain, and an answer engine has nothing to quote from it. The route
+ * stays live so any existing link resolves, and it is already out of the main
+ * navigation and out of the sitemap.
+ *
+ * follow: true deliberately. Crawlers should still walk the footer links out of
+ * it rather than treating it as a dead end.
+ *
+ * All three come back the day there is a first article. PENDING-COPY 1k.
+ */
+export const metadata: Metadata = {
+  ...pageMetadata("insights"),
+  robots: { index: false, follow: true },
+};
 
 export default function InsightsPage() {
   return (

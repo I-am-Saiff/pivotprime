@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/content/metadata";
-import { SERVICES_EYEBROW, SERVICES_HEADING } from "@/content/services";
+import { SERVICES_EYEBROW, SERVICES_HEADING, SERVICES_STANDFIRST } from "@/content/services";
 import ServiceCards from "@/components/ServiceCards";
 
 // Spec 4. The parent overview lists all five in spec order with the 3.4 card
@@ -20,6 +20,9 @@ export default function ServicesPage() {
           <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl lg:text-6xl">
             {SERVICES_HEADING}
           </h1>
+          <p className="mt-5 text-lg leading-relaxed text-neutral-600 md:text-xl">
+            {SERVICES_STANDFIRST}
+          </p>
         </header>
 
         {/* The same component the homepage 3.4 section renders. Spec 4 defines
@@ -27,7 +30,7 @@ export default function ServicesPage() {
             two implementations would drift. They did: this page kept its own
             grid until the heading-order check reported five H2 headings where
             the shared component renders card titles as H3. */}
-        <ServiceCards />
+        <ServiceCards headingLevel="h2" />
       </section>
     </div>
   );
