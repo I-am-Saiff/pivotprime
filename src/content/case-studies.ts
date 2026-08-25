@@ -83,7 +83,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     id: "founder-led",
     sector: "Founder-Led Business",
     challenge:
-      "The founder was deeply involved in every decision. While the business was growing, progress felt heavy. Most of the week was spent on admin, approvals, and rework, leaving little time for direction, partnerships, or growth initiatives. The team had skills but lacked confidence. Delegation existed in theory, but decisions still flowed back to the founder.",
+      "The founder was approving every decision. The team had capability but it lacked clear ownership. We mapped what should and shouldn't escalate, then redesigned roles around judgement, not just task delivery.",
     pivotLead: "We focused on founder load release through structure and behaviour.",
     pivot: [
       "Translated the founder's vision into clear decision standards and success criteria.",
@@ -101,7 +101,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     id: "fitness-wellness",
     sector: "Fitness and Wellness Company, UAE",
     challenge:
-      "The business had strong demand and a loyal core community, but member churn was rising. Leadership could not clearly see why members were leaving, and teams were focused on selling new memberships rather than retaining existing ones. Effort was high, but results were uneven.",
+      "Strong demand, loyal core, but churn was rising and nobody could pinpoint it. The team was focused on new sign-ups while existing members quietly left. We rebuilt retention around experience, behaviour, and team incentives.",
     pivotLead: "We rebuilt retention around experience, behaviour, and ownership.",
     pivot: [
       "Identified the moments that mattered most to members, including onboarding, class atmosphere, music, and post-class follow-up.",
@@ -176,6 +176,17 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
   },
 ];
+
+/**
+ * IRAM'S OWN WORDS, slide 8, verbatim. Not a client testimonial, so it carries
+ * no third-party permission problem: it is the founder speaking about her own
+ * team. The client quotes on the named case studies are still owed with consent.
+ */
+export const FOUNDER_QUOTE = {
+  body:
+    "We are a team that genuinely enjoys getting into a business and making it work better, and we care just as much about seeing our clients thrive as they do. That is why we will always tell you what we actually think, even when it is not what you were hoping to hear. Doing right by our clients is not a policy, it's who we are.",
+  attribution: "Iram Kauser, Founder and CEO",
+};
 
 export const CASE_STUDIES_HEADING = "What we have achieved";
 export const CASE_STUDIES_STANDFIRST = "Real problems, real execution, real results.";

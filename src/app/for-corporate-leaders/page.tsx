@@ -80,8 +80,8 @@ export default function ForCorporateLeaders() {
 
           {/* Section 3 */}
           <div className="frosted-card-light p-8 md:p-14 rounded-[28px] mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Executive Sounding Board + Critical Comms Support</h2>
-            <h3 className="text-lg font-bold text-mid mb-8">Through a Fractional COO retainer, monthly or ad hoc.</h3>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Senior judgment, on call</h2>
+            <h3 className="text-lg font-bold text-mid mb-8">Through Fractional Leadership Services. A confidential resource to pressure-test decisions before they cost you.</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
               <div className="md:col-span-7 space-y-4 text-neutral-600 leading-relaxed text-base">
@@ -97,7 +97,7 @@ export default function ForCorporateLeaders() {
               </div>
               <div className="md:col-span-5 bg-neutral-50/80 p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
                 <p className="text-mid font-bold text-base mb-3">The typical engagement is monthly or ad hoc.</p>
-                <p className="text-forest text-sm font-medium leading-relaxed">Often used alongside execution support, when visibility and stakes are high.</p>
+                <p className="text-forest text-sm font-medium leading-relaxed">This is like having an Executive Board that you can consult when you need.</p>
               </div>
             </div>
           </div>

@@ -80,6 +80,34 @@ const stripInstructions = (block) =>
  */
 const EXPECTED_ABSENT = [
   {
+    section: "5.3",
+    match: "Through a Fractional COO retainer, monthly or ad hoc",
+    why: "slide 19 replaces this card's title and subtitle outright: 'Senior judgment, on call' and 'Through Fractional Leadership Services. A confidential resource to pressure-test decisions before they cost you.'",
+    appearsWhen: "Iram withdraws the replacement, or asks for the delivering service to be named again alongside her new subtitle",
+    tracked: "PENDING-COPY 1v",
+  },
+  {
+    section: "5.4",
+    match: "Through an extended Operational Clarity Audit",
+    why: "slide 20 replaces card 1's title and subtitle: 'Why your unit isn\'t moving faster than the market'",
+    appearsWhen: "Iram withdraws the replacement, or asks for the delivering service to be named again alongside her new subtitle",
+    tracked: "PENDING-COPY 1v",
+  },
+  {
+    section: "5.4",
+    match: "a variant of the COO retainer",
+    why: "slide 20 replaces card 2's title and subtitle: 'Your decisions don\'t survive the next layers of the organisation'",
+    appearsWhen: "Iram withdraws the replacement, or asks for the delivering service to be named again alongside her new subtitle",
+    tracked: "PENDING-COPY 1v",
+  },
+  {
+    section: "5.4",
+    match: "Through Build and Place and Technology Builds",
+    why: "slide 20 replaces card 3's title and subtitle: 'Grow output without growing the cost base'",
+    appearsWhen: "Iram withdraws the replacement, or asks for the delivering service to be named again alongside her new subtitle",
+    tracked: "PENDING-COPY 1v",
+  },
+  {
     section: "3.3",
     match: "53%",
     why: 'spec 3.3 ends "IRAM TO CONFIRM the five ranges above against the master table in Section 9 before they go live", and section 1 says every result figure must come from that table. 53 is not in it: the table says 30 to 50',

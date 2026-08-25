@@ -152,3 +152,27 @@ This pattern has now cost, in order:
 
 Guarded by `npm run check:links`, which walks the site from the homepage and
 fails when a route in the sitemap is linked from no other page.
+
+
+## Redirect changes are verified by request, not by inspection
+
+Adding a redirect without checking for an existing rule in the opposite direction
+is its own failure mode, and reading the diff will not show it.
+
+`/services/fractional-leadership` already redirected to `/services/fractional-coo`,
+because spec 2.1 and 4.2 disagree about the slug and we had picked one. When slide
+13 settled it the other way, adding `coo -> leadership` left both rules in place.
+The new canonical route answered **308 to the old one**. The diff looked correct:
+one rule added, pointing the right way.
+
+It surfaced on the first `curl` of the page. So after any change to
+`next.config.ts` redirects, request both ends:
+
+```
+curl -s -o /dev/null -w "%{http_code} %{redirect_url}" <new-canonical>   # expect 200
+curl -s -o /dev/null -w "%{http_code} %{redirect_url}" <old-path>        # expect 308 to the new one
+```
+
+`check-content` holds the redirect list in `DECISIONS` and asserts each pair still
+resolves. When a direction flips, that list flips with it, or it goes on asserting
+the old world and passing.

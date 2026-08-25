@@ -36,8 +36,8 @@ export default function ForCorporateOwners() {
 
           {/* Section 1 */}
           <div className="frosted-card-light p-8 md:p-14 rounded-[28px] mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Competitive Focus &amp; Advantage Reset</h2>
-            <h3 className="text-lg font-bold text-mid mb-8">Through an extended Operational Clarity Audit.</h3>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Why your unit isn&apos;t moving faster than the market</h2>
+            <h3 className="text-lg font-bold text-mid mb-8">A reset of where capital, leadership attention, and effort are actually going, and what to cut.</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
               <div className="md:col-span-7 space-y-4 text-neutral-600 leading-relaxed text-base">
@@ -63,8 +63,8 @@ export default function ForCorporateOwners() {
 
           {/* Section 2 */}
           <div className="frosted-card-light p-8 md:p-14 rounded-[28px] mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Executive Leverage &amp; Strategy Carry-Through</h2>
-            <h3 className="text-lg font-bold text-mid mb-8">Through fractional Chief of Staff support, a variant of the COO retainer.</h3>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Your decisions don&rsquo;t survive the next layers of the organisation</h2>
+            <h3 className="text-lg font-bold text-mid mb-8">Senior-level support that closes the gap between what gets decided and what actually lands.</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
               <div className="md:col-span-7 space-y-4 text-neutral-600 leading-relaxed text-base">
@@ -90,8 +90,8 @@ export default function ForCorporateOwners() {
 
           {/* Section 3 */}
           <div className="frosted-card-light p-8 md:p-14 rounded-[28px] mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Scaled Execution &amp; Intelligent Modernisation</h2>
-            <h3 className="text-lg font-bold text-mid mb-8">Through Build and Place and Technology Builds.</h3>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Grow output without growing the cost base</h2>
+            <h3 className="text-lg font-bold text-mid mb-8">Smarter operating design, targeted automation, and AI adoption, applied where it actually reduces drag.</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
               <div className="md:col-span-7 space-y-4 text-neutral-600 leading-relaxed text-base">

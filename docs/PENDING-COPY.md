@@ -890,6 +890,70 @@ at 768 was 718px wide against a 640px file and was being upscaled.
 
 ---
 
+## 1u. Fractional Leadership, and one wording inconsistency to confirm
+
+**Done, on your instruction.** Slide 13: *"Drop down to be changed to Fractional
+Leadership instead of Fractional COO"*. The menu and the page now say Fractional
+Leadership, and the page's own web address changed to match. The old address
+still works and forwards to the new one, so nothing anyone has already shared
+will break.
+
+Your document agreed with you already, which is worth knowing: section 4.2's own
+heading for that page is "Fractional Leadership". Section 2.1 lists it under the
+other name. We had followed 2.1; you and 4.2 outvote it.
+
+**One thing to confirm rather than discover.** The service card on the homepage
+and the services page still reads **"Fractional COO, CFO and Chief of Staff"**,
+because that is a final-copy block in section 3.4 and you did not ask for it to
+change. So the menu says one thing and the card names the three seats.
+
+That is defensible: the menu is a category and the card lists what is in it. But
+it is the sort of difference you would notice later and wonder about. **Tell us if
+you would rather the card read "Fractional Leadership" too**, and it changes in
+one place.
+
+---
+
+## 1v. Your comments from the 22 August deck, now on the site
+
+Everything below is word for word from your own comments. Nothing was tightened,
+shortened or rephrased.
+
+| Where | What you asked for |
+|---|---|
+| Case studies | Your quote about the team, in full |
+| Client story 2 | Your rewrite: "The founder was approving every decision..." |
+| Client story 3 | Your rewrite: "Strong demand, loyal core, but churn was rising..." |
+| P&L owners, all three cards | Your six new titles and subtitles |
+| Corporate innovator, card 3 | "Senior judgment, on call", its subtitle, and the side box |
+| UAE market entry | "We are not interested in launching a business in the UAE which will fail" and the subheading |
+| Corporate innovator quote | Qatar, not Riyadh |
+| Client story attributions | Industry in capitals, following your own example |
+| Build and Place diagram | Project Manager, Software Engineer, Fractional COO added, "Watch the seats fill" removed |
+
+### One consequence worth a look
+
+**The three P&L owner cards no longer say which service delivers the outcome.**
+
+They used to carry a line naming it: *"Through an extended Operational Clarity
+Audit"*, *"Through fractional Chief of Staff support"*, *"Through Build and Place
+and Technology Builds"*. Your new subtitles replace those lines rather than sit
+under them, so the delivering service is no longer named on that page.
+
+On the corporate innovator page your subtitle keeps it, *"Through Fractional
+Leadership Services..."*, which is why that page still routes and this one does
+not.
+
+This may be exactly what you want: the new titles speak to the problem rather
+than the product, which is stronger. But it is a change in what the page does,
+not just how it reads. **If you want the service named as well, send us where you
+want it and we will put it back under your subtitle.**
+
+Those four lines are recorded as deliberately absent, so nothing reports them as
+missing copy.
+
+---
+
 ## 2. Spec contradictions, logged and worked around
 
 ### 2.1 The fractional service slug — **logged, decided**

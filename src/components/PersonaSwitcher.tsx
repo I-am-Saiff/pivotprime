@@ -11,6 +11,11 @@ interface PersonaData {
   ctaLabel: string;
   ctaHref: string;
   quote: string;
+  /**
+   * Slide 9: "Industries all to be in caps e.g. Regional Retail Group."
+   * The industry is capitalised; the role and the city are not, following her
+   * own example, which capitalises only the industry.
+   */
   author: string;
   bullets: string[];
 }
@@ -24,7 +29,7 @@ const PERSONAS: PersonaData[] = [
     ctaLabel: "Make your business predictable",
     ctaHref: "/for-smes",
     quote: "Margins stopped swinging month to month once the operating rhythm was fixed.",
-    author: "Managing Director, insurance brokerage · Dubai",
+    author: "Managing Director, INSURANCE BROKERAGE · Dubai",
     bullets: [
       "Some months feel smooth, others feel like starting from scratch.",
       "Revenue is up, but margins are unpredictable.",
@@ -40,7 +45,8 @@ const PERSONAS: PersonaData[] = [
     ctaLabel: "Get execution support",
     ctaHref: "/for-corporate-leaders",
     quote: "We launched our new venture in 90 days with placed leadership and zero permanent payroll bloat.",
-    author: "VP Innovation, regional retail group · Riyadh",
+    // Slide 9: "For corporate innovator quote put Qatar not Riyadh".
+    author: "VP Innovation, REGIONAL RETAIL GROUP · Qatar",
     bullets: [
       "You carry delivery, risk and outcomes without enough headcount.",
       "Hiring is slow, and permanent payroll expansion is off the table.",
@@ -56,7 +62,7 @@ const PERSONAS: PersonaData[] = [
     ctaLabel: "Design the execution roadmap",
     ctaHref: "/for-pl-owners",
     quote: "Every team finally knows their numbers and operating cadence. Noise turned into rhythm.",
-    author: "Chief Operating Officer, distribution group · Abu Dhabi",
+    author: "Chief Operating Officer, DISTRIBUTION GROUP · Abu Dhabi",
     bullets: [
       "Progress is slow and organizational change feels expensive.",
       "Every new strategic initiative competes with ten legacy tasks.",
@@ -72,7 +78,7 @@ const PERSONAS: PersonaData[] = [
     ctaLabel: "See what you can take off your plate",
     ctaHref: "/for-founders",
     quote: "Taking a two-week holiday without the business stopping was the proof it actually worked.",
-    author: "Founder & CEO, tech-enabled logistics · Dubai",
+    author: "Founder & CEO, TECH-ENABLED LOGISTICS · Dubai",
     bullets: [
       "Every major decision lands back on your desk every single day.",
       "You are simultaneously the glue, the chief salesperson, and the backstop.",

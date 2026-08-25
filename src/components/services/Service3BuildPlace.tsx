@@ -20,10 +20,13 @@ export default function Service3BuildPlace() {
   // would print the same idea twice, so the diagram keeps the role name that
   // identifies the node and drops the caption. Decision recorded in
   // docs/PENDING-COPY.md.
+  // Slide 14, her wording: "Change Project Manager (capital M)", "Software
+  // Engineer, instead of Engineer", "Add the Fractional COO".
   const slots = [
-    { left: 16, top: 20, b: "Project manager" },
+    { left: 16, top: 20, b: "Project Manager" },
     { left: 84, top: 20, b: "Fractional CFO" },
-    { left: 12, top: 80, b: "Engineer" },
+    { left: 50, top: 8, b: "Fractional COO" },
+    { left: 12, top: 80, b: "Software Engineer" },
     { left: 50, top: 92, b: "Marketing" },
     { left: 88, top: 80, b: "Web and digital" },
   ];
@@ -68,7 +71,7 @@ export default function Service3BuildPlace() {
               One contract. <span className="text-[#009f50]">One accountable party.</span>
             </h2>
             <p className="text-[#5e6f68] mt-3">
-              We bring in only what the diagnosis justifies, and we manage whoever we bring. Watch the seats fill.
+              We bring in only what the diagnosis justifies, and we manage whoever we bring.
             </p>
           </div>
 

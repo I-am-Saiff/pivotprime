@@ -136,7 +136,6 @@ const EXPECTATIONS = [
     route: "/for-corporate-leaders",
     assert: [
       { spec: "5.3", text: "Through Build and Place. Scoped per engagement.", why: "blocks 1 and 2 sub-line" },
-      { spec: "5.3", text: "Through a Fractional COO retainer, monthly or ad hoc.", why: "block 3 sub-line" },
       { spec: "5.3", text: "You do not need to hire for everything", why: "routing block" },
       { spec: "5.3", text: "How we staff an engagement", why: "routing block CTA" },
     ],
@@ -144,9 +143,6 @@ const EXPECTATIONS = [
   {
     route: "/for-pl-owners",
     assert: [
-      { spec: "5.4", text: "Through an extended Operational Clarity Audit.", why: "block 1 sub-line" },
-      { spec: "5.4", text: "a variant of the COO retainer", why: "block 2 sub-line" },
-      { spec: "5.4", text: "Through Build and Place and Technology Builds.", why: "block 3 sub-line" },
       { spec: "2.5", text: "This is a 2 to 12 week reset", why: "typographical correction" },
     ],
   },

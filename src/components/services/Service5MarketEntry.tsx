@@ -183,10 +183,10 @@ export default function Service5MarketEntry() {
               Straight answer
             </span>
             <h3 className="text-2xl md:text-3xl font-bold mt-3 mb-3 max-w-lg text-white">
-              We are not interested in launching a business here that will not make money here.
+              We are not interested in launching a business in the UAE which will fail.
             </h3>
             <p className="text-[#bfd8cd] mb-8">
-              If the model says it will not, we would rather tell you before you spend the money than after.
+              If after assessment, we feel your business will fail here, we will tell you to save your money and not enter this market or most of the time we will show you how you can make it work.
             </p>
             <div className="flex flex-wrap gap-4">
               <a href={WHATSAPP_URL} className="inline-flex items-center px-6 py-3 font-semibold text-[15px] bg-[#00d76d] text-[#013325] rounded-full hover:bg-white hover:-translate-y-0.5 transition-all">

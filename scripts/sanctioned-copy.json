@@ -487,20 +487,6 @@
       "why": "Appears in docs/spec.md. Green block, or quoted in a KEEP or section 11 instruction that sanctions the existing wording."
     },
     {
-      "text": "Executive Sounding Board + Critical Comms Support",
-      "status": "traced",
-      "kind": "live-site-keep",
-      "why": "Retained from pivotprime.ae under a KEEP instruction. Verified against the live page's served HTML on 2026-08-20."
-    },
-    {
-      "text": "Through a Fractional COO retainer, monthly or ad hoc.",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
-      "route": "/for-corporate-leaders",
-      "element": "h3"
-    },
-    {
       "text": "Need on-demand execution support?",
       "status": "awaiting-client",
       "kind": "authored",
@@ -519,48 +505,6 @@
       "status": "traced",
       "kind": "spec",
       "why": "Appears in docs/spec.md. Green block, or quoted in a KEEP or section 11 instruction that sanctions the existing wording."
-    },
-    {
-      "text": "Competitive Focus &amp; Advantage Reset",
-      "status": "traced",
-      "kind": "spec",
-      "why": "Appears in docs/spec.md. Green block, or quoted in a KEEP or section 11 instruction that sanctions the existing wording."
-    },
-    {
-      "text": "Through an extended Operational Clarity Audit.",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
-      "route": "/for-pl-owners",
-      "element": "h3"
-    },
-    {
-      "text": "Executive Leverage &amp; Strategy Carry-Through",
-      "status": "traced",
-      "kind": "spec",
-      "why": "Appears in docs/spec.md. Green block, or quoted in a KEEP or section 11 instruction that sanctions the existing wording."
-    },
-    {
-      "text": "Through fractional Chief of Staff support, a variant of the COO retainer.",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
-      "route": "/for-pl-owners",
-      "element": "h3"
-    },
-    {
-      "text": "Scaled Execution &amp; Intelligent Modernisation",
-      "status": "traced",
-      "kind": "live-site-keep",
-      "why": "Retained from pivotprime.ae under a KEEP instruction. Verified against the live page's served HTML on 2026-08-20."
-    },
-    {
-      "text": "Through Build and Place and Technology Builds.",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
-      "route": "/for-pl-owners",
-      "element": "h3"
     },
     {
       "text": "Ready to create real momentum?",
@@ -701,6 +645,54 @@
       "status": "traced",
       "kind": "live-site-keep",
       "why": "The client group's label, same provenance: a picture of these words in the live carousel, now text in the row. PENDING-COPY 1n."
+    },
+    {
+      "text": "We are not interested in launching a business in the UAE which will fail.",
+      "status": "traced",
+      "kind": "client-supplied",
+      "why": "Supplied by the client verbatim in a comment on slide 16 of Website Revisions 2208v3, 22 August. Replaces spec 5.x copy, which her comment postdates. PENDING-COPY 1v."
+    },
+    {
+      "text": "Senior judgment, on call",
+      "status": "traced",
+      "kind": "client-supplied",
+      "why": "Supplied by the client verbatim in a comment on slide 19 of Website Revisions 2208v3, 22 August. Replaces spec 5.x copy, which her comment postdates. PENDING-COPY 1v."
+    },
+    {
+      "text": "Through Fractional Leadership Services. A confidential resource to pressure-test decisions before they cost you.",
+      "status": "traced",
+      "kind": "client-supplied",
+      "why": "Supplied by the client verbatim in a comment on slide 19 of Website Revisions 2208v3, 22 August. Replaces spec 5.x copy, which her comment postdates. PENDING-COPY 1v."
+    },
+    {
+      "text": "Why your unit isn't moving faster than the market",
+      "status": "traced",
+      "kind": "client-supplied",
+      "why": "Supplied by the client verbatim in a comment on slide 20 of Website Revisions 2208v3, 22 August. Replaces spec 5.x copy, which her comment postdates. PENDING-COPY 1v."
+    },
+    {
+      "text": "Your decisions don\u2019t survive the next layers of the organisation",
+      "status": "traced",
+      "kind": "client-supplied",
+      "why": "Supplied by the client verbatim in a comment on slide 20 of Website Revisions 2208v3, 22 August. Replaces spec 5.x copy, which her comment postdates. PENDING-COPY 1v."
+    },
+    {
+      "text": "Senior-level support that closes the gap between what gets decided and what actually lands.",
+      "status": "traced",
+      "kind": "client-supplied",
+      "why": "Supplied by the client verbatim in a comment on slide 20 of Website Revisions 2208v3, 22 August. Replaces spec 5.x copy, which her comment postdates. PENDING-COPY 1v."
+    },
+    {
+      "text": "Grow output without growing the cost base",
+      "status": "traced",
+      "kind": "client-supplied",
+      "why": "Supplied by the client verbatim in a comment on slide 20 of Website Revisions 2208v3, 22 August. Replaces spec 5.x copy, which her comment postdates. PENDING-COPY 1v."
+    },
+    {
+      "text": "Smarter operating design, targeted automation, and AI adoption, applied where it actually reduces drag.",
+      "status": "traced",
+      "kind": "client-supplied",
+      "why": "Supplied by the client verbatim in a comment on slide 20 of Website Revisions 2208v3, 22 August. Replaces spec 5.x copy, which her comment postdates. PENDING-COPY 1v."
     }
   ]
 }
