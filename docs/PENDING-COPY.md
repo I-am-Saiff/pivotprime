@@ -959,6 +959,20 @@ it is the sort of difference you would notice later and wonder about. **Tell us 
 you would rather the card read "Fractional Leadership" too**, and it changes in
 one place.
 
+**And two sub-lines that had been missed, now changed.** The rename reached the
+menu, the page and the web address, but not the persona pages. Card 3 on both
+`/for-founders` and `/for-smes` still read **"Through a Fractional COO retainer.
+Scoped per engagement."**, which is your own wording from the block tables in
+sections 5.1 and 5.2. Those are the two pages a founder or an SME owner lands on,
+so the old name was surviving in the place it was most likely to be read.
+
+They now read **"Through Fractional Leadership. Scoped per engagement."** The
+sentence is unchanged; only the service name inside it moved, to the one slide 13
+settled on. **Say the word and the spec's original sentence goes back.**
+
+That leaves the homepage service card as the only place naming the three seats,
+which is the question above.
+
 ---
 
 ## 1v. Your comments from the 22 August deck, now on the site

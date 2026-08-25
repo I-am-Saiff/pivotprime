@@ -108,7 +108,7 @@ const EXPECTATIONS = [
     assert: [
       { spec: "5.1", text: "Through an Operational Clarity Audit. From AED 15,000.", why: "block 1 sub-line" },
       { spec: "5.1", text: "Through hiring support, role design and Build and Place.", why: "block 2 sub-line" },
-      { spec: "5.1", text: "Through a Fractional COO retainer. Scoped per engagement.", why: "block 3 sub-line" },
+      { spec: "5.1", text: "Through Fractional Leadership. Scoped per engagement.", why: "block 3 sub-line, renamed from the spec's \"Fractional COO retainer\" per slide 13. PENDING-COPY 1u" },
       { spec: "5.1", text: "Most founders start with the audit", why: "routing block" },
     ],
   },
@@ -117,7 +117,7 @@ const EXPECTATIONS = [
     assert: [
       { spec: "5.2", text: "Through an Operational Clarity Audit. From AED 15,000.", why: "block 1 sub-line" },
       { spec: "5.2", text: "Part of an Operational Clarity Audit, or scoped on its own.", why: "block 2 sub-line" },
-      { spec: "5.2", text: "Through a Fractional COO retainer. Scoped per engagement.", why: "block 3 sub-line" },
+      { spec: "5.2", text: "Through Fractional Leadership. Scoped per engagement.", why: "block 3 sub-line, renamed from the spec's \"Fractional COO retainer\" per slide 13. PENDING-COPY 1u" },
       { spec: "5.2", text: "Most SMEs start with the audit", why: "routing block" },
     ],
   },
@@ -304,6 +304,19 @@ const DECISIONS = [
       return /contribution margin, delivery effort, variability and risk/.test(html)
         ? "the paragraph is rendering again; the three cards on the page no longer match each other"
         : null;
+    },
+  },
+  {
+    what: 'the persona card 3 sub-lines say "Fractional Leadership", not the spec\'s "Fractional COO retainer"',
+    where: "PENDING-COPY 1u",
+    run: async (get) => {
+      for (const route of ["/for-founders", "/for-smes"]) {
+        const html = await (await get(route)).text();
+        if (/Fractional COO retainer/.test(html)) {
+          return `${route} names the COO retainer again, while the nav and the service page say Fractional Leadership`;
+        }
+      }
+      return null;
     },
   },
 ];

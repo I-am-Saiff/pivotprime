@@ -309,11 +309,11 @@
       "why": "Retained from pivotprime.ae under a KEEP instruction. Verified against the live page's served HTML on 2026-08-20."
     },
     {
-      "text": "Through a Fractional COO retainer. Scoped per engagement.",
+      "text": "Through Fractional Leadership. Scoped per engagement.",
       "status": "traced",
-      "kind": "spec",
-      "why": "Appears in docs/spec.md. spec 5.1, the Change to column of the block table, reused for the same block on /for-smes under 5.2. Dashed grid tables are not green copy blocks, so the reverse audit could not see this. Verified 2026-08-25.",
-      "route": "/for-founders",
+      "kind": "client-supplied",
+      "why": "Spec 5.1 and 5.2 write this sub-line as \"Through a Fractional COO retainer. Scoped per engagement.\" Her comment on slide 13 renames the service to Fractional Leadership, and the nav, the route and the service page all follow it, so the two persona pages were the last place still naming the COO retainer. The sentence is hers; only the service name inside it moved. PENDING-COPY 1u.",
+      "route": "/for-founders and /for-smes",
       "element": "h3"
     },
     {
