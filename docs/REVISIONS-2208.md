@@ -691,3 +691,137 @@ biography.
 | 41 | Gallagher in the client logo strip | `content/homepage.ts` | **CONFLICT** — former employer, not a known client | **BLOCKS** |
 | 42 | "Companies we have delivered for" rendered as a logo | `content/homepage.ts` | defect | CAN FOLLOW |
 | 43 | Four logo descriptions, now identified | `content/homepage.ts` | closes PENDING-COPY 1.14 once naming is settled | CAN FOLLOW |
+
+
+---
+---
+
+# Client comments inside the decks, read 25 August
+
+Audit only. No code in this pass.
+
+## The miss
+
+**Forty-four client comments have been sitting inside the two decks since 22
+August and none of them was read.** Every audit we ran on those files read the
+rendered slide images. PowerPoint comments are stored in a separate part of the
+file and never appear in a rendering, so nothing we did could have surfaced them.
+
+| File | Comment parts | **Comments** | Author | Read before today |
+|---|---|---|---|---|
+| `Website Revisions - 2208v1.pptx` | 5 | **7** | Iram Kauser | no |
+| `Website Revisions - 2208v3.pptx` | 19 | **37** | Iram Kauser | no |
+
+**v1's seven were missed as well**, which the brief did not anticipate. All seven
+reappear inside v3, so nothing is lost, but the 22 August audit was written
+without them too.
+
+**`client-comments-2208v3.md` is not in the working folder.** The comments below
+were extracted directly from the deck instead, which is the same source the file
+would have been made from.
+
+### Everything else checked, same method
+
+| File | Comments |
+|---|---|
+| `pp-about-v2_2.html` | 13 HTML comments, all structural markers such as `NAV`, `HERO`, `TEAM`, plus "Replace src with Iram's photo URL" |
+| `pp-services_11.html` | 10, all section markers. **One is informative**: the card is labelled "2 · Fractional Leadership", which independently corroborates slide 13 |
+| `pivot-prime-kpi-cards_3.html` | 22, all structural markers inside the SVG |
+| `PivotPrime_Website_Copy_Spec_v1_7_1.docx` | **0** |
+| `PivotPrime_Website_Copy_Spec_v1_6_1.docx` | **0** |
+| `PivotPrime_Constraint_Diagnostic_v1.docx` | **0** |
+
+The specification documents carry no comments. Nothing else is hiding.
+
+---
+
+## 1. Comments that contradict decisions already shipped
+
+**Six, and one of them reverses a ruling Saif gave.**
+
+| # | Comment | Contradicts | Tag |
+|---|---|---|---|
+| C1 | **Slide 13:** "Drop down to be changed to **Fractional Leadership** instead of Fractional COO" | Saif's ruling that fixed the `fractional-coo` slug and nav label. The services mockup's own code comment also says "Fractional Leadership", so this is settled in her mind | **CONFLICT** |
+| C2 | **Slide 1:** hero button "Change to Confirm you don't need our help, or don't think you need us, found out what we actually do" | Spec 3.1's button is "Find out what is holding your business back", which we restored eight days ago after it had been changed to "Book a Consultation" | **CONFLICT** |
+| C3 | **Slide 1:** "Then text is only **we find out what is holding your business back**" | Spec 3.1's hero lead is a green block reading "Most consultants recommend the fix. We build it." | **CONFLICT** |
+| C4 | **Slide 3:** "change wording to we do not measure success in slide decks, **we measure what has changed**" | Spec 3.3 green block reads "We measure what changed." One word | **CONFLICT**, trivial to apply, but it is a green block |
+| C5 | **Slide 10:** "Eyebrow heading to just say **OUR FEES**" | We removed all five chapter eyebrows including "Chapter 04 — Fees" on Saif's instruction. She wants a labelled eyebrow back, worded differently | **CONFLICT**, partial |
+| C6 | **Slide 18:** "Change the eyebrow heading to **FOR FOUNDERS**" | Same. We removed the persona chapter eyebrows | **CONFLICT**, partial |
+
+**On C5 and C6 together with slide 9's "Shouldn't be chapter anything - only WHO
+WE SERVE":** she does not want the eyebrows gone, she wants them to stop saying
+"Chapter N". Our removal went one step further than she asked. Three of the five
+should come back with new wording.
+
+---
+
+## 2. What these comments unblock
+
+**Substantial. Several things on the outstanding list are now answered.**
+
+| Cleared | By |
+|---|---|
+| **Iram's own testimonial quote** | Slide 8 supplies it verbatim, 63 words, ready to publish. It is HER quote about the team, not a client's, so it carries no third-party permission problem |
+| **Case study 2 copy** | Slide 8 rewrites it in full: "The founder was approving every decision..." |
+| **Case study 3 copy** | Slide 8 rewrites it in full: "Strong demand, loyal core, but churn was rising..." |
+| **Cinnacare and Scentmatic destinations** | Slide 8: "The pictures to use for **each case study 1 and 2** I have shared separately to you in email." Both images now have a home, which the 24 August audit recorded as having none |
+| **Corporate innovator quote location** | Slide 9: "put **Qatar** not Riyadh" |
+| **Three P&L owner card titles and subtitles** | Slide 20 supplies all six strings verbatim |
+| **Corporate innovator card 3** | Slide 19 supplies title, subtitle and side-box copy verbatim |
+| **Market entry positioning** | Slide 16 supplies the replacement heading and subheading verbatim |
+
+**Still NOT cleared by these comments:** the five result figures, the client
+testimonial quotes for the named case studies, the $120m/$100m credential, the
+fees pricing-rule decision, the logo asset, and the background colour. **The
+single largest blocker, the section 9 figures, is untouched by all 44 comments.**
+
+---
+
+## 3. Structural, so they can be sequenced
+
+Ordered by how much they move.
+
+| # | Change | Component | Tag |
+|---|---|---|---|
+| S1 | **Remove the Chapter 01 section entirely** (slide 6, "Remove this section"): "Knowing what is wrong is hard", its four Diagnose/Align/Rebuild/Embed cards and the 40–60% badge | `app/page.tsx`, spec 3.6 | **CONFLICT** with spec 3.6, which is a NEW section in the document |
+| S2 | **Hide or delete /services/how-we-work** (slide 17), keeping the text for later | whole route, nav, sitemap | **REPLACE** |
+| S3 | **Move all three anonymised case studies to /about**, leaving a "more case studies" button on the homepage | `CaseStudies.tsx`, `/about` | **NEW** |
+| S4 | **Reorder the persona pages**: stretched founder, SME, corporate innovator, then P&L owner | `PersonaSwitcher`, nav, four routes | **REPLACE** |
+| S5 | **Rename "mid-market execution owner" to "P&L owner" everywhere**, homepage included | four routes, nav, content | **REPLACE** |
+| S6 | **Strip the persona pages** to heading, subheading and the box only, deleting the rest. Founders first, then SME | four page files | **REPLACE**, large deletion |
+| S7 | **Rename the dropdown to Fractional Leadership** | `navigation.ts`, and the slug question | **CONFLICT**, see C1 |
+| S8 | **"What you get" shown on every service page, right side shaded** (slide 12) | five service components | **NEW** |
+| S9 | **Video behind the hero** (slide 1) | `app/page.tsx` | **NEW**, asset not supplied |
+| S10 | **At least one case study showing Saif's work** (slide 8) | `case-studies.ts` | **NEW**, needs Saif |
+| S11 | **Technology Builds rebuilt by Saif** (slide 15): "Saif to put all his work or design this however he wants" | `Service4TechBuilds` | **NEW**, needs Saif |
+
+### Cosmetic, low sequencing risk
+
+Slide 1 top bar colour trial and "small rounding so its more rectangular"
+(**ALREADY DONE**, 12px). Slide 2 "fix the logos part, looking cheap"
+(**ALREADY DONE**, larger and higher contrast). Slide 2 alignment
+(**ALREADY DONE**). Slide 3 different visual language per KPI. Slide 3 ivory
+background instead of white. Slide 4 colour the cards differently. Slide 9
+industries in caps and lighter green quote boxes. Slide 10 more writing, larger
+quote boxes. Slide 11 match the homepage. Slide 14: remove "Watch the seats
+fill", add Fractional COO, "Project Manager" capital M, "Software Engineer" not
+"Engineer", remove the animation caption.
+
+---
+
+## 4. Still needs her, after all of this
+
+1. **C1 vs Saif's ruling.** Fractional Leadership or Fractional COO, and if the
+   label changes, does the URL change with it.
+2. **C2's replacement hero button.** The text as written is not a sentence:
+   "Confirm you don't need our help, or don't think you need us, found out what
+   we actually do". It also replaces a green block. **We will not guess at this.**
+3. **S1.** Spec 3.6 is a NEW section in her own document and the comment says
+   remove it. One of the two is out of date.
+4. **The ivory background** (slide 3) is an eleventh colour unless it is one of
+   the ten already on the swatch.
+5. **The video** for the hero, which does not exist.
+6. **Which photo is case study 1 and which is case study 2.** She says the email
+   says; the email is not in the working folder.
+7. **The new services page animations** promised on slide 13, not yet sent.
+8. **The section 9 figures**, still.
