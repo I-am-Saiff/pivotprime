@@ -131,26 +131,57 @@ export default function Home() {
           {CLIENT_LOGOS_HEADING}
         </h2>
 
-        {/* Keeps scrolling on desktop and mobile, per spec 3.2: the movement
-            holds attention and is one of the few animations doing a job.
-            overflow-hidden clips the track so it cannot widen the document. */}
-        <div className="mt-8 w-full overflow-hidden">
-          <div className="flex w-max animate-[marquee_40s_linear_infinite] items-center motion-reduce:animate-none">
-            {[0, 1].map((copy) => (
-              <div key={copy} className="flex items-center space-x-12 px-6" aria-hidden={copy === 1}>
-                {CLIENT_LOGOS.map((logo) => (
-                  <Image
-                    key={`${copy}-${logo.src}`}
-                    src={logo.src}
-                    alt={copy === 1 ? "" : logo.alt}
-                    width={180}
-                    height={80}
-                    className="h-14 w-auto rounded-lg object-contain opacity-70 transition-opacity hover:opacity-100 md:h-16"
-                  />
+        {/* TWO ROWS, OPPOSITE DIRECTIONS, matching the live site. Spec 3.2:
+            the movement holds attention and is one of the few animations doing
+            a job.
+
+            The seven logos split four and three. A row of three does not fill
+            1440 on its own, so each row repeats its own subset until the track
+            is wide enough to have no visible gap as it loops, then the whole
+            track is rendered twice and translated exactly -50%, which lands the
+            second copy where the first began and makes the seam invisible.
+
+            Only the first repetition of each row is announced. Every logo is
+            therefore in the accessibility tree exactly once across both rows,
+            and every logo is in the served HTML regardless.
+
+            overflow-hidden on each row clips the track so neither can widen the
+            document, which matters more with two rows than with one. */}
+        <div className="mt-8 space-y-5">
+          {[
+            { logos: CLIENT_LOGOS.slice(0, 4), repeats: 3, animation: "animate-[marquee_40s_linear_infinite]" },
+            { logos: CLIENT_LOGOS.slice(4), repeats: 3, animation: "animate-[marquee-reverse_40s_linear_infinite]" },
+          ].map((row, rowIndex) => (
+            <div key={rowIndex} className="w-full overflow-hidden">
+              {/* The animation is a class, not an inline style. As a style it
+                  outranked motion-reduce:animate-none, so the strip kept moving
+                  for anyone who had asked it not to. */}
+              <div className={`flex w-max items-center ${row.animation} motion-reduce:animate-none`}>
+                {[0, 1].map((copy) => (
+                  <div key={copy} className="flex items-center" aria-hidden={copy === 1}>
+                    {Array.from({ length: row.repeats }).map((_, rep) => (
+                      <div
+                        key={rep}
+                        className="flex items-center space-x-12 px-6"
+                        aria-hidden={rep > 0}
+                      >
+                        {row.logos.map((logo) => (
+                          <Image
+                            key={`${copy}-${rep}-${logo.src}`}
+                            src={logo.src}
+                            alt={copy === 0 && rep === 0 ? logo.alt : ""}
+                            width={180}
+                            height={80}
+                            className="h-14 w-auto rounded-lg object-contain opacity-70 transition-opacity hover:opacity-100 md:h-16"
+                          />
+                        ))}
+                      </div>
+                    ))}
+                  </div>
                 ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 

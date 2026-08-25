@@ -88,12 +88,24 @@
   }
 }
 
+/* The strip runs as two rows moving in opposite directions, matching the live
+   site. Each track holds its content twice, so translating exactly -50% lands
+   the copy where the original started and the loop has no seam. */
 @keyframes marquee {
   0% {
     transform: translateX(0%);
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }
 
