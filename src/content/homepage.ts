@@ -61,18 +61,49 @@ export const PROOF = {
  *
  * Alt text names the client rather than describing the file, per spec 4.5.
  */
-export const CLIENT_LOGOS_HEADING = "Companies we have delivered for";
+/**
+ * TWO LABELLED GROUPS IN ONE SCROLLING STRIP, matching the live site.
+ *
+ * The live carousel runs two label cards through the row: one introducing the
+ * institutions Iram worked inside, one introducing Pivot Prime's clients. The
+ * rebuild had dropped the employer group and turned the client label into a
+ * static heading above the strip. The client circled both label cards and asked
+ * for her structure back, which also settles the Gallagher question: the
+ * employer logos have their own label and belong under it. PENDING-COPY 1n, 1p.
+ *
+ * The labels are TEXT, not the image cards the live site uses.
+ * logo-text-block-2.jpg and logo-text-block-1-2.jpg are pictures of these exact
+ * words; a screen reader announced them as client logos and a crawler read
+ * nothing at all. Both files stay unused.
+ */
+export type LogoGroup = { label: string; logos: { src: string; alt: string }[] };
 
-export const CLIENT_LOGOS = [
-  { src: "/logos/Frame-17.jpg", alt: "Democrance" },
-  { src: "/logos/insurancehub-with-bg-white.jpg", alt: "Insurance Hub" },
-  // The filename says stydio. The wordmark reads studio88.
-  { src: "/logos/stydio-with-bg.jpg", alt: "studio88" },
-  // The filename says instagram. The image is the Women Who Thrive wordmark.
-  { src: "/logos/instagram.jpg", alt: "Women Who Thrive" },
-  { src: "/logos/man-cave-with-bg.jpg", alt: "Man Cave" },
-  { src: "/logos/bop-foundation-with-bg-white.jpg", alt: "Birds of Paradise Foundation" },
-  { src: "/logos/nivishe.jpg", alt: "Nivishe" },
+export const LOGO_GROUPS: LogoGroup[] = [
+  {
+    label: "Experience inside global institutions",
+    logos: [
+      { src: "/logos/clogo1a.jpg", alt: "MetLife" },
+      { src: "/logos/clogo3a.jpg", alt: "Gallagher" },
+      { src: "/logos/sky.jpg", alt: "Sky" },
+      { src: "/logos/clogo5a.jpg", alt: "Willis Towers Watson" },
+      { src: "/logos/clogo2a.jpg", alt: "KPMG" },
+      { src: "/logos/clogo6a.jpg", alt: "AIG" },
+    ],
+  },
+  {
+    label: "Companies we have delivered for",
+    logos: [
+      { src: "/logos/Frame-17.jpg", alt: "Democrance" },
+      { src: "/logos/insurancehub-with-bg-white.jpg", alt: "Insurance Hub" },
+      // The filename says stydio. The wordmark reads studio88.
+      { src: "/logos/stydio-with-bg.jpg", alt: "studio88" },
+      // The filename says instagram. The image is the Women Who Thrive wordmark.
+      { src: "/logos/instagram.jpg", alt: "Women Who Thrive" },
+      { src: "/logos/man-cave-with-bg.jpg", alt: "Man Cave" },
+      { src: "/logos/bop-foundation-with-bg-white.jpg", alt: "Birds of Paradise Foundation" },
+      { src: "/logos/nivishe.jpg", alt: "Nivishe" },
+    ],
+  },
 ];
 
 /**

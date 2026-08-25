@@ -679,12 +679,6 @@
       "element": "heading"
     },
     {
-      "text": "Companies we have delivered for",
-      "status": "traced",
-      "kind": "live-site-keep",
-      "why": "The proof strip's own heading, carried over from the existing build. It was baked into logo-text-block-2.jpg and rendered as the first item in the logo carousel; the words are unchanged, they are now text. PENDING-COPY 1n."
-    },
-    {
       "text": "Justin Ford",
       "status": "traced",
       "kind": "client-supplied",
@@ -695,6 +689,18 @@
       "status": "traced",
       "kind": "client-supplied",
       "why": "Named in the client's own About design, pp-about-v2_2.html, with a title and a biography, and built verbatim from it. She then sent a photograph of each unprompted. PENDING-COPY 1t."
+    },
+    {
+      "text": "Experience inside global institutions",
+      "status": "traced",
+      "kind": "live-site-keep",
+      "why": "The employer group's own label, carried over from the live site where it is a picture of these words inside the carousel. Same words, now text. PENDING-COPY 1n."
+    },
+    {
+      "text": "Companies we have delivered for",
+      "status": "traced",
+      "kind": "live-site-keep",
+      "why": "The client group's label, same provenance: a picture of these words in the live carousel, now text in the row. PENDING-COPY 1n."
     }
   ]
 }

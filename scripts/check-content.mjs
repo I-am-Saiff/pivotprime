@@ -379,10 +379,11 @@ const HEADING_ORDER = [
     route: "/",
     spec: "3",
     h2: [
-      // The proof strip's heading. It was an image inside the logo carousel
-      // until 24 August, so it counted as a logo rather than a heading and this
-      // list had nine entries.
-      "Companies we have delivered for", // 3.2
+      // The proof strip's two labels are H3 inside the row, not H2 above it.
+      // They were image cards on the live site, briefly a static H2 here, and
+      // are now headings travelling in the row as the client asked. They are
+      // asserted by the reverse audit and by the strip's own structure rather
+      // than by this list, which tracks the page's H2 spine.
       "This is what our team has delivered", // 3.3
       "What do we actually do", // 3.4
       "These are the patterns before growth stalls", // 3.5

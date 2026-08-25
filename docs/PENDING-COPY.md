@@ -699,6 +699,19 @@ row.
 Those four are Iram's former employers. Her own credential names AIG, MetLife and
 Gallagher as the companies she spent sixteen years working at.
 
+> ### RESOLVED 25 AUGUST. The removal is undone.
+>
+> Iram circled both label cards in her own carousel and asked for that structure
+> back. That answers the question this entry was holding open: the employer
+> logos belong on the site, under their own label, exactly as her live site has
+> them. **Gallagher is back**, alongside MetLife, Sky, Willis Towers Watson,
+> KPMG and AIG, in a group headed "Experience inside global institutions".
+>
+> Nothing about the original reasoning was wrong. Gallagher under a heading
+> reading "companies we have delivered for" was a claim the page could not
+> support. It is now under the label that describes it accurately, which is what
+> was needed all along.
+
 **CORRECTION TO THE FIRST VERSION OF THIS ENTRY.** It said the live site presents
 those four "under a heading claiming delivery". That is not right, and the
 `logo-text-block-1-2.jpg` file is what settles it. The live strip runs **two**
@@ -727,6 +740,19 @@ The second text card is the giveaway: the live strip runs **two** heading cards
 through one scrolling row, so the employer group had its own label all along. The
 rebuild kept the client half and dropped the employer half and its label.
 Gallagher was the one that slipped across, and it is now out.
+
+> ### RESOLVED 25 AUGUST, and she noticed first.
+>
+> She flagged the strip before we raised it, circling both label cards. All six
+> employer logos are now on the site in their own labelled group: MetLife,
+> Gallagher, Sky, Willis Towers Watson, KPMG and AIG. Sky was the sixth and was
+> sitting in the repository as `Frame-15.jpg`, outside the logos folder, which is
+> why the first sweep found five rather than six.
+>
+> The offer in section 6c of the outstanding file is therefore built rather than
+> pending. The two label cards are text in the served HTML rather than the
+> pictures of words her live site uses, so a screen reader reads them as headings
+> instead of announcing them as client logos.
 
 **Iram has to be told this before she notices.** She will look at the new site,
 see four recognisable global brands missing, and reasonably ask where they went.

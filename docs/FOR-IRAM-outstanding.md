@@ -306,17 +306,28 @@ The four global logos are not on the new site yet. **That is a gap, not a
 decision to drop them.** They need their own labelled strip, and we did not want
 to invent one for you.
 
-### What we would like to build, whenever you say
+### BUILT, 25 August
+
+You flagged this before we asked, so it is done rather than waiting. **All six are
+back**, in their own group headed "Experience inside global institutions":
+MetLife, Gallagher, Sky, Willis Towers Watson, KPMG and AIG. Sky took a moment to
+find; it was in the project under a different filename.
+
+Both label cards travel in the row as they do on your site. The one difference is
+that ours are **text rather than pictures of text**, so a screen reader reads them
+as headings and Google can read them at all. Yours are images, which is why the
+labels were doing nothing for either.
+
+The two questions below still stand.
+
+### What we built, and what to confirm
 
 A **second strip directly under the client one**, headed **"Experience inside
 global institutions"**, carrying Willis Towers Watson, KPMG, AIG and MetLife.
 Same treatment as the client strip: heading as fixed text, logos moving beneath
 it. Both groups keep their own label, permanently in view.
 
-**We hold all four logo files. This is about an hour's work. Say yes and it is
-live the same day.**
-
-Two things to confirm with it:
+Two things to confirm:
 
 1. **Is the heading wording right?** "Experience inside global institutions" is
    your own line, taken from the card on your current site. If you would rather

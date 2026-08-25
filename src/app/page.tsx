@@ -4,8 +4,7 @@ import { DIAGNOSTIC_ENABLED } from "@/lib/flags";
 import { CONTACT_CTA, HERO_CTA, JOURNEY_CTA, WHATSAPP_CTA } from "@/content/cta";
 import {
   ACCOUNTABLE,
-  CLIENT_LOGOS,
-  CLIENT_LOGOS_HEADING,
+  LOGO_GROUPS,
   CLOSE,
   FOUNDER,
   HERO,
@@ -124,68 +123,53 @@ export default function Home() {
           </p>
         </div>
 
-        {/* The strip's heading, as text. It used to be the first image in the
-            carousel, so it was announced to a screen reader as a client logo and
-            read by a crawler as nothing at all. */}
-        <h2 className="mt-14 text-center font-sans text-xs font-bold tracking-[0.22em] text-neutral-500 uppercase">
-          {CLIENT_LOGOS_HEADING}
-        </h2>
+        {/* TWO ROWS, OPPOSITE DIRECTIONS, each carrying one labelled group.
+            Matching the live site, where both label cards travel in the row
+            rather than sitting above it.
 
-        {/* TWO ROWS, OPPOSITE DIRECTIONS, matching the live site. Spec 3.2:
-            the movement holds attention and is one of the few animations doing
-            a job.
+            THE LABEL CARDS ARE HEADINGS, NOT PICTURES. On the live site each is
+            a JPG of the words, so a screen reader announced them as client logos
+            and a crawler read nothing. Here each is an h3 in the served HTML,
+            styled to read as a card in the row.
 
-            The seven logos split four and three. A row of three does not fill
-            1440 on its own, so each row repeats its own subset until the track
-            is wide enough to have no visible gap as it loops, then the whole
-            track is rendered twice and translated exactly -50%, which lands the
-            second copy where the first began and makes the seam invisible.
+            NO LOGO APPEARS TWICE IN ONE VIEWPORT. Each row carries its group
+            once per copy rather than repeating a subset to fill the track, so
+            the widest thing on screen at any moment is one label plus its
+            logos. The previous version repeated a three-logo subset and two
+            Nivishe cards could sit in view together. Both copies exist only for
+            the -50% loop, and one copy is wider than the viewport at every
+            width, so the seam is the only place two copies meet.
 
-            Only the first repetition of each row is announced. Every logo is
-            therefore in the accessibility tree exactly once across both rows,
-            and every logo is in the served HTML regardless.
-
-            overflow-hidden on each row clips the track so neither can widen the
-            document, which matters more with two rows than with one. */}
-        <div className="mt-8 space-y-5">
-          {[
-            { logos: CLIENT_LOGOS.slice(0, 4), repeats: 3, animation: "animate-[marquee_40s_linear_infinite]" },
-            { logos: CLIENT_LOGOS.slice(4), repeats: 3, animation: "animate-[marquee-reverse_40s_linear_infinite]" },
-          ].map((row, rowIndex) => (
-            <div key={rowIndex} className="w-full overflow-hidden">
-              {/* The animation is a class, not an inline style. As a style it
-                  outranked motion-reduce:animate-none, so the strip kept moving
-                  for anyone who had asked it not to. */}
-              <div className={`flex w-max items-center ${row.animation} motion-reduce:animate-none`}>
+            Only the first copy is announced, so every logo and every label is in
+            the accessibility tree exactly once. */}
+        <div className="mt-10 space-y-5">
+          {LOGO_GROUPS.map((group, rowIndex) => (
+            <div key={group.label} className="w-full overflow-hidden">
+              <div
+                className={`flex w-max items-center ${
+                  rowIndex % 2 === 0
+                    ? "animate-[marquee_46s_linear_infinite]"
+                    : "animate-[marquee-reverse_46s_linear_infinite]"
+                } motion-reduce:animate-none`}
+              >
                 {[0, 1].map((copy) => (
-                  <div key={copy} className="flex items-center" aria-hidden={copy === 1}>
-                    {Array.from({ length: row.repeats }).map((_, rep) => (
-                      <div
-                        key={rep}
-                        className="flex items-center space-x-12 px-6"
-                        aria-hidden={rep > 0}
-                      >
-                        {row.logos.map((logo) => (
-                          <Image
-                            key={`${copy}-${rep}-${logo.src}`}
-                            src={logo.src}
-                            alt={copy === 0 && rep === 0 ? logo.alt : ""}
-                            // The source files are 345x185, so this is the
-                            // largest variant available and a 96px card stays
-                            // inside 2x on a high-density screen.
-                            width={345}
-                            height={185}
-                            // The marks are white on a dark gradient baked into
-                            // the file. opacity-70 faded the whole card toward
-                            // the white page, which lightened the gradient and
-                            // dimmed the mark at the same time, so it cost
-                            // contrast twice over. Full opacity plus a small
-                            // contrast lift pushes the whites whiter and the
-                            // gradient darker without making the strip brighter.
-                            className="h-20 w-auto rounded-lg object-contain contrast-[1.18] md:h-24"
-                          />
-                        ))}
-                      </div>
+                  <div
+                    key={copy}
+                    className="flex items-center space-x-12 px-6"
+                    aria-hidden={copy === 1}
+                  >
+                    <h3 className="flex h-20 w-56 flex-shrink-0 items-center justify-center rounded-lg border border-forest/15 bg-forest/[0.04] px-5 text-center font-sans text-xs font-bold tracking-[0.14em] text-forest uppercase md:h-24 md:w-64">
+                      {group.label}
+                    </h3>
+                    {group.logos.map((logo) => (
+                      <Image
+                        key={`${copy}-${logo.src}`}
+                        src={logo.src}
+                        alt={copy === 0 ? logo.alt : ""}
+                        width={345}
+                        height={185}
+                        className="h-20 w-auto flex-shrink-0 rounded-lg object-contain contrast-[1.18] md:h-24"
+                      />
                     ))}
                   </div>
                 ))}
