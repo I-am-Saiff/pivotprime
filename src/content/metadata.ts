@@ -57,7 +57,7 @@ export const PAGES = {
     title: "Fractional COO, CFO and Chief of Staff | Pivot Prime",
     description:
       "Senior leadership for a season, not a lifetime. We build the operating model, run the weekly execution, then hand it to an operations lead so it holds.",
-    path: "/services/fractional-coo",
+    path: "/services/fractional-leadership",
   },
   buildAndPlace: {
     title: "Build and Place | Pivot Prime",

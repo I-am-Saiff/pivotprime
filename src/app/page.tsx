@@ -406,6 +406,8 @@ export default function Home() {
             <div className="relative z-10 grid gap-10 md:grid-cols-2 md:gap-16 md:items-start">
               {/* Left — heading block */}
               <div>
+                {/* Her wording, slide 10: "Eyebrow heading to just say OUR FEES". */}
+                <span className="mb-4 block text-xs font-bold tracking-[0.22em] text-neon uppercase">Our fees</span>
                 <div className="mb-5 h-[3px] w-10 rounded-full bg-neon" aria-hidden="true" />
                 <h2 className="text-3xl font-extrabold tracking-tight text-white leading-tight md:text-4xl">
                   {HOW_WE_ARE_PAID.heading}

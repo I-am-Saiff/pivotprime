@@ -1,5 +1,5 @@
 /**
- * Seat anchors for /services/fractional-coo.
+ * Seat anchors for /services/fractional-leadership.
  *
  * Spec 4.2: "Build the three anchors on this page: #coo, #chief-of-staff and
  * #cfo. The persona pages and the homepage services card all link directly into
@@ -19,7 +19,7 @@ export type SeatId = (typeof SEAT_IDS)[number];
 const SEAT_ALIASES: Record<string, SeatId> = {
   cos: "chief-of-staff",
   "chief-of-staff": "chief-of-staff",
-  "fractional-coo": "coo",
+  "fractional-leadership": "coo",
   "fractional-cfo": "cfo",
 };
 

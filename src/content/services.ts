@@ -45,7 +45,7 @@ export const SERVICES: ServiceCard[] = [
     href: "/services/operational-clarity-audit",
   },
   {
-    slug: "fractional-coo",
+    slug: "fractional-leadership",
     title: "Fractional COO, CFO and Chief of Staff",
     priceLine: "Scoped per engagement",
     body: [
@@ -55,11 +55,11 @@ export const SERVICES: ServiceCard[] = [
     scopeLine:
       "Priced on the days a month, the seniority of the seat, and how much of the delivery team sits underneath it.",
     ctaLabel: "How the fractional leadership works",
-    // Spec 2.1 lists /services/fractional-coo while 4.2 and the 3.4 card button
+    // Spec 2.1 lists /services/fractional-leadership while 4.2 and the 3.4 card button
     // say /services/fractional-leadership. Holding the COO slug so it matches the
     // nav label and the market's search term. The other redirects here.
     // See docs/PENDING-COPY.md section 2.1.
-    href: "/services/fractional-coo",
+    href: "/services/fractional-leadership",
   },
   {
     slug: "build-and-place",

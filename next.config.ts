@@ -53,6 +53,27 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       // Spec 4.6: "What We Do" is renamed and moves under Services.
+      // THE CANONICAL SLUG FLIPPED, 25 August.
+      //
+      // The spec contradicts itself: 2.1 lists /services/fractional-coo under
+      // "New URLs required", while 4.2 and the 3.4 card button both point at
+      // /services/fractional-leadership. We had held the COO slug because it
+      // matched the nav label, and redirected leadership to it.
+      //
+      // Slide 13 of the client's deck settles it the other way: "Drop down to
+      // be changed to Fractional Leadership instead of Fractional COO". Spec
+      // 4.2's own hero heading is "Fractional Leadership", and the services
+      // mockup labels the same card that too, so three sources now agree and
+      // the nav label is no longer a reason to hold the other slug.
+      //
+      // The direction of this redirect is therefore reversed. Leaving both
+      // rules in place made a loop, which is how the reversal was caught.
+      // PENDING-COPY 1u.
+      {
+        source: "/services/fractional-coo",
+        destination: "/services/fractional-leadership",
+        permanent: true,
+      },
       { source: "/what-we-do", destination: "/services/how-we-work", permanent: true },
 
       // Spec 6: the About page absorbs Who We Are, with team and case studies
@@ -65,18 +86,6 @@ const nextConfig: NextConfig = {
 
       // Spec 5.4: the nav label changes from Corporate Owners to P&L Owners.
       { source: "/for-corporate-owners", destination: "/for-pl-owners", permanent: true },
-
-      // The spec contradicts itself on this slug: 2.1 lists
-      // /services/fractional-coo under "New URLs required", while 4.2 and the
-      // 3.4 card button both point at /services/fractional-leadership. We hold
-      // the COO slug because it matches the nav label and is the term searched
-      // in this market, and redirect the other so either link resolves.
-      // Logged in docs/PENDING-COPY.md for Iram.
-      {
-        source: "/services/fractional-leadership",
-        destination: "/services/fractional-coo",
-        permanent: true,
-      },
 
       // Spec 2.4: the footer link points at /contact, the live page is
       // /contact-us. Standardising on /contact and redirecting the old path.

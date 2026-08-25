@@ -66,6 +66,8 @@ export default function CaseStudies({
       {showHeading && (
         <header className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-3xl">
+            {/* Her wording, slide 8: "Instead of chapter 2, let's put case studies". */}
+            <span className="mb-3 block font-sans text-xs font-semibold tracking-[0.22em] text-mid uppercase">Case studies</span>
             <Heading className="text-3xl font-extrabold tracking-tight text-foreground md:text-4xl lg:text-5xl">
               {CASE_STUDIES_HEADING}
             </Heading>

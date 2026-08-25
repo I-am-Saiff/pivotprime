@@ -89,6 +89,8 @@ export default function PersonaSwitcher() {
     <div className="w-full">
       {/* Chapter header */}
       <div className="mb-10 text-left max-w-3xl">
+        {/* Her wording, slide 9: "Shouldn't be chapter anything - only WHO WE SERVE". */}
+        <span className="mb-3 block font-sans text-xs font-semibold tracking-[0.22em] text-mid uppercase">Who we serve</span>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-forest mb-5">
           You don’t have to figure it all out alone.
         </h2>

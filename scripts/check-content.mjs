@@ -91,7 +91,7 @@ const EXPECTATIONS = [
     ],
   },
   {
-    route: "/services/fractional-coo",
+    route: "/services/fractional-leadership",
     assert: [
       { spec: "4.2", text: "Fractional Leadership", why: "H1 stays as 4.2 wrote it" },
       { spec: "4.2", html: 'id="coo"', why: "seat anchor, load-bearing" },
@@ -280,7 +280,9 @@ const DECISIONS = [
         ["/our-blog", "/insights"],
         ["/for-corporate-owners", "/for-pl-owners"],
         ["/contact-us", "/contact"],
-        ["/services/fractional-leadership", "/services/fractional-coo"],
+        // Reversed 25 August. fractional-leadership is canonical now and the
+        // COO slug redirects to it, per slide 13 and spec 4.2.
+        ["/services/fractional-coo", "/services/fractional-leadership"],
       ];
       for (const [from, to] of pairs) {
         const res = await get(from, { redirect: "manual" });
@@ -335,7 +337,7 @@ const DECISIONS = [
  */
 const PANEL_SETS = [
   {
-    route: "/services/fractional-coo",
+    route: "/services/fractional-leadership",
     spec: "4.2",
     pattern: /What the [^<]*seat covers/g,
     expect: 3,

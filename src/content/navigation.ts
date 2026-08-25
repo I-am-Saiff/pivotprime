@@ -26,7 +26,12 @@ export const NAVIGATION: NavItem[] = [
     children: [
       { label: "All Services", href: "/services" },
       { label: "Operational Clarity Audit", href: "/services/operational-clarity-audit" },
-      { label: "Fractional COO", href: "/services/fractional-coo" },
+      // Slide 13: "Drop down to be changed to Fractional Leadership instead of
+      // Fractional COO". The services mockup's own code comment labels the same
+      // card "Fractional Leadership", so two independent sources agree. This
+      // reverses Saif's earlier ruling that fixed the fractional-coo slug.
+      // PENDING-COPY 1u.
+      { label: "Fractional Leadership", href: "/services/fractional-leadership" },
       { label: "Build and Place", href: "/services/build-and-place" },
       { label: "Technology Builds", href: "/services/technology-builds" },
       { label: "UAE Market Entry", href: "/services/uae-market-entry" },

@@ -34,7 +34,7 @@ const ROUTES = [
   "/",
   "/services",
   "/services/operational-clarity-audit",
-  "/services/fractional-coo",
+  "/services/fractional-leadership",
   "/services/build-and-place",
   "/services/technology-builds",
   "/services/uae-market-entry",

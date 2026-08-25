@@ -26,6 +26,8 @@ export default async function Contact({
             {/* Left Column: Chapter header & Discovery call pitch */}
             <div className="lg:col-span-6 flex flex-col justify-between h-full">
               <div>
+                {/* Restored with the chapter number stripped. She asked for the labels reworded, not deleted. */}
+                <span className="mb-3 block font-sans text-xs font-semibold tracking-[0.22em] text-mid uppercase">Start here</span>
                 <h1 className="text-[1.75rem] sm:text-4xl md:text-5xl font-extrabold text-forest tracking-tight leading-tight mb-5">
                   Tell us what’s slowing you down.
                 </h1>

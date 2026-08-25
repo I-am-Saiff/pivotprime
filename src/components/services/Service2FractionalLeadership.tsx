@@ -23,7 +23,7 @@ const getServerHash = () => "";
 
 export default function Service2FractionalLeadership() {
   // Which seat is open is derived from the fragment rather than held
-  // separately, so /services/fractional-coo#cfo opens the CFO seat when opened
+  // separately, so /services/fractional-leadership#cfo opens the CFO seat when opened
   // cold, and selecting a seat makes the URL shareable. Spec 4.2 calls these
   // anchors load-bearing: persona pages and the homepage card link into a seat.
   const hash = useSyncExternalStore(subscribeToHash, getHash, getServerHash);

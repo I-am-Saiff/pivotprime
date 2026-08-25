@@ -12,6 +12,8 @@ export default function ForCorporateOwners() {
       <header className="bg-forest text-white relative overflow-hidden py-16 md:py-24">
         <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          {/* Restored with the chapter number stripped. She asked for the labels reworded, not deleted. */}
+          <span className="mb-4 block text-xs font-bold tracking-[0.22em] text-neon uppercase">For P&amp;L owners</span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight max-w-4xl mx-auto">
             You are responsible for the whole system.
           </h1>
