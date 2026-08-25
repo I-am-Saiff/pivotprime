@@ -33,15 +33,7 @@ export default function ForFounders() {
             <h3 className="text-lg font-bold text-mid mb-8">Through an Operational Clarity Audit. From AED 15,000.</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
-              <div className="md:col-span-7 space-y-4 text-neutral-600 leading-relaxed text-base">
-                <p>
-                  We look at how your business actually runs today. We review your commercial model, P&L, marketing and sales, operations, and how decisions and work really flow. We speak with you and, where useful, selected team members.
-                </p>
-                <p>
-                  The focus is simple: understanding where progress still depends on you, where things slow down, and what needs to change first.
-                </p>
-              </div>
-              <div className="md:col-span-5 bg-neutral-50/80 p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
+              <div className="md:col-span-12 bg-neutral-50/80 p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
                 <p className="text-mid font-bold text-base mb-3">This is a 12-14 hour piece of analysis.</p>
                 <p className="text-forest text-sm font-medium leading-relaxed">Most founders start here. It gives clarity before any hiring or operational changes are made.</p>
               </div>
@@ -54,18 +46,7 @@ export default function ForFounders() {
             <h3 className="text-lg font-bold text-mid mb-8">Through hiring support, role design and Build and Place.</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
-              <div className="md:col-span-7 space-y-4 text-neutral-600 leading-relaxed text-base">
-                <p>
-                  Once it’s clear where the pressure sits, we help you put the right structure around people. This is about creating roles with real ownership, clear judgement, and defined outcomes.
-                </p>
-                <p>
-                  We support role design, hiring strategy, and assessments, including behavioural and practical tools that reduce the risk of mishires. We can support or run interviews with you, depending on what you need.
-                </p>
-                <p>
-                  The result is people who can carry work properly, make decisions, and reduce how much comes back to you.
-                </p>
-              </div>
-              <div className="md:col-span-5 bg-neutral-50/80 p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
+              <div className="md:col-span-12 bg-neutral-50/80 p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
                 <p className="text-mid font-bold text-base mb-3">Role clarity and hiring direction are typically established in 1–2 weeks, depending on scope.</p>
                 <p className="text-forest text-sm font-medium leading-relaxed">Founders usually come here after the diagnostic, when it’s clear what needs to be taken off their plate.</p>
               </div>
@@ -78,18 +59,7 @@ export default function ForFounders() {
             <h3 className="text-lg font-bold text-mid mb-8">Through a Fractional COO retainer. Scoped per engagement.</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
-              <div className="md:col-span-7 space-y-4 text-neutral-600 leading-relaxed text-base">
-                <p>
-                  As the business grows, what once worked often starts to strain. We review how work flows day to day, where friction builds, and where effort is being duplicated or wasted.
-                </p>
-                <p>
-                  We help reset workflows, priorities, and standards. This can include process design, automation opportunities, and documenting how critical work should run so execution becomes more predictable as volume increases.
-                </p>
-                <p>
-                  The aim is simple: growth stops creating more mess, and momentum continues without constant intervention.
-                </p>
-              </div>
-              <div className="md:col-span-5 bg-neutral-50/80 p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
+              <div className="md:col-span-12 bg-neutral-50/80 p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
                 <p className="text-mid font-bold text-base mb-3">This typically runs over 30 to 90 days.</p>
                 <p className="text-forest text-sm font-medium leading-relaxed">This typically follows hiring or growth pressure, when the business needs to stabilise at a new level.</p>
               </div>

@@ -300,7 +300,21 @@ export default function Home() {
           and the personas then ask the visitor to place themselves. */}
       <section className="bg-white px-4 pb-24 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <CaseStudies />
+          {/* Slide 8: the anonymised ones "sit only on the about page and you
+              link to them", with a "more case studies" button here. */}
+          <CaseStudies scope="homepage" />
+
+          <div className="mt-12 text-center">
+            <Link
+              href="/about#case-studies"
+              className="inline-flex items-center justify-center rounded-full border border-forest/25 px-8 py-4 font-sans text-xs font-bold tracking-wider text-forest uppercase transition-colors hover:border-forest hover:bg-forest hover:text-white focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
+            >
+              More case studies
+              <span aria-hidden="true" className="ml-2 text-base leading-none">
+                →
+              </span>
+            </Link>
+          </div>
         </div>
       </section>
 

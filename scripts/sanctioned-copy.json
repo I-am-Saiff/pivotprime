@@ -129,14 +129,6 @@
       "element": "button"
     },
     {
-      "text": "03 Mid-market execution owner",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
-      "route": "/",
-      "element": "button"
-    },
-    {
       "text": "04 Stretched founder",
       "status": "awaiting-client",
       "kind": "authored",
@@ -597,6 +589,18 @@
       "status": "traced",
       "kind": "client-supplied",
       "why": "Supplied by the client verbatim in a comment on slide 20 of Website Revisions 2208v3, 22 August. Replaces spec 5.x copy, which her comment postdates. PENDING-COPY 1v."
+    },
+    {
+      "text": "03 P&L owner",
+      "status": "traced",
+      "kind": "client-supplied",
+      "why": "Slide 20: 'On the main home page too it should read as P&L owners'. Replaces 'Mid-market execution owner'. PENDING-COPY 1y."
+    },
+    {
+      "text": "More case studies",
+      "status": "traced",
+      "kind": "client-supplied",
+      "why": "Slide 8: 'here have a button (more case studies)'. Her wording, sentence-cased to match the site. PENDING-COPY 1y."
     }
   ]
 }

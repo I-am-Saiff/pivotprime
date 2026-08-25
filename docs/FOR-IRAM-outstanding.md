@@ -387,6 +387,16 @@ Everything else in this area was agreed as a later phase and stays there.
 
 ---
 
+## 6f. One sentence to answer about your new card titles
+
+Your three new titles for the P&L owner cards replaced the line underneath them as
+well as the title, so **three of those four cards no longer tell a reader which
+service delivers the outcome** — the corporate innovator card still does, because
+your subtitle there kept the words "Through Fractional Leadership Services".
+**Do you want that routing line kept underneath your new subtitles?**
+
+---
+
 ## 7. Two sign-offs, whenever you can
 
 | What | Why |

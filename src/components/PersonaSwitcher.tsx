@@ -21,6 +21,25 @@ interface PersonaData {
 }
 
 const PERSONAS: PersonaData[] = [
+  // Slide 9: "put stretched founder first please, then SME, then corporate
+  // innovator and lastly the mid market execution owner", which slide 20
+  // renames to P&L owner.
+  {
+    id: "founder",
+    tabNumber: "04",
+    tabLabel: "Stretched founder",
+    heading: "You built something real, and everything still runs through you.",
+    ctaLabel: "See what you can take off your plate",
+    ctaHref: "/for-founders",
+    quote: "Taking a two-week holiday without the business stopping was the proof it actually worked.",
+    author: "Founder & CEO, TECH-ENABLED LOGISTICS · Dubai",
+    bullets: [
+      "Every major decision lands back on your desk every single day.",
+      "You are simultaneously the glue, the chief salesperson, and the backstop.",
+      "Stepping away from the office for two weeks feels genuinely risky.",
+      "You need systems, documentation, and placed leaders to run without you.",
+    ],
+  },
   {
     id: "sme",
     tabNumber: "01",
@@ -57,7 +76,8 @@ const PERSONAS: PersonaData[] = [
   {
     id: "pl-owner",
     tabNumber: "03",
-    tabLabel: "Mid-market execution owner",
+    // Slide 20: "On the main home page too it should read as P&L owners".
+    tabLabel: "P&L owner",
     heading: "The business is stable, but strategic momentum is hard to create.",
     ctaLabel: "Design the execution roadmap",
     ctaHref: "/for-pl-owners",
@@ -68,22 +88,6 @@ const PERSONAS: PersonaData[] = [
       "Every new strategic initiative competes with ten legacy tasks.",
       "Execution happens, but not always aligned in the direction you intend.",
       "You need structural governance and predictable execution cadences.",
-    ],
-  },
-  {
-    id: "founder",
-    tabNumber: "04",
-    tabLabel: "Stretched founder",
-    heading: "You built something real, and everything still runs through you.",
-    ctaLabel: "See what you can take off your plate",
-    ctaHref: "/for-founders",
-    quote: "Taking a two-week holiday without the business stopping was the proof it actually worked.",
-    author: "Founder & CEO, TECH-ENABLED LOGISTICS · Dubai",
-    bullets: [
-      "Every major decision lands back on your desk every single day.",
-      "You are simultaneously the glue, the chief salesperson, and the backstop.",
-      "Stepping away from the office for two weeks feels genuinely risky.",
-      "You need systems, documentation, and placed leaders to run without you.",
     ],
   },
 ];

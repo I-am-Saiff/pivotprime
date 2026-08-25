@@ -33,18 +33,7 @@ export default function ForSMEs() {
             <h3 className="text-lg font-bold text-mid mb-8">Through an Operational Clarity Audit. From AED 15,000.</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
-              <div className="md:col-span-7 space-y-4 text-neutral-600 leading-relaxed text-base">
-                <p>
-                  We review how money actually moves through the business today. That includes revenue drivers, pricing logic, margin by product or client, cost structure, working capital, and how reliably cash is collected.
-                </p>
-                <p>
-                  We look at where profit is leaking, where effort is not converting into margin, and where growth is creating pressure instead of strength. This often includes reviewing receivables, cost creep, pricing consistency, and operational drag that is quietly eroding results.
-                </p>
-                <p>
-                  The outcome is clarity on what is really driving performance month to month, what needs tightening first, and where predictability can be restored.
-                </p>
-              </div>
-              <div className="md:col-span-5 bg-neutral-50/80 p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
+              <div className="md:col-span-12 bg-neutral-50/80 p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
                 <p className="text-mid font-bold text-base mb-3">This is a 15-20 day analysis.</p>
                 <p className="text-forest text-sm font-medium leading-relaxed">This is where most SMEs start. It creates a clear baseline before structural or operational changes are made.</p>
               </div>
@@ -65,21 +54,7 @@ export default function ForSMEs() {
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
-              <div className="md:col-span-7 space-y-4 text-neutral-600 leading-relaxed text-base">
-                <p>
-                  As SMEs grow, pricing often lags behind reality. Products, clients, and services evolve, but prices stay flat, inconsistent, or driven by instinct rather than evidence.
-                </p>
-                <p>
-                  We analyse your pricing across clients, products, and contracts, looking at contribution margin, delivery effort, variability, and risk. This includes identifying where work creep exists, where clients are underpriced, and where value is being given away unintentionally.
-                </p>
-                <p>
-                  We help you design pricing logic that matches how your business actually operates. That may include tiered pricing, client segmentation, minimum fees, usage-based elements, or clearer rules around discounting and scope.
-                </p>
-                <p>
-                  The result is pricing you can defend, margins you can predict, and growth that increases profit instead of diluting it.
-                </p>
-              </div>
-              <div className="md:col-span-5 bg-neutral-50/80 p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
+              <div className="md:col-span-12 bg-neutral-50/80 p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
                 <p className="text-mid font-bold text-base mb-3">This is typically a 2–4 week engagement.</p>
                 <p className="text-forest text-sm font-medium leading-relaxed">Most SMEs come here after the profit and cash flow review, once it’s clear where margin instability is coming from.</p>
               </div>
@@ -92,21 +67,7 @@ export default function ForSMEs() {
             <h3 className="text-lg font-bold text-mid mb-8">Through a Fractional COO retainer. Scoped per engagement.</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
-              <div className="md:col-span-7 space-y-4 text-neutral-600 leading-relaxed text-base">
-                <p>
-                  What worked at a smaller size often starts to strain as volume increases. Processes become inconsistent, work is duplicated, priorities compete, and execution becomes noisy.
-                </p>
-                <p>
-                  We review how work actually flows across teams, where friction builds, and where effort is being wasted. We reset workflows, clarify priorities, define standards, and document how critical processes should run.
-                </p>
-                <p>
-                  This can include process redesign, automation opportunities, and creating operating rhythm so execution becomes more predictable as complexity increases.
-                </p>
-                <p>
-                  The aim is simple: growth stops creating chaos, and momentum continues without constant firefighting.
-                </p>
-              </div>
-              <div className="md:col-span-5 bg-neutral-50/80 p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
+              <div className="md:col-span-12 bg-neutral-50/80 p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
                 <p className="text-mid font-bold text-base mb-3">Typically runs over 30–90 days, depending on scope.</p>
                 <p className="text-forest text-sm font-medium leading-relaxed">This typically follows growth or hiring pressure, when the business needs to stabilise at a new level.</p>
               </div>

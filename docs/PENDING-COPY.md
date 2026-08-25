@@ -1105,6 +1105,89 @@ Here is everything it said, so you can read it without the site:
 
 ---
 
+## 1y. The rest of your 22 August comments, built
+
+**Client stories.** The three that were only ever on your new About design now sit
+on the About page alone, and the homepage carries the other three with a **More
+case studies** button underneath, as you asked on slide 8.
+
+**One thing we could not settle from the comments.** You said the pictures are for
+*"case study 1 and 2"*, and separately that *"the three which are anonymised sit
+only on the about page"*. Both refer to a numbering we cannot see. We have moved
+the three newest, which are the ones that have never been on the homepage.
+**Tell us if you meant a different three**, and which photograph belongs to which
+story, and both take a minute to change.
+
+**Who we serve** is now in your order: stretched founder, SME, corporate
+innovator, P&L owner. **"Mid-market execution owner" is gone everywhere** —
+menu, homepage, the page itself, its title and its search description. Checked
+against the live pages, not the code: zero occurrences in any form.
+
+**The founders and SME pages** are stripped to the heading, the sub-line and the
+box, as slide 18 asks. Nothing was thrown away. Here is every paragraph removed:
+
+**for-founders**
+
+> We look at how your business actually runs today. We review your commercial model, P&L, marketing and sales, operations, and how decisions and work really flow. We speak with you and, where useful, selected team members.
+
+> The focus is simple: understanding where progress still depends on you, where things slow down, and what needs to change first.
+
+> Once it’s clear where the pressure sits, we help you put the right structure around people. This is about creating roles with real ownership, clear judgement, and defined outcomes.
+
+> We support role design, hiring strategy, and assessments, including behavioural and practical tools that reduce the risk of mishires. We can support or run interviews with you, depending on what you need.
+
+> The result is people who can carry work properly, make decisions, and reduce how much comes back to you.
+
+> As the business grows, what once worked often starts to strain. We review how work flows day to day, where friction builds, and where effort is being duplicated or wasted.
+
+> We help reset workflows, priorities, and standards. This can include process design, automation opportunities, and documenting how critical work should run so execution becomes more predictable as volume increases.
+
+> The aim is simple: growth stops creating more mess, and momentum continues without constant intervention.
+
+**for-smes**
+
+> We review how money actually moves through the business today. That includes revenue drivers, pricing logic, margin by product or client, cost structure, working capital, and how reliably cash is collected.
+
+> We look at where profit is leaking, where effort is not converting into margin, and where growth is creating pressure instead of strength. This often includes reviewing receivables, cost creep, pricing consistency, and operational drag that is quietly eroding results.
+
+> The outcome is clarity on what is really driving performance month to month, what needs tightening first, and where predictability can be restored.
+
+> As SMEs grow, pricing often lags behind reality. Products, clients, and services evolve, but prices stay flat, inconsistent, or driven by instinct rather than evidence.
+
+> We analyse your pricing across clients, products, and contracts, looking at contribution margin, delivery effort, variability, and risk. This includes identifying where work creep exists, where clients are underpriced, and where value is being given away unintentionally.
+
+> We help you design pricing logic that matches how your business actually operates. That may include tiered pricing, client segmentation, minimum fees, usage-based elements, or clearer rules around discounting and scope.
+
+> The result is pricing you can defend, margins you can predict, and growth that increases profit instead of diluting it.
+
+> What worked at a smaller size often starts to strain as volume increases. Processes become inconsistent, work is duplicated, priorities compete, and execution becomes noisy.
+
+> We review how work actually flows across teams, where friction builds, and where effort is being wasted. We reset workflows, clarify priorities, define standards, and document how critical processes should run.
+
+> This can include process redesign, automation opportunities, and creating operating rhythm so execution becomes more predictable as complexity increases.
+
+> The aim is simple: growth stops creating chaos, and momentum continues without constant firefighting.
+
+---
+
+## 1z. Your new subtitles removed the line that said which service to buy
+
+One sentence, because it is the only thing in this batch that changes what a page
+does rather than how it reads.
+
+Your three new P&L owner cards replaced both lines: the title **and** the line
+underneath that named the service delivering it, so *"Through an extended
+Operational Clarity Audit"*, *"Through fractional Chief of Staff support"* and
+*"Through Build and Place and Technology Builds"* are all gone, and three of your
+four P&L cards now route a reader nowhere. Your corporate innovator card kept its
+routing line, *"Through Fractional Leadership Services..."*, which is why that one
+still does.
+
+**Do you want the service line kept underneath your new subtitle?** If so we put
+all three back under your wording, and nothing you wrote changes.
+
+---
+
 ## 2. Spec contradictions, logged and worked around
 
 ### 2.1 The fractional service slug — **logged, decided**

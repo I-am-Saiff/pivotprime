@@ -22,10 +22,14 @@ import {
 export default function CaseStudies({
   headingLevel = 2,
   showHeading = true,
+  scope = "all",
 }: {
   headingLevel?: 2 | 3;
   showHeading?: boolean;
+  /** "homepage" drops the three she asked to sit only on /about. */
+  scope?: "all" | "homepage";
 }) {
+  const studies = scope === "homepage" ? CASE_STUDIES.filter((c) => !c.aboutOnly) : CASE_STUDIES;
   const Heading = headingLevel === 2 ? "h2" : "h3";
   const SubHeading = headingLevel === 2 ? "h3" : "h4";
 
@@ -122,7 +126,7 @@ export default function CaseStudies({
         className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 pt-2 scroll-smooth"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
-        {CASE_STUDIES.map((study, i) => (
+        {studies.map((study, i) => (
           <li
             key={study.id}
             className="flex-shrink-0 w-full snap-center frosted-card-light rounded-[28px] p-6 sm:p-10 md:p-12 shadow-sm"
@@ -223,7 +227,7 @@ export default function CaseStudies({
 
       {/* Slide Progress Dots */}
       <div className="flex items-center justify-center gap-2 mt-4" aria-hidden="true">
-        {CASE_STUDIES.map((_, idx) => (
+        {studies.map((_, idx) => (
           <button
             key={idx}
             type="button"

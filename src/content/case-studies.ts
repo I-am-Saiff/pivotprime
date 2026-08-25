@@ -52,6 +52,14 @@ export type Result = {
 
 export type CaseStudy = {
   id: string;
+  /**
+   * Slide 8: "the three which are anonymised sit only on the about page and you
+   * link to them." The three below came from her own About design and have never
+   * been on the homepage, so they are the three that move. Which three she meant
+   * is not certain while the case study 1 and 2 photographs are unplaced, and
+   * that question is in PENDING-COPY 1y.
+   */
+  aboutOnly?: boolean;
   sector: string;
   challenge: string;
   pivotLead: string;
@@ -126,6 +134,7 @@ export const CASE_STUDIES: CaseStudy[] = [
    */
   {
     id: "professional-services",
+    aboutOnly: true,
     sector: "Professional Services, UAE",
     challenge:
       "Rapid growth exposed pricing gaps and an unstructured delivery process. The business was winning work but the margin on it varied engagement to engagement, and nobody could say reliably which work was profitable.",
@@ -143,6 +152,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     id: "retail-consumer",
+    aboutOnly: true,
     sector: "Retail and Consumer, Gulf",
     challenge:
       "Inventory was misaligned with demand and markdowns were consuming margin quietly. Buying decisions were made on instinct and the cost of getting them wrong only showed up at the end of a season.",
@@ -160,6 +170,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     id: "technology-saas",
+    aboutOnly: true,
     sector: "Technology and SaaS, MENA",
     challenge:
       "The sales pipeline looked healthy but conversion was slow and the reasons were unclear. Deals were being lost in follow-up rather than on price or product.",

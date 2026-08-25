@@ -80,6 +80,48 @@ const stripInstructions = (block) =>
  */
 const EXPECTED_ABSENT = [
   {
+    section: "3.6",
+    match: "Knowing what is wrong is hard",
+    why: "her comment on slide 6 of the 22 August deck reads, in full, 'Remove this section'. Spec 3.6 is tagged NEW, so the document asked for it and the comment removes it; the comment is later and wins",
+    appearsWhen: "Iram asks for the section back, at which point every word is in PENDING-COPY 1w",
+    tracked: "PENDING-COPY 1w",
+  },
+  {
+    section: "3.6",
+    match: "Most engagements end with a report",
+    why: "her comment on slide 6 of the 22 August deck reads, in full, 'Remove this section'. Spec 3.6 is tagged NEW, so the document asked for it and the comment removes it; the comment is later and wins",
+    appearsWhen: "Iram asks for the section back, at which point every word is in PENDING-COPY 1w",
+    tracked: "PENDING-COPY 1w",
+  },
+  {
+    section: "3.6",
+    match: "So we finish it. We place a project manager",
+    why: "her comment on slide 6 of the 22 August deck reads, in full, 'Remove this section'. Spec 3.6 is tagged NEW, so the document asked for it and the comment removes it; the comment is later and wins",
+    appearsWhen: "Iram asks for the section back, at which point every word is in PENDING-COPY 1w",
+    tracked: "PENDING-COPY 1w",
+  },
+  {
+    section: "3.6",
+    match: "No visa, no end-of-service liability",
+    why: "her comment on slide 6 of the 22 August deck reads, in full, 'Remove this section'. Spec 3.6 is tagged NEW, so the document asked for it and the comment removes it; the comment is later and wins",
+    appearsWhen: "Iram asks for the section back, at which point every word is in PENDING-COPY 1w",
+    tracked: "PENDING-COPY 1w",
+  },
+  {
+    section: "3.6",
+    match: "One contract, one invoice, one accountable party",
+    why: "her comment on slide 6 of the 22 August deck reads, in full, 'Remove this section'. Spec 3.6 is tagged NEW, so the document asked for it and the comment removes it; the comment is later and wins",
+    appearsWhen: "Iram asks for the section back, at which point every word is in PENDING-COPY 1w",
+    tracked: "PENDING-COPY 1w",
+  },
+  {
+    section: "3.6",
+    match: "A consultant tells you what to do",
+    why: "her comment on slide 6 of the 22 August deck reads, in full, 'Remove this section'. Spec 3.6 is tagged NEW, so the document asked for it and the comment removes it; the comment is later and wins",
+    appearsWhen: "Iram asks for the section back, at which point every word is in PENDING-COPY 1w",
+    tracked: "PENDING-COPY 1w",
+  },
+  {
     section: "5.3",
     match: "Through a Fractional COO retainer, monthly or ad hoc",
     why: "slide 19 replaces this card's title and subtitle outright: 'Senior judgment, on call' and 'Through Fractional Leadership Services. A confidential resource to pressure-test decisions before they cost you.'",
