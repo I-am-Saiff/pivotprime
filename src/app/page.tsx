@@ -170,9 +170,19 @@ export default function Home() {
                             key={`${copy}-${rep}-${logo.src}`}
                             src={logo.src}
                             alt={copy === 0 && rep === 0 ? logo.alt : ""}
-                            width={180}
-                            height={80}
-                            className="h-14 w-auto rounded-lg object-contain opacity-70 transition-opacity hover:opacity-100 md:h-16"
+                            // The source files are 345x185, so this is the
+                            // largest variant available and a 96px card stays
+                            // inside 2x on a high-density screen.
+                            width={345}
+                            height={185}
+                            // The marks are white on a dark gradient baked into
+                            // the file. opacity-70 faded the whole card toward
+                            // the white page, which lightened the gradient and
+                            // dimmed the mark at the same time, so it cost
+                            // contrast twice over. Full opacity plus a small
+                            // contrast lift pushes the whites whiter and the
+                            // gradient darker without making the strip brighter.
+                            className="h-20 w-auto rounded-lg object-contain contrast-[1.18] md:h-24"
                           />
                         ))}
                       </div>
