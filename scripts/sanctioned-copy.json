@@ -683,6 +683,18 @@
       "status": "traced",
       "kind": "live-site-keep",
       "why": "The proof strip's own heading, carried over from the existing build. It was baked into logo-text-block-2.jpg and rendered as the first item in the logo carousel; the words are unchanged, they are now text. PENDING-COPY 1n."
+    },
+    {
+      "text": "Justin Ford",
+      "status": "traced",
+      "kind": "client-supplied",
+      "why": "Named in the client's own About design, pp-about-v2_2.html, with a title and a biography, and built verbatim from it. She then sent a photograph of each unprompted. PENDING-COPY 1t."
+    },
+    {
+      "text": "Khushi Popat",
+      "status": "traced",
+      "kind": "client-supplied",
+      "why": "Named in the client's own About design, pp-about-v2_2.html, with a title and a biography, and built verbatim from it. She then sent a photograph of each unprompted. PENDING-COPY 1t."
     }
   ]
 }

@@ -814,6 +814,56 @@ attribute, so the homepage-only blind spot cannot come back.
 
 ---
 
+## 1t. The team page is built. Why, on what authority, and one thing not used
+
+The three names were on the outstanding list waiting for Iram's written
+confirmation. They are now built, on Saif's decision, and the reasoning is
+recorded here rather than left implicit.
+
+**What we are treating as her authority:** she named all three in her own About
+design, `pp-about-v2_2.html`, each with a title and a written biography. She then
+sent a photograph of Justin on 23 August and one of Khushi on 24 August, both
+unprompted, neither requested by us. Naming somebody and then sending their
+photograph is a clearer instruction than a sentence saying "yes" would be.
+
+**This is still not a written confirmation from each person.** The standard we
+applied to the testimonial quotes was the individual's own consent, not the
+client's. That distinction stands and remains outstanding for all three.
+
+**Names, titles and biographies are verbatim** from her file. Nothing was
+rewritten, tightened or shortened.
+
+**One exception, and it is not a rewrite.** Iram's biography is section 6.3 of the
+copy document rather than the one in the design. They are the same text except
+for one figure: the design says the multi-line book was worth **over $100
+million**, and both 6.3 and the homepage say **more than $120 million**. Taking
+the design verbatim would have put the lower figure back and made the About page
+disagree with the homepage again, which is the thing that was fixed on 23 August.
+Section 3 of the outstanding file still asks her which is right.
+
+**The fourth person in her design is deliberately absent.** Saif Ur Rehman
+appears there with a title and a biography and is not on the site, on his own
+instruction.
+
+### Photograph resolutions, checked at the rendered size
+
+Same check as the founder portrait.
+
+| | Source | Largest rendered box | Enough for a high-density screen? |
+|---|---|---|---|
+| Iram | 4099 x 6149 | 446 x 558 | Comfortably |
+| Justin | 1280 x 1600 | 446 x 558 | Yes, 1280 against the 892 a 2x screen needs |
+| Khushi | 1086 x 1448 | 446 x 558 | Yes, 1086 against 892 |
+
+All three are adequate. **Neither new photograph needs to be re-supplied.**
+
+The cards go three across above 1024 and stack below it. The two-column step is
+skipped deliberately: three cards in two columns strands the third on its own
+row. Stacked cards are capped at 28rem and centred, because a full-width portrait
+at 768 was 718px wide against a 640px file and was being upscaled.
+
+---
+
 ## 2. Spec contradictions, logged and worked around
 
 ### 2.1 The fractional service slug — **logged, decided**

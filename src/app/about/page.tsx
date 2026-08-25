@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { PEOPLE, ROLES, TEAM_ANCHOR, TEAM_INTRO } from "@/content/team";
 import CaseStudies from "@/components/CaseStudies";
@@ -178,26 +179,51 @@ export default function WhoWeAre() {
             ))}
           </ul>
 
-          {/* Spec 6.3 requires this grid to render correctly with an empty
-              bench, so the remaining people can drop in without a layout change. */}
-          {/* One person renders as one centred card rather than as a lone item in
-              a row built for several, which read as a grid with a gap in it. The
-              grid returns as soon as there is more than one. PENDING-COPY 1i. */}
+          {/* THREE ACROSS AT 1440, two at 768, one at 360. Three in a
+              two-column row would strand the third on its own, so the middle
+              step is skipped: it goes straight from one column to three at lg.
+
+              Portraits are cropped the same way as the founder image on the
+              homepage, 4:5 and anchored to the top, so faces sit in the same
+              place across all three cards rather than each being centred on a
+              different part of the body. */}
           {PEOPLE.length > 0 && (
             <ul
               className={
                 PEOPLE.length === 1
                   ? "mx-auto mt-14 max-w-2xl"
-                  : "mt-14 grid grid-cols-1 gap-6 md:grid-cols-2"
+                  : // Stacked cards are capped and centred rather than
+                    // full-bleed. At 768 a full-width card made the portrait
+                    // 718px wide against a 640px file, so it was being upscaled,
+                    // and an 898px-tall portrait is a lot of page for one card.
+                    "mx-auto mt-14 grid max-w-md grid-cols-1 gap-6 lg:max-w-none lg:grid-cols-3"
               }
             >
               {PEOPLE.map((person) => (
-                <li key={person.name} className="rounded-xl border border-neutral-200 p-8">
-                  <h3 className="text-xl font-extrabold text-foreground">{person.name}</h3>
-                  <p className="mt-1 mb-4 text-sm font-bold tracking-wide text-mid uppercase">
-                    {person.role}
-                  </p>
-                  <p className="leading-relaxed text-neutral-600">{person.credential}</p>
+                <li
+                  key={person.name}
+                  className="flex flex-col overflow-hidden rounded-xl border border-neutral-200"
+                >
+                  <Image
+                    src={person.photo.src}
+                    alt={person.photo.alt}
+                    width={640}
+                    height={800}
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 28rem, 100vw"
+                    className="aspect-[4/5] w-full object-cover object-top"
+                  />
+                  <div className="flex flex-1 flex-col p-8">
+                    <h3 className="text-xl font-extrabold text-foreground">{person.name}</h3>
+                    <p className="mt-1 text-sm font-bold tracking-wide text-mid uppercase">
+                      {person.role}
+                    </p>
+                    {person.seat ? (
+                      <p className="mt-3 inline-flex w-fit rounded-full border border-forest/10 bg-forest/[0.04] px-3 py-1 text-xs font-semibold text-forest">
+                        {person.seat}
+                      </p>
+                    ) : null}
+                    <p className="mt-4 leading-relaxed text-neutral-600">{person.credential}</p>
+                  </div>
                 </li>
               ))}
             </ul>

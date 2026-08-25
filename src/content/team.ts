@@ -46,7 +46,15 @@ export const ROLES: Role[] = [
   },
 ];
 
-export type Person = { name: string; role: string; credential: string };
+export type Person = {
+  name: string;
+  role: string;
+  credential: string;
+  /** Portrait. Every entry has one; a card with an empty frame is worse than none. */
+  photo: { src: string; alt: string };
+  /** The seat label from the client's About design. The founder has none. */
+  seat?: string;
+};
 
 /**
  * Layer two: named people.
@@ -64,6 +72,18 @@ export type Person = { name: string; role: string; credential: string };
  * docs/PENDING-COPY.md item 1.6.
  */
 /**
+ * THE FOURTH PERSON IN THE CLIENT'S DESIGN IS NOT HERE. Saif Ur Rehman appears
+ * in pp-about-v2_2.html with a title and a biography and is deliberately left
+ * out, on his own instruction.
+ *
+ * IRAM'S BIOGRAPHY IS NOT THE ONE IN THAT FILE. Hers is section 6.3 of the copy
+ * document, which is the same text with one difference: the design says the
+ * multi-line book was worth over $100 million, and 6.3 and the homepage both say
+ * more than $120 million. Taking the design verbatim here would have put the
+ * lower figure back on the site and made the About page disagree with the
+ * homepage again, which is the thing that was fixed on 23 August. Justin's and
+ * Khushi's are verbatim; nothing in either needed a decision.
+ *
  * $120 MILLION, NOT $100 MILLION.
  *
  * This file said $100m while src/content/homepage.ts said $120m, so the two
@@ -79,5 +99,26 @@ export const PEOPLE: Person[] = [
     role: "Founder and CEO",
     credential:
       "Fellow of the Institute and Faculty of Actuaries and one of roughly 75,000 qualified actuaries worldwide. Sixteen years in senior operating roles at AIG, MetLife and Gallagher across the UK, the Middle East and Africa, including Chief of Staff to a regional CEO across more than 150 staff, and pricing and portfolio strategy for a multi-line book worth more than $120 million. Founded Pivot Prime to close the gap between what a business decides and what it actually delivers.",
+    photo: { src: "/iram-kauser.jpg", alt: "Iram Kauser" },
+  },
+  {
+    /**
+     * VERBATIM FROM pp-about-v2_2.html, the client's own About design. Not
+     * rewritten, not tightened, not shortened.
+     */
+    name: "Justin Ford",
+    role: "Finance Seat",
+    seat: "Fractional CFO",
+    credential:
+      "Fractional CFO bringing senior finance leadership without the full-time cost. Cash management, forecasting, investor reporting and readiness for the next raise. The layer that turns a growing business into one that can prove it.",
+    photo: { src: "/justin-ford.jpg", alt: "Justin Ford" },
+  },
+  {
+    name: "Khushi Popat",
+    role: "Content & Social Seat",
+    seat: "Digital Storyteller & Social Media Strategist",
+    credential:
+      "Digital storyteller and social media strategist. Fixing the operation raises the ceiling. Khushi makes sure it gets filled. Positioning, visual storytelling and the client-facing presence that carries the business at scale.",
+    photo: { src: "/khushi-popat.jpg", alt: "Khushi Popat" },
   },
 ];
