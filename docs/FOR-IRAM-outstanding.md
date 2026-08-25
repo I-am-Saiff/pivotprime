@@ -277,6 +277,39 @@ it appears to when the two overlap.
 
 ---
 
+## 6c. Four logos you will notice are missing, and why
+
+**On your current website**, the row of logos headed *"Companies we have delivered
+for"* includes **Willis Towers Watson, KPMG, AIG and MetLife**, and a card reading
+*"Experience inside global institutions"* scrolling along in the same row.
+
+**On the new site those four are not there**, and that is deliberate rather than
+an oversight.
+
+Those are companies you worked at. Your own biography on the same page says so:
+sixteen years in senior roles at AIG, MetLife and Gallagher. Under a heading that
+says "companies we have delivered for", the page is making a different claim
+about them, and a reader who knows the sector will see the difference. We took
+Gallagher out of the new site for the same reason a few days ago.
+
+**We would rather show this properly than not at all.** Your experience inside
+those institutions is one of the strongest things about the offer, and the
+"Experience inside global institutions" card suggests you already thought so.
+
+**What we need from you.** Tell us which of these you want:
+
+1. **Bring them back as their own section**, with their own heading, something
+   like "Experience inside global institutions", clearly separate from the client
+   logos. We still hold all four files.
+2. **Leave them off** and let the client logos stand alone.
+3. **Something else**, if any of the four genuinely is a delivery client, in which
+   case tell us which and it goes back in the client row.
+
+We are not going to guess this one. Naming a company as a client when it was an
+employer is the kind of claim that is easy to check and expensive to get wrong.
+
+---
+
 ## 7. Two sign-offs, whenever you can
 
 | What | Why |

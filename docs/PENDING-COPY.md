@@ -689,6 +689,45 @@ reads.** Nothing has been changed; this goes to Iram with the naming decision.
 
 ---
 
+## 1p. The live site's logo strip mixes former employers with clients
+
+The live pivotprime.ae logo strip, under the heading **"Companies we have
+delivered for"**, carries **Willis Towers Watson, KPMG, AIG and MetLife**, plus a
+card reading **"Experience inside global institutions"** scrolling in the same
+row.
+
+Those four are Iram's former employers. Her own credential names AIG, MetLife and
+Gallagher as the companies she spent sixteen years working at. The live strip
+presents them under a heading claiming delivery.
+
+**None of the four is in our build.** Checked today: the strip carries Democrance,
+InsuranceHub, studio88, Women Who Thrive, Man Cave, Birds of Paradise Foundation
+and Nivishe, and nothing else. So nothing needed removing.
+
+**But all five files are sitting in the repository, unused**, which is how we
+know the separation was deliberate rather than accidental:
+
+| File | What it is |
+|---|---|
+| `clogo1a.jpg` | MetLife |
+| `clogo2a.jpg` | KPMG |
+| `clogo5a.jpg` | Willis Towers Watson |
+| `clogo6a.jpg` | AIG |
+| `logo-text-block-1-2.jpg` | the words "Experience inside global institutions", set as an image |
+
+The second text card is the giveaway: the live strip runs **two** heading cards
+through one scrolling row, so the employer group had its own label all along. The
+rebuild kept the client half and dropped the employer half and its label.
+Gallagher was the one that slipped across, and it is now out.
+
+**Iram has to be told this before she notices.** She will look at the new site,
+see four recognisable global brands missing, and reasonably ask where they went.
+The answer is that they are her CV rather than her client list, that we have
+separated the two, and that they can come back the moment she says so, under
+their own heading rather than under "Companies we have delivered for".
+
+---
+
 ## 2. Spec contradictions, logged and worked around
 
 ### 2.1 The fractional service slug — **logged, decided**
