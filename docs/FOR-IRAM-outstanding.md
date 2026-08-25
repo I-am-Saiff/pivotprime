@@ -1,11 +1,12 @@
 # Everything the website is waiting on
 
-This document is in two parts, and they ask different things of you.
+This document is in three parts, and they ask different things of you.
 
 | | |
 |---|---|
 | **Part one, sections 1 to 7** | **Send us something, or make a decision.** Numbers, permissions, files and sign-offs. Nothing here can be built until you answer |
-| **Part two, sections 8 to 26** | **Approve something already done.** Copy we wrote, copy we removed, and judgement calls we made in your absence. All of it is live now |
+| **Part two, sections 8 to 23** | **Approve something already done.** Copy we wrote, copy we removed, and judgement calls we made in your absence. All of it is live now |
+| **Part three, sections 24 and 25** | **Nothing.** Two corrections we made against your own document, recorded so you know they happened |
 
 Most of part one is a number or a yes. If you work down it in order it should
 take one sitting.
@@ -13,6 +14,12 @@ take one sitting.
 Part two is the half you cannot discover any other way. A sentence we wrote reads
 perfectly well; a section we removed leaves no gap. If nobody lists them, nobody
 ever objects to them.
+
+**What is being built right now.** Stage one is the public website: the homepage,
+the five service pages, the four audience pages, About, contact, privacy and
+insights. The constraint diagnostic — the four-minute scored questionnaire your
+document describes — is not in it, and a few items below are consequences of
+that. Everything else in your document is in stage one.
 
 Nothing here is a criticism of the brief. These are the points where the document
 either asks us to check with you, or says two different things, or refers to
@@ -32,9 +39,11 @@ five ranges above against the master table in Section 9 before they go live."*
 Section 1 adds that every result figure must come from that master table and
 nowhere else.
 
-We compared the three versions in circulation. **Four of the five figures on the
-site today do not appear in your master table.** So we have taken the numbers
-down and left the words in place. The section is built and waiting.
+We compared the three versions in circulation: your copy document, the master
+table in its section 9, and your KPI card mockup, `pivot-prime-kpi-cards_3.html`,
+which is what "your KPI mockup" means everywhere below. **Four of the five
+figures on the site today do not appear in your master table.** So we have taken
+the numbers down and left the words in place. The section is built and waiting.
 
 Write one number in the right-hand column. A range is a fine answer.
 
@@ -44,7 +53,7 @@ Write one number in the right-hand column. A range is a fine answer.
 |---|---|
 | The site said | 53% |
 | Your master table says | 30 to 50% faster |
-| Your new design says | +7% |
+| Your KPI mockup says | +7% |
 | **Your answer** | |
 
 ### 1.2 Reduction in duplicated work, rework and inefficiency
@@ -53,7 +62,7 @@ Write one number in the right-hand column. A range is a fine answer.
 |---|---|
 | The site said | 62% |
 | Your master table says | 40 to 60% in one place, 10 to 40% in another. Your document marks this row as a direct contradiction to be settled before launch |
-| Your new design says | 40 to 60% |
+| Your KPI mockup says | 40 to 60% |
 | **Your answer** | |
 
 ### 1.3 Increase in customer retention
@@ -62,7 +71,7 @@ Write one number in the right-hand column. A range is a fine answer.
 |---|---|
 | The site said | 16% |
 | Your master table says | a band of 10 to 15%, and 13% in one client story |
-| Your new design says | +13% |
+| Your KPI mockup says | +13% |
 | **Your answer** | |
 
 ### 1.4 Increase in profit
@@ -71,7 +80,7 @@ Write one number in the right-hand column. A range is a fine answer.
 |---|---|
 | The site said | 27% |
 | Your master table says | 17% in one place, 13% described as projected in another |
-| Your new design says | +27%, and calls it profit **margin** rather than profit |
+| Your KPI mockup says | +27%, and calls it profit **margin** rather than profit |
 | **Your answer** | |
 | Is it profit, or profit margin? | |
 
@@ -92,8 +101,9 @@ so it is not on the site. A simple count of builds shipped turns it on.
 
 ## 2. One decision about pricing, not about numbers
 
-Your new design for the fees section works an example all the way through: a
-target of $400,000, a fee of 20%, $320,000 you keep, $80,000 we earn.
+Your fees redesign — slide 10 of *Website Revisions 2208v3* — works an example
+all the way through: a target of $400,000, a fee of 20%, $320,000 you keep,
+$80,000 we earn.
 
 **We have not built it, and confirming those numbers will not help.** Two rules in
 your own document stop it, independently:
@@ -121,13 +131,29 @@ figure. Two sentences, ours, for you to approve or rewrite:
 > The Operational Clarity Audit starts at AED 15,000. Everything else is scoped
 > per engagement, because the shape of the work decides the cost.
 
-One smaller thing rides on the same answer: your design priced the audit in **AED**
-and worked the fee example in **dollars**, on the same page, with no rate between
-them. Naming only the audit floor, in AED, removes the question.
+One smaller thing rides on the same answer, and we had it slightly wrong until
+now. There is no AED anywhere on slide 10; the fee example is in dollars
+throughout and its arithmetic is consistent. The currency clash sits one level
+up: your services cards, `pp-services_11.html`, price the audit **"From AED
+15,000"** while the fees chapter works in **dollars**, with no rate between them.
+Naming only the audit floor, in AED, removes the question.
 
 **Also:** section 3.10 ends *"Iram to confirm final wording before this section goes
-live."* Those four sentences are your words and are built exactly as written, but
-you have not signed them off. **Please confirm.**
+live."* These are the four sentences, on the site now, exactly as you wrote them:
+
+> Most consultants are paid for the recommendation.
+
+> We are paid partly on whether the numbers move.
+
+> Before anything changes we baseline it: how long each step takes, pass and fail
+> rates, man hours per function, cost per transaction. Then we agree which of
+> those numbers has to move and by when, and a meaningful part of our fee sits on
+> the other side of them moving.
+
+> It is a discipline rather than a sales device. You cannot bill on outcomes
+> unless you were serious about measuring in the first place.
+
+**Please confirm them.**
 
 ---
 
@@ -150,7 +176,8 @@ lower one. **Please confirm which is right.** It is on the site now.
 
 ## 4. The client stories
 
-All six are on the page, including the three new ones from your design. **Their
+All six are on the page, including the three new ones from your About redesign,
+`pp-about-v2_2.html`. **Their
 numbers are not**, for the same reason as section 1: only figures from your master
 table go on the site, and most of these are not in it.
 
@@ -168,7 +195,7 @@ Published, because your table carries them: 67% faster transaction processing,
 
 Send the numbers, or confirm they belong in the master table, and they appear.
 
-**The quotes are also missing.** Your design puts a quote under each new story,
+**The quotes are also missing.** That same redesign puts a quote under each new story,
 signed by a role and a company type: a Managing Partner, a Commercial Director, a
 CEO. We have not published any of them. **Send each quote with confirmation that
 the client has agreed to it appearing on your website**, and we will add them.
@@ -202,7 +229,7 @@ returns when the labels do.
 | What | Why we need it |
 |---|---|
 | **The logo** | We were told to expect logo direction. No logo file arrived. The current mark is in the header, the footer and the browser tab icon, so a replacement touches all three plus the image shown when a link is shared |
-| **A background colour instruction** | Also expected, also not received. Your new About design uses an off-white page background that is not on your colour swatch. We have not applied it |
+| **A background colour instruction** | Also expected, also not received. Your About redesign, `pp-about-v2_2.html`, uses an off-white page background that is not on your colour swatch. We have not applied it |
 | **The WhatsApp pre-filled message** | Section 2.2 says to point the header button "at WhatsApp with the homepage pre-fill", but never says what that message reads. We are not going to invent the first sentence a prospect sends you. The button opens WhatsApp with an empty message until you send the wording |
 | **A share image** | The picture that appears when someone shares a Pivot Prime link on LinkedIn or WhatsApp. 1200 by 630, logo and a short line. Nothing in the project works as one, and an unbranded default is worse than none |
 | **Four client logo descriptions** | Four logos in the client strip cannot be identified from their files. We need to know who they are, both to describe them for screen readers and to be sure they are cleared to appear |
@@ -292,10 +319,10 @@ it appears to when the two overlap.
 
 ## 6c. Your global institution logos, and where they went
 
-**Short version: nothing was thrown away, and your current site was not making a
-false claim. We still hold all four files and they can go back this week.**
+**Short version: nothing was thrown away, your current site was not making a
+false claim, and all six logos are on the new site now. Two questions are left.**
 
-### What your current site actually does
+### What your current site does
 
 The row of logos on pivotprime.ae is not one group, it is two, and it runs **two
 heading cards through the same scrolling row**:
@@ -309,50 +336,34 @@ time a reader reaches AIG, the label that belongs to it has scrolled out of view
 and the one still in mind is "companies we have delivered for". The labels are
 right; the row stopped them doing their job.
 
-### What the new site does
+### What the new site does, as of 25 August
 
-We kept the client group, and its heading is now **real text sitting above the
-strip** rather than a picture scrolling inside it. It stays in place while the
-logos move, which is the whole point of a label.
+Two strips, one above the other, each with its own heading.
 
-The four global logos are not on the new site yet. **That is a gap, not a
-decision to drop them.** They need their own labelled strip, and we did not want
-to invent one for you.
+The **first strip** is headed **"Experience inside global institutions"** and
+carries all six: MetLife, Gallagher, Sky, Willis Towers Watson, KPMG and AIG. Sky
+took a moment to find; it was in the project under a different filename.
 
-### BUILT, 25 August
+The **client strip** runs directly beneath it, keeping its own group and its own
+heading. Both headings are now **real text sitting above the strip** rather than
+pictures scrolling inside it, so each stays in place while its logos move, which
+is the whole point of a label.
 
-You flagged this before we asked, so it is done rather than waiting. **All six are
-back**, in their own group headed "Experience inside global institutions":
-MetLife, Gallagher, Sky, Willis Towers Watson, KPMG and AIG. Sky took a moment to
-find; it was in the project under a different filename.
+On your site those labels are images of text, which is why they were doing
+nothing for either a screen reader or Google. Ours are text.
 
-Both label cards travel in the row as they do on your site. The one difference is
-that ours are **text rather than pictures of text**, so a screen reader reads them
-as headings and Google can read them at all. Yours are images, which is why the
-labels were doing nothing for either.
-
-The two questions below still stand.
-
-### What we built, and what to confirm
-
-A **second strip directly under the client one**, headed **"Experience inside
-global institutions"**, carrying Willis Towers Watson, KPMG, AIG and MetLife.
-Same treatment as the client strip: heading as fixed text, logos moving beneath
-it. Both groups keep their own label, permanently in view.
-
-Two things to confirm:
+### Two things to confirm
 
 1. **Is the heading wording right?** "Experience inside global institutions" is
    your own line, taken from the card on your current site. If you would rather
    it read differently, tell us.
-2. **Is any of the four actually a client?** If one is, it belongs in the top
+2. **Is any of the six actually a client?** If one is, it belongs in the client
    strip instead and we will move it.
 
-One related note: **Gallagher** was in the client strip on the new site and we
-took it out last week, because it was in the client group rather than the
-employer group and your biography names it as somewhere you worked. If we build
-the second strip, Gallagher belongs in it alongside the other four, unless you
-tell us otherwise.
+One related note: **Gallagher** was in the client strip and we took it out,
+because it sat in the client group while your biography names it as somewhere you
+worked. It is now in the second strip alongside the other five. Say if that is
+wrong.
 
 ---
 
@@ -434,16 +445,16 @@ If you read one item in this part, read section 8.
 
 ---
 
-## 8. Twenty-nine lines on the site that you have never seen
+## 8. Eighteen lines on the site that you have never seen
 
-Every heading and every button on the site is now traced to one of three places:
-a block in your copy document, wording kept from the current pivotprime.ae, or
-this list. **These twenty-nine are ours.**
+Every heading and every button on the site is now traced to one of four places:
+a block in your copy document, wording kept from the current pivotprime.ae, one
+of the HTML mockups you sent, or this list. **These eighteen are ours.**
 
-They are the connective writing your document did not supply: the sub-heading
-that holds a section together, the line above a button, the label on a tab.
-**None of it invents positioning and none of it makes a claim.** But none of it
-is yours either, and a visitor cannot tell the difference.
+They are the connective writing none of those supplied: the sub-heading that
+holds a section together, the line above a button, the label on a tab. **None of
+it invents positioning and none of it makes a claim.** But none of it is yours
+either, and a visitor cannot tell the difference.
 
 **Read the right-hand column. Cross out anything you would not have written.**
 
@@ -454,7 +465,6 @@ is yours either, and a visitor cannot tell the difference.
 | The heading on the Stretched founder panel | "You built something real, and everything still runs through you." |
 | The heading on the Scaling SME leader panel | "The business is stable, but strategic momentum is hard to create." |
 | The heading on the Corporate innovator panel | "You are expected to deliver change without the team it really takes." |
-| The button on the P&L owner panel | "Design the execution roadmap →" |
 | Three of the four tabs above those panels | "01 Scaling SME leader"<br>"02 Corporate innovator"<br>"04 Stretched founder" |
 | A client story heading, also on About | "Fitness and Wellness Company, UAE" |
 
@@ -462,7 +472,7 @@ is yours either, and a visitor cannot tell the difference.
 
 | Where it sits | What it says |
 |---|---|
-| The headings on the three newest client stories | "Professional Services, UAE"<br>"Retail and Consumer, Gulf"<br>"Technology and SaaS, MENA" |
+| The headings on two of the three newest client stories | "Retail and Consumer, Gulf"<br>"Technology and SaaS, MENA" |
 
 ### On the contact page
 
@@ -471,28 +481,16 @@ is yours either, and a visitor cannot tell the difference.
 | The page heading | "Tell us what's slowing you down." |
 | The WhatsApp link | "WhatsApp us on +971 52 440 1075" |
 
-### On the Operational Clarity Audit page
-
-| Where it sits | What it says |
-|---|---|
-| Above the before-and-after process map | "How the work runs today, and what it becomes." |
-| The heading in the dark panel at the foot | "Almost every engagement begins with the audit." |
-
 ### On the Fractional Leadership page
 
 | Where it sits | What it says |
 |---|---|
-| Above the explanation of why the cost falls | "Heavy at the start. Light by the end." |
-| Above the three seat tabs | "Three seats. Pick the one that is missing." |
-| The line under each of the three seat tabs | "Owns execution"<br>"Owns follow-through"<br>"Owns the numbers" |
-| Above the panel saying where the service does not suit | "Where it does not fit" |
-| The heading in the dark panel at the foot | "Find out which seat is actually missing." |
+| The line under one of the three seat tabs | "Owns follow-through" |
 
 ### On the Build and Place page
 
 | Where it sits | What it says |
 |---|---|
-| A section heading | "One contract. One accountable party." |
 | Above the role cards | "The seats we place" |
 
 ### On the UAE Market Entry page
@@ -510,12 +508,23 @@ is yours either, and a visitor cannot tell the difference.
 | The line above the closing button, For corporate leaders | "Need on-demand execution support?" |
 | The line above the closing button, For P&L owners | "Ready to create real momentum?" |
 
-**A correction we owe you on this list.** Until 25 August it said 44, then 41.
-The real number is 29. Twelve lines it named as ours are in fact yours: five are
-your own wording from the "Change to" column of the section 5 tables, which our
-checking tool could not read because of how that kind of table converts, and
-seven are kept from your current site. We found it before this document reached
-you, and the twelve are credited to you now.
+**Twenty-three lines have come off this list, and they are all yours.** We were
+tracing rendered copy back to your document and to your current site, and not to
+the mockups you sent, so anything taken from a mockup came back as ours.
+
+| Now credited to | How many |
+|---|---|
+| The "Change to" column of your section 5 tables, and the corrections table in 2.5 | 5 |
+| Kept from pivotprime.ae under the section 6.2 instruction | 7 |
+| Your own HTML mockups | 11 |
+
+The eleven are the whole Fractional Leadership set and both Build and Place
+headings, from `pivotprime-service-pages.html`; "Design the execution roadmap",
+from both persona mockups; and "Professional Services · UAE", from
+`pp-about-v2_2.html`, where only the comma we replaced the middle dot with is
+ours.
+
+All of this was found and corrected before the document reached you.
 
 ---
 
@@ -549,9 +558,9 @@ you wrote them.**
 
 ## 10. Three service pages had your copy replaced by a designer's captions
 
-Three of the service pages were built from the mockups rather than from your
-document, so in places the designer's short captions were sitting where your
-sentences should have been. Section 4.3 gives each of the five seats a full
+Three of the service pages were built from your service mockup,
+`pivotprime-service-pages.html`, rather than from your document, so in places the
+designer's short captions were sitting where your sentences should have been. Section 4.3 gives each of the five seats a full
 paragraph. On the page they existed only as two-word labels: "drives delivery",
 "owns the numbers".
 
@@ -613,49 +622,7 @@ heading's own sentence, so on its own it began mid-thought.
 
 ---
 
-## 13. The opening of your contact page, rewritten
-
-It read: *"Three fields, thirty seconds. We reply with a first read on your
-bottleneck and a time for a 30-minute discovery call, with no pitch deck."*
-
-Two things were wrong with it, and only one of them was ours. It used **discovery
-call**, which section 2.2 of your own document instructs off the site. And it
-promised three fields when the message box is now optional, so it described a
-form that no longer exists.
-
-It now reads:
-
-> Name and email is enough to start. We reply with a first read on your
-> bottleneck and a time to talk it through, with no pitch deck.
-
-**Ours, not yours. Replace it if you would rather it said something else.**
-
----
-
-## 14. Two buttons that used wording your document takes off the site
-
-Section 2.2, line 226, of your document reads: *"The header button currently
-reads BOOK DISCOVERY CALL. Change it to TALK TO US and point it at WhatsApp with
-the homepage pre-fill."*
-
-**The header button** had read "Book Consultation". That is the same wording your
-line asks to be removed, so it now reads **"Talk to us"** and opens WhatsApp, as
-instructed. Nothing else about it changed.
-
-**The enquiry form's button** read "Request a discovery call". That was ours, not
-yours, and it used the banned phrase. It now reads **"Send enquiry"**, which
-describes what the button does and promises nothing about what happens next.
-
-**A third place, found while checking.** "Book discovery call" was also on the How
-We Work page, twice, on the coaching and workshops cards. Also ours. Both now
-read "Talk to us". You did not ask us to look for it.
-
-The pre-filled WhatsApp message that line 226 refers to is in part one, because
-that one is waiting on you.
-
----
-
-## 15. The section you asked us to remove — do you still want it gone?
+## 13. The section you asked us to remove — do you still want it gone?
 
 Your comment on slide 6, in full: *"Remove this section."* It is off the homepage.
 
@@ -679,7 +646,7 @@ Every remaining word is in our working notes and one instruction restores it.
 
 ---
 
-## 16. How We Work is hidden, not deleted
+## 14. How We Work is hidden, not deleted
 
 Your comment on slide 17: *"Hide this or delete for now but would like to save
 what it says in case we want to use later? For now its not needed."*
@@ -698,12 +665,12 @@ is your page and you may have meant something lighter.
 
 ---
 
-## 17. One paragraph taken off the SME page
+## 15. One paragraph taken off the SME page
 
 The three cards on the For SMEs page are the same shape: a heading, a green line
 naming the service that delivers it, and a grey box giving the duration. Card two
 also carried a paragraph of prose, so one card in three looked different from its
-neighbours. It has been removed, on Saif's instruction, so the three match.
+neighbours. We have removed it, so the three match.
 
 **It is your copy, from section 5.2, and it is worth a second look before you
 agree:**
@@ -729,7 +696,7 @@ with something missing rather than cards that are deliberately short.
 
 ---
 
-## 18. Fractional Leadership: the menu and one card still disagree
+## 16. Fractional Leadership: the menu and one card still disagree
 
 **Done, on your instruction.** Slide 13: *"Drop down to be changed to Fractional
 Leadership instead of Fractional COO"*. The menu, the page and the page's web
@@ -751,17 +718,24 @@ page still reads **"Fractional COO, CFO and Chief of Staff"**, because that is a
 final-copy block in section 3.4 and you did not ask for it to change. So the menu
 says one thing and the card names the three seats.
 
-That is defensible — the menu is a category, the card lists what is in it — but
-it is the sort of difference you would notice later and wonder about. **Do you
-want the card to read "Fractional Leadership" as well?** It changes in one place.
+**We think the card should change too, and we would like your yes to do it.** The
+argument for leaving it is that a menu is a category and a card lists what is in
+it. The argument against is stronger: a visitor who clicks "Fractional
+Leadership" in the menu should land on a card that agrees with the words they
+clicked, and the three seats are named on the page itself anyway, twice. Leaving
+it is the option that needs defending, not changing it.
+
+We have not touched it, because 3.4 is a final-copy block and you did not ask.
+**One word from you and it changes in one place.**
 
 ---
 
-## 19. Your document and your mockup disagree about the audience page headlines
+## 17. Your document and your mockup disagree about the audience page headlines
 
 Sections 5.1 to 5.4 tell us to keep the existing headlines on the four audience
 pages, word for word, and describe them as the strongest writing on the site.
-**Your persona mockup carries four completely different ones.**
+**Your persona mockup, `pivotprime-persona-pages.html`, carries four completely
+different ones.**
 
 | On the site now, as your document instructs | In your mockup |
 |---|---|
@@ -776,7 +750,7 @@ one line per page and all four change the same afternoon.
 
 ---
 
-## 20. The patterns animation reveals rather than types
+## 18. The patterns animation reveals rather than types
 
 Your document asks for each pattern to type itself onto the screen. **It is built
 so the patterns appear one after another, keeping the reading rhythm and pausing
@@ -794,7 +768,7 @@ hiding the copy.
 
 ---
 
-## 21. The client stories are stacked, not a carousel
+## 19. The client stories are stacked, not a carousel
 
 Section 3.8 says *"Keep all three case studies and the existing carousel"*, and
 then immediately *"try to make them scroll better and look better if we can, I
@@ -812,7 +786,7 @@ rather have the carousel.
 
 ---
 
-## 22. Two consequences of the diagnostic not being in this stage
+## 20. Two consequences of the diagnostic not being in this stage
 
 **One button leads somewhere else.** Your document makes the diagnostic the
 destination of the second button in the hero, the homepage close, and the routing
@@ -838,7 +812,7 @@ diagnostic ships.
 
 ---
 
-## 23. Which three client stories did you mean?
+## 21. Which three client stories did you mean?
 
 You said the pictures are for *"case study 1 and 2"*, and separately that *"the
 three which are anonymised sit only on the about page"*. Both refer to a
@@ -853,7 +827,7 @@ story. Both take a minute to change.
 
 ---
 
-## 24. Insights is out of the menu until there is something to read
+## 22. Insights is out of the menu until there is something to read
 
 The page has a heading and three lines on it, because the first article has not
 been written. In the top menu that offered every visitor an empty page.
@@ -863,7 +837,7 @@ footer. **It goes back in the menu the day there is a first piece to read.**
 
 ---
 
-## 25. Names we chose, for you to change
+## 23. Names we chose, for you to change
 
 Your colour swatch adds five colours, labelled only by their codes. Code needs a
 word for each, so we picked plain ones: **shell** for the warm off-white, **mist** for
@@ -872,15 +846,55 @@ Rename any of them and we will follow.
 
 ---
 
-## 26. One thing to pass to whoever made the mockups
+# Part three — corrections we have already made
 
-Your deep diagnostic mockup declares the neon green as `#22c55e`. **Every other
-mockup, and the swatch plate in your copy document, says `#00d76d`.**
+Two things on the site were wrong against your own document. We fixed them. There
+is no decision in this part and nothing is owed; it is here because you should
+not find out from a stranger that a page once said something your brief forbids.
 
-This was a fault in that one export rather than in anything built from it, and
-the whole site is standardised on `#00d76d`, which is your swatch. Nothing needs
-doing here. It is only worth passing on, so the next set of mockups does not
-bring it back.
+---
+
+## 24. The opening of your contact page
+
+It read: *"Three fields, thirty seconds. We reply with a first read on your
+bottleneck and a time for a 30-minute discovery call, with no pitch deck."*
+
+Two things were wrong with it, and only one of them was ours. It used **discovery
+call**, which section 2.2 of your own document instructs off the site. And it
+promised three fields when the message box is now optional, so it described a
+form that no longer exists.
+
+It now reads:
+
+> Name and email is enough to start. We reply with a first read on your
+> bottleneck and a time to talk it through, with no pitch deck.
+
+That wording is ours. It had to change, so we are not asking you to approve it —
+only telling you it changed. **Replace it if you would rather it said something
+else.**
+
+---
+
+## 25. Two buttons that used wording your document takes off the site
+
+Section 2.2, line 226, of your document reads: *"The header button currently
+reads BOOK DISCOVERY CALL. Change it to TALK TO US and point it at WhatsApp with
+the homepage pre-fill."*
+
+**The header button** had read "Book Consultation". That is the same wording your
+line asks to be removed, so it now reads **"Talk to us"** and opens WhatsApp, as
+instructed. Nothing else about it changed.
+
+**The enquiry form's button** read "Request a discovery call". That was ours, not
+yours, and it used the banned phrase. It now reads **"Send enquiry"**, which
+describes what the button does and promises nothing about what happens next.
+
+**A third place, found while checking.** "Book discovery call" was also on the How
+We Work page, twice, on the coaching and workshops cards. Also ours. Both now
+read "Talk to us". You did not ask us to look for it.
+
+None of this needs an answer. The pre-filled WhatsApp message that line 226 also
+refers to does, and it is in part one, because that one is waiting on you.
 
 ---
 
