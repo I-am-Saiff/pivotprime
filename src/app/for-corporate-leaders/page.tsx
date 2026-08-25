@@ -31,7 +31,7 @@ export default function ForCorporateLeaders() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Section 1 */}
-          <div className="frosted-card-light p-8 md:p-14 rounded-[28px] mb-10">
+          <div className="frosted-card-light border-forest/20 p-8 md:p-14 rounded-[28px] mb-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Execution support without headcount</h2>
             <h3 className="text-lg font-bold text-mid mb-8">Through Build and Place. Scoped per engagement.</h3>
             
@@ -55,7 +55,7 @@ export default function ForCorporateLeaders() {
           </div>
 
           {/* Section 2 */}
-          <div className="frosted-card-light p-8 md:p-14 rounded-[28px] mb-10">
+          <div className="frosted-card-light border-forest/20 p-8 md:p-14 rounded-[28px] mb-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">On-demand specialist bench</h2>
             <h3 className="text-lg font-bold text-mid mb-8">Through Build and Place. Scoped per engagement.</h3>
             
@@ -79,7 +79,7 @@ export default function ForCorporateLeaders() {
           </div>
 
           {/* Section 3 */}
-          <div className="frosted-card-light p-8 md:p-14 rounded-[28px] mb-10">
+          <div className="frosted-card-light border-forest/20 p-8 md:p-14 rounded-[28px] mb-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Senior judgment, on call</h2>
             <h3 className="text-lg font-bold text-mid mb-8">Through Fractional Leadership Services. A confidential resource to pressure-test decisions before they cost you.</h3>
             
