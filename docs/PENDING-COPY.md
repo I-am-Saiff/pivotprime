@@ -353,35 +353,82 @@ So every heading and every button on the site is now traced back to one of three
 places: a block in your document, the wording kept from the current pivotprime.ae,
 or this list.
 
-The 44 below are ours. They are structural and connective writing that
-your document did not supply, mostly the sub-headings that hold a page together and
-the closing lines above a button. **None of it is wrong, and none of it is
-invented positioning.** But none of it is yours either, and you should read it and
-either approve it or replace it.
+**The count was wrong until 25 August, and it was wrong in the direction that
+costs you time.** This list said 44, then 41. The real figure is **29**. Twelve
+lines it named as ours are yours, and are corrected below before anything went to
+you.
 
-| Page | Copy we wrote |
-|---|---|
-| `/` | "01 Scaling SME leader"<br>"02 Corporate innovator"<br>"03 Mid-market execution owner"<br>"04 Stretched founder"<br>"Design the execution roadmap →"<br>"Fitness and Wellness Company, UAE"<br>"The business is stable, but strategic momentum is hard to create."<br>"What we have achieved"<br>"You are expected to deliver change without the team it really takes."<br>"You built something real, and everything still runs through you." |
-| `/about` | "At Pivot Prime, we bring four things into every engagement"<br>"We do not just understand your challenges."<br>"We have sat in the system."<br>"• We embed operational discipline"<br>"• We enable data tracking"<br>"• We structure problem solving"<br>"• We understand human behaviour" |
-| `/contact` | "Tell us what’s slowing you down."<br>"WhatsApp us on +971 52 440 1075" |
-| `/for-corporate-leaders` | "Need on-demand execution support?"<br>"Through Build and Place. Scoped per engagement."<br>"Through a Fractional COO retainer, monthly or ad hoc." |
-| `/for-founders` | "Ready to take work off your plate?"<br>"Through a Fractional COO retainer. Scoped per engagement."<br>"Through an Operational Clarity Audit. From AED 15,000."<br>"Through hiring support, role design and Build and Place." |
-| `/for-pl-owners` | "Ready to create real momentum?"<br>"Through Build and Place and Technology Builds."<br>"Through an extended Operational Clarity Audit."<br>"Through fractional Chief of Staff support, a variant of the COO retainer." |
-| `/for-smes` | "Ready to make your business predictable?" |
-| `/services/build-and-place` | "One contract. One accountable party."<br>"The seats we place" |
-| `/services/fractional-coo` | "Find out which seat is actually missing."<br>"Fractional CFO Owns the numbers"<br>"Fractional COO Owns execution"<br>"Fractional Chief of Staff Owns follow-through"<br>"Heavy at the start. Light by the end."<br>"Three seats. Pick the one that is missing."<br>"Where it does not fit" |
-| `/services/operational-clarity-audit` | "Almost every engagement begins with the audit."<br>"How the work runs today, and what it becomes." |
-| `/services/technology-builds` | "An app you want built, or a process that is eating your team." |
-| `/services/uae-market-entry` | "Where it ends up" |
+The 29 are structural and connective writing that your document did not supply,
+mostly the sub-headings that hold a page together and the closing lines above a
+button. **None of it is wrong, and none of it is invented positioning.** But none
+of it is yours either, and you should read it and either approve it or replace it.
 
-**Three of these are already gone.** Rebuilding the Technology Builds page on
+| Page | Where | Copy we wrote |
+|---|---|---|
+| `/` | Panel headline, Stretched founder | "You built something real, and everything still runs through you." |
+| `/` | Panel headline, Scaling SME leader | "The business is stable, but strategic momentum is hard to create." |
+| `/` | Panel headline, Corporate innovator | "You are expected to deliver change without the team it really takes." |
+| `/` | Button on the P&L owner panel | "Design the execution roadmap →" |
+| `/` | The numbered tabs above the panels | "01 Scaling SME leader"<br>"02 Corporate innovator"<br>"04 Stretched founder" |
+| `/` and `/about` | Client story heading | "Fitness and Wellness Company, UAE" |
+| `/about` | The three newer client story headings | "Professional Services, UAE"<br>"Retail and Consumer, Gulf"<br>"Technology and SaaS, MENA" |
+| `/contact` | Page heading | "Tell us what's slowing you down." |
+| `/contact` | The WhatsApp link | "WhatsApp us on +971 52 440 1075" |
+| `/services/operational-clarity-audit` | Heading over the before-and-after map | "How the work runs today, and what it becomes." |
+| `/services/operational-clarity-audit` | Heading in the dark closing panel | "Almost every engagement begins with the audit." |
+| `/services/fractional-leadership` | Heading, why the cost falls over time | "Heavy at the start. Light by the end." |
+| `/services/fractional-leadership` | Heading above the three seat tabs | "Three seats. Pick the one that is missing." |
+| `/services/fractional-leadership` | The three seat tabs | "Fractional COO Owns execution"<br>"Fractional Chief of Staff Owns follow-through"<br>"Fractional CFO Owns the numbers" |
+| `/services/fractional-leadership` | Heading over the honest-limits panel | "Where it does not fit" |
+| `/services/fractional-leadership` | Heading in the dark closing panel | "Find out which seat is actually missing." |
+| `/services/build-and-place` | Section heading | "One contract. One accountable party." |
+| `/services/build-and-place` | Heading above the role cards | "The seats we place" |
+| `/services/uae-market-entry` | Closing section heading | "Where it ends up" |
+| `/for-founders` | The line above the closing button | "Ready to take work off your plate?" |
+| `/for-smes` | The line above the closing button | "Ready to make your business predictable?" |
+| `/for-corporate-leaders` | The line above the closing button | "Need on-demand execution support?" |
+| `/for-pl-owners` | The line above the closing button | "Ready to create real momentum?" |
+
+**Three more are already gone.** Rebuilding the Technology Builds page on
 your document's own words retired copy we had written to fill gaps: the heading
 "An app you want built, or a process that is eating your team", and the two
 toggle labels "Automate everything" and "Fix the constraint first". Nothing was
 lost: every sentence on that page is now yours, from section 4.4.
 
-**One thing to correct rather than approve.** Section 6.2 says to keep the About
-content as it stands. We kept the sense but expanded two contractions:
+### The twelve that were wrongly listed as ours
+
+Two separate faults, both in our check rather than on the site. Nothing on the
+page changed; what changed is who these lines are credited to.
+
+**Five are your document's own wording.** Your copy spec writes its instructions
+in two kinds of table. The green copy blocks come out of the conversion as one
+shape, and the "Block / Currently / Change to" instruction tables come out as
+another, laid out by character position across the page. Our checker only read
+the first kind. So the entire "Change to" column of section 5, which is where you
+wrote the sub-line under every persona card, was invisible to it, and the lines
+we built straight from your instruction came back as lines we had invented.
+
+| Now credited to | Copy |
+|---|---|
+| Spec 5.1 | "Through an Operational Clarity Audit. From AED 15,000." |
+| Spec 5.1 | "Through hiring support, role design and Build and Place." |
+| Spec 5.1 and 5.2 | "Through a Fractional COO retainer. Scoped per engagement." |
+| Spec 5.3 | "Through Build and Place. Scoped per engagement." |
+| Spec 2.5 | "We understand human behaviour" — your own spelling correction |
+
+**Seven are kept from your current site**, under the section 6.2 instruction to
+keep the About content as it stands. Verified against the served pages on
+pivotprime.ae on 25 August.
+
+| From | Copy |
+|---|---|
+| /who-we-are | "What we have achieved" |
+| /who-we-are | "At Pivot Prime, we bring four things into every engagement" |
+| /who-we-are | "• We structure problem solving"<br>"• We embed operational discipline"<br>"• We enable data tracking" |
+| The homepage | "We do not just understand your challenges."<br>"We have sat in the system." |
+
+**One thing to correct rather than approve.** The last two of those are yours with
+the contraction expanded:
 
 | On pivotprime.ae today | On the rebuild |
 |---|---|

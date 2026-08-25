@@ -40,6 +40,7 @@ import { join } from "node:path";
 const SPEC_PATH = join(process.cwd(), "docs", "spec.md");
 
 let cache = null;
+let gridCache = null;
 
 function unescapePandoc(text) {
   return (
@@ -120,6 +121,80 @@ export function loadSpecBlocks() {
 
   cache = sections;
   return sections;
+}
+
+/**
+ * The copy inside pandoc's *dashed* grid tables, cell by cell.
+ *
+ * WHY THIS IS SEPARATE FROM loadSpecBlocks()
+ *
+ * The document uses two table syntaxes and they mean different things. Green
+ * copy blocks come out as `+---+` pipe tables and are final website copy, which
+ * is what loadSpecBlocks() returns. The instruction tables — "Block /
+ * Currently / Change to" in section 5, the typographical corrections in 2.5 —
+ * come out as bare dashed rulers with the columns laid out by character
+ * position. They are instructions, not blocks of page copy, so they do not
+ * belong in the copy-coverage audit's needle list.
+ *
+ * But the wording in the "Change to" column IS the client's, and the reverse
+ * audit was calling it ours. Five sub-lines on the persona pages, including
+ * "Through a Fractional COO retainer. Scoped per engagement." straight out of
+ * the 5.1 table, were listed in sanctioned-copy.json as copy we invented,
+ * because a haystack built only from pipe tables cannot contain them.
+ *
+ * Each cell is returned on its own rather than joined. Joining them and
+ * searching the result matches across cell boundaries: on the first run of this
+ * parser "We understand human behaviour" appeared to be sanctioned by two
+ * unrelated neighbouring cells. It is in the document, in 2.5, but the run that
+ * said so was not evidence of it.
+ */
+export function loadSpecGridCells() {
+  if (gridCache) return gridCache;
+
+  const raw = readFileSync(SPEC_PATH, "utf8");
+  const lines = raw.split("\n");
+  // Two or more runs of dashes on one line: the column ruler. A single run is a
+  // horizontal rule or a one-column table and carries no column geometry.
+  const RULER = /^\s*-{3,}(\s+-{3,})+\s*$/;
+  const cells = [];
+
+  for (let i = 0; i < lines.length; i += 1) {
+    if (!RULER.test(lines[i])) continue;
+    const columns = [];
+    const re = /-{3,}/g;
+    let m;
+    while ((m = re.exec(lines[i]))) columns.push([m.index, m.index + m[0].length]);
+
+    // Per column, a list of paragraphs; a blank line starts a new one.
+    const acc = columns.map(() => [[]]);
+    let j = i + 1;
+    for (; j < lines.length; j += 1) {
+      const line = lines[j];
+      if (RULER.test(line) || /^\s*-{3,}\s*$/.test(line)) break;
+      if (/^\s*$/.test(line)) {
+        acc.forEach((column) => column.push([]));
+        continue;
+      }
+      columns.forEach(([start, end], k) => {
+        // The ruler under the last column stops at its widest row, so anything
+        // beyond it still belongs to that column.
+        const piece = k === columns.length - 1 ? line.slice(start) : line.slice(start, end);
+        const text = piece.trim();
+        if (text) acc[k][acc[k].length - 1].push(text);
+      });
+    }
+
+    acc.forEach((column) =>
+      column.forEach((paragraph) => {
+        const text = unescapePandoc(paragraph.join(" "));
+        if (text) cells.push(text);
+      }),
+    );
+    i = j - 1;
+  }
+
+  gridCache = cells;
+  return cells;
 }
 
 /**

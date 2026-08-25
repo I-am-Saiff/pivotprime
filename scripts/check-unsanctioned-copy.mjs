@@ -28,7 +28,7 @@
 
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { loadSpecBlocks } from "./spec-blocks.mjs";
+import { loadSpecBlocks, loadSpecGridCells } from "./spec-blocks.mjs";
 
 const BASE = (process.argv[2] ?? process.env.CHECK_BASE_URL ?? "http://localhost:3000").replace(/\/$/, "");
 
@@ -52,6 +52,17 @@ const norm = (s) =>
 // if the document contains it anywhere: which section it came from is the copy
 // audit's job, not this one's.
 const specHaystack = norm(Object.values(loadSpecBlocks()).flat().join(" "));
+
+// The green copy blocks are not the whole document. The instruction tables in
+// sections 2.5 and 5 are dashed grid tables, which the block loader does not
+// read, and the "Change to" column of those tables is the client's own wording.
+// Five sub-lines on the persona pages were recorded here as copy we invented
+// because of that gap, and they were about to be sent to her as ours.
+//
+// Matched cell by cell rather than as one joined haystack. Joined, two adjacent
+// and unrelated cells sanctioned "We understand human behaviour" between them.
+const specGridCells = loadSpecGridCells().map(norm);
+const inSpec = (key) => specHaystack.includes(key) || specGridCells.some((c) => c.includes(key));
 
 const sanctioned = new Map(SANCTIONED.entries.map((e) => [norm(e.text), e]));
 
@@ -159,7 +170,7 @@ while (queue.length) {
     const key = norm(text);
     if (!key) continue;
     inspected += 1;
-    if (specHaystack.includes(key)) continue;
+    if (inSpec(key)) continue;
     if (sanctioned.has(key)) continue;
     if (seen.has(key)) continue;
     seen.add(key);

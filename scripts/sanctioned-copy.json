@@ -12,9 +12,9 @@
   "entries": [
     {
       "text": "What we have achieved",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "status": "traced",
+      "kind": "live-site-keep",
+      "why": "Retained from pivotprime.ae/who-we-are under the section 6.2 KEEP instruction. Verified against that page's served HTML on 2026-08-25.",
       "route": "/",
       "element": "h2"
     },
@@ -51,7 +51,7 @@
       "element": "h3"
     },
     {
-      "text": "You don\u2019t have to figure it all out alone.",
+      "text": "You don’t have to figure it all out alone.",
       "status": "traced",
       "kind": "live-site-keep",
       "why": "Retained from pivotprime.ae under a KEEP instruction. Verified against the live page's served HTML on 2026-08-20."
@@ -87,19 +87,19 @@
       "element": "h3"
     },
     {
-      "text": "Make your business predictable \u2192",
+      "text": "Make your business predictable →",
       "status": "traced",
       "kind": "live-site-keep",
       "why": "Retained from pivotprime.ae under a KEEP instruction. Verified against the live page's served HTML on 2026-08-20."
     },
     {
-      "text": "Get execution support \u2192",
+      "text": "Get execution support →",
       "status": "traced",
       "kind": "live-site-keep",
       "why": "Retained from pivotprime.ae under a KEEP instruction. Verified against the live page's served HTML on 2026-08-20."
     },
     {
-      "text": "Design the execution roadmap \u2192",
+      "text": "Design the execution roadmap →",
       "status": "awaiting-client",
       "kind": "authored",
       "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
@@ -107,7 +107,7 @@
       "element": "link"
     },
     {
-      "text": "See what you can take off your plate \u2192",
+      "text": "See what you can take off your plate →",
       "status": "traced",
       "kind": "live-site-keep",
       "why": "Retained from pivotprime.ae under a KEEP instruction. Verified against the live page's served HTML on 2026-08-20."
@@ -257,7 +257,7 @@
       "why": "Functional interface copy, not a copy decision. The spec never names interface controls."
     },
     {
-      "text": "Book your first conversation \u2192",
+      "text": "Book your first conversation →",
       "status": "traced",
       "kind": "live-site-keep",
       "why": "Retained from pivotprime.ae under a KEEP instruction. Verified against the live page's served HTML on 2026-08-20."
@@ -269,7 +269,7 @@
       "why": "Functional interface copy, not a copy decision. The spec never names interface controls."
     },
     {
-      "text": "You\u2019ve created something real.",
+      "text": "You’ve created something real.",
       "status": "traced",
       "kind": "live-site-keep",
       "why": "Retained from pivotprime.ae under a KEEP instruction. Verified against the live page's served HTML on 2026-08-20."
@@ -282,9 +282,9 @@
     },
     {
       "text": "Through an Operational Clarity Audit. From AED 15,000.",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "status": "traced",
+      "kind": "spec",
+      "why": "Appears in docs/spec.md. spec 5.1, the Change to column of the block table. Dashed grid tables are not green copy blocks, so loadSpecBlocks does not read them and the reverse audit could not see this. Verified 2026-08-25.",
       "route": "/for-founders",
       "element": "h3"
     },
@@ -296,9 +296,9 @@
     },
     {
       "text": "Through hiring support, role design and Build and Place.",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "status": "traced",
+      "kind": "spec",
+      "why": "Appears in docs/spec.md. spec 5.1, the Change to column of the block table. Dashed grid tables are not green copy blocks, so loadSpecBlocks does not read them and the reverse audit could not see this. Verified 2026-08-25.",
       "route": "/for-founders",
       "element": "h3"
     },
@@ -310,9 +310,9 @@
     },
     {
       "text": "Through a Fractional COO retainer. Scoped per engagement.",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "status": "traced",
+      "kind": "spec",
+      "why": "Appears in docs/spec.md. spec 5.1, the Change to column of the block table, reused for the same block on /for-smes under 5.2. Dashed grid tables are not green copy blocks, so the reverse audit could not see this. Verified 2026-08-25.",
       "route": "/for-founders",
       "element": "h3"
     },
@@ -357,7 +357,7 @@
       "element": "h2"
     },
     {
-      "text": "You\u2019re carrying delivery, risk, and outcomes",
+      "text": "You’re carrying delivery, risk, and outcomes",
       "status": "traced",
       "kind": "live-site-keep",
       "why": "Retained from pivotprime.ae under a KEEP instruction. Verified against the live page's served HTML on 2026-08-20."
@@ -370,9 +370,9 @@
     },
     {
       "text": "Through Build and Place. Scoped per engagement.",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "status": "traced",
+      "kind": "spec",
+      "why": "Appears in docs/spec.md. spec 5.3, the Change to column of the block table, for blocks 1 and 2. Dashed grid tables are not green copy blocks, so the reverse audit could not see this. Verified 2026-08-25.",
       "route": "/for-corporate-leaders",
       "element": "h3"
     },
@@ -418,62 +418,62 @@
     },
     {
       "text": "We do not just understand your challenges.",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "status": "traced",
+      "kind": "live-site-keep",
+      "why": "Retained from the pivotprime.ae homepage under the section 6.2 KEEP instruction, with the contraction expanded: the live site reads \"We don’t just understand your challenges.\". The expansion itself is the open item, and it is in PENDING-COPY 1f. Verified against the live homepage's served HTML on 2026-08-25.",
       "route": "/about",
       "element": "h2"
     },
     {
       "text": "We have sat in the system.",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "status": "traced",
+      "kind": "live-site-keep",
+      "why": "Retained from the pivotprime.ae homepage under the section 6.2 KEEP instruction, with the contraction expanded: the live site reads \"We’ve sat in the system.\". The expansion itself is the open item, and it is in PENDING-COPY 1f. Verified against the live homepage's served HTML on 2026-08-25.",
       "route": "/about",
       "element": "h2"
     },
     {
       "text": "At Pivot Prime, we bring four things into every engagement",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "status": "traced",
+      "kind": "live-site-keep",
+      "why": "Retained from pivotprime.ae/who-we-are under the section 6.2 KEEP instruction. Verified against that page's served HTML on 2026-08-25.",
       "route": "/about",
       "element": "h2"
     },
     {
-      "text": "\u2022 We structure problem solving",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "text": "• We structure problem solving",
+      "status": "traced",
+      "kind": "live-site-keep",
+      "why": "Retained from pivotprime.ae/who-we-are under the section 6.2 KEEP instruction. Verified against that page's served HTML on 2026-08-25.",
       "route": "/about",
       "element": "h3"
     },
     {
-      "text": "\u2022 We embed operational discipline",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "text": "• We embed operational discipline",
+      "status": "traced",
+      "kind": "live-site-keep",
+      "why": "Retained from pivotprime.ae/who-we-are under the section 6.2 KEEP instruction. Verified against that page's served HTML on 2026-08-25.",
       "route": "/about",
       "element": "h3"
     },
     {
-      "text": "\u2022 We enable data tracking",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "text": "• We enable data tracking",
+      "status": "traced",
+      "kind": "live-site-keep",
+      "why": "Retained from pivotprime.ae/who-we-are under the section 6.2 KEEP instruction. Verified against that page's served HTML on 2026-08-25.",
       "route": "/about",
       "element": "h3"
     },
     {
-      "text": "\u2022 We understand human behaviour",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "text": "• We understand human behaviour",
+      "status": "traced",
+      "kind": "spec",
+      "why": "Appears in docs/spec.md. spec 2.5, the typographical corrections table: the document asks for the American spelling on the live About page to be changed to this. Verified 2026-08-25.",
       "route": "/about",
       "element": "h3"
     },
     {
-      "text": "Tell us what\u2019s slowing you down.",
+      "text": "Tell us what’s slowing you down.",
       "status": "awaiting-client",
       "kind": "authored",
       "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
@@ -567,7 +567,7 @@
       "why": "Supplied by the client verbatim in a comment on slide 20 of Website Revisions 2208v3, 22 August. Replaces spec 5.x copy, which her comment postdates. PENDING-COPY 1v."
     },
     {
-      "text": "Your decisions don\u2019t survive the next layers of the organisation",
+      "text": "Your decisions don’t survive the next layers of the organisation",
       "status": "traced",
       "kind": "client-supplied",
       "why": "Supplied by the client verbatim in a comment on slide 20 of Website Revisions 2208v3, 22 August. Replaces spec 5.x copy, which her comment postdates. PENDING-COPY 1v."
