@@ -5,8 +5,8 @@ This document is in three parts, and they ask different things of you.
 | | |
 |---|---|
 | **Part one, sections 1 to 7** | **Send us something, or make a decision.** Numbers, permissions, files and sign-offs. Nothing here can be built until you answer |
-| **Part two, sections 8 to 23** | **Approve something already done.** Copy we wrote, copy we removed, and judgement calls we made in your absence. All of it is live now |
-| **Part three, sections 24 and 25** | **Nothing.** Two corrections we made against your own document, recorded so you know they happened |
+| **Part two, sections 8 to 24** | **Approve something already done.** Copy we wrote, copy we removed, and judgement calls we made in your absence. All of it is live now |
+| **Part three, sections 25 and 26** | **Nothing.** Two corrections we made against your own document, recorded so you know they happened |
 
 Most of part one is a number or a yes. If you work down it in order it should
 take one sitting.
@@ -157,20 +157,29 @@ live."* These are the four sentences, on the site now, exactly as you wrote them
 
 ---
 
-## 3. One fact about you that appears twice, differently
+## 3. One fact about you that appears in three places, with two figures
 
-Your copy document gives your credential twice, with two different figures:
+Your copy document gives your credential twice, with two different figures, and
+your About redesign is a third source:
 
 | | |
 |---|---|
-| The homepage section | a multi-line book worth more than **$120 million** |
-| The About page section | **$100 million** |
+| Copy document, section 3.7, the homepage block | a multi-line book worth more than **$120 million** |
+| Copy document, section 6.3, the About block | **$100 million** |
+| Slide 21, and `pp-about-v2_2.html` | worth over **$100 million** |
 
-Both are final-copy blocks, so the site reproduced both and the two pages
-disagreed. Your new About design says $100 million.
+Two of the three say $100 million.
 
-We have standardised on **$120 million** everywhere rather than quietly taking the
-lower one. **Please confirm which is right.** It is on the site now.
+**The two pages now say different things, on purpose.** Your About card is built
+from slide 21 word for word, so it says **$100 million**. The homepage says
+**$120 million**, which is what section 3.7 says and what pivotprime.ae says
+today. We have stopped guessing which is right, because we guessed once already
+and guessed upward.
+
+**One number from you settles it and both pages change the same day.** Until then
+a reader who visits both will see two figures for the same book. That is the
+honest state of the document, and we would rather show it to you than hide it
+behind a choice we are not qualified to make.
 
 ---
 
@@ -205,22 +214,29 @@ the logo bar.
 
 ---
 
-## 5. The team page
+## 5. Four people are on the team page. Three of them still need your say-so
 
-Your design names three more people with titles and biographies. **None is
-published.** A name and a job title on a live website is not something we will put
-up on anyone's say-so but yours.
+**This section said the opposite until today, and it had been wrong for a day.**
+It said none of your team was published and the page showed you alone. Justin and
+Khushi went up on 24 August on your instruction, and Saif went up on 25 August
+with the About rebuild. All four are live now, with the titles and biographies
+from slide 21, word for word.
 
-The section is built and shows you alone. Send, for each person: the name as it
-should appear, the title, one or two lines of biography, a photograph, and
-confirmation that they are happy to appear.
+**What is still missing is the permission, not the copy.** A name and a job title
+on a live website is a claim about a person. For each of Justin, Saif and Khushi
+we would like one line from you confirming they are happy to appear as written.
+That is a formality for a team you have already named in your own design, and it
+is the sort of formality that matters if anyone later objects.
 
-We have a photograph of Justin. It is not on the site and nothing has been built
-around it, because we do not have the wording or the permission.
+**Khushi's photograph is on the site.** Justin's is too. **Saif's card shows
+initials**, which is what your slide draws for all four of them; we simply have
+photographs for three.
 
-**The bench.** Your design lists around twenty capability labels. That section is
-not on the site at all: an empty panel reads as a page that failed to load, so it
-returns when the labels do.
+**The bench is on the site.** Your slide 22 gave us the twenty capability labels,
+so the section that had been held back is built: the heading, both paragraphs,
+all twenty labels and the "One point of contact. Zero coordination overhead."
+line. It was held back only because an empty panel reads as a page that failed to
+load.
 
 ---
 
@@ -846,6 +862,57 @@ Rename any of them and we will follow.
 
 ---
 
+## 24. The About page is your redesign now, and four sections came off it
+
+**This is the largest change on the site, and the largest removal.** Read this one
+even if you skip the rest.
+
+`/about` is now slide 21 and slide 22, in order: the hero, "We've been on both
+sides of the table.", the team, the bench, the case studies, the closing button.
+That is not our reading of the pictures. It is the section order in your own
+`pp-about-v2_2.html`, whose comments read NAV, HERO, ABOUT, TEAM, BENCH, CASE
+STUDIES, CTA.
+
+**Your redesign has no room for four things that were on the page**, so they came
+off. You did not ask for any of them to be deleted; you sent a page that does not
+contain them, and building your page underneath the old one would have produced
+something neither document describes.
+
+| What came off | Where it was from |
+|---|---|
+| **"Why Pivot Prime exists"**, all four paragraphs, and the link to your West Asia interview | Section 6.1 of your copy document, tagged NEW |
+| **"At Pivot Prime, we bring four things into every engagement"**, the four capabilities and their four explanations | Section 6.2, kept from your current site |
+| **"How we staff an engagement"** and the five seats under it | Section 6.3, layer one |
+| **The old hero**, "From pressure to Prime State" and its four paragraphs | Your current site |
+
+**Every word of all four is kept**, in our working notes, and any of them comes
+back in an afternoon. Three things are worth saying plainly:
+
+- **6.1 is the one we would ask about first.** It is tagged NEW in your document,
+  which means you wrote it in deliberately and it had never been on the old site.
+  It is also the only place the site explains, in your words, why the firm
+  exists.
+- **6.2 was KEEP content.** Your document says to keep it. The redesign replaces
+  it. That is a conflict between two things you sent, not a decision of ours, but
+  the redesign is the later one.
+- **The five seats are not off the site.** Section 4.3 puts the same five on the
+  Build and Place page in full, and that page is untouched. Only the About
+  version of them is gone.
+
+**And two lines have nowhere left to go.** These were on your homepage, then moved
+to About because your document's homepage running order has no place for them:
+
+> We don't just understand your challenges. We fix what's really holding your
+> business back.
+
+> We've sat in the system. Now we help reshape it.
+
+Your redesign has no slot for them either, so **they are off the site
+altogether.** They are the only thing in this section that is a loss rather than
+a replacement. **Tell us where they should live** and they go back.
+
+---
+
 # Part three — corrections we have already made
 
 Two things on the site were wrong against your own document. We fixed them. There
@@ -854,7 +921,7 @@ not find out from a stranger that a page once said something your brief forbids.
 
 ---
 
-## 24. The opening of your contact page
+## 25. The opening of your contact page
 
 It read: *"Three fields, thirty seconds. We reply with a first read on your
 bottleneck and a time for a 30-minute discovery call, with no pitch deck."*
@@ -875,7 +942,7 @@ else.**
 
 ---
 
-## 25. Two buttons that used wording your document takes off the site
+## 26. Two buttons that used wording your document takes off the site
 
 Section 2.2, line 226, of your document reads: *"The header button currently
 reads BOOK DISCOVERY CALL. Change it to TALK TO US and point it at WhatsApp with

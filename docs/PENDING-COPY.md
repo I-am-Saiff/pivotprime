@@ -1303,6 +1303,182 @@ accident without the failure naming this entry.
 
 ---
 
+## 1ab. The About page rebuilt from slides 21 and 22, and everything it removed — **for Iram**
+
+**This is the largest removal on the branch. Nothing is lost; all of it is below,
+word for word.**
+
+`/about` is now her redesign: hero, who we are, the team, the bench, the case
+studies, the CTA. That structure is not a reading of the slides. It is the
+literal section order of `req/pp-about-v2_2.html`, which carries the same page in
+markup and whose own comments read NAV, HERO, ABOUT, TEAM, BENCH, CASE STUDIES,
+CTA. There is no 6.1 in it, no four capabilities, and no roles layer.
+
+**Why the deck wins.** The deck is dated 22 August; the copy document is version
+1.7.1 and predates it. That is the same precedence already applied to spec 3.6
+(1w) and How We Work (1x), on her own comments. Applied here it removes more,
+because the redesign replaces a whole page rather than one section.
+
+**What she did not say.** She did not write "delete 6.1" or "delete the four
+capabilities". She sent a redesign that has neither. Building the redesign and
+keeping the removed sections underneath it would have produced a page neither
+document describes, so the removal follows from the instruction rather than from
+a judgement about the copy. **It is still a removal of her copy, and it is
+section 26 of `docs/FOR-IRAM-outstanding.md` for that reason.**
+
+`check-content` holds it as a decision and fails if any of it renders again.
+`audit-spec-copy` carries one `EXPECTED_ABSENT` entry per section rather than one
+per block, so the condition that brings each back is written once.
+
+### Gone: spec 6.1, "Why Pivot Prime exists", all four blocks
+
+> **Why Pivot Prime exists**
+
+> Sitting on an executive committee, you see exactly where value is won or lost:
+> in the gap between what leadership decides and what actually gets delivered.
+
+> Large corporates have entire layers of people to close that gap. The businesses
+> driving this region's growth, the founder-led companies, the mid-sized firms
+> scaling fast, and the international businesses arriving here, mostly do not.
+> They feel the cost of it directly on the P&L.
+
+> Iram Kauser spent sixteen years closing that gap inside large organisations.
+> Then she built Pivot Prime to close it for the businesses that need it most and
+> have nobody to do it.
+
+The "Read the full interview" link to the West Asia piece went with it. It is
+still in the proof bar on the homepage, so the interview is not off the site.
+
+**6.1 is tagged NEW in the copy document**, which means it was written in
+deliberately and had never appeared on the old site. Of everything in this
+entry, this is the block most likely to be wanted back.
+
+### Gone: spec 6.2's four capabilities, and their four explanatory paragraphs
+
+The heading:
+
+> At Pivot Prime, we bring four things into every engagement
+
+The four, each of which was also a card and then a longer paragraph:
+
+> • We structure problem solving — We take problems that feel tangled and surface
+> the full picture, making sure nothing important is missed. We help leaders see
+> gaps, dependencies, and risks that are often overlooked when everything is
+> treated as one big issue.
+
+> • We embed operational discipline — We put structure behind execution through
+> clear ownership, decision frameworks, and practical operating rhythms. Standard
+> ways of working are defined so progress does not depend on individual heroics
+> or constant follow up.
+
+> • We enable data tracking — We build practical dashboards based on the data and
+> KPIs that actually matter for your business. These dashboards give leaders a
+> reliable way to track progress, spot issues early, and make informed decisions
+> without digging through spreadsheets.
+
+> • We understand human behaviour — Strategies only hold when they fit the
+> culture, capacity, and motivations of the people expected to deliver them. We
+> work with how teams actually operate under pressure, how leaders influence
+> action, and where resistance or fatigue shows up.
+
+And the line under them:
+
+> We help unlock the version of the business that is possible when structure,
+> people, operations, and data work together: Your Prime State.
+
+**Two consequences worth knowing.** This is KEEP content from the live site under
+6.2, so it is the second time this branch has removed something the document says
+to keep. And "We understand human behaviour" was the corrected spelling spec 2.5
+asks for, so **that correction now has nothing on the site to apply to** — 1b's
+2.5 table changes from "Applied" to "no longer applicable" for row 6.
+
+### Gone: spec 6.3's roles layer, all five seats
+
+> **How we staff an engagement**
+> One senior operator, and a bench built around the five things that most often break.
+
+> A business rarely stalls for one reason. It stalls because the numbers are not
+> owned, or because delivery is not being driven, or because manual work has
+> quietly consumed the team, or because the operation finally works and nobody is
+> being told about it.
+
+> So the bench is built around those. We bring in only what the diagnosis
+> actually justifies, and we manage whoever we bring.
+
+> **The finance seat: fractional CFO** — Founder-led businesses almost always
+> outgrow their bookkeeping before they outgrow their accountant. Cash, runway,
+> forecasting, collections, board and investor reporting, and readiness for the
+> next raise. The CFO layer is what turns a business that is growing into a
+> business that can prove it.
+
+> **The delivery seat: project management** — A plan that nobody owns day to day
+> is a plan that quietly does not happen. The project manager sits inside the
+> client team and drives the order and project lifecycle, the suppliers, the
+> timelines and the documentation, so that execution does not depend on the
+> founder chasing it.
+
+> **The technology seat: engineering and automation** — Once the process is
+> clear, a great deal of it usually does not need a human at all. Custom
+> automation, CRM and workflow build, dashboards and reporting. Always scoped
+> after the diagnosis, so we build at the constraint rather than over the parts
+> that already work.
+
+> **The demand seat: marketing and brand** — Fixing the operation raises the
+> ceiling. It does not by itself fill the room. Positioning, go-to-market and the
+> client-facing material that carries it, for the point at which the business is
+> finally ready to be bought at scale.
+
+> **The digital seat: web** — Website design, build and maintenance. Used where
+> the shopfront no longer matches the business behind it.
+
+The seats themselves are not off the site: spec 4.3 puts the same five on
+`/services/build-and-place`, in full, and that page is untouched. What is gone is
+the version of them on About.
+
+### Gone: the old hero, and the two relocated homepage sections
+
+The hero it replaced:
+
+> **From pressure to Prime State**
+> Not traditional consultants, we are your execution partners.
+> We have worked inside complex systems, managing targets, navigating real constraints, and carrying responsibility for results.
+> We have also stepped back as advisors, to question what actually drives progress when effort is high but outcomes are not changing.
+> Pivot Prime exists because we have lived both sides. We understand what it takes to move work forward when plans meet pressure, people, and reality.
+
+Her new hero says the same thing in eleven words, which is presumably why she
+rewrote it.
+
+**And the two sections moved here from the homepage** under 2.4, which now have
+no home on either page:
+
+> We do not just understand your challenges. We fix what's really holding your business back.
+
+> We have sat in the system. Now we help reshape it.
+
+That reopens 2.4. They were moved here rather than deleted specifically so they
+would survive; the redesign has no slot for them. **They are off the site
+entirely until she says where they go.** This is the one item in this entry that
+is a genuine loss rather than a replacement, and it is called out separately in
+her file.
+
+### What was added
+
+Saif Ur Rehman is on the page. He was deliberately absent from the team section
+on his own instruction and is now included, also on his own instruction. He is on
+slide 21 with a title and a biography, so no permission question arises that did
+not already arise for the other two.
+
+His card renders initials rather than a photograph. Her slide draws all four as
+initials; we hold photographs for the other three and use them.
+
+**Justin and Khushi were already published**, since the team build on 24 August.
+The rebuild changes their layout, not their status. The written confirmation that
+each is happy to appear has still not arrived, and section 5 of her file said
+"none is published" until today, which had been wrong for a day and would have
+told her the opposite of what her own site shows. Corrected.
+
+---
+
 ## 2. Spec contradictions, logged and worked around
 
 ### 2.1 The fractional service slug — **logged, decided**

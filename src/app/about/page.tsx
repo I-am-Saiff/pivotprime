@@ -1,261 +1,248 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PEOPLE, ROLES, TEAM_ANCHOR, TEAM_INTRO } from "@/content/team";
+import { FOUNDER, PEOPLE, TEAM_ANCHOR, TEAM_INTRO, type Person } from "@/content/team";
 import CaseStudies from "@/components/CaseStudies";
-import { RELOCATED_TO_ABOUT } from "@/content/homepage";
-import { WHY_WE_EXIST } from "@/content/about";
+import { ABOUT_HERO, BENCH, WHO_WE_ARE } from "@/content/about";
 import type { Metadata } from "next";
 import { pageMetadata } from "@/content/metadata";
 
 export const metadata: Metadata = pageMetadata("about");
 
-
-export default function WhoWeAre() {
+/**
+ * The portrait tile. Her slide draws all four as initials on a dark tile; we
+ * hold real photographs for three of them, so the tile takes a photo when there
+ * is one and the monogram when there is not. Same shape either way, so a card
+ * with initials does not read as a card that failed to load.
+ */
+function Portrait({ person, className }: { person: Person; className: string }) {
+  if (person.photo) {
+    return (
+      <Image
+        src={person.photo.src}
+        alt={person.photo.alt}
+        width={640}
+        height={800}
+        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 28rem, 100vw"
+        className={`${className} object-cover object-top`}
+      />
+    );
+  }
   return (
-    <div className="flex flex-col min-h-screen pt-32 pb-16">
-      
-      {/* Hero Section */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center py-16 md:py-24">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-black mb-10 tracking-tight leading-tight max-w-4xl mx-auto">
-          From pressure to Prime State
-        </h1>
-        <p className="text-xl md:text-2xl text-gray-600 font-medium leading-relaxed max-w-4xl mx-auto mb-6">
-          <span className="text-primary font-bold">Not traditional consultants, we are your execution partners.</span>
-        </p>
-        <p className="text-xl md:text-2xl text-gray-600 font-medium leading-relaxed max-w-4xl mx-auto mb-6">
-          We have worked inside complex systems, managing targets, navigating real constraints, and carrying responsibility for results.
-        </p>
-        <p className="text-xl md:text-2xl text-gray-600 font-medium leading-relaxed max-w-4xl mx-auto mb-6">
-          We have also stepped back as advisors, to question what actually drives progress when effort is high but outcomes are not changing.
-        </p>
-        <p className="text-xl md:text-2xl text-gray-600 font-medium leading-relaxed max-w-4xl mx-auto">
-          Pivot Prime exists because we have lived both sides. We understand what it takes to move work forward when plans meet pressure, people, and reality.
-        </p>
-      </section>
+    <div
+      className={`${className} flex items-center justify-center bg-forest`}
+      // The name is the heading directly beneath. Reading "SR" out as well adds
+      // nothing and reads as a word.
+      aria-hidden="true"
+    >
+      <span className="text-4xl font-extrabold tracking-tight text-neon md:text-5xl">
+        {person.initials}
+      </span>
+    </div>
+  );
+}
 
-      {/* 6.1 Why Pivot Prime exists. NEW, and placed at the very top,
-          immediately under the H1 and before "From pressure to Prime State",
-          as the spec requires. */}
-      <section className="px-4 pb-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="mb-8 text-3xl font-extrabold tracking-tight text-foreground md:text-4xl lg:text-5xl">
-            {WHY_WE_EXIST.heading}
+export default function About() {
+  return (
+    <div className="flex min-h-screen flex-col pt-20 pb-16">
+      {/* HERO, slide 21 */}
+      <header className="relative overflow-hidden bg-forest py-20 text-white md:py-28">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:28px_28px]"
+        />
+        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <span className="mb-5 block text-xs font-bold tracking-[0.22em] text-neon uppercase">
+            {ABOUT_HERO.eyebrow}
+          </span>
+          <h1 className="max-w-4xl text-4xl font-extrabold tracking-tight md:text-6xl lg:text-7xl">
+            <span className="block">{ABOUT_HERO.headingLead}</span>
+            <span className="block text-neon">{ABOUT_HERO.headingAccent}</span>
+          </h1>
+          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-white/80 md:text-xl">
+            {ABOUT_HERO.standfirst}
+          </p>
+        </div>
+      </header>
+
+      {/* WHO WE ARE, slide 21 */}
+      <section className="px-4 py-20 sm:px-6 md:py-24 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="mb-4 block text-xs font-bold tracking-[0.22em] text-mid uppercase">
+            {WHO_WE_ARE.eyebrow}
+          </span>
+          <h2 className="text-3xl font-extrabold tracking-tight text-forest md:text-4xl lg:text-5xl">
+            {WHO_WE_ARE.heading}
           </h2>
-          <div className="space-y-5">
-            {WHY_WE_EXIST.body.map((paragraph) => (
+          <div className="mt-8 space-y-5">
+            {WHO_WE_ARE.body.map((paragraph) => (
               <p key={paragraph.slice(0, 40)} className="leading-relaxed text-neutral-600 md:text-lg">
                 {paragraph}
               </p>
             ))}
-            <p className="leading-relaxed text-neutral-600 md:text-lg">
-              <Link
-                href={WHY_WE_EXIST.founderSentence.nameHref}
-                className="font-semibold text-mid underline underline-offset-2 hover:text-forest"
-              >
-                {WHY_WE_EXIST.founderSentence.name}
-              </Link>
-              {WHY_WE_EXIST.founderSentence.rest}
-            </p>
           </div>
-          <a
-            href={WHY_WE_EXIST.ctaHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center rounded-md border border-forest/20 px-6 py-3 text-sm font-bold text-forest uppercase transition-colors hover:bg-forest/[0.04]"
-          >
-            {WHY_WE_EXIST.ctaLabel}
-            <span aria-hidden="true" className="ml-2 text-lg leading-none">&rarr;</span>
-          </a>
         </div>
       </section>
 
-      {/* Relocated from the homepage. Neither section appears anywhere in the
-          spec's 3.1 to 3.12 running order, so leaving them there would
-          contradict the spec and deleting them would discard copy the spec never
-          asked to lose. "We have sat in the system" reads as authority copy
-          here rather than as homepage filler. Recorded in
-          docs/PENDING-COPY.md 2.4 so the move can be vetoed without anyone
-          rewriting anything. */}
-      {RELOCATED_TO_ABOUT.map((section) => (
-        <section key={section.heading} className="px-4 py-20 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl">
-            <h2 className="mb-3 text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
-              {section.heading}
-            </h2>
-            <p className="mb-8 text-2xl font-medium text-mid md:text-3xl">{section.standfirst}</p>
-            <div className="space-y-5">
-              {section.body.map((paragraph) => (
-                <p
-                  key={paragraph.slice(0, 40)}
-                  className="leading-relaxed text-neutral-600 md:text-lg"
-                >
-                  {paragraph}
+      {/* MEET THE TEAM, slide 21. Anchor target for /about#team. */}
+      <section className="px-4 pb-20 sm:px-6 lg:px-8" id={TEAM_ANCHOR}>
+        <div className="mx-auto max-w-6xl">
+          <span className="mb-4 block text-xs font-bold tracking-[0.22em] text-mid uppercase">
+            {TEAM_INTRO.eyebrow}
+          </span>
+          <h2 className="text-3xl font-extrabold tracking-tight text-forest md:text-4xl lg:text-5xl">
+            {TEAM_INTRO.heading}
+          </h2>
+
+          {/* The founder card runs the full width, photograph beside the text,
+              as the slide draws it. */}
+          <article className="mt-12 overflow-hidden rounded-[28px] border border-forest/20 bg-white shadow-[0_16px_48px_rgba(1,51,37,0.06)]">
+            <div className="grid grid-cols-1 gap-8 p-6 md:grid-cols-12 md:gap-10 md:p-10">
+              <div className="md:col-span-4 lg:col-span-3">
+                <Portrait person={FOUNDER} className="aspect-[4/5] w-full rounded-2xl" />
+              </div>
+              <div className="md:col-span-8 lg:col-span-9">
+                <p className="text-xs font-bold tracking-[0.18em] text-mid uppercase">
+                  {FOUNDER.role}
                 </p>
-              ))}
+                <h3 className="mt-2 text-2xl font-extrabold text-forest md:text-3xl">
+                  {FOUNDER.name}
+                </h3>
+                <div className="mt-4 space-y-4">
+                  {FOUNDER.body.map((paragraph) => (
+                    <p key={paragraph.slice(0, 40)} className="leading-relaxed text-neutral-600">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+                <ul className="mt-6 flex flex-wrap gap-2">
+                  {FOUNDER.tags.map((tag) => (
+                    <li
+                      key={tag}
+                      className="rounded-full border border-forest/15 bg-forest/[0.04] px-3 py-1.5 text-xs font-semibold text-forest"
+                    >
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
-        </section>
-      ))}
+          </article>
 
-      {/* Four Pillars Summary */}
-      <section className="py-24 bg-gray-50 text-center">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-10">At Pivot Prime, we bring four things into every engagement</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 font-bold text-lg text-primary">• We structure problem solving</div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 font-bold text-lg text-primary">• We embed operational discipline</div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 font-bold text-lg text-primary">• We enable data tracking</div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 font-bold text-lg text-primary">• We understand human behaviour</div>
-          </div>
-          
-          <p className="text-xl font-medium text-gray-700">
-            We help unlock the version of the business that is possible when structure, people, operations, and data work together: <span className="font-bold text-black">Your Prime State.</span>
-          </p>
-        </div>
-      </section>
-
-      {/* Four Pillars Detail */}
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          
-          <div>
-            <h3 className="text-2xl font-bold mb-4 flex items-center"><span className="text-primary mr-3 text-3xl">•</span> We structure problem solving</h3>
-            <p className="text-gray-600 leading-relaxed text-lg pl-8">
-              We take problems that feel tangled and surface the full picture, making sure nothing important is missed. We help leaders see gaps, dependencies, and risks that are often overlooked when everything is treated as one big issue.
-            </p>
-          </div>
-          
-          <div>
-            <h3 className="text-2xl font-bold mb-4 flex items-center"><span className="text-primary mr-3 text-3xl">•</span> We embed operational discipline</h3>
-            <p className="text-gray-600 leading-relaxed text-lg pl-8">
-              We put structure behind execution through clear ownership, decision frameworks, and practical operating rhythms. Standard ways of working are defined so progress does not depend on individual heroics or constant follow up.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-2xl font-bold mb-4 flex items-center"><span className="text-primary mr-3 text-3xl">•</span> We enable data tracking</h3>
-            <p className="text-gray-600 leading-relaxed text-lg pl-8">
-              We build practical dashboards based on the data and KPIs that actually matter for your business. These dashboards give leaders a reliable way to track progress, spot issues early, and make informed decisions without digging through spreadsheets.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-2xl font-bold mb-4 flex items-center"><span className="text-primary mr-3 text-3xl">•</span> We understand human behaviour</h3>
-            <p className="text-gray-600 leading-relaxed text-lg pl-8">
-              Strategies only hold when they fit the culture, capacity, and motivations of the people expected to deliver them. We work with how teams actually operate under pressure, how leaders influence action, and where resistance or fatigue shows up.
-            </p>
-          </div>
-
-        </div>
-      </section>
-
-      {/* Team, spec 6.3. Anchor target for /about#team, linked from the About
-          dropdown. Layer one is roles, which never change. Layer two is named
-          people and is still partly blocked on spec 10 decision 2. */}
-      <section className="py-24" id={TEAM_ANCHOR}>
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <header className="mb-14 max-w-3xl">
-            <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
-              {TEAM_INTRO.heading}
-            </h2>
-            <p className="mb-6 text-xl font-medium text-mid md:text-2xl">{TEAM_INTRO.standfirst}</p>
-            {TEAM_INTRO.body.map((paragraph) => (
-              <p key={paragraph.slice(0, 40)} className="mb-4 leading-relaxed text-neutral-600">
-                {paragraph}
-              </p>
-            ))}
-          </header>
-
-          <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {ROLES.map((role) => (
+          {/* Three across at 1440, one at 360. Three in a two-column row would
+              strand the third, so the middle step is skipped. */}
+          <ul className="mx-auto mt-8 grid max-w-md grid-cols-1 gap-6 lg:max-w-none lg:grid-cols-3">
+            {PEOPLE.map((person) => (
               <li
-                key={role.title}
-                className="rounded-xl border border-forest/10 bg-forest/[0.04] p-8"
+                key={person.name}
+                className="flex flex-col overflow-hidden rounded-[28px] border border-forest/20 bg-white shadow-[0_16px_48px_rgba(1,51,37,0.06)]"
               >
-                <h3 className="mb-3 text-lg font-bold text-forest">{role.title}</h3>
-                <p className="leading-relaxed text-neutral-600">{role.body}</p>
+                <Portrait person={person} className="aspect-[4/5] w-full" />
+                <div className="flex flex-1 flex-col p-6 md:p-8">
+                  <p className="text-xs font-bold tracking-[0.18em] text-mid uppercase">
+                    {person.role}
+                  </p>
+                  <h3 className="mt-2 text-xl font-extrabold text-forest">{person.name}</h3>
+                  {person.body.map((paragraph) => (
+                    <p
+                      key={paragraph.slice(0, 40)}
+                      className="mt-4 leading-relaxed text-neutral-600"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                  {person.seat ? (
+                    <p className="mt-6 inline-flex w-fit rounded-full border border-forest/15 bg-forest/[0.04] px-3 py-1.5 text-xs font-semibold text-forest lg:mt-auto lg:pt-1.5">
+                      {person.seat}
+                    </p>
+                  ) : null}
+                </div>
               </li>
             ))}
           </ul>
-
-          {/* THREE ACROSS AT 1440, two at 768, one at 360. Three in a
-              two-column row would strand the third on its own, so the middle
-              step is skipped: it goes straight from one column to three at lg.
-
-              Portraits are cropped the same way as the founder image on the
-              homepage, 4:5 and anchored to the top, so faces sit in the same
-              place across all three cards rather than each being centred on a
-              different part of the body. */}
-          {PEOPLE.length > 0 && (
-            <ul
-              className={
-                PEOPLE.length === 1
-                  ? "mx-auto mt-14 max-w-2xl"
-                  : // Stacked cards are capped and centred rather than
-                    // full-bleed. At 768 a full-width card made the portrait
-                    // 718px wide against a 640px file, so it was being upscaled,
-                    // and an 898px-tall portrait is a lot of page for one card.
-                    "mx-auto mt-14 grid max-w-md grid-cols-1 gap-6 lg:max-w-none lg:grid-cols-3"
-              }
-            >
-              {PEOPLE.map((person) => (
-                <li
-                  key={person.name}
-                  className="flex flex-col overflow-hidden rounded-xl border border-neutral-200"
-                >
-                  <Image
-                    src={person.photo.src}
-                    alt={person.photo.alt}
-                    width={640}
-                    height={800}
-                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 28rem, 100vw"
-                    className="aspect-[4/5] w-full object-cover object-top"
-                  />
-                  <div className="flex flex-1 flex-col p-8">
-                    <h3 className="text-xl font-extrabold text-foreground">{person.name}</h3>
-                    <p className="mt-1 text-sm font-bold tracking-wide text-mid uppercase">
-                      {person.role}
-                    </p>
-                    {person.seat ? (
-                      <p className="mt-3 inline-flex w-fit rounded-full border border-forest/10 bg-forest/[0.04] px-3 py-1 text-xs font-semibold text-forest">
-                        {person.seat}
-                      </p>
-                    ) : null}
-                    <p className="mt-4 leading-relaxed text-neutral-600">{person.credential}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          )}
         </div>
       </section>
 
-      {/* THE BENCH does not render while it is empty.
-          It was built as a heading, a standfirst and an empty list so the labels
-          could drop into a shape that already existed. On the page that read as
-          a section that had failed to load: a dark band with 300px of nothing
-          under it. Same rule as metric 6, spec 3.4: nothing beats a slot that
-          looks broken. The markup returns with the copy. PENDING-COPY 1i. */}
+      {/* THE BENCH, slide 22. Twenty capability labels, verbatim. */}
+      <section className="px-4 pb-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl">
+          <div className="relative overflow-hidden rounded-[28px] bg-forest p-8 text-white md:p-14">
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:28px_28px]"
+            />
+            <div className="relative z-10 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-14">
+              <div>
+                <span className="mb-4 block text-xs font-bold tracking-[0.22em] text-neon uppercase">
+                  {BENCH.eyebrow}
+                </span>
+                <h2 className="text-3xl font-extrabold tracking-tight md:text-4xl">
+                  {BENCH.headingLines.map((line, i) => (
+                    <span
+                      key={line}
+                      className={i === BENCH.accentLineIndex ? "block text-neon" : "block"}
+                    >
+                      {line}
+                    </span>
+                  ))}
+                </h2>
+                <div className="mt-6 space-y-5">
+                  {BENCH.body.map((paragraph) => (
+                    <p key={paragraph.text.slice(0, 40)} className="leading-relaxed text-white/75">
+                      {paragraph.text}
+                      {paragraph.emphasis ? (
+                        <>
+                          {" "}
+                          <strong className="font-bold text-white">{paragraph.emphasis}</strong>{" "}
+                          {paragraph.rest}
+                        </>
+                      ) : null}
+                    </p>
+                  ))}
+                </div>
+                <p className="mt-8 inline-flex w-fit items-center rounded-full border border-neon/40 px-5 py-2.5 text-sm font-bold text-neon">
+                  <span aria-hidden="true" className="mr-2 text-xs leading-none">
+                    &bull;
+                  </span>
+                  {BENCH.pill}
+                </p>
+              </div>
 
-      {/* Section 6 keeps the case studies on /about behind the #case-studies
-          anchor. Same source as the homepage 3.8 section so the two cannot
-          drift. */}
+              <ul className="flex flex-wrap content-start gap-2.5">
+                {BENCH.capabilities.map((capability) => (
+                  <li
+                    key={capability}
+                    className="rounded-full border border-white/15 bg-white/[0.04] px-4 py-2 text-sm text-white/90"
+                  >
+                    {capability}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Case studies, unchanged. Same component as the homepage so the two
+          cannot drift. */}
       <section className="bg-gray-50 py-24" id="case-studies">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <CaseStudies />
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 bg-forest text-center px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <Link href="/contact" className="inline-flex items-center justify-center px-10 py-5 font-bold tracking-wide uppercase text-white bg-primary hover:bg-neon/90 transition-colors rounded-md shadow-xl text-lg group">
-            Book your first conversation <span className="ml-3 font-normal text-2xl leading-none group-hover:translate-x-1 transition-transform">→</span>
+      <section className="bg-forest px-4 py-24 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          <Link
+            href="/contact"
+            className="group inline-flex items-center justify-center rounded-md bg-primary px-10 py-5 text-lg font-bold tracking-wide text-white uppercase shadow-xl transition-colors hover:bg-neon/90"
+          >
+            Book your first conversation{" "}
+            <span className="ml-3 text-2xl leading-none font-normal transition-transform group-hover:translate-x-1">
+              →
+            </span>
           </Link>
         </div>
       </section>
-
     </div>
   );
 }

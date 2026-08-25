@@ -141,14 +141,13 @@ const EXPECTATIONS = [
     assert: [
       { spec: "6.3", html: 'id="team"', why: "anchor target for /about#team" },
       { spec: "6", html: 'id="case-studies"', why: "anchor target for /about#case-studies" },
-      { spec: "6.3", text: "How we staff an engagement", why: "team layer one heading" },
       { spec: "6", text: "13% increase in member retention", why: "case studies also render here" },
-      { spec: "2.4 decision", text: "We have sat in the system.", why: "orphan relocated from the homepage, not deleted" },
-      { spec: "2.4 decision", text: "We do not just understand your challenges.", why: "orphan relocated from the homepage, not deleted" },
-      { spec: "6.1", text: "Why Pivot Prime exists", why: "new section at the top of the page" },
-      { spec: "6.1", text: "in the gap between what leadership decides and what actually gets delivered", why: "6.1 opening" },
-      { spec: "6.1", html: 'href="/about#team"', why: "Iram Kauser links to the team section" },
-      { spec: "6.2", text: "We understand human behaviour", why: "four capabilities kept" },
+      { spec: "slide 21", text: "Execution partners.", why: "hero, first line" },
+      { spec: "slide 21", text: "We've been on both sides of the table.", why: "who we are heading" },
+      { spec: "slide 21", text: "The people you work with directly.", why: "team heading" },
+      { spec: "slide 21", text: "Saif Ur Rehman", why: "the fourth team card, added on instruction" },
+      { spec: "slide 22", text: "One point of contact. Zero coordination overhead.", why: "the bench pill" },
+      { spec: "slide 22", text: "Investor Relations", why: "the twentieth capability label" },
     ],
   },
   {
@@ -315,6 +314,37 @@ const DECISIONS = [
         if (/Fractional COO retainer/.test(html)) {
           return `${route} names the COO retainer again, while the nav and the service page say Fractional Leadership`;
         }
+      }
+      return null;
+    },
+  },
+  {
+    what: "spec 6.1, 6.2 and the 6.3 roles layer are off /about, replaced by her slides 21 and 22",
+    where: "PENDING-COPY 1ab",
+    run: async (get) => {
+      const html = await (await get("/about")).text();
+      const back = [
+        "Why Pivot Prime exists",
+        "At Pivot Prime, we bring four things into every engagement",
+        "How we staff an engagement",
+        "We have sat in the system.",
+      ].filter((needle) => html.includes(needle));
+      return back.length
+        ? `${back.join("; ")} rendering again on /about, which her About redesign replaced`
+        : null;
+    },
+  },
+  {
+    what: "the About card says $100 million and the homepage says $120 million, deliberately",
+    where: "PENDING-COPY 1i",
+    run: async (get) => {
+      const about = await (await get("/about")).text();
+      const home = await (await get("/")).text();
+      if (!about.includes("worth over $100 million")) {
+        return "the About card no longer says $100 million, which is what slide 21 says";
+      }
+      if (!home.includes("more than $120 million")) {
+        return "the homepage no longer says $120 million, which is what spec 3.7 and the live site say";
       }
       return null;
     },

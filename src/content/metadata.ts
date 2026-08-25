@@ -110,7 +110,10 @@ export const PAGES = {
   about: {
     title: "About Pivot Prime",
     description:
-      "Led by a Fellow of the Institute and Faculty of Actuaries, after sixteen years in senior operating roles at AIG, MetLife and Gallagher. Why Pivot Prime exists.",
+      // "Why Pivot Prime exists" was the spec 6.1 section, which her About
+      // redesign replaced on 25 August. A description that names a section the
+      // page no longer has is a promise the page cannot keep.
+      "Execution partners, not consultants. The people you work with directly, led by a Fellow of the Institute and Faculty of Actuaries.",
     path: "/about",
   },
   contact: {

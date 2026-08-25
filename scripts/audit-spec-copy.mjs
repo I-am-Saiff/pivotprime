@@ -80,6 +80,45 @@ const stripInstructions = (block) =>
  */
 const EXPECTED_ABSENT = [
   {
+    section: "6.1",
+    // One decision, every block it removed. `match` takes a list so a section
+    // that goes as a unit is one entry with one condition, rather than four
+    // near-identical entries that rot apart.
+    match: [
+      "Why Pivot Prime exists",
+      "Sitting on an executive committee",
+      "Large corporates have entire layers of people",
+      "Iram Kauser spent sixteen years",
+    ],
+    why: "her About redesign replaces spec section 6 on this page outright. Slides 21 and 22 of Website Revisions 2208v3, and req/pp-about-v2_2.html which is the same page in markup, run hero, who we are, team, bench, case studies, CTA. There is no 6.1 and no roles layer in either. The deck is 22 August and the copy document is version 1.7.1, so the deck is the later instruction, which is the precedence rule already used for spec 3.6 and How We Work",
+    appearsWhen: "Iram asks for 6.1 back, at which point every word is in PENDING-COPY 1ab",
+    tracked: "PENDING-COPY 1ab",
+  },
+  {
+    section: "6.3",
+    // Layer one only. Iram's own blocks are still asserted, so removing her
+    // from the page would still fail.
+    match: [
+      "How we staff an engagement",
+      "One senior operator, and a bench built",
+      "A business rarely stalls for one reason",
+      "So the bench is built around those",
+      "The finance seat",
+      "Founder-led businesses almost always outgrow",
+      "The delivery seat",
+      "A plan that nobody owns day to day",
+      "The technology seat",
+      "Once the process is clear",
+      "The demand seat",
+      "Fixing the operation raises the ceiling",
+      "The digital seat",
+      "Website design, build and maintenance",
+    ],
+    why: "her About redesign replaces spec section 6 on this page outright. Slides 21 and 22 of Website Revisions 2208v3, and req/pp-about-v2_2.html which is the same page in markup, run hero, who we are, team, bench, case studies, CTA. There is no 6.1 and no roles layer in either. The deck is 22 August and the copy document is version 1.7.1, so the deck is the later instruction, which is the precedence rule already used for spec 3.6 and How We Work. The five seats survive as prose on /services/build-and-place, which is where 4.3 puts them",
+    appearsWhen: "Iram asks the roles layer back, at which point every word is in PENDING-COPY 1ab",
+    tracked: "PENDING-COPY 1ab",
+  },
+  {
     section: "3.6",
     match: "Knowing what is wrong is hard",
     why: "her comment on slide 6 of the 22 August deck reads, in full, 'Remove this section'. Spec 3.6 is tagged NEW, so the document asked for it and the comment removes it; the comment is later and wins",
@@ -181,14 +220,18 @@ const EXPECTED_ABSENT = [
     section: "6.3",
     match: "Fellow of the Institute and Faculty of Actuaries",
     why:
-      "THE SPEC CONTRADICTS ITSELF ON THIS FIGURE. Line 901, section 3.7, says the " +
-      "multi-line book was worth more than $120 million. Line 2175, section 6.3, says " +
-      "$100 million. Both are green blocks and the build had faithfully reproduced " +
-      "both, so the homepage and the About page disagreed about the same credential. " +
-      "Standardised on $120m on Saif's instruction, which matches the live site and " +
-      "3.7, so this block no longer matches 6.3 verbatim. Everything else in it is " +
-      "unchanged",
-    appearsWhen: "Iram confirms which figure is right, at which point both sections agree",
+      "THE SPEC CONTRADICTS ITSELF ON THIS FIGURE, and the About card is now built " +
+      "from a third source. Line 901, section 3.7, says the multi-line book was worth " +
+      "more than $120 million. Line 2175, section 6.3, says $100 million. Slide 21 of " +
+      "Website Revisions 2208v3 says over $100 million, agreeing with 6.3. Since the " +
+      "About rebuild on 25 August the card carries slide 21 verbatim, so the figure " +
+      "matches 6.3 again and the two pages disagree with each other on purpose: About " +
+      "says $100m, the homepage says $120m. THIS BLOCK IS STILL ABSENT for a different " +
+      "reason from before: 6.3 writes \"Fellow of the Institute and Faculty of " +
+      "Actuaries and one of roughly 75,000\", slide 21 breaks the same words into two " +
+      "sentences, so the block never matches as one string. Nothing in it is missing " +
+      "from the page",
+    appearsWhen: "Iram settles which figure is right and the two pages are aligned to it",
     tracked: "PENDING-COPY 1i",
   },
   {
@@ -306,7 +349,11 @@ async function main() {
     const deliberate = [];
     const missing = [];
     for (const block of absent) {
-      const gated = EXPECTED_ABSENT.find((e) => e.section === section && block.startsWith(e.match));
+      const gated = EXPECTED_ABSENT.find(
+        (e) =>
+          e.section === section &&
+          (Array.isArray(e.match) ? e.match : [e.match]).some((m) => block.startsWith(m)),
+      );
       const split = RENDERED_SPLIT.find((e) => e.section === section && block.startsWith(e.match));
       if (gated) deliberate.push({ block, why: `${gated.why}. Appears when ${gated.appearsWhen}. ${gated.tracked}` });
       else if (split) deliberate.push({ block, why: `${split.why}, so this is a matching artefact rather than an absence` });

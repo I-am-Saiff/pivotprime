@@ -414,63 +414,71 @@
       "text": "From pressure to Prime State",
       "status": "traced",
       "kind": "spec",
-      "why": "Appears in docs/spec.md. Green block, or quoted in a KEEP or section 11 instruction that sanctions the existing wording."
+      "why": "Appears in docs/spec.md. Green block, or quoted in a KEEP or section 11 instruction that sanctions the existing wording. OFF THE SITE SINCE THE ABOUT REBUILD, 25 August: the old About hero, replaced by \"Execution partners. Not consultants.\" from slide 21. Kept here rather than deleted so the provenance survives the removal. Word for word in PENDING-COPY 1ab.",
+      "mustAppear": false
     },
     {
       "text": "We do not just understand your challenges.",
       "status": "traced",
       "kind": "live-site-keep",
-      "why": "Retained from the pivotprime.ae homepage under the section 6.2 KEEP instruction, with the contraction expanded: the live site reads \"We don’t just understand your challenges.\". The expansion itself is the open item, and it is in PENDING-COPY 1f. Verified against the live homepage's served HTML on 2026-08-25.",
+      "why": "Retained from the pivotprime.ae homepage under the section 6.2 KEEP instruction, with the contraction expanded: the live site reads \"We don’t just understand your challenges.\". The expansion itself is the open item, and it is in PENDING-COPY 1f. Verified against the live homepage's served HTML on 2026-08-25. OFF THE SITE SINCE THE ABOUT REBUILD, 25 August: relocated here from the homepage under PENDING-COPY 2.4; her About redesign has no place for it. Kept here rather than deleted so the provenance survives the removal. Word for word in PENDING-COPY 1ab.",
       "route": "/about",
-      "element": "h2"
+      "element": "h2",
+      "mustAppear": false
     },
     {
       "text": "We have sat in the system.",
       "status": "traced",
       "kind": "live-site-keep",
-      "why": "Retained from the pivotprime.ae homepage under the section 6.2 KEEP instruction, with the contraction expanded: the live site reads \"We’ve sat in the system.\". The expansion itself is the open item, and it is in PENDING-COPY 1f. Verified against the live homepage's served HTML on 2026-08-25.",
+      "why": "Retained from the pivotprime.ae homepage under the section 6.2 KEEP instruction, with the contraction expanded: the live site reads \"We’ve sat in the system.\". The expansion itself is the open item, and it is in PENDING-COPY 1f. Verified against the live homepage's served HTML on 2026-08-25. OFF THE SITE SINCE THE ABOUT REBUILD, 25 August: relocated here from the homepage under PENDING-COPY 2.4; her About redesign has no place for it. Kept here rather than deleted so the provenance survives the removal. Word for word in PENDING-COPY 1ab.",
       "route": "/about",
-      "element": "h2"
+      "element": "h2",
+      "mustAppear": false
     },
     {
       "text": "At Pivot Prime, we bring four things into every engagement",
       "status": "traced",
       "kind": "live-site-keep",
-      "why": "Retained from pivotprime.ae/who-we-are under the section 6.2 KEEP instruction. Verified against that page's served HTML on 2026-08-25.",
+      "why": "Retained from pivotprime.ae/who-we-are under the section 6.2 KEEP instruction. Verified against that page's served HTML on 2026-08-25. OFF THE SITE SINCE THE ABOUT REBUILD, 25 August: the spec 6.2 capabilities block, which her About redesign replaces. Kept here rather than deleted so the provenance survives the removal. Word for word in PENDING-COPY 1ab.",
       "route": "/about",
-      "element": "h2"
+      "element": "h2",
+      "mustAppear": false
     },
     {
       "text": "• We structure problem solving",
       "status": "traced",
       "kind": "live-site-keep",
-      "why": "Retained from pivotprime.ae/who-we-are under the section 6.2 KEEP instruction. Verified against that page's served HTML on 2026-08-25.",
+      "why": "Retained from pivotprime.ae/who-we-are under the section 6.2 KEEP instruction. Verified against that page's served HTML on 2026-08-25. OFF THE SITE SINCE THE ABOUT REBUILD, 25 August: one of the four spec 6.2 capabilities, which her About redesign replaces. Kept here rather than deleted so the provenance survives the removal. Word for word in PENDING-COPY 1ab.",
       "route": "/about",
-      "element": "h3"
+      "element": "h3",
+      "mustAppear": false
     },
     {
       "text": "• We embed operational discipline",
       "status": "traced",
       "kind": "live-site-keep",
-      "why": "Retained from pivotprime.ae/who-we-are under the section 6.2 KEEP instruction. Verified against that page's served HTML on 2026-08-25.",
+      "why": "Retained from pivotprime.ae/who-we-are under the section 6.2 KEEP instruction. Verified against that page's served HTML on 2026-08-25. OFF THE SITE SINCE THE ABOUT REBUILD, 25 August: one of the four spec 6.2 capabilities, which her About redesign replaces. Kept here rather than deleted so the provenance survives the removal. Word for word in PENDING-COPY 1ab.",
       "route": "/about",
-      "element": "h3"
+      "element": "h3",
+      "mustAppear": false
     },
     {
       "text": "• We enable data tracking",
       "status": "traced",
       "kind": "live-site-keep",
-      "why": "Retained from pivotprime.ae/who-we-are under the section 6.2 KEEP instruction. Verified against that page's served HTML on 2026-08-25.",
+      "why": "Retained from pivotprime.ae/who-we-are under the section 6.2 KEEP instruction. Verified against that page's served HTML on 2026-08-25. OFF THE SITE SINCE THE ABOUT REBUILD, 25 August: one of the four spec 6.2 capabilities, which her About redesign replaces. Kept here rather than deleted so the provenance survives the removal. Word for word in PENDING-COPY 1ab.",
       "route": "/about",
-      "element": "h3"
+      "element": "h3",
+      "mustAppear": false
     },
     {
       "text": "• We understand human behaviour",
       "status": "traced",
       "kind": "spec",
-      "why": "Appears in docs/spec.md. spec 2.5, the typographical corrections table: the document asks for the American spelling on the live About page to be changed to this. Verified 2026-08-25.",
+      "why": "Appears in docs/spec.md. spec 2.5, the typographical corrections table: the document asks for the American spelling on the live About page to be changed to this. Verified 2026-08-25. OFF THE SITE SINCE THE ABOUT REBUILD, 25 August: one of the four spec 6.2 capabilities, which her About redesign replaces. Also the corrected spelling spec 2.5 asks for, so that correction now has nothing on the site to apply to. Kept here rather than deleted so the provenance survives the removal. Word for word in PENDING-COPY 1ab.",
       "route": "/about",
-      "element": "h3"
+      "element": "h3",
+      "mustAppear": false
     },
     {
       "text": "Tell us what’s slowing you down.",
