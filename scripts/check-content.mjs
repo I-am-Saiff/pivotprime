@@ -118,7 +118,6 @@ const EXPECTATIONS = [
       { spec: "5.2", text: "Through an Operational Clarity Audit. From AED 15,000.", why: "block 1 sub-line" },
       { spec: "5.2", text: "Part of an Operational Clarity Audit, or scoped on its own.", why: "block 2 sub-line" },
       { spec: "5.2", text: "Through a Fractional COO retainer. Scoped per engagement.", why: "block 3 sub-line" },
-      { spec: "5.2", text: "contribution margin, delivery effort, variability and risk", why: "added margin paragraph" },
       { spec: "5.2", text: "Most SMEs start with the audit", why: "routing block" },
     ],
   },
@@ -295,6 +294,16 @@ const DECISIONS = [
         if (!location.endsWith(to)) return `${from} goes to ${location}, expected ${to}`;
       }
       return null;
+    },
+  },
+  {
+    what: "the spec 5.2 pricing paragraph is off /for-smes, so all three cards carry the same shape",
+    where: "PENDING-COPY 1aa",
+    run: async (get) => {
+      const html = await (await get("/for-smes")).text();
+      return /contribution margin, delivery effort, variability and risk/.test(html)
+        ? "the paragraph is rendering again; the three cards on the page no longer match each other"
+        : null;
     },
   },
 ];

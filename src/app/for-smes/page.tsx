@@ -44,15 +44,6 @@ export default function ForSMEs() {
           <div className="frosted-card-light p-8 md:p-14 rounded-[28px] mb-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Pricing that makes sense</h2>
             <h3 className="text-lg font-bold text-mid mb-8">Through pricing and margin architecture. Part of an Operational Clarity Audit, or scoped on its own.</h3>
-            {/* Spec 5.2: "the clearest place on the whole site where the
-                actuarial background is directly relevant, and it is currently
-                being left on the table." */}
-            <p className="mb-8 leading-relaxed text-neutral-600">
-              We look at contribution margin, delivery effort, variability and risk across every
-              client, product and contract, then design pricing logic you can defend, rather than
-              pricing that was set once and never revisited.
-            </p>
-            
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
               <div className="md:col-span-12 bg-neutral-50/80 p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
                 <p className="text-mid font-bold text-base mb-3">This is typically a 2–4 week engagement.</p>

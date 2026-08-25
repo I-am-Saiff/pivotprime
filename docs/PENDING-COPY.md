@@ -1235,6 +1235,41 @@ all three back under your wording, and nothing you wrote changes.
 
 ---
 
+## 1aa. One paragraph taken off /for-smes, kept word for word — **for Iram**
+
+**This is her copy, removed on Saif's instruction. It is not a cut for length.**
+
+The three cards on `/for-smes` are the same shape: a heading, a green line naming
+the service that delivers it, and a grey box giving the duration and when people
+usually come to it. Card 2 had a fourth thing the other two did not, a paragraph
+of prose sitting directly under its green line, so one card in three looked
+different from its neighbours.
+
+It survived the earlier strip by accident rather than by decision. The prose on
+the other cards sat inside a column the strip targeted; this one sits outside it,
+straight under the heading, so the change went round it.
+
+The paragraph, in full:
+
+> We look at contribution margin, delivery effort, variability and risk across
+> every client, product and contract, then design pricing logic you can defend,
+> rather than pricing that was set once and never revisited.
+
+It is spec 5.2 copy, and it is the clearest sentence on the whole site where the
+actuarial background is doing visible work: contribution margin, variability and
+risk are an actuary's vocabulary, on the page that sells pricing. Nothing else on
+the site makes that connection explicit.
+
+**Restoring it is one line.** The question is whether the pricing card should be
+allowed to carry more than the other two, or whether all three should carry a
+paragraph. Either is buildable; the current state is the third option, which is
+none of them.
+
+`check-content` holds this as a decision, so the paragraph cannot return by
+accident without the failure naming this entry.
+
+---
+
 ## 2. Spec contradictions, logged and worked around
 
 ### 2.1 The fractional service slug — **logged, decided**
