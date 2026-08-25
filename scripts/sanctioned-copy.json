@@ -100,9 +100,9 @@
     },
     {
       "text": "Design the execution roadmap →",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "status": "traced",
+      "kind": "client-mockup",
+      "why": "Visible text in the client's own mockup, req/pivotprime-persona-pages.html and req/pivotprime-persona-tiles.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25.",
       "route": "/",
       "element": "link"
     },
@@ -144,17 +144,17 @@
     },
     {
       "text": "How the work runs today, and what it becomes.",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "status": "traced",
+      "kind": "client-mockup",
+      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25.",
       "route": "/services/operational-clarity-audit",
       "element": "h2"
     },
     {
       "text": "Almost every engagement begins with the audit.",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "status": "traced",
+      "kind": "client-mockup",
+      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25.",
       "route": "/services/operational-clarity-audit",
       "element": "h3"
     },
@@ -166,41 +166,41 @@
     },
     {
       "text": "Heavy at the start. Light by the end.",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "status": "traced",
+      "kind": "client-mockup",
+      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25.",
       "route": "/services/fractional-coo",
       "element": "h2"
     },
     {
       "text": "Three seats. Pick the one that is missing.",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "status": "traced",
+      "kind": "client-mockup",
+      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25.",
       "route": "/services/fractional-coo",
       "element": "h2"
     },
     {
       "text": "Where it does not fit",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "status": "traced",
+      "kind": "client-mockup",
+      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25.",
       "route": "/services/fractional-coo",
       "element": "h3"
     },
     {
       "text": "Find out which seat is actually missing.",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "status": "traced",
+      "kind": "client-mockup",
+      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25.",
       "route": "/services/fractional-coo",
       "element": "h3"
     },
     {
       "text": "Fractional COO Owns execution",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "status": "traced",
+      "kind": "client-mockup",
+      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25.",
       "route": "/services/fractional-coo",
       "element": "button"
     },
@@ -214,17 +214,17 @@
     },
     {
       "text": "Fractional CFO Owns the numbers",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "status": "traced",
+      "kind": "client-mockup",
+      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25.",
       "route": "/services/fractional-coo",
       "element": "button"
     },
     {
       "text": "One contract. One accountable party.",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "status": "traced",
+      "kind": "client-mockup",
+      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25.",
       "route": "/services/build-and-place",
       "element": "h2"
     },
@@ -496,9 +496,9 @@
     },
     {
       "text": "Professional Services, UAE",
-      "status": "awaiting-client",
-      "kind": "authored",
-      "why": "From the 23 August About mockup. Narrative built, every figure withheld because none appears in the section 9 master table. Wording unconfirmed. PENDING-COPY 1i.",
+      "status": "traced",
+      "kind": "client-mockup",
+      "why": "Visible text in the client's own mockup, req/pp-about-v2_2.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25. The mockup separates the two halves with a middle dot, \"Professional Services · UAE\"; the comma is ours.",
       "route": "/",
       "element": "heading"
     },

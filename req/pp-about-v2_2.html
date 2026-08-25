@@ -1,0 +1,352 @@
+<title>About Pivot Prime</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+:root{
+  --forest:#013325;--neon:#00d76d;--mid:#009f50;
+  --paper:#f5f5f3;--ink:#0a1a12;--muted:#4a6657;
+  --line:#dde6e0;--card:#ffffff;
+}
+body{font-family:'Poppins',system-ui,sans-serif;background:var(--paper);color:var(--ink)}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(245,245,243,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-weight:800;font-size:15px;color:var(--forest);letter-spacing:-.02em;text-decoration:none}
+.nav-cta{display:inline-flex;align-items:center;gap:6px;background:var(--forest);color:var(--neon);font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;padding:8px 18px;border-radius:100px;text-decoration:none;transition:opacity .2s}
+.nav-cta:hover{opacity:.85}
+
+/* HERO */
+.hero{background:var(--forest);padding:96px 32px 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px);background-size:26px 26px;pointer-events:none}
+.hero-inner{max-width:760px;margin:0 auto;position:relative}
+.eyebrow{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+.hero .eyebrow{color:rgba(0,215,109,.6);margin-bottom:20px}
+.hero h1{font-size:clamp(38px,6vw,70px);font-weight:800;color:#fff;line-height:1.05;letter-spacing:-.028em;text-wrap:balance;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--neon)}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.58);line-height:1.72;max-width:520px}
+
+/* WRAP / SECTION */
+.wrap{max-width:1060px;margin:0 auto;padding:0 32px}
+.section{padding:72px 0}
+
+/* ABOUT BLURB */
+.about-blurb{max-width:720px;margin:0 auto;text-align:center}
+.about-blurb .eyebrow{color:var(--mid);margin-bottom:12px}
+.about-blurb h2{font-size:clamp(22px,3vw,32px);font-weight:800;color:var(--forest);letter-spacing:-.02em;margin-bottom:16px}
+.about-blurb p{font-size:15.5px;color:var(--muted);line-height:1.75}
+.about-blurb p+p{margin-top:12px}
+
+/* TEAM */
+.team-header{margin-bottom:32px}
+.team-header .eyebrow{color:var(--mid);margin-bottom:8px}
+.team-header h2{font-size:clamp(24px,3.2vw,36px);font-weight:800;color:var(--forest);letter-spacing:-.02em}
+
+/* Founder card (full-width featured) */
+.founder-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:40px 44px;display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:start;margin-bottom:16px}
+@media(max-width:620px){.founder-card{grid-template-columns:1fr;padding:28px 22px}}
+.founder-avatar{width:88px;height:88px;border-radius:50%;background:var(--forest);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:var(--neon);flex-shrink:0;overflow:hidden}
+.founder-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.person-role-label{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:4px}
+.person-name{font-size:22px;font-weight:800;color:var(--forest);letter-spacing:-.02em;margin-bottom:12px}
+.person-bio{font-size:14px;line-height:1.75;color:var(--muted)}
+.person-bio strong{color:var(--ink);font-weight:600}
+.pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.pill{display:inline-flex;align-items:center;gap:5px;background:rgba(1,51,37,.06);border:1px solid rgba(1,51,37,.1);border-radius:100px;padding:4px 11px;font-size:11px;font-weight:500;color:var(--forest)}
+.pill-dot{width:4px;height:4px;border-radius:50%;background:var(--mid);flex-shrink:0}
+
+/* Team row (3 equal cards) */
+.team-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:720px){.team-row{grid-template-columns:1fr}}
+.team-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 22px}
+.team-avatar{width:64px;height:64px;border-radius:50%;background:var(--forest);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:var(--neon);margin-bottom:14px;overflow:hidden;flex-shrink:0}
+.team-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.team-card .person-name{font-size:16px;margin-bottom:3px}
+.team-card .person-role-label{font-size:11px;color:var(--mid);font-weight:600;letter-spacing:.06em;text-transform:none;margin-bottom:10px}
+.team-card .person-bio{font-size:13px}
+.seat-tag{display:inline-block;margin-top:12px;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:rgba(1,51,37,.05);border:1px solid rgba(1,51,37,.09);border-radius:100px;padding:3px 10px}
+
+/* BENCH */
+.bench-wrap{background:var(--forest);border-radius:22px;padding:52px 48px;position:relative;overflow:hidden}
+.bench-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px);background-size:22px 22px;pointer-events:none}
+.bench-inner{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+@media(max-width:720px){.bench-inner{grid-template-columns:1fr}}
+.bench-left .eyebrow{color:rgba(0,215,109,.6);margin-bottom:14px}
+.bench-left h2{font-size:clamp(22px,3vw,34px);font-weight:800;color:#fff;letter-spacing:-.022em;line-height:1.12;margin-bottom:16px}
+.bench-left h2 em{font-style:normal;color:var(--neon)}
+.bench-left p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.72;margin-bottom:14px}
+.bench-left p strong{color:rgba(255,255,255,.85);font-weight:600}
+.bench-promise{display:inline-flex;align-items:center;gap:8px;background:rgba(0,215,109,.1);border:1px solid rgba(0,215,109,.28);border-radius:100px;padding:8px 16px;font-size:11.5px;font-weight:600;color:var(--neon);letter-spacing:.04em;margin-top:4px}
+.bench-dot{width:6px;height:6px;border-radius:50%;background:var(--neon);flex-shrink:0}
+
+.bench-tags{display:flex;flex-wrap:wrap;gap:9px;align-content:flex-start}
+.btag{display:inline-flex;align-items:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:7px 14px;font-size:12px;font-weight:500;color:rgba(255,255,255,.75);transition:background .2s,color .2s;cursor:default}
+.btag:hover{background:rgba(0,215,109,.15);border-color:rgba(0,215,109,.3);color:var(--neon)}
+.btag.hi{background:rgba(0,215,109,.1);border-color:rgba(0,215,109,.25);color:rgba(0,215,109,.9)}
+
+/* CASE STUDIES */
+.cs-header{margin-bottom:28px}
+.cs-header .eyebrow{color:var(--mid);margin-bottom:8px}
+.cs-header h2{font-size:clamp(24px,3.4vw,36px);font-weight:800;color:var(--forest);letter-spacing:-.02em;margin-bottom:4px}
+.cs-header p{font-size:14.5px;color:var(--muted)}
+.cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:820px){.cs-grid{grid-template-columns:1fr}}
+.cs-card{background:var(--forest);border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:16px;position:relative;overflow:hidden}
+.cs-card::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:20px 20px;pointer-events:none}
+.cs-tag{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(0,215,109,.55)}
+.cs-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4}
+.cs-results{display:flex;flex-direction:column;gap:9px}
+.cs-stat{display:flex;align-items:flex-start;gap:9px}
+.cs-num{font-size:20px;font-weight:800;color:var(--neon);letter-spacing:-.03em;line-height:1.1;white-space:nowrap;font-variant-numeric:tabular-nums}
+.cs-lbl{font-size:11px;font-weight:400;color:rgba(255,255,255,.5);line-height:1.45;padding-top:3px}
+.cs-rule{height:1px;background:rgba(255,255,255,.08)}
+.cs-quote{font-size:11.5px;font-style:italic;color:rgba(255,255,255,.4);line-height:1.65}
+.cs-attr{display:block;margin-top:4px;font-size:10px;font-weight:600;font-style:normal;color:rgba(0,215,109,.55);letter-spacing:.01em}
+
+/* CTA */
+.cta-strip{background:var(--forest);border-radius:20px;padding:60px 40px;text-align:center;position:relative;overflow:hidden;margin-bottom:72px}
+.cta-strip::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:24px 24px;pointer-events:none}
+.cta-strip .eyebrow{color:rgba(0,215,109,.55);margin-bottom:14px;position:relative}
+.cta-strip h2{font-size:clamp(22px,3.4vw,38px);font-weight:800;color:#fff;letter-spacing:-.022em;line-height:1.1;margin-bottom:26px;text-wrap:balance;position:relative}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--neon);color:var(--forest);font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;padding:13px 26px;border-radius:100px;text-decoration:none;transition:opacity .2s;position:relative}
+.cta-btn:hover{opacity:.88}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-logo" href="/">Pivot Prime</a>
+  <a class="nav-cta" href="https://wa.me/971524401075">Talk to us →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">About Pivot Prime</p>
+    <h1>Execution partners.<br><em>Not consultants.</em></h1>
+    <p class="hero-sub">We built Pivot Prime to close the gap between strategy and delivery.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+  <div class="wrap">
+    <div class="about-blurb">
+      <p class="eyebrow">Who we are</p>
+      <h2>We've been on both sides of the table.</h2>
+      <p>Our team has worked inside complex organisations, managing targets, navigating real constraints, and carrying responsibility for results. We've also advised from the outside, helping leaders understand why effort isn't translating into outcomes.</p>
+      <p>Pivot Prime exists because of that combination. When plans meet pressure, people, and reality, we know what it takes to keep things moving, and we stay until we see results.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="team-header">
+      <p class="eyebrow">Meet the team</p>
+      <h2>The people you work with directly.</h2>
+    </div>
+
+    <!-- Iram -->
+    <div class="founder-card">
+      <div class="founder-avatar">
+        <!-- Replace src with Iram's photo URL -->
+        <img src="" alt="Iram Kauser" onerror="this.style.display='none';this.parentNode.innerHTML='IK'">
+      </div>
+      <div>
+        <p class="person-role-label">Founder &amp; CEO</p>
+        <p class="person-name">Iram Kauser</p>
+        <p class="person-bio"><strong>Fellow of the Institute and Faculty of Actuaries.</strong> One of roughly 75,000 qualified actuaries worldwide. Sixteen years in senior operating roles at <strong>AIG, MetLife and Gallagher</strong> across the UK, Middle East and Africa. Chief of Staff to a regional CEO across more than 150 staff. Pricing and portfolio strategy for a multi-line book worth over $100 million.<br><br>Founded Pivot Prime to close the gap between what a business decides and what it actually delivers.</p>
+        <div class="pills">
+          <span class="pill"><span class="pill-dot"></span>Fellow, IFoA</span>
+          <span class="pill"><span class="pill-dot"></span>AIG · MetLife · Gallagher</span>
+          <span class="pill"><span class="pill-dot"></span>UK · Middle East · Africa</span>
+          <span class="pill"><span class="pill-dot"></span>16 years senior leadership</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team row -->
+    <div class="team-row">
+      <div class="team-card">
+        <div class="team-avatar">
+          <!-- Replace src with Justin's photo URL -->
+          <img src="" alt="Justin Ford" onerror="this.style.display='none';this.parentNode.innerHTML='JF'">
+        </div>
+        <p class="person-role-label">Finance Seat</p>
+        <p class="person-name">Justin Ford</p>
+        <p class="person-bio">Fractional CFO bringing senior finance leadership without the full-time cost. Cash management, forecasting, investor reporting and readiness for the next raise. The layer that turns a growing business into one that can prove it.</p>
+        <span class="seat-tag">Fractional CFO</span>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">
+          <!-- Replace src with Saif's photo URL -->
+          <img src="" alt="Saif Ur Rehman" onerror="this.style.display='none';this.parentNode.innerHTML='SR'">
+        </div>
+        <p class="person-role-label">Technology Seat</p>
+        <p class="person-name">Saif Ur Rehman</p>
+        <p class="person-bio">AI and technology solutions lead. Scoped after the diagnosis so we build at the constraint, not over the parts that already work. Custom automation, workflow design, CRM build and reporting systems that actually get used.</p>
+        <span class="seat-tag">AI &amp; Technology Lead</span>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">
+          <!-- Replace src with Khushi's photo URL -->
+          <img src="" alt="Khushi Popat" onerror="this.style.display='none';this.parentNode.innerHTML='KP'">
+        </div>
+        <p class="person-role-label">Content &amp; Social Seat</p>
+        <p class="person-name">Khushi Popat</p>
+        <p class="person-bio">Digital storyteller and social media strategist. Fixing the operation raises the ceiling. Khushi makes sure it gets filled. Positioning, visual storytelling and the client-facing presence that carries the business at scale.</p>
+        <span class="seat-tag">Digital Storyteller &amp; Social Media Strategist</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENCH -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="bench-wrap">
+      <div class="bench-inner">
+        <div class="bench-left">
+          <p class="eyebrow">The bench</p>
+          <h2>One partnership.<br><em>Every capability</em><br>you will ever need.</h2>
+          <p>As we execute plans and make things happen, we draw on a large bench of specialists. People we have worked with, vetted, and trust. <strong>You never have to manage them.</strong> You manage one relationship with us, and we manage the rest.</p>
+          <p>We understand your business deeply and become an extension of it. Every specialist we bring in is briefed by us, accountable to us, and integrated into the work already underway.</p>
+          <span class="bench-promise"><span class="bench-dot"></span>One point of contact. Zero coordination overhead.</span>
+        </div>
+        <div class="bench-tags">
+          <span class="btag hi">Project Management</span>
+          <span class="btag hi">Data Analytics</span>
+          <span class="btag hi">AI &amp; Automation</span>
+          <span class="btag">Legal &amp; Compliance</span>
+          <span class="btag">HR &amp; People</span>
+          <span class="btag">Recruitment</span>
+          <span class="btag">Company Formation</span>
+          <span class="btag">Supply Chain</span>
+          <span class="btag">Operations Design</span>
+          <span class="btag hi">Finance &amp; Accounting</span>
+          <span class="btag">Videography &amp; Production</span>
+          <span class="btag">Marketing &amp; Brand</span>
+          <span class="btag">Business Development</span>
+          <span class="btag">Regulatory Affairs</span>
+          <span class="btag">Change Management</span>
+          <span class="btag">Web Design &amp; Build</span>
+          <span class="btag hi">Executive Advisory</span>
+          <span class="btag">Training &amp; L&amp;D</span>
+          <span class="btag">Research &amp; Insights</span>
+          <span class="btag">Investor Relations</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="cs-header">
+      <p class="eyebrow">Proven outcomes</p>
+      <h2>Real problems. Real results.</h2>
+      <p>Every number below is verified. Clients are anonymised.</p>
+    </div>
+    <div class="cs-grid">
+
+      <div class="cs-card">
+        <p class="cs-tag">Financial Services · Dubai</p>
+        <p class="cs-title">Onboarding was slow, costs invisible, decisions had no data behind them.</p>
+        <div class="cs-results">
+          <div class="cs-stat"><span class="cs-num">67%</span><span class="cs-lbl">faster transaction processing per customer</span></div>
+          <div class="cs-stat"><span class="cs-num">10→3</span><span class="cs-lbl">days average KYC completion</span></div>
+          <div class="cs-stat"><span class="cs-num">25%</span><span class="cs-lbl">reduction in operational waste across onboarding</span></div>
+          <div class="cs-stat"><span class="cs-num">2–3</span><span class="cs-lbl">FTE roles removed from high-cost locations</span></div>
+        </div>
+        <div class="cs-rule"></div>
+        <p class="cs-quote">"Margins stopped swinging month to month once the operating rhythm was fixed."
+          <span class="cs-attr">Managing Director, insurance brokerage · Dubai</span></p>
+      </div>
+
+      <div class="cs-card">
+        <p class="cs-tag">Founder-Led Business</p>
+        <p class="cs-title">The founder was the bottleneck. Every decision routed back to one person.</p>
+        <div class="cs-results">
+          <div class="cs-stat"><span class="cs-num">2 days</span><span class="cs-lbl">per week returned to the founder</span></div>
+          <div class="cs-stat"><span class="cs-num">↓</span><span class="cs-lbl">fewer escalations, team decisions faster</span></div>
+          <div class="cs-stat"><span class="cs-num">90 days</span><span class="cs-lbl">to launch a new venture, zero permanent payroll added</span></div>
+        </div>
+        <div class="cs-rule"></div>
+        <p class="cs-quote">"We launched our new venture in 90 days with placed leadership and no permanent payroll bloat."
+          <span class="cs-attr">VP Innovation, regional retail group · Riyadh</span></p>
+      </div>
+
+      <div class="cs-card">
+        <p class="cs-tag">Fitness &amp; Wellness · UAE</p>
+        <p class="cs-title">Strong demand, rising churn, no visibility into why members were leaving.</p>
+        <div class="cs-results">
+          <div class="cs-stat"><span class="cs-num">+13%</span><span class="cs-lbl">increase in member retention</span></div>
+          <div class="cs-stat"><span class="cs-num">+17%</span><span class="cs-lbl">improvement in profit margin</span></div>
+          <div class="cs-stat"><span class="cs-num">✓</span><span class="cs-lbl">early churn signals visible before members leave</span></div>
+        </div>
+        <div class="cs-rule"></div>
+        <p class="cs-quote">"Every team finally knows their numbers and operating cadence. Noise turned into rhythm."
+          <span class="cs-attr">Chief Operating Officer, distribution group · Abu Dhabi</span></p>
+      </div>
+
+      <div class="cs-card">
+        <p class="cs-tag">Professional Services · UAE</p>
+        <p class="cs-title">Rapid growth exposed pricing gaps and an unstructured delivery process.</p>
+        <div class="cs-results">
+          <div class="cs-stat"><span class="cs-num">+22%</span><span class="cs-lbl">improvement in gross margin after pricing reset</span></div>
+          <div class="cs-stat"><span class="cs-num">40%</span><span class="cs-lbl">reduction in time spent on non-billable admin</span></div>
+          <div class="cs-stat"><span class="cs-num">✓</span><span class="cs-lbl">delivery process standardised across all client engagements</span></div>
+        </div>
+        <div class="cs-rule"></div>
+        <p class="cs-quote">"We were growing but not profiting. That changed when the pricing model was rebuilt properly."
+          <span class="cs-attr">Managing Partner, consulting firm · Abu Dhabi</span></p>
+      </div>
+
+      <div class="cs-card">
+        <p class="cs-tag">Retail &amp; Consumer · Gulf</p>
+        <p class="cs-title">Inventory was misaligned with demand. Markdowns were consuming margin quietly.</p>
+        <div class="cs-results">
+          <div class="cs-stat"><span class="cs-num">31%</span><span class="cs-lbl">reduction in markdown losses over two seasons</span></div>
+          <div class="cs-stat"><span class="cs-num">↑</span><span class="cs-lbl">sell-through rate improved across core product lines</span></div>
+          <div class="cs-stat"><span class="cs-num">✓</span><span class="cs-lbl">demand planning process introduced and embedded</span></div>
+        </div>
+        <div class="cs-rule"></div>
+        <p class="cs-quote">"The buying decisions finally had logic behind them. It changed what we ordered and when."
+          <span class="cs-attr">Commercial Director, retail group · Dubai</span></p>
+      </div>
+
+      <div class="cs-card">
+        <p class="cs-tag">Technology &amp; SaaS · MENA</p>
+        <p class="cs-title">Sales pipeline looked healthy. Conversion was slow and reasons were unclear.</p>
+        <div class="cs-results">
+          <div class="cs-stat"><span class="cs-num">+38%</span><span class="cs-lbl">improvement in pipeline-to-close conversion rate</span></div>
+          <div class="cs-stat"><span class="cs-num">−19 days</span><span class="cs-lbl">average sales cycle reduced</span></div>
+          <div class="cs-stat"><span class="cs-num">✓</span><span class="cs-lbl">CRM rebuilt around actual sales motion, not guesswork</span></div>
+        </div>
+        <div class="cs-rule"></div>
+        <p class="cs-quote">"We stopped losing deals in the follow-up stage. The process finally matched how buyers actually behave."
+          <span class="cs-attr">CEO, B2B SaaS business · Dubai</span></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-strip">
+      <p class="eyebrow">Start here</p>
+      <h2>The first conversation costs nothing.<br>Not moving does.</h2>
+      <a class="cta-btn" href="https://wa.me/971524401075">
+        Book your first conversation
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>

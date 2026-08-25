@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pivot Prime — Performance KPIs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/*
+  Palette:
+  --bg:       #000000   page ground
+  --tile:     #013325   card surface
+  --accent:   #00d76d   bright green — numbers & live dots
+  --mid:      #009f50   medium green — lines, fills, active state
+  --gold:     #9f7a3d   warm gold — "before" / contrast
+  --sand:     #e8d7b5   warm sand — body copy, labels
+  --mint:     #e8f4ec   very light mint — subtle fills
+  --cream:    #efeae0   cool cream — secondary text
+  --off-wht:  #fefbf8   near-white — metric name
+*/
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; }
+
+body {
+  background: #000000;
+  color: #e8d7b5;
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+  padding: 52px 24px 72px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+.eyebrow {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #009f50;
+  display: block;
+  margin-bottom: 8px;
+}
+.page-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fefbf8;
+  letter-spacing: -0.01em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+@media (min-width: 600px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* ---- Card base ---- */
+.card {
+  background: #013325;
+  border: 1px solid rgba(0, 215, 109, 0.2);
+  border-radius: 18px;
+  padding: 24px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+  animation: fadeUp 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.card:nth-child(2) { animation-delay: 0.07s; }
+.card:nth-child(3) { animation-delay: 0.14s; }
+.card:nth-child(4) { animation-delay: 0.21s; }
+.card:nth-child(5) { animation-delay: 0.28s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card { animation: none; }
+}
+
+/* Top glow */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 15%; right: 15%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 215, 109, 0.5), transparent);
+}
+
+/* Label */
+.kpi-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #00d76d;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+.kpi-label::before {
+  content: '';
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: #00d76d;
+  box-shadow: 0 0 7px rgba(0, 215, 109, 0.7);
+  flex-shrink: 0;
+}
+
+/* Viz container */
+.viz {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-height: 96px;
+  margin-bottom: 18px;
+}
+
+/* Metric */
+.metric {
+  font-family: 'Syne', sans-serif;
+  font-size: 54px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #efeae0;
+  margin-bottom: 4px;
+  font-variant-numeric: tabular-nums;
+}
+.metric em { color: #00d76d; font-style: normal; }
+.metric-name {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #fefbf8;
+  margin-bottom: 14px;
+  text-wrap: balance;
+}
+.card-desc {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #e8d7b5;
+  border-top: 1px solid rgba(0, 215, 109, 0.15);
+  padding-top: 12px;
+  margin-top: auto;
+  opacity: 0.75;
+}
+
+/* ---- RETENTION dots ---- */
+.rdots {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 5px;
+  width: 100%;
+}
+.rdot {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #00d76d;
+}
+.rdot.lost {
+  background: transparent;
+  border: 1.5px solid rgba(232, 215, 181, 0.45);
+}
+
+/* ---- SPEED bars ---- */
+.speed-wrap { display: flex; flex-direction: column; gap: 14px; width: 100%; }
+.speed-item { display: flex; flex-direction: column; gap: 5px; }
+.speed-item-label {
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; color: #e8d7b5;
+  opacity: 0.7;
+}
+.speed-track {
+  height: 24px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.speed-fill {
+  height: 100%;
+  display: flex; align-items: center;
+  padding: 0 10px;
+  border-radius: 5px;
+  font-size: 10px; font-weight: 600;
+  white-space: nowrap;
+}
+.speed-fill.before {
+  width: 100%;
+  background: rgba(159, 122, 61, 0.18);
+  border: 1px solid rgba(159, 122, 61, 0.4);
+  color: #e8d7b5;
+}
+.speed-fill.after {
+  width: 0%;
+  background: #00d76d;
+  color: #013325;
+  transition: width 1.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Legend shared */
+.legend-row {
+  display: flex;
+  gap: 12px;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9.5px;
+  color: #e8d7b5;
+  opacity: 0.75;
+}
+.legend-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <span class="eyebrow">Pivot Prime · Measured Impact</span>
+  <h1 class="page-title">Performance Overview</h1>
+</header>
+
+<div class="grid">
+
+<!-- ======= CARD 1: EXECUTION ======= -->
+<div class="card">
+  <div class="kpi-label">Execution</div>
+  <div class="viz">
+    <svg viewBox="0 0 260 72" fill="none" width="100%" height="96" aria-hidden="true" style="overflow:visible">
+      <path id="fp" d="M18,36 L90,36 L162,36 L242,36" visibility="hidden"/>
+      <!-- track lines -->
+      <line x1="28" y1="36" x2="82" y2="36" stroke="rgba(0,159,80,0.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <line x1="100" y1="36" x2="154" y2="36" stroke="rgba(0,159,80,0.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <line x1="172" y1="36" x2="232" y2="36" stroke="rgba(0,159,80,0.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <!-- nodes -->
+      <circle cx="18" cy="36" r="9" fill="#013325" stroke="rgba(0,215,109,0.4)" stroke-width="1.5"/>
+      <circle cx="18" cy="36" r="3" fill="#009f50"/>
+      <circle cx="90" cy="36" r="9" fill="#013325" stroke="rgba(0,215,109,0.4)" stroke-width="1.5"/>
+      <circle cx="90" cy="36" r="3" fill="#009f50"/>
+      <circle cx="162" cy="36" r="9" fill="#013325" stroke="rgba(0,215,109,0.4)" stroke-width="1.5"/>
+      <circle cx="162" cy="36" r="3" fill="#009f50"/>
+      <!-- terminal node glow -->
+      <circle cx="242" cy="36" r="14" fill="rgba(0,215,109,0.1)"/>
+      <circle cx="242" cy="36" r="9" fill="#013325" stroke="#00d76d" stroke-width="1.5"/>
+      <circle cx="242" cy="36" r="3.5" fill="#00d76d"/>
+      <!-- labels -->
+      <text x="18"  y="58" text-anchor="middle" fill="#e8d7b5" fill-opacity="0.5" font-size="7.5" font-family="Inter" letter-spacing="0.06em">ALIGN</text>
+      <text x="90"  y="58" text-anchor="middle" fill="#e8d7b5" fill-opacity="0.5" font-size="7.5" font-family="Inter" letter-spacing="0.06em">BUILD</text>
+      <text x="162" y="58" text-anchor="middle" fill="#e8d7b5" fill-opacity="0.5" font-size="7.5" font-family="Inter" letter-spacing="0.06em">EMBED</text>
+      <text x="242" y="58" text-anchor="middle" fill="#00d76d" font-size="7.5" font-family="Inter" font-weight="600" letter-spacing="0.06em">DONE</text>
+      <!-- animated particles -->
+      <circle r="3" fill="#00d76d">
+        <animateMotion dur="1.7s" repeatCount="indefinite" begin="0s"><mpath href="#fp"/></animateMotion>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.88;1" dur="1.7s" repeatCount="indefinite" begin="0s"/>
+      </circle>
+      <circle r="3" fill="#00d76d">
+        <animateMotion dur="1.7s" repeatCount="indefinite" begin="0.57s"><mpath href="#fp"/></animateMotion>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.88;1" dur="1.7s" repeatCount="indefinite" begin="0.57s"/>
+      </circle>
+      <circle r="3" fill="#00d76d">
+        <animateMotion dur="1.7s" repeatCount="indefinite" begin="1.13s"><mpath href="#fp"/></animateMotion>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.88;1" dur="1.7s" repeatCount="indefinite" begin="1.13s"/>
+      </circle>
+    </svg>
+  </div>
+  <div class="metric"><em>+7</em>%</div>
+  <div class="metric-name">Faster execution across teams</div>
+  <div class="card-desc">Decision rights, operating rhythm and delivery ownership rebuilt across all functions.</div>
+</div>
+
+<!-- ======= CARD 2: PROCESS EFFICIENCY ======= -->
+<div class="card">
+  <div class="kpi-label">Process Efficiency</div>
+  <div class="viz">
+    <svg viewBox="0 0 252 80" fill="none" width="100%" height="96" aria-hidden="true">
+      <!-- Before label -->
+      <text x="0" y="11" fill="#e8d7b5" fill-opacity="0.55" font-size="8" font-family="Inter" font-weight="600" letter-spacing="0.1em">BEFORE</text>
+      <!-- 5 green (productive) + 5 amber (inefficient) -->
+      <rect x="0"   y="16" width="22" height="16" rx="3" fill="rgba(0,159,80,0.3)"/>
+      <rect x="25"  y="16" width="22" height="16" rx="3" fill="rgba(0,159,80,0.3)"/>
+      <rect x="50"  y="16" width="22" height="16" rx="3" fill="rgba(0,159,80,0.3)"/>
+      <rect x="75"  y="16" width="22" height="16" rx="3" fill="rgba(0,159,80,0.3)"/>
+      <rect x="100" y="16" width="22" height="16" rx="3" fill="rgba(0,159,80,0.3)"/>
+      <rect x="125" y="16" width="22" height="16" rx="3" fill="rgba(196,144,64,0.65)" stroke="#c49040" stroke-width="1"/>
+      <rect x="150" y="16" width="22" height="16" rx="3" fill="rgba(196,144,64,0.65)" stroke="#c49040" stroke-width="1"/>
+      <rect x="175" y="16" width="22" height="16" rx="3" fill="rgba(196,144,64,0.5)"  stroke="rgba(196,144,64,0.8)" stroke-width="1"/>
+      <rect x="200" y="16" width="22" height="16" rx="3" fill="rgba(196,144,64,0.38)" stroke="rgba(196,144,64,0.65)" stroke-width="1"/>
+      <rect x="225" y="16" width="22" height="16" rx="3" fill="rgba(196,144,64,0.38)" stroke="rgba(196,144,64,0.65)" stroke-width="1"/>
+      <!-- Waste brace label -->
+      <line x1="125" y1="40" x2="247" y2="40" stroke="rgba(196,144,64,0.5)" stroke-width="0.5" stroke-dasharray="2 2"/>
+      <text x="186" y="50" text-anchor="middle" fill="#c49040" font-size="7.5" font-family="Inter" letter-spacing="0.06em">40–60% INEFFICIENCY</text>
+      <!-- After label -->
+      <text x="0" y="66" fill="#00d76d" font-size="8" font-family="Inter" font-weight="600" letter-spacing="0.1em">AFTER</text>
+      <!-- 5 solid + 2 faint = lean ops -->
+      <rect x="0"   y="70" width="22" height="10" rx="3" fill="#00d76d"/>
+      <rect x="25"  y="70" width="22" height="10" rx="3" fill="#00d76d"/>
+      <rect x="50"  y="70" width="22" height="10" rx="3" fill="#00d76d"/>
+      <rect x="75"  y="70" width="22" height="10" rx="3" fill="#00d76d"/>
+      <rect x="100" y="70" width="22" height="10" rx="3" fill="rgba(0,215,109,0.5)"/>
+      <rect x="125" y="70" width="22" height="10" rx="3" fill="rgba(0,215,109,0.1)" stroke="rgba(0,215,109,0.2)" stroke-width="1"/>
+      <rect x="150" y="70" width="22" height="10" rx="3" fill="rgba(0,215,109,0.1)" stroke="rgba(0,215,109,0.2)" stroke-width="1"/>
+    </svg>
+  </div>
+  <div class="metric" style="font-size:42px;"><em>40–60</em>%</div>
+  <div class="metric-name">Less duplicated work, rework &amp; waste</div>
+  <div class="card-desc">Processes mapped end to end and redesigned around how work actually flows.</div>
+</div>
+
+<!-- ======= CARD 3: CUSTOMER RETENTION ======= -->
+<div class="card">
+  <div class="kpi-label">Customer Retention</div>
+  <div class="viz" style="flex-direction:column;align-items:flex-start;gap:10px;">
+    <div class="rdots" id="rdots"></div>
+    <div class="legend-row">
+      <span class="legend-item">
+        <span class="legend-dot" style="background:#00d76d;"></span>Retained
+      </span>
+      <span class="legend-item">
+        <span class="legend-dot" style="background:transparent;border:1.5px solid rgba(232,215,181,0.45);"></span>Churned
+      </span>
+    </div>
+  </div>
+  <div class="metric"><em>+13</em>%</div>
+  <div class="metric-name">Increase in customer retention</div>
+  <div class="card-desc">Cancellation drivers identified. Team incentives realigned to retention, not just sign-ups.</div>
+</div>
+
+<!-- ======= CARD 4: PROFIT GROWTH ======= -->
+<div class="card">
+  <div class="kpi-label">Profit Growth</div>
+  <div class="viz">
+    <svg viewBox="0 0 260 80" fill="none" width="100%" height="96" aria-hidden="true">
+      <defs>
+        <linearGradient id="ag" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#00d76d" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#00d76d" stop-opacity="0"/>
+        </linearGradient>
+        <clipPath id="cc">
+          <rect id="cr" x="0" y="0" width="0" height="80"/>
+        </clipPath>
+      </defs>
+      <!-- horizontal grid -->
+      <line x1="0" y1="74" x2="260" y2="74" stroke="rgba(0,215,109,0.15)" stroke-width="1"/>
+      <line x1="0" y1="54" x2="260" y2="54" stroke="rgba(0,215,109,0.07)" stroke-width="1"/>
+      <line x1="0" y1="34" x2="260" y2="34" stroke="rgba(0,215,109,0.07)" stroke-width="1"/>
+      <line x1="0" y1="14" x2="260" y2="14" stroke="rgba(0,215,109,0.07)" stroke-width="1"/>
+      <!-- area fill -->
+      <path d="M8,70 L48,65 L95,59 L140,50 L180,37 L222,22 L252,10 L252,74 L8,74 Z"
+            fill="url(#ag)" clip-path="url(#cc)"/>
+      <!-- line -->
+      <polyline points="8,70 48,65 95,59 140,50 180,37 222,22 252,10"
+                stroke="#00d76d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                fill="none" clip-path="url(#cc)"/>
+      <!-- endpoint glow -->
+      <circle cx="252" cy="10" r="9" fill="rgba(0,215,109,0.15)" clip-path="url(#cc)"/>
+      <circle cx="252" cy="10" r="3.5" fill="#00d76d" clip-path="url(#cc)"/>
+      <!-- annotation -->
+      <text x="240" y="8" fill="#00d76d" font-size="8.5" font-family="Inter" font-weight="600"
+            text-anchor="end" clip-path="url(#cc)">+27%</text>
+      <!-- baseline label -->
+      <text x="2" y="79" fill="#e8d7b5" fill-opacity="0.35" font-size="7.5" font-family="Inter">0</text>
+    </svg>
+  </div>
+  <div class="metric"><em>+27</em>%</div>
+  <div class="metric-name">Increase in profit margin</div>
+  <div class="card-desc">Pricing, margin and commercial model redesigned with data at the centre.</div>
+</div>
+
+<!-- ======= CARD 5: TRANSACTION SPEED ======= -->
+<div class="card">
+  <div class="kpi-label">Transaction Speed</div>
+  <div class="viz" style="align-items:center;">
+    <div class="speed-wrap">
+      <div class="speed-item">
+        <div class="speed-item-label">Before — KYC completion</div>
+        <div class="speed-track">
+          <div class="speed-fill before">10 days avg.</div>
+        </div>
+      </div>
+      <div class="speed-item">
+        <div class="speed-item-label">After — KYC completion</div>
+        <div class="speed-track">
+          <div class="speed-fill after" id="after-bar">3 days</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="metric"><em>67</em>%</div>
+  <div class="metric-name">Faster transaction processing</div>
+  <div class="card-desc">End-to-end workflows mapped and rebuilt. KYC completion cut from 10 days to 3.</div>
+</div>
+
+</div><!-- /grid -->
+
+<script>
+// --- Customer Retention dot grid ---
+const rdots = document.getElementById('rdots');
+if (rdots) {
+  const total = 20, lost = 2;
+  for (let i = 0; i < total; i++) {
+    const d = document.createElement('div');
+    d.className = 'rdot' + (i >= total - lost ? ' lost' : '');
+    rdots.appendChild(d);
+  }
+}
+
+// --- Profit chart clip-reveal ---
+const cr = document.getElementById('cr');
+if (cr) {
+  let t0 = null;
+  const dur = 1300;
+  const ease = t => t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t+2,2)/2;
+  function tick(ts) {
+    if (!t0) t0 = ts;
+    const p = Math.min((ts - t0) / dur, 1);
+    cr.setAttribute('width', String(ease(p) * 260));
+    if (p < 1) requestAnimationFrame(tick);
+  }
+  setTimeout(() => requestAnimationFrame(tick), 300);
+}
+
+// --- Speed bar animate ---
+const afterBar = document.getElementById('after-bar');
+if (afterBar) {
+  setTimeout(() => { afterBar.style.width = '30%'; }, 450);
+}
+</script>
+</body>
+</html>

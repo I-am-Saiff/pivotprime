@@ -353,12 +353,12 @@ So every heading and every button on the site is now traced back to one of three
 places: a block in your document, the wording kept from the current pivotprime.ae,
 or this list.
 
-**The count was wrong until 25 August, and it was wrong in the direction that
-costs you time.** This list said 44, then 41. The real figure is **29**. Twelve
-lines it named as ours are yours, and are corrected below before anything went to
-you.
+**The count was wrong until 25 August, twice, and both times in the direction
+that costs you time.** This list said 44, then 41, then 29. The real figure is
+**18**. Twenty-three lines it named as ours are yours, and all of them were
+corrected before anything went to you.
 
-The 29 are structural and connective writing that your document did not supply,
+The 18 are structural and connective writing that no source of yours supplied,
 mostly the sub-headings that hold a page together and the closing lines above a
 button. **None of it is wrong, and none of it is invented positioning.** But none
 of it is yours either, and you should read it and either approve it or replace it.
@@ -395,10 +395,29 @@ your document's own words retired copy we had written to fill gaps: the heading
 toggle labels "Automate everything" and "Fix the constraint first". Nothing was
 lost: every sentence on that page is now yours, from section 4.4.
 
-### The twelve that were wrongly listed as ours
+### The twenty-three that were wrongly listed as ours
 
-Two separate faults, both in our check rather than on the site. Nothing on the
+Three separate faults, all in our check rather than on the site. Nothing on the
 page changed; what changed is who these lines are credited to.
+
+**Eleven come from your own HTML mockups**, which the reverse audit was not
+reading at all. It traced rendered copy to the copy document, to the live site
+and to this list, and those are three of the four places your wording lives. The
+fourth is the mockups in `req/`. Anything taken from one came back as ours:
+
+| From | Copy |
+|---|---|
+| `pivotprime-service-pages.html` | "How the work runs today, and what it becomes."<br>"Almost every engagement begins with the audit."<br>"Heavy at the start. Light by the end."<br>"Three seats. Pick the one that is missing."<br>"Where it does not fit"<br>"Find out which seat is actually missing."<br>"Fractional COO Owns execution"<br>"Fractional CFO Owns the numbers"<br>"One contract. One accountable party." |
+| `pivotprime-persona-pages.html`, `pivotprime-persona-tiles.html` | "Design the execution roadmap →" |
+| `pp-about-v2_2.html` | "Professional Services · UAE" — the comma in our version is ours, the words are hers |
+
+`check-unsanctioned-copy.mjs` now reads every `.html` in `req/` as a fourth
+source. The three loose mockups that lived outside the repository are copied into
+`req/` so the check is self-contained. Inline tags are stripped before the text
+is split, because both the mockup and the page colour half a heading with a
+`<span>` and splitting on every tag cuts the heading in two: the first version of
+this failed on "Heavy at the start. Light by the end." for exactly that reason,
+and was fixed before it was believed.
 
 **Five are your document's own wording.** Your copy spec writes its instructions
 in two kinds of table. The green copy blocks come out of the conversion as one

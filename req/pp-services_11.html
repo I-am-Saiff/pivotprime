@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pivot Prime Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; }
+
+body {
+  background: #e8f4ec;
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+  padding: 80px 32px 120px;
+}
+
+.section-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #009f50;
+  margin-bottom: 14px;
+}
+.section-heading {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 800;
+  color: #013325;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+  margin-bottom: 52px;
+  max-width: 560px;
+}
+
+/* ── Grid ── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+@media (max-width: 900px) { .services-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 560px) { .services-grid { grid-template-columns: 1fr; } }
+@media (min-width: 901px) {
+  .service-card:nth-child(4) { grid-column: 1; }
+  .service-card:nth-child(5) { grid-column: 2; }
+}
+
+/* ── Card base — uses CSS custom properties per colour variant ── */
+.service-card {
+  background: var(--bg);
+  border: 1px solid var(--border-clr);
+  border-radius: 18px;
+  padding: 28px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  transition:
+    transform   0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow  0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color 0.35s ease;
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+/* top-edge bar */
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2.5px;
+  background: var(--top-bar);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 2;
+}
+
+/* cursor spotlight */
+.service-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    500px circle at var(--mx,50%) var(--my,50%),
+    var(--spotlight),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.service-card:hover {
+  transform: translateY(-7px);
+  box-shadow: var(--hover-shadow);
+  border-color: var(--hover-border);
+}
+.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover::after  { opacity: 1; }
+
+/* ── Colour variants ── */
+
+/* 1. Dark forest green */
+.c-darkgreen {
+  --bg:           #013325;
+  --border-clr:   rgba(0,215,109,0.22);
+  --top-bar:      linear-gradient(90deg, transparent, #00d76d, transparent);
+  --spotlight:    rgba(0,215,109,0.07);
+  --hover-shadow: 0 12px 36px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,215,109,0.4);
+  --hover-border: rgba(0,215,109,0.45);
+  --c-heading:    #fefbf8;
+  --c-price:      #00d76d;
+  --c-body:       #b8d9c6;
+  --c-secondary:  rgba(184,217,198,0.65);
+  --c-cta:        #fefbf8;
+  --c-divider:    rgba(0,215,109,0.18);
+  --badge-bg:     rgba(0,215,109,0.15);
+  --badge-stroke: #00d76d;
+  --accent-opacity: 0.2;
+  --accent-hover:   0.38;
+}
+
+/* 2. Medium green */
+.c-midgreen {
+  --bg:           #007d40;
+  --border-clr:   rgba(255,255,255,0.22);
+  --top-bar:      linear-gradient(90deg, transparent, rgba(255,255,255,0.85), transparent);
+  --spotlight:    rgba(255,255,255,0.08);
+  --hover-shadow: 0 12px 36px rgba(0,80,35,0.45), 0 0 0 1px rgba(255,255,255,0.4);
+  --hover-border: rgba(255,255,255,0.5);
+  --c-heading:    #ffffff;
+  --c-price:      #c8f0da;
+  --c-body:       rgba(255,255,255,0.92);
+  --c-secondary:  rgba(255,255,255,0.65);
+  --c-cta:        #ffffff;
+  --c-divider:    rgba(255,255,255,0.25);
+  --badge-bg:     rgba(255,255,255,0.2);
+  --badge-stroke: #ffffff;
+  --accent-opacity: 0.22;
+  --accent-hover:   0.42;
+}
+
+/* 3. Light cream */
+.c-light {
+  --bg:           #efeae0;
+  --border-clr:   rgba(1,51,37,0.1);
+  --top-bar:      linear-gradient(90deg, transparent, #00d76d, transparent);
+  --spotlight:    rgba(0,215,109,0.06);
+  --hover-shadow: 0 12px 36px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,215,109,0.35);
+  --hover-border: rgba(0,215,109,0.4);
+  --c-heading:    #013325;
+  --c-price:      #009f50;
+  --c-body:       #3d5244;
+  --c-secondary:  rgba(1,51,37,0.48);
+  --c-cta:        #013325;
+  --c-divider:    rgba(1,51,37,0.12);
+  --badge-bg:     rgba(1,51,37,0.08);
+  --badge-stroke: #009f50;
+  --accent-opacity: 0.15;
+  --accent-hover:   0.28;
+}
+
+/* 3b. Dark olive gold */
+.c-olivegold {
+  --bg:           #3a3510;
+  --border-clr:   rgba(200,175,80,0.25);
+  --top-bar:      linear-gradient(90deg, transparent, #c8af50, transparent);
+  --spotlight:    rgba(200,175,80,0.08);
+  --hover-shadow: 0 12px 36px rgba(0,0,0,0.45), 0 0 0 1px rgba(200,175,80,0.45);
+  --hover-border: rgba(200,175,80,0.55);
+  --c-heading:    #fef9eb;
+  --c-price:      #c8af50;
+  --c-body:       rgba(254,249,235,0.82);
+  --c-secondary:  rgba(254,249,235,0.52);
+  --c-cta:        #fef9eb;
+  --c-divider:    rgba(200,175,80,0.22);
+  --badge-bg:     rgba(200,175,80,0.15);
+  --badge-stroke: #c8af50;
+  --accent-opacity: 0.18;
+  --accent-hover:   0.35;
+}
+
+/* 4. Black */
+.c-black {
+  --bg:           #000000;
+  --border-clr:   rgba(0,215,109,0.18);
+  --top-bar:      linear-gradient(90deg, transparent, #00d76d, transparent);
+  --spotlight:    rgba(0,215,109,0.06);
+  --hover-shadow: 0 12px 40px rgba(0,0,0,0.7), 0 0 0 1px rgba(0,215,109,0.45);
+  --hover-border: rgba(0,215,109,0.45);
+  --c-heading:    #fefbf8;
+  --c-price:      #00d76d;
+  --c-body:       rgba(255,255,255,0.82);
+  --c-secondary:  rgba(255,255,255,0.52);
+  --c-cta:        #fefbf8;
+  --c-divider:    rgba(255,255,255,0.12);
+  --badge-bg:     rgba(0,215,109,0.12);
+  --badge-stroke: #00d76d;
+  --accent-opacity: 0.18;
+  --accent-hover:   0.36;
+}
+
+/* 5. Bright green #00d76d — dark text, full opacity */
+.c-brightgreen {
+  --bg:           #00d76d;
+  --border-clr:   rgba(1,51,37,0.2);
+  --top-bar:      linear-gradient(90deg, transparent, rgba(1,51,37,0.5), transparent);
+  --spotlight:    rgba(1,51,37,0.06);
+  --hover-shadow: 0 12px 36px rgba(0,140,60,0.4), 0 0 0 1px rgba(1,51,37,0.35);
+  --hover-border: rgba(1,51,37,0.4);
+  --c-heading:    #012a1d;
+  --c-price:      #014d2f;
+  --c-body:       #023d28;
+  --c-secondary:  rgba(1,51,37,0.62);
+  --c-cta:        #012a1d;
+  --c-divider:    rgba(1,51,37,0.18);
+  --badge-bg:     rgba(1,51,37,0.12);
+  --badge-stroke: #013325;
+  --accent-opacity: 0.2;
+  --accent-hover:   0.38;
+}
+
+.card-accent { display: none; }
+
+/* ── Icon badge ── */
+.card-icon-badge {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: var(--badge-bg);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+  flex-shrink: 0;
+  transition: background 0.3s ease, transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+.service-card:hover .card-icon-badge { transform: scale(1.1); }
+.card-icon-badge svg {
+  width: 20px; height: 20px;
+  stroke: var(--badge-stroke);
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ── Card text ── */
+.card-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--c-heading);
+  margin-bottom: 5px;
+  line-height: 1.25;
+}
+.card-price {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--c-price);
+  margin-bottom: 14px;
+  letter-spacing: 0.01em;
+}
+.card-divider {
+  height: 1px;
+  background: var(--c-divider);
+  margin-bottom: 14px;
+}
+.card-desc {
+  font-size: 13px;
+  line-height: 1.68;
+  color: var(--c-body);
+  flex: 1;
+  margin-bottom: 18px;
+}
+.card-desc-secondary {
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--c-secondary);
+  margin-bottom: 18px;
+}
+.card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--c-cta);
+  text-decoration: none;
+  margin-top: auto;
+}
+.card-cta-arrow {
+  display: inline-block;
+  transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1);
+}
+.service-card:hover .card-cta-arrow { transform: translateX(5px); }
+
+/* ── Entrance ── */
+.service-card.visible {
+  animation: cardIn 0.55s cubic-bezier(0.25,0.46,0.45,0.94) forwards,
+             borderPulse 0.9s ease 0.3s 1;
+}
+@keyframes cardIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes borderPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(0,215,109,0); }
+  45%  { box-shadow: 0 0 0 8px rgba(0,215,109,0.13); }
+  100% { box-shadow: 0 0 0 0 rgba(0,215,109,0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-card { transition: none; animation: none; opacity: 1; transform: none; }
+  .service-card::before, .service-card::after { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="section-eyebrow">Our Services</div>
+<h2 class="section-heading">What do we actually do</h2>
+
+<div class="services-grid">
+
+  <!-- 1 · Audit → Dark Green · entry point, foundational -->
+  <div class="service-card c-darkgreen">
+    <div class="card-icon-badge">
+      <svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><line x1="14.5" y1="14.5" x2="20" y2="20"/><polyline points="7,10 9,8 11,11 13,9"/></svg>
+    </div>
+    <!-- accent: 4×4 dot grid — systematic mapping -->
+    <svg class="card-accent" viewBox="0 0 52 52" fill="none">
+      <circle cx="6"  cy="6"  r="2.5" fill="#00d76d"/>
+      <circle cx="20" cy="6"  r="2.5" fill="#00d76d"/>
+      <circle cx="34" cy="6"  r="2.5" fill="#00d76d"/>
+      <circle cx="48" cy="6"  r="2.5" fill="#00d76d"/>
+      <circle cx="6"  cy="20" r="2.5" fill="#00d76d"/>
+      <circle cx="20" cy="20" r="2.5" fill="#00d76d"/>
+      <circle cx="34" cy="20" r="2.5" fill="#00d76d"/>
+      <circle cx="48" cy="20" r="2.5" fill="#00d76d"/>
+      <circle cx="6"  cy="34" r="2.5" fill="#00d76d"/>
+      <circle cx="20" cy="34" r="2.5" fill="#00d76d"/>
+      <circle cx="34" cy="34" r="2.5" fill="#00d76d"/>
+      <circle cx="48" cy="34" r="2.5" fill="#00d76d"/>
+      <circle cx="6"  cy="48" r="2.5" fill="#00d76d"/>
+      <circle cx="20" cy="48" r="2.5" fill="#00d76d"/>
+      <circle cx="34" cy="48" r="2.5" fill="#00d76d"/>
+      <circle cx="48" cy="48" r="2.5" fill="#00d76d"/>
+    </svg>
+    <div class="card-title">Operational Clarity Audit</div>
+    <div class="card-price">From AED 15,000</div>
+    <div class="card-desc">We map how the business actually runs today: process, bottlenecks, founder dependency, margin leaks and the decisions that slow everything down.</div>
+    <div class="card-divider"></div>
+    <div class="card-desc-secondary">Scope depends on the size of the business, how many functions are involved and the depth of analysis required.</div>
+    <a href="#" class="card-cta">See what the audit covers <span class="card-cta-arrow">→</span></a>
+  </div>
+
+  <!-- 2 · Fractional Leadership → Black · premium, executive -->
+  <div class="service-card c-black">
+    <div class="card-icon-badge">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><circle cx="5" cy="9" r="2.2"/><circle cx="19" cy="9" r="2.2"/><path d="M3,19 C3,15.5 5.5,14 8,14 L16,14 C18.5,14 21,15.5 21,19"/><path d="M1,19 C1,17 2.5,16 4.5,16"/><path d="M23,19 C23,17 21.5,16 19.5,16"/></svg>
+    </div>
+    <!-- accent: concentric rings — layers of leadership -->
+    <svg class="card-accent" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="6"  stroke="#00d76d" stroke-width="1.8"/>
+      <circle cx="26" cy="26" r="14" stroke="white"   stroke-width="1.4"/>
+      <circle cx="26" cy="26" r="22" stroke="white"   stroke-width="1" stroke-dasharray="3 3"/>
+    </svg>
+    <div class="card-title">Fractional COO, CFO and Chief of Staff</div>
+    <div class="card-price">Scoped per engagement</div>
+    <div class="card-desc">COO, Chief of Staff and CFO seats, for businesses that need executive capability for a season rather than a permanent headcount cost.</div>
+    <div class="card-divider"></div>
+    <div class="card-desc-secondary">Priced on the days a month, the seniority of the seat, and the scope of what needs to be run or built.</div>
+    <a href="#" class="card-cta">How the fractional leadership works <span class="card-cta-arrow">→</span></a>
+  </div>
+
+  <!-- 3 · Build & Place → Dark olive gold -->
+  <div class="service-card c-olivegold">
+    <div class="card-icon-badge">
+      <svg viewBox="0 0 24 24"><rect x="3" y="9" width="14" height="13" rx="1.5"/><path d="M7,22 L7,17 L11,17 L11,22"/><polyline points="3,9 10,3 17,9"/><circle cx="19" cy="6" r="3"/><line x1="19" y1="9" x2="19" y2="13"/></svg>
+    </div>
+    <!-- accent: diagonal hatch — construction, hands-on work -->
+    <svg class="card-accent" viewBox="0 0 52 52" fill="none">
+      <line x1="0"  y1="52" x2="52" y2="0"  stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="10" y1="52" x2="52" y2="10" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="20" y1="52" x2="52" y2="20" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="30" y1="52" x2="52" y2="30" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="40" y1="52" x2="52" y2="40" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="0"  y1="42" x2="42" y2="0"  stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="0"  y1="32" x2="32" y2="0"  stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="0"  y1="22" x2="22" y2="0"  stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="0"  y1="12" x2="12" y2="0"  stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <div class="card-title">Build and Place</div>
+    <div class="card-price">Scoped per engagement</div>
+    <div class="card-desc">We put people inside your business to execute the fix rather than leaving you to run it yourself. Project managers, analysts and operators embedded on-site.</div>
+    <div class="card-divider"></div>
+    <div class="card-desc-secondary">Priced on the roles, the days a month and the length of the engagement.</div>
+    <a href="#" class="card-cta">How we staff an engagement <span class="card-cta-arrow">→</span></a>
+  </div>
+
+  <!-- 4 · Technology Builds → Bright green #00d76d · energy, momentum -->
+  <div class="service-card c-brightgreen">
+    <div class="card-icon-badge">
+      <svg viewBox="0 0 24 24"><polyline points="16,18 22,12 16,6"/><polyline points="8,6 2,12 8,18"/><rect x="9" y="5" width="6" height="14" rx="1.5"/></svg>
+    </div>
+    <!-- accent: circuit path — right-angle tech routing -->
+    <svg class="card-accent" viewBox="0 0 52 52" fill="none">
+      <circle cx="8"  cy="44" r="3"   stroke="#013325" stroke-width="1.8"/>
+      <circle cx="26" cy="26" r="3"   stroke="#013325" stroke-width="1.8"/>
+      <circle cx="44" cy="8"  r="3"   stroke="#013325" stroke-width="1.8"/>
+      <circle cx="44" cy="44" r="3"   stroke="#013325" stroke-width="1.8"/>
+      <line x1="8"  y1="44" x2="8"  y2="26" stroke="#013325" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="8"  y1="26" x2="26" y2="26" stroke="#013325" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="26" y1="26" x2="26" y2="8"  stroke="#013325" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="26" y1="8"  x2="44" y2="8"  stroke="#013325" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="44" y1="8"  x2="44" y2="44" stroke="#013325" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 3"/>
+    </svg>
+    <div class="card-title">Technology Builds</div>
+    <div class="card-price">Scoped per engagement</div>
+    <div class="card-desc">Websites, CRMs, workflow automation, dashboards and AI where it genuinely removes cost. We build and hand it over, or run it for you.</div>
+    <div class="card-divider"></div>
+    <div class="card-desc-secondary">Priced on the build itself, the systems it has to connect to, and whether ongoing support is needed.</div>
+    <a href="#" class="card-cta">See what we build <span class="card-cta-arrow">→</span></a>
+  </div>
+
+  <!-- 5 · UAE Market Entry → #009f50 mid green · growth, expansion -->
+  <div class="service-card c-midgreen">
+    <div class="card-icon-badge">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M2,12 L22,12"/><path d="M12,3 C9,6 7.5,9 7.5,12 C7.5,15 9,18 12,21"/><path d="M12,3 C15,6 16.5,9 16.5,12 C16.5,15 15,18 12,21"/><polyline points="16,8 20,8 20,12"/></svg>
+    </div>
+    <!-- accent: radiating spokes — expansion into new territory -->
+    <svg class="card-accent" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="4" stroke="white" stroke-width="1.8"/>
+      <line x1="26" y1="4"  x2="26" y2="18" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="26" y1="34" x2="26" y2="48" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="4"  y1="26" x2="18" y2="26" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="34" y1="26" x2="48" y2="26" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="9"  y1="9"  x2="19" y2="19" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="33" y1="33" x2="43" y2="43" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="43" y1="9"  x2="33" y2="19" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="9"  y1="43" x2="19" y2="33" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <div class="card-title">UAE Market Entry</div>
+    <div class="card-price">Scoped per engagement</div>
+    <div class="card-desc">Licence to functioning operation. We build the financial model first, with the investment case, then handle entity setup, banking, staffing and go-to-market.</div>
+    <div class="card-divider"></div>
+    <div class="card-desc-secondary">Priced on the entity structure, whether the products need regulatory approval, and the speed of execution required.</div>
+    <a href="#" class="card-cta">How market entry works <span class="card-cta-arrow">→</span></a>
+  </div>
+
+</div>
+
+<script>
+const cards = document.querySelectorAll('.service-card');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const card = entry.target;
+    const idx = [...cards].indexOf(card);
+    setTimeout(() => card.classList.add('visible'), idx * 130);
+    observer.unobserve(card);
+  });
+}, { threshold: 0.1 });
+cards.forEach(c => observer.observe(c));
+
+cards.forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+    card.style.setProperty('--my', ((e.clientY - r.top)  / r.height * 100) + '%');
+  });
+});
+</script>
+</body>
+</html>

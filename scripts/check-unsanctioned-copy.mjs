@@ -12,9 +12,10 @@
  * document.
  *
  * So this one walks the other way: every heading and every call to action the
- * site actually renders must trace to a block in docs/spec.md, or to an entry
- * in scripts/sanctioned-copy.json that says who decided it and where the client
- * can read about it. Anything else fails.
+ * site actually renders must trace to a block in docs/spec.md, to one of the
+ * client's own mockups in req/, or to an entry in scripts/sanctioned-copy.json
+ * that says who decided it and where the client can read about it. Anything
+ * else fails.
  *
  * WHAT IT DELIBERATELY DOES NOT DO
  *
@@ -26,7 +27,7 @@
  *   node scripts/check-unsanctioned-copy.mjs [baseUrl]
  */
 
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { loadSpecBlocks, loadSpecGridCells } from "./spec-blocks.mjs";
 
@@ -62,7 +63,62 @@ const specHaystack = norm(Object.values(loadSpecBlocks()).flat().join(" "));
 // Matched cell by cell rather than as one joined haystack. Joined, two adjacent
 // and unrelated cells sanctioned "We understand human behaviour" between them.
 const specGridCells = loadSpecGridCells().map(norm);
-const inSpec = (key) => specHaystack.includes(key) || specGridCells.some((c) => c.includes(key));
+
+/**
+ * The client's own mockups, as text, one visible run at a time.
+ *
+ * WHY THIS IS THE FOURTH SOURCE
+ *
+ * Copy on this site comes from four places, not three. The copy document, the
+ * live pivotprime.ae, the decisions listed in sanctioned-copy.json — and the
+ * HTML mockups in req/, which she wrote and sent and which carry finished
+ * wording, not just layout.
+ *
+ * That fourth one was missing, so anything taken from a mockup fell through to
+ * "we invented this". Eleven of the twenty-nine lines in the authored list were
+ * hers: the whole Fractional Leadership set and both Build and Place headings
+ * out of pivotprime-service-pages.html, "Design the execution roadmap" out of
+ * both persona mockups, and "Professional Services · UAE" out of pp-about-v2_2.
+ * The client file was about to ask her to approve eleven lines she wrote.
+ *
+ * Runs are kept separate rather than joined into one string, for the reason the
+ * grid-cell loader gives: a joined haystack sanctions phrases that exist only
+ * across the boundary between two unrelated elements.
+ */
+function loadClientMockups() {
+  const dir = join(process.cwd(), "req");
+  const files = readdirSync(dir).filter((f) => f.toLowerCase().endsWith(".html"));
+  if (!files.length) {
+    throw new Error("reverse-audit: no mockups found in req/. They are tracked, so an empty directory is a broken checkout, not a site with no mockups.");
+  }
+  const runs = [];
+  for (const file of files) {
+    const html = readFileSync(join(dir, file), "utf8")
+      .replace(/<(script|style)[\s\S]*?<\/\1>/gi, " ")
+      .replace(/<!--[\s\S]*?-->/g, " ")
+      // Inline tags are transparent to innerText, which is what the site side of
+      // this comparison collects. Both the mockup and the page write half a
+      // heading inside a <span> to colour it: "Heavy at the start. <span>Light by
+      // the end.</span>". Splitting on every tag cuts that in two and the whole
+      // heading matches nothing. Block tags still split, so unrelated elements
+      // are never joined.
+      .replace(/<\/?(span|b|strong|i|em|u|a|small|sup|sub|mark|code)\b[^>]*>/gi, "")
+      .replace(/<br\s*\/?>/gi, " ");
+    for (const run of html.split(/<[^>]+>/)) {
+      const key = norm(run);
+      if (key) runs.push({ file, key });
+    }
+  }
+  return runs;
+}
+
+const mockupRuns = loadClientMockups();
+
+/** Traceable to something the client wrote: the document, or one of her mockups. */
+const inClientSource = (key) =>
+  specHaystack.includes(key) ||
+  specGridCells.some((c) => c.includes(key)) ||
+  mockupRuns.some((r) => r.key.includes(key));
 
 const sanctioned = new Map(SANCTIONED.entries.map((e) => [norm(e.text), e]));
 
@@ -170,7 +226,7 @@ while (queue.length) {
     const key = norm(text);
     if (!key) continue;
     inspected += 1;
-    if (inSpec(key)) continue;
+    if (inClientSource(key)) continue;
     if (sanctioned.has(key)) continue;
     if (seen.has(key)) continue;
     seen.add(key);
