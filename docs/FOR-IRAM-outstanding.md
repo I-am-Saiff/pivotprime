@@ -277,36 +277,58 @@ it appears to when the two overlap.
 
 ---
 
-## 6c. Four logos you will notice are missing, and why
+## 6c. Your global institution logos, and where they went
 
-**On your current website**, the row of logos headed *"Companies we have delivered
-for"* includes **Willis Towers Watson, KPMG, AIG and MetLife**, and a card reading
-*"Experience inside global institutions"* scrolling along in the same row.
+**Short version: nothing was thrown away, and your current site was not making a
+false claim. We still hold all four files and they can go back this week.**
 
-**On the new site those four are not there**, and that is deliberate rather than
-an oversight.
+### What your current site actually does
 
-Those are companies you worked at. Your own biography on the same page says so:
-sixteen years in senior roles at AIG, MetLife and Gallagher. Under a heading that
-says "companies we have delivered for", the page is making a different claim
-about them, and a reader who knows the sector will see the difference. We took
-Gallagher out of the new site for the same reason a few days ago.
+The row of logos on pivotprime.ae is not one group, it is two, and it runs **two
+heading cards through the same scrolling row**:
 
-**We would rather show this properly than not at all.** Your experience inside
-those institutions is one of the strongest things about the offer, and the
-"Experience inside global institutions" card suggests you already thought so.
+> **Companies we have delivered for**  ...client logos...
+> **Experience inside global institutions**  ...Willis Towers Watson, KPMG, AIG, MetLife...
 
-**What we need from you.** Tell us which of these you want:
+So the four global names always had their own label. They were never presented as
+clients. **The problem is only that both groups share one moving row**, so by the
+time a reader reaches AIG, the label that belongs to it has scrolled out of view
+and the one still in mind is "companies we have delivered for". The labels are
+right; the row stopped them doing their job.
 
-1. **Bring them back as their own section**, with their own heading, something
-   like "Experience inside global institutions", clearly separate from the client
-   logos. We still hold all four files.
-2. **Leave them off** and let the client logos stand alone.
-3. **Something else**, if any of the four genuinely is a delivery client, in which
-   case tell us which and it goes back in the client row.
+### What the new site does
 
-We are not going to guess this one. Naming a company as a client when it was an
-employer is the kind of claim that is easy to check and expensive to get wrong.
+We kept the client group, and its heading is now **real text sitting above the
+strip** rather than a picture scrolling inside it. It stays in place while the
+logos move, which is the whole point of a label.
+
+The four global logos are not on the new site yet. **That is a gap, not a
+decision to drop them.** They need their own labelled strip, and we did not want
+to invent one for you.
+
+### What we would like to build, whenever you say
+
+A **second strip directly under the client one**, headed **"Experience inside
+global institutions"**, carrying Willis Towers Watson, KPMG, AIG and MetLife.
+Same treatment as the client strip: heading as fixed text, logos moving beneath
+it. Both groups keep their own label, permanently in view.
+
+**We hold all four logo files. This is about an hour's work. Say yes and it is
+live the same day.**
+
+Two things to confirm with it:
+
+1. **Is the heading wording right?** "Experience inside global institutions" is
+   your own line, taken from the card on your current site. If you would rather
+   it read differently, tell us.
+2. **Is any of the four actually a client?** If one is, it belongs in the top
+   strip instead and we will move it.
+
+One related note: **Gallagher** was in the client strip on the new site and we
+took it out last week, because it was in the client group rather than the
+employer group and your biography names it as somewhere you worked. If we build
+the second strip, Gallagher belongs in it alongside the other four, unless you
+tell us otherwise.
 
 ---
 

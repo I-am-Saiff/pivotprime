@@ -697,8 +697,16 @@ card reading **"Experience inside global institutions"** scrolling in the same
 row.
 
 Those four are Iram's former employers. Her own credential names AIG, MetLife and
-Gallagher as the companies she spent sixteen years working at. The live strip
-presents them under a heading claiming delivery.
+Gallagher as the companies she spent sixteen years working at.
+
+**CORRECTION TO THE FIRST VERSION OF THIS ENTRY.** It said the live site presents
+those four "under a heading claiming delivery". That is not right, and the
+`logo-text-block-1-2.jpg` file is what settles it. The live strip runs **two**
+heading cards through one scrolling row: "Companies we have delivered for" and
+"Experience inside global institutions". The employer group always had its own
+label. The two groups were simply sharing a single row, so whichever label had
+scrolled past was the one the reader no longer had in view. The live site never
+claimed those four as clients; its labels stopped doing their job.
 
 **None of the four is in our build.** Checked today: the strip carries Democrance,
 InsuranceHub, studio88, Women Who Thrive, Man Cave, Birds of Paradise Foundation
@@ -725,6 +733,36 @@ see four recognisable global brands missing, and reasonably ask where they went.
 The answer is that they are her CV rather than her client list, that we have
 separated the two, and that they can come back the moment she says so, under
 their own heading rather than under "Companies we have delivered for".
+
+---
+
+## 1q. Tried and rejected: centring the hero heading
+
+Recorded so nobody spends an afternoon on it again.
+
+The live site's H1 is centred, line one full width and line two shorter beneath
+it. Ours is left-aligned. Centring the H1 and its sub-line at 1440 and 768, with
+the eyebrow, body copy and buttons left where they are, was tried and reverted.
+
+**It reads worse than what it replaces**, for two specific reasons rather than
+taste:
+
+- **The neon accent rule is orphaned.** It sits under the eyebrow at the left
+  edge as the anchor for a left-aligned stack. With the heading centred it points
+  at nothing.
+- **The left edges stop relating to each other.** Eyebrow at 145px, centred H1 at
+  345px, body copy back at 145px. Three alignment changes inside one block, which
+  reads as a layout fault rather than a composition.
+
+At 768 the H1 already fills the width so centring is nearly invisible, but it
+orphans "build it." in the middle of the line, which the left-aligned version
+does not.
+
+**The underlying reason it cannot be lifted piecemeal:** on the live site the
+whole hero is centred, so the heading has a composition around it. Centring only
+the heading inside a left-aligned hero is a different thing wearing the same
+shape. Doing it properly means restyling the hero, which was explicitly not the
+brief. No type sizes were changed in the attempt.
 
 ---
 
