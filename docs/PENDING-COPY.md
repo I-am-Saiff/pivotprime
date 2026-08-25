@@ -616,6 +616,74 @@ are already server components.
 
 ---
 
+## 1j-a. Two records corrected on 25 August, on Saif's own knowledge
+
+Neither of these came from a file in the working folder. Both are Saif stating
+what he knows about channels this project cannot read, and both are recorded that
+way rather than as something verified here, because the pattern that produced
+them is the one that cost this branch the most: **instructions arriving in
+channels nobody audits.** Forty-four PowerPoint comments sat unread from 22
+August because every audit read rendered images. Email is the same shape.
+
+### The logo file was supplied on 11 August
+
+`docs/FOR-IRAM-outstanding.md` section 6 listed the logo under "things that were
+mentioned but never sent". That was wrong. It arrived on 11 August and the row is
+corrected to **received, pending integration** — a work item of ours, not
+something owed by the client.
+
+**What the working folder actually shows**, for the record, is that the only logo
+file reachable from here is `Cinnacare PRIMARY LOGO V2 BG1.pdf` inside
+`fwdwebsitecopy.zip`, timestamped 24 August, and that is a *client's* logo rather
+than the Pivot Prime mark. **So the 11 August file is not in the working folder
+and has not been opened here.** Applying it needs the file put somewhere this
+repository can see.
+
+Four places carry the mark and all four change together: the header, the footer,
+the browser tab icon, and the social share image. The share image is separately
+outstanding, so the two should be done in one pass.
+
+### Phase 2: the diagnostic statements must be randomised, not grouped
+
+Her email of 12 August requires the diagnostic questions to appear **in random
+order rather than grouped by domain**.
+
+**This reverses 3.1 below, and 3.1 is currently built the other way.** The
+history matters:
+
+1. The inherited implementation interleaved, round-robining across all six
+   domains so every screen mixed all six. That is her email's structure.
+2. Deep spec §8.2 says "One domain per screen, seven statements visible together,
+   with a progress indicator showing six steps."
+3. We rebuilt it to §8.2 — six domain-titled screens — and kept a randomised
+   statement order **inside** each screen to stop straight-lining. That is
+   recorded in 3.1 as "resolved, built to spec".
+
+So the original developer was following her email and we replaced it with the
+document. **The email is the client's own later instruction and the document is
+the client's own earlier one**, which is the same precedence question already
+settled in favour of the client's later word for spec 3.6 (1w), How We Work (1x)
+and the fractional rename (1u).
+
+**Not actioned, and deliberately so.** The diagnostic is not in stage one, so
+nothing on the live site is wrong today. But this is not a small change when it
+comes:
+
+- The six-screen structure is the screen structure. Random order across domains
+  means one long list or arbitrary pagination, and the six-step progress
+  indicator §8.2 asks for stops being meaningful.
+- Scoring is unaffected — statements already carry stable spec-derived ids and
+  the export keys on identity rather than render position, which was built for
+  exactly this kind of reordering.
+- Deep spec §8.2 will then be a deviation and needs its own entry, the same way
+  everything else built against her later word does.
+
+**Before it is built, her email should be read directly.** "Random order, not
+grouped" is being carried here second-hand, and the one thing this branch has
+learned repeatedly is that a paraphrase of an instruction is not the instruction.
+
+---
+
 ## 1k. Two lines of ours on the contact page, and where Insights went
 
 **The contact page opening.** It read: *"Three fields, thirty seconds. We reply
@@ -1544,7 +1612,7 @@ Iram can veto the move without anyone rewriting copy.
 
 ## 3. Build deviations found in the existing code
 
-### 3.1 The deep diagnostic screen structure — **resolved, built to spec**
+### 3.1 The deep diagnostic screen structure — **REOPENED by her 12 August email, see 1j-a**
 
 Deep spec §8.2 says "One domain per screen, seven statements visible together,
 with a progress indicator showing six steps." The implementation interleaved
