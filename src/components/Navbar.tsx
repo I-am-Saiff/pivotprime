@@ -197,7 +197,7 @@ export default function Navbar() {
     <nav ref={navRef} data-site-header className="fixed top-4 right-4 left-4 z-50">
       <div className="mx-auto max-w-6xl rounded-xl glass-nav px-4 sm:px-6">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex flex-shrink-0 items-center" onClick={closeAll}>
+          <Link href="/" className="-mx-2 inline-flex min-h-11 flex-shrink-0 items-center px-2" onClick={closeAll}>
             <PivotLogo />
           </Link>
 
@@ -218,7 +218,7 @@ export default function Navbar() {
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
-            className="inline-flex items-center justify-center rounded-xl p-2 text-white/80 hover:bg-white/10 hover:text-white focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none lg:hidden"
+            className="-mr-1 inline-flex h-11 w-11 items-center justify-center rounded-xl text-white/80 hover:bg-white/10 hover:text-white focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none lg:hidden"
           >
             <span className="sr-only">{mobileOpen ? "Close main menu" : "Open main menu"}</span>
             <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">

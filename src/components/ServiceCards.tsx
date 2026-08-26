@@ -160,16 +160,23 @@ export default function ServiceCards({ headingLevel = "h3" }: { headingLevel?: "
       </ul>
 
       {/* Mobile Swipe / Page Dot Indicators */}
-      <div className="flex items-center justify-center gap-2 mt-6 md:hidden" aria-hidden="true">
+      <div className="mt-6 flex items-center justify-center md:hidden" aria-hidden="true">
         {Array.from({ length: totalCards }).map((_, idx) => (
           <button
             key={idx}
             type="button"
+            // Decorative, so it leaves the tab order with its aria-hidden row.
+            // The dot stays 8px; the button around it is 44 so a finger lands.
+            tabIndex={-1}
             onClick={() => scrollToIndex(idx)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              idx === activeIndex ? "w-6 bg-mid" : "w-2 bg-neutral-300"
-            }`}
-          />
+            className="flex h-11 w-11 items-center justify-center"
+          >
+            <span
+              className={`block h-2 rounded-full transition-all duration-300 motion-reduce:transition-none ${
+                idx === activeIndex ? "w-6 bg-mid" : "w-2 bg-neutral-300"
+              }`}
+            />
+          </button>
         ))}
       </div>
     </div>

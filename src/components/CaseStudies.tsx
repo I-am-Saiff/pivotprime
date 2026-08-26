@@ -260,7 +260,7 @@ export default function CaseStudies({
       </ul>
 
       {/* Slide Progress Dots */}
-      <div className="flex items-center justify-center gap-2 mt-4" aria-hidden="true">
+      <div className="mt-4 flex items-center justify-center" aria-hidden="true">
         {studies.map((_, idx) => (
           <button
             key={idx}
@@ -269,10 +269,16 @@ export default function CaseStudies({
             // The arrows above are the labelled, focusable control.
             tabIndex={-1}
             onClick={() => scrollToIndex(idx)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              idx === currentIndex ? "w-8 bg-mid" : "w-2 bg-neutral-300"
-            }`}
-          />
+            // The dot stays 8px; the button around it is 44px so a finger can
+            // land on it. Measured at 320 they were 8x8 and 13x8.
+            className={`flex h-11 w-11 items-center justify-center [&>span]:transition-all [&>span]:duration-300 motion-reduce:[&>span]:transition-none`}
+          >
+            <span
+              className={`block h-2 rounded-full ${
+                idx === currentIndex ? "w-8 bg-mid" : "w-2 bg-neutral-300"
+              }`}
+            />
+          </button>
         ))}
       </div>
     </div>

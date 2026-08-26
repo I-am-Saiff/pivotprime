@@ -52,12 +52,14 @@ export default function Footer() {
               privacy policy required by 2.7. The contact link is the 2.4 fix:
               it pointed at /contact while the live page was /contact-us, so the
               site standardises on /contact and /contact-us redirects to it. */}
-          <div className="flex flex-wrap gap-x-6 gap-y-4">
+          {/* -my-2 py-2 keeps the visual spacing while giving every link a 44px
+              hit area. Measured at 320: these were 16px tall. */}
+          <div className="-my-2 flex flex-wrap gap-x-6">
             {FOOTER_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="tracking-wider text-gray-300 uppercase transition-colors hover:text-white"
+                className="inline-flex min-h-11 items-center tracking-wider text-gray-300 uppercase transition-colors hover:text-white"
               >
                 {link.label}
               </Link>
@@ -65,7 +67,7 @@ export default function Footer() {
           </div>
           
           <div className="mt-6 md:mt-0">
-            <button onClick={scrollToTop} className="flex items-center text-gray-300 hover:text-white transition-colors">
+            <button onClick={scrollToTop} className="-my-2 inline-flex min-h-11 items-center py-2 text-gray-300 transition-colors hover:text-white">
               Back to top 
               <span className="ml-2 w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7"></path></svg>
