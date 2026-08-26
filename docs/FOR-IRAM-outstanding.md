@@ -1058,6 +1058,62 @@ refers to does, and it is in part one, because that one is waiting on you.
 
 ---
 
+## 24. Three notes of yours we have read but not acted on
+
+All three are from your slide comments. Each is here because acting on it would
+mean guessing at something only you can settle.
+
+### The video behind the hero
+
+Slide 1: *"Use video in the back."*
+
+**We have no video.** Nothing in anything you have sent is a video file, and the
+hero currently uses a still photograph. We are not going to source stock footage
+for the first thing a visitor sees.
+
+Send a file, or tell us the kind of thing you have in mind and who might shoot
+it, and it goes in. Worth knowing before you do: a video behind the headline is
+the single heaviest thing a page can carry, and this is the page your paid
+traffic lands on, so it needs to be short, silent, and small enough not to slow
+the first screen down. That is a solvable problem, not an argument against it.
+
+### The two buttons under the headline
+
+Slide 1, in full: *"Then text is only we find out what is holding your business
+back…. Change to Confirm you don't need our help, or don't think you need us,
+found out what we actually do..."*
+
+**We could not build this without inventing half of it.** Read as written it is
+not a finished sentence, and we cannot tell where the button label stops and the
+explanation starts. It also replaces a green final-copy block: your document's
+section 3.1 gives those two buttons as *"Find out what is holding your business
+back"* and *"See what we actually do"*, and section 1 says green blocks are
+verbatim.
+
+So the buttons still say what 3.1 says. **Write the two labels out as you want
+them to appear** and they change the same day.
+
+### The logo strip
+
+Slide 2: *"Fix the logos part and make them look much better, get proper logos
+again if needed as this part is looking cheap. If rest is not centre aligned then
+this also shouldn't be as it looks off against next sections."*
+
+**Some of this is done and the rest is a judgement we would rather you make.**
+The strip has been rebuilt: two labelled groups instead of one mixed row, the
+headings are real text that stays in place rather than pictures scrolling past,
+and Sky was recovered from the project under a different filename.
+
+What we have not done is replace the logo files or re-align the section, because
+"looking cheap" and "looks off" are things you are seeing and we are not.
+**Tell us which it is** — the image quality of specific logos, the sizes being
+uneven, the alignment against the sections above and below, or the whole
+treatment — and it is a quick fix once we know what we are fixing. If it is the
+files themselves, four of them we cannot identify at all, which is section 6.
+
+
+---
+
 ## Not needed for launch
 
 The eighteen commentary blocks for the diagnostic, and the screenshots of built

@@ -139,6 +139,25 @@ export type Metric = {
   label: string;
   context: string;
   /**
+   * Her own name for the card, from the .kpi-label in
+   * req/pivot-prime-kpi-cards_3.html.
+   */
+  kpiLabel: string;
+  /**
+   * Which visual the card carries. Her slide 3 comment asks for "Different
+   * visual language for each KPI", and her mockup shows what she means: a
+   * five-node execution track, a before-and-after block comparison, a retention
+   * dot grid, a profit trend, and a pair of speed tracks.
+   *
+   * FOUR OF THE FIVE ENCODE THE FIGURE. Ten blocks becoming seven is a
+   * percentage drawn rather than written, and a rising line has a slope. So each
+   * card renders its own frame now and the data-bearing mark appears with the
+   * figure. Nothing here publishes a number the section 9 table does not carry,
+   * including in pictures, which is the form no check would have caught.
+   * PENDING-COPY 1aj.
+   */
+  visual: "track" | "before-after-blocks" | "dot-grid" | "trend" | "before-after-tracks";
+  /**
    * Why there is no figure, and therefore what the card does.
    *
    * "client-confirmation": the document carries a number but it is not cleared
@@ -178,6 +197,8 @@ export const METRICS: Metric[] = [
     figure: null,
     suffix: "%",
     pending: "client-confirmation",
+    kpiLabel: "Execution",
+    visual: "track",
     label: "Faster execution across teams",
     context: "Decision rights, operating rhythm and delivery ownership rebuilt.",
   },
@@ -185,6 +206,8 @@ export const METRICS: Metric[] = [
     figure: null,
     suffix: "%",
     pending: "client-confirmation",
+    kpiLabel: "Process Efficiency",
+    visual: "before-after-blocks",
     label: "Reduction in duplicated work, rework and inefficiency",
     context:
       "Processes mapped end to end and redesigned around how the work actually flows.",
@@ -193,6 +216,8 @@ export const METRICS: Metric[] = [
     figure: null,
     suffix: "%",
     pending: "client-confirmation",
+    kpiLabel: "Customer Retention",
+    visual: "dot-grid",
     label: "Increase in customer retention",
     context: "Service cancellation drivers identified and addressed.",
   },
@@ -200,6 +225,8 @@ export const METRICS: Metric[] = [
     figure: null,
     suffix: "%",
     pending: "client-confirmation",
+    kpiLabel: "Profit Growth",
+    visual: "trend",
     label: "Increase in profit",
     context: "Pricing, margin and commercial model redesigned.",
   },
@@ -207,6 +234,8 @@ export const METRICS: Metric[] = [
     figure: null,
     suffix: "%",
     pending: "client-confirmation",
+    kpiLabel: "Transaction Speed",
+    visual: "before-after-tracks",
     label: "Faster transaction processing",
     context: "End to end customer and transaction workflows mapped and rebuilt.",
   },
@@ -214,6 +243,10 @@ export const METRICS: Metric[] = [
     figure: null,
     suffix: "",
     pending: "not-yet-supplied",
+    // Card 6 does not render and is not in her mockup, so it has no visual of
+    // its own. Given the trend frame so the type holds; nothing draws it.
+    kpiLabel: "Bespoke Builds",
+    visual: "trend",
     label: "Bespoke software and automation builds delivered",
     context: "Custom systems, CRMs, dashboards and automations built for clients.",
   },

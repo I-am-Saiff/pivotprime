@@ -50,8 +50,22 @@ export default function Home() {
               words replace an "Operations · Strategy · Execution" that was ours:
               it is in neither the copy document, nor the live site, nor any
               mockup. Styling and position unchanged. PENDING-COPY 1ah. */}
-          <span className="mb-6 block text-xs font-bold tracking-[0.22em] text-neon uppercase">
-            Strategy · Operations · Technology · Execution
+          {/* Below sm the four words need two lines. With the separators in
+              the flow the break landed after "Technology", so the second line
+              opened with an orphaned "·". The dots are decorative, so they are
+              hidden below sm and the words wrap as words. The separators return
+              at sm, where the line fits. PENDING-COPY 1ah. */}
+          <span className="mb-6 flex flex-wrap gap-x-2 text-xs font-bold tracking-[0.22em] text-neon uppercase">
+            {["Strategy", "Operations", "Technology", "Execution"].map((word, i) => (
+              <span key={word} className="contents">
+                {i > 0 && (
+                  <span aria-hidden="true" className="hidden sm:block">
+                    ·
+                  </span>
+                )}
+                <span>{word}</span>
+              </span>
+            ))}
           </span>
 
           {/* Neon accent rule */}
@@ -186,7 +200,9 @@ export default function Home() {
           services: after "we build it" the visitor's next thought is "prove it".
           Figures are green and count up on scroll; labels and context are in the
           standard body colour. Spec 3.3. */}
-      <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+      {/* pb-28 below sm: clears the floating WhatsApp button so the last
+          card does not end underneath it. PENDING-COPY 1ak. */}
+      <section className="bg-white px-4 pt-20 pb-28 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <header className="mb-12 max-w-3xl">
             <span className="block font-sans font-semibold text-xs tracking-[0.22em] uppercase text-mid mb-3">

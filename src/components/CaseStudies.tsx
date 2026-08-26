@@ -78,15 +78,21 @@ export default function CaseStudies({
               {CASE_STUDIES_HEADING}
             </Heading>
             <p className="mt-4 text-lg text-neutral-600 md:text-xl">{CASE_STUDIES_STANDFIRST}</p>
-            {/* Her own words, slide 8, verbatim. */}
-            <blockquote className="mt-8 border-l-2 border-mid/40 pl-6">
-              <p className="text-base leading-relaxed text-neutral-700 italic md:text-lg">
-                {FOUNDER_QUOTE.body}
-              </p>
-              <footer className="mt-3 font-sans text-xs font-bold tracking-[0.14em] text-mid uppercase not-italic">
-                {FOUNDER_QUOTE.attribution}
-              </footer>
-            </blockquote>
+            {/* Her own words, slide 8, verbatim. HOMEPAGE ONLY: /about renders
+                her pp-case-studies.html pull quote directly above this section,
+                and both are Iram. Two long quotes from the same person separated
+                by one heading reads as a mistake, which is what it looked like
+                when this was on both pages. PENDING-COPY 1ai. */}
+            {scope === "homepage" && (
+              <blockquote className="mt-8 border-l-2 border-mid/40 pl-6">
+                <p className="text-base leading-relaxed text-neutral-700 italic md:text-lg">
+                  {FOUNDER_QUOTE.body}
+                </p>
+                <footer className="mt-3 font-sans text-xs font-bold tracking-[0.14em] text-mid uppercase not-italic">
+                  {FOUNDER_QUOTE.attribution}
+                </footer>
+              </blockquote>
+            )}
           </div>
 
           {/* Carousel Navigation Controls */}

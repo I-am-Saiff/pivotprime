@@ -393,6 +393,62 @@ the words wrap as a list, or accept the wrap.
 
 ---
 
+## 1aj. The KPI cards, the eyebrow wrap, the floating button, and four comments nobody had processed
+
+### Her per-card visuals are built
+
+Slide 3: *"Really good idea, but just need Different visual language for each
+KPI"*. Built from her own `req/pivot-prime-kpi-cards_3.html` rather than
+invented: a four-node ALIGN / BUILD / EMBED / DONE track, a before-and-after
+block comparison, a retention dot grid with her legend, a profit trend on a
+gridded field, and a pair of speed tracks. Her `.kpi-label` card names are back
+with them.
+
+**Four of the five encode the figure.** Ten blocks becoming seven is a percentage
+drawn instead of written; a line has a slope; a dot grid split into retained and
+churned is a ratio. Publishing those while the written figures are withheld would
+put the same unapproved numbers on the page in the one form no check reads. So
+each card renders its frame now and the data-bearing mark appears with the
+figure. Card one is complete today because her track carries no quantity at all.
+
+Static, not animated. Her mockup moves particles along the track and grows the
+trend line; both would put the moving part outside the served HTML for a
+decoration.
+
+### The 360 eyebrow
+
+The four words need two lines at 360. With the separators in the flow the break
+landed after "Technology" and the second line opened with an orphaned dot. The
+dots are decorative, so they are hidden below `sm` and the words wrap as words.
+First attempt used inline-block spans and the browser collapsed the space before
+each dot, rendering "STRATEGY. OPERATIONS."; caught by looking at it. Flex with
+`gap-x-2` instead.
+
+### The floating WhatsApp button
+
+A fixed button passes over whatever is beneath it, so it cannot be made never to
+overlap. At 360 it was 64px square over a full-width column and covered the tail
+of a line on the KPI cards and the persona quote. It is 48px in the corner below
+`sm`, and those two sections carry a bottom gutter taller than it. Measured by
+sampling what sits under the button every 200px down the page: seven text
+elements before, and after the change nothing but section eyebrows passing
+mid-scroll, which is unavoidable.
+
+### Four comments from the decks that nobody had processed
+
+Found by the corrected extraction, on top of the three now in the client file:
+
+| Slide | Her words | State |
+|---|---|---|
+| 9 | "The quote boxes maybe in the lighter green to stand out bit more." | not done. The persona quote boxes are not on `mist` |
+| 12 | "WHAT YOU GET PART OF ALL SERVICES SHOWN LIKE THE ONE HERE, RIGHT SIDE SHADED" | on the audit page only. Four service pages have no such panel |
+| 14 | "Text on the animation at the bottom, remove that." | the same instruction as her slide 12 one, for Build and Place. Not actioned, and the slide 12 version is already logged as withdrawn-or-resolved in 1af |
+| 8 and 15 | "Try to have some of Saif's work shown in here too... at least one case study" and "Saif to put all his work or design this however he wants" | no case study of his work exists, and the Technology Builds page does not showcase any |
+
+None is blocking. The last one needs Saif rather than Iram.
+
+---
+
 ## 1b. Spec instructions that describe the live WordPress site, not this build
 
 Iram wrote parts of the spec against what she could see on pivotprime.ae. Those

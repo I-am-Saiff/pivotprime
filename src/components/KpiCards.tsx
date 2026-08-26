@@ -1,4 +1,5 @@
 import { METRICS } from "@/content/homepage";
+import KpiVisual from "./KpiVisual";
 
 /**
  * The five result cards, spec 3.3.
@@ -22,8 +23,11 @@ import { METRICS } from "@/content/homepage";
  * Card 6 is a different case and does not render: nobody has that number yet,
  * and spec 3.4 says "Do not launch this card with a placeholder."
  *
- * The mockup's per-card visuals are not built. Each one encodes a specific
- * figure, so there is nothing to draw until the figures exist.
+ * HER PER-CARD VISUALS ARE BUILT, as of 26 August, on her slide 3 comment
+ * "Different visual language for each KPI". See KpiVisual: the geometry comes
+ * from her own req/pivot-prime-kpi-cards_3.html rather than being invented, and
+ * the parts of it that encode the figure wait for the figure, because ten blocks
+ * becoming seven is a percentage drawn instead of written.
  */
 export default function KpiCards() {
   const cards = METRICS.filter((m) => m.pending !== "not-yet-supplied");
@@ -46,6 +50,13 @@ export default function KpiCards() {
               {metric.suffix}
             </p>
           )}
+
+          {/* Her own card name, from the .kpi-label in her mockup. */}
+          <p className="font-sans text-[10px] font-bold tracking-[0.18em] text-neon/70 uppercase">
+            {metric.kpiLabel}
+          </p>
+
+          <KpiVisual metric={metric} />
 
           <p className="text-base font-medium text-white">{metric.label}</p>
           <p className="mt-3 border-t border-neon/15 pt-3 text-sm leading-relaxed text-sand/80">

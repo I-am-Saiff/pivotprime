@@ -211,3 +211,37 @@ reason — a reporting tool wired into a gate becomes a tool people silence.
 
 It earned its place on the first run: it found five of her case study headlines
 missing, including on two studies built from that same file an hour earlier.
+
+
+## Full-page screenshots lie about images on this site
+
+`fullPage: true` has now reported an image as missing twice when it was fine: the
+Cinnacare photograph on the homepage, and the founder portrait, which produced a
+"the right half of the founder section is empty" finding that was not true. Next
+lazy-loads, the capture scrolls and returns, and the image never paints.
+
+**Viewport captures are the only reliable method here.** Scroll to the element,
+wait, screenshot the viewport or the element. To assert an image is actually
+there, read `naturalWidth` after scrolling it into view rather than looking at a
+picture of it.
+
+The same trap in reverse: an `alt=""` is falsy in JavaScript, so a probe testing
+`!img.getAttribute("alt")` reports every deliberately decorative image as missing
+alt text. Fourteen on the homepage, all correct. Test `hasAttribute("alt")`.
+
+## Any parser reading client material is tested against a line break first
+
+`scripts/*` that read her decks, her mockups or her copy document are reading
+files nobody controls, and the failures are silent by nature: a comment that does
+not parse does not announce itself, it is simply never seen.
+
+The extractor that read the PowerPoint comments matched `<a:t>(.*?)</a:t>`
+without `re.S`. Every comment containing a line break was dropped. It reported
+4, 31 and 31 comments across the three decks; the real figures are 7, 37 and 37.
+Six were never read, and one of them was her slide 1 instruction about the hero
+eyebrow, which is why the hero carried our wording instead of hers for a week.
+
+So before trusting any such parser: **feed it a case containing a line break and
+confirm the output changes.** The same applies to a cell that wraps across lines,
+an entity where a literal character is expected, and a value split across two
+elements. Each has already produced a wrong number on this branch.

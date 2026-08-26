@@ -144,7 +144,7 @@ export default function PersonaSwitcher() {
             <div
               key={persona.id}
               hidden={!isVisible}
-              className="frosted-card-light rounded-[28px] p-8 md:p-12 transition-all duration-300"
+              className="frosted-card-light rounded-[28px] px-8 pt-8 pb-24 transition-all duration-300 sm:pb-8 md:p-12"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
                 {/* Left Column: Heading, CTA, Quote */}
