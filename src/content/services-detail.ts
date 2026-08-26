@@ -80,6 +80,60 @@ export const MARKET_ENTRY = {
 };
 
 /** Spec 4.2, blocks 6 to 9 and 14. */
+/**
+ * The cost taper, from her 22 August service mockup.
+ *
+ * SHE REVISED THIS AND WE HAD THE OLD ONE. The 13 August mockup drew a curve
+ * labelled MONTH 1 / MONTH 3 / MONTH 6+ with two lines: "Senior time required"
+ * and "Your monthly cost". The 22 August file replaces it with three phase
+ * cards, moves the bands to 1–2 / 3–4 / 5+, names the days a month at each
+ * stage, adds what your team is doing alongside, and **removes the monthly cost
+ * line**. That removal is hers and it agrees with spec section 1, which allows
+ * one price on the site.
+ *
+ * Static cards rather than her animated curve: every word is in the served HTML,
+ * and the involvement bar is decorative, so the day counts are in the sentence
+ * rather than only in the bar.
+ */
+export const FRACTIONAL_PHASES = [
+  {
+    band: "Months 1–2",
+    badge: "Build",
+    title: "We lead.",
+    pivotPrime:
+      // Her mockup writes this with an em dash. Section 1 of her own copy
+      // document bans the em dash from the site, so it is a colon here. Recorded
+      // in PENDING-COPY 1f alongside the two expanded contractions, because
+      // re-punctuating her copy is the same class of change.
+      "Primary ownership: 8 to 10 days a month. Setting the operating model, building the team structure, owning the decisions.",
+    yourTeam: "Observing, learning the rhythm. Beginning to own the day-to-day tasks.",
+    involvement: 90,
+  },
+  {
+    band: "Months 3–4",
+    badge: "Transfer",
+    title: "We hand it over.",
+    pivotPrime:
+      "3 to 5 days a month. Coaching your lead, sitting in the critical decisions, closing the remaining gaps.",
+    yourTeam: "Running the day-to-day. Escalating where needed. Building confidence in the seat.",
+    involvement: 52,
+  },
+  {
+    band: "Month 5+",
+    badge: "Running",
+    title: "Your team runs it.",
+    pivotPrime: "1 to 2 days a month. Available. Not required.",
+    yourTeam:
+      "Full ownership. The operating model holds itself. Decisions are made without us in the room.",
+    involvement: 18,
+    yourTeamFirst: true,
+  },
+];
+
+/** Her closing line under the phase cards, 22 August wording. */
+export const FRACTIONAL_PHASES_CAPTION =
+  "Most businesses do not need a permanent executive. They need executive-level expertise for a defined season, then a much more junior lead running the day-to-day, with us available, not resident.";
+
 export const FRACTIONAL = {
   whyHeading: "Why this exists",
   why: [

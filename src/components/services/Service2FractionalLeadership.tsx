@@ -1,12 +1,11 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
-import { useRevealOnScroll } from "@/lib/use-reveal-on-scroll";
 import Link from "next/link";
 import { WHATSAPP_URL } from "@/lib/flags";
 import { JOURNEY_CTA, WHATSAPP_CTA } from "@/content/cta";
 import { SEAT_IDS, seatIndexFromHash } from "@/lib/seat-anchors";
-import { FRACTIONAL } from "@/content/services-detail";
+import { FRACTIONAL_PHASES, FRACTIONAL_PHASES_CAPTION, FRACTIONAL } from "@/content/services-detail";
 import { CopyProse } from "./SpecCopyBlocks";
 
 // The URL fragment is an external mutable source. useSyncExternalStore is the
@@ -35,11 +34,6 @@ export default function Service2FractionalLeadership() {
     window.history.replaceState(null, "", `#${SEAT_IDS[index]}`);
     window.dispatchEvent(new HashChangeEvent("hashchange"));
   };
-  // Shared so the reveal never hides content from a crawler or from a
-  // visitor who has reduced motion enabled. See the hook for why.
-  const [curveRef, isVisible] = useRevealOnScroll<HTMLDivElement>();
-
-
 
   const SEATS = [
     {
@@ -133,57 +127,65 @@ export default function Service2FractionalLeadership() {
             </p>
           </div>
 
-          <div className="bg-white border border-[#e3eae6] rounded-xl p-6 md:p-8 overflow-hidden shadow-sm">
-            <div className="relative" ref={curveRef}>
-              <svg viewBox="0 0 820 250" preserveAspectRatio="none" className="w-full h-[250px] overflow-visible">
-                <g className="grid">
-                  <line x1="0" y1="200" x2="820" y2="200" stroke="#e3eae6" strokeWidth="1" />
-                  <line x1="0" y1="150" x2="820" y2="150" stroke="#e3eae6" strokeWidth="1" />
-                  <line x1="0" y1="100" x2="820" y2="100" stroke="#e3eae6" strokeWidth="1" />
-                  <line x1="0" y1="50" x2="820" y2="50" stroke="#e3eae6" strokeWidth="1" />
-                </g>
-                <path
-                  d="M20,40 C160,45 250,70 340,110 C440,155 560,182 800,192"
-                  fill="none"
-                  stroke="#013325"
-                  strokeWidth="2.6"
-                  strokeLinecap="round"
-                  strokeDasharray="900"
-                  strokeDashoffset={isVisible ? 0 : 900}
-                  className="transition-all duration-[1600ms] ease-[cubic-bezier(.4,0,.2,1)]"
-                />
-                <path
-                  d="M20,70 C170,80 260,110 350,140 C450,172 570,190 800,196"
-                  fill="none"
-                  stroke="#af8943"
-                  strokeWidth="2.2"
-                  strokeDasharray="5 5"
-                  strokeLinecap="round"
-                  strokeDashoffset={isVisible ? 0 : 900}
-                  className="transition-all duration-[1600ms] ease-[cubic-bezier(.4,0,.2,1)] delay-300"
-                />
-                <g className={`transition-opacity duration-500 delay-1000 ${isVisible ? "opacity-100" : "opacity-0"}`}>
-                  <circle cx="20" cy="40" r="5" fill="#013325" />
-                  <circle cx="340" cy="110" r="5" fill="#af8943" />
-                  <circle cx="800" cy="192" r="5" fill="#009f50" />
-                  <text x="20" y="24" className="font-sans font-semibold text-[10px] fill-[#5e6f68] tracking-widest">WE BUILD IT</text>
-                  <text x="272" y="94" className="font-sans font-semibold text-[10px] fill-[#5e6f68] tracking-widest">HANDOVER BEGINS</text>
-                  <text x="686" y="176" className="font-sans font-semibold text-[10px] fill-[#5e6f68] tracking-widest">YOUR TEAM RUNS IT</text>
-                </g>
-                <text x="20" y="232" className="font-sans font-semibold text-[10px] fill-[#5e6f68] tracking-widest">MONTH 1</text>
-                <text x="380" y="232" className="font-sans font-semibold text-[10px] fill-[#5e6f68] tracking-widest">MONTH 3</text>
-                <text x="740" y="232" className="font-sans font-semibold text-[10px] fill-[#5e6f68] tracking-widest">MONTH 6+</text>
-              </svg>
-              <div className="flex flex-wrap gap-5 mt-4 text-[13px] text-[#5e6f68]">
-                <span className="flex items-center"><i className="w-[18px] h-[2.6px] bg-[#013325] rounded-sm mr-2 inline-block"></i>Senior time required</span>
-                <span className="flex items-center"><i className="w-[18px] h-[2.6px] bg-[#af8943] rounded-sm mr-2 inline-block"></i>Your monthly cost</span>
-              </div>
-            </div>
-            
-            <p className="text-[14px] text-[#5e6f68] mt-6 min-h-[44px] max-w-2xl">
-              Most businesses do not need a permanent executive. They need executive-level expertise for a defined period, then a much more junior lead running the day to day with oversight a few hours a week.
-            </p>
-          </div>
+          {/* Her 22 August phase cards. The 13 August curve this replaces
+              carried a "Your monthly cost" line she has since removed, and
+              section 1 allows one price on the site. */}
+          <ol className="grid gap-4 md:grid-cols-3">
+            {FRACTIONAL_PHASES.map((phase) => (
+              <li
+                key={phase.band}
+                className="flex flex-col rounded-xl border border-forest/15 bg-white p-6 shadow-sm"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="font-sans text-xs font-bold tracking-[0.18em] text-mid uppercase">
+                    {phase.band}
+                  </span>
+                  <span className="rounded-full bg-mist px-2.5 py-0.5 font-sans text-[11px] font-bold tracking-wide text-forest uppercase">
+                    {phase.badge}
+                  </span>
+                </div>
+
+                <p className="mt-3 font-sans text-xl font-bold text-forest">{phase.title}</p>
+
+                {/* Her markup puts Your team first on the last card and dims
+                    Pivot Prime there: the order itself carries the handover. */}
+                <div
+                  className={`mt-5 flex flex-col gap-4 ${phase.yourTeamFirst ? "flex-col-reverse" : ""}`}
+                >
+                  <div className="rounded-lg bg-forest p-4 text-white">
+                    <p className="font-sans text-[11px] font-bold tracking-[0.18em] text-neon uppercase">
+                      Pivot Prime
+                    </p>
+                    <p className="mt-1.5 text-sm leading-relaxed text-white/85">{phase.pivotPrime}</p>
+                  </div>
+                  <div className="rounded-lg border border-forest/12 bg-linen/60 p-4">
+                    <p className="font-sans text-[11px] font-bold tracking-[0.18em] text-mid uppercase">
+                      Your team
+                    </p>
+                    <p className="mt-1.5 text-sm leading-relaxed text-forest/80">{phase.yourTeam}</p>
+                  </div>
+                </div>
+
+                <div className="mt-auto pt-6">
+                  {/* Decorative: the day counts are in the sentence above, so
+                      nothing is carried by the bar alone. */}
+                  <div aria-hidden="true" className="h-1.5 w-full rounded-full bg-forest/10">
+                    <div
+                      className="h-1.5 rounded-full bg-mid"
+                      style={{ width: `${phase.involvement}%` }}
+                    />
+                  </div>
+                  <p className="mt-2 font-sans text-[11px] font-bold tracking-[0.16em] text-forest/55 uppercase">
+                    Pivot Prime involvement
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
+
+          <p className="mt-6 max-w-3xl text-sm leading-relaxed text-forest/70">
+            {FRACTIONAL_PHASES_CAPTION}
+          </p>
         </div>
       </section>
 

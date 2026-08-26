@@ -163,6 +163,36 @@ further link artefacts are hiding in it.
 
 ---
 
+## 1ad. The fractional cost taper, updated to her 22 August revision — **for Iram**
+
+**We were building the 13 August version.** `pivotprimeservicepages.html`, sent on
+22 August and not processed until 26 August, revises this section and the site
+had the earlier one.
+
+| | 13 August, what we had | 22 August, what she sent |
+|---|---|---|
+| Bands | MONTH 1 / MONTH 3 / MONTH 6+ | Months 1–2 / Months 3–4 / Month 5+ |
+| Shape | one curve with two lines | three phase cards |
+| Lines | "Senior time required" and **"Your monthly cost"** | "Pivot Prime involvement" only |
+| Detail | none | 8 to 10, then 3 to 5, then 1 to 2 days a month |
+| Client side | absent | a "Your team" column at every phase |
+
+**She removed the monthly cost line herself**, which agrees with section 1: one
+price only appears on the site, the audit floor. Nothing needs deciding.
+
+Built as static cards rather than her animated curve, so every word is in the
+served HTML. The involvement bar is decorative and the day counts are in the
+sentence, so nothing is carried by the bar alone. Her ordering is kept: on the
+last card "Your team" comes first and Pivot Prime second, which is how her markup
+signals the handover.
+
+**One re-punctuation to tell her about.** Her phase 1 line reads "Primary
+ownership — 8 to 10 days a month". Section 1 of her own document bans the em
+dash from the site, so it is a colon here. Same class of change as the two
+expanded contractions in 1f, and recorded for the same reason.
+
+---
+
 ## 1b. Spec instructions that describe the live WordPress site, not this build
 
 Iram wrote parts of the spec against what she could see on pivotprime.ae. Those
