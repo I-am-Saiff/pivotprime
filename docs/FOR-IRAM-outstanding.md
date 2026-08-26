@@ -542,6 +542,25 @@ ours.
 
 All of this was found and corrected before the document reached you.
 
+**And eight lines that went the other way: yours, deleted, now back.**
+
+Three of them this document previously described as ours and retired — the
+heading "An app you want built, or a process that is eating your team" and the
+two labels "Automate everything" and "Fix the constraint first". **All three are
+yours**, from the Technology Builds page of your service mockup, in the project
+since 13 August. We deleted your copy believing it was ours.
+
+The other five are the headline on every one of your case studies — "Sometimes
+the most valuable advice is: don't", "KYC timelines were killing growth. We
+rebuilt the operation", and the three like them. They were not carried across
+when the case studies were built, including on the two studies built from that
+same file of yours.
+
+**All eight are on the site now.** One detail worth knowing about the first
+three: your mockup shows those two labels as a toggle and writes the second
+caption in script rather than in the page, so half that argument is invisible to
+Google on your own file. Both halves are plain text on ours.
+
 ---
 
 ## 9. Ten sentences of yours that had been rewritten, now put back

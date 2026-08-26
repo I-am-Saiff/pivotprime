@@ -176,3 +176,38 @@ curl -s -o /dev/null -w "%{http_code} %{redirect_url}" <old-path>        # expec
 `check-content` holds the redirect list in `DECISIONS` and asserts each pair still
 resolves. When a direction flips, that list flips with it, or it goes on asserting
 the old world and passing.
+
+
+## Her mockups are a source of copy, and the check runs both ways
+
+`req/*.html` are the client's own designs and they carry finished wording, not
+just layout. For a long time the reverse audit traced rendered copy to the spec,
+to the live site, or to `sanctioned-copy.json`, and nothing else, so anything
+taken from a mockup came back as "we invented this". Eleven of twenty-nine lines
+in the authored list were hers, and the client-facing file was about to ask her
+to approve her own writing.
+
+`check-unsanctioned-copy.mjs` now reads them as a fourth source. Two details
+matter and both were found by testing rather than by reasoning:
+
+- Inline tags are transparent. Both the mockup and the page colour half a
+  heading with a `<span>`, so splitting on every tag cuts "Heavy at the start.
+  Light by the end." in two and the whole heading matches nothing.
+- Runs are matched individually, never joined. A joined haystack sanctioned "We
+  understand human behaviour" across two unrelated neighbouring cells.
+
+**That check cannot catch the opposite error.** Copy already deleted renders
+nowhere, so it is not in the set being inspected. Three headings were recorded in
+`PENDING-COPY` 1f as "copy we had written to fill gaps" and retired. All three
+were in her service mockup and had been since 13 August. We deleted the client's
+copy believing it was ours.
+
+So `npm run check:dropped` walks her mockups and reports headings and buttons the
+site renders nowhere. It **reports and does not fail**: a mockup is a design, not
+a contract, and it carries superseded drafts and alternatives. Anything
+deliberate goes in `KNOWN_ABSENT` with the later instruction that supersedes it,
+by file where a whole mockup is superseded. It is not in `npm run check` for that
+reason — a reporting tool wired into a gate becomes a tool people silence.
+
+It earned its place on the first run: it found five of her case study headlines
+missing, including on two studies built from that same file an hour earlier.

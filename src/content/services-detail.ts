@@ -157,6 +157,33 @@ export const TECH_BUILDS = {
     "Internal tools and custom applications where nothing off the shelf fits",
     "AI agents and assistants, where they remove real cost rather than add a feature",
   ],
+  /**
+   * RESTORED 26 AUGUST. PENDING-COPY 1f listed these as copy we had written to
+   * fill gaps and retired. They are hers, out of the toggle on the Technology
+   * Builds page of her service mockup, and have been in req/ since 13 August.
+   * We deleted her copy believing it was ours.
+   *
+   * Her mockup runs them as a two-state toggle and injects the second caption
+   * from script, so the second half is not in her served HTML at all. Both are
+   * rendered here as a static contrast: same words, both halves in the page as
+   * it arrives, no interaction to hide either from a crawler.
+   */
+  constraintContrast: [
+    {
+      label: "Automate everything",
+      body: "Speed up everything except the bottleneck and the queue in front of it simply gets longer. The business feels busier and delivers exactly as much as it did before.",
+    },
+    {
+      label: "Fix the constraint first",
+      body: "Automate the approval step itself and the whole line clears. Nothing else in the process changed. That is why we find the constraint before we build anything.",
+    },
+  ],
+  /** Also hers, from the "Where this starts" panel of the same mockup. */
+  bringUsTheProblem: {
+    label: "Bring us the problem",
+    heading: "An app you want built, or a process that is eating your team.",
+    body: "Either works. The only technology work we take on is the kind pointed at a real problem.",
+  },
   howItRuns: "We scope the build against a defined problem and agree what it has to change. We build it, test it with the people who will actually use it, and hand it over with documentation rather than a demo. If you want us to run and maintain it afterwards, we can. If you want to own it outright, you own it, including the code.",
   whereThisStarts: "If you already know what you need built, we can start there. If you are not certain the technology is the actual constraint, start with an Operational Clarity Audit, and we will tell you honestly whether a build is the right answer.",
 };

@@ -69,6 +69,13 @@ export type CaseStudy = {
   /** Her own second line, e.g. "Baby Skincare · UK & UAE Launch". Named studies only. */
   subtitle?: string;
   /**
+   * Her headline for the study, from pp-case-studies.html. Added 26 August after
+   * check-dropped-mockup-copy found all five of them in her file and on no page
+   * of the site — including on the two studies built from that same file an hour
+   * earlier. The sector line says who; this says what happened.
+   */
+  headline?: string;
+  /**
    * Supplied 24 August. Only the two named studies have one, which is what
    * "the pictures are for case study 1 and 2" resolves to once her numbering is
    * read. PENDING-COPY 1y.
@@ -101,6 +108,7 @@ export const CASE_STUDIES: CaseStudy[] = [
    */
   {
     id: "cinnacare",
+    headline: "From concept to two-country operation, built from scratch",
     sector: "Cinnacare",
     subtitle: "Baby Skincare · UK and UAE Launch",
     photo: {
@@ -127,6 +135,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     id: "scentmatic",
+    headline: "Sometimes the most valuable advice is: don't.",
     sector: "Scentmatic",
     subtitle: "UAE Market Entry · Financial Modelling",
     photo: {
@@ -153,6 +162,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     id: "financial-services",
+    headline: "KYC timelines were killing growth. We rebuilt the operation.",
     aboutOnly: true,
     sector: "Financial Services Company",
     challenge:
@@ -173,6 +183,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     id: "founder-led",
+    headline: "Everything ran through the founder. We rebuilt the structure so it didn't have to.",
     aboutOnly: true,
     sector: "Founder-Led Business",
     challenge:
@@ -192,6 +203,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     id: "fitness-wellness",
+    headline: "Members were leaving. Nobody could see why, until we built the visibility.",
     aboutOnly: true,
     sector: "Fitness and Wellness Company, UAE",
     challenge:

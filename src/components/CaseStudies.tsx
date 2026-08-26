@@ -163,6 +163,11 @@ export default function CaseStudies({
                   {study.subtitle && (
                     <p className="mt-1 text-sm font-bold text-mid sm:text-base">{study.subtitle}</p>
                   )}
+                  {study.headline && (
+                    <p className="mt-3 text-lg font-bold leading-snug text-forest/85 sm:text-xl">
+                      {study.headline}
+                    </p>
+                  )}
                 </div>
 
                 <div>

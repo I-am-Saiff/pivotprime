@@ -72,6 +72,31 @@ export default function Service4TechBuilds() {
               </p>
             ))}
           </div>
+
+          {/* Her toggle, rendered as a contrast. Both halves are in the served
+              HTML: her own version injects the second caption from script, so
+              half her argument was invisible to a crawler on her page. */}
+          <ul className="mt-10 grid gap-5 md:grid-cols-2">
+            {TECH_BUILDS.constraintContrast.map((state, i) => (
+              <li
+                key={state.label}
+                className={`rounded-2xl border p-6 sm:p-7 ${
+                  i === 0
+                    ? "border-forest/15 bg-white/70"
+                    : "border-mid/35 bg-mist/50"
+                }`}
+              >
+                <h3
+                  className={`font-sans text-lg font-bold ${i === 0 ? "text-forest/70" : "text-mid"}`}
+                >
+                  {state.label}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-forest/80 sm:text-base">
+                  {state.body}
+                </p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -123,6 +148,18 @@ export default function Service4TechBuilds() {
               See what the audit covers
               <span aria-hidden="true">→</span>
             </Link>
+
+            <div className="mt-8 border-t border-neon/20 pt-6">
+              <p className="font-sans text-xs font-bold tracking-[0.22em] text-neon uppercase">
+                {TECH_BUILDS.bringUsTheProblem.label}
+              </p>
+              <h3 className="mt-4 font-sans text-lg font-bold text-white sm:text-xl">
+                {TECH_BUILDS.bringUsTheProblem.heading}
+              </h3>
+              <p className="mt-3 text-base leading-relaxed text-white/80">
+                {TECH_BUILDS.bringUsTheProblem.body}
+              </p>
+            </div>
           </div>
         </div>
       </section>

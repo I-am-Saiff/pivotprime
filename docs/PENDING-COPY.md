@@ -353,7 +353,7 @@ So every heading and every button on the site is now traced back to one of three
 places: a block in your document, the wording kept from the current pivotprime.ae,
 or this list.
 
-**The count was wrong until 25 August, twice, and both times in the direction
+**The count was wrong until 25 August, and it was wrong in the direction that
 that costs you time.** This list said 44, then 41, then 29. The real figure is
 **18**. Twenty-three lines it named as ours are yours, and all of them were
 corrected before anything went to you.
@@ -389,11 +389,29 @@ of it is yours either, and you should read it and either approve it or replace i
 | `/for-corporate-leaders` | The line above the closing button | "Need on-demand execution support?" |
 | `/for-pl-owners` | The line above the closing button | "Ready to create real momentum?" |
 
-**Three more are already gone.** Rebuilding the Technology Builds page on
-your document's own words retired copy we had written to fill gaps: the heading
-"An app you want built, or a process that is eating your team", and the two
-toggle labels "Automate everything" and "Fix the constraint first". Nothing was
-lost: every sentence on that page is now yours, from section 4.4.
+**Three lines this list was wrong about, in the other direction, and they are
+back.** It recorded the heading "An app you want built, or a process that is
+eating your team" and the two toggle labels "Automate everything" and "Fix the
+constraint first" as copy we had written to fill gaps, and retired.
+
+**All three are hers**, from the Technology Builds page of
+`req/pivotprime-service-pages.html`, which has been in the project since 13
+August. We deleted the client's copy believing it was ours, and this list told
+her so.
+
+Restored 26 August, on the Technology Builds page. Her mockup runs the two labels
+as a toggle and injects the second caption from script, so half her argument is
+not in her own served HTML; both halves are static here. The second caption,
+recovered from her script:
+
+> Automate the approval step itself and the whole line clears. Nothing else in
+> the process changed. That is why we find the constraint before we build
+> anything.
+
+`npm run check:dropped` now walks her mockups and reports anything of hers the
+site renders nowhere, which is the direction that produced this. It found five
+more on its first run: her headline on every case study, including on the two
+built from her file an hour earlier. Those are back too.
 
 ### The twenty-three that were wrongly listed as ours
 

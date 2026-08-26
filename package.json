@@ -16,7 +16,8 @@
     "check": "node scripts/check-overflow.mjs && node scripts/check-content.mjs && node scripts/check-links.mjs && node scripts/check-behaviour.mjs && node scripts/check-unsanctioned-copy.mjs",
     "check:links": "node scripts/check-links.mjs",
     "check:behaviour": "node scripts/check-behaviour.mjs",
-    "check:copy-reverse": "node scripts/check-unsanctioned-copy.mjs"
+    "check:copy-reverse": "node scripts/check-unsanctioned-copy.mjs",
+    "check:dropped": "node scripts/check-dropped-mockup-copy.mjs"
   },
   "dependencies": {
     "next": "16.3.0",
