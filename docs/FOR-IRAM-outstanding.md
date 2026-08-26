@@ -828,18 +828,45 @@ diagnostic ships.
 
 ---
 
-## 21. Which three client stories did you mean?
+## 21. Your case study numbering — settled by your own file, and we had it backwards
 
-You said the pictures are for *"case study 1 and 2"*, and separately that *"the
-three which are anonymised sit only on the about page"*. Both refer to a
-numbering we cannot see from here.
+**This is closed, and it needed nothing from you.** `pp-case-studies.html`, which
+you sent on 22 August, numbers the studies in its own markup:
 
-**We moved the three newest** — the ones that have never been on the homepage —
-to the About page, and left the other three on the homepage with a **More case
-studies** button underneath, as slide 8 asks.
+> ── CASE STUDY 1: CINNACARE ──
+> ── CASE STUDY 2: SCENTMATIC ──
+> ── ANONYMISED CASES ── Anon 1: Financial Services · Anon 2: Founder-Led · Anon 3: Fitness & Wellness
 
-**Tell us if you meant a different three**, and which photograph belongs to which
-story. Both take a minute to change.
+So *"the pictures are for case study 1 and 2"* means **Cinnacare and Scentmatic**,
+which is exactly the two sets of photographs you sent on 24 August: the baby oil
+bottles and the Scentmatic machine on the bar. Cinnacare, which appeared nowhere
+in the copy document and which we could not place, has a home.
+
+And *"the three which are anonymised sit only on the about page"* means
+**Financial Services, Founder-Led and Fitness & Wellness**.
+
+**We had it the wrong way round.** We had moved Professional Services, Retail &
+Consumer and Technology & SaaS to the About page and left your three anonymised
+ones on the homepage, because we were reading a numbering we could not see. That
+is now inverted:
+
+| | |
+|---|---|
+| **Homepage** | Cinnacare and Scentmatic, with your photographs, and a **More case studies** button beneath |
+| **About page** | Everything, including the three anonymised and the three from your About design |
+
+That also matches slide 8 exactly: *"For all the anonymised ones, actually move
+to about page and here have a button (more case studies)."*
+
+**Two things this raises rather than settles**, both below in this document: the
+figures on all five studies, and the fact that this file names two clients while
+your About design says clients are anonymised.
+
+**One thing we did not do.** Your file's standfirst says *"Two named clients who
+have given us permission to share their stories."* We have taken that as your
+authority to put the two names up, because it is your own written statement in a
+file you sent us. **Tell us if you would rather they came down** until the
+permission is on paper from the clients themselves.
 
 ---
 

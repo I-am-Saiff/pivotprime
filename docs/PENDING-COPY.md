@@ -1255,16 +1255,24 @@ Here is everything it said, so you can read it without the site:
 
 ## 1y. The rest of your 22 August comments, built
 
-**Client stories.** The three that were only ever on your new About design now sit
-on the About page alone, and the homepage carries the other three with a **More
-case studies** button underneath, as you asked on slide 8.
+**Client stories. SETTLED 26 AUGUST, and we had it backwards.**
+`pp-case-studies.html`, sent 22 August and not processed until now, numbers the
+studies in its own markup: case study 1 is Cinnacare, case study 2 is Scentmatic,
+and the anonymised set is Financial Services, Founder-Led and Fitness & Wellness.
 
-**One thing we could not settle from the comments.** You said the pictures are for
-*"case study 1 and 2"*, and separately that *"the three which are anonymised sit
-only on the about page"*. Both refer to a numbering we cannot see. We have moved
-the three newest, which are the ones that have never been on the homepage.
-**Tell us if you meant a different three**, and which photograph belongs to which
-story, and both take a minute to change.
+So *"the pictures are for case study 1 and 2"* resolves to the two named clients,
+which is exactly the two photograph sets she sent on 24 August, and Cinnacare
+finally has a home. *"The three which are anonymised sit only on the about page"*
+resolves to the three we had left on the homepage.
+
+We had moved Professional Services, Retail & Consumer and Technology & SaaS
+instead, because they were the three that had never been on the homepage and the
+numbering was unreadable. **Now inverted**: the homepage carries Cinnacare and
+Scentmatic with her photographs, and everything else is on /about. Held as a
+decision in `check-content`, so the split cannot silently flip back.
+
+The three from her About design keep `aboutOnly` as well: they do not appear in
+her numbering at all, so nothing puts them on the homepage.
 
 **Who we serve** is now in your order: stretched founder, SME, corporate
 innovator, P&L owner. **"Mid-market execution owner" is gone everywhere** —

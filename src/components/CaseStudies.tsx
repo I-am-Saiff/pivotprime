@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useRef } from "react";
 import {
   CASE_STUDIES,
@@ -40,7 +41,7 @@ export default function CaseStudies({
     if (!scrollRef.current) return;
     const { scrollLeft, offsetWidth } = scrollRef.current;
     const index = Math.round(scrollLeft / (offsetWidth || 1));
-    setCurrentIndex(Math.min(Math.max(index, 0), CASE_STUDIES.length - 1));
+    setCurrentIndex(Math.min(Math.max(index, 0), studies.length - 1));
   };
 
   const scrollToIndex = (index: number) => {
@@ -57,12 +58,12 @@ export default function CaseStudies({
   };
 
   const nextSlide = () => {
-    const next = (currentIndex + 1) % CASE_STUDIES.length;
+    const next = (currentIndex + 1) % studies.length;
     scrollToIndex(next);
   };
 
   const prevSlide = () => {
-    const prev = (currentIndex - 1 + CASE_STUDIES.length) % CASE_STUDIES.length;
+    const prev = (currentIndex - 1 + studies.length) % studies.length;
     scrollToIndex(prev);
   };
 
@@ -102,7 +103,7 @@ export default function CaseStudies({
             </button>
 
             <span className="text-xs font-semibold tracking-wider text-neutral-500 uppercase min-w-[50px] text-center">
-              {currentIndex + 1} / {CASE_STUDIES.length}
+              {currentIndex + 1} / {studies.length}
             </span>
 
             <button
@@ -131,14 +132,15 @@ export default function CaseStudies({
             key={study.id}
             className="flex-shrink-0 w-full snap-center frosted-card-light rounded-[28px] p-6 sm:p-10 md:p-12 shadow-sm"
           >
-            {/* Two columns only while the results panel has figures to carry.
-                With every figure withheld the panel is three short lines, so the
-                right column ended well above the left and the card looked
-                unfinished. Those cards run in one column and end level.
-                The split returns with the numbers. PENDING-COPY 1i. */}
+            {/* Two columns while the right side has something to carry: a
+                results panel with figures in it, or one of the two photographs
+                she sent for the named studies. With every figure withheld and no
+                picture the panel is three short lines, so the right column ended
+                well above the left and the card looked unfinished. Those cards
+                run in one column and end level. PENDING-COPY 1i. */}
             <div
               className={
-                study.results.some((r) => r.figure)
+                study.results.some((r) => r.figure) || study.photo
                   ? "flex flex-col gap-8 lg:grid lg:grid-cols-12 lg:gap-12 items-start"
                   : "flex flex-col gap-8"
               }
@@ -146,7 +148,9 @@ export default function CaseStudies({
               {/* Left Column: Challenge & The Pivot */}
               <div
                 className={
-                  study.results.some((r) => r.figure) ? "lg:col-span-7 space-y-7" : "space-y-7"
+                  study.results.some((r) => r.figure) || study.photo
+                    ? "lg:col-span-7 space-y-7"
+                    : "space-y-7"
                 }
               >
                 <div>
@@ -156,6 +160,9 @@ export default function CaseStudies({
                   <SubHeading className="text-2xl font-extrabold text-forest md:text-3xl mt-2">
                     {study.sector}
                   </SubHeading>
+                  {study.subtitle && (
+                    <p className="mt-1 text-sm font-bold text-mid sm:text-base">{study.subtitle}</p>
+                  )}
                 </div>
 
                 <div>
@@ -179,11 +186,26 @@ export default function CaseStudies({
                 </div>
               </div>
 
-              {/* Right Column: The Results Card */}
+              {/* Right Column: her photograph, where there is one, then the results. */}
               <div
-                className={`w-full rounded-2xl bg-forest p-6 sm:p-8 text-white shadow-xl border border-white/10 relative overflow-hidden ${
-                  study.results.some((r) => r.figure) ? "lg:col-span-5" : ""
-                }`}
+                className={
+                  study.results.some((r) => r.figure) || study.photo
+                    ? "w-full space-y-6 lg:col-span-5"
+                    : "w-full space-y-6"
+                }
+              >
+                {study.photo && (
+                  <Image
+                    src={study.photo.src}
+                    alt={study.photo.alt}
+                    width={study.photo.width}
+                    height={study.photo.height}
+                    sizes="(min-width: 1024px) 34vw, 92vw"
+                    className="w-full rounded-2xl border border-forest/15 object-cover shadow-sm"
+                  />
+                )}
+              <div
+                className="w-full rounded-2xl bg-forest p-6 sm:p-8 text-white shadow-xl border border-white/10 relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
                 <div className="relative z-10">
@@ -219,6 +241,7 @@ export default function CaseStudies({
                     ))}
                   </ul>
                 </div>
+              </div>
               </div>
             </div>
           </li>

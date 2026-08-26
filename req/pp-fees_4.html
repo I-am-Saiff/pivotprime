@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pivot Prime Fees</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; }
+
+body {
+  background: #fefbf8;
+  font-family: 'Poppins', system-ui, sans-serif;
+  color: #0a1a12;
+  min-height: 100vh;
+  padding: 80px 32px 120px;
+}
+
+.wrap {
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+/* ── TOP: headline floats on the page ── */
+.fees-top {
+  margin-bottom: 40px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #009f50;
+  margin-bottom: 20px;
+}
+.eyebrow-line {
+  display: block;
+  width: 28px;
+  height: 1.5px;
+  background: #009f50;
+  border-radius: 2px;
+}
+
+.headline {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(34px, 5.8vw, 68px);
+  font-weight: 800;
+  color: #013325;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+  max-width: 780px;
+}
+
+/* ── MIDDLE: two cards ── */
+.model-cols {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 680px) {
+  .model-cols { grid-template-columns: 1fr; }
+}
+
+/* OLD model card */
+.old-card {
+  background: #1b2e23;
+  border-radius: 18px;
+  padding: 32px 28px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.old-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(
+    135deg,
+    transparent calc(50% - 1px),
+    rgba(0,215,109,0.18) calc(50% - 1px),
+    rgba(0,215,109,0.18) calc(50% + 1px),
+    transparent calc(50% + 1px)
+  );
+  pointer-events: none;
+}
+
+.card-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.old-card .card-label { color: rgba(255,255,255,0.3); }
+
+.old-card-body {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.28);
+  line-height: 1.6;
+  text-decoration: line-through;
+  text-decoration-color: rgba(0,215,109,0.4);
+  text-decoration-thickness: 1.5px;
+}
+
+.old-card-sub {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.2);
+  line-height: 1.5;
+}
+
+/* OUR model card */
+.our-card {
+  background: #ffffff;
+  border: 1.5px solid rgba(1,51,37,0.1);
+  border-radius: 18px;
+  padding: 32px 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.our-card .card-label { color: #009f50; }
+
+/* Term sheet */
+.terms {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid rgba(1,51,37,0.09);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.term-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 13px 18px;
+  border-bottom: 1px solid rgba(1,51,37,0.07);
+  gap: 12px;
+}
+.term-row:last-child { border-bottom: none; }
+
+.term-row.result {
+  background: #013325;
+}
+
+.term-key {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #6b8a74;
+}
+.term-row.result .term-key { color: rgba(0,215,109,0.65); }
+
+.term-val {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #013325;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+.term-row.result .term-val { color: #00d76d; }
+
+.term-val .big {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.our-footnote {
+  font-size: 13px;
+  font-weight: 400;
+  color: #6b8a74;
+  line-height: 1.65;
+}
+.our-footnote strong {
+  color: #013325;
+  font-weight: 600;
+}
+
+/* ── BOTTOM: guarantee strip ── */
+.guarantee {
+  background: #013325;
+  border-radius: 18px;
+  padding: 52px 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.guarantee::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+.guarantee-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(0,215,109,0.6);
+  position: relative;
+}
+
+.guarantee-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(22px, 3.4vw, 38px);
+  font-weight: 800;
+  color: #fefbf8;
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  max-width: 680px;
+  position: relative;
+}
+
+.guarantee-text em {
+  font-style: normal;
+  position: relative;
+  white-space: nowrap;
+}
+.guarantee-text em::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 2px;
+  background: #00d76d;
+  border-radius: 2px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(0,215,109,0.1);
+  border: 1px solid rgba(0,215,109,0.28);
+  border-radius: 100px;
+  padding: 9px 16px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #00d76d;
+  position: relative;
+}
+.badge-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #00d76d;
+}
+
+@media (max-width: 680px) {
+  .guarantee { padding: 40px 28px; }
+  .guarantee-text em { white-space: normal; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="fees-top">
+    <p class="eyebrow"><span class="eyebrow-line"></span> Chapter 04 — Fees</p>
+    <h2 class="headline">Most consultants charge whether it works or not.</h2>
+  </div>
+
+  <div class="model-cols">
+
+    <div class="old-card">
+      <p class="card-label">The traditional model</p>
+      <p class="old-card-body">You pay for the advice. Whether anything actually improves is not really their problem.</p>
+      <p class="old-card-sub">The invoice arrives either way.</p>
+    </div>
+
+    <div class="our-card">
+      <p class="card-label">The Pivot Prime model</p>
+
+      <div class="terms">
+        <div class="term-row">
+          <span class="term-key">We agree a target</span>
+          <span class="term-val">$400,000 in cost savings</span>
+        </div>
+        <div class="term-row">
+          <span class="term-key">Our fee structure</span>
+          <span class="term-val">20% of savings delivered</span>
+        </div>
+        <div class="term-row">
+          <span class="term-key">You keep</span>
+          <span class="term-val"><span class="big">$320,000</span></span>
+        </div>
+        <div class="term-row result">
+          <span class="term-key">We earn</span>
+          <span class="term-val">$80,000 — only when we deliver</span>
+        </div>
+      </div>
+
+      <p class="our-footnote">
+        Every engagement has a fixed element and a results element. <strong>A meaningful part of our fee sits on the other side of the agreed target being hit.</strong>
+      </p>
+    </div>
+
+  </div>
+
+  <div class="guarantee">
+    <p class="guarantee-label">The commitment</p>
+    <p class="guarantee-text">If we haven't moved your numbers, <em>most of our fee doesn't get paid.</em></p>
+    <span class="badge"><span class="badge-dot"></span> Performance-linked fees</span>
+  </div>
+
+</div>
+</body>
+</html>

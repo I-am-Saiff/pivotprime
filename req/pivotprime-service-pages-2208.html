@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Service pages | Pivot Prime</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#013325;--forest-2:#02291e;--forest-3:#0a4433;
+  --mid:#009f50;--neon:#00d76d;--gold:#af8943;
+  --sand:#efe7d8;--paper:#f7f9f8;--ink:#0c1a15;--muted:#5e6f68;--line:#e3eae6;
+  --display:'Poppins',system-ui,sans-serif;--body:'Segoe UI',system-ui,-apple-system,sans-serif;
+  --r:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#fff;color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--display);font-weight:700;line-height:1.13;letter-spacing:-.028em}
+.g{color:var(--mid)}
+.ondark .g{color:var(--neon)}
+p{max-width:64ch}
+.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,52px)}
+.eyebrow{font-family:var(--display);font-weight:600;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--mid);display:block}
+.ondark .eyebrow{color:var(--neon)}
+
+/* ---------- page switcher ---------- */
+nav{position:sticky;top:0;z-index:80;background:rgba(1,51,37,.96);backdrop-filter:blur(10px)}
+nav .inner{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,52px);display:flex;align-items:center;gap:8px;
+  height:62px;overflow-x:auto;scrollbar-width:none}
+nav .inner::-webkit-scrollbar{display:none}
+.logo{display:inline-flex;align-items:center;gap:9px;font-family:var(--display);font-weight:600;font-size:16px;color:#fff;
+  text-decoration:none;margin-right:18px;white-space:nowrap;letter-spacing:-.02em}
+.mk{display:grid;grid-template-columns:repeat(4,3px);gap:2.5px}
+.mk i{width:3px;height:3px;border-radius:50%;background:var(--neon);display:block}
+.mk i:nth-child(4n){background:#fff;opacity:.35}
+.pt{background:none;border:none;cursor:pointer;font-family:var(--display);font-weight:600;font-size:13px;color:#a3c3b5;
+  padding:8px 14px;border-radius:999px;white-space:nowrap;transition:color .18s,background .18s}
+.pt:hover{color:#fff}
+.pt.on{background:var(--neon);color:var(--forest)}
+
+.page{display:none}
+.page.on{display:block}
+section{padding:clamp(52px,6.5vw,90px) 0}
+.paper{background:var(--paper)}
+.dark{background:var(--forest);color:#fff}
+
+/* ---------- hero ---------- */
+.hero{background:var(--forest);color:#fff;position:relative;overflow:hidden;padding:clamp(52px,6.5vw,84px) 0 clamp(44px,5vw,68px)}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1px);background-size:28px 28px}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{font-size:clamp(32px,5.2vw,58px);margin:18px 0 0;max-width:16ch}
+.hero .lede{color:#bfd8cd;font-size:17.5px;margin-top:20px;max-width:54ch}
+.priceline{display:flex;gap:22px;flex-wrap:wrap;align-items:baseline;margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.16)}
+.priceline b{font-family:var(--display);font-weight:700;font-size:22px;color:var(--neon);letter-spacing:-.02em}
+.priceline span{font-size:14px;color:#8fb3a4}
+.scopeline{font-size:14.5px;color:#a9c8ba;margin-top:14px;max-width:56ch}
+.btn{font-family:var(--display);font-weight:600;font-size:15px;text-decoration:none;padding:14px 26px;border-radius:999px;
+  display:inline-flex;align-items:center;gap:9px;border:none;cursor:pointer;transition:transform .18s,background .18s,color .18s,border-color .18s}
+.btn-neon{background:var(--neon);color:var(--forest)}
+.btn-neon:hover{background:#fff;transform:translateY(-2px)}
+.btn-dark{background:var(--forest);color:#fff}
+.btn-dark:hover{background:var(--forest-3);transform:translateY(-2px)}
+.btn-ghost{border:1px solid var(--line);color:var(--ink);background:transparent}
+.btn-ghost:hover{border-color:var(--forest)}
+.btn-ghost.dk{border-color:rgba(255,255,255,.28);color:#fff}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+
+/* ---------- shared blocks ---------- */
+.sechead{margin-bottom:clamp(24px,3vw,38px);max-width:60ch}
+.sechead h2{font-size:clamp(26px,3.4vw,38px);margin-top:11px}
+.sechead .sub{color:var(--muted);margin-top:11px}
+.ondark .sechead .sub{color:#a9c8ba}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,52px)}
+.ticks{list-style:none;display:grid;gap:11px}
+.ticks li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px}
+.ticks li::before{content:"";width:17px;height:17px;border-radius:50%;flex:0 0 17px;margin-top:3px;
+  background:var(--mid) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/10px no-repeat}
+.ondark .ticks li{color:#c9e0d6}
+.lab{font-family:var(--display);font-weight:600;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:13px}
+
+.panelbox{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px 28px}
+.paper .panelbox{background:#fff}
+.notefit{border-left:3px solid var(--gold);background:#fdf9f2;border-radius:0 var(--r) var(--r) 0;padding:22px 26px}
+.notefit h3{font-size:18px;margin-bottom:9px}
+.notefit p{color:#6b5a3c;font-size:15.5px}
+
+.closer{background:var(--forest-2);color:#fff;border-radius:var(--r);padding:clamp(28px,4vw,44px);margin-top:8px}
+.closer h3{font-size:clamp(21px,2.4vw,28px);color:#fff;margin:12px 0 12px;max-width:22ch}
+.closer p{color:#bfd8cd}
+
+/* ---------- signature: shared stage ---------- */
+.stage{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3vw,32px);overflow:hidden}
+.dark .stage{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14)}
+.toggle{display:inline-flex;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:4px;gap:3px;margin-bottom:22px}
+.dark .toggle{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.16)}
+.toggle button{background:none;border:none;cursor:pointer;font-family:var(--display);font-weight:600;font-size:13px;
+  color:var(--muted);padding:9px 17px;border-radius:999px;transition:background .2s,color .2s}
+.dark .toggle button{color:#a9c8ba}
+.toggle button.on{background:var(--forest);color:#fff}
+.dark .toggle button.on{background:var(--neon);color:var(--forest)}
+.caption{font-size:14px;color:var(--muted);margin-top:18px;min-height:44px;max-width:58ch}
+.dark .caption{color:#a9c8ba}
+
+/* 1. process map */
+.pmap{position:relative;height:240px}
+.node{position:absolute;width:74px;height:34px;border-radius:8px;background:var(--paper);border:1px solid var(--line);
+  display:grid;place-items:center;font-family:var(--display);font-weight:600;font-size:10.5px;color:var(--forest);
+  transition:left .9s cubic-bezier(.6,.02,.2,1),top .9s cubic-bezier(.6,.02,.2,1),background .5s,border-color .5s,color .5s}
+.node.dead{background:#fdf1ee;border-color:#e8c4ba;color:#9c4f3a}
+.pmap svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.pmap path{fill:none;stroke:#c8d9d0;stroke-width:1.6;transition:d .9s cubic-bezier(.6,.02,.2,1),stroke .5s}
+.pmap path.warn{stroke:#e0a08c;stroke-dasharray:4 4}
+
+/* 2. handover viz — Fractional Leadership */
+.hv-grid{
+  display:grid;
+  grid-template-columns:1fr auto 1fr auto 1fr;
+  gap:0;
+  align-items:stretch;
+}
+.hv-arrow{
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;color:#d0ddd8;
+  padding:0 12px;
+  opacity:0;
+  transition:opacity .4s ease;
+  align-self:center;
+  font-family:var(--display);font-weight:300;
+  flex-shrink:0;
+}
+.hv-arrow.go{opacity:1}
+.hv-card{
+  border:1.5px solid var(--line);
+  border-radius:14px;
+  padding:22px 20px;
+  background:#fff;
+  opacity:0;
+  transform:translateY(14px);
+  display:flex;
+  flex-direction:column;
+  gap:13px;
+  transition:opacity .5s ease,transform .5s cubic-bezier(.34,1.08,.64,1);
+}
+.hv-card.go{opacity:1;transform:translateY(0)}
+.hv-card[data-phase="1"]{transition-delay:.18s}
+.hv-card[data-phase="2"]{transition-delay:.36s}
+.hv-head{display:flex;align-items:center;gap:8px;margin-bottom:0}
+.hv-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.hv-dot.pp{background:var(--forest)}
+.hv-dot.xfer{background:var(--gold)}
+.hv-dot.run{background:var(--mid)}
+.hv-phname{
+  font-family:var(--display);font-size:10.5px;font-weight:600;
+  color:var(--muted);flex:1;letter-spacing:.04em;
+}
+.hv-badge{
+  font-family:var(--display);font-size:9px;font-weight:700;
+  letter-spacing:.13em;text-transform:uppercase;
+  padding:3px 9px;border-radius:999px;
+}
+.hv-badge.pp{background:rgba(1,51,37,.08);color:var(--forest)}
+.hv-badge.xfer{background:rgba(175,137,67,.12);color:#7a5e28}
+.hv-badge.run{background:rgba(0,159,80,.1);color:var(--mid)}
+.hv-title{
+  font-family:var(--display);font-size:16px;font-weight:700;
+  color:var(--forest);line-height:1.2;margin:0;
+}
+.hv-block{border-radius:9px;padding:12px 14px}
+.hv-block.pp-block{background:var(--forest)}
+.hv-block.pp-block .hv-blabel{color:var(--neon)}
+.hv-block.pp-block .hv-brole{color:#b4d4c4}
+.hv-block.cl-block{background:rgba(0,159,80,.07);border:1px solid rgba(0,159,80,.16)}
+.hv-block.cl-block .hv-blabel{color:var(--mid)}
+.hv-block.cl-block .hv-brole{color:var(--muted)}
+.hv-block.dim{opacity:.42}
+.hv-blabel{
+  font-family:var(--display);font-size:9.5px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px;
+}
+.hv-brole{font-size:13px;line-height:1.5}
+.hv-meter{margin-top:auto;padding-top:4px}
+.hv-meter-track{height:5px;background:var(--line);border-radius:3px;overflow:hidden}
+.hv-meter-fill{
+  height:100%;border-radius:3px;background:var(--forest);
+  width:0;
+  transition:width 1s cubic-bezier(.4,0,.2,1) .45s;
+}
+.hv-card.go .hv-meter-fill{width:var(--w)}
+.hv-meter-label{
+  font-family:var(--display);font-size:10px;font-weight:600;
+  color:var(--muted);margin-top:5px;letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.hv-foot{
+  display:flex;align-items:flex-start;gap:20px;
+  flex-wrap:wrap;margin-top:20px;
+  padding-top:18px;border-top:1px solid var(--line);
+}
+.hv-leg{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);white-space:nowrap}
+.hv-lsw{width:16px;height:4px;border-radius:2px;display:inline-block;flex-shrink:0}
+.hv-cap{font-size:14px;color:var(--muted);flex:1;min-width:200px;line-height:1.6;max-width:56ch}
+
+/* 3. bench */
+.bench{position:relative;height:290px}
+.bench svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.bench line{stroke:#cfe0d8;stroke-width:1.6;stroke-dasharray:200;stroke-dashoffset:200;transition:stroke-dashoffset .7s ease}
+.bench line.go{stroke-dashoffset:0}
+.hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--forest);color:#fff;
+  border-radius:12px;padding:15px 20px;text-align:center;z-index:2}
+.hub b{display:block;font-family:var(--display);font-weight:600;font-size:14px}
+.hub span{font-size:11px;color:#8fb3a4}
+.slot{position:absolute;width:118px;transform:translate(-50%,-50%);text-align:center;
+  border:1.6px dashed #cfd9d4;border-radius:11px;padding:11px 8px;background:#fff;
+  opacity:.5;transition:opacity .5s,border-color .5s,border-style .5s,transform .5s,background .5s}
+.slot b{display:block;font-family:var(--display);font-weight:600;font-size:12.5px;color:var(--muted)}
+.slot span{font-size:10.5px;color:#9db0a8}
+.slot.filled{opacity:1;border-style:solid;border-color:var(--mid);background:#f2f8f4}
+.slot.filled b{color:var(--forest)}
+.slot.filled span{color:var(--mid)}
+
+/* 4. constraint queue */
+.queue{display:grid;gap:14px}
+.lane{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:10px;height:66px;overflow:hidden}
+.dark .lane{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14)}
+.lane .lname{position:absolute;left:14px;top:9px;font-family:var(--display);font-weight:600;font-size:10.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--muted);z-index:3}
+.dark .lane .lname{color:#8fb3a4}
+.gate{position:absolute;top:0;bottom:0;width:5px;background:var(--gold);z-index:2}
+.gate::after{content:attr(data-l);position:absolute;top:-2px;left:11px;font-family:var(--display);font-weight:600;
+  font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+.dot{position:absolute;bottom:16px;width:12px;height:12px;border-radius:50%;background:var(--mid)}
+.dot.stuck{background:#d9694a}
+.pileup{position:absolute;bottom:14px;display:flex;gap:3px;z-index:1}
+.pileup i{width:11px;height:11px;border-radius:50%;background:#d9694a;display:block;opacity:0;transition:opacity .3s}
+.pileup i.on{opacity:1}
+
+/* 5. calendar */
+.cal{display:grid;grid-template-columns:repeat(12,1fr);gap:6px;align-items:end;height:190px}
+.mo{position:relative;display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+.mo .bar{border-radius:5px 5px 0 0;background:var(--mid);height:40%;transition:height .9s cubic-bezier(.6,.02,.2,1),background .5s}
+.mo.dip .bar{background:var(--gold)}
+.mo .m{text-align:center;font-family:var(--display);font-weight:600;font-size:10px;color:var(--muted);margin-top:8px;letter-spacing:.04em}
+.calnotes{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.calnote{font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 13px;
+  opacity:0;transform:translateY(6px);transition:opacity .45s,transform .45s}
+.calnote.on{opacity:1;transform:none}
+.calnote b{color:var(--gold);font-family:var(--display);font-weight:600}
+
+/* seats */
+.seats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
+.seat{border:1px solid var(--line);border-radius:var(--r);padding:20px;cursor:pointer;background:#fff;transition:border-color .2s,transform .2s,box-shadow .2s}
+.seat:hover{border-color:#cfe3d8;transform:translateY(-3px);box-shadow:0 14px 30px rgba(1,51,37,.07)}
+.seat.on{border-color:var(--forest);background:var(--forest);color:#fff}
+.seat h4{font-size:16px;margin-bottom:6px}
+.seat p{font-size:13.5px;color:var(--muted);margin:0}
+.seat.on p{color:#bfd8cd}
+.seatbody{margin-top:20px;border-top:1px solid var(--line);padding-top:22px}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal.on{opacity:1;transform:none}
+:focus-visible{outline:2px solid var(--neon);outline-offset:3px;border-radius:4px}
+
+@media (max-width:880px){
+  .cols,.seats{grid-template-columns:1fr}
+  .pmap{height:340px}
+  .bench{height:420px}
+  .cal{gap:3px}
+  .mo .m{font-size:8.5px}
+  .hv-grid{grid-template-columns:1fr;gap:12px}
+  .hv-arrow{transform:rotate(90deg);padding:4px 0;font-size:20px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  .hv-card{opacity:1;transform:none}
+  .hv-arrow{opacity:1}
+  .hv-meter-fill{width:var(--w)!important}
+  .slot{opacity:1}
+  .calnote{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a class="logo" href="#"><span class="mk" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>PivotPrime</a>
+    <button class="pt on" data-pg="0">Clarity Audit</button>
+    <button class="pt" data-pg="1">Fractional Leadership</button>
+    <button class="pt" data-pg="2">Build and Place</button>
+    <button class="pt" data-pg="3">Technology Builds</button>
+    <button class="pt" data-pg="4">UAE Market Entry</button>
+  </div>
+</nav>
+
+<!-- ══════════ 1. OPERATIONAL CLARITY AUDIT ══════════ -->
+<div class="page on" data-pg="0">
+  <header class="hero ondark">
+    <div class="wrap">
+      <span class="eyebrow">Service one</span>
+      <h1>Operational <span class="g">Clarity Audit.</span></h1>
+      <p class="lede">A structured diagnosis of what is actually limiting the business, and a prioritised plan for fixing it.</p>
+      <div class="priceline"><b>From AED 15,000</b><span>Typically 12 to 20 working days</span></div>
+      <p class="scopeline">Scope depends on the size of the business, how many functions are in review, and how many people we interview.</p>
+      <div class="ctas"><a class="btn btn-neon" href="#">Talk to us on WhatsApp</a></div>
+    </div>
+  </header>
+
+  <section class="paper">
+    <div class="wrap">
+      <div class="sechead reveal">
+        <span class="eyebrow">The deliverable, in one picture</span>
+        <h2>How the work runs today, <span class="g">and what it becomes.</span></h2>
+        <p class="sub">Every audit produces an as-is versus to-be map. Press the toggle to see the difference we are looking for.</p>
+      </div>
+
+      <div class="stage reveal">
+        <div class="toggle" id="tg1">
+          <button class="on" data-s="0">As it runs today</button>
+          <button data-s="1">After the audit</button>
+        </div>
+        <div class="pmap" id="pmap">
+          <svg viewBox="0 0 900 240" preserveAspectRatio="none"><g id="pmapPaths"></g></svg>
+        </div>
+        <div class="caption" id="cap1">Seven steps, four handoffs that double back, and two that nobody owns. This is what most businesses look like when you actually map them rather than describe them.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap cols">
+      <div class="reveal">
+        <div class="lab">What we look at</div>
+        <ul class="ticks">
+          <li>The commercial model, pricing, and margin by product, client or service</li>
+          <li>The P&amp;L, cost structure, working capital and how reliably cash is collected</li>
+          <li>How work actually flows day to day, and where it stalls or reverses</li>
+          <li>Which decisions route through the founder, and which genuinely need to</li>
+          <li>Roles, ownership and accountability, and where they are unclear</li>
+          <li>Where automation would remove real cost, and where it would add a tool</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="lab">What you get</div>
+        <ul class="ticks">
+          <li>An as-is versus to-be map of how work runs today and what changes</li>
+          <li>A findings report with every gap ranked by risk and by effort</li>
+          <li>A prioritised roadmap: what to fix now, what can wait</li>
+          <li>A baseline set of measurements to judge the improvements against</li>
+          <li>A costed view of what to fix internally and what needs outside capacity</li>
+          <li>An executive summary written for owners and investors</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="paper">
+    <div class="wrap">
+      <div class="cols">
+        <div class="reveal">
+          <div class="lab">How we do it</div>
+          <p style="margin-bottom:12px">One-to-one interviews with the people doing the work, not only the leadership team. Private conversations surface what people will not say in a room.</p>
+          <p>Process mapping end to end, then a facilitated workshop per function where the team walks the process on screen and stress tests it together. The findings are owned rather than imposed.</p>
+        </div>
+        <div class="notefit reveal">
+          <h3>What happens after</h3>
+          <p>The audit ends with a decision, not a filing cabinet. Some clients take the roadmap and execute it themselves, and that is a legitimate outcome. Most ask us to run some or all of it. We will tell you plainly which of those the findings actually justify.</p>
+        </div>
+      </div>
+      <div class="closer reveal" style="margin-top:34px">
+        <span class="eyebrow" style="color:var(--neon)">Start here</span>
+        <h3>Almost every engagement begins with the audit.</h3>
+        <p>We will not commit to owning outcomes in a business we have not properly diagnosed.</p>
+        <div class="ctas"><a class="btn btn-neon" href="#">Talk to us on WhatsApp</a><a class="btn btn-ghost dk" href="#">Take the 4-minute diagnostic</a></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════ 2. FRACTIONAL LEADERSHIP ══════════ -->
+<div class="page" data-pg="1">
+  <header class="hero ondark">
+    <div class="wrap">
+      <span class="eyebrow">Service two</span>
+      <h1>Fractional <span class="g">Leadership.</span></h1>
+      <p class="lede">Senior leadership for a season, not a lifetime. COO, Chief of Staff and CFO seats.</p>
+      <div class="priceline"><b>Scoped per engagement</b><span>Three-month minimum</span></div>
+      <p class="scopeline">Priced on the days a month, the seniority of the seat, and how much of the delivery team sits underneath it. We agree all three before anything is quoted.</p>
+      <div class="ctas"><a class="btn btn-neon" href="#">Talk to us on WhatsApp</a></div>
+    </div>
+  </header>
+
+  <section class="paper">
+    <div class="wrap">
+      <div class="sechead reveal">
+        <span class="eyebrow">Why it costs less than it looks</span>
+        <h2>Heavy at the start. <span class="g">Light by the end.</span></h2>
+        <p class="sub">We build the structure, then hand it to someone cheaper to run. Senior input falls away as the operating model starts holding itself.</p>
+      </div>
+
+      <div class="stage reveal" id="curveStage">
+
+        <!-- Phase cards -->
+        <div class="hv-grid" id="hvGrid">
+
+          <!-- Phase 1 -->
+          <div class="hv-card" data-phase="0">
+            <div class="hv-head">
+              <span class="hv-dot pp"></span>
+              <span class="hv-phname">Months 1–2</span>
+              <span class="hv-badge pp">Build</span>
+            </div>
+            <p class="hv-title">We lead.</p>
+            <div class="hv-block pp-block">
+              <div class="hv-blabel">Pivot Prime</div>
+              <div class="hv-brole">Primary ownership — 8 to 10 days a month. Setting the operating model, building the team structure, owning the decisions.</div>
+            </div>
+            <div class="hv-block cl-block dim">
+              <div class="hv-blabel">Your team</div>
+              <div class="hv-brole">Observing, learning the rhythm. Beginning to own the day-to-day tasks.</div>
+            </div>
+            <div class="hv-meter">
+              <div class="hv-meter-track"><div class="hv-meter-fill" style="--w:90%"></div></div>
+              <div class="hv-meter-label">Pivot Prime involvement</div>
+            </div>
+          </div>
+
+          <div class="hv-arrow">›</div>
+
+          <!-- Phase 2 -->
+          <div class="hv-card" data-phase="1">
+            <div class="hv-head">
+              <span class="hv-dot xfer"></span>
+              <span class="hv-phname">Months 3–4</span>
+              <span class="hv-badge xfer">Transfer</span>
+            </div>
+            <p class="hv-title">We hand it over.</p>
+            <div class="hv-block pp-block" style="opacity:.72">
+              <div class="hv-blabel">Pivot Prime</div>
+              <div class="hv-brole">3 to 5 days a month. Coaching your lead, sitting in the critical decisions, closing the remaining gaps.</div>
+            </div>
+            <div class="hv-block cl-block">
+              <div class="hv-blabel">Your team</div>
+              <div class="hv-brole">Running the day-to-day. Escalating where needed. Building confidence in the seat.</div>
+            </div>
+            <div class="hv-meter">
+              <div class="hv-meter-track"><div class="hv-meter-fill" style="--w:52%"></div></div>
+              <div class="hv-meter-label">Pivot Prime involvement</div>
+            </div>
+          </div>
+
+          <div class="hv-arrow">›</div>
+
+          <!-- Phase 3 -->
+          <div class="hv-card" data-phase="2">
+            <div class="hv-head">
+              <span class="hv-dot run"></span>
+              <span class="hv-phname">Month 5+</span>
+              <span class="hv-badge run">Running</span>
+            </div>
+            <p class="hv-title">Your team runs it.</p>
+            <div class="hv-block cl-block">
+              <div class="hv-blabel">Your team</div>
+              <div class="hv-brole">Full ownership. The operating model holds itself. Decisions are made without us in the room.</div>
+            </div>
+            <div class="hv-block pp-block dim">
+              <div class="hv-blabel">Pivot Prime</div>
+              <div class="hv-brole">1 to 2 days a month. Available. Not required.</div>
+            </div>
+            <div class="hv-meter">
+              <div class="hv-meter-track"><div class="hv-meter-fill" style="--w:18%"></div></div>
+              <div class="hv-meter-label">Pivot Prime involvement</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="hv-foot">
+          <span class="hv-leg"><span class="hv-lsw" style="background:var(--forest)"></span>Pivot Prime</span>
+          <span class="hv-leg"><span class="hv-lsw" style="background:rgba(0,159,80,.35)"></span>Your team</span>
+          <p class="hv-cap">Most businesses do not need a permanent executive. They need executive-level expertise for a defined season, then a much more junior lead running the day-to-day — with us available, not resident.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sechead reveal">
+        <span class="eyebrow">The seats we fill</span>
+        <h2>Three seats. <span class="g">Pick the one that is missing.</span></h2>
+      </div>
+
+      <div class="seats reveal" id="seats">
+        <div class="seat on" data-s="0"><h4>Fractional COO</h4><p>Owns execution</p></div>
+        <div class="seat" data-s="1"><h4>Chief of Staff</h4><p>Owns follow-through</p></div>
+        <div class="seat" data-s="2"><h4>Fractional CFO</h4><p>Owns the numbers</p></div>
+      </div>
+
+      <div class="seatbody" id="seatbody"></div>
+    </div>
+  </section>
+
+  <section class="paper">
+    <div class="wrap">
+      <div class="cols">
+        <div class="notefit reveal">
+          <h3>Where it does not fit</h3>
+          <p>A complex operation with 200 or more staff, several products and sites in multiple countries needs a permanent COO. A Chief of Staff seat only works where there is a leadership team to serve. And if the problem is one defined project rather than the way the business runs, you need a project manager, which costs less.</p>
+        </div>
+        <div class="reveal">
+          <div class="lab">How it runs</div>
+          <p style="margin-bottom:12px">Almost every retainer begins with an Operational Clarity Audit, because we will not commit to owning outcomes in a business we have not properly diagnosed. The audit also tells us what the retainer needs to cover, which is why we scope it afterwards rather than before.</p>
+          <p style="margin-bottom:12px">The CFO seat is the exception. Where the need is cash, reporting or an imminent raise, we can start there and diagnose alongside it.</p>
+          <p>Three-month minimum, reviewed quarterly. A meaningful part of the fee can be structured against agreed KPIs.</p>
+        </div>
+      </div>
+      <div class="closer reveal" style="margin-top:34px">
+        <span class="eyebrow" style="color:var(--neon)">Next step</span>
+        <h3>Find out which seat is actually missing.</h3>
+        <p>The diagnostic will tell you in four minutes, before anyone quotes you anything.</p>
+        <div class="ctas"><a class="btn btn-neon" href="#">Talk to us on WhatsApp</a><a class="btn btn-ghost dk" href="#">Take the 4-minute diagnostic</a></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════ 3. BUILD AND PLACE ══════════ -->
+<div class="page" data-pg="2">
+  <header class="hero ondark">
+    <div class="wrap">
+      <span class="eyebrow">Service three</span>
+      <h1>Build <span class="g">and Place.</span></h1>
+      <p class="lede">We put people inside your business to execute the fix, rather than leaving you to run it yourself.</p>
+      <div class="priceline"><b>Scoped per engagement</b><span>Roles, days and duration agreed up front</span></div>
+      <p class="scopeline">Sourced, vetted and managed by us. They report to us rather than to you, so you are not carrying the recruitment risk or the performance management.</p>
+      <div class="ctas"><a class="btn btn-neon" href="#">Talk to us on WhatsApp</a></div>
+    </div>
+  </header>
+
+  <section class="paper">
+    <div class="wrap">
+      <div class="sechead reveal">
+        <span class="eyebrow">How it fits together</span>
+        <h2>One contract. <span class="g">One accountable party.</span></h2>
+        <p class="sub">We bring in only what the diagnosis justifies, and we manage whoever we bring. Watch the seats fill.</p>
+      </div>
+
+      <div class="stage reveal" id="benchStage">
+        <div class="bench" id="bench">
+          <svg viewBox="0 0 800 290" preserveAspectRatio="none"><g id="benchLines"></g></svg>
+          <div class="hub"><b>Pivot Prime</b><span>manages, invoices, accountable</span></div>
+          <div class="slot" style="left:16%;top:20%"><b>Project manager</b><span>drives delivery</span></div>
+          <div class="slot" style="left:84%;top:20%"><b>Fractional CFO</b><span>owns the numbers</span></div>
+          <div class="slot" style="left:12%;top:80%"><b>Engineer</b><span>builds the automation</span></div>
+          <div class="slot" style="left:50%;top:92%"><b>Marketing</b><span>takes it to market</span></div>
+          <div class="slot" style="left:88%;top:80%"><b>Web and digital</b><span>rebuilds the shopfront</span></div>
+        </div>
+        <div class="caption" id="cap3">Five seats we can fill. You never take all five. The audit says which ones the business actually needs, and that is what gets placed.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap cols">
+      <div class="reveal">
+        <div class="lab">What you are not carrying</div>
+        <ul class="ticks">
+          <li>Recruitment risk, and the cost of getting it wrong</li>
+          <li>Performance management and the awkward conversation</li>
+          <li>Visas, medical cover and end-of-service liability</li>
+          <li>A permanent salary for a temporary problem</li>
+          <li>Five separate contracts and five separate invoices</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="lab">How it is priced</div>
+        <p style="margin-bottom:12px">We scope the work with you, agree the days and what good looks like, and put it into a single proposal. You pay Pivot Prime and we pay the delivery partner.</p>
+        <p>If the full team is not affordable, we reduce the scope rather than quietly reducing the quality of who we put in front of you.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="paper">
+    <div class="wrap">
+      <div class="closer reveal">
+        <span class="eyebrow" style="color:var(--neon)">The difference</span>
+        <h3>A consultant tells you what to do. A recruiter finds you someone.</h3>
+        <p>Neither one is accountable for whether it worked. That is the gap this service exists to close.</p>
+        <div class="ctas"><a class="btn btn-neon" href="#">Talk to us on WhatsApp</a></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════ 4. TECHNOLOGY BUILDS ══════════ -->
+<div class="page" data-pg="3">
+  <header class="hero ondark">
+    <div class="wrap">
+      <span class="eyebrow">Service four</span>
+      <h1>Technology <span class="g">Builds.</span></h1>
+      <p class="lede">Software, automation and AI, built after the diagnosis rather than instead of it.</p>
+      <div class="priceline"><b>Scoped per engagement</b><span>Own it outright, or we maintain it</span></div>
+      <p class="scopeline">Priced on the build itself, the systems it has to connect to, and whether you want us to run it afterwards.</p>
+      <div class="ctas"><a class="btn btn-neon" href="#">Talk to us on WhatsApp</a></div>
+    </div>
+  </header>
+
+  <section class="dark ondark">
+    <div class="wrap">
+      <div class="sechead">
+        <span class="eyebrow">The argument</span>
+        <h2>We do not sprinkle AI over a business <span class="g">and call it transformation.</span></h2>
+        <p class="sub">A business moves at the speed of its biggest constraint. Making everything else faster only builds a longer queue in front of it.</p>
+      </div>
+
+      <div class="stage">
+        <div class="toggle" id="tg4">
+          <button class="on" data-s="0">Automate everything</button>
+          <button data-s="1">Fix the constraint first</button>
+        </div>
+        <div class="queue">
+          <div class="lane" id="laneA">
+            <span class="lname">Work in progress</span>
+            <div class="gate" id="gateA" data-l="Approvals" style="left:62%"></div>
+            <div class="pileup" id="pileA" style="left:calc(62% - 78px)"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+        <div class="caption" id="cap4">Speed up everything except the bottleneck and the queue in front of it simply gets longer. The business feels busier and delivers exactly as much as it did before.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap cols">
+      <div class="reveal">
+        <div class="lab">What we build</div>
+        <ul class="ticks">
+          <li>Websites: design, build, maintenance and the digital estate around them</li>
+          <li>CRM build and configuration, including migration from spreadsheets</li>
+          <li>Workflow automation across sales, operations, finance and fulfilment</li>
+          <li>Dashboards and management reporting</li>
+          <li>Integrations between systems you already pay for and are not using</li>
+          <li>Internal tools and custom applications where nothing off the shelf fits</li>
+          <li>AI agents and assistants, where they remove real cost</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="lab">How it runs</div>
+        <p style="margin-bottom:12px">We scope the build against a defined problem and agree what it has to change. We build it, test it with the people who will actually use it, and hand it over with documentation rather than a demo.</p>
+        <p style="margin-bottom:20px">If you want us to run and maintain it afterwards, we can. If you want to own it outright, you own it, including the code.</p>
+        <div class="notefit">
+          <h3>Where this starts</h3>
+          <p>If you already know what you need built, we can start there. If you are not certain the technology is the actual constraint, start with an audit and we will tell you honestly whether a build is the right answer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="paper">
+    <div class="wrap">
+      <div class="closer reveal">
+        <span class="eyebrow" style="color:var(--neon)">Bring us the problem</span>
+        <h3>An app you want built, or a process that is eating your team.</h3>
+        <p>Either works. The only technology work we take on is the kind pointed at a real problem.</p>
+        <div class="ctas"><a class="btn btn-neon" href="#">Talk to us on WhatsApp</a></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════ 5. UAE MARKET ENTRY ══════════ -->
+<div class="page" data-pg="4">
+  <header class="hero ondark">
+    <div class="wrap">
+      <span class="eyebrow">Service five</span>
+      <h1>UAE <span class="g">Market Entry.</span></h1>
+      <p class="lede">From licence to a functioning, properly priced operation.</p>
+      <div class="priceline"><b>Scoped per engagement</b><span>Financial model built before anything else</span></div>
+      <p class="scopeline">Priced on the entity structure, whether the products need regulatory approval, and how much of the operation we build rather than advise on.</p>
+      <div class="ctas"><a class="btn btn-neon" href="#">Talk to us on WhatsApp</a></div>
+    </div>
+  </header>
+
+  <section class="paper">
+    <div class="wrap">
+      <div class="sechead reveal">
+        <span class="eyebrow">The misconception</span>
+        <h2>A plan built on twelve even months <span class="g">will miss badly.</span></h2>
+        <p class="sub">Most businesses arrive with a home-market forecast. This market does not trade that way.</p>
+      </div>
+
+      <div class="stage reveal" id="calStage">
+        <div class="toggle" id="tg5">
+          <button class="on" data-s="0">Home-market plan</button>
+          <button data-s="1">Built for here</button>
+        </div>
+        <div class="cal" id="cal"></div>
+        <div class="calnotes" id="calnotes">
+          <span class="calnote"><b>Ramadan</b> reshapes trading for a month</span>
+          <span class="calnote"><b>Summer</b> takes a large part of your customer base out of the country</span>
+          <span class="calnote"><b>Heat</b> changes logistics, storage and footfall for half the year</span>
+          <span class="calnote"><b>Q4</b> has to carry what the rest of the year cannot</span>
+        </div>
+        <div class="caption" id="cap5">A flat forecast assumes every month behaves the same way. Press the toggle to see what the year actually looks like, and what it does to a plan built elsewhere.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap cols">
+      <div class="reveal">
+        <div class="lab">The numbers come first</div>
+        <p style="margin-bottom:12px">There are hundreds of company formation experts in Dubai who will get you a licence and sometimes a bank account. We support all of that, but the licence is where we start rather than where we stop.</p>
+        <p style="margin-bottom:12px">Before anything else we build a financial model with you: every assumption priced in, the investment required, the breakeven point and the expected return.</p>
+        <p>This is where most international businesses go wrong. They price for this market using home-market assumptions and end up busy but unprofitable.</p>
+      </div>
+      <div class="reveal">
+        <div class="lab">What we build</div>
+        <ul class="ticks">
+          <li>Entity structure, licensing and regulatory approvals</li>
+          <li>A full financial model: investment, breakeven, return and local pricing</li>
+          <li>Product and regulatory compliance, so what you sell can be sold here</li>
+          <li>Commercial real estate and office fit-out</li>
+          <li>Hiring, with local market HR expertise</li>
+          <li>Manufacturing, logistics and supply chain</li>
+          <li>Brand localisation and go-to-market</li>
+          <li>The operating model, and the people to run it once you are live</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="paper">
+    <div class="wrap">
+      <div class="closer reveal">
+        <span class="eyebrow" style="color:var(--neon)">Straight answer</span>
+        <h3>We are not interested in launching a business here that will not make money here.</h3>
+        <p>If the model says it will not, we would rather tell you before you spend the money than after.</p>
+        <div class="ctas"><a class="btn btn-neon" href="#">Talk to us on WhatsApp</a></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+"use strict";
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+
+/* ---------- page switching ---------- */
+$$('.pt').forEach(b=>{
+  b.onclick = ()=>{
+    $$('.pt').forEach(x=>x.classList.remove('on'));
+    $$('.page').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+    $('.page[data-pg="'+b.dataset.pg+'"]').classList.add('on');
+    scrollTo({top:0,behavior:'instant'});
+    kick(b.dataset.pg);
+  };
+});
+
+/* ---------- scroll reveals ---------- */
+const revealIO = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); revealIO.unobserve(e.target);} });
+},{threshold:.12});
+$$('.reveal').forEach(el=>revealIO.observe(el));
+
+/* ══════ 1. PROCESS MAP ══════ */
+const MESSY = [
+  {x:4,  y:18, t:'Enquiry'},
+  {x:26, y:64, t:'Quote'},
+  {x:14, y:6,  t:'Approval', dead:true},
+  {x:48, y:34, t:'Onboard'},
+  {x:38, y:80, t:'Rework', dead:true},
+  {x:68, y:14, t:'Deliver'},
+  {x:82, y:62, t:'Invoice'}
+];
+const CLEAN = [
+  {x:2,  y:42, t:'Enquiry'},
+  {x:18, y:42, t:'Quote'},
+  {x:34, y:42, t:'Approval'},
+  {x:50, y:42, t:'Onboard'},
+  {x:66, y:42, t:'Deliver'},
+  {x:82, y:42, t:'Invoice'}
+];
+const MESSY_LINKS = [[0,1],[1,2],[2,1],[1,3],[3,4],[4,3],[3,5],[5,6],[4,6]];
+const CLEAN_LINKS = [[0,1],[1,2],[2,3],[3,4],[4,5]];
+
+function drawMap(state){
+  const map = $('#pmap');
+  const set = state ? CLEAN : MESSY;
+  const links = state ? CLEAN_LINKS : MESSY_LINKS;
+  let nodes = $$('#pmap .node');
+  if(nodes.length !== Math.max(MESSY.length, CLEAN.length)){
+    $$('#pmap .node').forEach(n=>n.remove());
+    for(let i=0;i<MESSY.length;i++){
+      const d = document.createElement('div');
+      d.className='node'; map.appendChild(d);
+    }
+    nodes = $$('#pmap .node');
+  }
+  nodes.forEach((n,i)=>{
+    const s = set[i];
+    if(!s){ n.style.opacity='0'; n.style.left='90%'; n.style.top='42%'; return; }
+    n.style.opacity='1';
+    n.textContent = s.t;
+    n.style.left = s.x+'%';
+    n.style.top  = s.y+'%';
+    n.classList.toggle('dead', !!s.dead);
+  });
+  const g = $('#pmapPaths');
+  g.innerHTML = links.map(([a,b])=>{
+    const A=set[a], B=set[b];
+    if(!A||!B) return '';
+    const x1=A.x/100*900+37, y1=A.y/100*240+17, x2=B.x/100*900+37, y2=B.y/100*240+17;
+    const mx=(x1+x2)/2, bend = state?0:38;
+    const warn = !state && (a>b) ? ' class="warn"' : '';
+    return `<path${warn} d="M${x1},${y1} Q${mx},${(y1+y2)/2 - bend} ${x2},${y2}"/>`;
+  }).join('');
+}
+drawMap(0);
+$$('#tg1 button').forEach(b=>{
+  b.onclick = ()=>{
+    $$('#tg1 button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+    const s = +b.dataset.s;
+    drawMap(s);
+    $('#cap1').textContent = s
+      ? 'Six steps, one direction, every one owned. Same business, same people. What changed is that the work now only moves forwards, and the two steps that existed to fix earlier mistakes are gone.'
+      : 'Seven steps, four handoffs that double back, and two that nobody owns. This is what most businesses look like when you actually map them rather than describe them.';
+  };
+});
+
+/* ══════ 2. HANDOVER VIZ + SEATS ══════ */
+const curveIO = new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(!e.isIntersecting) return;
+    const cards = $$('#hvGrid .hv-card');
+    const arrows = $$('#hvGrid .hv-arrow');
+    if(reduce){
+      cards.forEach(c=>c.classList.add('go'));
+      arrows.forEach(a=>a.classList.add('go'));
+    } else {
+      cards.forEach((c,i)=>setTimeout(()=>c.classList.add('go'), i*210));
+      arrows.forEach((a,i)=>setTimeout(()=>a.classList.add('go'), 120 + i*210));
+    }
+    curveIO.unobserve(e.target);
+  });
+},{threshold:.25});
+if($('#curveStage')) curveIO.observe($('#curveStage'));
+
+const SEATS = [
+  {h:'What the COO seat covers', l:['Ownership of execution against an agreed plan, with weekly accountability','The operating model, decision rights and operating rhythm','Process design, SOPs and operational governance','Supplier, cost and margin discipline','Hiring, team structure and onboarding','Dashboards and reporting, so decisions are made on numbers','Managing the delivery team, whether that is your people or ours'],
+   n:'For businesses where the work happens but nothing finishes predictably.'},
+  {h:'What the Chief of Staff seat covers', l:['Translating strategic decisions into work that actually moves','Priority management across functions, and resolving the ones that collide','Preparing the leadership team for the decisions ahead of them','Chairing the operating rhythm: the meetings, agendas and follow-through','Managing cross-functional programmes that have no natural owner','Protecting senior attention, so leadership works on what only they can do','Sitting in the meetings that matter, including board and investor conversations'],
+   n:'For complex organisations where the strategy is right and cannot land on its own.'},
+  {h:'What the CFO seat covers', l:['Cash, runway and rolling forecasts','Management reporting and the board pack','Collections, credit control and working capital','Pricing, margin and unit economics','Fundraising readiness: the model, the data room and the numbers behind the story','Budgeting, cost control and supplier terms','Statutory reporting, audit and compliance coordination'],
+   n:'For businesses raising capital, or where the absence of a finance seat is felt every week.'}
+];
+function renderSeat(i){
+  const s = SEATS[i];
+  $('#seatbody').innerHTML = `<div class="cols">
+      <div><div class="lab">${s.h}</div><p style="color:var(--muted)">${s.n}</p></div>
+      <div><ul class="ticks">${s.l.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+    </div>`;
+}
+if($('#seats')){
+  renderSeat(0);
+  $$('#seats .seat').forEach(el=>{
+    el.onclick = ()=>{
+      $$('#seats .seat').forEach(x=>x.classList.remove('on'));
+      el.classList.add('on');
+      renderSeat(+el.dataset.s);
+    };
+  });
+}
+
+/* ══════ 3. BENCH ══════ */
+function fillBench(){
+  const slots = $$('#bench .slot');
+  const g = $('#benchLines');
+  g.innerHTML = slots.map((s,i)=>{
+    const l = parseFloat(s.style.left), t = parseFloat(s.style.top);
+    return `<line x1="400" y1="145" x2="${l/100*800}" y2="${t/100*290}" data-i="${i}"/>`;
+  }).join('');
+  const lines = $$('#benchLines line');
+  slots.forEach((s,i)=>{
+    setTimeout(()=>{
+      lines[i].classList.add('go');
+      s.classList.add('filled');
+    }, reduce?0:280 + i*260);
+  });
+}
+const benchIO = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ fillBench(); benchIO.unobserve(e.target);} });
+},{threshold:.3});
+if($('#benchStage')) benchIO.observe($('#benchStage'));
+
+/* ══════ 4. CONSTRAINT QUEUE ══════ */
+let qTimer = null, qMode = 0;
+function runQueue(mode){
+  qMode = mode;
+  const lane = $('#laneA');
+  if(!lane) return;
+  clearInterval(qTimer);
+  $$('#laneA .dot').forEach(d=>d.remove());
+  const pile = $$('#pileA i');
+  pile.forEach(p=>p.classList.remove('on'));
+  $('#gateA').style.left = mode ? '92%' : '62%';
+  $('#gateA').setAttribute('data-l', mode ? 'Approvals, automated' : 'Approvals');
+  $('#pileA').style.left = mode ? 'calc(92% - 78px)' : 'calc(62% - 78px)';
+  if(reduce) return;
+
+  let piled = 0;
+  qTimer = setInterval(()=>{
+    const d = document.createElement('div');
+    d.className = 'dot';
+    d.style.left = '-14px';
+    lane.appendChild(d);
+    const gateX = mode ? 0.92 : 0.62;
+    const dur = mode ? 2600 : 3200;
+    const start = performance.now();
+    (function move(t){
+      const p = Math.min((t-start)/dur, 1);
+      const w = lane.clientWidth;
+      const stopAt = gateX*w - 22;
+      let x = p * (w + 20) - 14;
+      if(!mode && x > stopAt){ x = stopAt; d.classList.add('stuck');
+        if(!d.dataset.counted){ d.dataset.counted='1'; if(piled<6){ pile[piled].classList.add('on'); piled++; } d.remove(); return; } }
+      d.style.left = x + 'px';
+      if(p<1) requestAnimationFrame(move); else d.remove();
+    })(performance.now());
+  }, 620);
+}
+$$('#tg4 button').forEach(b=>{
+  b.onclick = ()=>{
+    $$('#tg4 button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+    const s = +b.dataset.s;
+    runQueue(s);
+    $('#cap4').textContent = s
+      ? 'Automate the approval step itself and the whole line clears. Nothing else in the process changed. That is why we find the constraint before we build anything.'
+      : 'Speed up everything except the bottleneck and the queue in front of it simply gets longer. The business feels busier and delivers exactly as much as it did before.';
+  };
+});
+
+/* ══════ 5. TRADING CALENDAR ══════ */
+const MONTHS = ['J','F','M','A','M','J','J','A','S','O','N','D'];
+const FLAT   = [62,62,62,62,62,62,62,62,62,62,62,62];
+const REAL   = [72,78,52,60,55,34,28,32,66,84,92,88];
+const DIPS   = [false,false,true,false,false,true,true,true,false,false,false,false];
+function buildCal(){
+  const c = $('#cal'); if(!c) return;
+  c.innerHTML = MONTHS.map((m,i)=>`<div class="mo" data-i="${i}"><div class="bar" style="height:${FLAT[i]}%"></div><div class="m">${m}</div></div>`).join('');
+}
+buildCal();
+function setCal(mode){
+  const mos = $$('#cal .mo');
+  mos.forEach((mo,i)=>{
+    const bar = mo.querySelector('.bar');
+    setTimeout(()=>{
+      bar.style.height = (mode ? REAL[i] : FLAT[i]) + '%';
+      mo.classList.toggle('dip', mode && DIPS[i]);
+    }, reduce?0:i*55);
+  });
+  $$('#calnotes .calnote').forEach((n,i)=>{
+    setTimeout(()=>n.classList.toggle('on', !!mode), reduce?0:(mode? 700 + i*160 : 0));
+  });
+  $('#cap5').textContent = mode
+    ? 'Two months carry almost nothing, three carry the year, and the shape repeats annually. Price and staff against the flat version and you will be overstaffed in July and short in November.'
+    : 'A flat forecast assumes every month behaves the same way. Press the toggle to see what the year actually looks like, and what it does to a plan built elsewhere.';
+}
+$$('#tg5 button').forEach(b=>{
+  b.onclick = ()=>{
+    $$('#tg5 button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+    setCal(+b.dataset.s);
+  };
+});
+
+/* ---------- kick animations when a page opens ---------- */
+function kick(pg){
+  if(pg==='3') runQueue(qMode);
+  else clearInterval(qTimer);
+  if(pg==='2'){ $$('#bench .slot').forEach(s=>s.classList.remove('filled')); fillBench(); }
+}
+const qIO = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting) runQueue(qMode); else clearInterval(qTimer); });
+},{threshold:.2});
+if($('#laneA')) qIO.observe($('#laneA'));
+</script>
+</body>
+</html>

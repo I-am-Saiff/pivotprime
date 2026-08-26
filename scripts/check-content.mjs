@@ -63,8 +63,12 @@ const EXPECTATIONS = [
       { spec: "3.7", text: "Pivot Prime is led by a Mathematician", why: "founder section heading" },
       { spec: "3.7", text: "roughly 75,000 qualified actuaries worldwide", why: "founder credential" },
       { spec: "3.8", text: "What we have achieved", why: "case studies heading" },
-      { spec: "3.8", text: "67% faster transaction processing", why: "case study 1 result" },
-      { spec: "3.8", text: "13% increase in member retention", why: "case study 3, proves all three are served" },
+      // The anonymised three moved to /about on 26 August, because her own
+      // pp-case-studies.html numbers Cinnacare and Scentmatic as case studies 1
+      // and 2 and calls the other three the anonymised set. Their results are
+      // asserted on /about now, not deleted. PENDING-COPY 1y.
+      { spec: "3.8", text: "Cinnacare", why: "case study 1, named" },
+      { spec: "3.8", text: "Scentmatic", why: "case study 2, named" },
       { spec: "3.9", text: "You don", why: "persona cards retained, tagged KEEP" },
       { spec: "3.10", text: "Most consultants are paid for the recommendation", why: "how we are paid heading" },
       { spec: "3.10", text: "We are paid partly on whether the numbers move.", why: "how we are paid lead" },
@@ -142,6 +146,7 @@ const EXPECTATIONS = [
       { spec: "6.3", html: 'id="team"', why: "anchor target for /about#team" },
       { spec: "6", html: 'id="case-studies"', why: "anchor target for /about#case-studies" },
       { spec: "6", text: "13% increase in member retention", why: "case studies also render here" },
+      { spec: "6", text: "67% faster transaction processing", why: "moved off the homepage, so /about is the only place this result is served" },
       { spec: "slide 21", text: "Execution partners.", why: "hero, first line" },
       { spec: "slide 21", text: "We've been on both sides of the table.", why: "who we are heading" },
       { spec: "slide 21", text: "The people you work with directly.", why: "team heading" },
@@ -345,6 +350,22 @@ const DECISIONS = [
       }
       if (!home.includes("more than $120 million")) {
         return "the homepage no longer says $120 million, which is what spec 3.7 and the live site say";
+      }
+      return null;
+    },
+  },
+  {
+    what: "the homepage carries only the two named case studies, and the anonymised set sits on /about",
+    where: "PENDING-COPY 1y",
+    run: async (get) => {
+      const home = await (await get("/")).text();
+      const about = await (await get("/about")).text();
+      for (const named of ["Cinnacare", "Scentmatic"]) {
+        if (!home.includes(named)) return `${named} is not on the homepage; her file numbers it as a case study 1 or 2`;
+      }
+      for (const anon of ["Financial Services Company", "Founder-Led Business", "Fitness and Wellness Company"]) {
+        if (home.includes(anon)) return `${anon} is back on the homepage; her file puts the anonymised three on /about only`;
+        if (!about.includes(anon)) return `${anon} is not on /about, so moving it off the homepage dropped it`;
       }
       return null;
     },

@@ -54,13 +54,26 @@ export type CaseStudy = {
   id: string;
   /**
    * Slide 8: "the three which are anonymised sit only on the about page and you
-   * link to them." The three below came from her own About design and have never
-   * been on the homepage, so they are the three that move. Which three she meant
-   * is not certain while the case study 1 and 2 photographs are unplaced, and
-   * that question is in PENDING-COPY 1y.
+   * link to them."
+   *
+   * WHICH THREE IS SETTLED, and we had it backwards. pp-case-studies.html, her
+   * own 22 August file, numbers them in its markup: case study 1 is Cinnacare,
+   * case study 2 is Scentmatic, and the anonymised set is Financial Services,
+   * Founder-Led and Fitness & Wellness. Those three carry the flag now. The
+   * three that carried it before came from her About design and never appear in
+   * her numbering at all, so they stay off the homepage as well. PENDING-COPY 1y.
    */
   aboutOnly?: boolean;
+  /** The client's name where she has cleared it, the sector where she has not. */
   sector: string;
+  /** Her own second line, e.g. "Baby Skincare · UK & UAE Launch". Named studies only. */
+  subtitle?: string;
+  /**
+   * Supplied 24 August. Only the two named studies have one, which is what
+   * "the pictures are for case study 1 and 2" resolves to once her numbering is
+   * read. PENDING-COPY 1y.
+   */
+  photo?: { src: string; alt: string; width: number; height: number };
   challenge: string;
   pivotLead: string;
   pivot: string[];
@@ -68,8 +81,79 @@ export type CaseStudy = {
 };
 
 export const CASE_STUDIES: CaseStudy[] = [
+  /**
+   * CASE STUDY 1 AND 2, named, from pp-case-studies.html of 22 August.
+   *
+   * Her file names them in its own markup — "── CASE STUDY 1: CINNACARE ──",
+   * "── CASE STUDY 2: SCENTMATIC ──" — and its standfirst states the permission
+   * in her words: "Two named clients who have given us permission to share their
+   * stories, and three anonymised."
+   *
+   * EVERY NUMERIC FIGURE IS WITHHELD, on the same rule as every other result on
+   * the site. Spec section 1: result figures come from the section 9 master
+   * table and nowhere else, and none of these is in it. The non-numeric markers
+   * she wrote — the regulatory approval, the roadmap, the tax position — are not
+   * result figures and stay, but they stay in the label rather than in the
+   * figure slot: `figure` means a number the master table carries, and the
+   * Verified badge and the two-column layout both read it. A tick in that slot
+   * put a Verified badge on a card with no verified number on it.
+   * PENDING-COPY 1ab carries the rule question.
+   */
+  {
+    id: "cinnacare",
+    sector: "Cinnacare",
+    subtitle: "Baby Skincare · UK and UAE Launch",
+    photo: {
+      src: "/case-studies/cinnacare-baby-oil.jpg",
+      alt: "Two Cinnacare Soothing Baby Oil bottles on a pale surface beside a knitted blanket and eucalyptus leaves",
+      width: 1400,
+      height: 933,
+    },
+    challenge:
+      "A UK baby skincare founder came to us with a product formula and a vision: launch simultaneously in the UK and UAE. What followed was not a strategy engagement.",
+    pivotLead:
+      "We built the whole thing, while the founder focused on the product.",
+    pivot: [
+      "Regulatory approval and company structures in both markets",
+      "Brand identity and the supply chain behind it",
+      "Pricing, and the UAE market entry itself",
+    ],
+    results: [
+      { figure: null, label: "Instagram reach grew sharply in the first 30 days" },
+      { figure: null, label: "Two countries set up and compliant, UK and UAE simultaneously" },
+      { figure: null, label: "Formula approved by the UK regulator" },
+      { figure: null, label: "A full operational roadmap: brand, supply chain, pricing and go to market" },
+    ],
+  },
+  {
+    id: "scentmatic",
+    sector: "Scentmatic",
+    subtitle: "UAE Market Entry · Financial Modelling",
+    photo: {
+      src: "/case-studies/scentmatic-vendor.jpg",
+      alt: "The Scentmatic Vendor fragrance dispensing machine installed on a bar counter",
+      width: 808,
+      height: 540,
+    },
+    challenge:
+      "A UK fragrance tech company came to us asking whether UAE expansion made financial sense. We built a full cash-flow model, month by month, venue by venue, sensitivity scenario by sensitivity scenario.",
+    pivotLead:
+      "The answer was honest: the way they planned to enter would lose them money.",
+    pivot: [
+      "We showed them exactly why",
+      "We built an alternative path that worked, and let them decide",
+      "They chose to wait, and kept a complete roadmap ready for when the time is right",
+    ],
+    results: [
+      { figure: null, label: "Capital protected from a loss-making entry plan" },
+      { figure: null, label: "A projected margin modelled on the alternative plan" },
+      { figure: null, label: "A breakeven point established on the revised model" },
+      { figure: null, label: "Zero tax liability identified in year one through the UAE structure" },
+    ],
+  },
   {
     id: "financial-services",
+    aboutOnly: true,
     sector: "Financial Services Company",
     challenge:
       "Customer onboarding and policy processing were slow and inconsistent. Teams lacked visibility into workload, cost per client, and profitability at a client and transaction level. KYC timelines were unpredictable, creating customer frustration and internal pressure. Leadership could not clearly see where time and cost were being lost.",
@@ -89,6 +173,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     id: "founder-led",
+    aboutOnly: true,
     sector: "Founder-Led Business",
     challenge:
       "The founder was approving every decision. The team had capability but it lacked clear ownership. We mapped what should and shouldn't escalate, then redesigned roles around judgement, not just task delivery.",
@@ -107,6 +192,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     id: "fitness-wellness",
+    aboutOnly: true,
     sector: "Fitness and Wellness Company, UAE",
     challenge:
       "Strong demand, loyal core, but churn was rising and nobody could pinpoint it. The team was focused on new sign-ups while existing members quietly left. We rebuilt retention around experience, behaviour, and team incentives.",
