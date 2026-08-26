@@ -138,3 +138,22 @@ h2,
 h3 {
   text-wrap: balance;
 }
+
+/* The cycling emphasis on the result cards. Only this attribute moves; every
+   card is server-rendered and stays readable, so with JavaScript off or under
+   reduced motion there is simply no emphasis. See KpiHighlight. */
+[data-kpi-active="0"] [data-kpi-index="0"],
+[data-kpi-active="1"] [data-kpi-index="1"],
+[data-kpi-active="2"] [data-kpi-index="2"],
+[data-kpi-active="3"] [data-kpi-index="3"],
+[data-kpi-active="4"] [data-kpi-index="4"] {
+  --tw-ring-color: var(--color-neon);
+  box-shadow: 0 12px 40px rgba(0, 215, 109, 0.16);
+  transform: translateY(-3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-kpi-active] [data-kpi-index] {
+    transform: none;
+  }
+}

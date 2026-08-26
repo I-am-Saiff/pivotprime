@@ -70,7 +70,8 @@ const EXPECTATIONS = [
       { spec: "3.8", text: "Cinnacare", why: "case study 1, named" },
       { spec: "3.8", text: "Scentmatic", why: "case study 2, named" },
       { spec: "3.9", text: "You don", why: "persona cards retained, tagged KEEP" },
-      { spec: "3.10", text: "Most consultants are paid for the recommendation", why: "how we are paid heading" },
+      { spec: "3.10", text: "Most consultants are paid for the recommendation", why: "3.10 block 0, now the H3 over the traditional-model column" },
+      { spec: "her fees mockup", text: "Most consultants charge whether it works or not.", why: "her heading, now the lead line under the H2" },
       { spec: "3.10", text: "We are paid partly on whether the numbers move.", why: "how we are paid lead" },
       { spec: "3.11", text: "Find out what is actually holding the business back", why: "close heading" },
     ],
@@ -383,6 +384,22 @@ const DECISIONS = [
       return html.includes("AED 15,000") ? null : "the audit floor is gone, so the section names no price at all";
     },
   },
+  {
+    what: "the fees detail is inside <details>, so it is served whether open or shut",
+    where: "PENDING-COPY 1al",
+    run: async (get) => {
+      const html = await (await get("/")).text();
+      for (const needed of [
+        "Before anything changes we baseline it",
+        "It is a discipline rather than a sales device",
+        "We agree the target upfront",
+        "The Operational Clarity Audit starts at AED 15,000",
+      ]) {
+        if (!html.includes(needed)) return `"${needed.slice(0, 40)}" is not in the served HTML, so the expander is hiding it rather than collapsing it`;
+      }
+      return null;
+    },
+  },
 ];
 
 
@@ -482,12 +499,12 @@ const HEADING_ORDER = [
       "Pivot Prime is led by a Mathematician", // 3.7
       "What we have achieved", // 3.8
       "You don", // 3.9, contraction differs by apostrophe encoding
-      // The fees section is built to her pp-fees_3/_4 design as of 26 August,
-      // so its H2 is her mockup heading and spec 3.10's own first block is the
-      // H3 heading the traditional-model column. Both are her copy and both are
-      // still served; only which one is the spine heading changed.
-      // PENDING-COPY 1ae.
-      "Most consultants charge whether it works or not.", // her fees mockup
+      // The fees section's spine heading is the authored SEO one as of 26
+      // August: her own two lines say what the section is ABOUT but never say
+      // in plain words what the pricing model IS, and that is what someone
+      // searches for. Both of hers are still served, as the neon lead and as
+      // the H3 over the traditional column. PENDING-COPY 1ae and 1al.
+      "How Pivot Prime charges", // authored, PENDING-COPY 1al
       "Find out what is actually holding the business back", // 3.11
     ],
   },

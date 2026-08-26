@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { WHATSAPP_URL } from "@/lib/flags";
+import { HAS_WHATSAPP, WHATSAPP_URL } from "@/lib/flags";
 
 /* Smaller and tighter into the corner below sm. A fixed button passes over
    whatever is beneath it as the page scrolls, so it cannot be made never to
@@ -36,9 +36,12 @@ export default function WhatsappButton() {
     // Registered in scripts/palette-allow.json for the same reason.
     <a
       href={WHATSAPP_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Message Pivot Prime on WhatsApp"
+      // WHATSAPP_URL degrades to /contact when NEXT_PUBLIC_WHATSAPP_NUMBER is
+      // unset, and it is unset in production today. The target and rel were
+      // unconditional, so the fallback opened our own contact page in a new tab.
+      target={HAS_WHATSAPP ? "_blank" : undefined}
+      rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined}
+      aria-label={HAS_WHATSAPP ? "Message Pivot Prime on WhatsApp" : "Talk to us"}
       className={`fixed bottom-4 right-4 z-50 bg-[#25D366] text-white p-3 rounded-full shadow-lg transition-all duration-500 ease-in-out hover:scale-110 hover:shadow-xl sm:bottom-6 sm:right-6 sm:p-4 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"
       }`}

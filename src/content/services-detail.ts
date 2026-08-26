@@ -202,6 +202,32 @@ export const TECH_BUILDS = {
     claim: "We do not sprinkle AI over a business and call it transformation.",
     body: ["A business moves at the speed of its biggest constraint. Making everything else faster only builds a longer queue in front of it. So, before we build anything we find out where the business is actually losing time, margin or control, and then we build at that point.", "That is the difference between technology that pays for itself and technology that becomes another subscription nobody opens."],
   },
+  /**
+   * The capability grid. Spec 4.4 blocks 11 to 17 verbatim, each paired with a
+   * short label so the grid reads as a set of capabilities rather than a list
+   * of sentences. The labels are ours; the sentence under each is hers.
+   *
+   * TWO ARE AUTHORED IN FULL and are marked. Saif named mobile applications and
+   * agentic web applications as capabilities on 26 August; 4.4 covers websites,
+   * custom applications and AI agents but neither of those two phrases. Logged
+   * in PENDING-COPY 1al rather than quietly folded into her list.
+   */
+  /** Authored. The grid needed a heading and the two authored tiles needed
+   *  naming as ours in public. PENDING-COPY 1al. */
+  capabilityHeading: "Nine things we build, and one rule about when we build them",
+  capabilityNote:
+    "Every one of these is scoped against a defined problem first. We do not start a build to find out whether it was needed.",
+  capabilityGrid: [
+    { label: "Websites and digital estate", spec: true, body: "Websites: design, build, maintenance and the digital estate around them" },
+    { label: "CRM builds", spec: true, body: "CRM build and configuration, including migration from spreadsheets and inherited systems" },
+    { label: "Business process automation", spec: true, body: "Workflow automation across sales, operations, finance and fulfilment" },
+    { label: "Dashboards and reporting", spec: true, body: "Dashboards and management reporting, so decisions are made on numbers rather than instinct" },
+    { label: "Systems integration", spec: true, body: "Integrations between the systems you already pay for and are not getting value from" },
+    { label: "Internal tools", spec: true, body: "Internal tools and custom applications where nothing off the shelf fits" },
+    { label: "AI integrations and agents", spec: true, body: "AI agents and assistants, where they remove real cost rather than add a feature" },
+    { label: "Agentic web applications", spec: false, body: "Web applications that carry out a task end to end rather than presenting a form and waiting." },
+    { label: "Mobile applications", spec: false, body: "Native and cross-platform apps, where the work genuinely happens away from a desk." },
+  ],
   capabilities: [
     "Websites: design, build, maintenance and the digital estate around them",
     "CRM build and configuration, including migration from spreadsheets and inherited systems",

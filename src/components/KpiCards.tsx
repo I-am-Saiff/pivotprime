@@ -1,5 +1,6 @@
 import { METRICS } from "@/content/homepage";
 import KpiVisual from "./KpiVisual";
+import KpiHighlight from "./KpiHighlight";
 
 /**
  * The five result cards, spec 3.3.
@@ -33,11 +34,13 @@ export default function KpiCards() {
   const cards = METRICS.filter((m) => m.pending !== "not-yet-supplied");
 
   return (
-    <ul data-metric-cards className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {cards.map((metric) => (
+    <KpiHighlight count={cards.length}>
+      <ul data-metric-cards className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {cards.map((metric, i) => (
         <li
           key={metric.label}
-          className="flex flex-col rounded-2xl bg-forest p-6 ring-1 ring-neon/20"
+          data-kpi-index={i}
+          className="group/kpi flex flex-col rounded-2xl bg-forest p-6 ring-1 ring-neon/20 transition-[box-shadow,transform,background-color] duration-700 ease-out motion-reduce:transition-none"
         >
           {/* The figure, or nothing at all. No zero, no dash, no "coming soon":
               a placeholder in a results section reads as a result.
@@ -58,12 +61,15 @@ export default function KpiCards() {
 
           <KpiVisual metric={metric} />
 
-          <p className="text-base font-medium text-white">{metric.label}</p>
+          {/* With the figure withheld this line is the card's headline, not a
+              caption under one, so it carries the weight the number would. */}
+          <p className="mt-auto text-lg leading-snug font-bold text-white sm:text-xl">{metric.label}</p>
           <p className="mt-3 border-t border-neon/15 pt-3 text-sm leading-relaxed text-sand/80">
             {metric.context}
           </p>
         </li>
       ))}
-    </ul>
+      </ul>
+    </KpiHighlight>
   );
 }

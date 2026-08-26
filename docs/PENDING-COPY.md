@@ -496,6 +496,63 @@ work; until then they are a dead link on every page of the site.
 
 ---
 
+## 1al. Eleven more lines of ours, and the fees section made shorter — **for Iram**
+
+### The fees section is 37% shorter on desktop and 44% on mobile
+
+Measured, not estimated: 1801px to 1135px at 1440, and 2944px to 1649px at 360.
+**Not one word of hers was cut.** The traditional-versus-Pivot contrast and her
+commitment line stay in view, and the supporting detail sits behind a native
+expander. `details` needs no JavaScript, so every sentence is in the page as it
+arrives whether it is open or shut, and `check-content` fails if any of it stops
+being served.
+
+**One new heading and one new sentence, both ours.** Her copy says what the
+section is *about* — "Most consultants charge whether it works or not" — but
+never says in plain words what the pricing model *is*, and that is the thing
+somebody types into a search box:
+
+> **How Pivot Prime charges: a fixed fee plus a results-linked element**
+>
+> Every engagement has two parts. A fixed element covers the work itself, and a
+> results element is paid against a target agreed with you before anything
+> starts. The Operational Clarity Audit starts at AED 15,000, and everything
+> else is scoped per engagement.
+
+Her heading moved down one line and now leads the section as a statement rather
+than as its title; spec 3.10's own first block is still the heading over the
+traditional column. Both are still on the page.
+
+### The Technology Builds capability grid
+
+Nine tiles. Seven carry spec 4.4's sentences **verbatim** with a short label
+above each; the labels are ours. Two are ours in full and are flagged as such:
+
+| Ours | Why it is not hers |
+|---|---|
+| **Agentic web applications** | 4.4 covers AI agents and custom applications, but not this |
+| **Mobile applications** | 4.4 covers websites and says nothing about mobile |
+
+Both were named as capabilities by Saif on 26 August. The grid heading and the
+line under it are ours too.
+
+**Eleven lines in total**, and they take the authored list from 18 to 29. They
+are in the table in 1f with the rest.
+
+### The result cards read as finished rather than empty
+
+The figure slot was leaving a hole, so the label under it now carries the weight
+the number would and the card ends on a rule rather than on space. A slow
+emphasis cycles across the five cards.
+
+**It cannot hide anything.** Every card is server-rendered and all five are in
+the page at all times; the only thing that moves is one attribute that CSS uses
+to lift a card. With JavaScript off there are five readable cards and no
+emphasis. It pauses on hover and on focus, and under reduced motion it never
+starts.
+
+---
+
 ## 1b. Spec instructions that describe the live WordPress site, not this build
 
 Iram wrote parts of the spec against what she could see on pivotprime.ae. Those

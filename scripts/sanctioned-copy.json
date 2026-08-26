@@ -609,6 +609,94 @@
       "status": "traced",
       "kind": "client-supplied",
       "why": "Slide 8: 'here have a button (more case studies)'. Her wording, sentence-cased to match the site. PENDING-COPY 1y."
+    },
+    {
+      "text": "How Pivot Prime charges: a fixed fee plus a results-linked element",
+      "status": "awaiting-client",
+      "kind": "authored",
+      "why": "Written during the rebuild. The fees section H2. Her own two lines say what the section is about but never state the model in plain words, which is what somebody searches for and what an answer engine can quote. PENDING-COPY 1al.",
+      "route": "/",
+      "element": "h2"
+    },
+    {
+      "text": "Nine things we build, and one rule about when we build them",
+      "status": "awaiting-client",
+      "kind": "authored",
+      "why": "Written during the rebuild. Heading over the capability grid. Spec 4.4 gives the seven capabilities but no heading for them. PENDING-COPY 1al.",
+      "route": "/services/technology-builds",
+      "element": "h2"
+    },
+    {
+      "text": "Websites and digital estate",
+      "status": "awaiting-client",
+      "kind": "authored",
+      "why": "Written during the rebuild. Capability tile label. The sentence beneath it is spec 4.4 verbatim; only the short label is ours. PENDING-COPY 1al.",
+      "route": "/services/technology-builds",
+      "element": "h3"
+    },
+    {
+      "text": "CRM builds",
+      "status": "awaiting-client",
+      "kind": "authored",
+      "why": "Written during the rebuild. Capability tile label. The sentence beneath it is spec 4.4 verbatim; only the short label is ours. PENDING-COPY 1al.",
+      "route": "/services/technology-builds",
+      "element": "h3"
+    },
+    {
+      "text": "Business process automation",
+      "status": "awaiting-client",
+      "kind": "authored",
+      "why": "Written during the rebuild. Capability tile label. The sentence beneath it is spec 4.4 verbatim; only the short label is ours. PENDING-COPY 1al.",
+      "route": "/services/technology-builds",
+      "element": "h3"
+    },
+    {
+      "text": "Dashboards and reporting",
+      "status": "awaiting-client",
+      "kind": "authored",
+      "why": "Written during the rebuild. Capability tile label. The sentence beneath it is spec 4.4 verbatim; only the short label is ours. PENDING-COPY 1al.",
+      "route": "/services/technology-builds",
+      "element": "h3"
+    },
+    {
+      "text": "Systems integration",
+      "status": "awaiting-client",
+      "kind": "authored",
+      "why": "Written during the rebuild. Capability tile label. The sentence beneath it is spec 4.4 verbatim; only the short label is ours. PENDING-COPY 1al.",
+      "route": "/services/technology-builds",
+      "element": "h3"
+    },
+    {
+      "text": "Internal tools",
+      "status": "awaiting-client",
+      "kind": "authored",
+      "why": "Written during the rebuild. Capability tile label. The sentence beneath it is spec 4.4 verbatim; only the short label is ours. PENDING-COPY 1al.",
+      "route": "/services/technology-builds",
+      "element": "h3"
+    },
+    {
+      "text": "AI integrations and agents",
+      "status": "awaiting-client",
+      "kind": "authored",
+      "why": "Written during the rebuild. Capability tile label. The sentence beneath it is spec 4.4 verbatim; only the short label is ours. PENDING-COPY 1al.",
+      "route": "/services/technology-builds",
+      "element": "h3"
+    },
+    {
+      "text": "Agentic web applications",
+      "status": "awaiting-client",
+      "kind": "authored",
+      "why": "Written during the rebuild. AUTHORED IN FULL, label and sentence. Named as a capability by Saif on 26 August; spec 4.4 covers AI agents and custom applications but not this phrase. PENDING-COPY 1al.",
+      "route": "/services/technology-builds",
+      "element": "h3"
+    },
+    {
+      "text": "Mobile applications",
+      "status": "awaiting-client",
+      "kind": "authored",
+      "why": "Written during the rebuild. AUTHORED IN FULL, label and sentence. Named as a capability by Saif on 26 August; spec 4.4 covers websites but says nothing about mobile. PENDING-COPY 1al.",
+      "route": "/services/technology-builds",
+      "element": "h3"
     }
   ]
 }

@@ -373,6 +373,19 @@ export const HOW_WE_ARE_PAID = {
    * EM DASHES. Four of her sentences here use one and section 1 of her own
    * document bans it from the site. They are colons and commas. PENDING-COPY 1ae.
    */
+  /**
+   * AUTHORED, NOT FROM ANY SOURCE. The plainest sentence that states the model,
+   * added 26 August so the section has a heading somebody would actually search
+   * and an answerable first line under it. Her own copy gives the section a
+   * position ("Most consultants charge whether it works or not") but never says
+   * in plain words what the pricing model is, so an answer engine asked "how
+   * does Pivot Prime charge" had nothing short and factual to quote.
+   *
+   * Both lines are ours. PENDING-COPY 1al.
+   */
+  seoHeading: "How Pivot Prime charges: a fixed fee plus a results-linked element",
+  seoAnswer:
+    "Every engagement has two parts. A fixed element covers the work itself, and a results element is paid against a target agreed with you before anything starts. The Operational Clarity Audit starts at AED 15,000, and everything else is scoped per engagement.",
   mockupHeading: "Most consultants charge whether it works or not.",
   contrast: {
     traditional: {
