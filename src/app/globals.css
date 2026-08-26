@@ -48,6 +48,10 @@
   body {
     @apply bg-shell text-foreground antialiased font-sans;
   }
+  /* NOTE: layout.tsx also puts bg-shell on <body> as a utility. That utility is
+     what actually paints, because the utilities layer outranks this one. This
+     rule was here alone at first and did nothing at all: the page stayed white
+     and only the sections warmed. Change both or neither. */
 
   /* Spec 2.1: the About dropdown items are in-page anchors, built with smooth
      scroll and a real URL fragment so /about#team can be linked directly.
