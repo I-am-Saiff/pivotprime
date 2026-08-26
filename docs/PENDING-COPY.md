@@ -349,6 +349,50 @@ the lint reads rendered strings.
 
 ---
 
+## 1ah. The hero eyebrow is now her four words — **for Iram**
+
+Her comment on **slide 1**, which is on all three decks identically:
+
+> "…Use video in the back, **Strategy, Operations, technology, execution at the
+> top.** Different fonts or italics for the most consultants…"
+
+The eyebrow now reads **STRATEGY · OPERATIONS · TECHNOLOGY · EXECUTION**, in her
+order. Same styling, same position directly under the navbar.
+
+**This does not override a spec block.** It was checked three ways before the
+change: spec 3.1 has five blocks and none of them is an eyebrow; the phrase is on
+no page of the live pivotprime.ae; and it is in none of her mockups. The line it
+replaced, "Operations · Strategy · Execution", was **ours**. So this is authored
+copy giving way to her instruction, which is the direction that needs no
+permission.
+
+**It has never been in the authored list either**, and that is a scope gap rather
+than an oversight: `check-unsanctioned-copy` collects headings, links and buttons,
+and the eyebrow is a `<span>`. Any other authored eyebrow on the site is
+invisible to it for the same reason. Logged in 1j as a work item.
+
+### It wraps at 360, and that is not being papered over
+
+Measured on the built page rather than estimated:
+
+| Viewport | Text width | Space available | Result |
+|---|---|---|---|
+| 1440 | 437px | 1152px | one line |
+| 768 | 437px | 720px | one line |
+| **360** | **437px** | **328px** | **two lines** |
+
+At 360 it breaks as `STRATEGY · OPERATIONS · TECHNOLOGY` on the first line and
+`· EXECUTION` on the second, so **the second line begins with an orphaned
+separator**. That is the part that reads as a fault rather than as a wrap.
+
+**Nothing was shrunk to hide it.** Reducing the type or the letter-spacing would
+make her four words fit and make them harder to read at the one width where they
+are hardest to read already. Left as it is, reported to Saif, and the options are
+his call: drop the separators to line breaks at 360, hide the middle dots and let
+the words wrap as a list, or accept the wrap.
+
+---
+
 ## 1b. Spec instructions that describe the live WordPress site, not this build
 
 Iram wrote parts of the spec against what she could see on pivotprime.ae. Those
@@ -1379,15 +1423,24 @@ was not being published anyway.
 
 ---
 
-## 1x. How We Work, taken off the site and kept in full
+## 1x. How We Work, off the site — **DECIDED, not pending**
 
 Slide 17: *"Hide this or delete for now but would like to save what it says in
 case we want to use later? For now its not needed."*
 
+**Closed on 26 August, on Saif's instruction: taken at face value.** This is no
+longer an open question and the client file no longer asks her one. It was framed
+as needing her confirmation, which invited her to re-decide something she had
+already decided in plain words.
+
 The page is off the site. Visiting its address returns a not-found page, it is out
 of the menu, and it is out of the sitemap so search engines stop listing it. **It
 is hidden, not deleted.** The page and every sentence on it are still in the
-project and a single switch puts it back exactly as it was.
+project and a single switch, `NEXT_PUBLIC_ENABLE_HOW_WE_WORK`, puts it back
+exactly as it was.
+
+Held as a decision in `check-content`, which fails if the route stops returning
+404, so it cannot come back by accident.
 
 Here is everything it said, so you can read it without the site:
 

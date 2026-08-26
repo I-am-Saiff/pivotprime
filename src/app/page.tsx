@@ -45,9 +45,13 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-6xl text-white">
-          {/* Eyebrow */}
+          {/* Eyebrow. HER WORDS AND HER ORDER, from the slide 1 comment:
+              "Strategy, Operations, technology, execution at the top." The four
+              words replace an "Operations · Strategy · Execution" that was ours:
+              it is in neither the copy document, nor the live site, nor any
+              mockup. Styling and position unchanged. PENDING-COPY 1ah. */}
           <span className="mb-6 block text-xs font-bold tracking-[0.22em] text-neon uppercase">
-            Operations · Strategy · Execution
+            Strategy · Operations · Technology · Execution
           </span>
 
           {/* Neon accent rule */}

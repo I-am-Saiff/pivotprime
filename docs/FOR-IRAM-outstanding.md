@@ -726,22 +726,24 @@ Every remaining word is in our working notes and one instruction restores it.
 
 ---
 
-## 14. How We Work is hidden, not deleted
+## 14. How We Work is off the site. Nothing needed from you
 
 Your comment on slide 17: *"Hide this or delete for now but would like to save
 what it says in case we want to use later? For now its not needed."*
 
-We did exactly that, and this section exists so you know what "hidden" means in
-practice: **visiting the page's address now returns a not-found page**, it is out
-of the menu, and it is out of the file that tells Google which pages exist, so
-search engines will stop listing it.
+**Taken at face value and closed.** This is not a question and there is nothing
+to answer. The page is off, its words are kept, and it comes back whenever you
+want it.
 
-**The page and every sentence on it are still in the project**, and one switch
-puts it back as it was. Nothing was lost, including the Balanced Scorecard
-statistic and its source line.
+What "off" means in practice, so it holds no surprises: visiting the page's
+address returns a not-found page, it is out of the menu, and it is out of the
+file that tells Google which pages exist, so search engines stop listing it.
 
-This one only needs a yes. We read "hide, don't delete" the way it sounds, but it
-is your page and you may have meant something lighter.
+**Every sentence is preserved**, including the Balanced Scorecard statistic and
+its source line, and one switch restores the page exactly as it was. Nothing
+about it decays while it is off.
+
+**Say the word at any point and it is back the same day.**
 
 ---
 

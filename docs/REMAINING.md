@@ -69,7 +69,6 @@ Saif is getting them across. `PENDING-COPY` 1j-a.
 | **The fractional service card** | The menu says Fractional Leadership; the homepage card still says "Fractional COO, CFO and Chief of Staff", because that is a green block in 3.4. Our recommendation is in the client file. | `FOR-IRAM` 16, `PENDING-COPY` 1u |
 | **The audience page headlines** | Sections 5.1–5.4 say keep the existing ones; her persona mockup carries four completely different ones. We built the document's. One line per page to switch. | `PENDING-COPY` 2.3 |
 | **Spec 3.6** | Removed on her slide 6 comment, kept word for word. Her own document asked for it. | `FOR-IRAM` 12, `PENDING-COPY` 1w |
-| **How We Work** | Off the site on her slide 17 comment: 404, out of the menu, out of the sitemap. Hidden, not deleted; one switch restores it. | `FOR-IRAM` 13, `PENDING-COPY` 1x |
 | **The slide 12 caption** | Her v2 deck says "REMOVE THE TEXT AT THE BOTTOM OF ANIMATION". She deleted the comment before v3 while keeping its neighbour. Withdrawn or resolved — only she knows. **Not actioned.** | `PENDING-COPY` 1af |
 | **Em dashes** | Section 1 bans them; her own 22 August copy uses them throughout. We have converted nine. Three options put to her. | `FOR-IRAM` 9a, `PENDING-COPY` 1ag |
 | **The colour names** | shell, mist, sand, bronze, linen. Ours, because her swatch labels only hexes. | `FOR-IRAM` 23 |
@@ -103,6 +102,10 @@ None of these is outstanding work. They are listed so nothing is discovered late
   Vetoable without rewriting a word. `PENDING-COPY` 2.4.
 - **The /for-smes pricing paragraph** removed so three cards match.
   `PENDING-COPY` 1aa.
+- **How We Work is off the site**, on her slide 17 comment, taken at face value.
+  **Closed, not pending**: 404, out of the menu, out of the sitemap, every
+  sentence preserved, one flag restores it, and `check-content` fails if the
+  route stops 404ing. `PENDING-COPY` 1x, `FOR-IRAM` 14.
 - **Eighteen lines of connective copy are ours**, grouped by page for her.
   `PENDING-COPY` 1f.
 
