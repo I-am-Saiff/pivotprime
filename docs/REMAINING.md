@@ -28,7 +28,7 @@ as four broken cards. It is published on the case study that earned it.
 
 | What | Blocks | Entry |
 |---|---|---|
-| **The WhatsApp pre-fill message** | The header button opens WhatsApp with an empty message. Spec 2.2 says to point it "at WhatsApp with the homepage pre-fill" and never says what that message reads. We will not invent the first sentence a prospect sends her. | `FOR-IRAM` 6, `PENDING-COPY` 0.5 |
+| **The WhatsApp pre-fill message** | `NEXT_PUBLIC_WHATSAPP_NUMBER` is set in all three Vercel environments as of 26 August and the buttons open WhatsApp, verified by clicking the live URL. What is still missing is the message they open with. Spec 2.2 says to point it "at WhatsApp with the homepage pre-fill" and never says what that message reads. We will not invent the first sentence a prospect sends her. | `FOR-IRAM` 6, `PENDING-COPY` 0.5 |
 | **A share image** | The picture shown when a link is shared on LinkedIn or WhatsApp. 1200×630. Nothing in the project works as one and an unbranded default is worse than none. | `FOR-IRAM` 6 |
 | **A background colour instruction** | Expected, never received. Her About redesign uses an off-white page background not on her swatch. Not applied. | `FOR-IRAM` 6 |
 | **Four client logo descriptions** | Four logos in the client strip cannot be identified from their files, so their alt text and their clearance are both unresolved. | `FOR-IRAM` 6 |

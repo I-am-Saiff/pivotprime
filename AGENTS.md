@@ -245,3 +245,29 @@ So before trusting any such parser: **feed it a case containing a line break and
 confirm the output changes.** The same applies to a cell that wraps across lines,
 an entity where a literal character is expected, and a value split across two
 elements. Each has already produced a wrong number on this branch.
+
+
+## A flagged feature is done when the variable is set in Vercel, not when the code is right
+
+The code for the floating WhatsApp button was correct for weeks. It read
+`NEXT_PUBLIC_WHATSAPP_NUMBER`, degraded to `/contact` when unset, and worked
+locally because the value was in `.env.local`. It was reported as built. **On the
+live site it went to the contact page**, because the variable had never been set
+in Vercel.
+
+So for anything behind an environment variable, "built" means all four of:
+
+1. the code is right,
+2. `vercel env ls` shows the variable **in the environment that actually
+   serves** — note that `vercel deploy` without `--prod` builds in **Preview**,
+   so setting Production alone does nothing for the aliased URL,
+3. a new deployment has been made, because `NEXT_PUBLIC_` values are inlined at
+   build time and an existing build will never pick one up, and
+4. it has been **clicked on the live URL** and the destination read back.
+
+Setting Production only, then deploying a preview, produced a build that still
+fell back to `/contact`. That was caught by checking the deployment before
+reporting, which is the only reason it is a paragraph here rather than a third
+round of "it still is not working".
+
+If a variable is missing, name the variable. Do not report the feature as built.

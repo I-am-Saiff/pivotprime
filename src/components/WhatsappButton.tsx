@@ -37,8 +37,10 @@ export default function WhatsappButton() {
     <a
       href={WHATSAPP_URL}
       // WHATSAPP_URL degrades to /contact when NEXT_PUBLIC_WHATSAPP_NUMBER is
-      // unset, and it is unset in production today. The target and rel were
-      // unconditional, so the fallback opened our own contact page in a new tab.
+      // unset. The variable is set in all three Vercel environments as of
+      // 26 August, so this resolves to wa.me; the fallback is now only the
+      // failure mode. The target and rel used to be unconditional, so that
+      // fallback opened our own contact page in a new tab.
       target={HAS_WHATSAPP ? "_blank" : undefined}
       rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined}
       aria-label={HAS_WHATSAPP ? "Message Pivot Prime on WhatsApp" : "Talk to us"}
