@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FOUNDER, PEOPLE, TEAM_ANCHOR, TEAM_INTRO, type Person } from "@/content/team";
 import CaseStudies from "@/components/CaseStudies";
+import { CASE_STUDIES_PULLQUOTE } from "@/content/case-studies";
 import { ABOUT_HERO, BENCH, WHO_WE_ARE } from "@/content/about";
 import type { Metadata } from "next";
 import { pageMetadata } from "@/content/metadata";
@@ -226,12 +227,30 @@ export default function About() {
           cannot drift. */}
       <section className="bg-gray-50 py-24" id="case-studies">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Her pull quote from pp-case-studies.html, in the position her own
+              file gives it: directly above the studies. The slide 8 quote is a
+              different thing and stays with the homepage section. */}
+          <figure className="mx-auto mb-14 max-w-3xl border-l-4 border-mid pl-6 sm:pl-8">
+            <blockquote className="text-lg leading-relaxed text-forest/85 italic sm:text-xl">
+              {CASE_STUDIES_PULLQUOTE.body}
+            </blockquote>
+            <figcaption className="mt-4 text-xs font-bold tracking-[0.18em] text-mid uppercase">
+              {CASE_STUDIES_PULLQUOTE.attribution}
+            </figcaption>
+          </figure>
           <CaseStudies />
         </div>
       </section>
 
+      {/* Her close, pp-about-v2_2.html. The button was here without the two
+          lines above it that give it a reason: check-dropped-mockup-copy found
+          them in her file and on no page of the site. */}
       <section className="bg-forest px-4 py-24 text-center sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
+          <p className="mb-4 text-xs font-bold tracking-[0.22em] text-neon uppercase">Start here</p>
+          <h2 className="mb-10 text-3xl font-extrabold tracking-tight text-white md:text-4xl">
+            The first conversation costs nothing. Not moving does.
+          </h2>
           <Link
             href="/contact"
             className="group inline-flex items-center justify-center rounded-md bg-primary px-10 py-5 text-lg font-bold tracking-wide text-white uppercase shadow-xl transition-colors hover:bg-neon/90"

@@ -591,6 +591,51 @@ you wrote them.**
 
 ---
 
+## 9a. Nine times we have changed your punctuation without telling you
+
+Section 1 of your copy document bans the em dash from the site. **Your own newer
+copy uses it constantly.** Every file you sent on 22 August is full of them: the
+fees designs, the case studies, the revised service pages.
+
+So every time we build one of those sentences we quietly convert it, and we have
+now done that **nine times**. Nobody asked us to and nobody told you.
+
+| Your sentence | On the site |
+|---|---|
+| "Primary ownership — 8 to 10 days a month" | a colon |
+| "…a much more junior lead running the day-to-day — with us available, not resident" | a comma |
+| "We do the work — inside your business, not from a slide deck" | split into a heading and a line |
+| "Most founders already feel something is wrong — they just don't know where to look" | a comma |
+| "We built a full cash-flow model — month by month, venue by venue" | a comma |
+| "From concept to two-country operation — built from scratch" | a comma |
+| "Nobody could see why — until we built the visibility" | a comma |
+| "The team had capability — it lacked clear ownership" | a comma |
+| "Strong demand, loyal core — but churn was rising" | a comma |
+
+**None of it changes what a sentence means.** All of it changes how it reads, and
+all of it was done on the authority of a rule you wrote in a document that
+predates the copy it is being applied to.
+
+**Three ways this can go, and it is entirely your call:**
+
+1. **The rule stands.** We keep converting, and this list stops growing because
+   you now know it is happening.
+2. **The rule was about the old site.** Your newer writing is the later
+   instruction, and we put the dashes back everywhere.
+3. **The rule stands for the site, not for you.** Your sentences keep their
+   dashes and anything we write obeys the ban.
+
+We have carried on with the first, because a rule in your own document is the
+safest thing to follow when you are not here to ask. **It is the option we would
+change first if you disagree.**
+
+This is the same class of change as the two contractions in section 8, and it is
+listed separately only because there are nine of them and they are all in copy
+you sent this month.
+
+
+---
+
 ## 10. Three service pages had your copy replaced by a designer's captions
 
 Three of the service pages were built from your service mockup,

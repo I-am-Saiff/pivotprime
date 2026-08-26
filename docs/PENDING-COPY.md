@@ -312,6 +312,43 @@ standfirst, and the About page.
 
 ---
 
+## 1ag. Her own new copy uses em dashes and section 1 bans them — **for Iram**
+
+Section 1 bans the em dash from the site. Every file she sent on 22 August uses
+them heavily: `pp-fees_3`, `pp-fees_4`, `pp-case-studies.html` and the revised
+service pages.
+
+**We convert them on sight, and by 26 August that had happened nine times**
+without her being told once. Measured against the served pages rather than
+counted by hand, because the first count given to Saif was five and it was wrong.
+
+| Her sentence | Built as |
+|---|---|
+| "Primary ownership — 8 to 10 days a month" | colon |
+| "…running the day-to-day — with us available, not resident" | comma |
+| "We do the work — inside your business, not from a slide deck" | split into title and line |
+| "Most founders already feel something is wrong — they just don't know where to look" | comma |
+| "We built a full cash-flow model — month by month, venue by venue" | comma |
+| "From concept to two-country operation — built from scratch" | comma |
+| "Nobody could see why — until we built the visibility" | comma |
+| "The team had capability — it lacked clear ownership" | comma |
+| "Strong demand, loyal core — but churn was rising" | comma |
+
+The last two predate this batch and were converted earlier; they are listed
+because they are the same change and she has never been told about any of them.
+
+**The tension is real and it is hers to settle.** The ban is in a document from
+13 August. The copy it is being applied to is from 22 August and is also hers.
+Following the older rule is the safer default while she is not here, but it is
+a default, not a finding. `docs/FOR-IRAM-outstanding.md` section 9a puts the
+three options to her.
+
+`copy-lint` enforces the ban and is what catches each one, so this cannot drift
+silently. Em dashes inside code comments are not flagged and do not need to be:
+the lint reads rendered strings.
+
+---
+
 ## 1b. Spec instructions that describe the live WordPress site, not this build
 
 Iram wrote parts of the spec against what she could see on pivotprime.ae. Those

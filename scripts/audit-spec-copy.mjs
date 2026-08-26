@@ -217,6 +217,19 @@ const EXPECTED_ABSENT = [
     tracked: "PENDING-COPY, and docs/FOR-IRAM-outstanding.md",
   },
   {
+    section: "3.3",
+    match: "67%",
+    why:
+      "the only one of the five the three versions agree on, and it IS in the section 9 master table, " +
+      "so it is published on the case study that earned it. It is withheld HERE because spec 3.3 ends " +
+      "\"IRAM TO CONFIRM the five ranges above against the master table in Section 9 before they go live\" " +
+      "and that instruction covers all five, not four. Withholding four and publishing the fifth would " +
+      "put a lone figure in a band of five empty ones, which reads as four broken cards rather than as a " +
+      "section awaiting sign-off",
+    appearsWhen: "Iram confirms one figure per row of the section 9 master table",
+    tracked: "PENDING-COPY, and docs/FOR-IRAM-outstanding.md section 1.5",
+  },
+  {
     section: "6.3",
     match: "Fellow of the Institute and Faculty of Actuaries",
     why:

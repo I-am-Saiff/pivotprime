@@ -13,11 +13,13 @@
     "test:watch": "vitest",
     "check:overflow": "node scripts/check-overflow.mjs",
     "check:content": "node scripts/check-content.mjs",
-    "check": "node scripts/check-overflow.mjs && node scripts/check-content.mjs && node scripts/check-links.mjs && node scripts/check-behaviour.mjs && node scripts/check-unsanctioned-copy.mjs",
+    "check": "node scripts/check-overflow.mjs && node scripts/check-content.mjs && node scripts/check-links.mjs && node scripts/check-behaviour.mjs && node scripts/check-unsanctioned-copy.mjs && npm run --silent report",
     "check:links": "node scripts/check-links.mjs",
     "check:behaviour": "node scripts/check-behaviour.mjs",
     "check:copy-reverse": "node scripts/check-unsanctioned-copy.mjs",
-    "check:dropped": "node scripts/check-dropped-mockup-copy.mjs"
+    "check:dropped": "node scripts/check-dropped-mockup-copy.mjs",
+    "report": "node scripts/audit-spec-copy.mjs && node scripts/check-dropped-mockup-copy.mjs",
+    "audit:copy": "node scripts/audit-spec-copy.mjs"
   },
   "dependencies": {
     "next": "16.3.0",

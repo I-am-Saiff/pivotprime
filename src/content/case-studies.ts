@@ -297,5 +297,22 @@ export const FOUNDER_QUOTE = {
   attribution: "Iram Kauser, Founder and CEO",
 };
 
+/**
+ * HER SECOND FOUNDER QUOTE, from pp-case-studies.html, where it sits directly
+ * above case study 1.
+ *
+ * NOT AN ALTERNATIVE TO FOUNDER_QUOTE. The slide 8 one is about how the firm
+ * behaves and sits with the case studies section on the homepage. This one is
+ * about what the work finds, which is why she put it above the studies
+ * themselves. Both are hers, both are dated 22 August, and neither supersedes
+ * the other. Rendered on /about only, above the case studies section, which is
+ * the position her own file gives it.
+ */
+export const CASE_STUDIES_PULLQUOTE = {
+  body:
+    "Before we propose anything, we go in and find exactly where the business is bleeding. Most founders already feel something is wrong, they just don't know where to look. Once we can show them the number, the conversation changes completely.",
+  attribution: "Iram Kauser, Founder and CEO, Pivot Prime",
+};
+
 export const CASE_STUDIES_HEADING = "What we have achieved";
 export const CASE_STUDIES_STANDFIRST = "Real problems, real execution, real results.";

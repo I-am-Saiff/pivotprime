@@ -77,6 +77,19 @@ const KNOWN_ABSENT = [
     why: "same as pivotprime-persona-pages.html: slide 18 and PENDING-COPY 2.3",
   },
   {
+    // NOT dropped copy. Her services mockup and spec 3.4 disagree on two of the
+    // five card buttons and agree on the other three, and the spec's are green
+    // final-copy blocks, which section 1 says are verbatim.
+    //   spec 3.4 block 27: "See what tech we can build"  vs mockup "See what we build"
+    //   spec 3.4 block 33: "What market entry includes"  vs mockup "How market entry works"
+    match: "See what we build",
+    why: "spec 3.4 block 27 gives this button as \"See what tech we can build\", a green block, and that is what the site carries",
+  },
+  {
+    match: "How market entry works",
+    why: "spec 3.4 block 33 gives this button as \"What market entry includes\", a green block, and that is what the site carries",
+  },
+  {
     match: "Real problems. Real results.",
     why: "pp-case-studies.html is later and words it \"Real problems, real execution, real results\", which is what the site carries",
   },
