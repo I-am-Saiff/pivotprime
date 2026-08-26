@@ -193,6 +193,125 @@ expanded contractions in 1f, and recorded for the same reason.
 
 ---
 
+## 1ae. The fees section, rebuilt to her design without the figures — **for Iram**
+
+**She sent a design and we did not have it.** `pp-fees_3.html` and
+`pp-fees_4.html`, both 22 August, arrived in the same batch as the case studies
+file and were not processed until 26 August. The section had been built prose-only
+partly because no design existed. Two did.
+
+**Neither is buildable as drawn**, and confirming the numbers would not help:
+
+| | Publishes |
+|---|---|
+| `pp-fees_3` | $400,000, 20%, and the formula in words |
+| `pp-fees_4` | $400,000, 20%, $320,000, $80,000, and the whole arithmetic |
+
+> Section 1: "One price only appears on the site: the Operational Clarity Audit
+> floor. No other figure and no upper limit appears anywhere."
+
+> Section 3.10: "Do not publish a specific percentage or a formula here."
+
+**So the layout is hers and the number boxes carry wording.** What is built:
+
+- her eyebrow, kept as "Our fees" per her slide 10 comment
+- her heading, "Most consultants charge whether it works or not."
+- her traditional-versus-Pivot-Prime contrast from `_4`, with spec 3.10's own
+  first block heading the traditional column, which is where it belongs
+- her four model boxes reduced to two. "We agree a target" and "Our fee
+  structure" survive with words in place of figures; "You keep" and "We earn"
+  are dropped outright, because that pair exists only to show the split, which
+  is the formula
+- her commitment box, verbatim: *"If we haven't moved your numbers, most of our
+  fee doesn't get paid."* It states the entire model with no figure in it
+- her numbered sequence from `_3`
+- the audit floor, AED 15,000, as the only figure on the section
+
+**Nothing of hers was cut for length.** Every sentence in either file is either on
+the page or is a figure the rules bar.
+
+**Two changes to tell her about.**
+
+Her H2 is now the section's spine heading, so spec 3.10's "Most consultants are
+paid for the recommendation" moved from H2 to the H3 over the traditional column.
+Both are her copy and both are still served; only which one is the page's
+skeleton changed.
+
+Four of her sentences here use an em dash, which section 1 bans from the site.
+They are colons and commas. Same class of change as the two expanded contractions
+in 1f. Her *"We do the work — inside your business, not from a slide deck"* is
+split into a title and a line rather than carrying a dash.
+
+**Still open, and unchanged by any of this:** whether the rule itself should
+move. If she wants the worked example published, that is a change to section 1
+and 3.10, not a change to this build. Section 2 of her outstanding file asks it.
+
+---
+
+## 1af. Three things logged rather than built — **for Iram**
+
+Each of these is hers to settle. None is blocking and none should be decided here.
+
+### The case study figures: a rule question, not a missing number
+
+`pp-case-studies.html` and `pp-about-v2_2.html` **now agree**, independently, on
+the figures for the three anonymised studies:
+
+| | Both files say |
+|---|---|
+| Financial Services | 67% faster transaction processing · KYC 10 days to 3 · 25% reduction in operational waste · 2 to 3 FTE roles removed |
+| Founder-Led | 2 days a week returned to the founder |
+| Fitness & Wellness | +13% retention · +17% profit margin |
+
+Section 4 of her outstanding file asks her for exactly these numbers. **They are
+not missing. They are barred**, because section 1 says every result figure comes
+from the section 9 master table and these are not in it — except the 67%, the 13%
+and the 17%, which are, and which are published.
+
+So the question is no longer "what is the number". It is **"does the master-table
+rule still hold, now that two of your own files agree on figures the table does
+not carry?"** One sentence from her turns them on. The same applies to Cinnacare
+and Scentmatic, whose figures are withheld on the same rule from a single source.
+
+### The slide 12 caption comment: withdrawn, or resolved?
+
+Her v2 deck carries a comment on slide 12 that v3 does not: **"REMOVE THE TEXT AT
+THE BOTTOM OF ANIMATION"**. Slide 12 is the before-and-after process map on the
+audit page, and the text at the bottom is:
+
+> Seven steps, four handoffs that double back, and two that nobody owns. This is
+> what most businesses look like when you actually map them rather than describe
+> them.
+
+That caption is on the site. **The comment was deleted between v2 and v3** while
+the other slide-12 comment survived word for word, so it was removed deliberately
+rather than lost.
+
+Deleting a comment means one of two things and only she knows which: she
+withdrew the instruction, or she marked it done. **Not actioned.** Removing a
+caption on a comment she deleted is the worse of the two mistakes to make.
+
+### Her two files disagree on whether clients are anonymised
+
+Both are hers, both are 22 to 24 August, and **the disagreement is now visible on
+two different pages of the site**:
+
+| | Says |
+|---|---|
+| `pp-case-studies.html` | "Two named clients who have given us permission to share their stories, and three anonymised" |
+| `pp-about-v2_2.html` | "Every number below is verified. **Clients are anonymised.**" |
+
+The homepage now names Cinnacare and Scentmatic, on the authority of the first
+file. The About page carries the standfirst from the second. A reader moving
+between them sees a promise of anonymity next to two named clients.
+
+This compounds the point already in 6b of her outstanding file: the homepage logo
+strip already names seven clients while the stories promise anonymity. **Whichever
+way she goes, three places have to agree**: the logo strip, the case study
+standfirst, and the About page.
+
+---
+
 ## 1b. Spec instructions that describe the live WordPress site, not this build
 
 Iram wrote parts of the spec against what she could see on pivotprime.ae. Those

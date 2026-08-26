@@ -317,6 +317,81 @@ export const HOW_WE_ARE_PAID = {
     "The Operational Clarity Audit starts at AED 15,000. Everything else is scoped per engagement, because the shape of the work decides the cost.",
   ],
 
+
+  /**
+   * HER FEES DESIGN, BUILT COMPLIANT. pp-fees_3.html and pp-fees_4.html, both
+   * sent 22 August and not processed until 26 August. The section had been
+   * built prose-only partly because no design existed. One did, and two.
+   *
+   * NEITHER IS BUILDABLE AS DRAWN. _3 publishes $400,000, 20% and the formula
+   * in words. _4 publishes $400,000, 20%, $320,000, $80,000 and the whole
+   * arithmetic. Two rules bar them independently:
+   *
+   *   Spec section 1: "One price only appears on the site: the Operational
+   *   Clarity Audit floor. No other figure and no upper limit appears anywhere."
+   *
+   *   Spec 3.10: "Do not publish a specific percentage or a formula here."
+   *
+   * So the layout is hers and the number boxes carry wording instead. Her
+   * structure survives intact: the traditional-versus-Pivot-Prime contrast from
+   * _4, the numbered sequence from _3, and her commitment line, which states
+   * the whole idea with no figure in it at all.
+   *
+   * EM DASHES. Four of her sentences here use one and section 1 of her own
+   * document bans it from the site. They are colons and commas. PENDING-COPY 1ae.
+   */
+  mockupHeading: "Most consultants charge whether it works or not.",
+  contrast: {
+    traditional: {
+      label: "The traditional model",
+      /** Spec 3.10 block 0, verbatim: it is the traditional model in her words. */
+      headline: "Most consultants are paid for the recommendation",
+      body: [
+        "You pay for the advice. Whether anything actually improves is not really their problem.",
+        "The invoice arrives either way.",
+      ],
+    },
+    pivotPrime: {
+      label: "The Pivot Prime model",
+      headline: "We only fully earn when you do.",
+      /** Her four boxes. Every figure in them is replaced by what the figure was
+       *  there to demonstrate. The "You keep" and "We earn" pair is dropped
+       *  outright: it exists only to show the split, which is the formula. */
+      rows: [
+        {
+          label: "We agree a target",
+          value: "A cost reduction, a margin improvement, or a revenue number. A specific number, and a specific date.",
+        },
+        {
+          label: "Our fee structure",
+          value: "A fixed element covers the work itself. A results element sits against that target.",
+        },
+      ],
+    },
+  },
+  /** Her pull box, _3 and _4, verbatim. It carries the model with no figure in it. */
+  commitment: {
+    label: "The commitment",
+    body: "If we haven't moved your numbers, most of our fee doesn't get paid.",
+  },
+  /** Her numbered sequence, _3. Em dashes replaced per section 1. */
+  sequence: [
+    {
+      title: "We agree the target upfront.",
+      body: "A specific number. A specific date.",
+    },
+    {
+      // Hers reads "We do the work — inside your business, not from a slide
+      // deck." Split at the dash rather than carrying one, per section 1.
+      title: "We do the work.",
+      body: "Inside your business, not from a slide deck.",
+    },
+    {
+      title: "We earn on results.",
+      body: "Part of our fee is fixed. The rest is tied to what actually happened.",
+    },
+  ],
+
   // Spec 3.10 also says "Iram to confirm final wording before this section goes
   // live." That applies to the block copy above, which is already built and
   // deployed. Tracked as item 1.5.

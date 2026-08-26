@@ -370,6 +370,19 @@ const DECISIONS = [
       return null;
     },
   },
+  {
+    what: "the fees section carries no figure but the audit floor, and no percentage or formula",
+    where: "PENDING-COPY 1ae and 1h",
+    run: async (get) => {
+      const html = (await (await get("/")).text()).replace(/<[^>]+>/g, " ");
+      const banned = ["$400,000", "$320,000", "$80,000", "20% of savings", "20% of what"];
+      const leaked = banned.filter((b) => html.includes(b));
+      if (leaked.length) {
+        return `${leaked.join(", ")} published. Section 1 allows one price on the site and 3.10 says "Do not publish a specific percentage or a formula here"`;
+      }
+      return html.includes("AED 15,000") ? null : "the audit floor is gone, so the section names no price at all";
+    },
+  },
 ];
 
 
@@ -469,7 +482,12 @@ const HEADING_ORDER = [
       "Pivot Prime is led by a Mathematician", // 3.7
       "What we have achieved", // 3.8
       "You don", // 3.9, contraction differs by apostrophe encoding
-      "Most consultants are paid for the recommendation", // 3.10
+      // The fees section is built to her pp-fees_3/_4 design as of 26 August,
+      // so its H2 is her mockup heading and spec 3.10's own first block is the
+      // H3 heading the traditional-model column. Both are her copy and both are
+      // still served; only which one is the spine heading changed.
+      // PENDING-COPY 1ae.
+      "Most consultants charge whether it works or not.", // her fees mockup
       "Find out what is actually holding the business back", // 3.11
     ],
   },

@@ -337,71 +337,120 @@ export default function Home() {
               className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.07)_1px,transparent_1px)] [background-size:26px_26px] pointer-events-none"
             />
 
-            {/* Content */}
-            <div className="relative z-10 grid gap-10 md:grid-cols-2 md:gap-16 md:items-start">
-              {/* Left — heading block */}
-              <div>
-                {/* Her wording, slide 10: "Eyebrow heading to just say OUR FEES". */}
-                <span className="mb-4 block text-xs font-bold tracking-[0.22em] text-neon uppercase">Our fees</span>
-                <div className="mb-5 h-[3px] w-10 rounded-full bg-neon" aria-hidden="true" />
-                <h2 className="text-3xl font-extrabold tracking-tight text-white leading-tight md:text-4xl">
-                  {HOW_WE_ARE_PAID.heading}
-                </h2>
+            {/* Content — her layout from pp-fees_3 and pp-fees_4, with every
+                number box replaced by what the number was there to show. */}
+            <div className="relative z-10">
+              {/* Her wording, slide 10: "Eyebrow heading to just say OUR FEES". */}
+              <span className="mb-4 block text-xs font-bold tracking-[0.22em] text-neon uppercase">Our fees</span>
+              <div className="mb-5 h-[3px] w-10 rounded-full bg-neon" aria-hidden="true" />
+              <h2 className="max-w-3xl text-3xl font-extrabold leading-tight tracking-tight text-white md:text-4xl">
+                {HOW_WE_ARE_PAID.mockupHeading}
+              </h2>
+              <p className="mt-5 max-w-3xl text-lg font-semibold leading-snug text-neon md:text-xl">
+                {HOW_WE_ARE_PAID.lead}
+              </p>
 
-                {/* Lead sentence — neon highlight */}
-                <p className="mt-5 text-lg font-semibold leading-snug text-neon md:text-xl">
-                  {HOW_WE_ARE_PAID.lead}
-                </p>
-
-                {/* Outcome badge */}
-                <div className="mt-8 inline-flex items-center gap-2.5 rounded-full border border-neon/30 bg-neon/10 px-4 py-2">
-                  <span className="h-2 w-2 rounded-full bg-neon flex-shrink-0" aria-hidden="true" />
-                  <span className="text-xs font-bold tracking-wider text-neon uppercase">
-                    Performance-linked fees
-                  </span>
-                </div>
-              </div>
-
-              {/* Right — body copy */}
-              <div className="space-y-5">
-                {HOW_WE_ARE_PAID.body.map((paragraph) => (
-                  <p
-                    key={paragraph.slice(0, 40)}
-                    className="leading-relaxed text-white/80 text-sm sm:text-base"
-                  >
-                    {paragraph}
+              {/* Her two-column contrast, pp-fees_4. */}
+              {/* items-start: her traditional column is two lines against four
+                  boxes, so stretching it to match left a third of it empty. */}
+              <div className="mt-12 grid items-start gap-5 md:grid-cols-2">
+                <div className="rounded-2xl border border-white/12 bg-white/[0.04] p-6 sm:p-8">
+                  <p className="text-xs font-bold tracking-[0.18em] text-white/50 uppercase">
+                    {HOW_WE_ARE_PAID.contrast.traditional.label}
                   </p>
-                ))}
-
-                {/* The pricing model, stated in prose. Spec section 1 allows one
-                    price on the whole site and spec 3.10 bars a percentage or a
-                    formula here, so the model is described rather than worked
-                    through. PENDING-COPY 1h. */}
-                <div className="mt-8 rounded-2xl border border-neon/25 bg-neon/[0.07] p-5">
-                  <p className="text-xs font-bold tracking-[0.18em] text-neon uppercase">
-                    How the fee is built
-                  </p>
-                  {HOW_WE_ARE_PAID.structure.map((paragraph) => (
-                    <p
-                      key={paragraph.slice(0, 40)}
-                      className="mt-3 text-sm leading-relaxed text-white/80 sm:text-base"
-                    >
-                      {paragraph}
+                  <h3 className="mt-4 text-xl font-bold text-white/85">
+                    {HOW_WE_ARE_PAID.contrast.traditional.headline}
+                  </h3>
+                  {HOW_WE_ARE_PAID.contrast.traditional.body.map((line) => (
+                    <p key={line.slice(0, 30)} className="mt-3 text-sm leading-relaxed text-white/60 sm:text-base">
+                      {line}
                     </p>
                   ))}
                 </div>
 
-                {/* Bottom strip — what it means in practice */}
-                <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.06] p-5 flex gap-4 items-start">
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-neon/15 text-neon">
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <p className="text-sm text-white/70 leading-relaxed">
-                    Every engagement starts with a measurement baseline. That baseline is what our outcome-linked fee is held against.
+                <div className="rounded-2xl border border-neon/30 bg-neon/[0.07] p-6 sm:p-8">
+                  <p className="text-xs font-bold tracking-[0.18em] text-neon uppercase">
+                    {HOW_WE_ARE_PAID.contrast.pivotPrime.label}
                   </p>
+                  <h3 className="mt-4 text-xl font-bold text-white">
+                    {HOW_WE_ARE_PAID.contrast.pivotPrime.headline}
+                  </h3>
+                  <dl className="mt-5 space-y-4">
+                    {HOW_WE_ARE_PAID.contrast.pivotPrime.rows.map((row) => (
+                      <div key={row.label} className="rounded-xl border border-white/10 bg-forest/40 p-4">
+                        <dt className="text-xs font-bold tracking-[0.16em] text-neon uppercase">
+                          {row.label}
+                        </dt>
+                        <dd className="mt-1.5 text-sm leading-relaxed text-white/85">{row.value}</dd>
+                      </div>
+                    ))}
+                  </dl>
                 </div>
+              </div>
+
+              {/* Spec 3.10 blocks 2 and 3, verbatim. */}
+              <div className="mt-12 grid gap-6 md:grid-cols-2 md:gap-10">
+                {HOW_WE_ARE_PAID.body.map((paragraph) => (
+                  <p
+                    key={paragraph.slice(0, 40)}
+                    className="text-sm leading-relaxed text-white/80 sm:text-base"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+
+              {/* Her commitment box. It states the model with no figure in it. */}
+              <blockquote className="mt-10 rounded-2xl border-l-4 border-neon bg-white/[0.06] px-6 py-6 sm:px-8">
+                <p className="text-xs font-bold tracking-[0.18em] text-neon uppercase">
+                  {HOW_WE_ARE_PAID.commitment.label}
+                </p>
+                <p className="mt-3 text-lg font-bold leading-snug text-white sm:text-xl">
+                  {HOW_WE_ARE_PAID.commitment.body}
+                </p>
+              </blockquote>
+
+              {/* Her numbered sequence, pp-fees_3. */}
+              <ol className="mt-10 grid gap-5 md:grid-cols-3">
+                {HOW_WE_ARE_PAID.sequence.map((step, i) => (
+                  <li key={step.title} className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
+                    <span
+                      aria-hidden="true"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-neon/15 font-sans text-sm font-extrabold text-neon"
+                    >
+                      {i + 1}
+                    </span>
+                    <p className="mt-4 font-bold text-white">{step.title}</p>
+                    <p className="mt-1.5 text-sm leading-relaxed text-white/70">{step.body}</p>
+                  </li>
+                ))}
+              </ol>
+
+              {/* The one price section 1 permits, and the only figure here.
+                  Ours, not hers: PENDING-COPY 1h. */}
+              <div className="mt-10 rounded-2xl border border-neon/25 bg-neon/[0.07] p-5 sm:p-6">
+                <p className="text-xs font-bold tracking-[0.18em] text-neon uppercase">
+                  How the fee is built
+                </p>
+                {HOW_WE_ARE_PAID.structure.map((paragraph) => (
+                  <p
+                    key={paragraph.slice(0, 40)}
+                    className="mt-3 text-sm leading-relaxed text-white/80 sm:text-base"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+
+              <div className="mt-6 flex items-start gap-4 rounded-2xl border border-white/10 bg-white/[0.06] p-5">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-neon/15 text-neon">
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <p className="text-sm leading-relaxed text-white/70">
+                  Every engagement starts with a measurement baseline. That baseline is what our outcome-linked fee is held against.
+                </p>
               </div>
             </div>
           </div>
