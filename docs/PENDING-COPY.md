@@ -829,19 +829,28 @@ them is the one that cost this branch the most: **instructions arriving in
 channels nobody audits.** Forty-four PowerPoint comments sat unread from 22
 August because every audit read rendered images. Email is the same shape.
 
-### The logo file was supplied on 11 August
+### The logo: sent to Saif on 11 August, never seen here
 
-`docs/FOR-IRAM-outstanding.md` section 6 listed the logo under "things that were
-mentioned but never sent". That was wrong. It arrived on 11 August and the row is
-corrected to **received, pending integration** — a work item of ours, not
-something owed by the client.
+**Status: not seen.** Not "never sent", which is what the client file used to say
+and which was wrong. Not "received, pending integration", which is what it said
+next and which claimed more than is true.
 
-**What the working folder actually shows**, for the record, is that the only logo
-file reachable from here is `Cinnacare PRIMARY LOGO V2 BG1.pdf` inside
-`fwdwebsitecopy.zip`, timestamped 24 August, and that is a *client's* logo rather
-than the Pivot Prime mark. **So the 11 August file is not in the working folder
-and has not been opened here.** Applying it needs the file put somewhere this
-repository can see.
+Saif has the file. It is in Iram's email of **11 August, titled "Pivot Prime
+Logo", five attachments, two of them PDFs.** Nothing from that email has been in
+the working folder and nothing from it has been opened here.
+
+**What is actually reachable from this repository** is one logo file,
+`Cinnacare PRIMARY LOGO V2 BG1.pdf` inside `fwdwebsitecopy.zip`, timestamped
+24 August. That is a *client's* logo, not the Pivot Prime mark, and it is not the
+file in question.
+
+**Nothing is built on it and nothing should be.** Five attachments with two PDFs
+almost certainly means variants — a primary mark, a mono or reversed version,
+possibly a favicon-sized one — and which variant belongs in which of the four
+places is a decision that needs the files open, not inferred from a filename.
+
+Saif is putting them somewhere the repository can see. Until then this is an
+item **we cannot start**, rather than one we have not got to.
 
 Four places carry the mark and all four change together: the header, the footer,
 the browser tab icon, and the social share image. The share image is separately
@@ -882,9 +891,23 @@ comes:
 - Deep spec §8.2 will then be a deviation and needs its own entry, the same way
   everything else built against her later word does.
 
-**Before it is built, her email should be read directly.** "Random order, not
-grouped" is being carried here second-hand, and the one thing this branch has
-learned repeatedly is that a paraphrase of an instruction is not the instruction.
+### Status: reported, not read at source
+
+**This instruction has not been read here.** It reaches this record as Saif's
+account of an email of 12 August that nobody on this side has opened. That is not
+a doubt about Saif; it is the difference between an instruction and a paraphrase
+of one, and this branch has been taught that difference expensively.
+
+**Nothing is to be built on the paraphrase.** "Random order, not grouped" is
+eleven words standing in for whatever she actually wrote, and the eleven words
+already carry at least two unanswered questions: whether random means shuffled
+across all six domains or shuffled within a screen, and whether the six-step
+progress indicator survives either reading. A build that guesses those is a build
+that has to be undone.
+
+**What unblocks it:** the email itself, forwarded or pasted, at which point this
+entry is rewritten from the source and 3.1 is decided properly. The diagnostic is
+out of stage one, so nothing is waiting on it and there is no reason to guess.
 
 ---
 

@@ -244,7 +244,7 @@ load.
 
 | What | Why we need it |
 |---|---|
-| **The logo** — *received, not yet applied* | This row said no logo file had arrived. It had, on 11 August. Nothing is owed by you here; the file is with us and the work is ours. It goes into the header, the footer and the browser tab icon, plus the image shown when a link is shared, and we will confirm when all four are on the new mark |
+| **The logo** — *sent, not yet with the build* | This row said no logo file had arrived. That was wrong: you sent it on 11 August, in the email titled "Pivot Prime Logo". **Nothing is owed by you here.** It has simply not reached the people building the site yet, so nobody has opened it. Once it has, it goes into the header, the footer, the browser tab icon and the image shown when a link is shared, and we will confirm when all four are on the new mark |
 | **A background colour instruction** | Also expected, also not received. Your About redesign, `pp-about-v2_2.html`, uses an off-white page background that is not on your colour swatch. We have not applied it |
 | **The WhatsApp pre-filled message** | Section 2.2 says to point the header button "at WhatsApp with the homepage pre-fill", but never says what that message reads. We are not going to invent the first sentence a prospect sends you. The button opens WhatsApp with an empty message until you send the wording |
 | **A share image** | The picture that appears when someone shares a Pivot Prime link on LinkedIn or WhatsApp. 1200 by 630, logo and a short line. Nothing in the project works as one, and an unbranded default is worse than none |

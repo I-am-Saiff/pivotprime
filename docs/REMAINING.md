@@ -37,11 +37,16 @@ as four broken cards. It is published on the case study that earned it.
 | **The eighteen diagnostic commentary blocks** | Phase two. Nothing held up. | `FOR-IRAM` tail |
 | **Screenshots of built systems** | For the technology page. Phase two. | `FOR-IRAM` tail |
 
-**And one that is ours, not hers.** The logo file arrived on 11 August and the
-client file wrongly listed it as never sent. It is now recorded as received and
-pending integration — but **the file is not in the working folder** and has not
-been opened here. It has to be put somewhere the repo can see before the header,
-footer, favicon and share image can move to it. `PENDING-COPY` 1j-a.
+**And one that is ours, not hers.** The logo was sent on 11 August, in Iram's
+email titled "Pivot Prime Logo", five attachments and two PDFs. The client file
+first said it was never sent, then said received and pending integration. **Both
+were wrong. It has never been in the working folder and has never been opened
+here.**
+
+Status: **not seen**, and therefore not startable rather than not started. Five
+attachments almost certainly means variants, and which variant belongs in the
+header, the footer, the favicon and the share image needs the files open.
+Saif is getting them across. `PENDING-COPY` 1j-a.
 
 ---
 
@@ -108,7 +113,7 @@ None of these is outstanding work. They are listed so nothing is discovered late
 | | |
 |---|---|
 | **The diagnostic** | Flagged off. The instrument at `/diagnostic` is the deep 42-statement version; the split into a public 12-question one and an unlisted deep one is later-phase, so `/diagnostic/deep` 404s on its own account. `PENDING-COPY` 0.1–0.3. |
-| **Question order** | **Reopened.** Her 12 August email requires the statements in random order, not grouped by domain. The inherited build did that; we replaced it with deep spec 8.2's one-domain-per-screen. Not actioned, and the email should be read directly before it is. `PENDING-COPY` 1j-a, 3.1. |
+| **Question order** | **Reopened, and the instruction has not been read here.** It reaches the record as Saif's account of a 12 August email nobody on this side has opened. "Random order, not grouped" already leaves two questions open: across all six domains or within a screen, and whether the six-step progress indicator survives. **Nothing to be built on the paraphrase.** The email itself unblocks it. `PENDING-COPY` 1j-a, 3.1. |
 | **Two gated sentences** | Spec 3.11's homepage close standfirst, and the diagnostic destination on the second CTA, which points at `/contact` with her own "Talk to us" wording. Both return automatically. `PENDING-COPY` 0.4, 0.6. |
 | **Joint-constraint reporting** | Where two constraints combine the diagnostic reports them singly, which is narrower than the document. `PENDING-COPY` 3.2. |
 | **The report template** | 11 headings in her `report-template.html` are on no page, because none of it is built. |
@@ -122,7 +127,7 @@ None of these is outstanding work. They are listed so nothing is discovered late
 |---|---|
 | **Four service page components are client components without needing to be** | `Service1ClarityAudit`, `Service2FractionalLeadership`, `Service3BuildPlace`, `Service5MarketEntry`. Their content is fully in the served HTML — measured on all nine service and audience pages against the fully-expanded DOM, zero words missing. A hydration cost and a shape that invites the served-HTML defect back, not a live defect. `PENDING-COPY` 1j. |
 | **Three palette leftovers** | `--color-primary-dark`, `--color-dark`, `--color-light` in `globals.css`. The first is the hover state on every primary button, so dropping it changes every button on the site. Not done unasked. `PENDING-COPY` 4.4. |
-| **The logo, once the file is reachable** | Header, footer, favicon and share image change together. |
+| **The logo** | **Cannot start: the file has never been here.** Sent 11 August, not yet across. Header, footer, favicon and share image change together. |
 | **`check:dropped` still reports one** | "Real problems. Real results." from `pp-about-v2_2.html`, superseded by her later `pp-case-studies.html` wording. Explained in `KNOWN_ABSENT`, not a gap. |
 
 ---
