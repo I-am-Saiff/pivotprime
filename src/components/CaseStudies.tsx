@@ -265,6 +265,9 @@ export default function CaseStudies({
           <button
             key={idx}
             type="button"
+            // The row is aria-hidden, so these must leave the tab order with it.
+            // The arrows above are the labelled, focusable control.
+            tabIndex={-1}
             onClick={() => scrollToIndex(idx)}
             className={`h-2 rounded-full transition-all duration-300 ${
               idx === currentIndex ? "w-8 bg-mid" : "w-2 bg-neutral-300"

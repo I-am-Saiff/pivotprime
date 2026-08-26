@@ -449,6 +449,53 @@ None is blocking. The last one needs Saif rather than Iram.
 
 ---
 
+## 1ak. The page background is warmed to shell, and a functional sweep — **for Iram**
+
+### Every light page background is now her cream
+
+Her slide 3 comment: *"Lets try few new colour ways with all the colours shown
+here we have few background options instead of white cold..we can use the
+ivory"*. `shell`, `#fefbf8`, is the ivory on her own swatch and it is now the
+page base site-wide. Nineteen sections that were explicitly pure white moved with
+it, and the two cool grey bands became `linen`, the palette's warm grey, so the
+banding rhythm survives the warming instead of going muddy against it.
+
+**Cards stayed white on purpose.** Warming both would have flattened the
+separation between a card and the page it sits on, so the page carries the cream
+and the card keeps the white. Palette tokens only; `palette-lint` clean.
+
+**Contrast measured afterwards, and one class fails, before and after.** `mid`
+green (`#009f50`) at small sizes reads 3.2 to 3.5 against light backgrounds where
+WCAG AA wants 4.5. On pure white it was 3.46; on shell it is 3.35, so the warming
+moved it by roughly a tenth and did not cause it. It affects the eyebrow above
+most sections and the green sub-lines on the audience pages. Changing it touches
+every eyebrow on the site, so it is a decision rather than a fix, and it is
+Saif's to make. Two smaller ones sit with it: the neon eyebrow on the patterns
+section reads 1.86, and the form's "(optional)" reads 2.52.
+
+### What the functional sweep found
+
+556 links and buttons clicked on every route, at 1440 and 360, with a real touch
+context for the dropdowns. Every internal link resolves 200, every in-page anchor
+target exists, every external link carries `rel="noopener"`, all six redirects
+answer 308 to a destination that returns 200, and the three dropdowns, the mobile
+menu and its disclosures, the three seat tabs and their deep links, the process
+map toggle and the case study arrows all behave.
+
+**One defect worth her knowing about, now fixed.** With JavaScript disabled the
+contact page showed a pulsing grey placeholder and no form at all. The form reads
+a query parameter for its prefilled message, and doing that in the browser forced
+React to stream the whole form inside a hidden container with a script to reveal
+it; with no JavaScript that script never runs. The page is the one whose entire
+job is the enquiry. The parameter is read on the server now and the form is in
+the page as it arrives, with its own address and method, so it posts natively.
+
+**One thing left for her.** The footer carries two social icons, LinkedIn and
+Instagram, and both link to nothing. **Send the two profile addresses** and they
+work; until then they are a dead link on every page of the site.
+
+---
+
 ## 1b. Spec instructions that describe the live WordPress site, not this build
 
 Iram wrote parts of the spec against what she could see on pivotprime.ae. Those

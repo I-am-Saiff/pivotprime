@@ -6,7 +6,7 @@ export const metadata: Metadata = pageMetadata("forPlOwners");
 
 export default function ForCorporateOwners() {
   return (
-    <div className="flex flex-col min-h-screen pt-20 pb-16 bg-neutral-50/50">
+    <div className="flex flex-col min-h-screen pt-20 pb-16">
       
       {/* Hero Section */}
       <header className="bg-forest text-white relative overflow-hidden py-16 md:py-24">

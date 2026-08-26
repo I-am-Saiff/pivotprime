@@ -225,7 +225,7 @@ export default function About() {
 
       {/* Case studies, unchanged. Same component as the homepage so the two
           cannot drift. */}
-      <section className="bg-gray-50 py-24" id="case-studies">
+      <section className="bg-linen/40 py-24" id="case-studies">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Her pull quote from pp-case-studies.html, in the position her own
               file gives it: directly above the studies. The slide 8 quote is a

@@ -40,8 +40,13 @@
 }
 
 @layer base {
+  /* The page base is shell, her #fefbf8, not pure white. Every light section
+     sits on it and the ones that were explicitly bg-white are bg-shell now.
+     Cards stay white so they still separate from the page they sit on, which is
+     the whole reason for warming the base rather than both. --color-background
+     is still #ffffff and is what those cards use. */
   body {
-    @apply bg-background text-foreground antialiased font-sans;
+    @apply bg-shell text-foreground antialiased font-sans;
   }
 
   /* Spec 2.1: the About dropdown items are in-page anchors, built with smooth

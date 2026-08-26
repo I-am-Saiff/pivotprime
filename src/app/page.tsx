@@ -116,7 +116,7 @@ export default function Home() {
 
       {/* 3.2 Proof bar. MOVE: the logo rows sat buried inside a later section
           and belong directly under the hero. */}
-      <section className="border-b border-neutral-100 bg-white py-14">
+      <section className="border-b border-neutral-100 bg-shell py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="mx-auto max-w-3xl text-center text-base font-medium text-neutral-600 md:text-lg">
             {PROOF.trusted}
@@ -202,7 +202,7 @@ export default function Home() {
           standard body colour. Spec 3.3. */}
       {/* pb-28 below sm: clears the floating WhatsApp button so the last
           card does not end underneath it. PENDING-COPY 1ak. */}
-      <section className="bg-white px-4 pt-20 pb-28 sm:px-6 sm:py-20 lg:px-8">
+      <section className="bg-shell px-4 pt-20 pb-28 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <header className="mb-12 max-w-3xl">
             <span className="block font-sans font-semibold text-xs tracking-[0.22em] uppercase text-mid mb-3">
@@ -219,7 +219,7 @@ export default function Home() {
       </section>
 
       {/* 3.4 What do we actually do. NEW. The hero's secondary CTA anchors here. */}
-      <section id="services" className="scroll-mt-28 bg-white px-4 pb-24 sm:px-6 lg:px-8">
+      <section id="services" className="scroll-mt-28 bg-shell px-4 pb-24 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <header className="mb-14 max-w-3xl">
             <p className="mb-4 text-xs font-semibold tracking-[0.18em] text-mid uppercase">
@@ -237,7 +237,7 @@ export default function Home() {
       {/* 3.5 The patterns. MOVED below the services: having just read what
           Pivot Prime sells, the visitor now recognises their own symptom and
           knows which service it points to. Spec 3.5. */}
-      <section className="bg-white px-4 pb-24 sm:px-6 lg:px-8">
+      <section className="bg-shell px-4 pb-24 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <p className="mb-4 text-xs font-semibold tracking-[0.18em] text-neon uppercase">
             {PATTERNS.eyebrow}
@@ -271,7 +271,7 @@ export default function Home() {
           the layout does not collapse and the two-column intent is preserved.
           Spec 8.2: nothing is better than stock, so the placeholder uses
           initials + brand colour rather than any photography. Spec 3.7. */}
-      <section className="bg-white px-4 py-24 sm:px-6 lg:px-8">
+      <section className="bg-shell px-4 py-24 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl grid items-center gap-12 md:grid-cols-2">
           {/* Copy column — left on desktop */}
           <div>
@@ -318,7 +318,7 @@ export default function Home() {
           after the founder section and before the personas, so the founder
           section establishes who is behind the work, the case studies prove it,
           and the personas then ask the visitor to place themselves. */}
-      <section className="bg-white px-4 pb-24 sm:px-6 lg:px-8">
+      <section className="bg-shell px-4 pb-24 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           {/* Slide 8: the anonymised ones "sit only on the about page and you
               link to them", with a "more case studies" button here. */}
@@ -339,7 +339,7 @@ export default function Home() {
       </section>
 
       {/* Audiences Section / Chapter 03 — Who We Serve */}
-      <section className="py-24 bg-neutral-50 px-4 sm:px-6 lg:px-8 border-t border-neutral-100">
+      <section className="py-24 bg-linen/40 px-4 sm:px-6 lg:px-8 border-t border-forest/[0.06]">
         <div className="max-w-6xl mx-auto">
           <PersonaSwitcher />
         </div>
@@ -348,7 +348,7 @@ export default function Home() {
       {/* 3.10 How we are paid. Dark card treatment — the performance-linked
           model is a differentiator and deserves visual weight. No percentage
           or formula published per spec 3.10. */}
-      <section className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8 bg-white">
+      <section className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8 bg-shell">
         <div className="mx-auto max-w-6xl">
           <div className="relative overflow-hidden rounded-3xl bg-forest px-6 py-12 sm:px-10 sm:py-16 md:px-16 md:py-20">
             {/* Dot-grid texture */}
@@ -375,7 +375,7 @@ export default function Home() {
                   boxes, so stretching it to match left a third of it empty. */}
               <div className="mt-12 grid items-start gap-5 md:grid-cols-2">
                 <div className="rounded-2xl border border-white/12 bg-white/[0.04] p-6 sm:p-8">
-                  <p className="text-xs font-bold tracking-[0.18em] text-white/50 uppercase">
+                  <p className="text-xs font-bold tracking-[0.18em] text-white/70 uppercase">
                     {HOW_WE_ARE_PAID.contrast.traditional.label}
                   </p>
                   <h3 className="mt-4 text-xl font-bold text-white/85">
@@ -478,7 +478,7 @@ export default function Home() {
       </section>
 
       {/* 3.11 Close / Banner Card (Chapter 05 Style) */}
-      <section className="px-4 py-20 sm:px-6 lg:px-8 bg-white">
+      <section className="px-4 py-20 sm:px-6 lg:px-8 bg-shell">
         <div className="mx-auto max-w-6xl rounded-[32px] bg-forest text-white p-10 sm:p-14 md:p-20 relative overflow-hidden border border-white/10 shadow-2xl text-center">
           <div aria-hidden="true" className="absolute inset-0 z-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none" />
 

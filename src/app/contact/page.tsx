@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import type { Metadata } from "next";
 import { pageMetadata } from "@/content/metadata";
 import EnquiryForm from "@/components/EnquiryForm";
@@ -10,14 +9,20 @@ export const metadata: Metadata = pageMetadata("contact");
 export default async function Contact({
   searchParams,
 }: {
-  searchParams: Promise<{ sent?: string; error?: string }>;
+  searchParams: Promise<{ sent?: string; error?: string; message?: string }>;
 }) {
   const params = await searchParams;
   const sent = params.sent === "1";
   const error = params.error ?? null;
+  // Read on the server and passed down. Reading it in the client component
+  // with useSearchParams forces a Suspense boundary, and React then streams
+  // the form inside <div hidden> with a script to unhide it. With JavaScript
+  // off that script never runs, so the enquiry page showed a pulsing grey
+  // placeholder and no form at all. PENDING-COPY 1ak.
+  const prefilledMessage = params.message ?? "";
 
   return (
-    <div className="flex flex-col min-h-screen pt-28 pb-20 bg-neutral-50/60">
+    <div className="flex flex-col min-h-screen pt-28 pb-20">
       <section className="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto py-12 md:py-16 w-full">
         {/* Main Frosted Card Container */}
         <div className="frosted-card-light rounded-[32px] p-8 sm:p-12 md:p-16">
@@ -63,9 +68,11 @@ export default async function Contact({
 
             {/* Right Column: Enquiry Form */}
             <div className="lg:col-span-6">
-              <Suspense fallback={<div className="h-96 rounded-2xl bg-neutral-100/50 animate-pulse" />}>
-                <EnquiryForm initialStatus={sent ? "sent" : null} initialError={error} />
-              </Suspense>
+              <EnquiryForm
+                initialStatus={sent ? "sent" : null}
+                initialError={error}
+                prefilledMessage={prefilledMessage}
+              />
             </div>
 
           </div>

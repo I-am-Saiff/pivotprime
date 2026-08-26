@@ -190,7 +190,7 @@ export default function Service2FractionalLeadership() {
       </section>
 
       {/* Seats Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-shell">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
             <span className="block font-sans font-semibold text-[10.5px] tracking-[0.24em] uppercase text-[#009f50]">
@@ -312,7 +312,7 @@ export default function Service2FractionalLeadership() {
       {/* Spec 4.2 WHY THIS EXISTS, restored. The designed page opened straight
           into the seats, so the argument for a fractional seat at all was
           missing. See docs/PENDING-COPY.md. */}
-      <section className="bg-white py-16 md:py-24">
+      <section className="bg-shell py-16 md:py-24">
         <div className="px-4 sm:px-6 lg:px-8">
           <CopyProse heading={FRACTIONAL.whyHeading} paragraphs={FRACTIONAL.why} />
         </div>

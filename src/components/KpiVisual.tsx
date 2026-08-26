@@ -73,7 +73,7 @@ export default function KpiVisual({ metric }: { metric: Metric }) {
                 y="60"
                 textAnchor="middle"
                 fill="var(--color-sand)"
-                fillOpacity="0.75"
+                fillOpacity="0.92"
                 fontSize="8"
                 fontWeight="600"
                 letterSpacing="1"

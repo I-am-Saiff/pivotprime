@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useSearchParams } from "next/navigation";
 import { ENQUIRY_SUBMIT_CTA } from "@/content/cta";
 
 /**
@@ -22,12 +21,15 @@ import { ENQUIRY_SUBMIT_CTA } from "@/content/cta";
 export default function EnquiryForm({
   initialStatus,
   initialError,
+  prefilledMessage = "",
 }: {
   initialStatus?: "sent" | null;
   initialError?: string | null;
+  /** Read on the server. useSearchParams here forced a Suspense boundary, which
+   *  streamed the whole form inside <div hidden> and left it hidden with
+   *  JavaScript off, defeating the progressive enhancement described above. */
+  prefilledMessage?: string;
 }) {
-  const searchParams = useSearchParams();
-  const prefilledMessage = searchParams?.get("message") || "";
 
   const [state, setState] = useState<"idle" | "sending" | "sent" | "error">(
     initialStatus === "sent" ? "sent" : initialError ? "error" : "idle",
