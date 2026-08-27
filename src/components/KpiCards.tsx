@@ -1,5 +1,5 @@
 import { METRICS } from "@/content/homepage";
-import KpiVisual from "./KpiVisual";
+import KpiAutoVisual from "./KpiAutoVisual";
 import KpiHighlight from "./KpiHighlight";
 
 /**
@@ -59,7 +59,7 @@ export default function KpiCards() {
             {metric.kpiLabel}
           </p>
 
-          <KpiVisual metric={metric} />
+          <KpiAutoVisual figure={metric.figure} index={i} />
 
           {/* With the figure withheld this line is the card's headline, not a
               caption under one, so it carries the weight the number would. */}

@@ -224,7 +224,9 @@ export const METRICS: Metric[] = [
     context: "Service cancellation drivers identified and addressed.",
   },
   {
-    figure: null,
+    // Her own mockup, req/pivot-prime-kpi-cards_3.html, prints +27% on this
+    // card. It is the only one of the five that carries a figure there.
+    figure: 27,
     suffix: "%",
     pending: "client-confirmation",
     kpiLabel: "Profit Growth",
