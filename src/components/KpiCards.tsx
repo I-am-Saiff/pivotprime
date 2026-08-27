@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useState, useSyncExternalStore } from "react";
 import { METRICS } from "@/content/homepage";
 import KpiVisual from "./KpiVisual";
 import KpiFigure from "./KpiFigure";
@@ -13,22 +13,24 @@ import KpiFigure from "./KpiFigure";
  * This is the defect this page has now had twice. ResultsGraphic rendered only
  * the active metric, so four figures out of five were absent and a crawler saw
  * one card. Here every card is rendered by this component on the server, the
- * five sit stacked in one grid cell, and only opacity and visibility move.
- * There is no conditional rendering anywhere below.
+ * five sit stacked in one grid cell, and only opacity, transform and visibility
+ * move. There is no conditional rendering of any card below.
  *
- * WITHOUT JAVASCRIPT, AND UNDER REDUCED MOTION, there is no rotation at all:
- * `data-kpi-active` is only ever set by the effect, and the CSS that stacks the
- * cards is scoped to that attribute. The fallback is the five cards laid out as
- * an ordinary grid, every figure and every visual drawn in its finished state.
+ * WITHOUT JAVASCRIPT, AND UNDER REDUCED MOTION, there is no rotation at all.
+ * `rotating` is read from the browser through useSyncExternalStore, whose server
+ * snapshot is false, and the CSS that stacks the cards is scoped to the
+ * data-kpi-active attribute that only appears when rotating. The fallback is the
+ * five cards laid out as an ordinary list, every figure printed and every visual
+ * drawn in its finished state.
  *
  * The stack takes the height of the tallest card, so advancing never moves the
- * page. Hover, focus and the manual controls all pause the timer.
+ * page. Hover, focus and the manual controls all pause the timer, and the
+ * progress bar shows that it is paused rather than just stopping.
  *
  * Card 6 does not render: nobody has that number, and spec 3.4 says "Do not
  * launch this card with a placeholder."
  */
 const INTERVAL = 4000;
-
 const REDUCED = "(prefers-reduced-motion: reduce)";
 
 function subscribeToMotion(onChange: () => void) {
@@ -44,125 +46,136 @@ function isMotionWelcome() {
 export default function KpiCards() {
   const cards = METRICS.filter((m) => m.pending !== "not-yet-supplied");
 
-  // Whether to rotate at all is read from the browser rather than stored, so
-  // nothing sets state inside an effect and the server snapshot is honestly
-  // "not rotating". On the server and on the first paint that is false, which
-  // is what puts all five cards in the served HTML.
   const rotating = useSyncExternalStore(subscribeToMotion, isMotionWelcome, () => false);
 
   const [active, setActive] = useState(0);
-  const paused = useRef(false);
-  const held = useRef(false);
+  const [paused, setPaused] = useState(false);
+  // A manual choice holds that card until the pointer or focus leaves, so the
+  // timer does not pull the page away from something being read.
+  const [held, setHeld] = useState(false);
+  const frozen = paused || held;
 
   useEffect(() => {
-    if (!rotating) return;
+    // The timer is torn down and rebuilt when the beat is frozen, rather than
+    // running and skipping ticks. That way the next card gets a full four
+    // seconds after a hover rather than whatever was left of the interval.
+    if (!rotating || frozen) return;
     const id = window.setInterval(() => {
-      if (paused.current || held.current) return;
       setActive((current) => (current + 1) % cards.length);
     }, INTERVAL);
     return () => window.clearInterval(id);
-  }, [cards.length, rotating]);
+  }, [cards.length, rotating, frozen]);
 
-  // A manual choice holds that card until the pointer or focus leaves, so the
-  // timer does not pull the page away from something being read.
   const go = useCallback(
     (i: number) => {
-      held.current = true;
+      setHeld(true);
       setActive(((i % cards.length) + cards.length) % cards.length);
     },
     [cards.length],
   );
 
+  const release = useCallback(() => {
+    setPaused(false);
+    setHeld(false);
+  }, []);
+
   return (
     <div
       data-kpi-active={rotating ? active : undefined}
-      onMouseEnter={() => (paused.current = true)}
-      onMouseLeave={() => {
-        paused.current = false;
-        held.current = false;
-      }}
-      onFocusCapture={() => (paused.current = true)}
-      onBlurCapture={() => {
-        paused.current = false;
-        held.current = false;
-      }}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={release}
+      onFocusCapture={() => setPaused(true)}
+      onBlurCapture={release}
     >
-      <ul
-        data-metric-cards
-        className="mx-auto grid max-w-2xl grid-cols-1 gap-4"
-        aria-live="off"
-      >
+      <ul data-metric-cards className="mx-auto grid max-w-4xl grid-cols-1 gap-4">
         {cards.map((metric, i) => (
           <li
             key={metric.label}
             data-kpi-index={i}
-            className="flex flex-col rounded-2xl bg-forest p-6 ring-1 ring-neon/20 transition-opacity duration-500 ease-out motion-reduce:transition-none sm:p-8"
+            className="grid items-center gap-6 rounded-2xl bg-forest p-6 ring-1 ring-neon/20 sm:p-8 md:grid-cols-[1.1fr_1fr] md:gap-10"
           >
-            <p className="font-sans text-[10px] font-bold tracking-[0.18em] text-neon/70 uppercase">
-              {metric.kpiLabel}
-            </p>
-
-            <KpiVisual metric={metric} active={rotating ? active === i : true} />
-
-            {metric.figureText !== null && (
-              <p className="mb-3 font-sans text-5xl leading-none font-extrabold tracking-tight text-neon sm:text-6xl">
-                <KpiFigure text={metric.figureText} active={rotating ? active === i : false} />
+            {/* The figure and the words on one side. */}
+            <div>
+              <p className="font-sans text-[10px] font-bold tracking-[0.18em] text-neon/70 uppercase">
+                {metric.kpiLabel}
               </p>
-            )}
+              {metric.figureText !== null && (
+                <p className="mt-3 font-sans text-5xl leading-none font-extrabold tracking-tight text-neon tabular-nums sm:text-6xl">
+                  <KpiFigure text={metric.figureText} active={rotating ? active === i : false} />
+                </p>
+              )}
+              <p className="mt-4 text-lg leading-snug font-bold text-white sm:text-xl">{metric.label}</p>
+              <p className="mt-2 text-sm leading-relaxed text-white/60">{metric.context}</p>
+            </div>
 
-            <p className="text-lg leading-snug font-bold text-white sm:text-xl">{metric.label}</p>
-            <p className="mt-3 border-t border-neon/15 pt-3 text-sm leading-relaxed text-sand/80">
-              {metric.context}
-            </p>
+            {/* The visual on the other, under them on mobile. */}
+            <div className="md:pl-2">
+              <KpiVisual metric={metric} active={rotating ? active === i : true} />
+            </div>
           </li>
         ))}
       </ul>
 
-      {/* Manual controls. They are real buttons, so they are in the tab order
-          and answer Enter and Space without any key handling of our own.
-          Hidden when nothing is rotating, because there is nothing to step
-          through: every card is already on screen. */}
+      {/* The four second beat, made visible. Keyed on the active index so the
+          fill restarts with each card, and paused as a state rather than as a
+          bar that silently stops. Absent entirely when nothing is rotating. */}
       {rotating && (
-        <div className="mt-6 flex items-center justify-center gap-3">
-          <button
-            type="button"
-            onClick={() => go(active - 1)}
-            aria-label="Previous result"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-neon/30 text-neon transition-colors hover:bg-neon/10 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
-          >
-            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
-              <path d="M15 5l-7 7 7 7" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
+        <div className="mx-auto mt-6 max-w-4xl">
+          <div className="h-[3px] w-full overflow-hidden rounded-full bg-neon/15">
+            <div
+              // Keyed on the freeze as well as the card, because the timer is
+              // rebuilt when the beat unfreezes: both restart together, so the
+              // bar never finishes while the card still has seconds left.
+              key={`${active}-${frozen}`}
+              data-kpi-progress
+              data-paused={frozen ? "" : undefined}
+              className="h-full w-full origin-left rounded-full bg-neon"
+            />
+          </div>
 
-          {cards.map((metric, i) => (
+          {/* Manual controls. Real buttons, so they are in the tab order and
+              answer Enter and Space with no key handling of our own. */}
+          <div className="mt-4 flex items-center justify-center gap-3">
             <button
-              key={metric.label}
               type="button"
-              onClick={() => go(i)}
-              aria-label={`Show ${metric.kpiLabel}`}
-              aria-current={active === i}
-              className="inline-flex h-11 w-6 items-center justify-center focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
+              onClick={() => go(active - 1)}
+              aria-label="Previous result"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-neon/30 text-neon transition-colors hover:bg-neon/10 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
             >
-              <span
-                aria-hidden="true"
-                className={`block h-2 rounded-full transition-all duration-300 ${
-                  active === i ? "w-6 bg-neon" : "w-2 bg-neon/30"
-                }`}
-              />
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
+                <path d="M15 5l-7 7 7 7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </button>
-          ))}
 
-          <button
-            type="button"
-            onClick={() => go(active + 1)}
-            aria-label="Next result"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-neon/30 text-neon transition-colors hover:bg-neon/10 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
-          >
-            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
-              <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
+            {cards.map((metric, i) => (
+              <button
+                key={metric.label}
+                type="button"
+                onClick={() => go(i)}
+                aria-label={`Show ${metric.kpiLabel}`}
+                aria-current={active === i}
+                className="inline-flex h-11 w-6 items-center justify-center focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
+              >
+                <span
+                  aria-hidden="true"
+                  className={`block h-2 rounded-full transition-all duration-300 ${
+                    active === i ? "w-6 bg-neon" : "w-2 bg-neon/30"
+                  }`}
+                />
+              </button>
+            ))}
+
+            <button
+              type="button"
+              onClick={() => go(active + 1)}
+              aria-label="Next result"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-neon/30 text-neon transition-colors hover:bg-neon/10 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
+            >
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
+                <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          </div>
         </div>
       )}
     </div>

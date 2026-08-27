@@ -196,9 +196,13 @@ h3 {
 /* One result card in view at a time, on the client's 27 August instruction.
    Scoped entirely to [data-kpi-active], which only the client component sets.
    With JavaScript off, or under prefers-reduced-motion, none of this applies
-   and the five cards lay out as an ordinary grid with everything drawn. All
-   five are in the served HTML either way; only opacity and visibility move.
-   The stack takes the tallest card's height, so advancing shifts nothing. */
+   and the five cards lay out as an ordinary list with everything drawn. All
+   five are in the served HTML either way; only opacity, transform and
+   visibility move. The stack takes the tallest card's height, so advancing
+   shifts nothing.
+
+   ONE TRANSITION FOR ALL FIVE: a cross-fade with a small lift. The variety is
+   in the drawings, not in how the cards arrive. */
 [data-kpi-active] [data-metric-cards] {
   gap: 0;
 }
@@ -209,6 +213,11 @@ h3 {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  transform: translateY(10px);
+  transition:
+    opacity 460ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 460ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    visibility 0s linear 460ms;
 }
 
 [data-kpi-active="0"] [data-kpi-index="0"],
@@ -219,4 +228,26 @@ h3 {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  transform: translateY(0);
+  transition-delay: 0s, 0s, 0s;
+}
+
+/* The auto-advance, made visible. Keyed on the active index in the component,
+   so React remounts it and the fill restarts with each card. */
+[data-kpi-progress] {
+  animation: kpi-progress 4000ms linear forwards;
+}
+
+[data-kpi-progress][data-paused] {
+  animation-play-state: paused;
+  opacity: 0.45;
+}
+
+@keyframes kpi-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }

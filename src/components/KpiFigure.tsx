@@ -10,14 +10,18 @@ import { useEffect, useState } from "react";
  * shipped every result figure on this page as the string `0` by animating from
  * zero on mount; nothing here writes to the DOM until an animation frame runs.
  *
- * A value with no single number in it, like "40-60%", is never animated. There
- * is no honest way to count up a range, so it simply appears.
+ * A range counts both ends together, so "40-60%" runs 0-0 up to 40-60 rather
+ * than appearing whole while the other four cards animate.
  */
+const DURATION = 900;
+
+/** Every run of digits in the value, with the text around them left alone. */
+function parts(text: string) {
+  const found = [...text.matchAll(/\d+/g)];
+  return found.length ? found : null;
+}
+
 export default function KpiFigure({ text, active }: { text: string; active: boolean }) {
-  // A frame only counts while the card is still the one that produced it, so a
-  // stale final value from the previous pass cannot flash before the new count
-  // starts. `frame` is cleared by the effect's own cleanup rather than by
-  // reading a ref during render.
   const [frame, setFrame] = useState<string | null>(null);
 
   useEffect(() => {
@@ -26,20 +30,24 @@ export default function KpiFigure({ text, active }: { text: string; active: bool
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (reduce.matches) return;
 
-    const single = /^([+-]?)(\d+)(\D*)$/.exec(text);
-    if (!single) return;
+    const numbers = parts(text);
+    if (!numbers) return;
 
-    const [, sign, digits, tail] = single;
-    const target = Number(digits);
     const started = performance.now();
-    const DURATION = 900;
     let raf = 0;
 
     const step = (now: number) => {
       const t = Math.min(1, (now - started) / DURATION);
       // Ease out, so it slows into the real number rather than snapping.
       const eased = 1 - Math.pow(1 - t, 3);
-      setFrame(`${sign}${Math.round(target * eased)}${tail}`);
+      let out = "";
+      let cursor = 0;
+      for (const match of numbers) {
+        const at = match.index;
+        out += text.slice(cursor, at) + Math.round(Number(match[0]) * eased);
+        cursor = at + match[0].length;
+      }
+      setFrame(out + text.slice(cursor));
       if (t < 1) raf = requestAnimationFrame(step);
     };
     raf = requestAnimationFrame(step);
