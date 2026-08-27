@@ -17,7 +17,7 @@ export const HERO = {
   /** Set noticeably larger than the paragraph beneath it. Spec 3.1: "That
    *  sentence is doing the most work on the page, so give it room." */
   lead: "Most consultants recommend the fix. We build it.",
-  body: "We combine fractional C-suite leadership with hands-on execution capability. We find what is holding your business back, then bring the people, systems and technology to fix it.",
+  body: "We find what is holding your business back, then bring the people, systems and technology to fix it.",
   primaryLabel: "Find out what is holding your business back",
   secondaryLabel: "See what we actually do",
   secondaryHref: "#services",
