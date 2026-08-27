@@ -11,7 +11,7 @@ export const metadata: Metadata = pageMetadata("services");
 
 export default function ServicesPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-background">
+    <div className="flex min-h-screen flex-col surface-page">
       <section className="mx-auto w-full max-w-7xl px-4 pt-32 pb-24 sm:px-6 md:pt-40 lg:px-8">
         <header className="mb-14 max-w-3xl md:mb-20">
           <p className="mb-4 text-xs font-semibold tracking-[0.18em] text-mid uppercase">

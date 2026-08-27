@@ -278,7 +278,7 @@ export default function DiagnosticApp() {
                 </div>
                 
                 <div className="mt-7">
-                  <button type="submit" className="inline-flex items-center gap-2 font-sans font-semibold text-[15px] bg-[#00d76d] text-[#013325] rounded-full px-6 py-3.5 hover:bg-white hover:-translate-y-0.5 transition-all">
+                  <button type="submit" className="inline-flex items-center gap-2 font-sans font-semibold text-[15px] bg-[#00d76d] text-[#013325] rounded-xl px-6 py-3.5 hover:bg-white hover:-translate-y-0.5 transition-all">
                     Begin
                   </button>
                 </div>
@@ -332,7 +332,7 @@ export default function DiagnosticApp() {
                             <div className="text-[16.5px] font-medium text-[#0c1a15] max-w-2xl">
                               {q.t}
                             </div>
-                            <span className="inline-block text-[11px] tracking-[0.1em] uppercase text-[#5e6f68] bg-[#f7f9f8] border border-[#e3eae6] rounded-xl px-2.5 py-1 mt-2">
+                            <span className="inline-block text-[11px] tracking-[0.1em] uppercase text-[#5e6f68] surface-page border border-[#e3eae6] rounded-xl px-2.5 py-1 mt-2">
                               {D[q.d]}
                             </span>
                           </div>
@@ -369,10 +369,10 @@ export default function DiagnosticApp() {
                 </div>
 
                 <div className="flex items-center gap-3 mt-8 flex-wrap">
-                  <button onClick={() => setStep(step - 1)} className="inline-flex items-center gap-2 font-sans font-semibold text-[15px] bg-transparent border border-[#e3eae6] text-[#0c1a15] rounded-full px-6 py-3.5 hover:border-[#013325] transition-all">
+                  <button onClick={() => setStep(step - 1)} className="inline-flex items-center gap-2 font-sans font-semibold text-[15px] bg-transparent border border-[#e3eae6] text-[#0c1a15] rounded-xl px-6 py-3.5 hover:border-[#013325] transition-all">
                     Back
                   </button>
-                  <button onClick={handleNextPage} className="inline-flex items-center gap-2 font-sans font-semibold text-[15px] bg-[#009f50] text-white rounded-full px-6 py-3.5 hover:bg-[#013325] hover:-translate-y-0.5 transition-all">
+                  <button onClick={handleNextPage} className="inline-flex items-center gap-2 font-sans font-semibold text-[15px] bg-[#009f50] text-white rounded-xl px-6 py-3.5 hover:bg-[#013325] hover:-translate-y-0.5 transition-all">
                     {pi === PAGES - 1 ? "Continue to open questions" : "Next section"}
                   </button>
                   {hint && <span className="text-[13.5px] text-[#af8943] font-medium">{hint}</span>}
@@ -413,10 +413,10 @@ export default function DiagnosticApp() {
               </div>
 
               <div className="flex items-center gap-3 mt-8 flex-wrap">
-                <button onClick={() => setStep(step - 1)} className="inline-flex items-center gap-2 font-sans font-semibold text-[15px] bg-transparent border border-[#e3eae6] text-[#0c1a15] rounded-full px-6 py-3.5 hover:border-[#013325] transition-all">
+                <button onClick={() => setStep(step - 1)} className="inline-flex items-center gap-2 font-sans font-semibold text-[15px] bg-transparent border border-[#e3eae6] text-[#0c1a15] rounded-xl px-6 py-3.5 hover:border-[#013325] transition-all">
                   Back
                 </button>
-                <button onClick={() => setStep(step + 1)} className="inline-flex items-center gap-2 font-sans font-semibold text-[15px] bg-[#009f50] text-white rounded-full px-6 py-3.5 hover:bg-[#013325] hover:-translate-y-0.5 transition-all">
+                <button onClick={() => setStep(step + 1)} className="inline-flex items-center gap-2 font-sans font-semibold text-[15px] bg-[#009f50] text-white rounded-xl px-6 py-3.5 hover:bg-[#013325] hover:-translate-y-0.5 transition-all">
                   See the result
                 </button>
               </div>
@@ -570,10 +570,10 @@ export default function DiagnosticApp() {
                       On these findings, that is the engagement the result actually justifies. Everything below it in the ranking gets easier once this one moves.
                     </p>
                     <div className="flex gap-3 flex-wrap">
-                      <a href={WHATSAPP_URL} className="inline-flex items-center gap-2 font-sans font-semibold text-[15px] bg-[#00d76d] text-[#013325] rounded-full px-6 py-3.5 hover:bg-white hover:-translate-y-0.5 transition-all">
+                      <a href={WHATSAPP_URL} className="inline-flex items-center gap-2 font-sans font-semibold text-[15px] bg-[#00d76d] text-[#013325] rounded-xl px-6 py-3.5 hover:bg-white hover:-translate-y-0.5 transition-all">
                         {WHATSAPP_CTA.label}
                       </a>
-                      <Link href="/services" className="inline-flex items-center gap-2 font-sans font-semibold text-[15px] bg-transparent border border-white/30 text-white rounded-full px-6 py-3.5 hover:border-white transition-all">
+                      <Link href="/services" className="inline-flex items-center gap-2 font-sans font-semibold text-[15px] bg-transparent border border-white/30 text-white rounded-xl px-6 py-3.5 hover:border-white transition-all">
                         See what the audit covers
                       </Link>
                     </div>
@@ -585,13 +585,13 @@ export default function DiagnosticApp() {
                 </div>
 
                 <div className="flex gap-3 mt-8 print:hidden flex-wrap">
-                  <button onClick={() => window.print()} className="inline-flex items-center font-sans font-semibold text-[15px] bg-[#009f50] text-white rounded-full px-6 py-3 hover:bg-[#013325] transition-colors">
+                  <button onClick={() => window.print()} className="inline-flex items-center font-sans font-semibold text-[15px] bg-[#009f50] text-white rounded-xl px-6 py-3 hover:bg-[#013325] transition-colors">
                     Save as PDF
                   </button>
-                  <button onClick={handleExport} className="inline-flex items-center font-sans font-semibold text-[15px] bg-transparent border border-[#e3eae6] text-[#0c1a15] rounded-full px-6 py-3 hover:border-[#013325] transition-colors">
+                  <button onClick={handleExport} className="inline-flex items-center font-sans font-semibold text-[15px] bg-transparent border border-[#e3eae6] text-[#0c1a15] rounded-xl px-6 py-3 hover:border-[#013325] transition-colors">
                     Download the data
                   </button>
-                  <button onClick={() => { setStep(0); setAnswers({}); setTextAnswers(["", "", "", ""]); }} className="inline-flex items-center font-sans font-semibold text-[15px] bg-transparent border border-[#e3eae6] text-[#0c1a15] rounded-full px-6 py-3 hover:border-[#013325] transition-colors">
+                  <button onClick={() => { setStep(0); setAnswers({}); setTextAnswers(["", "", "", ""]); }} className="inline-flex items-center font-sans font-semibold text-[15px] bg-transparent border border-[#e3eae6] text-[#0c1a15] rounded-xl px-6 py-3 hover:border-[#013325] transition-colors">
                     Start again
                   </button>
                 </div>

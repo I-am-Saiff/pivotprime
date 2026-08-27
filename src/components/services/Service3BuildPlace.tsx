@@ -53,7 +53,7 @@ export default function Service3BuildPlace() {
             Sourced, vetted and managed by us. They report to us rather than to you, so you are not carrying the recruitment risk or the performance management.
           </p>
           <div className="mt-8">
-            <a href={WHATSAPP_URL} className="inline-flex items-center px-6 py-3 font-semibold text-[15px] bg-[#00d76d] text-[#013325] rounded-full hover:bg-white hover:-translate-y-0.5 transition-all">
+            <a href={WHATSAPP_URL} className="inline-flex items-center px-6 py-3 font-semibold text-[15px] bg-[#00d76d] text-[#013325] rounded-xl hover:bg-white hover:-translate-y-0.5 transition-all">
               {WHATSAPP_CTA.label}
             </a>
           </div>
@@ -61,7 +61,7 @@ export default function Service3BuildPlace() {
       </header>
 
       {/* Stage / Map Section */}
-      <section className="bg-[#f7f9f8] py-16 md:py-24">
+      <section className="surface-page py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10 max-w-2xl">
             <span className="block font-sans font-semibold text-[10.5px] tracking-[0.24em] uppercase text-[#009f50]">
@@ -174,7 +174,7 @@ export default function Service3BuildPlace() {
       </section>
 
       {/* Closer Section */}
-      <section className="bg-[#f7f9f8] py-16 md:py-24">
+      <section className="surface-page py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#02291e] text-white rounded-xl p-8 md:p-12">
             <span className="block font-sans font-semibold text-[10.5px] tracking-[0.24em] uppercase text-[#00d76d] mb-4">
@@ -187,7 +187,7 @@ export default function Service3BuildPlace() {
               Neither one is accountable for whether it worked. That is the gap this service exists to close.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href={WHATSAPP_URL} className="inline-flex items-center px-6 py-3 font-semibold text-[15px] bg-[#00d76d] text-[#013325] rounded-full hover:bg-white hover:-translate-y-0.5 transition-all">
+              <a href={WHATSAPP_URL} className="inline-flex items-center px-6 py-3 font-semibold text-[15px] bg-[#00d76d] text-[#013325] rounded-xl hover:bg-white hover:-translate-y-0.5 transition-all">
                 {WHATSAPP_CTA.label}
               </a>
             </div>
@@ -206,7 +206,7 @@ export default function Service3BuildPlace() {
         </div>
       </section>
 
-      <section className="bg-[#f7f9f8] py-16 md:py-24">
+      <section className="surface-page py-16 md:py-24">
         <div className="px-4 sm:px-6 lg:px-8">
           <CopyCards heading={BUILD_AND_PLACE.rolesHeading} cards={BUILD_AND_PLACE.cards} />
         </div>

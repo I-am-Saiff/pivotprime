@@ -39,7 +39,7 @@ export default function ClarityAuditProcessMap() {
   const links = mapState ? CLEAN_LINKS : MESSY_LINKS;
 
   return (
-      <section className="bg-[#f7f9f8] py-16 md:py-24">
+      <section className="surface-page py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10 max-w-2xl">
             <span className="block font-sans font-semibold text-[10.5px] tracking-[0.24em] uppercase text-[#009f50]">
@@ -54,10 +54,10 @@ export default function ClarityAuditProcessMap() {
           </div>
 
           <div className="surface-page border border-[#e3eae6] rounded-xl p-6 md:p-8 overflow-hidden shadow-sm">
-            <div className="inline-flex bg-[#f7f9f8] border border-[#e3eae6] rounded-full p-1 gap-1 mb-6">
+            <div className="inline-flex surface-page border border-[#e3eae6] rounded-full p-1 gap-1 mb-6">
               <button
                 onClick={() => setMapState(0)}
-                className={`px-4 py-2 font-semibold text-[13px] rounded-full transition-colors ${
+                className={`px-4 py-2 font-semibold text-[13px] rounded-xl transition-colors ${
                   mapState === 0 ? "bg-[#013325] text-white" : "text-[#5e6f68] hover:bg-[#e3eae6]"
                 }`}
               >
@@ -65,7 +65,7 @@ export default function ClarityAuditProcessMap() {
               </button>
               <button
                 onClick={() => setMapState(1)}
-                className={`px-4 py-2 font-semibold text-[13px] rounded-full transition-colors ${
+                className={`px-4 py-2 font-semibold text-[13px] rounded-xl transition-colors ${
                   mapState === 1 ? "bg-[#013325] text-white" : "text-[#5e6f68] hover:bg-[#e3eae6]"
                 }`}
               >
@@ -107,7 +107,7 @@ export default function ClarityAuditProcessMap() {
                   return (
                     <div
                       key={i}
-                      className="absolute w-[74px] h-[34px] rounded-lg bg-[#f7f9f8] border border-[#e3eae6] flex items-center justify-center font-sans font-semibold text-[10.5px] text-[#013325] opacity-0 transition-all duration-700 ease-in-out pointer-events-none"
+                      className="absolute w-[74px] h-[34px] rounded-lg surface-page border border-[#e3eae6] flex items-center justify-center font-sans font-semibold text-[10.5px] text-[#013325] opacity-0 transition-all duration-700 ease-in-out pointer-events-none"
                       style={{ left: "90%", top: "42%", transform: "translate(-50%, -50%)" }}
                     />
                   );
@@ -117,7 +117,7 @@ export default function ClarityAuditProcessMap() {
                   <div
                     key={i}
                     className={`absolute w-[74px] h-[34px] rounded-lg border flex items-center justify-center font-sans font-semibold text-[10.5px] transition-all duration-700 ease-in-out z-10
-                      ${isDead ? "bg-[#fdf1ee] border-[#e8c4ba] text-[#9c4f3a]" : "bg-[#f7f9f8] border-[#e3eae6] text-[#013325]"}
+                      ${isDead ? "surface-page border-[#e8c4ba] text-[#9c4f3a]" : "surface-page border-[#e3eae6] text-[#013325]"}
                     `}
                     style={{ left: `${s.x}%`, top: `${s.y}%`, transform: "translate(-50%, -50%)" }}
                   >

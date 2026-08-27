@@ -49,7 +49,7 @@ export default function Service5MarketEntry() {
             Priced on the entity structure, whether the products need regulatory approval, and how much of the operation we build rather than advise on.
           </p>
           <div className="mt-8">
-            <a href={WHATSAPP_URL} className="inline-flex items-center px-6 py-3 font-semibold text-[15px] bg-[#00d76d] text-[#013325] rounded-full hover:bg-white hover:-translate-y-0.5 transition-all">
+            <a href={WHATSAPP_URL} className="inline-flex items-center px-6 py-3 font-semibold text-[15px] bg-[#00d76d] text-[#013325] rounded-xl hover:bg-white hover:-translate-y-0.5 transition-all">
               {WHATSAPP_CTA.label}
             </a>
           </div>
@@ -57,7 +57,7 @@ export default function Service5MarketEntry() {
       </header>
 
       {/* Stage / Map Section */}
-      <section className="bg-[#f7f9f8] py-16 md:py-24">
+      <section className="surface-page py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10 max-w-2xl">
             <span className="block font-sans font-semibold text-[10.5px] tracking-[0.24em] uppercase text-[#009f50]">
@@ -72,10 +72,10 @@ export default function Service5MarketEntry() {
           </div>
 
           <div className="surface-page border border-[#e3eae6] rounded-xl p-6 md:p-8 overflow-hidden shadow-sm">
-            <div className="inline-flex bg-[#f7f9f8] border border-[#e3eae6] rounded-full p-1 gap-1 mb-6">
+            <div className="inline-flex surface-page border border-[#e3eae6] rounded-full p-1 gap-1 mb-6">
               <button
                 onClick={() => setCalMode(0)}
-                className={`px-4 py-2 font-semibold text-[13px] rounded-full transition-colors ${
+                className={`px-4 py-2 font-semibold text-[13px] rounded-xl transition-colors ${
                   calMode === 0 ? "bg-[#013325] text-white" : "text-[#5e6f68] hover:bg-[#e3eae6]"
                 }`}
               >
@@ -83,7 +83,7 @@ export default function Service5MarketEntry() {
               </button>
               <button
                 onClick={() => setCalMode(1)}
-                className={`px-4 py-2 font-semibold text-[13px] rounded-full transition-colors ${
+                className={`px-4 py-2 font-semibold text-[13px] rounded-xl transition-colors ${
                   calMode === 1 ? "bg-[#013325] text-white" : "text-[#5e6f68] hover:bg-[#e3eae6]"
                 }`}
               >
@@ -176,7 +176,7 @@ export default function Service5MarketEntry() {
       </section>
 
       {/* Closer Section */}
-      <section className="bg-[#f7f9f8] py-16 md:py-24">
+      <section className="surface-page py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#02291e] text-white rounded-xl p-8 md:p-12">
             <span className="block font-sans font-semibold text-[10.5px] tracking-[0.24em] uppercase text-[#00d76d] mb-4">
@@ -189,7 +189,7 @@ export default function Service5MarketEntry() {
               If after assessment, we feel your business will fail here, we will tell you to save your money and not enter this market or most of the time we will show you how you can make it work.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href={WHATSAPP_URL} className="inline-flex items-center px-6 py-3 font-semibold text-[15px] bg-[#00d76d] text-[#013325] rounded-full hover:bg-white hover:-translate-y-0.5 transition-all">
+              <a href={WHATSAPP_URL} className="inline-flex items-center px-6 py-3 font-semibold text-[15px] bg-[#00d76d] text-[#013325] rounded-xl hover:bg-white hover:-translate-y-0.5 transition-all">
                 {WHATSAPP_CTA.label}
               </a>
             </div>
@@ -210,7 +210,7 @@ export default function Service5MarketEntry() {
         </div>
       </section>
 
-      <section className="bg-[#f7f9f8] py-16 md:py-24">
+      <section className="surface-page py-16 md:py-24">
         <div className="px-4 sm:px-6 lg:px-8">
           <CopyList heading={MARKET_ENTRY.buildHeading} items={MARKET_ENTRY.build} />
         </div>

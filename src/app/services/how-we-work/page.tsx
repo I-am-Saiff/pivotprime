@@ -32,7 +32,7 @@ export default function WhatWeDo() {
       </section>
 
       {/* Core Focus Areas */}
-      <section className="bg-gray-50 py-24">
+      <section className="surface-page py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-16">What we do:</h2>
           
@@ -196,7 +196,7 @@ export default function WhatWeDo() {
       </section>
 
       {/* Pillars Section */}
-      <section className="bg-gray-50 py-24">
+      <section className="surface-page py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-extrabold mb-6">People, roles, and ways of working must support it.</h2>
@@ -261,42 +261,42 @@ export default function WhatWeDo() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           
-          <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+          <div className="surface-page p-8 rounded-2xl border border-gray-100">
             <div className="text-4xl font-extrabold text-primary mb-4 opacity-50">01.</div>
             <h4 className="text-xl font-bold mb-4">What is blocking progress</h4>
             <p className="text-gray-600 mb-6 text-sm">A short assessment that surfaces the real constraints in the business, not surface symptoms, and focuses attention on what is actually slowing results.</p>
             <p className="font-bold text-sm"><span className="text-primary">Outcome:</span> Clarity on the true blockers to performance.</p>
           </div>
 
-          <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+          <div className="surface-page p-8 rounded-2xl border border-gray-100">
             <div className="text-4xl font-extrabold text-primary mb-4 opacity-50">02.</div>
             <h4 className="text-xl font-bold mb-4">First conversation</h4>
             <p className="text-gray-600 mb-6 text-sm">A focused conversation to understand your context, pressure points, and goals, and to determine whether working together is the right next step.</p>
             <p className="font-bold text-sm"><span className="text-primary">Outcome:</span> Clear alignment on the problem, the ambition, and whether Pivot Prime is the right fit.</p>
           </div>
 
-          <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+          <div className="surface-page p-8 rounded-2xl border border-gray-100">
             <div className="text-4xl font-extrabold text-primary mb-4 opacity-50">03.</div>
             <h4 className="text-xl font-bold mb-4">Discover through a deep diagnostic</h4>
             <p className="text-gray-600 mb-6 text-sm">We examine strategy, operations, structure, culture, people, and numbers to identify where work is breaking down and where effort is not translating into results.</p>
             <p className="font-bold text-sm"><span className="text-primary">Outcome:</span> A clear, in-depth view of strengths, weaknesses, and the true sources of friction in the business.</p>
           </div>
 
-          <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+          <div className="surface-page p-8 rounded-2xl border border-gray-100">
             <div className="text-4xl font-extrabold text-primary mb-4 opacity-50">04.</div>
             <h4 className="text-xl font-bold mb-4">Design the action plan</h4>
             <p className="text-gray-600 mb-6 text-sm">A focused plan that sets priorities, ownership, and sequencing, balancing immediate improvements with decisions that strengthen performance over time.</p>
             <p className="font-bold text-sm"><span className="text-primary">Outcome:</span> A practical plan built for execution and results, not presentation.</p>
           </div>
 
-          <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+          <div className="surface-page p-8 rounded-2xl border border-gray-100">
             <div className="text-4xl font-extrabold text-primary mb-4 opacity-50">05.</div>
             <h4 className="text-xl font-bold mb-4">Deliver with hands-on support</h4>
             <p className="text-gray-600 mb-6 text-sm">We work alongside you and your team to turn the plan into action, remove obstacles, and maintain momentum through delivery.</p>
             <p className="font-bold text-sm"><span className="text-primary">Outcome:</span> Progress you can see and measure, whether that is revenue growth, improved margins, or a more controlled and effective operation.</p>
           </div>
 
-          <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+          <div className="surface-page p-8 rounded-2xl border border-gray-100">
             <div className="text-4xl font-extrabold text-primary mb-4 opacity-50">06.</div>
             <h4 className="text-xl font-bold mb-4">Sustained results</h4>
             <p className="text-gray-600 mb-6 text-sm">A business that runs with clarity and control delivers stronger financial performance, and gives leaders confidence that effort and decisions are producing real outcomes.</p>

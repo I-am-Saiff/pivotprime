@@ -86,7 +86,7 @@ export default function PatternsList() {
           {/* Full-width on mobile, auto-width on sm+ */}
           <Link
             href={contactHref}
-            className="inline-flex w-full sm:w-auto flex-shrink-0 items-center justify-center px-6 py-3 rounded-full text-sm font-bold bg-neon text-forest hover:bg-white transition-all shadow-md"
+            className="inline-flex w-full sm:w-auto flex-shrink-0 items-center justify-center px-6 py-3 rounded-xl text-sm font-bold bg-neon text-forest hover:bg-white transition-all shadow-md"
           >
             {CONTACT_CTA.label}
             <span aria-hidden="true" className="ml-2">→</span>

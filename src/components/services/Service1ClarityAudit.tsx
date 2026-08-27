@@ -30,7 +30,7 @@ export default function Service1ClarityAudit() {
             Scope depends on the size of the business, how many functions are in review, and how many people we interview.
           </p>
           <div className="mt-8">
-            <a href={WHATSAPP_URL} className="inline-flex items-center px-6 py-3 font-semibold text-[15px] bg-[#00d76d] text-[#013325] rounded-full hover:bg-white hover:-translate-y-0.5 transition-all">
+            <a href={WHATSAPP_URL} className="inline-flex items-center px-6 py-3 font-semibold text-[15px] bg-[#00d76d] text-[#013325] rounded-xl hover:bg-white hover:-translate-y-0.5 transition-all">
               {WHATSAPP_CTA.label}
             </a>
           </div>
@@ -91,7 +91,7 @@ export default function Service1ClarityAudit() {
       </section>
 
       {/* How we do it / What happens after */}
-      <section className="bg-[#f7f9f8] py-16 md:py-24">
+      <section className="surface-page py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
             <div>
@@ -105,7 +105,7 @@ export default function Service1ClarityAudit() {
                 Process mapping end to end, then a facilitated workshop per function where the team walks the process on screen and stress tests it together. The findings are owned rather than imposed.
               </p>
             </div>
-            <div className="bg-[#fdf9f2] border-l-[3px] border-[#af8943] rounded-r-xl p-6 md:p-8">
+            <div className="surface-page border-l-[3px] border-[#af8943] rounded-r-xl p-6 md:p-8">
               <h3 className="font-sans font-bold text-lg text-[#0c1a15] mb-2">What happens after</h3>
               <p className="text-[#6b5a3c] text-[15.5px]">
                 The audit ends with a decision, not a filing cabinet. Some clients take the roadmap and execute it themselves, and that is a legitimate outcome. Most ask us to run some or all of it. We will tell you plainly which of those the findings actually justify.
@@ -124,10 +124,10 @@ export default function Service1ClarityAudit() {
               We will not commit to owning outcomes in a business we have not properly diagnosed.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href={WHATSAPP_URL} className="inline-flex items-center px-6 py-3 font-semibold text-[15px] bg-[#00d76d] text-[#013325] rounded-full hover:bg-white hover:-translate-y-0.5 transition-all">
+              <a href={WHATSAPP_URL} className="inline-flex items-center px-6 py-3 font-semibold text-[15px] bg-[#00d76d] text-[#013325] rounded-xl hover:bg-white hover:-translate-y-0.5 transition-all">
                 {WHATSAPP_CTA.label}
               </a>
-              <Link href={JOURNEY_CTA.href} className="inline-flex items-center px-6 py-3 font-semibold text-[15px] bg-transparent text-white border border-white/30 rounded-full hover:border-white transition-colors">
+              <Link href={JOURNEY_CTA.href} className="inline-flex items-center px-6 py-3 font-semibold text-[15px] bg-transparent text-white border border-white/30 rounded-xl hover:border-white transition-colors">
                 {JOURNEY_CTA.label}
               </Link>
             </div>
@@ -147,7 +147,7 @@ export default function Service1ClarityAudit() {
         </div>
       </section>
 
-      <section className="bg-[#f7f9f8] py-16 md:py-24">
+      <section className="surface-page py-16 md:py-24">
         <div className="px-4 sm:px-6 lg:px-8 space-y-16">
           <CopyList heading={CLARITY_AUDIT.lookHeading} items={CLARITY_AUDIT.look} />
           <CopyProse heading={CLARITY_AUDIT.howHeading} paragraphs={CLARITY_AUDIT.how} />
@@ -161,7 +161,7 @@ export default function Service1ClarityAudit() {
         </div>
       </section>
 
-      <section className="bg-[#f7f9f8] py-16 md:py-24">
+      <section className="surface-page py-16 md:py-24">
         <div className="px-4 sm:px-6 lg:px-8">
           <CopyProse heading={CLARITY_AUDIT.pricingHeading} paragraphs={CLARITY_AUDIT.pricing} />
           <p className="mx-auto mt-8 max-w-3xl text-sm leading-relaxed text-[#5e6f68]">

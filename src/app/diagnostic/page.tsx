@@ -23,7 +23,7 @@ export default function DiagnosticPage() {
   if (!DIAGNOSTIC_ENABLED) notFound();
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#f7f9f8]">
+    <div className="flex min-h-screen flex-col surface-page">
       <DiagnosticApp />
     </div>
   );

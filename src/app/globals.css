@@ -39,6 +39,14 @@
   --animate-water-pan: water-pan 20s ease-in-out infinite alternate;
 }
 
+/* The page ground: linen at 40% over shell, which is the WHO WE SERVE band.
+   Written with the swatch values rather than var(--color-linen), because
+   Tailwind 4 only emits a --color-* variable when some utility still uses it,
+   and dropping the last bg-linen took that variable out of the stylesheet. */
+:root {
+  --page-ground: color-mix(in srgb, #efeae0 40%, #fefbf8);
+}
+
 @layer base {
   /* The page base is shell, her #fefbf8, not pure white. Every light section
      sits on it and the ones that were explicitly bg-shell are bg-shell now.
@@ -48,11 +56,11 @@
   /* The page ground is the WHO WE SERVE band: linen at 40% over shell. Both
      are swatch tokens, so this adds no eleventh colour. */
   html {
-    background-color: var(--color-shell);
+    background-color: var(--page-ground);
   }
   body {
     @apply text-foreground antialiased font-sans;
-    background-color: color-mix(in srgb, var(--color-linen) 40%, var(--color-shell));
+    background-color: var(--page-ground);
   }
   /* NOTE: layout.tsx also puts bg-shell on <body> as a utility. That utility is
      what actually paints, because the utilities layer outranks this one. This
@@ -87,7 +95,7 @@
   }
 
   .surface-page {
-    background-color: color-mix(in srgb, var(--color-linen) 40%, var(--color-shell));
+    background-color: var(--page-ground);
   }
 
   .glass-nav {

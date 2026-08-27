@@ -47,7 +47,7 @@ export default function ForCorporateLeaders() {
                   Support can include project management, operational coordination, vendor oversight, documentation, and day-to-day execution support during high-pressure periods such as launches, integrations, audits, or regulatory change.
                 </p>
               </div>
-              <div className="md:col-span-5 bg-neutral-50/80 p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
+              <div className="md:col-span-5 surface-page p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
                 <p className="text-mid font-bold text-base mb-3">We can provide execution support for anywhere from 4 weeks to 6 months+.</p>
                 <p className="text-forest text-sm font-medium leading-relaxed">Most leaders start here when delivery pressure is high and internal bandwidth is stretched.</p>
               </div>
@@ -71,7 +71,7 @@ export default function ForCorporateLeaders() {
                   This allows you to bring in the right capability for one month, three months, or a defined piece of work, without long approval cycles or permanent cost.
                 </p>
               </div>
-              <div className="md:col-span-5 bg-neutral-50/80 p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
+              <div className="md:col-span-5 surface-page p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
                 <p className="text-mid font-bold text-base mb-3">Typical engagements to use our partner bench are flexible and based on need.</p>
                 <p className="text-forest text-sm font-medium leading-relaxed">Often used when workload spikes or specialist input is required fast.</p>
               </div>
@@ -95,7 +95,7 @@ export default function ForCorporateLeaders() {
                   This is decision support for people who can’t afford mistakes.
                 </p>
               </div>
-              <div className="md:col-span-5 bg-neutral-50/80 p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
+              <div className="md:col-span-5 surface-page p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
                 <p className="text-mid font-bold text-base mb-3">The typical engagement is monthly or ad hoc.</p>
                 <p className="text-forest text-sm font-medium leading-relaxed">This is like having an Executive Board that you can consult when you need.</p>
               </div>

@@ -120,7 +120,7 @@ export default function Service4TechBuilds() {
       {/* HERO MOTIF — a faint circuit lattice behind the heading. Decorative,
           aria-hidden, and the drift stops under prefers-reduced-motion. */}
       {/* WHAT WE BUILD — her seven, verbatim, as a capability grid. */}
-      <section className="relative overflow-hidden bg-linen py-20 md:py-28">
+      <section className="relative overflow-hidden surface-page py-20 md:py-28">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 opacity-[0.5] [background-image:linear-gradient(var(--color-forest)_1px,transparent_1px),linear-gradient(90deg,var(--color-forest)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,black,transparent)] [opacity:0.06]"
