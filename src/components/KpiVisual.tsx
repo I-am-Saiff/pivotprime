@@ -1,7 +1,9 @@
+"use client";
+
 import type { Metric } from "@/content/homepage";
 
 /**
- * One distinct visual per result card.
+ * One distinct visual per result card, animating when its card becomes active.
  *
  * WHY THIS EXISTS
  *
@@ -9,211 +11,237 @@ import type { Metric } from "@/content/homepage";
  * language for each KPI". Her own mockup, req/pivot-prime-kpi-cards_3.html,
  * shows what she means, so the geometry below is taken from that file rather
  * than invented: a four-node execution track, a before-and-after block
- * comparison, a retention dot grid, a profit trend on a gridded field, and a
- * pair of speed tracks.
+ * comparison, a retained-versus-churned dot grid with a legend, a profit trend
+ * on a gridded field, and a pair of before-and-after speed bars.
  *
- * WHAT IS DELIBERATELY NOT DRAWN
+ * HOW THE MOTION WORKS, AND WHY IT IS SAFE
  *
- * Four of her five visuals encode the figure itself. Ten blocks becoming seven
- * is a percentage drawn instead of written. A line with a slope is a magnitude.
- * A dot grid split into retained and churned is a ratio. Publishing those while
- * the written figures are withheld would put the same unapproved numbers on the
- * page in a form no check reads.
+ * Every element is rendered at all times. `run` only changes inline geometry
+ * that CSS transitions between, so nothing mounts, unmounts or hides. The
+ * server-rendered HTML is the finished state of the drawing, which is also what
+ * a reader sees with JavaScript off and what reduced motion gets.
  *
- * So each card renders its frame now, and the data-bearing mark appears when
- * `figure` does. Card one is the exception and is complete today, because her
- * ALIGN / BUILD / EMBED / DONE track carries no quantity at all.
- *
- * Everything here is server-rendered and static. No animation: her mockup
- * animates particles along the track and grows the trend line, and both would
- * put the moving part outside the served HTML for the sake of a decoration.
- *
- * PENDING-COPY 1aj.
+ * `run` goes false when the card leaves, so the animation replays on the next
+ * pass rather than playing once per page load.
  */
-
 const STAGES = ["Align", "Build", "Embed", "Done"];
+const EASE = "cubic-bezier(0.22, 0.61, 0.36, 1)";
 
-export default function KpiVisual({ metric }: { metric: Metric }) {
-  const hasFigure = metric.figure !== null;
+export default function KpiVisual({
+  metric,
+  active,
+}: {
+  metric: Metric;
+  active: boolean;
+}) {
+  // `run` is the `active` prop and nothing else. There is no state here at all:
+  // the parent passes active=true for every card while it is not rotating, so
+  // the server output and the no-JavaScript and reduced-motion cases are the
+  // finished drawing. Once rotation starts the inactive cards fall back to the
+  // empty geometry, which is what gives the next activation something to
+  // transition from.
+  const run = active;
 
-  if (metric.visual === "track") {
-    return (
-      <svg viewBox="0 0 260 72" width="100%" height="76" aria-hidden="true" className="mt-1 mb-5">
-        {[0, 1, 2].map((i) => (
-          <line
-            key={i}
-            x1={28 + i * 72}
-            y1="34"
-            x2={82 + i * 72}
-            y2="34"
-            stroke="var(--color-mid)"
-            strokeOpacity="0.3"
-            strokeWidth="1.5"
-            strokeDasharray="4 3"
-          />
-        ))}
-        {STAGES.map((stage, i) => {
-          const cx = 18 + i * 72;
-          const last = i === STAGES.length - 1;
-          return (
-            <g key={stage}>
-              {last && <circle cx={cx} cy="34" r="14" fill="var(--color-neon)" fillOpacity="0.1" />}
-              <circle
-                cx={cx}
-                cy="34"
-                r="9"
-                fill="var(--color-forest)"
-                stroke="var(--color-neon)"
-                strokeOpacity={last ? 1 : 0.4}
-                strokeWidth="1.5"
-              />
-              <circle cx={cx} cy="34" r={last ? 3.5 : 3} fill={last ? "var(--color-neon)" : "var(--color-mid)"} />
-              <text
-                x={cx}
-                y="60"
-                textAnchor="middle"
-                fill="var(--color-sand)"
-                fillOpacity="0.92"
-                fontSize="8"
-                fontWeight="600"
-                letterSpacing="1"
-              >
-                {stage.toUpperCase()}
-              </text>
-            </g>
-          );
-        })}
-      </svg>
-    );
-  }
+  const pct = metric.figure === null ? 0 : Math.max(0, Math.min(100, metric.figure));
 
-  if (metric.visual === "before-after-blocks") {
-    // Her rows are five productive blocks then five wasteful ones, becoming five
-    // and two. The counts ARE the percentage, so while the figure is withheld
-    // both rows carry the same count and only their evenness differs.
-    return (
-      <svg viewBox="0 0 252 80" width="100%" height="76" aria-hidden="true" className="mt-1 mb-5">
-        {(["Before", "After"] as const).map((row, r) => (
-          <g key={row}>
-            <text
-              x="0"
-              y={r === 0 ? 9 : 51}
-              fill="var(--color-sand)"
-              fillOpacity="0.55"
-              fontSize="8"
-              fontWeight="600"
-              letterSpacing="1.2"
-            >
-              {row.toUpperCase()}
-            </text>
-            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => {
-              const ragged = r === 0 && i % 3 !== 0;
-              return (
-                <rect
-                  key={i}
-                  x={i * 25}
-                  y={(r === 0 ? 14 : 56) + (ragged ? 3 : 0)}
-                  width="22"
-                  height={ragged ? 10 : 16}
-                  rx="3"
-                  fill={r === 0 ? "var(--color-bronze)" : "var(--color-mid)"}
-                  fillOpacity={r === 0 ? 0.5 : 0.42}
-                  stroke={r === 0 ? "var(--color-bronze)" : "var(--color-mid)"}
-                  strokeOpacity={r === 0 ? 0.7 : 0.5}
-                  strokeWidth="1"
-                />
-              );
-            })}
-          </g>
-        ))}
-      </svg>
-    );
-  }
-
-  if (metric.visual === "dot-grid") {
-    // Her grid splits into retained and churned, which is the ratio. Until the
-    // figure exists it is one uniform field: a surface waiting for a reading.
-    return (
-      <div className="mt-1 mb-5 h-[76px]">
-        <svg viewBox="0 0 252 50" width="100%" height="50" aria-hidden="true">
-          {Array.from({ length: 40 }, (_, i) => (
-            <circle
-              key={i}
-              cx={7 + (i % 20) * 13}
-              cy={12 + Math.floor(i / 20) * 20}
-              r="4.5"
-              fill={hasFigure ? "var(--color-neon)" : "none"}
-              stroke="var(--color-sand)"
-              strokeOpacity="0.45"
-              strokeWidth="1.5"
-            />
-          ))}
-        </svg>
-        <p className="mt-1.5 flex gap-4 font-sans text-[9px] font-semibold tracking-[0.1em] text-sand/60 uppercase">
-          <span className="flex items-center gap-1.5">
-            <span aria-hidden="true" className="inline-block h-2 w-2 rounded-full bg-neon" />
-            Retained
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span aria-hidden="true" className="inline-block h-2 w-2 rounded-full border border-sand/45" />
-            Churned
-          </span>
-        </p>
-      </div>
-    );
-  }
-
-  if (metric.visual === "trend") {
-    // The gridded field is the frame. The line has a slope, so the slope is the
-    // figure and the line waits for it.
-    return (
-      <svg viewBox="0 0 260 80" width="100%" height="76" aria-hidden="true" className="mt-1 mb-5">
-        {[74, 54, 34, 14].map((y, i) => (
-          <line
-            key={y}
-            x1="0"
-            y1={y}
-            x2="260"
-            y2={y}
-            stroke="var(--color-neon)"
-            strokeOpacity={i === 0 ? 0.15 : 0.07}
-            strokeWidth="1"
-          />
-        ))}
-        {hasFigure && (
-          <polyline
-            points="8,70 48,65 95,59 140,50 180,37 222,22 252,10"
-            stroke="var(--color-neon)"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            fill="none"
-          />
-        )}
-        <text x="0" y="9" fill="var(--color-sand)" fillOpacity="0.55" fontSize="8" fontWeight="600" letterSpacing="1.2">
-          MARGIN
-        </text>
-      </svg>
-    );
-  }
-
-  // before-after-tracks. Her fills are labelled "10 days avg." and "3 days",
-  // neither of which is in the section 9 table, so the tracks are empty.
+  // Fixed height, left aligned. The drawings are 260 units wide and the card is
+  // wider than that, so a centred SVG floated in the middle with dead space
+  // either side of it.
   return (
-    <div className="mt-1 mb-5 flex h-[76px] flex-col justify-center gap-3">
-      {(["Before", "After"] as const).map((row) => (
-        <div key={row}>
-          <p className="font-sans text-[9px] font-semibold tracking-[0.1em] text-sand/60 uppercase">{row}</p>
-          <div className="mt-1 h-2.5 w-full rounded-full bg-white/10">
-            {hasFigure && (
-              <div
-                className="h-2.5 rounded-full bg-neon"
-                style={{ width: row === "Before" ? "100%" : "33%" }}
-              />
-            )}
-          </div>
-        </div>
-      ))}
+    <div className="mt-2 mb-6 h-[96px]" aria-hidden="true">
+      {metric.visual === "track" && <Track run={run} />}
+      {metric.visual === "before-after-blocks" && <Blocks run={run} pct={pct} />}
+      {metric.visual === "dot-grid" && <Dots run={run} pct={pct} />}
+      {metric.visual === "trend" && <Trend run={run} pct={pct} />}
+      {metric.visual === "before-after-tracks" && <Bars run={run} pct={pct} />}
     </div>
+  );
+}
+
+/** Her ALIGN / BUILD / EMBED / DONE track. The nodes light in sequence. */
+function Track({ run }: { run: boolean }) {
+  return (
+    <svg viewBox="0 0 260 76" width="100%" height="100%" preserveAspectRatio="xMinYMid meet">
+      {[0, 1, 2].map((i) => (
+        <line
+          key={i}
+          x1={28 + i * 72}
+          y1="30"
+          x2={82 + i * 72}
+          y2="30"
+          stroke="var(--color-neon)"
+          strokeWidth="1.5"
+          strokeDasharray="54"
+          strokeDashoffset={run ? 0 : 54}
+          strokeOpacity="0.45"
+          style={{ transition: `stroke-dashoffset 420ms ${EASE} ${140 + i * 260}ms` }}
+        />
+      ))}
+      {STAGES.map((stage, i) => {
+        const cx = 18 + i * 72;
+        return (
+          <g key={stage}>
+            <circle
+              cx={cx}
+              cy="30"
+              r="13"
+              fill="var(--color-neon)"
+              fillOpacity={run ? 0.14 : 0}
+              style={{ transition: `fill-opacity 320ms ${EASE} ${i * 260}ms` }}
+            />
+            <circle
+              cx={cx}
+              cy="30"
+              r="5.5"
+              fill="var(--color-neon)"
+              fillOpacity={run ? 1 : 0.18}
+              style={{ transition: `fill-opacity 320ms ${EASE} ${i * 260}ms` }}
+            />
+            <text
+              x={cx}
+              y="60"
+              textAnchor="middle"
+              className="fill-white/60 font-sans text-[8px] font-bold tracking-[0.16em] uppercase"
+            >
+              {stage}
+            </text>
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
+/** Her before-and-after block comparison. Ten blocks; the after row empties. */
+function Blocks({ run, pct }: { run: boolean; pct: number }) {
+  const remaining = Math.max(1, Math.round((1 - pct / 100) * 10));
+  return (
+    <svg viewBox="0 0 260 76" width="100%" height="100%" preserveAspectRatio="xMinYMid meet">
+      <text x="0" y="9" className="fill-white/45 font-sans text-[7.5px] font-bold tracking-[0.18em] uppercase">
+        Before
+      </text>
+      {Array.from({ length: 10 }, (_, i) => (
+        <rect key={`b${i}`} x={i * 26} y="14" width="20" height="16" rx="4" fill="var(--color-bronze)" fillOpacity="0.5" />
+      ))}
+      <text x="0" y="47" className="fill-neon/70 font-sans text-[7.5px] font-bold tracking-[0.18em] uppercase">
+        After
+      </text>
+      {Array.from({ length: 10 }, (_, i) => {
+        const kept = i < remaining;
+        return (
+          <rect
+            key={`a${i}`}
+            x={i * 26}
+            y="52"
+            width="20"
+            height="16"
+            rx="4"
+            fill="var(--color-neon)"
+            fillOpacity={run ? (kept ? 0.9 : 0.1) : 0.9}
+            style={{ transition: `fill-opacity 380ms ${EASE} ${i * 70}ms` }}
+          />
+        );
+      })}
+    </svg>
+  );
+}
+
+/** Her retained-versus-churned dot grid, legend included. */
+function Dots({ run, pct }: { run: boolean; pct: number }) {
+  const total = 40;
+  // The card reports an increase in retention, so the filled share is the
+  // magnitude of that increase and not a claim about absolute retention.
+  const on = Math.max(1, Math.round((pct / 100) * total));
+  return (
+    <svg viewBox="0 0 260 76" width="100%" height="100%" preserveAspectRatio="xMinYMid meet">
+      {Array.from({ length: total }, (_, i) => {
+        const col = i % 20;
+        const row = Math.floor(i / 20);
+        const filled = i < on;
+        return (
+          <circle
+            key={i}
+            cx={6 + col * 13}
+            cy={12 + row * 18}
+            r="4.5"
+            fill="var(--color-neon)"
+            fillOpacity={run && filled ? 0.95 : 0}
+            stroke="var(--color-neon)"
+            strokeOpacity="0.32"
+            strokeWidth="1.4"
+            style={{ transition: `fill-opacity 300ms ${EASE} ${i * 22}ms` }}
+          />
+        );
+      })}
+      <circle cx="6" cy="62" r="4" fill="var(--color-neon)" />
+      <text x="16" y="65" className="fill-white/60 font-sans text-[7.5px] font-bold tracking-[0.14em] uppercase">
+        Retained
+      </text>
+      <circle cx="86" cy="62" r="4" fill="none" stroke="var(--color-neon)" strokeOpacity="0.32" strokeWidth="1.4" />
+      <text x="96" y="65" className="fill-white/40 font-sans text-[7.5px] font-bold tracking-[0.14em] uppercase">
+        Churned
+      </text>
+    </svg>
+  );
+}
+
+/** Her profit trend on a gridded field. The line draws left to right. */
+function Trend({ run, pct }: { run: boolean; pct: number }) {
+  const rise = (pct / 100) * 46;
+  const points = `4,66 68,${66 - rise * 0.28} 132,${66 - rise * 0.58} 196,${66 - rise * 0.82} 252,${66 - rise}`;
+  return (
+    <svg viewBox="0 0 260 76" width="100%" height="100%" preserveAspectRatio="xMinYMid meet">
+      <text x="0" y="9" className="fill-white/45 font-sans text-[7.5px] font-bold tracking-[0.18em] uppercase">
+        Margin
+      </text>
+      {[0, 1, 2].map((i) => (
+        <line key={i} x1="0" y1={24 + i * 21} x2="260" y2={24 + i * 21} stroke="var(--color-neon)" strokeOpacity="0.14" strokeWidth="1" />
+      ))}
+      <polyline
+        points={points}
+        fill="none"
+        stroke="var(--color-neon)"
+        strokeWidth="2.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeDasharray="300"
+        strokeDashoffset={run ? 0 : 300}
+        style={{ transition: `stroke-dashoffset 1100ms ${EASE} 80ms` }}
+      />
+      <circle
+        cx="252"
+        cy={66 - rise}
+        r="4.5"
+        fill="var(--color-neon)"
+        fillOpacity={run ? 1 : 0}
+        style={{ transition: `fill-opacity 260ms ${EASE} 900ms` }}
+      />
+    </svg>
+  );
+}
+
+/** Her before-and-after speed bars. The after bar shortens as it draws. */
+function Bars({ run, pct }: { run: boolean; pct: number }) {
+  const after = Math.max(6, 248 * (1 - pct / 100));
+  return (
+    <svg viewBox="0 0 260 76" width="100%" height="100%" preserveAspectRatio="xMinYMid meet">
+      <text x="0" y="12" className="fill-white/45 font-sans text-[7.5px] font-bold tracking-[0.18em] uppercase">
+        Before
+      </text>
+      <rect x="0" y="18" width="248" height="10" rx="5" fill="var(--color-bronze)" fillOpacity="0.5" />
+      <text x="0" y="50" className="fill-neon/70 font-sans text-[7.5px] font-bold tracking-[0.18em] uppercase">
+        After
+      </text>
+      <rect
+        x="0"
+        y="56"
+        width={run ? after : 248}
+        height="10"
+        rx="5"
+        fill="var(--color-neon)"
+        fillOpacity="0.9"
+        style={{ transition: `width 820ms ${EASE} 120ms` }}
+      />
+    </svg>
   );
 }

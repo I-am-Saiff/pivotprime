@@ -211,26 +211,34 @@ const DECISIONS = [
     },
   },
   {
-    what: "the five result figures are withheld while spec section 9 is unresolved",
-    where: "REVISIONS-2208, 23 August section",
+    what: "the five result figures are the ones the client authorised, overriding the Section 9 table",
+    where: "PENDING-COPY 1am",
     run: async (get) => {
       const html = await (await get("/")).text();
-      // SCOPED TO THE METRIC CARDS, structurally, via data-metric-cards.
-      // Matching the whole document was wrong: 67% is also a case study result,
-      // which the master table explicitly sanctions and attributes, so the
-      // assertion fired on a figure that is allowed to be there. It has to be
-      // able to tell the two apart.
+      // 27 August: the client authorised these five on the call, pointing at her
+      // own pivot-prime-kpi-cards_3.html and at her deck comment saying the HTML
+      // was provided to build them. The assertion flipped direction with the
+      // decision: it used to prove the figures were absent, and now proves the
+      // five she authorised are the five on the page, so a stray edit cannot
+      // quietly reintroduce a Section 9 value or drop one of hers.
       const block = html.match(/<ul[^>]*data-metric-cards[\s\S]*?<\/ul>/);
       if (!block) return "the metric card list is not in the served HTML at all";
-      const leaked = [53, 62, 16, 27, 67].filter((n) =>
-        new RegExp(`>\\s*${n}%?\\s*<`).test(block[0]),
+      const authorised = ["+7%", "40-60%", "+13%", "+27%", "67%"];
+      const missing = authorised.filter((f) => !block[0].includes(f));
+      if (missing.length) {
+        return `${missing.join(", ")} missing from the cards, but PENDING-COPY 1am records all five as authorised by the client on 27 August`;
+      }
+      // The Section 9 values she overrode. 27 and 67 are hers as well, so only
+      // the three that are hers alone can be tested for.
+      const superseded = [53, 62, 16].filter((n) =>
+        new RegExp(`>\\s*[+-]?${n}%?\\s*<`).test(block[0]),
       );
-      if (leaked.length) {
-        return `${leaked.join(", ")} published, but spec 3.3 says "IRAM TO CONFIRM the five ranges above against the master table in Section 9 before they go live"`;
+      if (superseded.length) {
+        return `${superseded.join(", ")} is a Section 9 value, and PENDING-COPY 1am records the mockup as overriding that table`;
       }
       return /Faster execution across teams/.test(html)
         ? null
-        : "figures withheld but the approved copy went with them, so the section is empty rather than pending";
+        : "the figures are there but the approved copy is not, so the cards are numbers with nothing attached";
     },
   },
   {

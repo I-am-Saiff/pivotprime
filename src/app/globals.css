@@ -194,15 +194,21 @@ h3 {
 }
 
 /* One result card in view at a time, on the client's 27 August instruction.
-   All five are stacked in the same grid cell and all five are in the served
-   HTML; only opacity and pointer-events move. The inactive ones keep their
-   height so the section does not jump between cards of different lengths.
-   With JavaScript off no attribute is ever set, and the :not() rule below
-   leaves every card visible rather than hiding four. See KpiHighlight. */
+   Scoped entirely to [data-kpi-active], which only the client component sets.
+   With JavaScript off, or under prefers-reduced-motion, none of this applies
+   and the five cards lay out as an ordinary grid with everything drawn. All
+   five are in the served HTML either way; only opacity and visibility move.
+   The stack takes the tallest card's height, so advancing shifts nothing. */
+[data-kpi-active] [data-metric-cards] {
+  gap: 0;
+}
+
 [data-kpi-active] [data-kpi-index] {
+  grid-column: 1;
+  grid-row: 1;
   opacity: 0;
-  pointer-events: none;
   visibility: hidden;
+  pointer-events: none;
 }
 
 [data-kpi-active="0"] [data-kpi-index="0"],
@@ -211,8 +217,6 @@ h3 {
 [data-kpi-active="3"] [data-kpi-index="3"],
 [data-kpi-active="4"] [data-kpi-index="4"] {
   opacity: 1;
-  pointer-events: auto;
   visibility: visible;
-  --tw-ring-color: var(--color-neon);
-  box-shadow: 0 12px 40px rgba(0, 215, 109, 0.16);
+  pointer-events: auto;
 }

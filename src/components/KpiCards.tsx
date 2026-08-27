@@ -1,79 +1,170 @@
+"use client";
+
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { METRICS } from "@/content/homepage";
-import KpiAutoVisual from "./KpiAutoVisual";
-import KpiHighlight from "./KpiHighlight";
+import KpiVisual from "./KpiVisual";
+import KpiFigure from "./KpiFigure";
 
 /**
- * The five result cards, spec 3.3.
+ * The five result cards, spec 3.3. One in view at a time, on a four second beat.
  *
- * REPLACES ResultsGraphic, which showed one metric at a time on a three second
- * rotation. Only the active metric was ever in the DOM, so 62%, 16% and 27% were
- * absent from the served HTML: a crawler or a reader without JavaScript saw one
- * figure out of five. This is a server component with all five cards rendered at
- * once, so there is no active-item state to hide anything behind.
+ * ALL FIVE ARE IN THE SERVED HTML, ALWAYS.
  *
- * EVERY FIGURE SLOT IS EMPTY, DELIBERATELY.
+ * This is the defect this page has now had twice. ResultsGraphic rendered only
+ * the active metric, so four figures out of five were absent and a crawler saw
+ * one card. Here every card is rendered by this component on the server, the
+ * five sit stacked in one grid cell, and only opacity and visibility move.
+ * There is no conditional rendering anywhere below.
  *
- * Spec 3.3 ends "IRAM TO CONFIRM the five ranges above against the master table
- * in Section 9 before they go live", and spec section 1 says every result figure
- * must come from that table and nowhere else. Four of the five do not appear in
- * it. The 22 August mockup proposes a different five, of which two appear in the
- * table and two appear nowhere at all. Neither set is safe to publish, so the
- * layout ships and the numbers wait. The labels and context below ARE approved
- * green-block copy and are rendered verbatim.
+ * WITHOUT JAVASCRIPT, AND UNDER REDUCED MOTION, there is no rotation at all:
+ * `data-kpi-active` is only ever set by the effect, and the CSS that stacks the
+ * cards is scoped to that attribute. The fallback is the five cards laid out as
+ * an ordinary grid, every figure and every visual drawn in its finished state.
  *
- * Card 6 is a different case and does not render: nobody has that number yet,
- * and spec 3.4 says "Do not launch this card with a placeholder."
+ * The stack takes the height of the tallest card, so advancing never moves the
+ * page. Hover, focus and the manual controls all pause the timer.
  *
- * HER PER-CARD VISUALS ARE BUILT, as of 26 August, on her slide 3 comment
- * "Different visual language for each KPI". See KpiVisual: the geometry comes
- * from her own req/pivot-prime-kpi-cards_3.html rather than being invented, and
- * the parts of it that encode the figure wait for the figure, because ten blocks
- * becoming seven is a percentage drawn instead of written.
+ * Card 6 does not render: nobody has that number, and spec 3.4 says "Do not
+ * launch this card with a placeholder."
  */
+const INTERVAL = 4000;
+
+const REDUCED = "(prefers-reduced-motion: reduce)";
+
+function subscribeToMotion(onChange: () => void) {
+  const query = window.matchMedia(REDUCED);
+  query.addEventListener("change", onChange);
+  return () => query.removeEventListener("change", onChange);
+}
+
+function isMotionWelcome() {
+  return !window.matchMedia(REDUCED).matches;
+}
+
 export default function KpiCards() {
   const cards = METRICS.filter((m) => m.pending !== "not-yet-supplied");
 
+  // Whether to rotate at all is read from the browser rather than stored, so
+  // nothing sets state inside an effect and the server snapshot is honestly
+  // "not rotating". On the server and on the first paint that is false, which
+  // is what puts all five cards in the served HTML.
+  const rotating = useSyncExternalStore(subscribeToMotion, isMotionWelcome, () => false);
+
+  const [active, setActive] = useState(0);
+  const paused = useRef(false);
+  const held = useRef(false);
+
+  useEffect(() => {
+    if (!rotating) return;
+    const id = window.setInterval(() => {
+      if (paused.current || held.current) return;
+      setActive((current) => (current + 1) % cards.length);
+    }, INTERVAL);
+    return () => window.clearInterval(id);
+  }, [cards.length, rotating]);
+
+  // A manual choice holds that card until the pointer or focus leaves, so the
+  // timer does not pull the page away from something being read.
+  const go = useCallback(
+    (i: number) => {
+      held.current = true;
+      setActive(((i % cards.length) + cards.length) % cards.length);
+    },
+    [cards.length],
+  );
+
   return (
-    <KpiHighlight count={cards.length}>
-      {/* One card in view at a time. All five occupy the same grid cell, so
-          none is removed from the DOM and the section holds one card's height.
-          The stack is centred and capped, because a single card stretched to the
-          full row read as a banner rather than as a result. */}
-      <ul data-metric-cards className="mx-auto grid max-w-xl grid-cols-1 grid-rows-1">
-      {cards.map((metric, i) => (
-        <li
-          key={metric.label}
-          data-kpi-index={i}
-          className="group/kpi col-start-1 row-start-1 flex flex-col rounded-2xl bg-forest p-6 ring-1 ring-neon/20 transition-opacity duration-700 ease-out motion-reduce:transition-none"
-        >
-          {/* The figure, or nothing at all. No zero, no dash, no "coming soon":
-              a placeholder in a results section reads as a result.
-              The slot used to reserve 3.5rem so a confirmed figure would not
-              reflow the section. It reserved a visible void instead, and a card
-              that reflows once beats a card that looks broken for a week. */}
-          {metric.figure !== null && (
-            <p className="mb-4 font-sans text-5xl leading-none font-extrabold tracking-tight text-linen">
-              {metric.figure}
-              {metric.suffix}
+    <div
+      data-kpi-active={rotating ? active : undefined}
+      onMouseEnter={() => (paused.current = true)}
+      onMouseLeave={() => {
+        paused.current = false;
+        held.current = false;
+      }}
+      onFocusCapture={() => (paused.current = true)}
+      onBlurCapture={() => {
+        paused.current = false;
+        held.current = false;
+      }}
+    >
+      <ul
+        data-metric-cards
+        className="mx-auto grid max-w-2xl grid-cols-1 gap-4"
+        aria-live="off"
+      >
+        {cards.map((metric, i) => (
+          <li
+            key={metric.label}
+            data-kpi-index={i}
+            className="flex flex-col rounded-2xl bg-forest p-6 ring-1 ring-neon/20 transition-opacity duration-500 ease-out motion-reduce:transition-none sm:p-8"
+          >
+            <p className="font-sans text-[10px] font-bold tracking-[0.18em] text-neon/70 uppercase">
+              {metric.kpiLabel}
             </p>
-          )}
 
-          {/* Her own card name, from the .kpi-label in her mockup. */}
-          <p className="font-sans text-[10px] font-bold tracking-[0.18em] text-neon/70 uppercase">
-            {metric.kpiLabel}
-          </p>
+            <KpiVisual metric={metric} active={rotating ? active === i : true} />
 
-          <KpiAutoVisual figure={metric.figure} index={i} />
+            {metric.figureText !== null && (
+              <p className="mb-3 font-sans text-5xl leading-none font-extrabold tracking-tight text-neon sm:text-6xl">
+                <KpiFigure text={metric.figureText} active={rotating ? active === i : false} />
+              </p>
+            )}
 
-          {/* With the figure withheld this line is the card's headline, not a
-              caption under one, so it carries the weight the number would. */}
-          <p className="mt-auto text-lg leading-snug font-bold text-white sm:text-xl">{metric.label}</p>
-          <p className="mt-3 border-t border-neon/15 pt-3 text-sm leading-relaxed text-sand/80">
-            {metric.context}
-          </p>
-        </li>
-      ))}
+            <p className="text-lg leading-snug font-bold text-white sm:text-xl">{metric.label}</p>
+            <p className="mt-3 border-t border-neon/15 pt-3 text-sm leading-relaxed text-sand/80">
+              {metric.context}
+            </p>
+          </li>
+        ))}
       </ul>
-    </KpiHighlight>
+
+      {/* Manual controls. They are real buttons, so they are in the tab order
+          and answer Enter and Space without any key handling of our own.
+          Hidden when nothing is rotating, because there is nothing to step
+          through: every card is already on screen. */}
+      {rotating && (
+        <div className="mt-6 flex items-center justify-center gap-3">
+          <button
+            type="button"
+            onClick={() => go(active - 1)}
+            aria-label="Previous result"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-neon/30 text-neon transition-colors hover:bg-neon/10 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
+          >
+            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
+              <path d="M15 5l-7 7 7 7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+
+          {cards.map((metric, i) => (
+            <button
+              key={metric.label}
+              type="button"
+              onClick={() => go(i)}
+              aria-label={`Show ${metric.kpiLabel}`}
+              aria-current={active === i}
+              className="inline-flex h-11 w-6 items-center justify-center focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
+            >
+              <span
+                aria-hidden="true"
+                className={`block h-2 rounded-full transition-all duration-300 ${
+                  active === i ? "w-6 bg-neon" : "w-2 bg-neon/30"
+                }`}
+              />
+            </button>
+          ))}
+
+          <button
+            type="button"
+            onClick={() => go(active + 1)}
+            aria-label="Next result"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-neon/30 text-neon transition-colors hover:bg-neon/10 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
+          >
+            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
+              <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+        </div>
+      )}
+    </div>
   );
 }

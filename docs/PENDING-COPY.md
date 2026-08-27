@@ -2211,3 +2211,36 @@ six resolved above, so they have not been touched.
 button. The mockups do hover with opacity rather than a second green, so the
 consistent fix is to drop the token and hover on alpha. Not done unasked,
 because it changes every button on the site.
+
+---
+
+## 1am. The five result figures are now live, overriding the Section 9 table — **for Iram**
+
+**What changed.** The five figures on the homepage results cards were empty for
+weeks and are now published:
+
+| Card | Figure |
+| --- | --- |
+| Execution | +7% |
+| Process Efficiency | 40-60% |
+| Customer Retention | +13% |
+| Profit Growth | +27% |
+| Transaction Speed | 67% |
+
+**Where they came from.** Your own `pivot-prime-kpi-cards_3.html`, and your deck
+comment confirming that the HTML was provided so these cards could be built.
+You authorised them verbally on 27 August 2026.
+
+**What they override.** Spec 3.3 says "IRAM TO CONFIRM the five ranges above
+against the master table in Section 9 before they go live", and Section 9 lists
+different values for four of the five. Only Transaction Speed matches. Your
+mockup and your deck are being treated as the later and more specific
+instruction, so the table no longer governs these five numbers.
+
+**How to undo it.** Every value sits in one place, `METRICS` in
+`src/content/homepage.ts`, as a `figure` for the drawing and a `figureText` for
+the printed value. Changing a number, or emptying one, is a one-line edit per
+card and nothing else moves.
+
+Card 6, bespoke builds, still has no figure from anyone and still does not
+render, per spec 3.4's "Do not launch this card with a placeholder."

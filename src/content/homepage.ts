@@ -136,7 +136,16 @@ export const RESULTS = {
 };
 
 export type Metric = {
+  /**
+   * The magnitude the visual draws with, 0 to 100. For the range card it is the
+   * top of the range, because a drawn bar cannot show two ends at once.
+   */
   figure: number | null;
+  /**
+   * What the card prints, exactly as her mockup prints it, sign and range and
+   * all. `figure` cannot express "40-60%" and the page must not paraphrase her.
+   */
+  figureText: string | null;
   suffix: string;
   label: string;
   context: string;
@@ -183,31 +192,41 @@ export type Metric = {
 /**
  * The six metric cards, spec 3.3.
  *
- * The five figures below are the exact values in v1.7.1, which tightened the
- * earlier ranges into single numbers. They carry an "IRAM TO CONFIRM ... against
- * the master table in Section 9" instruction, and section 9 still records a
- * direct contradiction on operational waste, so these are built as specified and
- * await sign-off before launch. Tracked as items 1.3 and 1.4.
+ * THE FIVE FIGURES ARE PUBLISHED, AS OF 27 AUGUST.
  *
- * TODO(client): metric 6 has no figure. Spec 3.3 marks it "SAIF TO SUPPLY" and
+ * They were withheld for weeks because spec 3.3 ends "IRAM TO CONFIRM the five
+ * ranges above against the master table in Section 9 before they go live" and
+ * four of the five do not match that table. The client authorised them on the
+ * 27 August call, pointing at her own req/pivot-prime-kpi-cards_3.html and at
+ * her deck comment saying the HTML was provided in order to build these cards.
+ * The mockup and the deck therefore override the section 9 table.
+ *
+ * The values are hers, verbatim, including the sign and the range: +7%,
+ * 40-60%, +13%, +27%, 67%. `figure` is the magnitude the drawing uses and
+ * `figureText` is what the card prints. Recorded in docs/PENDING-COPY.md 1am so
+ * the override is visible to her and can be undone in one edit.
+ *
+ * TODO(client): metric 6 has no figure. Spec 3.4 marks it "SAIF TO SUPPLY" and
  * is explicit: "Do not launch this card with a placeholder." It is therefore
  * filtered out entirely rather than shown with an XX, and appears the moment the
  * number lands. Tracked as item 1.2.
  */
 export const METRICS: Metric[] = [
   {
-    figure: null,
+    figure: 7,
+    figureText: "+7%",
     suffix: "%",
-    pending: "client-confirmation",
+    pending: null,
     kpiLabel: "Execution",
     visual: "track",
     label: "Faster execution across teams",
     context: "Decision rights, operating rhythm and delivery ownership rebuilt.",
   },
   {
-    figure: null,
+    figure: 60,
+    figureText: "40-60%",
     suffix: "%",
-    pending: "client-confirmation",
+    pending: null,
     kpiLabel: "Process Efficiency",
     visual: "before-after-blocks",
     label: "Reduction in duplicated work, rework and inefficiency",
@@ -215,9 +234,10 @@ export const METRICS: Metric[] = [
       "Processes mapped end to end and redesigned around how the work actually flows.",
   },
   {
-    figure: null,
+    figure: 13,
+    figureText: "+13%",
     suffix: "%",
-    pending: "client-confirmation",
+    pending: null,
     kpiLabel: "Customer Retention",
     visual: "dot-grid",
     label: "Increase in customer retention",
@@ -228,18 +248,20 @@ export const METRICS: Metric[] = [
     // she showed the same slide on the 27 August call. It still waits, because
     // spec 3.3 holds all five until they are checked against the section 9
     // master table and section 9 still contradicts itself on operational waste.
-    figure: null,
+    figure: 27,
+    figureText: "+27%",
     suffix: "%",
-    pending: "client-confirmation",
+    pending: null,
     kpiLabel: "Profit Growth",
     visual: "trend",
     label: "Increase in profit",
     context: "Pricing, margin and commercial model redesigned.",
   },
   {
-    figure: null,
+    figure: 67,
+    figureText: "67%",
     suffix: "%",
-    pending: "client-confirmation",
+    pending: null,
     kpiLabel: "Transaction Speed",
     visual: "before-after-tracks",
     label: "Faster transaction processing",
@@ -247,6 +269,7 @@ export const METRICS: Metric[] = [
   },
   {
     figure: null,
+    figureText: null,
     suffix: "",
     pending: "not-yet-supplied",
     // Card 6 does not render and is not in her mockup, so it has no visual of
