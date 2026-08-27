@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
  * A range counts both ends together, so "40-60%" runs 0-0 up to 40-60 rather
  * than appearing whole while the other four cards animate.
  */
-const DURATION = 900;
+const DURATION = 1000;
 
 /** Every run of digits in the value, with the text around them left alone. */
 function parts(text: string) {

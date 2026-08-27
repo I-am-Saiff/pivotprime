@@ -235,7 +235,7 @@ h3 {
 /* The auto-advance, made visible. Keyed on the active index in the component,
    so React remounts it and the fill restarts with each card. */
 [data-kpi-progress] {
-  animation: kpi-progress 4000ms linear forwards;
+  animation: kpi-progress 2500ms linear forwards;
 }
 
 [data-kpi-progress][data-paused] {

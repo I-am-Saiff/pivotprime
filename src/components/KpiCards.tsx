@@ -30,7 +30,7 @@ import KpiFigure from "./KpiFigure";
  * Card 6 does not render: nobody has that number, and spec 3.4 says "Do not
  * launch this card with a placeholder."
  */
-const INTERVAL = 4000;
+const INTERVAL = 2500;
 const REDUCED = "(prefers-reduced-motion: reduce)";
 
 function subscribeToMotion(onChange: () => void) {
@@ -116,7 +116,7 @@ export default function KpiCards() {
         ))}
       </ul>
 
-      {/* The four second beat, made visible. Keyed on the active index so the
+      {/* The beat, made visible. Keyed on the active index so the
           fill restarts with each card, and paused as a state rather than as a
           bar that silently stops. Absent entirely when nothing is rotating. */}
       {rotating && (
