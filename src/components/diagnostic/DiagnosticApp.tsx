@@ -323,7 +323,7 @@ export default function DiagnosticApp() {
                     const globalIdx = from + idx;
                     const a = answers[globalIdx];
                     return (
-                      <div key={globalIdx} id={`card${globalIdx}`} className={`bg-white border rounded-xl p-5 md:p-6 transition-colors ${a ? "border-[#cfe3d8]" : "border-[#e3eae6]"}`}>
+                      <div key={globalIdx} id={`card${globalIdx}`} className={`bg-shell border rounded-xl p-5 md:p-6 transition-colors ${a ? "border-[#cfe3d8]" : "border-[#e3eae6]"}`}>
                         <div className="flex gap-3 items-start mb-4">
                           <div className="font-sans font-bold text-[11.5px] tracking-[0.14em] text-[#af8943] pt-1 w-7 shrink-0">
                             {String(globalIdx + 1).padStart(2, '0')}
@@ -355,7 +355,7 @@ export default function DiagnosticApp() {
                               <span className={`block cursor-pointer text-[13.5px] px-3.5 py-2 border rounded-full select-none transition-all
                                 ${a?.oi === oi 
                                   ? (o.na ? "bg-[#5e6f68] border-[#5e6f68] text-white" : o.dk ? "bg-[#af8943] border-[#af8943] text-white" : "bg-[#013325] border-[#013325] text-white") 
-                                  : "bg-white border-[#e3eae6] text-[#0c1a15] hover:border-[#009f50] peer-focus-visible:ring-2 peer-focus-visible:ring-[#00d76d]"
+                                  : "bg-shell border-[#e3eae6] text-[#0c1a15] hover:border-[#009f50] peer-focus-visible:ring-2 peer-focus-visible:ring-[#00d76d]"
                                 }
                               `}>
                                 {o.t}
@@ -406,7 +406,7 @@ export default function DiagnosticApp() {
                         newT[idx] = e.target.value;
                         setTextAnswers(newT);
                       }}
-                      className="w-full font-sans text-[15.5px] text-[#0c1a15] bg-white border border-[#e3eae6] rounded-xl px-4 py-3 min-h-[100px] resize-y focus:outline-none focus:ring-2 focus:ring-[#009f50]" 
+                      className="w-full font-sans text-[15.5px] text-[#0c1a15] bg-shell border border-[#e3eae6] rounded-xl px-4 py-3 min-h-[100px] resize-y focus:outline-none focus:ring-2 focus:ring-[#009f50]" 
                     />
                   </div>
                 ))}
@@ -501,7 +501,7 @@ export default function DiagnosticApp() {
                   Ranked by weighted deficit rather than lowest score. An area scoring 40 at a weight of 25 holds the business back more than one scoring 30 at a weight of 5. This order is the recommended sequence of work.
                 </p>
 
-                <div className="border border-[#e3eae6] rounded-xl overflow-hidden bg-white">
+                <div className="border border-[#e3eae6] rounded-xl overflow-hidden bg-shell">
                   {r.ranked.map((row, i) => (
                     <div key={i} className={`grid grid-cols-[34px_1fr_104px] gap-4 items-center p-4 border-t border-[#e3eae6] first:border-0 ${i === 0 ? "bg-[#efe7d8]" : ""}`}>
                       <div className={`font-sans font-bold text-[15px] ${i === 0 ? "text-[#013325]" : "text-[#af8943]"}`}>

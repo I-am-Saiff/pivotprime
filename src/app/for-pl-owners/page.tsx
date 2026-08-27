@@ -127,7 +127,7 @@ export default function ForCorporateOwners() {
               How we staff an engagement
               <span aria-hidden="true" className="ml-2 text-base leading-none">&rarr;</span>
             </Link>
-            <Link href="/services/technology-builds" className="inline-flex items-center justify-center rounded-full bg-white border border-forest/20 px-8 py-3.5 text-xs font-bold tracking-wider text-forest uppercase transition-all hover:bg-forest hover:text-white hover:scale-105">
+            <Link href="/services/technology-builds" className="inline-flex items-center justify-center rounded-full bg-shell border border-forest/20 px-8 py-3.5 text-xs font-bold tracking-wider text-forest uppercase transition-all hover:bg-forest hover:text-white hover:scale-105">
               See what tech we can build
               <span aria-hidden="true" className="ml-2 text-base leading-none">&rarr;</span>
             </Link>

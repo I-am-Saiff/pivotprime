@@ -75,7 +75,7 @@ export default function Service3BuildPlace() {
             </p>
           </div>
 
-          <div className="bg-white border border-[#e3eae6] rounded-xl p-6 md:p-8 overflow-hidden shadow-sm">
+          <div className="bg-shell border border-[#e3eae6] rounded-xl p-6 md:p-8 overflow-hidden shadow-sm">
             <div className="relative h-[290px] md:h-[420px] w-full" ref={benchRef}>
               <svg viewBox="0 0 800 290" preserveAspectRatio="none" className="absolute inset-0 w-full h-full overflow-visible">
                 {slots.map((s, i) => {
@@ -111,7 +111,7 @@ export default function Service3BuildPlace() {
                   <div 
                     key={i}
                     className={`absolute w-[118px] -translate-x-1/2 -translate-y-1/2 text-center rounded-xl p-2.5 transition-all duration-500
-                      ${isVisible ? "opacity-100 border-solid border-[#009f50] bg-[#f2f8f4]" : "opacity-50 border-dashed border-[#cfd9d4] bg-white"}
+                      ${isVisible ? "opacity-100 border-solid border-[#009f50] bg-[#f2f8f4]" : "opacity-50 border-dashed border-[#cfd9d4] bg-shell"}
                     `}
                     style={{ 
                       left: `${s.left}%`, 

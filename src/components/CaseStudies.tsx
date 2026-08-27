@@ -101,7 +101,7 @@ export default function CaseStudies({
               type="button"
               onClick={prevSlide}
               aria-label="Previous case study"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-300 bg-white text-forest shadow-sm transition-all hover:bg-neutral-50 hover:border-forest hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:outline-none active:scale-95"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-300 bg-shell text-forest shadow-sm transition-all hover:bg-neutral-50 hover:border-forest hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:outline-none active:scale-95"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -116,7 +116,7 @@ export default function CaseStudies({
               type="button"
               onClick={nextSlide}
               aria-label="Next case study"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-300 bg-white text-forest shadow-sm transition-all hover:bg-neutral-50 hover:border-forest hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:outline-none active:scale-95"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-300 bg-shell text-forest shadow-sm transition-all hover:bg-neutral-50 hover:border-forest hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:outline-none active:scale-95"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

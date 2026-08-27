@@ -71,7 +71,7 @@ export default function Service5MarketEntry() {
             </p>
           </div>
 
-          <div className="bg-white border border-[#e3eae6] rounded-xl p-6 md:p-8 overflow-hidden shadow-sm">
+          <div className="bg-shell border border-[#e3eae6] rounded-xl p-6 md:p-8 overflow-hidden shadow-sm">
             <div className="inline-flex bg-[#f7f9f8] border border-[#e3eae6] rounded-full p-1 gap-1 mb-6">
               <button
                 onClick={() => setCalMode(0)}

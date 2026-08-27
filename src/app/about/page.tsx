@@ -96,7 +96,7 @@ export default function About() {
 
           {/* The founder card runs the full width, photograph beside the text,
               as the slide draws it. */}
-          <article className="mt-12 overflow-hidden rounded-[28px] border border-forest/20 bg-white shadow-[0_16px_48px_rgba(1,51,37,0.06)]">
+          <article className="mt-12 overflow-hidden rounded-[28px] border border-forest/20 bg-shell shadow-[0_16px_48px_rgba(1,51,37,0.06)]">
             <div className="grid grid-cols-1 gap-8 p-6 md:grid-cols-12 md:gap-10 md:p-10">
               <div className="md:col-span-4 lg:col-span-3">
                 <Portrait person={FOUNDER} className="aspect-[4/5] w-full rounded-2xl" />
@@ -135,7 +135,7 @@ export default function About() {
             {PEOPLE.map((person) => (
               <li
                 key={person.name}
-                className="flex flex-col overflow-hidden rounded-[28px] border border-forest/20 bg-white shadow-[0_16px_48px_rgba(1,51,37,0.06)]"
+                className="flex flex-col overflow-hidden rounded-[28px] border border-forest/20 bg-shell shadow-[0_16px_48px_rgba(1,51,37,0.06)]"
               >
                 <Portrait person={person} className="aspect-[4/5] w-full" />
                 <div className="flex flex-1 flex-col p-6 md:p-8">

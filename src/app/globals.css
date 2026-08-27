@@ -12,7 +12,7 @@
   --color-forest: #013325;
   --color-neon: #00d76d;
   --color-mid: #009f50;
-  --color-background: #ffffff;
+  --color-background: #fefbf8;
   --color-foreground: #000000;
 
   /* The five added by the client's swatch, slide 3 of Website Revisions 2208v1.
@@ -41,7 +41,7 @@
 
 @layer base {
   /* The page base is shell, her #fefbf8, not pure white. Every light section
-     sits on it and the ones that were explicitly bg-white are bg-shell now.
+     sits on it and the ones that were explicitly bg-shell are bg-shell now.
      Cards stay white so they still separate from the page they sit on, which is
      the whole reason for warming the base rather than both. --color-background
      is still #ffffff and is what those cards use. */
@@ -93,7 +93,7 @@
   }
 
   .frosted-card-light {
-    @apply bg-white/95 backdrop-blur-md border border-neutral-200/80 shadow-[0_16px_48px_rgba(1,51,37,0.06)];
+    @apply bg-shell/95 backdrop-blur-md border border-neutral-200/80 shadow-[0_16px_48px_rgba(1,51,37,0.06)];
   }
 }
 

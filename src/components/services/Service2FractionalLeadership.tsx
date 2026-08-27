@@ -134,7 +134,7 @@ export default function Service2FractionalLeadership() {
             {FRACTIONAL_PHASES.map((phase) => (
               <li
                 key={phase.band}
-                className="flex flex-col rounded-xl border border-forest/15 bg-white p-6 shadow-sm"
+                className="flex flex-col rounded-xl border border-forest/15 bg-shell p-6 shadow-sm"
               >
                 <div className="flex items-center gap-3">
                   <span className="font-sans text-xs font-bold tracking-[0.18em] text-mid uppercase">
@@ -212,7 +212,7 @@ export default function Service2FractionalLeadership() {
                 className={`border rounded-xl p-5 text-left cursor-pointer transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#009f50] focus-visible:ring-offset-2 ${
                   activeSeat === i
                     ? "border-[#013325] bg-[#013325] text-white shadow-lg -translate-y-1"
-                    : "border-[#e3eae6] bg-white text-[#0c1a15] hover:border-[#cfe3d8] hover:-translate-y-1 hover:shadow-md"
+                    : "border-[#e3eae6] bg-shell text-[#0c1a15] hover:border-[#cfe3d8] hover:-translate-y-1 hover:shadow-md"
                 }`}
               >
                 <h4 className="font-sans font-bold text-base mb-1.5">{seat.title}</h4>
