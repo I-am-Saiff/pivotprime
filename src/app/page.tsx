@@ -96,7 +96,7 @@ export default function Home() {
 
             <a
               href={HERO.secondaryHref}
-              className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-black/35 backdrop-blur-md px-7 py-3.5 text-xs font-bold tracking-wider text-white uppercase transition-all duration-200 hover:border-white/45 hover:bg-black/50 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
+              className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-black backdrop-blur-md px-7 py-3.5 text-xs font-bold tracking-wider text-white uppercase transition-all duration-200 hover:border-white/45 hover:bg-black/85 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
             >
               {HERO.secondaryLabel}
             </a>
