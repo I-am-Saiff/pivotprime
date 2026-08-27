@@ -328,7 +328,7 @@ export default function Home() {
           <div className="mt-12 text-center">
             <Link
               href="/about#case-studies"
-              className="inline-flex items-center justify-center rounded-xl border border-forest/25 px-8 py-4 font-sans text-xs font-bold tracking-wider text-forest uppercase transition-colors hover:border-forest hover:bg-forest hover:text-white focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
+              className="inline-flex items-center justify-center rounded-xl bg-neon px-8 py-4 font-sans text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
             >
               More case studies
               <span aria-hidden="true" className="ml-2 text-base leading-none">
