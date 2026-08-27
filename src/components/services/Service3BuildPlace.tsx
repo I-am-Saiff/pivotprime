@@ -75,7 +75,7 @@ export default function Service3BuildPlace() {
             </p>
           </div>
 
-          <div className="bg-shell border border-[#e3eae6] rounded-xl p-6 md:p-8 overflow-hidden shadow-sm">
+          <div className="surface-page border border-[#e3eae6] rounded-xl p-6 md:p-8 overflow-hidden shadow-sm">
             <div className="relative h-[290px] md:h-[420px] w-full" ref={benchRef}>
               <svg viewBox="0 0 800 290" preserveAspectRatio="none" className="absolute inset-0 w-full h-full overflow-visible">
                 {slots.map((s, i) => {
@@ -111,7 +111,7 @@ export default function Service3BuildPlace() {
                   <div 
                     key={i}
                     className={`absolute w-[118px] -translate-x-1/2 -translate-y-1/2 text-center rounded-xl p-2.5 transition-all duration-500
-                      ${isVisible ? "opacity-100 border-solid border-[#009f50] bg-[#f2f8f4]" : "opacity-50 border-dashed border-[#cfd9d4] bg-shell"}
+                      ${isVisible ? "opacity-100 border-solid border-[#009f50] bg-[#f2f8f4]" : "opacity-50 border-dashed border-[#cfd9d4] surface-page"}
                     `}
                     style={{ 
                       left: `${s.left}%`, 
@@ -136,7 +136,7 @@ export default function Service3BuildPlace() {
       </section>
 
       {/* Columns Section */}
-      <section className="py-16 md:py-24 bg-shell">
+      <section className="py-16 md:py-24 surface-page">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
           <div>
             <div className="font-sans font-semibold text-[10.5px] tracking-[0.2em] uppercase text-[#af8943] mb-4">
@@ -200,7 +200,7 @@ export default function Service3BuildPlace() {
           copy verbatim, and a caption is not a compression of a paragraph. The
           diagram is kept and its descriptor lines removed, so the same words do
           not appear twice on the page. See docs/PENDING-COPY.md. */}
-      <section className="bg-shell py-16 md:py-24">
+      <section className="surface-page py-16 md:py-24">
         <div className="px-4 sm:px-6 lg:px-8">
           <CopyProse heading={BUILD_AND_PLACE.whyHeading} paragraphs={BUILD_AND_PLACE.why} />
         </div>
@@ -212,7 +212,7 @@ export default function Service3BuildPlace() {
         </div>
       </section>
 
-      <section className="bg-shell py-16 md:py-24">
+      <section className="surface-page py-16 md:py-24">
         <div className="px-4 sm:px-6 lg:px-8">
           <CopyProse
             heading={BUILD_AND_PLACE.pricedHeading}

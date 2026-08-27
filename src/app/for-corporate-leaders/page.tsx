@@ -113,7 +113,7 @@ export default function ForCorporateLeaders() {
             You do not need to hire for everything. You do need access to people who know what they are doing, without a long approval cycle or a permanent cost.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link href="/services/build-and-place" className="inline-flex items-center justify-center rounded-full bg-forest px-8 py-3.5 text-xs font-bold tracking-wider text-white uppercase transition-all hover:bg-mid hover:scale-105">
+            <Link href="/services/build-and-place" className="inline-flex items-center justify-center rounded-xl bg-forest px-8 py-3.5 text-xs font-bold tracking-wider text-white uppercase transition-all hover:bg-mid hover:scale-105">
               How we staff an engagement
               <span aria-hidden="true" className="ml-2 text-base leading-none">&rarr;</span>
             </Link>
@@ -129,7 +129,7 @@ export default function ForCorporateLeaders() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-6">
               Need on-demand execution support?
             </h2>
-            <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-bold tracking-wider uppercase text-forest bg-neon hover:bg-white hover:scale-105 transition-all rounded-full shadow-xl text-xs">
+            <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-bold tracking-wider uppercase text-forest bg-neon hover:bg-white hover:scale-105 transition-all rounded-xl shadow-xl text-xs">
               Book your first conversation <span className="ml-2 text-base leading-none">→</span>
             </Link>
           </div>

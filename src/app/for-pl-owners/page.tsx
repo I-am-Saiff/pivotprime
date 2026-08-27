@@ -123,11 +123,11 @@ export default function ForCorporateOwners() {
             The outcome is a small number of moves that materially shift trajectory, rather than a long list of initiatives that compete with each other.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link href="/services/build-and-place" className="inline-flex items-center justify-center rounded-full bg-forest px-8 py-3.5 text-xs font-bold tracking-wider text-white uppercase transition-all hover:bg-mid hover:scale-105">
+            <Link href="/services/build-and-place" className="inline-flex items-center justify-center rounded-xl bg-forest px-8 py-3.5 text-xs font-bold tracking-wider text-white uppercase transition-all hover:bg-mid hover:scale-105">
               How we staff an engagement
               <span aria-hidden="true" className="ml-2 text-base leading-none">&rarr;</span>
             </Link>
-            <Link href="/services/technology-builds" className="inline-flex items-center justify-center rounded-full bg-shell border border-forest/20 px-8 py-3.5 text-xs font-bold tracking-wider text-forest uppercase transition-all hover:bg-forest hover:text-white hover:scale-105">
+            <Link href="/services/technology-builds" className="inline-flex items-center justify-center rounded-xl surface-page border border-forest/20 px-8 py-3.5 text-xs font-bold tracking-wider text-forest uppercase transition-all hover:bg-forest hover:text-white hover:scale-105">
               See what tech we can build
               <span aria-hidden="true" className="ml-2 text-base leading-none">&rarr;</span>
             </Link>
@@ -143,7 +143,7 @@ export default function ForCorporateOwners() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-6">
               Ready to create real momentum?
             </h2>
-            <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-bold tracking-wider uppercase text-forest bg-neon hover:bg-white hover:scale-105 transition-all rounded-full shadow-xl text-xs">
+            <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-bold tracking-wider uppercase text-forest bg-neon hover:bg-white hover:scale-105 transition-all rounded-xl shadow-xl text-xs">
               Book your first conversation <span className="ml-2 text-base leading-none">→</span>
             </Link>
           </div>

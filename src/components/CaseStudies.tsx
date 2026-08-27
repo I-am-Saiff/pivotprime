@@ -101,7 +101,7 @@ export default function CaseStudies({
               type="button"
               onClick={prevSlide}
               aria-label="Previous case study"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-300 bg-shell text-forest shadow-sm transition-all hover:bg-neutral-50 hover:border-forest hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:outline-none active:scale-95"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-300 surface-page text-forest shadow-sm transition-all hover:bg-neutral-50 hover:border-forest hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:outline-none active:scale-95"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -116,7 +116,7 @@ export default function CaseStudies({
               type="button"
               onClick={nextSlide}
               aria-label="Next case study"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-300 bg-shell text-forest shadow-sm transition-all hover:bg-neutral-50 hover:border-forest hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:outline-none active:scale-95"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-300 surface-page text-forest shadow-sm transition-all hover:bg-neutral-50 hover:border-forest hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:outline-none active:scale-95"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -160,7 +160,7 @@ export default function CaseStudies({
                 }
               >
                 <div>
-                  <span className="mb-2 inline-flex items-center px-3 py-1 rounded-full bg-forest/5 text-xs font-bold tracking-wider text-forest uppercase">
+                  <span className="mb-2 inline-flex items-center px-3 py-1 rounded-xl bg-forest/5 text-xs font-bold tracking-wider text-forest uppercase">
                     Case Study {i + 1}
                   </span>
                   <SubHeading className="text-2xl font-extrabold text-forest md:text-3xl mt-2">

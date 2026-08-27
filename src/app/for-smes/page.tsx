@@ -76,7 +76,7 @@ export default function ForSMEs() {
             Most SMEs start with the audit, because margin instability almost never comes from where the business assumes it does.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link href="/services/operational-clarity-audit" className="inline-flex items-center justify-center rounded-full bg-forest px-8 py-3.5 text-xs font-bold tracking-wider text-white uppercase transition-all hover:bg-mid hover:scale-105">
+            <Link href="/services/operational-clarity-audit" className="inline-flex items-center justify-center rounded-xl bg-forest px-8 py-3.5 text-xs font-bold tracking-wider text-white uppercase transition-all hover:bg-mid hover:scale-105">
               See what the audit covers
               <span aria-hidden="true" className="ml-2 text-base leading-none">&rarr;</span>
             </Link>
@@ -92,7 +92,7 @@ export default function ForSMEs() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-6">
               Ready to make your business predictable?
             </h2>
-            <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-bold tracking-wider uppercase text-forest bg-neon hover:bg-white hover:scale-105 transition-all rounded-full shadow-xl text-xs">
+            <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-bold tracking-wider uppercase text-forest bg-neon hover:bg-white hover:scale-105 transition-all rounded-xl shadow-xl text-xs">
               Book your first conversation <span className="ml-2 text-base leading-none">→</span>
             </Link>
           </div>

@@ -156,7 +156,7 @@ export default function PersonaSwitcher() {
                   <div className="mb-8">
                     <Link
                       href={persona.ctaHref}
-                      className="inline-flex items-center justify-center rounded-full bg-neon px-6 py-3.5 text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-forest hover:text-white hover:scale-105"
+                      className="inline-flex items-center justify-center rounded-xl bg-neon px-6 py-3.5 text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-forest hover:text-white hover:scale-105"
                     >
                       {persona.ctaLabel}
                       <span aria-hidden="true" className="ml-2 text-base leading-none">

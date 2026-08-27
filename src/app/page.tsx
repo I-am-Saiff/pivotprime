@@ -117,7 +117,7 @@ export default function Home() {
 
       {/* 3.2 Proof bar. MOVE: the logo rows sat buried inside a later section
           and belong directly under the hero. */}
-      <section className="border-b border-neutral-100 bg-shell py-14">
+      <section className="border-b border-neutral-100 surface-page py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="mx-auto max-w-3xl text-center text-base font-medium text-neutral-600 md:text-lg">
             {PROOF.trusted}
@@ -203,7 +203,7 @@ export default function Home() {
           standard body colour. Spec 3.3. */}
       {/* pb-28 below sm: clears the floating WhatsApp button so the last
           card does not end underneath it. PENDING-COPY 1ak. */}
-      <section className="bg-shell px-4 pt-20 pb-28 sm:px-6 sm:py-20 lg:px-8">
+      <section className="surface-page px-4 pt-20 pb-28 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <header className="mb-12 max-w-3xl">
             <span className="block font-sans font-semibold text-xs tracking-[0.22em] uppercase text-mid mb-3">
@@ -220,7 +220,7 @@ export default function Home() {
       </section>
 
       {/* 3.4 What do we actually do. NEW. The hero's secondary CTA anchors here. */}
-      <section id="services" className="scroll-mt-28 bg-shell px-4 pb-24 sm:px-6 lg:px-8">
+      <section id="services" className="scroll-mt-28 surface-page px-4 pb-24 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <header className="mb-14 max-w-3xl">
             <p className="mb-4 text-xs font-semibold tracking-[0.18em] text-mid uppercase">
@@ -238,7 +238,7 @@ export default function Home() {
       {/* 3.5 The patterns. MOVED below the services: having just read what
           Pivot Prime sells, the visitor now recognises their own symptom and
           knows which service it points to. Spec 3.5. */}
-      <section className="bg-shell px-4 pb-24 sm:px-6 lg:px-8">
+      <section className="surface-page px-4 pb-24 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <p className="mb-4 text-xs font-semibold tracking-[0.18em] text-neon uppercase">
             {PATTERNS.eyebrow}
@@ -272,7 +272,7 @@ export default function Home() {
           the layout does not collapse and the two-column intent is preserved.
           Spec 8.2: nothing is better than stock, so the placeholder uses
           initials + brand colour rather than any photography. Spec 3.7. */}
-      <section className="bg-shell px-4 py-24 sm:px-6 lg:px-8">
+      <section className="surface-page px-4 py-24 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl grid items-center gap-12 md:grid-cols-2">
           {/* Copy column — left on desktop */}
           <div>
@@ -319,7 +319,7 @@ export default function Home() {
           after the founder section and before the personas, so the founder
           section establishes who is behind the work, the case studies prove it,
           and the personas then ask the visitor to place themselves. */}
-      <section className="bg-shell px-4 pb-24 sm:px-6 lg:px-8">
+      <section className="surface-page px-4 pb-24 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           {/* Slide 8: the anonymised ones "sit only on the about page and you
               link to them", with a "more case studies" button here. */}
@@ -328,7 +328,7 @@ export default function Home() {
           <div className="mt-12 text-center">
             <Link
               href="/about#case-studies"
-              className="inline-flex items-center justify-center rounded-full border border-forest/25 px-8 py-4 font-sans text-xs font-bold tracking-wider text-forest uppercase transition-colors hover:border-forest hover:bg-forest hover:text-white focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
+              className="inline-flex items-center justify-center rounded-xl border border-forest/25 px-8 py-4 font-sans text-xs font-bold tracking-wider text-forest uppercase transition-colors hover:border-forest hover:bg-forest hover:text-white focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
             >
               More case studies
               <span aria-hidden="true" className="ml-2 text-base leading-none">
@@ -340,7 +340,7 @@ export default function Home() {
       </section>
 
       {/* Audiences Section / Chapter 03 — Who We Serve */}
-      <section className="py-24 bg-linen/40 px-4 sm:px-6 lg:px-8 border-t border-forest/[0.06]">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 border-t border-forest/[0.06]">
         <div className="max-w-6xl mx-auto">
           <PersonaSwitcher />
         </div>
@@ -349,7 +349,7 @@ export default function Home() {
       {/* 3.10 How we are paid. Dark card treatment — the performance-linked
           model is a differentiator and deserves visual weight. No percentage
           or formula published per spec 3.10. */}
-      <section className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8 bg-shell">
+      <section className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8 surface-page">
         <div className="mx-auto max-w-6xl">
           <div className="relative overflow-hidden rounded-3xl bg-forest px-6 py-12 sm:px-10 sm:py-16 md:px-16 md:py-20">
             {/* Dot-grid texture */}
@@ -495,7 +495,7 @@ export default function Home() {
       </section>
 
       {/* 3.11 Close / Banner Card (Chapter 05 Style) */}
-      <section className="px-4 py-20 sm:px-6 lg:px-8 bg-shell">
+      <section className="px-4 py-20 sm:px-6 lg:px-8 surface-page">
         <div className="mx-auto max-w-6xl rounded-[32px] bg-forest text-white p-10 sm:p-14 md:p-20 relative overflow-hidden border border-white/10 shadow-2xl text-center">
           <div aria-hidden="true" className="absolute inset-0 z-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none" />
 
@@ -514,7 +514,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row mt-8">
               <Link
                 href={JOURNEY_CTA.href}
-                className="inline-flex items-center justify-center rounded-full bg-neon px-8 py-4 text-xs font-bold tracking-wider text-forest uppercase transition-all hover:bg-white hover:scale-105 shadow-lg focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none"
+                className="inline-flex items-center justify-center rounded-xl bg-neon px-8 py-4 text-xs font-bold tracking-wider text-forest uppercase transition-all hover:bg-white hover:scale-105 shadow-lg focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none"
               >
                 {JOURNEY_CTA.label}
               </Link>
@@ -522,7 +522,7 @@ export default function Home() {
                 href={WHATSAPP_CTA.href}
                 target={WHATSAPP_CTA.external ? "_blank" : undefined}
                 rel={WHATSAPP_CTA.external ? "noopener noreferrer" : undefined}
-                className="inline-flex items-center justify-center rounded-full border border-white/40 backdrop-blur-md px-8 py-4 text-xs font-bold tracking-wider text-white uppercase transition-all hover:border-neon hover:text-neon hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
+                className="inline-flex items-center justify-center rounded-xl border border-white/40 backdrop-blur-md px-8 py-4 text-xs font-bold tracking-wider text-white uppercase transition-all hover:border-neon hover:text-neon hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
               >
                 {WHATSAPP_CTA.label}
               </a>

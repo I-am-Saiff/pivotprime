@@ -71,7 +71,7 @@ export default function Service5MarketEntry() {
             </p>
           </div>
 
-          <div className="bg-shell border border-[#e3eae6] rounded-xl p-6 md:p-8 overflow-hidden shadow-sm">
+          <div className="surface-page border border-[#e3eae6] rounded-xl p-6 md:p-8 overflow-hidden shadow-sm">
             <div className="inline-flex bg-[#f7f9f8] border border-[#e3eae6] rounded-full p-1 gap-1 mb-6">
               <button
                 onClick={() => setCalMode(0)}
@@ -132,7 +132,7 @@ export default function Service5MarketEntry() {
       </section>
 
       {/* Columns Section */}
-      <section className="py-16 md:py-24 bg-shell">
+      <section className="py-16 md:py-24 surface-page">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
           <div>
             <div className="font-sans font-semibold text-[10.5px] tracking-[0.2em] uppercase text-[#af8943] mb-4">
@@ -201,7 +201,7 @@ export default function Service5MarketEntry() {
           a single clause and dropped most of WHAT WE BUILD and the CLOSE. The
           design above is kept; this carries the copy the spec sets verbatim.
           See docs/PENDING-COPY.md. */}
-      <section className="bg-shell py-16 md:py-24">
+      <section className="surface-page py-16 md:py-24">
         <div className="px-4 sm:px-6 lg:px-8">
           <CopyProse
             heading={MARKET_ENTRY.misconceptionHeading}
@@ -216,7 +216,7 @@ export default function Service5MarketEntry() {
         </div>
       </section>
 
-      <section className="bg-shell py-16 md:py-24">
+      <section className="surface-page py-16 md:py-24">
         <div className="px-4 sm:px-6 lg:px-8">
           <CopyProse heading={MARKET_ENTRY.closeHeading} paragraphs={[MARKET_ENTRY.close]} />
         </div>

@@ -45,8 +45,14 @@
      Cards stay white so they still separate from the page they sit on, which is
      the whole reason for warming the base rather than both. --color-background
      is still #ffffff and is what those cards use. */
+  /* The page ground is the WHO WE SERVE band: linen at 40% over shell. Both
+     are swatch tokens, so this adds no eleventh colour. */
+  html {
+    background-color: var(--color-shell);
+  }
   body {
-    @apply bg-shell text-foreground antialiased font-sans;
+    @apply text-foreground antialiased font-sans;
+    background-color: color-mix(in srgb, var(--color-linen) 40%, var(--color-shell));
   }
   /* NOTE: layout.tsx also puts bg-shell on <body> as a utility. That utility is
      what actually paints, because the utilities layer outranks this one. This
@@ -80,6 +86,10 @@
     display: none;
   }
 
+  .surface-page {
+    background-color: color-mix(in srgb, var(--color-linen) 40%, var(--color-shell));
+  }
+
   .glass-nav {
     @apply bg-forest backdrop-blur-xl border border-white/15 shadow-[0_12px_36px_rgba(0,0,0,0.3)];
   }
@@ -93,7 +103,7 @@
   }
 
   .frosted-card-light {
-    @apply bg-shell/95 backdrop-blur-md border border-neutral-200/80 shadow-[0_16px_48px_rgba(1,51,37,0.06)];
+    @apply bg-shell/90 backdrop-blur-md border border-neutral-200/80 shadow-[0_16px_48px_rgba(1,51,37,0.06)];
   }
 }
 

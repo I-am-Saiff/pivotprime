@@ -39,7 +39,7 @@ export default function WhatWeDo() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             
             {/* Box 1 */}
-            <div className="bg-shell p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div className="surface-page p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <ul className="space-y-6 text-lg text-gray-700">
                 <li className="flex items-start">
                   <span className="text-primary mr-3 text-2xl">•</span>
@@ -57,7 +57,7 @@ export default function WhatWeDo() {
             </div>
 
             {/* Box 2 */}
-            <div className="bg-shell p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div className="surface-page p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <ul className="space-y-6 text-lg text-gray-700">
                 <li className="flex items-start">
                   <span className="text-primary mr-3 text-2xl">•</span>
@@ -75,7 +75,7 @@ export default function WhatWeDo() {
             </div>
 
             {/* Box 3 */}
-            <div className="bg-shell p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div className="surface-page p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <ul className="space-y-6 text-lg text-gray-700">
                 <li className="flex items-start">
                   <span className="text-primary mr-3 text-2xl">•</span>
@@ -93,7 +93,7 @@ export default function WhatWeDo() {
             </div>
 
             {/* Box 4 */}
-            <div className="bg-shell p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div className="surface-page p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <ul className="space-y-6 text-lg text-gray-700">
                 <li className="flex items-start">
                   <span className="text-primary mr-3 text-2xl">•</span>
@@ -209,7 +209,7 @@ export default function WhatWeDo() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="bg-shell p-10 md:p-12 rounded-3xl shadow-sm border border-gray-100 flex flex-col justify-between">
+            <div className="surface-page p-10 md:p-12 rounded-3xl shadow-sm border border-gray-100 flex flex-col justify-between">
               <div>
                 <h3 className="text-2xl font-bold mb-6">Executive coaching and leadership labs</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
@@ -224,7 +224,7 @@ export default function WhatWeDo() {
               </Link>
             </div>
 
-            <div className="bg-shell p-10 md:p-12 rounded-3xl shadow-sm border border-gray-100 flex flex-col justify-between">
+            <div className="surface-page p-10 md:p-12 rounded-3xl shadow-sm border border-gray-100 flex flex-col justify-between">
               <div>
                 <h3 className="text-2xl font-bold mb-6">Team building workshops and communication labs</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">

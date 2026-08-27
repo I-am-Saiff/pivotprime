@@ -35,7 +35,7 @@ export function CopyCards({ heading, cards }: { heading: string; cards: ServiceD
       <h2 className="mb-8 text-2xl font-bold text-forest md:text-3xl">{heading}</h2>
       <ul className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {cards.map((card) => (
-          <li key={card.title} className="rounded-xl border border-forest/10 bg-shell p-7">
+          <li key={card.title} className="rounded-xl border border-forest/10 surface-page p-7">
             <h3 className="mb-3 font-bold text-forest">{card.title}</h3>
             <p className="leading-relaxed text-forest/70">{card.body}</p>
           </li>

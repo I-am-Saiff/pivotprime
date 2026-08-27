@@ -53,7 +53,7 @@ export default function ClarityAuditProcessMap() {
             </p>
           </div>
 
-          <div className="bg-shell border border-[#e3eae6] rounded-xl p-6 md:p-8 overflow-hidden shadow-sm">
+          <div className="surface-page border border-[#e3eae6] rounded-xl p-6 md:p-8 overflow-hidden shadow-sm">
             <div className="inline-flex bg-[#f7f9f8] border border-[#e3eae6] rounded-full p-1 gap-1 mb-6">
               <button
                 onClick={() => setMapState(0)}

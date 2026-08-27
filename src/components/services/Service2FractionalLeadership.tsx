@@ -134,13 +134,13 @@ export default function Service2FractionalLeadership() {
             {FRACTIONAL_PHASES.map((phase) => (
               <li
                 key={phase.band}
-                className="flex flex-col rounded-xl border border-forest/15 bg-shell p-6 shadow-sm"
+                className="flex flex-col rounded-xl border border-forest/15 surface-page p-6 shadow-sm"
               >
                 <div className="flex items-center gap-3">
                   <span className="font-sans text-xs font-bold tracking-[0.18em] text-mid uppercase">
                     {phase.band}
                   </span>
-                  <span className="rounded-full bg-mist px-2.5 py-0.5 font-sans text-[11px] font-bold tracking-wide text-forest uppercase">
+                  <span className="rounded-xl bg-mist px-2.5 py-0.5 font-sans text-[11px] font-bold tracking-wide text-forest uppercase">
                     {phase.badge}
                   </span>
                 </div>
@@ -190,7 +190,7 @@ export default function Service2FractionalLeadership() {
       </section>
 
       {/* Seats Section */}
-      <section className="py-16 md:py-24 bg-shell">
+      <section className="py-16 md:py-24 surface-page">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
             <span className="block font-sans font-semibold text-[10.5px] tracking-[0.24em] uppercase text-[#009f50]">
@@ -212,7 +212,7 @@ export default function Service2FractionalLeadership() {
                 className={`border rounded-xl p-5 text-left cursor-pointer transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#009f50] focus-visible:ring-offset-2 ${
                   activeSeat === i
                     ? "border-[#013325] bg-[#013325] text-white shadow-lg -translate-y-1"
-                    : "border-[#e3eae6] bg-shell text-[#0c1a15] hover:border-[#cfe3d8] hover:-translate-y-1 hover:shadow-md"
+                    : "border-[#e3eae6] surface-page text-[#0c1a15] hover:border-[#cfe3d8] hover:-translate-y-1 hover:shadow-md"
                 }`}
               >
                 <h4 className="font-sans font-bold text-base mb-1.5">{seat.title}</h4>
@@ -312,7 +312,7 @@ export default function Service2FractionalLeadership() {
       {/* Spec 4.2 WHY THIS EXISTS, restored. The designed page opened straight
           into the seats, so the argument for a fractional seat at all was
           missing. See docs/PENDING-COPY.md. */}
-      <section className="bg-shell py-16 md:py-24">
+      <section className="surface-page py-16 md:py-24">
         <div className="px-4 sm:px-6 lg:px-8">
           <CopyProse heading={FRACTIONAL.whyHeading} paragraphs={FRACTIONAL.why} />
         </div>

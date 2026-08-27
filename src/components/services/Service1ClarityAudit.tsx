@@ -41,7 +41,7 @@ export default function Service1ClarityAudit() {
       <ClarityAuditProcessMap />
 
       {/* Columns Section */}
-      <section className="py-16 md:py-24 bg-shell">
+      <section className="py-16 md:py-24 surface-page">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
           <div>
             <div className="font-sans font-semibold text-[10.5px] tracking-[0.2em] uppercase text-[#af8943] mb-4">
@@ -141,7 +141,7 @@ export default function Service1ClarityAudit() {
           workshop method, what happens afterwards, and the standalone pricing
           and margin engagement. Copy generated directly from docs/spec.md rather
           than transcribed. See docs/PENDING-COPY.md. */}
-      <section className="bg-shell py-16 md:py-24">
+      <section className="surface-page py-16 md:py-24">
         <div className="px-4 sm:px-6 lg:px-8">
           <CopyProse heading={CLARITY_AUDIT.whyHeading} paragraphs={CLARITY_AUDIT.why} />
         </div>
@@ -154,7 +154,7 @@ export default function Service1ClarityAudit() {
         </div>
       </section>
 
-      <section className="bg-shell py-16 md:py-24">
+      <section className="surface-page py-16 md:py-24">
         <div className="px-4 sm:px-6 lg:px-8 space-y-16">
           <CopyList heading={CLARITY_AUDIT.getHeading} items={CLARITY_AUDIT.get} />
           <CopyProse heading={CLARITY_AUDIT.afterHeading} paragraphs={CLARITY_AUDIT.after} />

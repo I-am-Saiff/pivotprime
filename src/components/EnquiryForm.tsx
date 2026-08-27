@@ -105,7 +105,7 @@ export default function EnquiryForm({
           required
           autoComplete="name"
           placeholder="Your name"
-          className="w-full rounded-xl border border-neutral-200 bg-shell px-4 py-3.5 text-sm transition-all placeholder:text-neutral-400 focus:border-neon focus:ring-2 focus:ring-neon/30 focus:outline-none"
+          className="w-full rounded-xl border border-neutral-200 surface-page px-4 py-3.5 text-sm transition-all placeholder:text-neutral-400 focus:border-neon focus:ring-2 focus:ring-neon/30 focus:outline-none"
         />
       </div>
 
@@ -120,7 +120,7 @@ export default function EnquiryForm({
           required
           autoComplete="email"
           placeholder="you@company.com"
-          className="w-full rounded-xl border border-neutral-200 bg-shell px-4 py-3.5 text-sm transition-all placeholder:text-neutral-400 focus:border-neon focus:ring-2 focus:ring-neon/30 focus:outline-none"
+          className="w-full rounded-xl border border-neutral-200 surface-page px-4 py-3.5 text-sm transition-all placeholder:text-neutral-400 focus:border-neon focus:ring-2 focus:ring-neon/30 focus:outline-none"
         />
       </div>
 
@@ -136,7 +136,7 @@ export default function EnquiryForm({
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Tell us what you're working through..."
-          className="w-full resize-none rounded-xl border border-neutral-200 bg-shell px-4 py-3.5 text-sm transition-all placeholder:text-neutral-400 focus:border-neon focus:ring-2 focus:ring-neon/30 focus:outline-none"
+          className="w-full resize-none rounded-xl border border-neutral-200 surface-page px-4 py-3.5 text-sm transition-all placeholder:text-neutral-400 focus:border-neon focus:ring-2 focus:ring-neon/30 focus:outline-none"
         />
       </div>
 
@@ -151,7 +151,7 @@ export default function EnquiryForm({
       <button
         type="submit"
         disabled={state === "sending"}
-        className="w-full rounded-full bg-neon px-8 py-3.5 font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-forest hover:text-white hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:outline-none disabled:opacity-70 text-xs"
+        className="w-full rounded-xl bg-neon px-8 py-3.5 font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-forest hover:text-white hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:outline-none disabled:opacity-70 text-xs"
       >
         {state === "sending" ? "Sending..." : ENQUIRY_SUBMIT_CTA.label}
       </button>

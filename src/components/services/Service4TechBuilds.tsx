@@ -66,7 +66,7 @@ export default function Service4TechBuilds() {
             href={WHATSAPP_CTA.href}
             target={WHATSAPP_CTA.external ? "_blank" : undefined}
             rel={WHATSAPP_CTA.external ? "noopener noreferrer" : undefined}
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-neon px-7 py-3.5 font-sans text-sm font-bold tracking-wide text-forest uppercase transition-colors hover:bg-white focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none"
+            className="mt-8 inline-flex items-center justify-center rounded-xl bg-neon px-7 py-3.5 font-sans text-sm font-bold tracking-wide text-forest uppercase transition-colors hover:bg-white focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none"
           >
             {WHATSAPP_CTA.label}
           </a>
@@ -74,7 +74,7 @@ export default function Service4TechBuilds() {
       </section>
 
       {/* THE OPENING ARGUMENT — before the list, deliberately. */}
-      <section className="bg-shell py-20 md:py-28">
+      <section className="surface-page py-20 md:py-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <p className="font-sans text-xs font-bold tracking-[0.22em] text-mid uppercase">
             The opening argument
@@ -137,7 +137,7 @@ export default function Service4TechBuilds() {
             {TECH_BUILDS.capabilityGrid.map((item, i) => (
               <li
                 key={item.label}
-                className="group/cap flex flex-col rounded-2xl border border-forest/12 bg-shell p-6 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-mid/40 hover:shadow-[0_14px_36px_rgba(1,51,37,0.08)] motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                className="group/cap flex flex-col rounded-2xl border border-forest/12 surface-page p-6 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-mid/40 hover:shadow-[0_14px_36px_rgba(1,51,37,0.08)] motion-reduce:transition-none motion-reduce:hover:translate-y-0"
               >
                 <span
                   aria-hidden="true"
@@ -199,13 +199,13 @@ export default function Service4TechBuilds() {
       </section>
 
       {/* CLOSE */}
-      <section className="bg-shell py-16 md:py-20">
+      <section className="surface-page py-16 md:py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <a
             href={WHATSAPP_CTA.href}
             target={WHATSAPP_CTA.external ? "_blank" : undefined}
             rel={WHATSAPP_CTA.external ? "noopener noreferrer" : undefined}
-            className="inline-flex items-center justify-center rounded-full bg-mid px-8 py-4 font-sans text-sm font-bold tracking-wide text-white uppercase transition-colors hover:bg-forest focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
+            className="inline-flex items-center justify-center rounded-xl bg-mid px-8 py-4 font-sans text-sm font-bold tracking-wide text-white uppercase transition-colors hover:bg-forest focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
           >
             {WHATSAPP_CTA.label}
           </a>
