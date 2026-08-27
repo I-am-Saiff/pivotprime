@@ -175,7 +175,7 @@ export default function Navbar() {
             without JavaScript could reach it. The five other service pages
             survived only because the homepage cards happen to link them. */}
         <div id={panelId} hidden={!isOpen} className="absolute top-full left-0 z-50 w-64 pt-3">
-          <ul className="rounded-2xl bg-forest/95 backdrop-blur-xl border border-white/15 py-2 shadow-2xl ring-1 ring-black/20">
+          <ul className="rounded-2xl bg-forest backdrop-blur-xl border border-white/15 py-2 shadow-2xl ring-1 ring-black/20">
             {item.children.map((child) => (
               <li key={child.href}>
                 <Link
@@ -236,7 +236,7 @@ export default function Navbar() {
       {mobileOpen && (
         <div
           id="mobile-menu"
-          className="mx-auto mt-2 max-w-6xl rounded-2xl border border-white/15 bg-forest/95 backdrop-blur-xl p-4 text-white shadow-2xl lg:hidden"
+          className="mx-auto mt-2 max-w-6xl rounded-2xl border border-white/15 bg-forest backdrop-blur-xl p-4 text-white shadow-2xl lg:hidden"
         >
           <div className="space-y-1">
             {NAVIGATION.map((item) => {
