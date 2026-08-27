@@ -78,7 +78,7 @@ export default function Home() {
           {/* Lead — the most important sentence */}
           <p className="mt-6 max-w-2xl text-xl leading-snug font-semibold text-white/95 sm:text-2xl md:text-3xl">
             <em className="block italic">{HERO.leadItalic}</em>
-            <em className="block text-neon italic">{HERO.leadStrong}</em>
+            <em className="block text-neon italic underline decoration-neon/40 decoration-[3px] underline-offset-[8px]">{HERO.leadStrong}</em>
           </p>
 
           <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/80 sm:text-base md:text-lg">
