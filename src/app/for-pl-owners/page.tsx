@@ -54,7 +54,7 @@ export default function ForCorporateOwners() {
                   The outcome is a small number of moves that materially shift trajectory, not a long list of initiatives.
                 </p>
               </div>
-              <div className="md:col-span-5 surface-page p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
+              <div className="md:col-span-5 card-dark p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
                 <p className="text-mid font-bold text-base mb-3">This is a 2 to 12 week reset, depending on scope and complexity.</p>
                 <p className="text-forest text-sm font-medium leading-relaxed">Most CEOs start here when growth plateaus, regulation shifts, or competitive pressure increases.</p>
               </div>
@@ -81,7 +81,7 @@ export default function ForCorporateOwners() {
                   This is how strategy survives scale.
                 </p>
               </div>
-              <div className="md:col-span-5 surface-page p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
+              <div className="md:col-span-5 card-dark p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
                 <p className="text-mid font-bold text-base mb-3">Engaged on a flexible basis, typically over 3–6 months.</p>
                 <p className="text-forest text-sm font-medium leading-relaxed">Typically engaged after priorities are reset, when execution needs senior-level coordination, follow-through, and momentum.</p>
               </div>
@@ -105,7 +105,7 @@ export default function ForCorporateOwners() {
                   This is not transformation theatre. It is targeted change that improves execution velocity, cost discipline, and decision quality without destabilising the organisation.
                 </p>
               </div>
-              <div className="md:col-span-5 surface-page p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
+              <div className="md:col-span-5 card-dark p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
                 <p className="text-mid font-bold text-base mb-3">Typically delivered over 3–9 months, depending on the scope of change.</p>
                 <p className="text-forest text-sm font-medium leading-relaxed">Usually engaged once direction is set, to modernise how work actually gets done.</p>
               </div>
@@ -127,7 +127,7 @@ export default function ForCorporateOwners() {
               How we staff an engagement
               <span aria-hidden="true" className="ml-2 text-base leading-none">&rarr;</span>
             </Link>
-            <Link href="/services/technology-builds" className="inline-flex items-center justify-center rounded-xl surface-page border border-forest/20 px-8 py-3.5 text-xs font-bold tracking-wider text-forest uppercase transition-all hover:bg-forest hover:text-white hover:scale-105">
+            <Link href="/services/technology-builds" className="inline-flex items-center justify-center rounded-xl card-dark border border-forest/20 px-8 py-3.5 text-xs font-bold tracking-wider text-forest uppercase transition-all hover:bg-forest hover:text-white hover:scale-105">
               See what tech we can build
               <span aria-hidden="true" className="ml-2 text-base leading-none">&rarr;</span>
             </Link>

@@ -86,7 +86,7 @@ export default function EnquiryForm({
       action="/api/enquiry"
       method="post"
       onSubmit={onSubmit}
-      className="space-y-5 rounded-2xl border border-neutral-200/80 surface-page p-6 sm:p-8 backdrop-blur-sm"
+      className="space-y-5 rounded-2xl border border-neutral-200/80 card-dark p-6 sm:p-8 backdrop-blur-sm"
     >
       {error && (
         <p role="alert" className="rounded-xl border border-red-200 bg-red-50 p-4 text-xs font-semibold text-red-800">
@@ -105,7 +105,7 @@ export default function EnquiryForm({
           required
           autoComplete="name"
           placeholder="Your name"
-          className="w-full rounded-xl border border-neutral-200 surface-page px-4 py-3.5 text-sm transition-all placeholder:text-neutral-400 focus:border-neon focus:ring-2 focus:ring-neon/30 focus:outline-none"
+          className="w-full rounded-xl border border-neutral-200 card-dark px-4 py-3.5 text-sm transition-all placeholder:text-neutral-400 focus:border-neon focus:ring-2 focus:ring-neon/30 focus:outline-none"
         />
       </div>
 
@@ -120,7 +120,7 @@ export default function EnquiryForm({
           required
           autoComplete="email"
           placeholder="you@company.com"
-          className="w-full rounded-xl border border-neutral-200 surface-page px-4 py-3.5 text-sm transition-all placeholder:text-neutral-400 focus:border-neon focus:ring-2 focus:ring-neon/30 focus:outline-none"
+          className="w-full rounded-xl border border-neutral-200 card-dark px-4 py-3.5 text-sm transition-all placeholder:text-neutral-400 focus:border-neon focus:ring-2 focus:ring-neon/30 focus:outline-none"
         />
       </div>
 
@@ -136,7 +136,7 @@ export default function EnquiryForm({
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Tell us what you're working through..."
-          className="w-full resize-none rounded-xl border border-neutral-200 surface-page px-4 py-3.5 text-sm transition-all placeholder:text-neutral-400 focus:border-neon focus:ring-2 focus:ring-neon/30 focus:outline-none"
+          className="w-full resize-none rounded-xl border border-neutral-200 card-dark px-4 py-3.5 text-sm transition-all placeholder:text-neutral-400 focus:border-neon focus:ring-2 focus:ring-neon/30 focus:outline-none"
         />
       </div>
 

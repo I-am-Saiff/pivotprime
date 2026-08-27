@@ -94,6 +94,42 @@
     display: none;
   }
 
+  /* Cards are green with white on them, always. The creamy ground is a ground
+     and nothing else, on the client's 27 August instruction. The descendant
+     rules exist so a card can be converted by changing one class rather than
+     rewriting every child's colour: the light-on-dark tokens are remapped in
+     place, and the mid green becomes neon so an accent stays an accent. */
+  .card-dark {
+    background-color: var(--color-forest);
+    color: #fff;
+  }
+  .card-dark :where(
+    [class*="text-forest"],
+    [class*="text-neutral-"],
+    [class*="text-gray-"],
+    [class*="text-black"],
+    [class*="text-[#0c1a15]"],
+    [class*="text-[#013325]"],
+    [class*="text-[#5e6f68]"],
+    [class*="text-[#9c4f3a]"],
+    [class*="text-[#6b5a3c]"]
+  ) {
+    color: #fff;
+  }
+  .card-dark :where([class*="text-mid"], [class*="text-bronze"], [class*="text-[#af8943]"]) {
+    color: var(--color-neon);
+  }
+  .card-dark :where([class*="border-forest"], [class*="border-neutral"], [class*="border-gray"], [class*="border-[#e3eae6]"], [class*="border-[#cfd9d4]"], [class*="border-[#e8c4ba]"]) {
+    border-color: rgba(255, 255, 255, 0.16);
+  }
+  .card-dark :where([class*="bg-forest/"], [class*="bg-neutral-"]) {
+    background-color: rgba(255, 255, 255, 0.07);
+  }
+  .card-dark::placeholder,
+  .card-dark :where(input, textarea, select) {
+    color: #fff;
+  }
+
   .surface-page {
     background-color: var(--page-ground);
   }
@@ -157,21 +193,26 @@ h3 {
   text-wrap: balance;
 }
 
-/* The cycling emphasis on the result cards. Only this attribute moves; every
-   card is server-rendered and stays readable, so with JavaScript off or under
-   reduced motion there is simply no emphasis. See KpiHighlight. */
+/* One result card in view at a time, on the client's 27 August instruction.
+   All five are stacked in the same grid cell and all five are in the served
+   HTML; only opacity and pointer-events move. The inactive ones keep their
+   height so the section does not jump between cards of different lengths.
+   With JavaScript off no attribute is ever set, and the :not() rule below
+   leaves every card visible rather than hiding four. See KpiHighlight. */
+[data-kpi-active] [data-kpi-index] {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
 [data-kpi-active="0"] [data-kpi-index="0"],
 [data-kpi-active="1"] [data-kpi-index="1"],
 [data-kpi-active="2"] [data-kpi-index="2"],
 [data-kpi-active="3"] [data-kpi-index="3"],
 [data-kpi-active="4"] [data-kpi-index="4"] {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
   --tw-ring-color: var(--color-neon);
   box-shadow: 0 12px 40px rgba(0, 215, 109, 0.16);
-  transform: translateY(-3px);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  [data-kpi-active] [data-kpi-index] {
-    transform: none;
-  }
 }

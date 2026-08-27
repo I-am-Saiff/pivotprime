@@ -166,7 +166,7 @@ export default function PersonaSwitcher() {
                   </div>
 
                   {/* Quote Container */}
-                  <div className="rounded-2xl border border-neutral-200/80 surface-page p-6 mt-auto">
+                  <div className="rounded-2xl border border-neutral-200/80 card-dark p-6 mt-auto">
                     <p className="text-base sm:text-lg font-semibold text-forest leading-snug mb-3">
                       “{persona.quote}”
                     </p>
@@ -177,7 +177,7 @@ export default function PersonaSwitcher() {
                 </div>
 
                 {/* Right Column: Bullets */}
-                <div className="lg:col-span-5 surface-page rounded-2xl p-6 md:p-8 border border-neutral-100">
+                <div className="lg:col-span-5 card-dark rounded-2xl p-6 md:p-8 border border-neutral-100">
                   <span className="block text-xs font-bold uppercase tracking-wider text-mid mb-6">
                     What this looks like:
                   </span>

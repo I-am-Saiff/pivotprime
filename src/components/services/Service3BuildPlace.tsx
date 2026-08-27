@@ -75,7 +75,7 @@ export default function Service3BuildPlace() {
             </p>
           </div>
 
-          <div className="surface-page border border-[#e3eae6] rounded-xl p-6 md:p-8 overflow-hidden shadow-sm">
+          <div className="card-dark border border-[#e3eae6] rounded-xl p-6 md:p-8 overflow-hidden shadow-sm">
             <div className="relative h-[290px] md:h-[420px] w-full" ref={benchRef}>
               <svg viewBox="0 0 800 290" preserveAspectRatio="none" className="absolute inset-0 w-full h-full overflow-visible">
                 {slots.map((s, i) => {

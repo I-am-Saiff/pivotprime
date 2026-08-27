@@ -33,7 +33,7 @@ export default function ForFounders() {
             <h3 className="text-lg font-bold text-mid mb-6">Through an Operational Clarity Audit. From AED 15,000.</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
-              <div className="md:col-span-12 surface-page p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
+              <div className="md:col-span-12 card-dark p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
                 <p className="text-mid font-bold text-base mb-3">This is a 12-14 hour piece of analysis.</p>
                 <p className="text-forest text-sm font-medium leading-relaxed">Most founders start here. It gives clarity before any hiring or operational changes are made.</p>
               </div>
@@ -46,7 +46,7 @@ export default function ForFounders() {
             <h3 className="text-lg font-bold text-mid mb-6">Through hiring support, role design and Build and Place.</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
-              <div className="md:col-span-12 surface-page p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
+              <div className="md:col-span-12 card-dark p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
                 <p className="text-mid font-bold text-base mb-3">Role clarity and hiring direction are typically established in 1–2 weeks, depending on scope.</p>
                 <p className="text-forest text-sm font-medium leading-relaxed">Founders usually come here after the diagnostic, when it’s clear what needs to be taken off their plate.</p>
               </div>
@@ -59,7 +59,7 @@ export default function ForFounders() {
             <h3 className="text-lg font-bold text-mid mb-6">Through Fractional Leadership. Scoped per engagement.</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
-              <div className="md:col-span-12 surface-page p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
+              <div className="md:col-span-12 card-dark p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
                 <p className="text-mid font-bold text-base mb-3">This typically runs over 30 to 90 days.</p>
                 <p className="text-forest text-sm font-medium leading-relaxed">This typically follows hiring or growth pressure, when the business needs to stabilise at a new level.</p>
               </div>

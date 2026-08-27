@@ -105,7 +105,7 @@ export default function Service1ClarityAudit() {
                 Process mapping end to end, then a facilitated workshop per function where the team walks the process on screen and stress tests it together. The findings are owned rather than imposed.
               </p>
             </div>
-            <div className="surface-page border-l-[3px] border-[#af8943] rounded-r-xl p-6 md:p-8">
+            <div className="card-dark border-l-[3px] border-[#af8943] rounded-r-xl p-6 md:p-8">
               <h3 className="font-sans font-bold text-lg text-[#0c1a15] mb-2">What happens after</h3>
               <p className="text-[#6b5a3c] text-[15.5px]">
                 The audit ends with a decision, not a filing cabinet. Some clients take the roadmap and execute it themselves, and that is a legitimate outcome. Most ask us to run some or all of it. We will tell you plainly which of those the findings actually justify.

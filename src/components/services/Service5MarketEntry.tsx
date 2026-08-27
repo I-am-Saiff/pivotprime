@@ -71,8 +71,8 @@ export default function Service5MarketEntry() {
             </p>
           </div>
 
-          <div className="surface-page border border-[#e3eae6] rounded-xl p-6 md:p-8 overflow-hidden shadow-sm">
-            <div className="inline-flex surface-page border border-[#e3eae6] rounded-full p-1 gap-1 mb-6">
+          <div className="card-dark border border-[#e3eae6] rounded-xl p-6 md:p-8 overflow-hidden shadow-sm">
+            <div className="inline-flex card-dark border border-[#e3eae6] rounded-full p-1 gap-1 mb-6">
               <button
                 onClick={() => setCalMode(0)}
                 className={`px-4 py-2 font-semibold text-[13px] rounded-xl transition-colors ${

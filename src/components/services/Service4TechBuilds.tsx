@@ -137,7 +137,7 @@ export default function Service4TechBuilds() {
             {TECH_BUILDS.capabilityGrid.map((item, i) => (
               <li
                 key={item.label}
-                className="group/cap flex flex-col rounded-2xl border border-forest/12 surface-page p-6 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-mid/40 hover:shadow-[0_14px_36px_rgba(1,51,37,0.08)] motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                className="group/cap flex flex-col rounded-2xl border border-forest/12 card-dark p-6 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-mid/40 hover:shadow-[0_14px_36px_rgba(1,51,37,0.08)] motion-reduce:transition-none motion-reduce:hover:translate-y-0"
               >
                 <span
                   aria-hidden="true"

@@ -35,12 +35,16 @@ export default function KpiCards() {
 
   return (
     <KpiHighlight count={cards.length}>
-      <ul data-metric-cards className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {/* One card in view at a time. All five occupy the same grid cell, so
+          none is removed from the DOM and the section holds one card's height.
+          The stack is centred and capped, because a single card stretched to the
+          full row read as a banner rather than as a result. */}
+      <ul data-metric-cards className="mx-auto grid max-w-xl grid-cols-1 grid-rows-1">
       {cards.map((metric, i) => (
         <li
           key={metric.label}
           data-kpi-index={i}
-          className="group/kpi flex flex-col rounded-2xl bg-forest p-6 ring-1 ring-neon/20 transition-[box-shadow,transform,background-color] duration-700 ease-out motion-reduce:transition-none"
+          className="group/kpi col-start-1 row-start-1 flex flex-col rounded-2xl bg-forest p-6 ring-1 ring-neon/20 transition-opacity duration-700 ease-out motion-reduce:transition-none"
         >
           {/* The figure, or nothing at all. No zero, no dash, no "coming soon":
               a placeholder in a results section reads as a result.

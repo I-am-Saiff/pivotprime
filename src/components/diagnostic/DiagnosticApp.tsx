@@ -323,7 +323,7 @@ export default function DiagnosticApp() {
                     const globalIdx = from + idx;
                     const a = answers[globalIdx];
                     return (
-                      <div key={globalIdx} id={`card${globalIdx}`} className={`surface-page border rounded-xl p-5 md:p-6 transition-colors ${a ? "border-[#cfe3d8]" : "border-[#e3eae6]"}`}>
+                      <div key={globalIdx} id={`card${globalIdx}`} className={`card-dark border rounded-xl p-5 md:p-6 transition-colors ${a ? "border-[#cfe3d8]" : "border-[#e3eae6]"}`}>
                         <div className="flex gap-3 items-start mb-4">
                           <div className="font-sans font-bold text-[11.5px] tracking-[0.14em] text-[#af8943] pt-1 w-7 shrink-0">
                             {String(globalIdx + 1).padStart(2, '0')}
@@ -332,7 +332,7 @@ export default function DiagnosticApp() {
                             <div className="text-[16.5px] font-medium text-[#0c1a15] max-w-2xl">
                               {q.t}
                             </div>
-                            <span className="inline-block text-[11px] tracking-[0.1em] uppercase text-[#5e6f68] surface-page border border-[#e3eae6] rounded-xl px-2.5 py-1 mt-2">
+                            <span className="inline-block text-[11px] tracking-[0.1em] uppercase text-[#5e6f68] card-dark border border-[#e3eae6] rounded-xl px-2.5 py-1 mt-2">
                               {D[q.d]}
                             </span>
                           </div>
@@ -406,7 +406,7 @@ export default function DiagnosticApp() {
                         newT[idx] = e.target.value;
                         setTextAnswers(newT);
                       }}
-                      className="w-full font-sans text-[15.5px] text-[#0c1a15] surface-page border border-[#e3eae6] rounded-xl px-4 py-3 min-h-[100px] resize-y focus:outline-none focus:ring-2 focus:ring-[#009f50]" 
+                      className="w-full font-sans text-[15.5px] text-[#0c1a15] card-dark border border-[#e3eae6] rounded-xl px-4 py-3 min-h-[100px] resize-y focus:outline-none focus:ring-2 focus:ring-[#009f50]" 
                     />
                   </div>
                 ))}
@@ -501,7 +501,7 @@ export default function DiagnosticApp() {
                   Ranked by weighted deficit rather than lowest score. An area scoring 40 at a weight of 25 holds the business back more than one scoring 30 at a weight of 5. This order is the recommended sequence of work.
                 </p>
 
-                <div className="border border-[#e3eae6] rounded-xl overflow-hidden surface-page">
+                <div className="border border-[#e3eae6] rounded-xl overflow-hidden card-dark">
                   {r.ranked.map((row, i) => (
                     <div key={i} className={`grid grid-cols-[34px_1fr_104px] gap-4 items-center p-4 border-t border-[#e3eae6] first:border-0 ${i === 0 ? "bg-[#efe7d8]" : ""}`}>
                       <div className={`font-sans font-bold text-[15px] ${i === 0 ? "text-[#013325]" : "text-[#af8943]"}`}>

@@ -33,7 +33,7 @@ export default function ForSMEs() {
             <h3 className="text-lg font-bold text-mid mb-6">Through an Operational Clarity Audit. From AED 15,000.</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
-              <div className="md:col-span-12 surface-page p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
+              <div className="md:col-span-12 card-dark p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
                 <p className="text-mid font-bold text-base mb-3">This is a 15-20 day analysis.</p>
                 <p className="text-forest text-sm font-medium leading-relaxed">This is where most SMEs start. It creates a clear baseline before structural or operational changes are made.</p>
               </div>
@@ -45,7 +45,7 @@ export default function ForSMEs() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Pricing that makes sense</h2>
             <h3 className="text-lg font-bold text-mid mb-6">Through pricing and margin architecture. Part of an Operational Clarity Audit, or scoped on its own.</h3>
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
-              <div className="md:col-span-12 surface-page p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
+              <div className="md:col-span-12 card-dark p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
                 <p className="text-mid font-bold text-base mb-3">This is typically a 2–4 week engagement.</p>
                 <p className="text-forest text-sm font-medium leading-relaxed">Most SMEs come here after the profit and cash flow review, once it’s clear where margin instability is coming from.</p>
               </div>
@@ -58,7 +58,7 @@ export default function ForSMEs() {
             <h3 className="text-lg font-bold text-mid mb-6">Through Fractional Leadership. Scoped per engagement.</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
-              <div className="md:col-span-12 surface-page p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
+              <div className="md:col-span-12 card-dark p-6 md:p-8 rounded-2xl border border-neutral-200/80 flex flex-col justify-center">
                 <p className="text-mid font-bold text-base mb-3">Typically runs over 30–90 days, depending on scope.</p>
                 <p className="text-forest text-sm font-medium leading-relaxed">This typically follows growth or hiring pressure, when the business needs to stabilise at a new level.</p>
               </div>

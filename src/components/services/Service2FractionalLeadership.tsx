@@ -134,7 +134,7 @@ export default function Service2FractionalLeadership() {
             {FRACTIONAL_PHASES.map((phase) => (
               <li
                 key={phase.band}
-                className="flex flex-col rounded-xl border border-forest/15 surface-page p-6 shadow-sm"
+                className="flex flex-col rounded-xl border border-forest/15 card-dark p-6 shadow-sm"
               >
                 <div className="flex items-center gap-3">
                   <span className="font-sans text-xs font-bold tracking-[0.18em] text-mid uppercase">
@@ -158,7 +158,7 @@ export default function Service2FractionalLeadership() {
                     </p>
                     <p className="mt-1.5 text-sm leading-relaxed text-white/85">{phase.pivotPrime}</p>
                   </div>
-                  <div className="rounded-lg border border-forest/12 surface-page p-4">
+                  <div className="rounded-lg border border-forest/12 card-dark p-4">
                     <p className="font-sans text-[11px] font-bold tracking-[0.18em] text-mid uppercase">
                       Your team
                     </p>
@@ -265,7 +265,7 @@ export default function Service2FractionalLeadership() {
       <section className="surface-page py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
-            <div className="surface-page border-l-[3px] border-[#af8943] rounded-r-xl p-6 md:p-8">
+            <div className="card-dark border-l-[3px] border-[#af8943] rounded-r-xl p-6 md:p-8">
               <h3 className="font-sans font-bold text-lg text-[#0c1a15] mb-2">Where it does not fit</h3>
               <p className="text-[#6b5a3c] text-[15.5px]">
                 A complex operation with 200 or more staff, several products and sites in multiple countries needs a permanent COO. A Chief of Staff seat only works where there is a leadership team to serve. And if the problem is one defined project rather than the way the business runs, you need a project manager, which costs less.
