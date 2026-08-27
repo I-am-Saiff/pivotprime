@@ -385,17 +385,26 @@ const DECISIONS = [
     },
   },
   {
-    what: "the fees detail is inside <details>, so it is served whether open or shut",
+    what: "the fees section is her slide 9, cut to the contrast and the commitment and nothing else",
     where: "PENDING-COPY 1al",
     run: async (get) => {
       const html = await (await get("/")).text();
-      for (const needed of [
+      // 27 August, on the client's verbal instruction: the fees chapter was
+      // reduced to her slide 9 of Website Revisions 2208v3. The <details> and
+      // everything it held are gone, so this asserts the reduction held rather
+      // than asserting the expander serves its contents.
+      for (const gone of [
+        "How the work is measured, and how it runs",
         "Before anything changes we baseline it",
         "It is a discipline rather than a sales device",
-        "We agree the target upfront",
-        "The Operational Clarity Audit starts at AED 15,000",
       ]) {
-        if (!html.includes(needed)) return `"${needed.slice(0, 40)}" is not in the served HTML, so the expander is hiding it rather than collapsing it`;
+        if (html.includes(gone)) return `"${gone.slice(0, 40)}" is back on the page, so the section has grown again`;
+      }
+      for (const needed of [
+        "Most consultants charge whether it works or not.",
+        "If we haven't moved your numbers",
+      ]) {
+        if (!html.includes(needed)) return `"${needed.slice(0, 40)}" is missing, so her slide 9 is not what renders`;
       }
       return null;
     },
@@ -499,12 +508,11 @@ const HEADING_ORDER = [
       "Pivot Prime is led by a Mathematician", // 3.7
       "What we have achieved", // 3.8
       "You don", // 3.9, contraction differs by apostrophe encoding
-      // The fees section's spine heading is the authored SEO one as of 26
-      // August: her own two lines say what the section is ABOUT but never say
-      // in plain words what the pricing model IS, and that is what someone
-      // searches for. Both of hers are still served, as the neon lead and as
-      // the H3 over the traditional column. PENDING-COPY 1ae and 1al.
-      "How Pivot Prime charges", // authored, PENDING-COPY 1al
+      // 27 August: the authored SEO H2 was cut with the rest of the fees
+      // explanation on the client's verbal instruction, so the spine heading is
+      // hers again. Her lead survives beneath it and "Most consultants are paid
+      // for the recommendation" is the H3 over the traditional column.
+      "Most consultants charge whether it works or not.", // 3.10
       "Find out what is actually holding the business back", // 3.11
     ],
   },

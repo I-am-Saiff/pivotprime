@@ -224,9 +224,11 @@ export const METRICS: Metric[] = [
     context: "Service cancellation drivers identified and addressed.",
   },
   {
-    // Her own mockup, req/pivot-prime-kpi-cards_3.html, prints +27% on this
-    // card. It is the only one of the five that carries a figure there.
-    figure: 27,
+    // Her own mockup, req/pivot-prime-kpi-cards_3.html, prints +27% here, and
+    // she showed the same slide on the 27 August call. It still waits, because
+    // spec 3.3 holds all five until they are checked against the section 9
+    // master table and section 9 still contradicts itself on operational waste.
+    figure: null,
     suffix: "%",
     pending: "client-confirmation",
     kpiLabel: "Profit Growth",

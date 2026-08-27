@@ -358,137 +358,60 @@ export default function Home() {
               className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.07)_1px,transparent_1px)] [background-size:26px_26px] pointer-events-none"
             />
 
-            {/* Content — her layout from pp-fees_3 and pp-fees_4, restructured
-                26 August to lose roughly half its height. Nothing of hers is
-                cut: the contrast and the commitment stay in view and the
-                supporting detail moves behind a native <details>, which is in
-                the served HTML open or closed. PENDING-COPY 1al. */}
+            {/* Content — her slide 9 of Website Revisions 2208v3, shown on the
+                27 August call: eyebrow, the position line, the two-model
+                contrast, and the commitment band. Everything that explained the
+                model at length is gone, which is what "minimal" meant. */}
             <div className="relative z-10">
               <span className="mb-4 block text-xs font-bold tracking-[0.22em] text-neon uppercase">Our fees</span>
-              <div className="mb-5 h-[3px] w-10 rounded-full bg-neon" aria-hidden="true" />
+              <div className="mb-6 h-[3px] w-10 rounded-full bg-neon" aria-hidden="true" />
 
-              {/* The searchable H2 and an answerable first line beneath it. */}
-              <h2 className="max-w-3xl text-2xl font-extrabold leading-tight tracking-tight text-white md:text-3xl">
-                {HOW_WE_ARE_PAID.seoHeading}
+              <h2 className="max-w-2xl text-3xl font-extrabold leading-[1.1] tracking-tight text-white md:text-5xl">
+                {HOW_WE_ARE_PAID.mockupHeading}
               </h2>
-              <p className="mt-4 max-w-3xl text-base leading-relaxed text-white/85 md:text-lg">
-                {HOW_WE_ARE_PAID.seoAnswer}
+              <p className="mt-4 max-w-2xl text-lg font-semibold leading-snug text-neon">
+                {HOW_WE_ARE_PAID.lead}
               </p>
 
-              <p className="mt-6 max-w-3xl text-lg font-semibold leading-snug text-neon md:text-xl">
-                {HOW_WE_ARE_PAID.mockupHeading} {HOW_WE_ARE_PAID.lead}
-              </p>
-
-              {/* Her contrast, side by side and tighter. */}
-              <div className="mt-8 grid items-start gap-4 md:grid-cols-2">
-                <div className="rounded-2xl border border-white/12 bg-white/[0.04] p-5 sm:p-6">
-                  <p className="text-xs font-bold tracking-[0.18em] text-white/55 uppercase">
+              <div className="mt-10 grid items-start gap-4 md:grid-cols-2">
+                <div className="rounded-2xl border border-white/12 bg-white/[0.04] p-6 sm:p-7">
+                  <p className="text-[11px] font-bold tracking-[0.18em] text-white/50 uppercase">
                     {HOW_WE_ARE_PAID.contrast.traditional.label}
                   </p>
                   <h3 className="mt-3 text-lg font-bold text-white/85">
                     {HOW_WE_ARE_PAID.contrast.traditional.headline}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/65">
-                    {HOW_WE_ARE_PAID.contrast.traditional.body.join(" ")}
+                  <p className="mt-3 text-base leading-relaxed text-white/70">
+                    {HOW_WE_ARE_PAID.contrast.traditional.body[0]}
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-neon/30 bg-neon/[0.07] p-5 sm:p-6">
-                  <p className="text-xs font-bold tracking-[0.18em] text-neon uppercase">
+                <div className="rounded-2xl border border-neon/30 bg-neon/[0.07] p-6 sm:p-7">
+                  <p className="text-[11px] font-bold tracking-[0.18em] text-neon uppercase">
                     {HOW_WE_ARE_PAID.contrast.pivotPrime.label}
                   </p>
-                  <h3 className="mt-3 text-lg font-bold text-white">
-                    {HOW_WE_ARE_PAID.contrast.pivotPrime.headline}
-                  </h3>
-                  <dl className="mt-3 space-y-2">
+                  <dl className="mt-4 space-y-4">
                     {HOW_WE_ARE_PAID.contrast.pivotPrime.rows.map((row) => (
                       <div key={row.label}>
                         <dt className="text-[11px] font-bold tracking-[0.16em] text-neon uppercase">
                           {row.label}
                         </dt>
-                        <dd className="text-sm leading-relaxed text-white/85">{row.value}</dd>
+                        <dd className="mt-1 text-sm leading-relaxed text-white/85">{row.value}</dd>
                       </div>
                     ))}
                   </dl>
                 </div>
               </div>
 
-              {/* Her commitment line stays in view: it is the section in one sentence. */}
-              <blockquote className="mt-6 rounded-2xl border-l-4 border-neon bg-white/[0.06] px-5 py-4 sm:px-7 sm:py-5">
-                <p className="text-xs font-bold tracking-[0.18em] text-neon uppercase">
-                  {HOW_WE_ARE_PAID.commitment.label}
-                </p>
-                <p className="mt-2 text-base font-bold leading-snug text-white sm:text-lg">
+              {/* Her bottom band, verbatim. It is the section in one sentence. */}
+              <div className="mt-8 rounded-2xl bg-forest/60 px-6 py-6 text-center ring-1 ring-neon/25 sm:px-10">
+                <p className="text-lg font-bold leading-snug text-white sm:text-xl">
                   {HOW_WE_ARE_PAID.commitment.body}
                 </p>
-              </blockquote>
-
-              {/* Everything below is in the served HTML whether open or shut.
-                  <details> needs no JavaScript and no state. */}
-              <details className="group/fees mt-6 rounded-2xl border border-white/12 bg-white/[0.03]">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-sm font-bold tracking-wide text-neon uppercase sm:px-7 [&::-webkit-details-marker]:hidden">
-                  How the work is measured, and how it runs
-                  <span
-                    aria-hidden="true"
-                    className="text-lg leading-none transition-transform duration-200 group-open/fees:rotate-45 motion-reduce:transition-none"
-                  >
-                    +
-                  </span>
-                </summary>
-
-                <div className="space-y-6 px-5 pb-6 sm:px-7">
-                  <div className="grid gap-5 md:grid-cols-2">
-                    {HOW_WE_ARE_PAID.body.map((paragraph) => (
-                      <p
-                        key={paragraph.slice(0, 40)}
-                        className="text-sm leading-relaxed text-white/80"
-                      >
-                        {paragraph}
-                      </p>
-                    ))}
-                  </div>
-
-                  <ol className="grid gap-4 md:grid-cols-3">
-                    {HOW_WE_ARE_PAID.sequence.map((step, i) => (
-                      <li key={step.title} className="rounded-xl border border-white/10 bg-white/[0.04] p-4">
-                        <span
-                          aria-hidden="true"
-                          className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-neon/15 font-sans text-xs font-extrabold text-neon"
-                        >
-                          {i + 1}
-                        </span>
-                        <p className="mt-3 text-sm font-bold text-white">{step.title}</p>
-                        <p className="mt-1 text-sm leading-relaxed text-white/70">{step.body}</p>
-                      </li>
-                    ))}
-                  </ol>
-
-                  <div className="rounded-xl border border-neon/25 bg-neon/[0.07] p-4 sm:p-5">
-                    <p className="text-xs font-bold tracking-[0.18em] text-neon uppercase">
-                      How the fee is built
-                    </p>
-                    {HOW_WE_ARE_PAID.structure.map((paragraph) => (
-                      <p
-                        key={paragraph.slice(0, 40)}
-                        className="mt-2 text-sm leading-relaxed text-white/80"
-                      >
-                        {paragraph}
-                      </p>
-                    ))}
-                  </div>
-
-                  <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.06] p-4">
-                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-neon/15 text-neon">
-                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <p className="text-sm leading-relaxed text-white/70">
-                      Every engagement starts with a measurement baseline. That baseline is what our outcome-linked fee is held against.
-                    </p>
-                  </div>
-                </div>
-              </details>
+                <p className="mt-3 text-[11px] font-bold tracking-[0.2em] text-neon uppercase">
+                  Performance linked fee
+                </p>
+              </div>
             </div>
           </div>
         </div>
