@@ -201,9 +201,51 @@ h3 {
   text-wrap: balance;
 }
 
-/* THE RESULT CARDS are her own design now, from
-   req/pivot-prime-kpi-cards_3.html, and they carry no state: five cards in a
-   grid, everything in the served HTML, nothing hidden. The rules that used to
-   live here stacked one rotating card, ran a progress bar and cut per-slide
-   clip-path shapes. All of it was ours and none of it was asked for, so it is
-   gone rather than commented out. See KpiCards. */
+/* THE RESULT CARDS are her own design, from req/pivot-prime-kpi-cards_3.html,
+   and nothing below changes the card. These rules only stack her grid into one
+   cell so a single card shows at a time, which is a presentation choice laid
+   over her design rather than a change to it.
+
+   Scoped entirely to [data-kpi-active], which only KpiRotator sets. With
+   JavaScript off, or under prefers-reduced-motion, none of it applies and her
+   five-card grid is what renders, static and complete. All five are in the
+   served HTML either way: only opacity and visibility move.
+
+   The card keeps its grid-column width, a third of the container, by staying in
+   a three-column grid and sitting in the middle column. Setting a fixed pixel
+   width instead would have drifted from her (1080 - 28) / 3. */
+[data-kpi-active] [data-metric-cards] {
+  row-gap: 0;
+}
+
+[data-kpi-active] [data-kpi-index] {
+  grid-row: 1;
+  grid-column: 1;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  /* ONE TRANSITION FOR ALL FIVE: a plain cross-fade, no per-card variation. */
+  transition:
+    opacity 420ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    visibility 0s linear 420ms;
+}
+
+@media (min-width: 640px) {
+  [data-kpi-active] [data-metric-cards] {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  [data-kpi-active] [data-kpi-index] {
+    grid-column: 2;
+  }
+}
+
+[data-kpi-active="0"] [data-kpi-index="0"],
+[data-kpi-active="1"] [data-kpi-index="1"],
+[data-kpi-active="2"] [data-kpi-index="2"],
+[data-kpi-active="3"] [data-kpi-index="3"],
+[data-kpi-active="4"] [data-kpi-index="4"] {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s, 0s;
+}

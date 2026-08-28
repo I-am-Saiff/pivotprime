@@ -1,5 +1,6 @@
 import { METRICS } from "@/content/homepage";
 import KpiVisual from "./KpiVisual";
+import KpiRotator from "./KpiRotator";
 
 /**
  * The five result cards, spec 3.3, built from her own design file.
@@ -16,9 +17,14 @@ import KpiVisual from "./KpiVisual";
  * 600, three from 900, so five land as three across and two beneath. Five
  * compact cards also take less height than one large rotating one did.
  *
- * A SERVER COMPONENT. There is no rotation, no active state and nothing hidden,
- * so every word and every figure is in the served HTML with no client work at
- * all. Only the visuals are client islands, and each of those starts drawn.
+ * A SERVER COMPONENT. Every word and every figure is in the served HTML, and the
+ * card markup below is the only definition of the card anywhere.
+ *
+ * KpiRotator wraps it to show one card at a time on a three second beat. That
+ * wrapper sets a single attribute and changes nothing about the card: the CSS
+ * stacks the five in one grid cell and cross-fades. Without JavaScript, and
+ * under reduced motion, the attribute is never set and her grid is what
+ * renders.
  *
  * Card 6 does not render: nobody has that number, and spec 3.4 says "Do not
  * launch this card with a placeholder."
@@ -27,6 +33,7 @@ export default function KpiCards() {
   const cards = METRICS.filter((m) => m.pending !== "not-yet-supplied");
 
   return (
+    <KpiRotator labels={cards.map((m) => m.kpiLabel)}>
     <ul
       data-metric-cards
       className="mx-auto grid max-w-[1080px] grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3"
@@ -75,5 +82,6 @@ export default function KpiCards() {
         </li>
       ))}
     </ul>
+    </KpiRotator>
   );
 }
