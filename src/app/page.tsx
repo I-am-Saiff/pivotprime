@@ -426,7 +426,7 @@ export default function Home() {
                 <FeeCalculator />
 
                 {/* Her bottom band, verbatim. It is the section in one sentence. */}
-                <div className="flex flex-col justify-center rounded-2xl bg-forest/60 px-5 py-4 text-center ring-1 ring-neon/25 sm:px-6">
+                <div className="flex flex-col justify-center rounded-2xl bg-neon/[0.14] px-5 py-4 text-center ring-1 ring-neon/40 sm:px-6">
                   <p className="text-[15px] font-bold leading-snug text-white sm:text-lg">
                     {HOW_WE_ARE_PAID.commitment.body}
                   </p>

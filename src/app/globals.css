@@ -130,6 +130,14 @@
     color: #fff;
   }
 
+  /* The pair toggle sets its own colours by position, so the card-dark remap
+     above must not repaint its labels white. Declared after it, at the same
+     specificity, so it wins. */
+  .card-dark [data-pair-toggle] button,
+  [data-pair-toggle] button {
+    color: var(--color-forest);
+  }
+
   .surface-page {
     background-color: var(--page-ground);
   }

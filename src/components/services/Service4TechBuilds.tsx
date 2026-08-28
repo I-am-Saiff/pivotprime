@@ -85,18 +85,23 @@ export default function Service4TechBuilds() {
             {TECH_BUILDS.constraintContrast.map((state, i) => (
               <li
                 key={state.label}
+                // The site's pair rule: white on the left, green on the right.
                 className={`rounded-2xl border p-6 sm:p-7 ${
                   i === 0
-                    ? "border-forest/15 bg-white/70"
-                    : "border-mid/35 bg-mist/50"
+                    ? "border-forest/15 bg-shell"
+                    : "border-forest/40 bg-forest text-white"
                 }`}
               >
                 <h3
-                  className={`font-sans text-lg font-bold ${i === 0 ? "text-forest/70" : "text-mid"}`}
+                  className={`font-sans text-lg font-bold ${i === 0 ? "text-forest" : "text-white"}`}
                 >
                   {state.label}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-forest/80 sm:text-base">
+                <p
+                  className={`mt-3 text-sm leading-relaxed sm:text-base ${
+                    i === 0 ? "text-forest/80" : "text-white/90"
+                  }`}
+                >
                   {state.body}
                 </p>
               </li>

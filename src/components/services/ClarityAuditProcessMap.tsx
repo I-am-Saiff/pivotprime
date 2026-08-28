@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import PairToggle from "@/components/PairToggle";
 
 /**
  * The as-it-runs-today process map, lifted out of Service1ClarityAudit.
@@ -54,24 +55,13 @@ export default function ClarityAuditProcessMap() {
           </div>
 
           <div className="card-dark border border-[#e3eae6] rounded-xl p-6 md:p-8 overflow-hidden shadow-sm">
-            <div className="inline-flex card-dark border border-[#e3eae6] rounded-full p-1 gap-1 mb-6">
-              <button
-                onClick={() => setMapState(0)}
-                className={`inline-flex min-h-11 items-center px-4 py-2 font-semibold text-[13px] rounded-xl transition-colors ${
-                  mapState === 0 ? "bg-[#013325] text-white" : "text-[#5e6f68] hover:bg-[#e3eae6]"
-                }`}
-              >
-                As it runs today
-              </button>
-              <button
-                onClick={() => setMapState(1)}
-                className={`inline-flex min-h-11 items-center px-4 py-2 font-semibold text-[13px] rounded-xl transition-colors ${
-                  mapState === 1 ? "bg-[#013325] text-white" : "text-[#5e6f68] hover:bg-[#e3eae6]"
-                }`}
-              >
-                After the audit
-              </button>
-            </div>
+            <PairToggle
+              left="As it runs today"
+              right="After the audit"
+              active={mapState as 0 | 1}
+              onChange={(n) => setMapState(n)}
+              className="mb-6"
+            />
 
             <div className="relative h-[240px] md:h-[340px] w-full">
               <svg viewBox="0 0 900 240" preserveAspectRatio="none" className="absolute inset-0 w-full h-full overflow-visible">

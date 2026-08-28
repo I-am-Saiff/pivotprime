@@ -2652,3 +2652,23 @@ the only honest form it can take.
 
 The COO, Chief of Staff and CFO panels went with the section that held them. Their content is in `SEATS` in `src/components/services/Service2FractionalLeadership.tsx`, which is untouched: it is the rendering that was removed, not the copy. Its removal is what the three `id="coo"`, `id="chief-of-staff"` and `id="cfo"` assertions now record.
 
+
+---
+
+## 1as. One rule for paired elements, applied site-wide — **for Iram**
+
+**The rule, set on your instruction of 28 August 2026.** Wherever two elements
+sit side by side as a pair, they are visually opposed: one white, one green, and
+**the green one is always on the right**.
+
+For two-button toggles, the position decides the colour and not the state: the
+left button is white with dark text and the right is light green with dark text,
+whichever one is pressed. The pressed one is marked by a ring and a heavier
+weight. The old behaviour swapped both fills on every click, so the control
+inverted as you used it and read as two different controls.
+
+Where a pair sits on the dark forest panel, the fills stay in that panel's own
+tone rather than going literally white, so nothing floats.
+
+The rule now lives in one component, `src/components/PairToggle.tsx`, so any new
+toggle inherits it rather than restating it.

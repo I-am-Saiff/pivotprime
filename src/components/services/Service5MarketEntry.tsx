@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import PairToggle from "@/components/PairToggle";
 import { WHATSAPP_URL } from "@/lib/flags";
 import { WHATSAPP_CTA } from "@/content/cta";
 
@@ -70,24 +71,13 @@ export default function Service5MarketEntry() {
           </div>
 
           <div className="card-dark border border-[#e3eae6] rounded-xl p-6 md:p-8 overflow-hidden shadow-sm">
-            <div className="inline-flex card-dark border border-[#e3eae6] rounded-full p-1 gap-1 mb-6">
-              <button
-                onClick={() => setCalMode(0)}
-                className={`inline-flex min-h-11 items-center px-4 py-2 font-semibold text-[13px] rounded-xl transition-colors ${
-                  calMode === 0 ? "bg-[#013325] text-white" : "text-[#5e6f68] hover:bg-[#e3eae6]"
-                }`}
-              >
-                Home-market plan
-              </button>
-              <button
-                onClick={() => setCalMode(1)}
-                className={`inline-flex min-h-11 items-center px-4 py-2 font-semibold text-[13px] rounded-xl transition-colors ${
-                  calMode === 1 ? "bg-[#013325] text-white" : "text-[#5e6f68] hover:bg-[#e3eae6]"
-                }`}
-              >
-                Built for here
-              </button>
-            </div>
+            <PairToggle
+              left="Home-market plan"
+              right="Built for here"
+              active={calMode}
+              onChange={(n) => setCalMode(n)}
+              className="mb-6"
+            />
 
             <div className="h-[190px] grid grid-cols-12 gap-1 md:gap-[6px] items-end pb-6 border-b border-[#e3eae6]">
               {CAL_DATA.map((d, i) => {

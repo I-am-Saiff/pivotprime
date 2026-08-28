@@ -42,9 +42,9 @@ export default function FeeCalculator() {
   const high = Math.round(value * 0.2);
 
   return (
-    <div className="rounded-2xl border border-neon/25 bg-neon/[0.06] p-4 sm:p-5">
+    <div className="rounded-2xl border border-white/15 bg-white/[0.06] p-4 sm:p-5">
       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-        <label htmlFor="fee-value" className="text-[11px] font-bold tracking-[0.18em] text-neon uppercase">
+        <label htmlFor="fee-value" className="text-[11px] font-bold tracking-[0.18em] text-white/70 uppercase">
           The saving or gain we agree with you
         </label>
         <p className="font-sans text-xl leading-none font-extrabold tracking-tight text-white tabular-nums sm:text-3xl">
