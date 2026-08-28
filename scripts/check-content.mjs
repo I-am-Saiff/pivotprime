@@ -224,16 +224,19 @@ const DECISIONS = [
       // quietly reintroduce a Section 9 value or drop one of hers.
       const block = html.match(/<ul[^>]*data-metric-cards[\s\S]*?<\/ul>/);
       if (!block) return "the metric card list is not in the served HTML at all";
+      // Her design colours the figure and its unit differently, so "+7%" is two
+      // elements in the markup. Tags are stripped before matching: the previous
+      // version searched the raw HTML and reported four of the five missing on
+      // a page that showed all five.
+      const text = block[0].replace(/<[^>]+>/g, "").replace(/<!--[\s\S]*?-->/g, "");
       const authorised = ["+7%", "40-60%", "+13%", "+27%", "67%"];
-      const missing = authorised.filter((f) => !block[0].includes(f));
+      const missing = authorised.filter((f) => !text.includes(f));
       if (missing.length) {
         return `${missing.join(", ")} missing from the cards, but PENDING-COPY 1am records all five as authorised by the client on 27 August`;
       }
       // The Section 9 values she overrode. 27 and 67 are hers as well, so only
       // the three that are hers alone can be tested for.
-      const superseded = [53, 62, 16].filter((n) =>
-        new RegExp(`>\\s*[+-]?${n}%?\\s*<`).test(block[0]),
-      );
+      const superseded = [53, 62, 16].filter((n) => new RegExp(`\\b${n}%`).test(text));
       if (superseded.length) {
         return `${superseded.join(", ")} is a Section 9 value, and PENDING-COPY 1am records the mockup as overriding that table`;
       }

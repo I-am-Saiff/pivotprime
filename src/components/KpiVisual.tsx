@@ -1,425 +1,260 @@
 "use client";
 
+import { useRevealOnScroll } from "@/lib/use-reveal-on-scroll";
 import type { Metric } from "@/content/homepage";
 
 /**
- * One distinct visual per result card, animating when its card becomes active.
+ * Her five visuals, from req/pivot-prime-kpi-cards_3.html.
  *
- * WHY THIS EXISTS
+ * THIS IS HER FILE, NOT OUR DESIGN. Every earlier version of this section — the
+ * clip-path shapes, the pills, the rotating carousel — was ours and she never
+ * asked for any of it. The geometry, the viewBox sizes, the stroke widths, the
+ * dash patterns and the label positions below are transcribed from her file.
  *
- * Her comment on slide 3: "Really good idea, but just need Different visual
- * language for each KPI". Her own mockup, req/pivot-prime-kpi-cards_3.html,
- * carries the five ideas: a four-stage track, a before-and-after comparison, a
- * retained-versus-churned grid, a profit trend, and a pair of speed bars.
+ * TWO DELIBERATE DEVIATIONS, both recorded in PENDING-COPY 1av:
  *
- * EACH ONE NOW HAS ITS OWN SHAPE, on the client's 27 August instruction: the
- * stages run round a ring, the units are hexagons, the retention dots sit on a
- * circle, the trend is drawn inside a circular frame, and the two speeds are
- * concentric arcs. The card stays a rectangle so the layout holds.
+ *   1. Her "before" blocks on card two are amber, #c49040. The standing
+ *      instruction is that nothing in this section is brown or gold, so they are
+ *      drawn in mid green at the same opacities. Her contrast survives as one
+ *      hue at two weights.
+ *   2. Her execution card runs three particles on an infinite loop. The brief is
+ *      that each visual animates once on arrival and then rests, so the track
+ *      draws once instead.
  *
- * ONE HUE, TWO WEIGHTS. Before and after are the same green separated by
- * opacity. An earlier version drew "before" in bronze, which against a forest
- * card read as muddy khaki rather than as a dimmer version of the same thing.
- * Nothing in this file uses bronze or sand.
- *
- * TIMING. The carousel advances every 2.5 seconds, so every animation here is
- * built to finish inside about 1.5, leaving the finished state to rest rather
- * than being cut off mid-draw.
- *
- * HOW THE MOTION WORKS, AND WHY IT IS SAFE
- *
- * `run` is the `active` prop and there is no state here at all. Every element is
- * rendered at all times; `run` only changes inline geometry that CSS transitions
- * between, so nothing mounts, unmounts or hides. The parent passes active=true
- * for every card while it is not rotating, so the server output, the
- * no-JavaScript case and reduced motion are all the finished drawing.
+ * MOTION. `useRevealOnScroll` starts revealed, so the finished drawing is what
+ * the server sends and what a reader without JavaScript sees. It un-reveals only
+ * when the card is below the fold and motion is allowed, then draws on
+ * intersection. Nothing is ever conditionally rendered.
  */
-const STAGES = ["Align", "Build", "Embed", "Done"];
-const EASE = "cubic-bezier(0.22, 0.61, 0.36, 1)";
+const EASE = "cubic-bezier(0.25, 0.46, 0.45, 0.94)";
 
-/** The dimmed weight of the same green. Before, unfilled, not-yet. */
-const DIM = 0.16;
-
-const W = 280;
-const H = 150;
-const CX = 140;
-const CY = 70;
-
-export default function KpiVisual({
-  metric,
-  active,
-  variant = "inline",
-}: {
-  metric: Metric;
-  active: boolean;
-  /** "edge" draws the stage ring at the rim of the disc card instead of inside
-   *  a box beside the copy. Only card one uses it. */
-  variant?: "inline" | "edge" | "compact";
-}) {
-  const run = active;
-  const pct = metric.figure === null ? 0 : Math.max(0, Math.min(100, metric.figure));
+export default function KpiVisual({ metric, index }: { metric: Metric; index: number }) {
+  const [ref, run] = useRevealOnScroll<HTMLDivElement>(index * 70);
 
   return (
-    <div className={variant === "edge" ? "h-full w-full" : "w-full"} aria-hidden="true">
-      {metric.visual === "track" && <StageRing run={run} edge={variant === "edge"} />}
-      {metric.visual === "before-after-blocks" && <HexRows run={run} pct={pct} />}
-      {metric.visual === "dot-grid" && <DotRing run={run} pct={pct} />}
-      {metric.visual === "trend" && <TrendDial run={run} pct={pct} />}
-      {metric.visual === "before-after-tracks" && <SpeedArcs run={run} pct={pct} compact={variant === "compact"} />}
+    <div ref={ref} className="mb-[18px] flex min-h-[96px] flex-1 items-center" aria-hidden="true">
+      {metric.visual === "track" && <Track run={run} />}
+      {metric.visual === "before-after-blocks" && <Waste run={run} />}
+      {metric.visual === "dot-grid" && <Dots run={run} />}
+      {metric.visual === "trend" && <Trend run={run} />}
+      {metric.visual === "before-after-tracks" && <Speed run={run} />}
     </div>
   );
 }
 
-function Chrome({ children, square }: { children: React.ReactNode; square?: number }) {
-  // A square box for the edge variant, so the ring is a circle at the rim of the
-  // disc rather than an ellipse stretched to a landscape frame.
-  const w = square ?? W;
-  const h = square ?? H;
+/** Her card 1: a four-node track, ALIGN / BUILD / EMBED / DONE. */
+function Track({ run }: { run: boolean }) {
   return (
-    <svg
-      viewBox={`0 0 ${w} ${h}`}
-      className={square ? "block h-full w-full" : "block h-auto w-full"}
-    >
-      {children}
+    <svg viewBox="0 0 260 72" width="100%" height="96" className="overflow-visible" fill="none">
+      {[
+        [28, 82],
+        [100, 154],
+        [172, 232],
+      ].map(([x1, x2], i) => (
+        <line
+          key={x1}
+          x1={x1}
+          y1="36"
+          x2={x2}
+          y2="36"
+          stroke="var(--color-mid)"
+          strokeOpacity="0.3"
+          strokeWidth="1.5"
+          strokeDasharray="4 3"
+          style={{
+            // Her dashes are static; the draw is ours, standing in for her
+            // looping particles.
+            clipPath: run ? "inset(0 0 0 0)" : "inset(0 100% 0 0)",
+            transition: `clip-path 320ms ${EASE} ${180 + i * 200}ms`,
+          }}
+        />
+      ))}
+
+      {[18, 90, 162].map((cx, i) => (
+        <g key={cx} style={{ opacity: run ? 1 : 0.25, transition: `opacity 260ms ${EASE} ${i * 200}ms` }}>
+          <circle cx={cx} cy="36" r="9" fill="var(--color-forest)" stroke="var(--color-neon)" strokeOpacity="0.4" strokeWidth="1.5" />
+          <circle cx={cx} cy="36" r="3" fill="var(--color-mid)" />
+        </g>
+      ))}
+
+      <g style={{ opacity: run ? 1 : 0.25, transition: `opacity 260ms ${EASE} 600ms` }}>
+        <circle cx="242" cy="36" r="14" fill="var(--color-neon)" fillOpacity="0.1" />
+        <circle cx="242" cy="36" r="9" fill="var(--color-forest)" stroke="var(--color-neon)" strokeWidth="1.5" />
+        <circle cx="242" cy="36" r="3.5" fill="var(--color-neon)" />
+      </g>
+
+      {[
+        [18, "Align"],
+        [90, "Build"],
+        [162, "Embed"],
+      ].map(([x, label]) => (
+        <text
+          key={String(x)}
+          x={x as number}
+          y="58"
+          textAnchor="middle"
+          fill="var(--color-sand)"
+          fillOpacity="0.5"
+          fontSize="7.5"
+          letterSpacing="0.06em"
+          className="uppercase"
+        >
+          {label}
+        </text>
+      ))}
+      <text x="242" y="58" textAnchor="middle" fill="var(--color-neon)" fontSize="7.5" fontWeight="600" letterSpacing="0.06em" className="uppercase">
+        Done
+      </text>
     </svg>
   );
 }
 
-/** Where a stage sits on the ring, starting at twelve o'clock. */
-function onRing(index: number, count: number, radius: number, cx = CX, cy = CY) {
-  const angle = (index / count) * 2 * Math.PI - Math.PI / 2;
-  return { x: cx + radius * Math.cos(angle), y: cy + radius * Math.sin(angle) };
-}
-
-/**
- * ALIGN / BUILD / EMBED / DONE, filling clockwise round a ring.
- * Each quarter draws, then its node lights, then the next quarter starts.
- */
-function StageRing({ run, edge = false }: { run: boolean; edge?: boolean }) {
-  const R = edge ? 170 : 46;
-  const C = 2 * Math.PI * R;
-  const SEG = C / 4 - (edge ? 16 : 6); // the gap is what makes four stages read as four
-  const box = 460;
-  const cx = edge ? box / 2 : CX;
-  const cy = edge ? box / 2 : CY;
-  const node = edge ? 9 : 5.5;
-  const halo = edge ? 15 : 9;
-  const type = edge ? "text-[13px]" : "text-[9px]";
-  const gap = edge ? 34 : 22;
-
+/** Her card 2: ten blocks before, seven after, with the waste marked. */
+function Waste({ run }: { run: boolean }) {
+  const before = [0, 25, 50, 75, 100, 125, 150, 175, 200, 225];
   return (
-    <Chrome square={edge ? box : undefined}>
-      <circle cx={cx} cy={cy} r={R} fill="none" stroke="var(--color-neon)" strokeOpacity={DIM} strokeWidth={edge ? 10 : 7} />
-
-      {[0, 1, 2, 3].map((i) => (
-        <circle
-          key={`arc${i}`}
-          cx={cx}
-          cy={cy}
-          r={R}
-          fill="none"
-          stroke="var(--color-neon)"
-          strokeWidth={edge ? 10 : 7}
-          strokeLinecap="round"
-          strokeOpacity="0.85"
-          strokeDasharray={`${SEG} ${C}`}
-          strokeDashoffset={run ? 0 : SEG}
-          transform={`rotate(${i * 90 - 90} ${cx} ${cy})`}
-          style={{ transition: `stroke-dashoffset 260ms ${EASE} ${i * 200}ms` }}
+    <svg viewBox="0 0 252 80" width="100%" height="96" fill="none">
+      <text x="0" y="11" fill="var(--color-sand)" fillOpacity="0.55" fontSize="8" fontWeight="600" letterSpacing="0.1em">
+        BEFORE
+      </text>
+      {before.map((x, i) => (
+        <rect
+          key={x}
+          x={x}
+          y="16"
+          width="22"
+          height="16"
+          rx="3"
+          // Her five productive blocks, then five she draws in amber. Same
+          // split, one hue: the wasted five are the lighter weight.
+          fill="var(--color-mid)"
+          fillOpacity={i < 5 ? 0.3 : 0.62}
+          stroke={i < 5 ? undefined : "var(--color-neon)"}
+          strokeOpacity={i < 5 ? undefined : 0.35}
+          strokeWidth={i < 5 ? undefined : 1}
         />
       ))}
+      <line x1="125" y1="40" x2="247" y2="40" stroke="var(--color-neon)" strokeOpacity="0.45" strokeWidth="0.5" strokeDasharray="2 2" />
+      <text x="186" y="50" textAnchor="middle" fill="var(--color-neon)" fillOpacity="0.8" fontSize="7.5" letterSpacing="0.06em">
+        40–60% INEFFICIENCY
+      </text>
 
-      {STAGES.map((stage, i) => {
-        const { x, y } = onRing(i, 4, R, cx, cy);
-        const label = onRing(i, 4, R + gap, cx, cy);
-        const anchor = i === 1 ? "start" : i === 3 ? "end" : "middle";
-        return (
-          <g key={stage}>
-            <circle cx={x} cy={y} r={halo} fill="var(--color-forest)" />
-            <circle
-              cx={x}
-              cy={y}
-              r={node}
-              fill="var(--color-neon)"
-              fillOpacity={run ? 1 : DIM}
-              style={{ transition: `fill-opacity 240ms ${EASE} ${i * 200 + 200}ms` }}
+      <text x="0" y="66" fill="var(--color-neon)" fontSize="8" fontWeight="600" letterSpacing="0.1em">
+        AFTER
+      </text>
+      {[0, 25, 50, 75, 100, 125, 150].map((x, i) => (
+        <rect
+          key={`a${x}`}
+          x={x}
+          y="70"
+          width="22"
+          height="10"
+          rx="3"
+          fill="var(--color-neon)"
+          fillOpacity={i < 4 ? 1 : i === 4 ? 0.5 : 0.1}
+          stroke={i > 4 ? "var(--color-neon)" : undefined}
+          strokeOpacity={i > 4 ? 0.2 : undefined}
+          strokeWidth={i > 4 ? 1 : undefined}
+          style={{ opacity: run ? 1 : 0, transition: `opacity 220ms ${EASE} ${i * 70}ms` }}
+        />
+      ))}
+    </svg>
+  );
+}
+
+/** Her card 3: twenty dots, the last two hollow, with her legend. */
+function Dots({ run }: { run: boolean }) {
+  return (
+    <div className="flex w-full flex-col items-start gap-2.5">
+      <div className="grid w-full grid-cols-10 gap-[5px]">
+        {Array.from({ length: 20 }, (_, i) => {
+          const lost = i >= 18;
+          return (
+            <span
+              key={i}
+              className={`aspect-square rounded-full ${lost ? "border-[1.5px] border-sand/45" : "bg-neon"}`}
+              style={{ opacity: run ? 1 : 0, transition: `opacity 200ms ${EASE} ${i * 26}ms` }}
             />
-            <text
-              x={label.x}
-              y={label.y + 3.5}
-              textAnchor={anchor}
-              fill="#fff"
-              fillOpacity={run ? 0.7 : 0.28}
-              className={`font-sans ${type} font-bold tracking-[0.16em] uppercase`}
-              style={{ transition: `fill-opacity 240ms ${EASE} ${i * 200 + 200}ms` }}
-            >
-              {stage}
-            </text>
-          </g>
-        );
-      })}
-    </Chrome>
+          );
+        })}
+      </div>
+      <div className="flex gap-3">
+        <span className="flex items-center gap-[5px] text-[9.5px] text-sand/75">
+          <span className="h-[7px] w-[7px] shrink-0 rounded-full bg-neon" />
+          Retained
+        </span>
+        <span className="flex items-center gap-[5px] text-[9.5px] text-sand/75">
+          <span className="h-[7px] w-[7px] shrink-0 rounded-full border-[1.5px] border-sand/45" />
+          Churned
+        </span>
+      </div>
+    </div>
   );
 }
 
-/** A flat-topped hexagon in a w by h box at x, y. */
-function hex(x: number, y: number, w: number, h: number) {
-  return [
-    [x + w * 0.25, y],
-    [x + w * 0.75, y],
-    [x + w, y + h / 2],
-    [x + w * 0.75, y + h],
-    [x + w * 0.25, y + h],
-    [x, y + h / 2],
-  ]
-    .map(([px, py]) => `${px.toFixed(1)},${py.toFixed(1)}`)
-    .join(" ");
-}
-
-/** The before row fades down while the after row fills left to right. */
-function HexRows({ run, pct }: { run: boolean; pct: number }) {
-  const remaining = Math.max(1, Math.round((1 - pct / 100) * 10));
-  const CELL = 28;
-  const HEX_W = 24;
-  const HEX_H = 26;
+/** Her card 4: the margin line, revealed left to right with its area beneath. */
+function Trend({ run }: { run: boolean }) {
+  const line = "8,70 48,65 95,59 140,50 180,37 222,22 252,10";
   return (
-    <Chrome>
-      <text x="0" y="22" fill="#fff" fillOpacity="0.45" className="font-sans text-[9px] font-bold tracking-[0.18em] uppercase">
-        Before
-      </text>
-      {Array.from({ length: 10 }, (_, i) => (
-        <polygon
-          key={`b${i}`}
-          points={hex(i * CELL, 34, HEX_W, HEX_H)}
-          fill="var(--color-neon)"
-          // Ten solid units that dim as the after row fills: you watch the waste
-          // leave rather than being shown two static rows.
-          fillOpacity={run ? 0.2 : 0.62}
-          style={{ transition: `fill-opacity 300ms ${EASE} ${180 + i * 40}ms` }}
-        />
+    <svg viewBox="0 0 260 80" width="100%" height="96" fill="none">
+      <defs>
+        <linearGradient id="kpi-area" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="var(--color-neon)" stopOpacity="0.3" />
+          <stop offset="100%" stopColor="var(--color-neon)" stopOpacity="0" />
+        </linearGradient>
+      </defs>
+      <line x1="0" y1="74" x2="260" y2="74" stroke="var(--color-neon)" strokeOpacity="0.15" strokeWidth="1" />
+      {[54, 34, 14].map((y) => (
+        <line key={y} x1="0" y1={y} x2="260" y2={y} stroke="var(--color-neon)" strokeOpacity="0.07" strokeWidth="1" />
       ))}
-      <text x="0" y="96" fill="var(--color-neon)" fillOpacity="0.75" className="font-sans text-[9px] font-bold tracking-[0.18em] uppercase">
-        After
-      </text>
-      {Array.from({ length: 10 }, (_, i) => (
-        <polygon
-          key={`a${i}`}
-          points={hex(i * CELL, 108, HEX_W, HEX_H)}
-          fill="var(--color-neon)"
-          fillOpacity={run ? (i < remaining ? 0.95 : DIM) : DIM}
-          style={{ transition: `fill-opacity 260ms ${EASE} ${i * 45}ms` }}
-        />
-      ))}
-    </Chrome>
-  );
-}
 
-/**
- * The retention base as a full ring of dots, with the uplift as a bright arc
- * drawn over it.
- *
- * The earlier version filled only the figure's share, so 13% lit four dots out
- * of twenty-four and a legend reading "retained / churned" described the
- * opposite of what was drawn. The figure is an increase, not a retention rate,
- * so the ring is the base and the arc is the gain. The two labels are ours;
- * hers named two things this card does not measure.
- */
-function DotRing({ run, pct }: { run: boolean; pct: number }) {
-  // 24 rather than 32: at r=50 the larger count left barely three pixels
-  // between neighbours and the ring read as a dashed line.
-  const total = 24;
-  const R = 50;
-  const ARC_R = R + 13;
-  const C = 2 * Math.PI * ARC_R;
-  const uplift = C * (pct / 100);
-
-  return (
-    <Chrome>
-      {Array.from({ length: total }, (_, i) => {
-        const { x, y } = onRing(i, total, R);
-        return (
-          <circle
-            key={i}
-            cx={x}
-            cy={y}
-            r="5"
-            fill="var(--color-neon)"
-            // The base fills quickly and stays dim, so the arc that lands on top
-            // of it is the only bright thing on the card.
-            fillOpacity={run ? 0.34 : 0}
-            stroke="var(--color-neon)"
-            strokeOpacity={DIM * 2.4}
-            strokeWidth="1.8"
-            style={{ transition: `fill-opacity 180ms ${EASE} ${i * 18}ms` }}
-          />
-        );
-      })}
-
-      <circle
-        cx={CX}
-        cy={CY}
-        r={ARC_R}
-        fill="none"
-        stroke="var(--color-neon)"
-        strokeWidth="5"
-        strokeLinecap="round"
-        strokeOpacity="1"
-        strokeDasharray={`${uplift} ${C}`}
-        strokeDashoffset={run ? 0 : uplift}
-        transform={`rotate(-90 ${CX} ${CY})`}
-        // Last, and on its own, so the eye lands on the gain rather than on the
-        // base it sits above.
-        style={{ transition: `stroke-dashoffset 420ms ${EASE} 520ms` }}
-      />
-
-      <circle cx={CX - 62} cy={H - 12} r="5" fill="var(--color-neon)" fillOpacity="0.34" stroke="var(--color-neon)" strokeOpacity={DIM * 2.4} strokeWidth="1.8" />
-      <text x={CX - 50} y={H - 8} fill="#fff" fillOpacity="0.5" className="font-sans text-[9px] font-bold tracking-[0.14em] uppercase">
-        Retention base
-      </text>
-      <rect x={CX + 58} y={H - 15} width="16" height="5" rx="2.5" fill="var(--color-neon)" />
-      <text x={CX + 80} y={H - 8} fill="var(--color-neon)" fillOpacity="0.85" className="font-sans text-[9px] font-bold tracking-[0.14em] uppercase">
-        Uplift
-      </text>
-    </Chrome>
-  );
-}
-
-/** The trend drawn on a curved field inside a soft circular frame. */
-function TrendDial({ run, pct }: { run: boolean; pct: number }) {
-  const R = 60;
-  const rise = (pct / 100) * 62;
-  const left = CX - 52;
-  const right = CX + 52;
-  const base = CY + 24;
-  const pts = [0, 0.25, 0.5, 0.75, 1].map((t) => {
-    const x = left + (right - left) * t;
-    // Slightly convex, so the line follows the curve of the frame rather than
-    // cutting a chord across it.
-    const y = base - rise * (t * 0.8 + t * t * 0.2) - Math.sin(t * Math.PI) * 5;
-    return `${x.toFixed(1)},${y.toFixed(1)}`;
-  });
-  const line = pts.join(" ");
-  const end = pts[pts.length - 1].split(",").map(Number);
-
-  return (
-    <Chrome>
-      <circle cx={CX} cy={CY} r={R} fill="none" stroke="var(--color-neon)" strokeOpacity={DIM * 1.8} strokeWidth="1.5" />
-      <circle cx={CX} cy={CY} r={R - 14} fill="none" stroke="var(--color-neon)" strokeOpacity={DIM * 0.6} strokeWidth="1" />
-      <text x={CX} y={H - 8} textAnchor="middle" fill="#fff" fillOpacity="0.45" className="font-sans text-[9px] font-bold tracking-[0.18em] uppercase">
-        Margin
-      </text>
-
-      <clipPath id="kpi-dial">
-        <circle cx={CX} cy={CY} r={R - 2} />
-      </clipPath>
-      <g clipPath="url(#kpi-dial)">
-        <polygon
-          points={`${line} ${right},${base + 40} ${left},${base + 40}`}
-          fill="var(--color-neon)"
-          fillOpacity={run ? 0.16 : 0}
-          style={{ transition: `fill-opacity 420ms ${EASE} 420ms` }}
-        />
-        <polyline
-          points={line}
-          fill="none"
-          stroke="var(--color-neon)"
-          strokeWidth="3"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeDasharray="160"
-          strokeDashoffset={run ? 0 : 160}
-          style={{ transition: `stroke-dashoffset 720ms ${EASE} 60ms` }}
-        />
+      {/* Her clip-path reveal, as a CSS transition rather than a rAF loop. */}
+      <g
+        style={{
+          clipPath: run ? "inset(0 0 0 0)" : "inset(0 100% 0 0)",
+          transition: `clip-path 1300ms ${EASE} 300ms`,
+        }}
+      >
+        <path d={`M${line.split(" ").join(" L")} L252,74 L8,74 Z`} fill="url(#kpi-area)" />
+        <polyline points={line} stroke="var(--color-neon)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        <circle cx="252" cy="10" r="9" fill="var(--color-neon)" fillOpacity="0.15" />
+        <circle cx="252" cy="10" r="3.5" fill="var(--color-neon)" />
+        <text x="240" y="8" fill="var(--color-neon)" fontSize="8.5" fontWeight="600" textAnchor="end">
+          +27%
+        </text>
       </g>
-      <circle
-        cx={end[0]}
-        cy={end[1]}
-        r="5"
-        fill="var(--color-neon)"
-        fillOpacity={run ? 1 : 0}
-        style={{ transition: `fill-opacity 200ms ${EASE} 720ms` }}
-      />
-    </Chrome>
+      <text x="2" y="79" fill="var(--color-sand)" fillOpacity="0.35" fontSize="7.5">
+        0
+      </text>
+    </svg>
   );
 }
 
-/** Two concentric arcs race. The after arc is done long before the before arc. */
-function SpeedArcs({ run, pct, compact = false }: { run: boolean; pct: number; compact?: boolean }) {
-  const OUTER = 54;
-  const INNER = 36;
-  const SWEEP = 0.78; // three quarters of the ring, so the two ends stay visible
-  const outerC = 2 * Math.PI * OUTER;
-  const innerC = 2 * Math.PI * INNER;
-  const outerRun = outerC * SWEEP;
-  const innerRun = innerC * SWEEP * (1 - pct / 100);
-
+/** Her card 5: two tracks, the after bar filling to 30%. */
+function Speed({ run }: { run: boolean }) {
   return (
-    <Chrome>
-      <g transform={`rotate(-90 ${CX} ${CY})`}>
-        <circle
-          cx={CX}
-          cy={CY}
-          r={OUTER}
-          fill="none"
-          stroke="var(--color-neon)"
-          strokeOpacity={DIM}
-          strokeWidth="9"
-          strokeLinecap="round"
-          strokeDasharray={`${outerC * SWEEP} ${outerC}`}
-        />
-        <circle
-          cx={CX}
-          cy={CY}
-          r={OUTER}
-          fill="none"
-          stroke="var(--color-neon)"
-          strokeOpacity="0.4"
-          strokeWidth="9"
-          strokeLinecap="round"
-          strokeDasharray={`${outerRun} ${outerC}`}
-          strokeDashoffset={run ? 0 : outerRun}
-          style={{ transition: `stroke-dashoffset 1200ms ${EASE} 80ms` }}
-        />
-        <circle
-          cx={CX}
-          cy={CY}
-          r={INNER}
-          fill="none"
-          stroke="var(--color-neon)"
-          strokeOpacity={DIM}
-          strokeWidth="9"
-          strokeLinecap="round"
-          strokeDasharray={`${innerC * SWEEP} ${innerC}`}
-        />
-        <circle
-          cx={CX}
-          cy={CY}
-          r={INNER}
-          fill="none"
-          stroke="var(--color-neon)"
-          strokeWidth="9"
-          strokeLinecap="round"
-          strokeOpacity="0.95"
-          strokeDasharray={`${innerRun} ${innerC}`}
-          strokeDashoffset={run ? 0 : innerRun}
-          // A shorter distance on a shorter clock, so the after arc visibly
-          // stops while the before arc is still travelling. The gap is the point.
-          style={{ transition: `stroke-dashoffset 420ms ${EASE} 80ms` }}
-        />
-      </g>
-      {/* The bar card renders these arcs at about a fifth of the width the
-          others get, where 9px type is a smudge. There the two weights carry it
-          on their own. */}
-      {!compact && (
-        <>
-          <text x={CX} y={CY - 4} textAnchor="middle" fill="#fff" fillOpacity="0.45" className="font-sans text-[9px] font-bold tracking-[0.18em] uppercase">
-            Before
-          </text>
-          <text x={CX} y={CY + 12} textAnchor="middle" fill="var(--color-neon)" fillOpacity="0.75" className="font-sans text-[9px] font-bold tracking-[0.18em] uppercase">
-            After
-          </text>
-        </>
-      )}
-    </Chrome>
+    <div className="flex w-full flex-col gap-3.5">
+      <div className="flex flex-col gap-[5px]">
+        <p className="text-[9px] font-semibold tracking-[0.1em] text-sand/70 uppercase">Before — KYC completion</p>
+        <div className="h-6 overflow-hidden rounded-[5px] bg-white/[0.04]">
+          {/* Her amber "before" fill, drawn in the same green at the dim weight:
+              this section carries no brown. PENDING-COPY 1av. */}
+          <div className="flex h-full w-full items-center rounded-[5px] border border-neon/25 bg-neon/[0.10] px-2.5 text-[10px] font-semibold text-sand">
+            10 days avg.
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col gap-[5px]">
+        <p className="text-[9px] font-semibold tracking-[0.1em] text-sand/70 uppercase">After — KYC completion</p>
+        <div className="h-6 overflow-hidden rounded-[5px] bg-white/[0.04]">
+          <div
+            className="flex h-full items-center rounded-[5px] bg-neon px-2.5 text-[10px] font-semibold text-forest"
+            style={{ width: run ? "30%" : "0%", transition: `width 1300ms ${EASE} 450ms` }}
+          >
+            3 days
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

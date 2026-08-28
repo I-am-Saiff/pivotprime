@@ -1,294 +1,79 @@
-"use client";
-
-import { useCallback, useEffect, useState, useSyncExternalStore } from "react";
 import { METRICS } from "@/content/homepage";
 import KpiVisual from "./KpiVisual";
-import KpiFigure from "./KpiFigure";
 
 /**
- * The five result cards, spec 3.3. One in view at a time, on a four second beat.
+ * The five result cards, spec 3.3, built from her own design file.
  *
- * ALL FIVE ARE IN THE SERVED HTML, ALWAYS.
+ * SOURCE: req/pivot-prime-kpi-cards_3.html, the client's approved design for
+ * this section. Everything below — the grid, the card, the label with its lit
+ * dot, the 96px visual well, the metric with its neon figure and cream suffix,
+ * the name, and the rule above the supporting line — is transcribed from that
+ * file rather than designed here.
  *
- * This is the defect this page has now had twice. ResultsGraphic rendered only
- * the active metric, so four figures out of five were absent and a crawler saw
- * one card. Here every card is rendered by this component on the server, the
- * five sit stacked in one grid cell, and only opacity, transform and visibility
- * move. There is no conditional rendering of any card below.
+ * WHAT THIS REPLACES. A rotating carousel of one card, which went through
+ * clip-path shapes, pills and ellipses over three rounds. None of it was hers.
+ * Her file shows five cards visible together: one column below 600, two from
+ * 600, three from 900, so five land as three across and two beneath. Five
+ * compact cards also take less height than one large rotating one did.
  *
- * WITHOUT JAVASCRIPT, AND UNDER REDUCED MOTION, there is no rotation at all.
- * `rotating` is read from the browser through useSyncExternalStore, whose server
- * snapshot is false, and the CSS that stacks the cards is scoped to the
- * data-kpi-active attribute that only appears when rotating. The fallback is the
- * five cards laid out as an ordinary list, every figure printed and every visual
- * drawn in its finished state.
- *
- * The stack takes the height of the tallest card, so advancing never moves the
- * page. Hover, focus and the manual controls all pause the timer, and the
- * progress bar shows that it is paused rather than just stopping.
+ * A SERVER COMPONENT. There is no rotation, no active state and nothing hidden,
+ * so every word and every figure is in the served HTML with no client work at
+ * all. Only the visuals are client islands, and each of those starts drawn.
  *
  * Card 6 does not render: nobody has that number, and spec 3.4 says "Do not
  * launch this card with a placeholder."
  */
-const INTERVAL = 2500;
-
-/**
- * One form per slide, on the client's 27 August instruction. The shape is cut
- * with clip-path in globals.css and the composition below is arranged to suit
- * it, rather than every card being poured into the same two-column grid.
- */
-const SHAPES = {
-  track: "disc",
-  "before-after-blocks": "hex",
-  "dot-grid": "capsule",
-  trend: "angled",
-  "before-after-tracks": "bar",
-} as const;
-
-/** A faint treatment inside each shape, never competing with the figure. */
-const TEXTURE: Record<string, string> = {
-  disc: "[background:repeating-radial-gradient(circle_at_50%_50%,transparent_0,transparent_26px,rgba(0,215,109,0.05)_26px,rgba(0,215,109,0.05)_27px)]",
-  hex: "[background-image:linear-gradient(rgba(0,215,109,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,215,109,0.05)_1px,transparent_1px)] [background-size:34px_34px]",
-  capsule: "[background:linear-gradient(180deg,rgba(0,215,109,0.10)_0%,transparent_46%,rgba(0,215,109,0.06)_100%)]",
-  angled:
-    "[background:repeating-linear-gradient(135deg,transparent_0,transparent_16px,rgba(0,215,109,0.045)_16px,rgba(0,215,109,0.045)_17px)]",
-  bar: "[background:repeating-linear-gradient(180deg,transparent_0,transparent_13px,rgba(0,215,109,0.05)_13px,rgba(0,215,109,0.05)_14px)]",
-};
-const REDUCED = "(prefers-reduced-motion: reduce)";
-
-function subscribeToMotion(onChange: () => void) {
-  const query = window.matchMedia(REDUCED);
-  query.addEventListener("change", onChange);
-  return () => query.removeEventListener("change", onChange);
-}
-
-function isMotionWelcome() {
-  return !window.matchMedia(REDUCED).matches;
-}
-
-function Label({ metric }: { metric: (typeof METRICS)[number] }) {
-  return (
-    <p className="font-sans text-[10px] font-bold tracking-[0.18em] text-neon/70 uppercase">
-      {metric.kpiLabel}
-    </p>
-  );
-}
-
-function Figure({
-  metric,
-  counting,
-}: {
-  metric: (typeof METRICS)[number];
-  counting: boolean;
-}) {
-  if (metric.figureText === null) return null;
-  return (
-    <p className="mt-2 font-sans text-5xl leading-none font-extrabold tracking-tight text-neon tabular-nums sm:text-6xl">
-      <KpiFigure text={metric.figureText} active={counting} />
-    </p>
-  );
-}
-
 export default function KpiCards() {
   const cards = METRICS.filter((m) => m.pending !== "not-yet-supplied");
 
-  const rotating = useSyncExternalStore(subscribeToMotion, isMotionWelcome, () => false);
-
-  const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
-  // A manual choice holds that card until the pointer or focus leaves, so the
-  // timer does not pull the page away from something being read.
-  const [held, setHeld] = useState(false);
-  const frozen = paused || held;
-
-  useEffect(() => {
-    // The timer is torn down and rebuilt when the beat is frozen, rather than
-    // running and skipping ticks. That way the next card gets a full four
-    // seconds after a hover rather than whatever was left of the interval.
-    if (!rotating || frozen) return;
-    const id = window.setInterval(() => {
-      setActive((current) => (current + 1) % cards.length);
-    }, INTERVAL);
-    return () => window.clearInterval(id);
-  }, [cards.length, rotating, frozen]);
-
-  const go = useCallback(
-    (i: number) => {
-      setHeld(true);
-      setActive(((i % cards.length) + cards.length) % cards.length);
-    },
-    [cards.length],
-  );
-
-  const release = useCallback(() => {
-    setPaused(false);
-    setHeld(false);
-  }, []);
-
   return (
-    <div
-      data-kpi-active={rotating ? active : undefined}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={release}
-      onFocusCapture={() => setPaused(true)}
-      onBlurCapture={release}
+    <ul
+      data-metric-cards
+      className="mx-auto grid max-w-[1080px] grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3"
     >
-      <ul data-metric-cards className="mx-auto grid max-w-4xl grid-cols-1 gap-4">
-        {cards.map((metric, i) => {
-          const on = rotating ? active === i : true;
-          const counting = rotating ? active === i : false;
-          const shape = SHAPES[metric.visual];
-          return (
-            <li key={metric.label} data-kpi-index={i} data-kpi-shape={shape}>
-              {/* A background treatment inside each shape. Low contrast, and
-                  always behind the copy: rings inside the disc, a grid inside
-                  the hexagon, a gradient up the capsule, diagonals across the
-                  cut corner, hairlines along the bar. */}
-              <div aria-hidden="true" className={`pointer-events-none absolute inset-0 ${TEXTURE[shape]}`} />
+      {cards.map((metric, i) => (
+        <li
+          key={metric.label}
+          data-kpi-index={i}
+          className="relative flex min-h-[300px] flex-col overflow-hidden rounded-[18px] border border-neon/20 bg-forest px-6 pt-6 pb-5"
+        >
+          {/* Her top glow: a hairline that fades in from both ends. */}
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-[15%] top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(0,215,109,0.5),transparent)]"
+          />
 
-              {shape === "disc" && (
-                <>
-                  {/* The stages ring the rim from md up. At 360 the ring's own
-                      labels reach past the lens, so the small screen gets the
-                      compact track under the copy instead. */}
-                  <div className="pointer-events-none absolute inset-0 hidden md:block">
-                    <KpiVisual metric={metric} active={on} variant="edge" />
-                  </div>
-                  <div className="relative flex h-full flex-col items-center justify-center px-8 text-center md:px-10">
-                    <Label metric={metric} />
-                    <Figure metric={metric} counting={counting} />
-                    <p className="mt-2 max-w-[15rem] text-base leading-snug font-bold text-white sm:text-lg md:max-w-[14rem]">{metric.label}</p>
-                    <p className="mt-2 max-w-[15rem] text-[12.5px] leading-relaxed text-white/55 md:max-w-[14rem]">{metric.context}</p>
-                    <div className="mt-4 w-full max-w-[13rem] md:hidden">
-                      <KpiVisual metric={metric} active={on} />
-                    </div>
-                  </div>
-                </>
-              )}
-
-              {shape === "hex" && (
-                <div className="relative flex h-full flex-col items-center justify-center px-10 text-center md:px-24">
-                  <Label metric={metric} />
-                  <Figure metric={metric} counting={counting} />
-                  <p className="mt-3 max-w-sm text-lg leading-snug font-bold text-white">{metric.label}</p>
-                  <p className="mt-2 max-w-sm text-[13px] leading-relaxed text-white/55">{metric.context}</p>
-                  {/* Narrower than the copy: the rows sit low in the hexagon,
-                      where the sides have already begun to close in. */}
-                  <div className="mt-5 w-full max-w-[11.5rem] md:max-w-[19rem]">
-                    <KpiVisual metric={metric} active={on} />
-                  </div>
-                </div>
-              )}
-
-              {shape === "capsule" && (
-                <div className="relative flex h-full flex-col items-center justify-center px-9 text-center">
-                  <Label metric={metric} />
-                  <Figure metric={metric} counting={counting} />
-                  <p className="mt-3 max-w-[15rem] text-lg leading-snug font-bold text-white">{metric.label}</p>
-                  <p className="mt-2 max-w-[15rem] text-[13px] leading-relaxed text-white/55">{metric.context}</p>
-                  <div className="mt-4 w-full max-w-[14rem]">
-                    <KpiVisual metric={metric} active={on} />
-                  </div>
-                </div>
-              )}
-
-              {shape === "angled" && (
-                <div className="relative grid h-full items-center gap-6 px-8 py-8 sm:px-12 md:grid-cols-[1.15fr_1fr]">
-                  {/* The copy stays clear of the cut, which takes the top right. */}
-                  <div className="self-center">
-                    <Label metric={metric} />
-                    <Figure metric={metric} counting={counting} />
-                    <p className="mt-3 max-w-sm text-lg leading-snug font-bold text-white sm:text-xl">{metric.label}</p>
-                    <p className="mt-2 max-w-sm text-[13px] leading-relaxed text-white/55">{metric.context}</p>
-                  </div>
-                  <div className="self-end md:self-center md:pb-6">
-                    <KpiVisual metric={metric} active={on} />
-                  </div>
-                </div>
-              )}
-
-              {shape === "bar" && (
-                <div className="relative grid h-full items-center gap-4 px-8 py-6 sm:px-14 md:grid-cols-[auto_1fr_auto] md:gap-10">
-                  <div className="md:pr-2">
-                    <Label metric={metric} />
-                    <Figure metric={metric} counting={counting} />
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-lg leading-snug font-bold text-white sm:text-xl">{metric.label}</p>
-                    <p className="mt-1.5 text-[13px] leading-relaxed text-white/55">{metric.context}</p>
-                  </div>
-                  <div className="w-full max-w-[10rem] justify-self-end md:max-w-[11rem]">
-                    <KpiVisual metric={metric} active={on} variant="compact" />
-                  </div>
-                </div>
-              )}
-            </li>
-          );
-        })}
-      </ul>
-
-      {/* The beat, made visible. Keyed on the active index so the
-          fill restarts with each card, and paused as a state rather than as a
-          bar that silently stops. Absent entirely when nothing is rotating. */}
-      {rotating && (
-        <div className="mx-auto mt-6 max-w-4xl">
-          <div className="h-[3px] w-full overflow-hidden rounded-full bg-neon/15">
-            <div
-              // Keyed on the freeze as well as the card, because the timer is
-              // rebuilt when the beat unfreezes: both restart together, so the
-              // bar never finishes while the card still has seconds left.
-              key={`${active}-${frozen}`}
-              data-kpi-progress
-              data-paused={frozen ? "" : undefined}
-              className="h-full w-full origin-left rounded-full bg-neon"
+          {/* Her label, with the lit dot in front of it. */}
+          <p className="mb-[18px] flex items-center gap-[7px] text-[9px] font-semibold tracking-[0.15em] text-neon uppercase">
+            <span
+              aria-hidden="true"
+              className="h-[5px] w-[5px] shrink-0 rounded-full bg-neon shadow-[0_0_7px_rgba(0,215,109,0.7)]"
             />
-          </div>
+            {metric.kpiLabel}
+          </p>
 
-          {/* Manual controls. Real buttons, so they are in the tab order and
-              answer Enter and Space with no key handling of our own. */}
-          <div className="mt-4 flex items-center justify-center gap-1 sm:gap-3">
-            <button
-              type="button"
-              onClick={() => go(active - 1)}
-              aria-label="Previous result"
-              className="hidden h-11 w-11 sm:inline-flex items-center justify-center rounded-xl border border-neon/30 text-neon transition-colors hover:bg-neon/10 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
+          <KpiVisual metric={metric} index={i} />
+
+          {/* Her metric: the figure in neon, the unit in cream. Card two drops
+              to 42px in her file because the range is twice as long. */}
+          {metric.figureText !== null && (
+            <p
+              className={`mb-1 font-sans leading-none font-extrabold tracking-[-0.03em] text-linen tabular-nums ${
+                metric.figureText.length > 5 ? "text-[42px]" : "text-[54px]"
+              }`}
             >
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
-                <path d="M15 5l-7 7 7 7" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
+              <span className="text-neon">{metric.figureText.replace(/%$/, "")}</span>
+              {metric.figureText.endsWith("%") ? "%" : ""}
+            </p>
+          )}
 
-            {cards.map((metric, i) => (
-              <button
-                key={metric.label}
-                type="button"
-                onClick={() => go(i)}
-                aria-label={`Show ${metric.kpiLabel}`}
-                aria-current={active === i}
-                className="inline-flex h-11 w-11 shrink-0 items-center justify-center focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
-              >
-                <span
-                  aria-hidden="true"
-                  className={`block h-2 rounded-full transition-all duration-300 ${
-                    active === i ? "w-6 bg-neon" : "w-2 bg-neon/30"
-                  }`}
-                />
-              </button>
-            ))}
+          <p className="mb-3.5 text-[12.5px] font-medium text-balance text-shell">{metric.label}</p>
 
-            <button
-              type="button"
-              onClick={() => go(active + 1)}
-              aria-label="Next result"
-              className="hidden h-11 w-11 sm:inline-flex items-center justify-center rounded-xl border border-neon/30 text-neon transition-colors hover:bg-neon/10 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
-            >
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
-                <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      )}
-    </div>
+          <p className="mt-auto border-t border-neon/15 pt-3 text-[11px] leading-[1.6] text-sand/75">
+            {metric.context}
+          </p>
+        </li>
+      ))}
+    </ul>
   );
 }

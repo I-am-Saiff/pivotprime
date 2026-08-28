@@ -209,16 +209,16 @@ export default function Home() {
           standard body colour. Spec 3.3. */}
       {/* pb-28 below sm: clears the floating WhatsApp button so the last
           card does not end underneath it. PENDING-COPY 1ak. */}
-      <section className="surface-page px-4 pt-12 pb-10 sm:px-6 sm:pt-20 sm:pb-28 lg:px-8">
+      <section className="surface-page px-4 pt-8 pb-8 sm:px-6 sm:pt-12 sm:pb-12 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <header className="mb-8 sm:mb-12 max-w-3xl">
+          <header className="mb-3 sm:mb-4 max-w-3xl">
             <span className="block font-sans font-semibold text-xs tracking-[0.22em] uppercase text-mid mb-3">
               MEASURED IMPACT
             </span>
             <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-4xl lg:text-5xl">
               {RESULTS.heading}
             </h2>
-            <p className="mt-4 text-lg text-neutral-600 md:text-xl">{RESULTS.standfirst}</p>
+            <p className="mt-3 text-lg text-neutral-600 md:text-xl">{RESULTS.standfirst}</p>
           </header>
 
           <KpiCards />

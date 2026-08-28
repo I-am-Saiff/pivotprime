@@ -2749,3 +2749,70 @@ the page still says what the audit covers. Everything else above did not.
 **In short:** on every one of the five, the cut took content that answers "what
 is this and what do I get", not only the trailing explanation. The full text of
 every removed block is preserved in [1ar](#1ar).
+
+---
+
+## 1au. The supporting line on each result card has been removed — **for Iram**
+
+On your instruction of 28 August 2026 the result cards were cut to a compact strip: the small label, the figure, the headline and the visual. **The supporting sentence under each headline is no longer rendered on any of the five.** It is your copy, from spec 3.3, so it is preserved here word for word.
+
+| Card | The sentence that no longer appears |
+| --- | --- |
+| Execution | Decision rights, operating rhythm and delivery ownership rebuilt. |
+| Process Efficiency | Processes mapped end to end and redesigned around how the work actually flows. |
+| Customer Retention | Service cancellation drivers identified and addressed. |
+| Profit Growth | Pricing, margin and commercial model redesigned. |
+| Transaction Speed | End to end customer and transaction workflows mapped and rebuilt. |
+| Bespoke Builds | Custom systems, CRMs, dashboards and automations built for clients. |
+
+The strings are still in `METRICS` in `src/content/homepage.ts` as the `context` field, untouched. Putting them back is one line in `KpiCards`, not a retype.
+
+Card six, bespoke builds, still does not render at all, so its line was never on the page.
+
+
+---
+
+## 1av. The results section is your own design file now — **for Iram**
+
+`req/pivot-prime-kpi-cards_3.html` has been reproduced as the results section:
+five cards in a grid, one column below 600px, two from 600 and three from 900,
+so the five land as three across and two beneath. Your card, your label with its
+lit dot, your 96px visual well, your metric with the figure in bright green and
+the unit in cream, your name line and your supporting line under a hairline rule.
+
+**The rotating carousel is gone.** Everything it went through — the shapes, the
+pills, the ellipse, the progress bar — was ours and none of it was in your file.
+
+**Four things in your file we did not reproduce exactly.**
+
+1. **The amber.** Your "before" blocks on Process Efficiency, and the "before"
+   bar on Transaction Speed, are `#c49040`. The standing instruction is that this
+   section carries no brown or gold, so both are drawn in the same green at the
+   lower weight. Your contrast survives as one hue at two weights. **Say the word
+   and the amber goes back.**
+2. **The typeface.** Your file sets the figures in Syne 800 and the body in
+   Inter. The site is Poppins throughout. The size, weight, line height and
+   letter spacing are matched exactly; the letterforms are not.
+3. **The looping particles.** Your execution card runs three dots round the track
+   on an infinite loop. The brief here was that each visual animates once on
+   arrival and then rests, so the track draws itself once instead.
+4. **Three lines of your copy differ**, because the site carries the spec 3.3
+   wording and your design file carries a shorter version of the same idea:
+
+   | Your file | The site |
+   | --- | --- |
+   | Less duplicated work, rework & waste | Reduction in duplicated work, rework and inefficiency |
+   | Increase in profit margin | Increase in profit |
+   | End-to-end workflows mapped and rebuilt. KYC completion cut from 10 days to 3. | End to end customer and transaction workflows mapped and rebuilt. |
+
+   Yours is tighter and the card would be shorter with it. Tell us which wins and
+   it is a one-line change each.
+
+**One thing to know about the height.** Five cards in a grid is 685px at 1440
+against 180px for the single rotating strip it replaces, so this section is
+taller than it was an hour ago. It is your design, and it shows all five results
+at once rather than one every two and a half seconds.
+
+**KYC figures.** Your Transaction Speed card publishes "10 days avg." and
+"3 days". They are in your design file, so they are on the page, on the same
+authority as [1am](#1am): your file overrides the Section 9 table.
