@@ -441,6 +441,9 @@ const DECISIONS = [
       // 28 August: every service page was cut back on the client's instruction.
       // Each string below is the first line of a removed block, so this fails
       // the moment one of those sections is put back without her asking.
+      // The capability grid was restored on 28 August: the blanket cut took it
+      // with the trailing prose, and the client confirmed it was never the
+      // target. It is no longer on this list. PENDING-COPY 1ar.
       const removed = [
         ["/services/operational-clarity-audit", "Why this exists"],
         ["/services/operational-clarity-audit", "How it runs"],
@@ -449,7 +452,6 @@ const DECISIONS = [
         ["/services/fractional-leadership", 'id="chief-of-staff"'],
         ["/services/fractional-leadership", 'id="cfo"'],
         ["/services/build-and-place", "Why this exists"],
-        ["/services/technology-builds", "What we build"],
         ["/services/uae-market-entry", "Where it ends up"],
       ];
       for (const [route, gone] of removed) {

@@ -2672,3 +2672,80 @@ tone rather than going literally white, so nothing floats.
 
 The rule now lives in one component, `src/components/PairToggle.tsx`, so any new
 toggle inherits it rather than restating it.
+
+**Update, 28 August 2026.** The capability grid on Technology Builds — the nine
+things we build, with the note beneath it — has been **restored in full**, in its
+original position and with its original treatment. It sat below the "Why this
+exists" heading and the blanket cut took it with the trailing prose. It was never
+the target.
+
+The rule as the client actually intended it: **remove the trailing prose sections
+that explain the philosophy behind the service; keep everything that tells a
+visitor what the service is, what it includes, or what they get.** Measured
+against that rule, the cut took substantive content from all five pages, not just
+this one. The audit of what went from each is in
+[1at](#1at-what-the-blanket-cut-actually-took-from-each-service-page--for-iram).
+
+---
+
+## 1at. What the blanket cut actually took from each service page — **for Iram**
+
+Measured against the rule as you meant it — remove the trailing philosophy prose,
+keep anything that says what the service is, what it includes or what you get —
+here is what went from each of the five. **Nothing below has been restored except
+the Technology Builds capability grid.** Say which of these you want back.
+
+### Operational Clarity Audit
+
+| Removed | Verdict |
+| --- | --- |
+| "How we do it" and "What happens after" — the designed two-part section | **Substantive.** It is how the audit runs and what lands at the end. |
+| `whyHeading` + `why` | Philosophy. Correct target. |
+| `lookHeading` + `look` — seven things we look at | **Substantive.** What the audit covers. |
+| `howHeading` + `how` | **Substantive.** How it runs. |
+| `getHeading` + `get` — six deliverables | **Substantive.** What you get. |
+| `afterHeading` + `after` | **Substantive.** What happens next. |
+| `pricingHeading` + `pricing` | **Substantive.** How it is priced. |
+
+The "What we look at / What you get" columns directly under the hero survived, so
+the page still says what the audit covers. Everything else above did not.
+
+### Fractional Leadership
+
+| Removed | Verdict |
+| --- | --- |
+| The three seat panels — COO, Chief of Staff, CFO, each with "What the seat covers" | **Substantive, and the core of the page.** It is the only place that says what each seat does. |
+| "How it runs" | **Substantive.** |
+| `whyHeading` + `why` | Philosophy. Correct target. |
+
+### Build and Place
+
+| Removed | Verdict |
+| --- | --- |
+| The columns section | **Substantive.** |
+| The closer section and its CTA | Closing prose plus a call to action. |
+| `whyHeading` + `why` | Philosophy. Correct target. |
+| `rolesHeading` + `cards` — the roles we place | **Substantive.** What the service includes. |
+| `pricedHeading` + `priced` | **Substantive.** How it is priced. |
+
+### Technology Builds
+
+| Removed | Verdict |
+| --- | --- |
+| The capability grid, nine tiles plus the note | **Substantive. RESTORED 28 August.** |
+| "How it runs" and "Where this starts", with "Bring us the problem" | **Substantive.** How to start and what we take on. |
+| The closing CTA | Call to action. |
+
+### UAE Market Entry
+
+| Removed | Verdict |
+| --- | --- |
+| The columns section | **Substantive.** |
+| The closer section and its CTA | Closing prose plus a call to action. |
+| `misconceptionHeading` + `misconception` | Philosophy, arguably. It is the argument for the service rather than its content. |
+| `buildHeading` + `build` — eight things we build for entry | **Substantive.** What you get. |
+| `closeHeading` + `close` | Closing prose. Correct target. |
+
+**In short:** on every one of the five, the cut took content that answers "what
+is this and what do I get", not only the trailing explanation. The full text of
+every removed block is preserved in [1ar](#1ar).
