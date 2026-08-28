@@ -239,7 +239,7 @@ function Speed({ run }: { run: boolean }) {
         <div className="h-6 overflow-hidden rounded-[5px] bg-white/[0.04]">
           {/* Her amber "before" fill, drawn in the same green at the dim weight:
               this section carries no brown. PENDING-COPY 1av. */}
-          <div className="flex h-full w-full items-center rounded-[5px] border border-neon/25 bg-neon/[0.10] px-2.5 text-[10px] font-semibold text-sand">
+          <div className="flex h-full w-full items-center rounded-[5px] border border-neon/25 bg-neon/[0.10] px-2.5 text-[10px] font-semibold whitespace-nowrap text-sand">
             10 days avg.
           </div>
         </div>
@@ -248,7 +248,7 @@ function Speed({ run }: { run: boolean }) {
         <p className="text-[9px] font-semibold tracking-[0.1em] text-sand/70 uppercase">After — KYC completion</p>
         <div className="h-6 overflow-hidden rounded-[5px] bg-white/[0.04]">
           <div
-            className="flex h-full items-center rounded-[5px] bg-neon px-2.5 text-[10px] font-semibold text-forest"
+            className="flex h-full items-center overflow-hidden rounded-[5px] bg-neon px-2.5 text-[10px] font-semibold whitespace-nowrap text-forest"
             style={{ width: run ? "30%" : "0%", transition: `width 1300ms ${EASE} 450ms` }}
           >
             3 days
