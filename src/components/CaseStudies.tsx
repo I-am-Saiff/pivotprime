@@ -136,64 +136,59 @@ export default function CaseStudies({
         {studies.map((study, i) => (
           <li
             key={study.id}
-            className="flex-shrink-0 w-full snap-center frosted-card-light rounded-[28px] p-6 sm:p-10 md:p-12 shadow-sm"
+            className="flex flex-shrink-0 w-full snap-center frosted-card-light rounded-[28px] p-5 sm:p-8 md:p-9 shadow-sm"
           >
-            {/* Two columns while the right side has something to carry: a
-                results panel with figures in it, or one of the two photographs
-                she sent for the named studies. With every figure withheld and no
-                picture the panel is three short lines, so the right column ended
-                well above the left and the card looked unfinished. Those cards
-                run in one column and end level. PENDING-COPY 1i. */}
-            <div
-              className={
-                study.results.some((r) => r.figure) || study.photo
-                  ? "flex flex-col gap-8 lg:grid lg:grid-cols-12 lg:gap-12 items-start"
-                  : "flex flex-col gap-8"
-              }
-            >
-              {/* Left Column: Challenge & The Pivot */}
+            {/* ONE COLUMN OF ARGUMENT, THE PICTURE BESIDE IT.
+
+                Until 28 August the results panel sat in the right column under
+                the photograph, so the left column stopped at the button while
+                the right ran on. The card took the taller side and half of it
+                was empty: on the Nurture card that was most of the left half.
+
+                Now the copy and the results are both in the left column, in
+                reading order, and the picture is alone on the right where it
+                spans both of them. Cards with no picture use the same order in
+                one column, so every card reads the same way. PENDING-COPY 1i. */}
+            <div className="grid h-full gap-5 sm:gap-6 lg:grid-cols-12 lg:gap-10">
+              {/* The argument. */}
               <div
-                className={
-                  study.results.some((r) => r.figure) || study.photo
-                    ? "lg:col-span-7 space-y-7"
-                    : "space-y-7"
-                }
+                className={`space-y-5 ${study.photo ? "lg:col-span-7 lg:col-start-1 lg:row-start-1" : "lg:col-span-12"}`}
               >
                 <div>
                   <span className="mb-2 inline-flex items-center px-3 py-1 rounded-xl bg-forest/5 text-xs font-bold tracking-wider text-forest uppercase">
                     Case Study {i + 1}
                   </span>
-                  <SubHeading className="text-2xl font-extrabold text-forest md:text-3xl mt-2">
+                  <SubHeading className="text-2xl font-extrabold text-forest md:text-3xl mt-1.5">
                     {study.sector}
                   </SubHeading>
                   {study.subtitle && (
                     <p className="mt-1 text-sm font-bold text-mid sm:text-base">{study.subtitle}</p>
                   )}
                   {study.headline && (
-                    <p className="mt-3 text-lg font-bold leading-snug text-forest/85 sm:text-xl">
+                    <p className="mt-2 text-lg font-bold leading-snug text-forest/85 sm:text-xl">
                       {study.headline}
                     </p>
                   )}
                   {/* Who delivered it, where that is not the consulting
                       engagement the other cards describe. */}
                   {study.attribution && (
-                    <p className="mt-3 text-xs font-bold tracking-[0.14em] text-mid uppercase">
+                    <p className="mt-2 text-xs font-bold tracking-[0.14em] text-mid uppercase">
                       {study.attribution}
                     </p>
                   )}
                 </div>
 
                 <div>
-                  <h4 className="mb-2 font-bold text-forest text-base sm:text-lg">The challenge</h4>
+                  <h4 className="mb-1.5 font-bold text-forest text-base sm:text-lg">The challenge</h4>
                   <p className="leading-relaxed text-neutral-600 text-sm sm:text-base">{study.challenge}</p>
                 </div>
 
                 <div>
-                  <h4 className="mb-2 font-bold text-forest text-base sm:text-lg">The pivot</h4>
-                  <p className="mb-3 leading-relaxed text-neutral-700 font-medium text-sm sm:text-base">
+                  <h4 className="mb-1.5 font-bold text-forest text-base sm:text-lg">The pivot</h4>
+                  <p className="mb-2 leading-relaxed text-neutral-700 font-medium text-sm sm:text-base">
                     {study.pivotLead}
                   </p>
-                  <ul className="space-y-2 text-sm sm:text-base text-neutral-600">
+                  <ul className="space-y-1.5 text-sm sm:text-base text-neutral-600">
                     {study.pivot.map((point) => (
                       <li key={point} className="flex items-start">
                         <span className="text-mid font-bold mr-2.5">•</span>
@@ -218,62 +213,68 @@ export default function CaseStudies({
                 )}
               </div>
 
-              {/* Right Column: her photograph, where there is one, then the results. */}
-              <div
-                className={
-                  study.results.some((r) => r.figure) || study.photo
-                    ? "w-full space-y-6 lg:col-span-5"
-                    : "w-full space-y-6"
-                }
-              >
-                {study.photo && (
+              {/* The picture, alone on the right, spanning both rows so it
+                  never sets the card's height on its own. Capped: the Nurture
+                  screenshot is a phone at 738x1600, which unbounded made the
+                  card taller than everything in it. */}
+              {study.photo && (
+                <div className="relative lg:col-span-5 lg:col-start-8 lg:row-span-2 lg:row-start-1 lg:self-stretch">
                   <Image
                     src={study.photo.src}
                     alt={study.photo.alt}
                     width={study.photo.width}
                     height={study.photo.height}
                     sizes="(min-width: 1024px) 34vw, 92vw"
-                    className="w-full rounded-2xl border border-forest/15 object-cover shadow-sm"
+                    // Absolute from lg up, so the picture fills the height the
+                    // argument sets rather than setting it. With h-full alone the
+                    // 738x1600 phone screenshot pushed the card from 932 to 1110.
+                    className="max-h-[300px] w-full rounded-2xl border border-forest/15 object-cover object-top shadow-sm sm:max-h-[380px] lg:absolute lg:inset-0 lg:h-full lg:max-h-none"
                   />
-                )}
-              <div
-                className="w-full rounded-2xl bg-forest p-6 sm:p-8 text-white shadow-xl border border-white/10 relative overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
-                <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-4 border-b border-white/15 pb-3">
-                    <h4 className="font-bold text-neon text-sm sm:text-base uppercase tracking-wider">
-                      The Results
-                    </h4>
-                    {/* "Verified" is only true of a figure the master table
-                        carries. On a card whose figures are all withheld it was
-                        asserting the opposite of the truth, so it renders only
-                        when the card actually publishes one. */}
-                    {study.results.some((r) => r.figure) ? (
-                    <span className="text-xs font-semibold text-white/60">Verified</span>
-                    ) : null}
-                  </div>
-
-                  <ul className="space-y-4">
-                    {study.results.map((result) => (
-                      <li key={result.label} className="flex items-start text-sm sm:text-base font-medium text-white/95 leading-snug">
-                        <span aria-hidden="true" className="mr-3 mt-0.5 font-bold text-neon text-base leading-none">
-                          ✓
-                        </span>
-                        {/* The figure is withheld where it is not in the section 9
-                            master table. The claim still renders, so the case study
-                            reads as a result awaiting a number rather than as nothing. */}
-                        <span>
-                          {result.figure ? (
-                            <strong className="font-extrabold text-neon">{result.figure} </strong>
-                          ) : null}
-                          {result.label}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
-              </div>
+              )}
+
+              {/* The results, under the argument they belong to. The row is
+                  pushed to the bottom so a short card does not leave the gap
+                  between the button and the panel. */}
+              <div
+                className={`w-full self-end ${study.photo ? "lg:col-span-7 lg:col-start-1 lg:row-start-2" : "lg:col-span-12"}`}
+              >
+                <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-forest p-5 text-white shadow-xl sm:p-6">
+                  <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
+                  <div className="relative z-10">
+                    <div className="mb-3 flex items-center justify-between border-b border-white/15 pb-2.5">
+                      <h4 className="font-bold text-neon text-sm uppercase tracking-wider sm:text-base">
+                        The Results
+                      </h4>
+                      {/* "Verified" is only true of a figure the master table
+                          carries. On a card whose figures are all withheld it was
+                          asserting the opposite of the truth, so it renders only
+                          when the card actually publishes one. */}
+                      {study.results.some((r) => r.figure) ? (
+                        <span className="text-xs font-semibold text-white/60">Verified</span>
+                      ) : null}
+                    </div>
+
+                    <ul className="space-y-2.5">
+                      {study.results.map((result) => (
+                        <li key={result.label} className="flex items-start text-sm font-medium leading-snug text-white/95">
+                          <span aria-hidden="true" className="mr-3 mt-0.5 font-bold text-neon text-base leading-none">
+                            ✓
+                          </span>
+                          {/* The figure is withheld where it is not in the section 9
+                              master table. The claim still renders, so the case study
+                              reads as a result awaiting a number rather than as nothing. */}
+                          <span>
+                            {result.figure ? (
+                              <strong className="font-extrabold text-neon">{result.figure} </strong>
+                            ) : null}
+                            {result.label}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </li>
