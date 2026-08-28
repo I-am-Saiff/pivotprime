@@ -2244,3 +2244,59 @@ card and nothing else moves.
 
 Card 6, bespoke builds, still has no figure from anyone and still does not
 render, per spec 3.4's "Do not launch this card with a placeholder."
+
+---
+
+## 1an. The homepage now publishes a fee, a percentage and the formula — **for Iram**
+
+**What is on the page.** A slider in the fees section. You move it to the saving
+or gain agreed with the client, anywhere from AED 100,000 to AED 2,000,000, and
+it shows two figures:
+
+- **The fixed element, AED 20,000**, which does not change.
+- **The results element, 10 to 20% of the slider value.** At AED 400,000 that
+  reads AED 40,000 to 80,000.
+
+Under it: "The fixed element covers the work. The results element is only earned
+if the agreed number moves."
+
+**What it overrides.** Two instructions in your own document, each of which bars
+it on its own:
+
+- Spec section 1: "One price only appears on the site: the Operational Clarity
+  Audit floor. No other figure and no upper limit appears anywhere."
+- Spec 3.10: "Do not publish a specific percentage or a formula here."
+
+The slider publishes a second price, an upper limit, a percentage and the
+arithmetic that joins them.
+
+**Authority.** Your verbal instruction on 28 August 2026. **Pending your written
+confirmation.** Nothing else on the site was changed to match it.
+
+**How to undo it.** The whole block is `src/components/FeeCalculator.tsx`. The
+range, the step, the default, the fixed element and the two percentages are five
+constants at the top of that file. Removing the component from the homepage
+leaves the fees section exactly as it was.
+
+---
+
+## 1ao. AED 20,000 and AED 15,000 are both on the site and cannot both be right — **for Iram**
+
+The new fixed element is **AED 20,000**. The Operational Clarity Audit floor is
+**AED 15,000**, and it is still stated in five places:
+
+| Where | How it reads |
+| --- | --- |
+| Homepage, fees section answer line | "The Operational Clarity Audit starts at AED 15,000" |
+| `/services` | "From AED 15,000" on the audit card |
+| `/services/operational-clarity-audit` | "From AED 15,000", and in the page's search description |
+| `/for-founders` | "Through an Operational Clarity Audit. From AED 15,000." |
+| `/for-smes` | "Through an Operational Clarity Audit. From AED 15,000." |
+
+A reader moving between the homepage and any service page sees two different
+starting prices for what looks like the same thing. **Nothing has been changed.**
+Which of the two is correct, and whether they describe the same fee at all, is
+yours to settle. Once you say, it is a one-line edit in each place.
+
+Authority for publishing AED 20,000 while AED 15,000 stands: your verbal
+instruction on 28 August 2026, pending written confirmation. See [1an](#1an).

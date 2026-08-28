@@ -417,6 +417,22 @@ const DECISIONS = [
       return null;
     },
   },
+  {
+    what: "the fee calculator's default state is server-rendered, so the figures are not blank without JavaScript",
+    where: "PENDING-COPY 1an",
+    run: async (get) => {
+      const html = await (await get("/")).text();
+      // Each figure is one string in the component precisely so this can find
+      // it. JSX interpolation splits "AED {value}" into two text nodes with a
+      // comment between them, which no grep for the whole figure can match.
+      for (const needed of ["AED 400,000", "AED 20,000", "AED 40,000 to 80,000"]) {
+        if (!html.includes(needed)) {
+          return `"${needed}" is not in the served HTML, so the calculator renders blank without JavaScript`;
+        }
+      }
+      return null;
+    },
+  },
 ];
 
 

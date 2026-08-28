@@ -17,6 +17,7 @@ import ServiceCards from "@/components/ServiceCards";
 import PatternsList from "@/components/PatternsList";
 import CaseStudies from "@/components/CaseStudies";
 import PersonaSwitcher from "@/components/PersonaSwitcher";
+import FeeCalculator from "@/components/FeeCalculator";
 import KpiCards from "@/components/KpiCards";
 import type { Metadata } from "next";
 import { pageMetadata } from "@/content/metadata";
@@ -349,9 +350,9 @@ export default function Home() {
       {/* 3.10 How we are paid. Dark card treatment — the performance-linked
           model is a differentiator and deserves visual weight. No percentage
           or formula published per spec 3.10. */}
-      <section className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8 surface-page">
+      <section className="px-4 py-12 sm:px-6 sm:py-16 lg:px-8 surface-page">
         <div className="mx-auto max-w-6xl">
-          <div className="relative overflow-hidden rounded-3xl bg-forest px-6 py-12 sm:px-10 sm:py-16 md:px-16 md:py-20">
+          <div className="relative overflow-hidden rounded-3xl bg-forest px-5 py-8 sm:px-10 sm:py-12 md:px-14 md:py-14">
             {/* Dot-grid texture */}
             <div
               aria-hidden="true"
@@ -363,54 +364,63 @@ export default function Home() {
                 contrast, and the commitment band. Everything that explained the
                 model at length is gone, which is what "minimal" meant. */}
             <div className="relative z-10">
-              <span className="mb-4 block text-xs font-bold tracking-[0.22em] text-neon uppercase">Our fees</span>
-              <div className="mb-6 h-[3px] w-10 rounded-full bg-neon" aria-hidden="true" />
+              <span className="mb-3 block text-xs font-bold tracking-[0.22em] text-neon uppercase">Our fees</span>
+              <div className="mb-4 h-[3px] w-10 rounded-full bg-neon" aria-hidden="true" />
 
-              <h2 className="max-w-2xl text-3xl font-extrabold leading-[1.1] tracking-tight text-white md:text-5xl">
+              <h2 className="max-w-2xl text-2xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-3xl md:text-4xl">
                 {HOW_WE_ARE_PAID.mockupHeading}
               </h2>
-              <p className="mt-4 max-w-2xl text-lg font-semibold leading-snug text-neon">
+              <p className="mt-3 max-w-2xl text-base font-semibold leading-snug text-neon sm:text-lg">
                 {HOW_WE_ARE_PAID.lead}
               </p>
 
-              <div className="mt-10 grid items-start gap-4 md:grid-cols-2">
-                <div className="rounded-2xl border border-white/12 bg-white/[0.04] p-6 sm:p-7">
-                  <p className="text-[11px] font-bold tracking-[0.18em] text-white/50 uppercase">
+              <div className="mt-5 grid items-start gap-3 md:grid-cols-2">
+                {/* White against green: the contrast between the two models is
+                    the point of the pair, so the cards do not share a treatment. */}
+                <div className="rounded-2xl bg-shell p-5 sm:p-6">
+                  <p className="text-[11px] font-bold tracking-[0.18em] text-forest/55 uppercase">
                     {HOW_WE_ARE_PAID.contrast.traditional.label}
                   </p>
-                  <h3 className="mt-3 text-lg font-bold text-white/85">
+                  <h3 className="mt-2 text-base font-bold text-forest sm:text-lg">
                     {HOW_WE_ARE_PAID.contrast.traditional.headline}
                   </h3>
-                  <p className="mt-3 text-base leading-relaxed text-white/70">
+                  <p className="mt-2 text-sm leading-relaxed text-forest/70 sm:text-base">
                     {HOW_WE_ARE_PAID.contrast.traditional.body[0]}
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-neon/30 bg-neon/[0.07] p-6 sm:p-7">
+                <div className="rounded-2xl border border-neon/30 bg-neon/[0.07] p-5 sm:p-6">
                   <p className="text-[11px] font-bold tracking-[0.18em] text-neon uppercase">
                     {HOW_WE_ARE_PAID.contrast.pivotPrime.label}
                   </p>
-                  <dl className="mt-4 space-y-4">
+                  <dl className="mt-3 space-y-3">
                     {HOW_WE_ARE_PAID.contrast.pivotPrime.rows.map((row) => (
                       <div key={row.label}>
                         <dt className="text-[11px] font-bold tracking-[0.16em] text-neon uppercase">
                           {row.label}
                         </dt>
-                        <dd className="mt-1 text-sm leading-relaxed text-white/85">{row.value}</dd>
+                        <dd className="mt-1 text-[13px] leading-relaxed text-white/85 sm:text-sm">{row.value}</dd>
                       </div>
                     ))}
                   </dl>
                 </div>
               </div>
 
-              {/* Her bottom band, verbatim. It is the section in one sentence. */}
-              <div className="mt-8 rounded-2xl bg-forest/60 px-6 py-6 text-center ring-1 ring-neon/25 sm:px-10">
-                <p className="text-lg font-bold leading-snug text-white sm:text-xl">
-                  {HOW_WE_ARE_PAID.commitment.body}
-                </p>
-                <p className="mt-3 text-[11px] font-bold tracking-[0.2em] text-neon uppercase">
-                  Performance linked fee
-                </p>
+              {/* The calculator and her commitment band share a row from md up,
+                  so the section carries the new block without growing.
+                  PENDING-COPY 1an. */}
+              <div className="mt-3 grid items-stretch gap-3 md:grid-cols-[1.4fr_1fr]">
+                <FeeCalculator />
+
+                {/* Her bottom band, verbatim. It is the section in one sentence. */}
+                <div className="flex flex-col justify-center rounded-2xl bg-forest/60 px-5 py-4 text-center ring-1 ring-neon/25 sm:px-6">
+                  <p className="text-[15px] font-bold leading-snug text-white sm:text-lg">
+                    {HOW_WE_ARE_PAID.commitment.body}
+                  </p>
+                  <p className="mt-1.5 text-[11px] font-bold tracking-[0.2em] text-neon uppercase">
+                    Performance linked fee
+                  </p>
+                </div>
               </div>
             </div>
           </div>
