@@ -287,12 +287,16 @@ export default function Home() {
                 </p>
               ))}
             </div>
+            {/* A solid button on the navbar's shape language, not a bare text
+                link: 12px radius, neon fill, forest text, the header CTA's
+                padding scale. The other homepage arrow link, "More case
+                studies", already carries it. */}
             <Link
               href={FOUNDER.ctaHref}
-              className="mt-8 inline-flex items-center text-sm font-bold text-forest uppercase hover:text-mid"
+              className="mt-8 inline-flex items-center justify-center rounded-xl bg-neon px-5 py-2.5 font-sans text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
             >
               {FOUNDER.ctaLabel}
-              <span aria-hidden="true" className="ml-2 text-lg leading-none">
+              <span aria-hidden="true" className="ml-2 text-base leading-none">
                 &rarr;
               </span>
             </Link>
@@ -329,7 +333,7 @@ export default function Home() {
           <div className="mt-12 text-center">
             <Link
               href="/about#case-studies"
-              className="inline-flex items-center justify-center rounded-xl bg-neon px-8 py-4 font-sans text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
+              className="inline-flex items-center justify-center rounded-xl bg-neon px-5 py-2.5 font-sans text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
             >
               More case studies
               <span aria-hidden="true" className="ml-2 text-base leading-none">

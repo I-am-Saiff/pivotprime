@@ -81,6 +81,15 @@ export type CaseStudy = {
    * read. PENDING-COPY 1y.
    */
   photo?: { src: string; alt: string; width: number; height: number };
+  /**
+   * One line saying who in the business delivered it, where that is not the
+   * consulting engagement the other studies describe. Nurture is our technology
+   * team's own product work, and a card that reads like the others would imply
+   * an advisory engagement that did not happen. PENDING-COPY 1ap.
+   */
+  attribution?: string;
+  /** An outbound link to the live product, where one exists. */
+  link?: { href: string; label: string };
   challenge: string;
   pivotLead: string;
   pivot: string[];
@@ -88,6 +97,50 @@ export type CaseStudy = {
 };
 
 export const CASE_STUDIES: CaseStudy[] = [
+  /**
+   * CASE STUDY 1, NURTURE. Added 28 August on the client's instruction, placed
+   * ahead of Cinnacare everywhere case studies appear.
+   *
+   * THIS ONE IS OURS, NOT AN ENGAGEMENT. Nurture is a product our technology
+   * team built. The other studies describe consulting work for a client, and a
+   * card written the same way would imply an advisory engagement that never
+   * happened, so `attribution` says plainly who delivered it.
+   *
+   * EVERY FACT BELOW COMES FROM nurtureuae.com AND NOTHING ELSE. In particular:
+   * the site's app store buttons are placeholders, so nothing here says the app
+   * is downloadable or listed.
+   *
+   * NO FIGURES. Not withheld pending the section 9 table like the others:
+   * nobody has produced a verified number for this product at all, so the
+   * results are capability statements. PENDING-COPY 1aq.
+   *
+   * PERMISSION IS NOT YET IN WRITING. Naming the app and using its screenshot
+   * are pending Kieran's confirmation. PENDING-COPY 1ap.
+   */
+  {
+    id: "nurture",
+    headline: "A childcare app where the household actually shares the day",
+    sector: "Nurture",
+    subtitle: "Childcare technology \u00b7 UAE",
+    attribution: "Built by our technology team.",
+    link: { href: "https://nurtureuae.com", label: "View the product" },
+    challenge:
+      "In a UAE household the people caring for a child are rarely all in the same place, and often do not share a first language. Parents, nannies and drivers each hold part of the day, and none of them holds the whole of it.",
+    pivotLead: "We built one place where the whole household sees the same day.",
+    pivot: [
+      "Real-time daily care logs for feeds, naps and nappies",
+      "Instant messaging with one-tap translation across six languages",
+      "Photo and video sharing to a shared family timeline",
+      "Role-based access, so parents, nannies and drivers each see only what they should",
+    ],
+    results: [
+      { figure: null, label: "An activities hub with age-appropriate developmental guides" },
+      { figure: null, label: "AI meal planning, with a caregiver cookbook alongside it" },
+      { figure: null, label: "Nurture Academy, carrying certified early-childhood courses" },
+      { figure: null, label: "Child development tracking across the household" },
+      { figure: null, label: "Built to UAE PDPL, encrypted in transit, with hashed PINs" },
+    ],
+  },
   /**
    * CASE STUDY 1 AND 2, named, from pp-case-studies.html of 22 August.
    *

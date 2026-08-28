@@ -174,6 +174,13 @@ export default function CaseStudies({
                       {study.headline}
                     </p>
                   )}
+                  {/* Who delivered it, where that is not the consulting
+                      engagement the other cards describe. */}
+                  {study.attribution && (
+                    <p className="mt-3 text-xs font-bold tracking-[0.14em] text-mid uppercase">
+                      {study.attribution}
+                    </p>
+                  )}
                 </div>
 
                 <div>
@@ -195,6 +202,20 @@ export default function CaseStudies({
                     ))}
                   </ul>
                 </div>
+
+                {study.link && (
+                  <a
+                    href={study.link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-xl bg-neon px-5 py-2.5 font-sans text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
+                  >
+                    {study.link.label}
+                    <span aria-hidden="true" className="ml-2 text-base leading-none">
+                      &rarr;
+                    </span>
+                  </a>
+                )}
               </div>
 
               {/* Right Column: her photograph, where there is one, then the results. */}

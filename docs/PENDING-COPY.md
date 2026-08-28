@@ -2300,3 +2300,50 @@ yours to settle. Once you say, it is a one-line edit in each place.
 
 Authority for publishing AED 20,000 while AED 15,000 stands: your verbal
 instruction on 28 August 2026, pending written confirmation. See [1an](#1an).
+
+---
+
+## 1ap. Nurture is our own product, published in your case studies — **for Iram, and pending Kieran**
+
+**What is on the site.** A new case study, Nurture, placed first on the homepage
+and on `/about`, ahead of Cinnacare. It describes a UAE childcare app: shared
+daily care logs, translated messaging, a family timeline, role-based access for
+parents, nannies and drivers.
+
+**Two things about it are different from every other card.**
+
+1. **It is not a consulting engagement.** Nurture is a product our own
+   technology team built. Written like the other studies it would read as
+   advisory work done for a client, which is not what happened. The card
+   therefore carries one line — "Built by our technology team." — directly under
+   the headline. Nothing on it claims a Pivot Prime engagement.
+2. **Permission is not yet in writing.** Naming the app, describing it, linking
+   to nurtureuae.com and using its screenshot are all pending **Kieran's written
+   confirmation**. It is live now on the verbal go-ahead of 28 August 2026.
+
+**What it deliberately does not say.** It does not say the app is downloadable
+or listed on any app store. Nurture's own site currently uses placeholder store
+links, so no availability claim can be supported. Every fact on the card comes
+from nurtureuae.com and nowhere else.
+
+**How to undo it.** The whole study is one entry at the top of
+`CASE_STUDIES` in `src/content/case-studies.ts`. Deleting that entry removes it
+from both places and renumbers the rest automatically.
+
+---
+
+## 1aq. Nurture carries no figures at all, and why that is a different reason from the others — **for Iram**
+
+Every other case study shows results with the number withheld: the claim is
+written out, and the figure waits for the Section 9 master table to be settled.
+Nurture is not that case. **No number has been produced for it by anyone.**
+
+So its five result lines are capability statements rather than results awaiting
+a figure: the activities hub, the AI meal planning and caregiver cookbook,
+Nurture Academy, development tracking, and the PDPL and encryption position.
+Each is a true statement about what the product does, and none of them implies a
+measurement.
+
+If verified numbers for Nurture exist, send them and they go in the same slot the
+other cards use. Until then the card claims capability and not outcome, which is
+the only honest form it can take.

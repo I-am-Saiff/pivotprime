@@ -689,6 +689,14 @@
       "why": "Written during the rebuild. AUTHORED IN FULL, label and sentence. Named as a capability by Saif on 26 August; spec 4.4 covers websites but says nothing about mobile. PENDING-COPY 1al.",
       "route": "/services/technology-builds",
       "element": "h3"
+    },
+    {
+      "text": "View the product\u2192",
+      "status": "traced",
+      "kind": "authored",
+      "why": "The outbound link on the Nurture case study, added 28 August 2026 on the client's instruction. Labelled to view the product rather than to download it, because nurtureuae.com currently uses placeholder app store links and no availability claim can be supported. PENDING-COPY 1ap.",
+      "route": "/",
+      "element": "link"
     }
   ]
 }
