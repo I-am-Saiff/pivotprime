@@ -13,7 +13,7 @@ import type { Metric } from "@/content/homepage";
  *
  * TWO DELIBERATE DEVIATIONS, both recorded in PENDING-COPY 1av:
  *
- *   1. Her "before" blocks on card two are amber, #c49040. The standing
+ *   1. Her "before" blocks on card two are amber. The standing
  *      instruction is that nothing in this section is brown or gold, so they are
  *      drawn in mid green at the same opacities. Her contrast survives as one
  *      hue at two weights.
@@ -93,7 +93,7 @@ function Track({ run }: { run: boolean }) {
           x={x as number}
           y="58"
           textAnchor="middle"
-          fill="var(--color-sand)"
+          fill="var(--color-linen)"
           fillOpacity="0.5"
           fontSize="7.5"
           letterSpacing="0.06em"
@@ -114,7 +114,7 @@ function Waste({ run }: { run: boolean }) {
   const before = [0, 25, 50, 75, 100, 125, 150, 175, 200, 225];
   return (
     <svg viewBox="0 0 252 80" width="100%" height="96" fill="none">
-      <text x="0" y="11" fill="var(--color-sand)" fillOpacity="0.55" fontSize="8" fontWeight="600" letterSpacing="0.1em">
+      <text x="0" y="11" fill="var(--color-linen)" fillOpacity="0.55" fontSize="8" fontWeight="600" letterSpacing="0.1em">
         BEFORE
       </text>
       {before.map((x, i) => (
@@ -172,19 +172,19 @@ function Dots({ run }: { run: boolean }) {
           return (
             <span
               key={i}
-              className={`aspect-square rounded-full ${lost ? "border-[1.5px] border-sand/45" : "bg-neon"}`}
+              className={`aspect-square rounded-full ${lost ? "border-[1.5px] border-linen/45" : "bg-neon"}`}
               style={{ opacity: run ? 1 : 0, transition: `opacity 200ms ${EASE} ${i * 26}ms` }}
             />
           );
         })}
       </div>
       <div className="flex gap-3">
-        <span className="flex items-center gap-[5px] text-[9.5px] text-sand/75">
+        <span className="flex items-center gap-[5px] text-[9.5px] text-linen/75">
           <span className="h-[7px] w-[7px] shrink-0 rounded-full bg-neon" />
           Retained
         </span>
-        <span className="flex items-center gap-[5px] text-[9.5px] text-sand/75">
-          <span className="h-[7px] w-[7px] shrink-0 rounded-full border-[1.5px] border-sand/45" />
+        <span className="flex items-center gap-[5px] text-[9.5px] text-linen/75">
+          <span className="h-[7px] w-[7px] shrink-0 rounded-full border-[1.5px] border-linen/45" />
           Churned
         </span>
       </div>
@@ -223,7 +223,7 @@ function Trend({ run }: { run: boolean }) {
           +27%
         </text>
       </g>
-      <text x="2" y="79" fill="var(--color-sand)" fillOpacity="0.35" fontSize="7.5">
+      <text x="2" y="79" fill="var(--color-linen)" fillOpacity="0.35" fontSize="7.5">
         0
       </text>
     </svg>
@@ -235,17 +235,17 @@ function Speed({ run }: { run: boolean }) {
   return (
     <div className="flex w-full flex-col gap-3.5">
       <div className="flex flex-col gap-[5px]">
-        <p className="text-[9px] font-semibold tracking-[0.1em] text-sand/70 uppercase">Before — KYC completion</p>
+        <p className="text-[9px] font-semibold tracking-[0.1em] text-linen/70 uppercase">Before — KYC completion</p>
         <div className="h-6 overflow-hidden rounded-[5px] bg-white/[0.04]">
           {/* Her amber "before" fill, drawn in the same green at the dim weight:
               this section carries no brown. PENDING-COPY 1av. */}
-          <div className="flex h-full w-full items-center rounded-[5px] border border-neon/25 bg-neon/[0.10] px-2.5 text-[10px] font-semibold whitespace-nowrap text-sand">
+          <div className="flex h-full w-full items-center rounded-[5px] border border-neon/25 bg-neon/[0.10] px-2.5 text-[10px] font-semibold whitespace-nowrap text-linen">
             10 days avg.
           </div>
         </div>
       </div>
       <div className="flex flex-col gap-[5px]">
-        <p className="text-[9px] font-semibold tracking-[0.1em] text-sand/70 uppercase">After — KYC completion</p>
+        <p className="text-[9px] font-semibold tracking-[0.1em] text-linen/70 uppercase">After — KYC completion</p>
         <div className="h-6 overflow-hidden rounded-[5px] bg-white/[0.04]">
           <div
             className="flex h-full items-center overflow-hidden rounded-[5px] bg-neon px-2.5 text-[10px] font-semibold whitespace-nowrap text-forest"

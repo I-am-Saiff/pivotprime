@@ -86,7 +86,7 @@ export default function Service5MarketEntry() {
                 return (
                   <div key={i} className="relative flex flex-col justify-end h-full">
                     <div 
-                      className={`rounded-t-sm md:rounded-t-md transition-all duration-[900ms] ease-[cubic-bezier(.6,.02,.2,1)] ${isDip ? "bg-[#af8943]" : "bg-[#009f50]"}`}
+                      className={`rounded-t-sm md:rounded-t-md transition-all duration-[900ms] ease-[cubic-bezier(.6,.02,.2,1)] ${isDip ? "bg-mid" : "bg-[#009f50]"}`}
                       style={{ height: `${h}%` }}
                     />
                     <div className="text-center font-sans font-semibold text-[8.5px] md:text-[10px] text-[#5e6f68] mt-2 tracking-[0.04em] absolute -bottom-6 left-0 right-0">
@@ -99,16 +99,16 @@ export default function Service5MarketEntry() {
 
             <div className="flex flex-wrap gap-3 mt-7 sm:mt-10 min-h-[60px]">
               <span className={`text-[12.5px] text-[#5e6f68] border border-[#e3eae6] rounded-full px-3.5 py-1.5 transition-all duration-[450ms] ${calMode === 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1.5 absolute pointer-events-none'}`}>
-                <b className="text-[#af8943] font-sans font-semibold">Ramadan</b> reshapes trading for a month
+                <b className="text-mid font-sans font-semibold">Ramadan</b> reshapes trading for a month
               </span>
               <span className={`text-[12.5px] text-[#5e6f68] border border-[#e3eae6] rounded-full px-3.5 py-1.5 transition-all duration-[450ms] delay-75 ${calMode === 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1.5 absolute pointer-events-none'}`}>
-                <b className="text-[#af8943] font-sans font-semibold">Summer</b> takes a large part of your customer base out of the country
+                <b className="text-mid font-sans font-semibold">Summer</b> takes a large part of your customer base out of the country
               </span>
               <span className={`text-[12.5px] text-[#5e6f68] border border-[#e3eae6] rounded-full px-3.5 py-1.5 transition-all duration-[450ms] delay-150 ${calMode === 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1.5 absolute pointer-events-none'}`}>
-                <b className="text-[#af8943] font-sans font-semibold">Heat</b> changes logistics, storage and footfall for half the year
+                <b className="text-mid font-sans font-semibold">Heat</b> changes logistics, storage and footfall for half the year
               </span>
               <span className={`text-[12.5px] text-[#5e6f68] border border-[#e3eae6] rounded-full px-3.5 py-1.5 transition-all duration-[450ms] delay-200 ${calMode === 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1.5 absolute pointer-events-none'}`}>
-                <b className="text-[#af8943] font-sans font-semibold">Q4</b> has to carry what the rest of the year cannot
+                <b className="text-mid font-sans font-semibold">Q4</b> has to carry what the rest of the year cannot
               </span>
             </div>
             

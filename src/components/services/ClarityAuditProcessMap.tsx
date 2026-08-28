@@ -82,7 +82,7 @@ export default function ClarityAuditProcessMap() {
                       key={idx}
                       d={`M${x1},${y1} Q${mx},${(y1 + y2) / 2 - bend} ${x2},${y2}`}
                       fill="none"
-                      stroke={warn ? "#e0a08c" : "#c8d9d0"}
+                      stroke={warn ? "#5e6f68" : "#c8d9d0"}
                       strokeWidth="1.6"
                       strokeDasharray={warn ? "4 4" : "none"}
                       className="transition-all duration-700 ease-in-out"
@@ -107,7 +107,7 @@ export default function ClarityAuditProcessMap() {
                   <div
                     key={i}
                     className={`absolute w-[74px] h-[34px] rounded-lg border flex items-center justify-center font-sans font-semibold text-[10.5px] transition-all duration-700 ease-in-out z-10
-                      ${isDead ? "surface-page border-[#e8c4ba] text-[#9c4f3a]" : "surface-page border-[#e3eae6] text-[#013325]"}
+                      ${isDead ? "surface-page border-forest/25 text-forest/55" : "surface-page border-[#e3eae6] text-[#013325]"}
                     `}
                     style={{ left: `${s.x}%`, top: `${s.y}%`, transform: "translate(-50%, -50%)" }}
                   >

@@ -1,5 +1,6 @@
 "use client";
 
+import { INDUSTRIES } from "@/content/industries";
 import { useState } from "react";
 import { ENQUIRY_SUBMIT_CTA } from "@/content/cta";
 
@@ -36,6 +37,7 @@ export default function EnquiryForm({
   );
   const [error, setError] = useState<string | null>(initialError ?? null);
   const [message, setMessage] = useState(prefilledMessage);
+  const [industry, setIndustry] = useState("");
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -120,6 +122,49 @@ export default function EnquiryForm({
           required
           autoComplete="email"
           placeholder="you@company.com"
+          className="w-full rounded-xl border border-neutral-200 card-dark px-4 py-3.5 text-sm transition-all placeholder:text-neutral-400 focus:border-neon focus:ring-2 focus:ring-neon/30 focus:outline-none"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="industry" className="mb-1.5 block text-xs font-bold uppercase tracking-wider text-neutral-600">
+          Industry
+        </label>
+        {/* A native select with `required`, so the no-JavaScript path is the
+            same path: the browser blocks an empty submit, and if it does not,
+            the server rejects it with the same error pattern as every other
+            field. `industry` is state only so the Other box can appear; nothing
+            about the value depends on JavaScript running. */}
+        <select
+          id="industry"
+          name="industry"
+          required
+          value={industry}
+          onChange={(e) => setIndustry(e.target.value)}
+          className="w-full rounded-xl border border-neutral-200 card-dark px-4 py-3.5 text-sm transition-all focus:border-neon focus:ring-2 focus:ring-neon/30 focus:outline-none"
+        >
+          <option value="">Select your industry</option>
+          {INDUSTRIES.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* Rendered always, hidden with the `hidden` attribute rather than by
+          being absent, so it is in the served HTML. `required` is on it only
+          while Other is chosen, which is also what the server enforces. */}
+      <div hidden={industry !== "Other"}>
+        <label htmlFor="industryOther" className="mb-1.5 block text-xs font-bold uppercase tracking-wider text-neutral-600">
+          Which industry?
+        </label>
+        <input
+          id="industryOther"
+          name="industryOther"
+          type="text"
+          required={industry === "Other"}
+          placeholder="Tell us in a few words"
           className="w-full rounded-xl border border-neutral-200 card-dark px-4 py-3.5 text-sm transition-all placeholder:text-neutral-400 focus:border-neon focus:ring-2 focus:ring-neon/30 focus:outline-none"
         />
       </div>

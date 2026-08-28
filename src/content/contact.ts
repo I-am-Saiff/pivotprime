@@ -11,5 +11,8 @@
  */
 export const CONTACT_PAGE = {
   standfirst:
-    "Name and email is enough to start. We reply with a first read on your bottleneck and a time to talk it through, with no pitch deck.",
+    // 28 August: industry became required, so the old line, "Name and email is
+    // enough to start", was no longer true. Rewritten to the shortest honest
+    // version of the same promise. Authored, logged in PENDING-COPY 1aw.
+    "Three fields is enough to start. We reply with a first read on your bottleneck and a time to talk it through, with no pitch deck.",
 };

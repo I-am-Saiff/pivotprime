@@ -2816,3 +2816,44 @@ at once rather than one every two and a half seconds.
 **KYC figures.** Your Transaction Speed card publishes "10 days avg." and
 "3 days". They are in your design file, so they are on the page, on the same
 authority as [1am](#1am): your file overrides the Section 9 table.
+
+---
+
+## 1aw. Industry is now a required field on the contact form — **for Iram**
+
+**What changed.** A required Industry dropdown sits between Work email and the
+message box, with fourteen options: Insurance, Financial services, Fintech,
+Retail and consumer goods, Wellness and healthcare, Fragrance and beauty,
+Logistics and supply chain, Real estate and construction, Professional services,
+Technology and SaaS, Manufacturing, Hospitality, Education, Other. Choosing
+Other reveals a short text box, which is then required too.
+
+The industry appears in the enquiry email, in its subject line, and in the
+autoresponder the sender receives.
+
+**One line of copy changed.** The contact standfirst said "Name and email is
+enough to start", which stopped being true. It now reads **"Three fields is
+enough to start."** The rest of the sentence is unchanged. That half-sentence is
+ours, not the spec's, so replace it if you would put it differently.
+
+---
+
+## 1ax. No gold or tan anywhere, and the build now enforces it — **for Iram**
+
+Gold had come back twice: as the small heading colour on the Operational Clarity
+Audit page and as the "before" tint on comparison panels. Every warm value has
+been removed site-wide and replaced with palette greens or neutrals.
+
+**Two of your ten swatch values are now deliberately not tokens at all:**
+`#9f7a3d` and `#e8d7b5`. They are in your swatch and we do not use either, so
+rather than leave them defined and rely on nobody reaching for them, they are
+gone and the palette guard fails the build on any use of them.
+
+`scripts/lint-palette.mjs` now rejects any gold or tan hex anywhere in the code,
+including in the files the older rule skipped — which is where both relapses
+happened. It matches by closeness to the known values and by shape, restricted to
+the yellow-orange band so a terracotta warning colour is not mistaken for gold.
+
+**Also on that page:** the "What we look at" and "What you get" columns are a
+comparison pair, so they now follow the site rule — white on the left, green on
+the right. They were two unfilled columns with a gold heading each.

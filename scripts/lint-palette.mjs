@@ -68,7 +68,84 @@ const HEX = /(?<!&)#[0-9a-fA-F]{3,8}\b/g;
  * Add an entry here whenever a colour token is deleted, so a stale reference
  * fails the build instead of quietly rendering nothing.
  */
+/**
+ * GOLD AND TAN, BANNED OUTRIGHT.
+ *
+ * Two of the client's ten swatch values are warm: #9f7a3d and #e8d7b5. Neither
+ * is used. The instruction of 28 August is that no gold or tan appears anywhere
+ * on the site, so they are not defined as tokens and any literal use of them is
+ * a build failure rather than a review comment.
+ *
+ * This list is checked in EVERY file including the grandfathered ones and
+ * globals.css, because the point is that the value cannot come back at all, not
+ * that it cannot come back in files we have already tokenised. Gold has now
+ * returned twice: once as an eyebrow colour on the audit page and once as the
+ * "before" tint on a comparison panel, both times inside grandfathered files
+ * that the ordinary hex rule skips.
+ *
+ * `near` is the tolerance in RGB distance. An exact-match list would miss the
+ * next slightly different amber somebody types.
+ */
+const BANNED_WARM = [
+  { hex: "#9f7a3d", why: "her bronze, in the swatch and unused" },
+  { hex: "#e8d7b5", why: "her sand, in the swatch and unused" },
+  { hex: "#c8af50", why: "gold" },
+  { hex: "#c49040", why: "the amber on her KPI mockup's before blocks" },
+  { hex: "#af8943", why: "the gold eyebrow that kept coming back" },
+  { hex: "#6b5a3c", why: "the warm brown body colour on the audit page" },
+];
+
+/** How far from a banned value still counts as that value. */
+const WARM_TOLERANCE = 22;
+
+function rgb(hex) {
+  const h = hex.replace("#", "");
+  const full = h.length === 3 ? h.split("").map((c) => c + c).join("") : h.slice(0, 6);
+  return [0, 2, 4].map((i) => parseInt(full.slice(i, i + 2), 16));
+}
+
+/** Hue in degrees, 0 to 360. */
+function hue(r, g, b) {
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  if (max === min) return 0;
+  const d = max - min;
+  let h;
+  if (max === r) h = ((g - b) / d) % 6;
+  else if (max === g) h = (b - r) / d + 2;
+  else h = (r - g) / d + 4;
+  h *= 60;
+  return h < 0 ? h + 360 : h;
+}
+
+/**
+ * True for any colour that reads as gold or tan.
+ *
+ * TWO TESTS, AND THE SECOND IS HUE-BOUNDED ON PURPOSE. Distance alone, at a
+ * tolerance loose enough to catch a nearby amber, also caught #cfd9d4 (a cool
+ * grey-green) and #e8c4ba (a pale salmon). A red-over-green-over-blue shape test
+ * alone caught the terracotta the process map uses for its warning state, which
+ * is a warning colour rather than gold. So the shape test is confined to the
+ * yellow-orange band, 28 to 58 degrees, where gold, tan and amber actually sit.
+ */
+function isWarm(hex) {
+  const [r, g, b] = rgb(hex);
+  if ([r, g, b].some(Number.isNaN)) return false;
+  for (const banned of BANNED_WARM) {
+    const [br, bg, bb] = rgb(banned.hex);
+    if (Math.hypot(r - br, g - bg, b - bb) <= WARM_TOLERANCE) return banned;
+  }
+  const spread = Math.max(r, g, b) - Math.min(r, g, b);
+  const h = hue(r, g, b);
+  if (r > g && g > b && spread >= 40 && r >= 110 && h >= 28 && h <= 58) {
+    return { hex, why: "reads as gold or tan: yellow-orange hue, saturated" };
+  }
+  return null;
+}
+
 const REMOVED_TOKENS = [
+  { name: "sand", removedIn: "the 28 August gold sweep", use: "linen, or white alpha on dark" },
+  { name: "bronze", removedIn: "the 28 August gold sweep", use: "mid for an accent" },
   { name: "primary-dark", removedIn: "c04d14b", use: "hover:bg-mid/90 on light, hover:bg-neon/90 on dark" },
   { name: "dark", removedIn: "c04d14b", use: "forest, or foreground for text" },
   { name: "light", removedIn: "c04d14b", use: "background, or a neutral utility" },
@@ -108,9 +185,30 @@ function main() {
   const allow = loadAllowlist();
   const findings = [];
   const staleFindings = [];
+  const warmFindings = [];
 
   for (const file of walkFiles(SRC)) {
     const rel = relative(ROOT, file).split(sep).join("/");
+
+    // The warm-colour ban runs on every file, before the exemptions, because
+    // both times gold came back it came back inside an exempt one.
+    readFileSync(file, "utf8")
+      .split("\n")
+      .forEach((line, i) => {
+        if (/^\s*(\/\/|\*|\/\*)/.test(line)) return;
+        for (const hex of line.match(HEX) ?? []) {
+          const hit = isWarm(hex);
+          if (!hit) continue;
+          warmFindings.push({
+            file: rel,
+            line: i + 1,
+            hex,
+            why: hit.why,
+            text: line.trim().slice(0, 96),
+          });
+        }
+      });
+
     if (rel === TOKEN_SOURCE) continue;
     if (GRANDFATHERED.some((p) => rel.startsWith(p))) continue;
 
@@ -152,15 +250,26 @@ function main() {
     });
   }
 
-  if (findings.length === 0 && staleFindings.length === 0) {
+  if (findings.length === 0 && staleFindings.length === 0 && warmFindings.length === 0) {
     console.log("palette-lint: clean");
     return;
+  }
+
+  for (const f of warmFindings) {
+    console.error(`${f.file}:${f.line}  ${f.hex} is gold or tan — ${f.why}`);
+    console.error(`  ${f.text}`);
+    console.error(
+      `  No gold or tan appears anywhere on this site, by the client's instruction of ` +
+        `28 August 2026. Use mid or neon for an accent, linen or shell for a warm neutral, ` +
+        `or white alpha on dark. This rule runs on every file including the grandfathered ` +
+        `ones, because gold has come back twice inside those.`,
+    );
   }
 
   for (const f of findings) {
     console.error(`${f.rel}:${f.line}:${f.column}  raw hex ${f.hex}`);
     console.error(
-      `  use a palette token (forest, neon, mid, background, foreground, shell, mist, sand, bronze, linen), or derive from one ` +
+      `  use a palette token (forest, neon, mid, background, foreground, shell, mist, linen), or derive from one ` +
         `with white alpha as the mockups do. If this value is genuinely correct, add it to ` +
         `scripts/palette-allow.json with a reason.`,
     );
@@ -174,7 +283,7 @@ function main() {
     );
   }
 
-  const total = findings.length + staleFindings.length;
+  const total = findings.length + staleFindings.length + warmFindings.length;
   console.error(`\npalette-lint: ${total} problem${total === 1 ? "" : "s"}.`);
   process.exit(1);
 }

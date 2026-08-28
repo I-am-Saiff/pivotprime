@@ -15,7 +15,15 @@
   --color-background: #fefbf8;
   --color-foreground: #000000;
 
-  /* The five added by the client's swatch, slide 3 of Website Revisions 2208v1.
+  /* NOT DEFINED, DELIBERATELY: --color-sand and --color-bronze, her two warm
+     swatch values. Both are in her ten-swatch and neither is used. The hexes are
+     named in scripts/lint-palette.mjs and nowhere else, so this file does not
+     trip its own guard. The standing
+     instruction of 28 August is that no gold or tan appears anywhere on the
+     site, so they are not tokens at all rather than tokens nobody is supposed
+     to reach for. scripts/lint-palette.mjs fails the build on either value.
+
+     The five added by the client's swatch, slide 3 of Website Revisions 2208v1.
      Transcribed from the image, since the deck carries no text. The swatch's top
      row is identical to the five above, so nothing existing is redefined.
 
@@ -23,8 +31,6 @@
      else. Recorded in docs/PENDING-COPY.md so Iram can rename them. */
   --color-shell: #fefbf8;
   --color-mist: #e8f4ec;
-  --color-sand: #e8d7b5;
-  --color-bronze: #9f7a3d;
   --color-linen: #efeae0;
 
   /* Alias retained because bg-primary and text-primary are used site-wide.
@@ -110,16 +116,14 @@
     [class*="text-black"],
     [class*="text-[#0c1a15]"],
     [class*="text-[#013325]"],
-    [class*="text-[#5e6f68]"],
-    [class*="text-[#9c4f3a]"],
-    [class*="text-[#6b5a3c]"]
+    [class*="text-[#5e6f68]"]
   ) {
     color: #fff;
   }
-  .card-dark :where([class*="text-mid"], [class*="text-bronze"], [class*="text-[#af8943]"]) {
+  .card-dark :where([class*="text-mid"]) {
     color: var(--color-neon);
   }
-  .card-dark :where([class*="border-forest"], [class*="border-neutral"], [class*="border-gray"], [class*="border-[#e3eae6]"], [class*="border-[#cfd9d4]"], [class*="border-[#e8c4ba]"]) {
+  .card-dark :where([class*="border-forest"], [class*="border-neutral"], [class*="border-gray"], [class*="border-[#e3eae6]"], [class*="border-[#cfd9d4]"], [class*="border-forest"]) {
     border-color: rgba(255, 255, 255, 0.16);
   }
   .card-dark :where([class*="bg-forest/"], [class*="bg-neutral-"]) {

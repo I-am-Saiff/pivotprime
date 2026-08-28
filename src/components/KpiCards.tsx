@@ -76,7 +76,7 @@ export default function KpiCards() {
 
           <p className="mb-3.5 text-[12.5px] font-medium text-balance text-shell">{metric.label}</p>
 
-          <p className="mt-auto border-t border-neon/15 pt-3 text-[11px] leading-[1.6] text-sand/75">
+          <p className="mt-auto border-t border-neon/15 pt-3 text-[11px] leading-[1.6] text-linen/75">
             {metric.context}
           </p>
         </li>

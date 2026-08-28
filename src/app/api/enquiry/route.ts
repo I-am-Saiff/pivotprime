@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { z } from "zod";
+import { INDUSTRIES } from "@/content/industries";
 import { Resend } from "resend";
 
 /**
@@ -28,10 +29,25 @@ const EnquirySchema = z.object({
   // free-text box costs enquiries on the one page whose whole job is enquiries.
   // The spec sets the routing for this form (2.3) and says nothing about its
   // fields, so this is a product decision rather than a deviation.
+  /**
+   * Required, from 28 August. The one field on this form that is not about
+   * reaching the person back: it routes the enquiry before anyone reads it.
+   *
+   * `industryOther` is only required when "Other" is chosen, which is a rule
+   * about the pair rather than about either field, so it is a refinement on the
+   * object rather than a validator on the string. That also makes the
+   * no-JavaScript path correct for free: the select posts natively, and a blank
+   * "Other" box is rejected with the same message the browser would have shown.
+   */
+  industry: z.enum(INDUSTRIES, { message: "Choose the industry you are in" }),
+  industryOther: z.string().trim().max(120).optional().default(""),
   message: z.string().trim().max(5000).optional().default(""),
   // Bots fill hidden fields; people do not. Cheaper and more private than a
   // third-party captcha, and it never asks a real visitor to prove anything.
   company: z.string().max(0).optional(),
+}).refine((v) => v.industry !== "Other" || v.industryOther.length > 0, {
+  path: ["industryOther"],
+  message: "Tell us which industry you are in",
 });
 
 /** Fixed-window limit, per IP. In-memory: one instance, no store, by scope. */
@@ -103,7 +119,10 @@ export async function POST(request: NextRequest) {
   if (!parsed.success) {
     return fail(400, parsed.error.issues[0]?.message ?? "Check the form and try again.");
   }
-  const { name, email, message } = parsed.data;
+  const { name, email, message, industry, industryOther } = parsed.data;
+  // What goes in the emails: the free-text answer where they gave one, so
+  // nobody in the inbox has to open the form to find out what "Other" meant.
+  const industryLine = industry === "Other" ? `Other: ${industryOther}` : industry;
 
   // A missing key must never look like a delivered message.
   const apiKey = process.env.RESEND_API_KEY;
@@ -119,9 +138,10 @@ export async function POST(request: NextRequest) {
       from: FROM,
       to: TO,
       replyTo: email, // Spec 2.3: replies work directly from the inbox.
-      subject: `Website enquiry from ${name}`,
+      subject: `Website enquiry from ${name} — ${industryLine}`,
       html: `<p><strong>Name</strong><br>${escapeHtml(name)}</p>
 <p><strong>Email</strong><br><a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>
+<p><strong>Industry</strong><br>${escapeHtml(industryLine)}</p>
 ${
         message
           ? `<p><strong>Message</strong><br>${escapeHtml(message).replace(/\n/g, "<br>")}</p>`
@@ -143,6 +163,7 @@ ${
       subject: "We have your enquiry",
       html: `<p>Thank you for getting in touch with Pivot Prime.</p>
 <p>We have your enquiry and someone will reply within one working day. If it is urgent, WhatsApp is the fastest way to reach us.</p>
+<p>You told us your industry is <strong>${escapeHtml(industryLine)}</strong>.</p>
 ${
         message
           ? `<p>For reference, this is what you sent:</p>

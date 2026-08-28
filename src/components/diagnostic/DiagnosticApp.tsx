@@ -325,7 +325,7 @@ export default function DiagnosticApp() {
                     return (
                       <div key={globalIdx} id={`card${globalIdx}`} className={`card-dark border rounded-xl p-5 md:p-6 transition-colors ${a ? "border-[#cfe3d8]" : "border-[#e3eae6]"}`}>
                         <div className="flex gap-3 items-start mb-4">
-                          <div className="font-sans font-bold text-[11.5px] tracking-[0.14em] text-[#af8943] pt-1 w-7 shrink-0">
+                          <div className="font-sans font-bold text-[11.5px] tracking-[0.14em] text-mid pt-1 w-7 shrink-0">
                             {String(globalIdx + 1).padStart(2, '0')}
                           </div>
                           <div>
@@ -354,7 +354,7 @@ export default function DiagnosticApp() {
                               />
                               <span className={`block cursor-pointer text-[13.5px] px-3.5 py-2 border rounded-full select-none transition-all
                                 ${a?.oi === oi 
-                                  ? (o.na ? "bg-[#5e6f68] border-[#5e6f68] text-white" : o.dk ? "bg-[#af8943] border-[#af8943] text-white" : "bg-[#013325] border-[#013325] text-white") 
+                                  ? (o.na ? "bg-[#5e6f68] border-[#5e6f68] text-white" : o.dk ? "bg-mid border-mid text-white" : "bg-[#013325] border-[#013325] text-white") 
                                   : "surface-page border-[#e3eae6] text-[#0c1a15] hover:border-[#009f50] peer-focus-visible:ring-2 peer-focus-visible:ring-[#00d76d]"
                                 }
                               `}>
@@ -375,7 +375,7 @@ export default function DiagnosticApp() {
                   <button onClick={handleNextPage} className="inline-flex items-center gap-2 font-sans font-semibold text-[15px] bg-[#009f50] text-white rounded-xl px-6 py-3.5 hover:bg-[#013325] hover:-translate-y-0.5 transition-all">
                     {pi === PAGES - 1 ? "Continue to open questions" : "Next section"}
                   </button>
-                  {hint && <span className="text-[13.5px] text-[#af8943] font-medium">{hint}</span>}
+                  {hint && <span className="text-[13.5px] text-mid font-medium">{hint}</span>}
                 </div>
               </section>
             </main>
@@ -481,13 +481,13 @@ export default function DiagnosticApp() {
                       <div key={i} className="mb-3.5">
                         <div className="flex justify-between items-baseline mb-1.5">
                           <span className="font-sans font-semibold text-[14.5px] text-[#0c1a15]">{row.name}</span>
-                          <span className={`font-sans font-bold text-[14.5px] ${isPrimary ? "text-[#af8943]" : "text-[#009f50]"}`}>
+                          <span className={`font-sans font-bold text-[14.5px] ${isPrimary ? "text-mid" : "text-[#009f50]"}`}>
                             {row.score}
                           </span>
                         </div>
                         <div className="h-2 bg-[#e3eae6] rounded-full overflow-hidden">
                           <div 
-                            className={`h-full rounded-full transition-all duration-1000 ease-[cubic-bezier(.22,1,.36,1)] ${isPrimary ? "bg-[#af8943]" : "bg-[#009f50]"}`} 
+                            className={`h-full rounded-full transition-all duration-1000 ease-[cubic-bezier(.22,1,.36,1)] ${isPrimary ? "bg-mid" : "bg-[#009f50]"}`} 
                             style={{ width: `${row.score}%` }} 
                           />
                         </div>
@@ -503,8 +503,8 @@ export default function DiagnosticApp() {
 
                 <div className="border border-[#e3eae6] rounded-xl overflow-hidden card-dark">
                   {r.ranked.map((row, i) => (
-                    <div key={i} className={`grid grid-cols-[34px_1fr_104px] gap-4 items-center p-4 border-t border-[#e3eae6] first:border-0 ${i === 0 ? "bg-[#efe7d8]" : ""}`}>
-                      <div className={`font-sans font-bold text-[15px] ${i === 0 ? "text-[#013325]" : "text-[#af8943]"}`}>
+                    <div key={i} className={`grid grid-cols-[34px_1fr_104px] gap-4 items-center p-4 border-t border-[#e3eae6] first:border-0 ${i === 0 ? "bg-[#efeae0]" : ""}`}>
+                      <div className={`font-sans font-bold text-[15px] ${i === 0 ? "text-[#013325]" : "text-mid"}`}>
                         {i + 1}
                       </div>
                       <div>
@@ -516,9 +516,9 @@ export default function DiagnosticApp() {
                         </div>
                       </div>
                       <div className="text-right">
-                        <div className="font-sans font-bold text-[16px] text-[#af8943]">{row.deficit}</div>
+                        <div className="font-sans font-bold text-[16px] text-mid">{row.deficit}</div>
                         <div className="h-[5px] bg-[#e3eae6] rounded-sm mt-1.5 overflow-hidden">
-                          <div className="h-full bg-[#af8943] rounded-sm" style={{ width: `${maxDef ? Math.round((row.deficit / maxDef) * 100) : 0}%` }} />
+                          <div className="h-full bg-mid rounded-sm" style={{ width: `${maxDef ? Math.round((row.deficit / maxDef) * 100) : 0}%` }} />
                         </div>
                       </div>
                     </div>
@@ -526,8 +526,8 @@ export default function DiagnosticApp() {
                 </div>
 
                 {c && primary && (
-                  <div className="bg-[#efe7d8] rounded-xl p-7 my-8">
-                    <div className="font-sans font-semibold text-[11px] tracking-[0.16em] uppercase text-[#6b5a3c] mb-2">
+                  <div className="bg-[#efeae0] rounded-xl p-7 my-8">
+                    <div className="font-sans font-semibold text-[11px] tracking-[0.16em] uppercase text-forest/70 mb-2">
                       Your primary constraint
                     </div>
                     <h3 className="text-[22px] font-bold text-[#013325] mb-2.5">
@@ -536,7 +536,7 @@ export default function DiagnosticApp() {
                     <p className="font-sans font-semibold text-[#013325] mb-2.5">
                       {c.line}
                     </p>
-                    <p className="text-[#5a4d38] text-[15.5px] m-0">
+                    <p className="text-[#37423d] text-[15.5px] m-0">
                       {c.body}
                     </p>
                   </div>

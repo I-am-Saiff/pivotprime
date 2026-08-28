@@ -39,9 +39,12 @@ export default function Service1ClarityAudit() {
 
       {/* Columns Section */}
       <section className="py-10 sm:py-16 md:py-24 surface-page">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 md:gap-14">
-          <div>
-            <div className="font-sans font-semibold text-[10.5px] tracking-[0.2em] uppercase text-[#af8943] mb-4">
+        {/* A comparison pair, so the site rule applies: white on the left,
+            green on the right. They were two unfilled columns with a gold
+            eyebrow each. */}
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+          <div className="rounded-2xl bg-shell p-6 sm:p-7">
+            <div className="font-sans font-semibold text-[10.5px] tracking-[0.2em] uppercase text-mid mb-4">
               What we look at
             </div>
             <ul className="space-y-3">
@@ -62,8 +65,8 @@ export default function Service1ClarityAudit() {
               ))}
             </ul>
           </div>
-          <div>
-            <div className="font-sans font-semibold text-[10.5px] tracking-[0.2em] uppercase text-[#af8943] mb-4">
+          <div className="rounded-2xl bg-forest p-6 text-white sm:p-7">
+            <div className="font-sans font-semibold text-[10.5px] tracking-[0.2em] uppercase text-neon mb-4">
               What you get
             </div>
             <ul className="space-y-3">
@@ -75,9 +78,9 @@ export default function Service1ClarityAudit() {
                 "A costed view of what to fix internally and what needs outside capacity",
                 "An executive summary written for owners and investors"
               ].map((item, i) => (
-                <li key={i} className="flex gap-3 items-start text-[15.5px] text-[#0c1a15]">
-                  <div className="w-[17px] h-[17px] rounded-full bg-[#009f50] flex-shrink-0 mt-1 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" className="w-2.5 h-2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <li key={i} className="flex gap-3 items-start text-[15.5px] text-white/90">
+                  <div className="w-[17px] h-[17px] rounded-full bg-neon flex-shrink-0 mt-1 flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#013325" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" className="w-2.5 h-2.5"><polyline points="20 6 9 17 4 12"/></svg>
                   </div>
                   <span>{item}</span>
                 </li>
