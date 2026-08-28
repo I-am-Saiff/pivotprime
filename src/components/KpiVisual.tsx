@@ -45,77 +45,101 @@ const H = 150;
 const CX = 140;
 const CY = 70;
 
-export default function KpiVisual({ metric, active }: { metric: Metric; active: boolean }) {
+export default function KpiVisual({
+  metric,
+  active,
+  variant = "inline",
+}: {
+  metric: Metric;
+  active: boolean;
+  /** "edge" draws the stage ring at the rim of the disc card instead of inside
+   *  a box beside the copy. Only card one uses it. */
+  variant?: "inline" | "edge" | "compact";
+}) {
   const run = active;
   const pct = metric.figure === null ? 0 : Math.max(0, Math.min(100, metric.figure));
 
   return (
-    <div className="w-full" aria-hidden="true">
-      {metric.visual === "track" && <StageRing run={run} />}
+    <div className={variant === "edge" ? "h-full w-full" : "w-full"} aria-hidden="true">
+      {metric.visual === "track" && <StageRing run={run} edge={variant === "edge"} />}
       {metric.visual === "before-after-blocks" && <HexRows run={run} pct={pct} />}
       {metric.visual === "dot-grid" && <DotRing run={run} pct={pct} />}
       {metric.visual === "trend" && <TrendDial run={run} pct={pct} />}
-      {metric.visual === "before-after-tracks" && <SpeedArcs run={run} pct={pct} />}
+      {metric.visual === "before-after-tracks" && <SpeedArcs run={run} pct={pct} compact={variant === "compact"} />}
     </div>
   );
 }
 
-function Chrome({ children }: { children: React.ReactNode }) {
+function Chrome({ children, square }: { children: React.ReactNode; square?: number }) {
+  // A square box for the edge variant, so the ring is a circle at the rim of the
+  // disc rather than an ellipse stretched to a landscape frame.
+  const w = square ?? W;
+  const h = square ?? H;
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} width="100%" className="block h-auto w-full">
+    <svg
+      viewBox={`0 0 ${w} ${h}`}
+      className={square ? "block h-full w-full" : "block h-auto w-full"}
+    >
       {children}
     </svg>
   );
 }
 
 /** Where a stage sits on the ring, starting at twelve o'clock. */
-function onRing(index: number, count: number, radius: number) {
+function onRing(index: number, count: number, radius: number, cx = CX, cy = CY) {
   const angle = (index / count) * 2 * Math.PI - Math.PI / 2;
-  return { x: CX + radius * Math.cos(angle), y: CY + radius * Math.sin(angle) };
+  return { x: cx + radius * Math.cos(angle), y: cy + radius * Math.sin(angle) };
 }
 
 /**
  * ALIGN / BUILD / EMBED / DONE, filling clockwise round a ring.
  * Each quarter draws, then its node lights, then the next quarter starts.
  */
-function StageRing({ run }: { run: boolean }) {
-  const R = 46;
+function StageRing({ run, edge = false }: { run: boolean; edge?: boolean }) {
+  const R = edge ? 170 : 46;
   const C = 2 * Math.PI * R;
-  const SEG = C / 4 - 6; // the gap is what makes four stages read as four
+  const SEG = C / 4 - (edge ? 16 : 6); // the gap is what makes four stages read as four
+  const box = 460;
+  const cx = edge ? box / 2 : CX;
+  const cy = edge ? box / 2 : CY;
+  const node = edge ? 9 : 5.5;
+  const halo = edge ? 15 : 9;
+  const type = edge ? "text-[13px]" : "text-[9px]";
+  const gap = edge ? 34 : 22;
 
   return (
-    <Chrome>
-      <circle cx={CX} cy={CY} r={R} fill="none" stroke="var(--color-neon)" strokeOpacity={DIM} strokeWidth="7" />
+    <Chrome square={edge ? box : undefined}>
+      <circle cx={cx} cy={cy} r={R} fill="none" stroke="var(--color-neon)" strokeOpacity={DIM} strokeWidth={edge ? 10 : 7} />
 
       {[0, 1, 2, 3].map((i) => (
         <circle
           key={`arc${i}`}
-          cx={CX}
-          cy={CY}
+          cx={cx}
+          cy={cy}
           r={R}
           fill="none"
           stroke="var(--color-neon)"
-          strokeWidth="7"
+          strokeWidth={edge ? 10 : 7}
           strokeLinecap="round"
           strokeOpacity="0.85"
           strokeDasharray={`${SEG} ${C}`}
           strokeDashoffset={run ? 0 : SEG}
-          transform={`rotate(${i * 90 - 90} ${CX} ${CY})`}
+          transform={`rotate(${i * 90 - 90} ${cx} ${cy})`}
           style={{ transition: `stroke-dashoffset 260ms ${EASE} ${i * 200}ms` }}
         />
       ))}
 
       {STAGES.map((stage, i) => {
-        const { x, y } = onRing(i, 4, R);
-        const label = onRing(i, 4, R + 22);
+        const { x, y } = onRing(i, 4, R, cx, cy);
+        const label = onRing(i, 4, R + gap, cx, cy);
         const anchor = i === 1 ? "start" : i === 3 ? "end" : "middle";
         return (
           <g key={stage}>
-            <circle cx={x} cy={y} r="9" fill="var(--color-forest)" />
+            <circle cx={x} cy={y} r={halo} fill="var(--color-forest)" />
             <circle
               cx={x}
               cy={y}
-              r="5.5"
+              r={node}
               fill="var(--color-neon)"
               fillOpacity={run ? 1 : DIM}
               style={{ transition: `fill-opacity 240ms ${EASE} ${i * 200 + 200}ms` }}
@@ -126,7 +150,7 @@ function StageRing({ run }: { run: boolean }) {
               textAnchor={anchor}
               fill="#fff"
               fillOpacity={run ? 0.7 : 0.28}
-              className="font-sans text-[9px] font-bold tracking-[0.16em] uppercase"
+              className={`font-sans ${type} font-bold tracking-[0.16em] uppercase`}
               style={{ transition: `fill-opacity 240ms ${EASE} ${i * 200 + 200}ms` }}
             >
               {stage}
@@ -320,7 +344,7 @@ function TrendDial({ run, pct }: { run: boolean; pct: number }) {
 }
 
 /** Two concentric arcs race. The after arc is done long before the before arc. */
-function SpeedArcs({ run, pct }: { run: boolean; pct: number }) {
+function SpeedArcs({ run, pct, compact = false }: { run: boolean; pct: number; compact?: boolean }) {
   const OUTER = 54;
   const INNER = 36;
   const SWEEP = 0.78; // three quarters of the ring, so the two ends stay visible
@@ -383,12 +407,19 @@ function SpeedArcs({ run, pct }: { run: boolean; pct: number }) {
           style={{ transition: `stroke-dashoffset 420ms ${EASE} 80ms` }}
         />
       </g>
-      <text x={CX} y={CY - 4} textAnchor="middle" fill="#fff" fillOpacity="0.45" className="font-sans text-[9px] font-bold tracking-[0.18em] uppercase">
-        Before
-      </text>
-      <text x={CX} y={CY + 12} textAnchor="middle" fill="var(--color-neon)" fillOpacity="0.75" className="font-sans text-[9px] font-bold tracking-[0.18em] uppercase">
-        After
-      </text>
+      {/* The bar card renders these arcs at about a fifth of the width the
+          others get, where 9px type is a smudge. There the two weights carry it
+          on their own. */}
+      {!compact && (
+        <>
+          <text x={CX} y={CY - 4} textAnchor="middle" fill="#fff" fillOpacity="0.45" className="font-sans text-[9px] font-bold tracking-[0.18em] uppercase">
+            Before
+          </text>
+          <text x={CX} y={CY + 12} textAnchor="middle" fill="var(--color-neon)" fillOpacity="0.75" className="font-sans text-[9px] font-bold tracking-[0.18em] uppercase">
+            After
+          </text>
+        </>
+      )}
     </Chrome>
   );
 }

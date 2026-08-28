@@ -31,6 +31,29 @@ import KpiFigure from "./KpiFigure";
  * launch this card with a placeholder."
  */
 const INTERVAL = 2500;
+
+/**
+ * One form per slide, on the client's 27 August instruction. The shape is cut
+ * with clip-path in globals.css and the composition below is arranged to suit
+ * it, rather than every card being poured into the same two-column grid.
+ */
+const SHAPES = {
+  track: "disc",
+  "before-after-blocks": "hex",
+  "dot-grid": "capsule",
+  trend: "angled",
+  "before-after-tracks": "bar",
+} as const;
+
+/** A faint treatment inside each shape, never competing with the figure. */
+const TEXTURE: Record<string, string> = {
+  disc: "[background:repeating-radial-gradient(circle_at_50%_50%,transparent_0,transparent_26px,rgba(0,215,109,0.05)_26px,rgba(0,215,109,0.05)_27px)]",
+  hex: "[background-image:linear-gradient(rgba(0,215,109,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,215,109,0.05)_1px,transparent_1px)] [background-size:34px_34px]",
+  capsule: "[background:linear-gradient(180deg,rgba(0,215,109,0.10)_0%,transparent_46%,rgba(0,215,109,0.06)_100%)]",
+  angled:
+    "[background:repeating-linear-gradient(135deg,transparent_0,transparent_16px,rgba(0,215,109,0.045)_16px,rgba(0,215,109,0.045)_17px)]",
+  bar: "[background:repeating-linear-gradient(180deg,transparent_0,transparent_13px,rgba(0,215,109,0.05)_13px,rgba(0,215,109,0.05)_14px)]",
+};
 const REDUCED = "(prefers-reduced-motion: reduce)";
 
 function subscribeToMotion(onChange: () => void) {
@@ -41,6 +64,29 @@ function subscribeToMotion(onChange: () => void) {
 
 function isMotionWelcome() {
   return !window.matchMedia(REDUCED).matches;
+}
+
+function Label({ metric }: { metric: (typeof METRICS)[number] }) {
+  return (
+    <p className="font-sans text-[10px] font-bold tracking-[0.18em] text-neon/70 uppercase">
+      {metric.kpiLabel}
+    </p>
+  );
+}
+
+function Figure({
+  metric,
+  counting,
+}: {
+  metric: (typeof METRICS)[number];
+  counting: boolean;
+}) {
+  if (metric.figureText === null) return null;
+  return (
+    <p className="mt-2 font-sans text-5xl leading-none font-extrabold tracking-tight text-neon tabular-nums sm:text-6xl">
+      <KpiFigure text={metric.figureText} active={counting} />
+    </p>
+  );
 }
 
 export default function KpiCards() {
@@ -88,32 +134,97 @@ export default function KpiCards() {
       onBlurCapture={release}
     >
       <ul data-metric-cards className="mx-auto grid max-w-4xl grid-cols-1 gap-4">
-        {cards.map((metric, i) => (
-          <li
-            key={metric.label}
-            data-kpi-index={i}
-            className="grid items-center gap-6 rounded-2xl bg-forest p-6 ring-1 ring-neon/20 sm:p-8 md:grid-cols-[1.1fr_1fr] md:gap-10"
-          >
-            {/* The figure and the words on one side. */}
-            <div>
-              <p className="font-sans text-[10px] font-bold tracking-[0.18em] text-neon/70 uppercase">
-                {metric.kpiLabel}
-              </p>
-              {metric.figureText !== null && (
-                <p className="mt-3 font-sans text-5xl leading-none font-extrabold tracking-tight text-neon tabular-nums sm:text-6xl">
-                  <KpiFigure text={metric.figureText} active={rotating ? active === i : false} />
-                </p>
-              )}
-              <p className="mt-4 text-lg leading-snug font-bold text-white sm:text-xl">{metric.label}</p>
-              <p className="mt-2 text-sm leading-relaxed text-white/60">{metric.context}</p>
-            </div>
+        {cards.map((metric, i) => {
+          const on = rotating ? active === i : true;
+          const counting = rotating ? active === i : false;
+          const shape = SHAPES[metric.visual];
+          return (
+            <li key={metric.label} data-kpi-index={i} data-kpi-shape={shape}>
+              {/* A background treatment inside each shape. Low contrast, and
+                  always behind the copy: rings inside the disc, a grid inside
+                  the hexagon, a gradient up the capsule, diagonals across the
+                  cut corner, hairlines along the bar. */}
+              <div aria-hidden="true" className={`pointer-events-none absolute inset-0 ${TEXTURE[shape]}`} />
 
-            {/* The visual on the other, under them on mobile. */}
-            <div className="md:pl-2">
-              <KpiVisual metric={metric} active={rotating ? active === i : true} />
-            </div>
-          </li>
-        ))}
+              {shape === "disc" && (
+                <>
+                  {/* The stages ring the rim from md up. At 360 the ring's own
+                      labels reach past the lens, so the small screen gets the
+                      compact track under the copy instead. */}
+                  <div className="pointer-events-none absolute inset-0 hidden md:block">
+                    <KpiVisual metric={metric} active={on} variant="edge" />
+                  </div>
+                  <div className="relative flex h-full flex-col items-center justify-center px-8 text-center md:px-10">
+                    <Label metric={metric} />
+                    <Figure metric={metric} counting={counting} />
+                    <p className="mt-2 max-w-[15rem] text-base leading-snug font-bold text-white sm:text-lg md:max-w-[14rem]">{metric.label}</p>
+                    <p className="mt-2 max-w-[15rem] text-[12.5px] leading-relaxed text-white/55 md:max-w-[14rem]">{metric.context}</p>
+                    <div className="mt-4 w-full max-w-[13rem] md:hidden">
+                      <KpiVisual metric={metric} active={on} />
+                    </div>
+                  </div>
+                </>
+              )}
+
+              {shape === "hex" && (
+                <div className="relative flex h-full flex-col items-center justify-center px-10 text-center md:px-24">
+                  <Label metric={metric} />
+                  <Figure metric={metric} counting={counting} />
+                  <p className="mt-3 max-w-sm text-lg leading-snug font-bold text-white">{metric.label}</p>
+                  <p className="mt-2 max-w-sm text-[13px] leading-relaxed text-white/55">{metric.context}</p>
+                  {/* Narrower than the copy: the rows sit low in the hexagon,
+                      where the sides have already begun to close in. */}
+                  <div className="mt-5 w-full max-w-[11.5rem] md:max-w-[19rem]">
+                    <KpiVisual metric={metric} active={on} />
+                  </div>
+                </div>
+              )}
+
+              {shape === "capsule" && (
+                <div className="relative flex h-full flex-col items-center justify-center px-9 text-center">
+                  <Label metric={metric} />
+                  <Figure metric={metric} counting={counting} />
+                  <p className="mt-3 max-w-[15rem] text-lg leading-snug font-bold text-white">{metric.label}</p>
+                  <p className="mt-2 max-w-[15rem] text-[13px] leading-relaxed text-white/55">{metric.context}</p>
+                  <div className="mt-4 w-full max-w-[14rem]">
+                    <KpiVisual metric={metric} active={on} />
+                  </div>
+                </div>
+              )}
+
+              {shape === "angled" && (
+                <div className="relative grid h-full items-center gap-6 px-8 py-8 sm:px-12 md:grid-cols-[1.15fr_1fr]">
+                  {/* The copy stays clear of the cut, which takes the top right. */}
+                  <div className="self-center">
+                    <Label metric={metric} />
+                    <Figure metric={metric} counting={counting} />
+                    <p className="mt-3 max-w-sm text-lg leading-snug font-bold text-white sm:text-xl">{metric.label}</p>
+                    <p className="mt-2 max-w-sm text-[13px] leading-relaxed text-white/55">{metric.context}</p>
+                  </div>
+                  <div className="self-end md:self-center md:pb-6">
+                    <KpiVisual metric={metric} active={on} />
+                  </div>
+                </div>
+              )}
+
+              {shape === "bar" && (
+                <div className="relative grid h-full items-center gap-4 px-8 py-6 sm:px-14 md:grid-cols-[auto_1fr_auto] md:gap-10">
+                  <div className="md:pr-2">
+                    <Label metric={metric} />
+                    <Figure metric={metric} counting={counting} />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-lg leading-snug font-bold text-white sm:text-xl">{metric.label}</p>
+                    <p className="mt-1.5 text-[13px] leading-relaxed text-white/55">{metric.context}</p>
+                  </div>
+                  <div className="w-full max-w-[10rem] justify-self-end md:max-w-[11rem]">
+                    <KpiVisual metric={metric} active={on} variant="compact" />
+                  </div>
+                </div>
+              )}
+            </li>
+          );
+        })}
       </ul>
 
       {/* The beat, made visible. Keyed on the active index so the
