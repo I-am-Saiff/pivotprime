@@ -60,7 +60,9 @@ export default function FeeCalculator() {
         step={STEP}
         value={value}
         onChange={(e) => setValue(Number(e.target.value))}
-        className="mt-2.5 w-full accent-[var(--color-neon)]"
+        // A range input is 16px tall by default, which is not a touch target.
+        // The extra height is the control, not padding around it.
+        className="mt-1 h-11 w-full accent-[var(--color-neon)]"
         aria-describedby="fee-note"
       />
 

@@ -44,9 +44,9 @@ function Portrait({ person, className }: { person: Person; className: string }) 
 
 export default function About() {
   return (
-    <div className="flex min-h-screen flex-col pt-20 pb-16">
+    <div className="flex min-h-screen flex-col pt-12 sm:pt-20 pb-10 sm:pb-16">
       {/* HERO, slide 21 */}
-      <header className="relative overflow-hidden bg-forest py-20 text-white md:py-28">
+      <header className="relative overflow-hidden bg-forest py-12 sm:py-20 text-white md:py-28">
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:28px_28px]"
@@ -66,7 +66,7 @@ export default function About() {
       </header>
 
       {/* WHO WE ARE, slide 21 */}
-      <section className="px-4 py-20 sm:px-6 md:py-24 lg:px-8">
+      <section className="px-4 py-12 sm:py-20 sm:px-6 md:py-24 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <span className="mb-4 block text-xs font-bold tracking-[0.22em] text-mid uppercase">
             {WHO_WE_ARE.eyebrow}
@@ -85,7 +85,7 @@ export default function About() {
       </section>
 
       {/* MEET THE TEAM, slide 21. Anchor target for /about#team. */}
-      <section className="px-4 pb-20 sm:px-6 lg:px-8" id={TEAM_ANCHOR}>
+      <section className="px-4 pb-12 sm:pb-20 sm:px-6 lg:px-8" id={TEAM_ANCHOR}>
         <div className="mx-auto max-w-6xl">
           <span className="mb-4 block text-xs font-bold tracking-[0.22em] text-mid uppercase">
             {TEAM_INTRO.eyebrow}
@@ -96,8 +96,8 @@ export default function About() {
 
           {/* The founder card runs the full width, photograph beside the text,
               as the slide draws it. */}
-          <article className="mt-12 overflow-hidden rounded-[28px] border border-forest/20 card-dark shadow-[0_16px_48px_rgba(1,51,37,0.06)]">
-            <div className="grid grid-cols-1 gap-8 p-6 md:grid-cols-12 md:gap-10 md:p-10">
+          <article className="mt-8 sm:mt-12 overflow-hidden rounded-[28px] border border-forest/20 card-dark shadow-[0_16px_48px_rgba(1,51,37,0.06)]">
+            <div className="grid grid-cols-1 gap-5 sm:gap-8 p-6 md:grid-cols-12 md:gap-10 md:p-10">
               <div className="md:col-span-4 lg:col-span-3">
                 <Portrait person={FOUNDER} className="aspect-[4/5] w-full rounded-2xl" />
               </div>
@@ -137,7 +137,7 @@ export default function About() {
                 key={person.name}
                 className="flex flex-col overflow-hidden rounded-[28px] border border-forest/20 card-dark shadow-[0_16px_48px_rgba(1,51,37,0.06)]"
               >
-                <Portrait person={person} className="aspect-[4/5] w-full" />
+                <Portrait person={person} className="aspect-[16/10] w-full sm:aspect-[4/5]" />
                 <div className="flex flex-1 flex-col p-6 md:p-8">
                   <p className="text-xs font-bold tracking-[0.18em] text-mid uppercase">
                     {person.role}
@@ -164,14 +164,14 @@ export default function About() {
       </section>
 
       {/* THE BENCH, slide 22. Twenty capability labels, verbatim. */}
-      <section className="px-4 pb-20 sm:px-6 lg:px-8">
+      <section className="px-4 pb-12 sm:pb-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <div className="relative overflow-hidden rounded-[28px] bg-forest p-8 text-white md:p-14">
             <div
               aria-hidden="true"
               className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:28px_28px]"
             />
-            <div className="relative z-10 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-14">
+            <div className="relative z-10 grid grid-cols-1 gap-6 sm:gap-10 lg:grid-cols-2 lg:gap-14">
               <div>
                 <span className="mb-4 block text-xs font-bold tracking-[0.22em] text-neon uppercase">
                   {BENCH.eyebrow}
@@ -225,12 +225,12 @@ export default function About() {
 
       {/* Case studies, unchanged. Same component as the homepage so the two
           cannot drift. */}
-      <section className="py-24" id="case-studies">
+      <section className="py-14 sm:py-24" id="case-studies">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Her pull quote from pp-case-studies.html, in the position her own
               file gives it: directly above the studies. The slide 8 quote is a
               different thing and stays with the homepage section. */}
-          <figure className="mx-auto mb-14 max-w-3xl border-l-4 border-mid pl-6 sm:pl-8">
+          <figure className="mx-auto mb-9 sm:mb-14 max-w-3xl border-l-4 border-mid pl-6 sm:pl-8">
             <blockquote className="text-lg leading-relaxed text-forest/85 italic sm:text-xl">
               {CASE_STUDIES_PULLQUOTE.body}
             </blockquote>
@@ -245,10 +245,10 @@ export default function About() {
       {/* Her close, pp-about-v2_2.html. The button was here without the two
           lines above it that give it a reason: check-dropped-mockup-copy found
           them in her file and on no page of the site. */}
-      <section className="bg-forest px-4 py-24 text-center sm:px-6 lg:px-8">
+      <section className="bg-forest px-4 py-14 sm:py-24 text-center sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <p className="mb-4 text-xs font-bold tracking-[0.22em] text-neon uppercase">Start here</p>
-          <h2 className="mb-10 text-3xl font-extrabold tracking-tight text-white md:text-4xl">
+          <h2 className="mb-7 sm:mb-10 text-3xl font-extrabold tracking-tight text-white md:text-4xl">
             The first conversation costs nothing. Not moving does.
           </h2>
           <Link

@@ -2347,3 +2347,308 @@ measurement.
 If verified numbers for Nurture exist, send them and they go in the same slot the
 other cards use. Until then the card claims capability and not outcome, which is
 the only honest form it can take.
+
+---
+
+## 1ar. Every service page trimmed to its hero, and all the copy below it preserved here — **for Iram**
+
+**What changed.** On 28 August 2026, on your instruction, all five service pages were cut to what sits above the "Why this exists" heading: the hero, the scoped line, the CTAs and the one section directly beneath them. Everything below that point was removed from the page.
+
+**None of it is lost.** It is all spec 4.x copy and it is all reproduced below, word for word, so any of it can be put back. The strings are still in `src/content/services-detail.ts` — nothing was deleted from the content file, only from the pages that rendered it. Restoring a block is re-adding the section that read it.
+
+**The content checks were not deleted.** Four assertions covered copy that is now gone. They have been rewritten to assert the removal instead, so if a section reappears without your say-so the check fails and names this entry. See `scripts/check-content.mjs`.
+
+### Operational Clarity Audit — `/services/operational-clarity-audit`, spec 4.1
+
+**after**
+
+> The audit ends with a decision, not a filing cabinet. Some clients take the roadmap and execute it themselves, and that is a legitimate outcome. Most ask us to run some or all of it, which is where the fractional COO retainer, a placed project manager, CFO or engineer, or a technology build comes in. We will tell you plainly which of those the findings actually justify.
+>
+
+**afterHeading**
+
+> What happens after
+>
+
+**get**
+
+> An as-is versus to-be map of how work runs today and exactly what changes
+>
+> A findings report with every gap ranked by risk and by effort
+>
+> A prioritised roadmap: what to fix now, what can wait, what will move results
+>
+> A baseline set of measurements that the improvements will later be judged against
+>
+> A costed view of what to fix internally and what needs outside capacity
+>
+> An executive summary written for owners and investors, not only for operations
+>
+
+**getHeading**
+
+> What you get
+>
+
+**how**
+
+> One-to-one interviews with the people doing the work, not only the leadership team. Private conversations surface what people will not say in a room.
+>
+> Process mapping end to end. A facilitated workshop per function, where the team walks the process on screen and stress tests it together, so the findings are owned rather than imposed. Direct observation where it helps.
+>
+
+**howHeading**
+
+> How we do it
+>
+
+**look**
+
+> The commercial model, pricing, and margin by product, client or service
+>
+> The P&L, cost structure, working capital and how reliably cash is collected
+>
+> How work actually flows day to day, and where it stalls, duplicates or reverses
+>
+> Which decisions route through the founder, and which of those genuinely need to
+>
+> Roles, ownership and accountability, and where they are unclear
+>
+> Where automation or AI would remove real cost, and where it would only add another tool
+>
+> Data: what is captured, what is trusted, and what leaders are actually deciding on
+>
+
+**lookHeading**
+
+> What we look at
+>
+
+**pricing**
+
+> Sometimes the constraint is not the process, it is the price. We look at contribution margin, delivery effort, variability and risk across every client, product and contract, then design pricing logic you can defend.
+>
+> This runs either as part of a full audit, or as a standalone piece of work where pricing is clearly the problem.
+>
+
+**pricingHeading**
+
+> Pricing and margin engagements
+>
+
+**scopeLine**
+
+> Scope depends on the size of the business, how many functions are in review, and how many people we interview. A single-site founder-led business sits at the lower end. A multi-division operation with fifty or more staff is a larger piece of work.
+>
+
+**why**
+
+> Every business has a theory about why growth is harder than it should be. Usually the theory is wrong, or it describes a symptom of something further upstream.
+>
+> Leaders carry an idealistic picture of how the business works. The people doing the work know what is actually possible. The gap between those two pictures is where almost every operational problem lives. The audit closes it with evidence rather than opinion.
+>
+
+**whyHeading**
+
+> Why this exists
+>
+
+### Fractional Leadership — `/services/fractional-leadership`, spec 4.2
+
+**why**
+
+> Most growing businesses do not need a permanent executive. They need executive-level expertise for a defined period: someone senior enough to design the operating model, build the processes, set the standard for how things should run, and hold the delivery week to week.
+>
+> Every seat works the same way. We build the structure, then hand it to someone cheaper to run. A COO builds the operating model and hands the day to day to an operations lead. A Chief of Staff establishes the operating rhythm and decision rights, then leaves them running without needing a person to enforce them. A CFO builds the reporting, forecasting and controls, then hands them to a finance manager or your accountant.
+>
+> In each case you keep the senior judgement without carrying a full-time executive salary, and the structure keeps working long after the intensive phase ends.
+>
+> We add seats as demand justifies them.
+>
+
+**whyHeading**
+
+> Why this exists
+>
+
+### Build and Place — `/services/build-and-place`, spec 4.3
+
+**cards**
+
+> Project management
+>
+> Runs delivery inside your team: the order and project lifecycle, supplier and stakeholder coordination, SLA and timeline tracking, and documentation that outlives the engagement. Used where the plan is clear and the problem is that nothing is being driven.
+>
+> Finance
+>
+> Fractional CFO support: board and investor reporting, cash, runway and forecasting, collections and credit control, statutory reporting, and readiness for the next round. Used where the founder feels the absence of a finance seat every single week.
+>
+> Technology
+>
+> Engineers who build the automation, the CRM, the dashboards and the internal tools. Scoped after the diagnosis, never before it. If the work is a standalone build rather than an embedded seat, see Technology Builds.
+>
+> Marketing and brand
+>
+> Positioning, go-to-market, and the client-facing material that carries it. Used where the operation has been fixed but the business still is not being bought.
+>
+> Web and digital
+>
+> Website design, build and maintenance, and the digital estate around it. Used where the shopfront no longer matches the business behind it.
+>
+
+**priced**
+
+> We scope the work with you, agree the days and what good looks like, and put it into a single proposal. You pay Pivot Prime and we pay the delivery partner. If the full team is not affordable, we reduce the scope rather than quietly reducing the quality of who we put in front of you.
+>
+
+**pricedHeading**
+
+> How it is priced
+>
+
+**rolesHeading**
+
+> The seats we place
+>
+
+**scopeLine**
+
+> Priced on the roles, the days a month and the length of the engagement.
+>
+
+**why**
+
+> Most consultancies sell advice and leave the client to execute it. We place people inside the business and stay accountable for the outcome.
+>
+> Everyone we place is sourced, vetted and managed by us. They report to us rather than to you, which means you are not carrying the recruitment risk, the performance management, or the awkward conversation if it is not working. One contract, one invoice, one accountable party.
+>
+
+**whyHeading**
+
+> Why this exists
+>
+
+### Technology Builds — `/services/technology-builds`, spec 4.4
+
+**bringUsTheProblem**
+
+> Bring us the problem
+>
+> An app you want built, or a process that is eating your team.
+>
+> Either works. The only technology work we take on is the kind pointed at a real problem.
+>
+
+**capabilityGrid**
+
+> Websites and digital estate
+>
+> Websites: design, build, maintenance and the digital estate around them
+>
+> CRM builds
+>
+> CRM build and configuration, including migration from spreadsheets and inherited systems
+>
+> Business process automation
+>
+> Workflow automation across sales, operations, finance and fulfilment
+>
+> Dashboards and reporting
+>
+> Dashboards and management reporting, so decisions are made on numbers rather than instinct
+>
+> Systems integration
+>
+> Integrations between the systems you already pay for and are not getting value from
+>
+> Internal tools
+>
+> Internal tools and custom applications where nothing off the shelf fits
+>
+> AI integrations and agents
+>
+> AI agents and assistants, where they remove real cost rather than add a feature
+>
+> Agentic web applications
+>
+> Web applications that carry out a task end to end rather than presenting a form and waiting.
+>
+> Mobile applications
+>
+> Native and cross-platform apps, where the work genuinely happens away from a desk.
+>
+
+**capabilityHeading**
+
+> Nine things we build, and one rule about when we build them
+>
+
+**capabilityNote**
+
+> Every one of these is scoped against a defined problem first. We do not start a build to find out whether it was needed.
+>
+
+**howItRuns**
+
+> We scope the build against a defined problem and agree what it has to change. We build it, test it with the people who will actually use it, and hand it over with documentation rather than a demo. If you want us to run and maintain it afterwards, we can. If you want to own it outright, you own it, including the code.
+>
+
+**whereThisStarts**
+
+> If you already know what you need built, we can start there. If you are not certain the technology is the actual constraint, start with an Operational Clarity Audit, and we will tell you honestly whether a build is the right answer.
+>
+
+### UAE Market Entry — `/services/uae-market-entry`, spec 4.5
+
+**build**
+
+> Entity structure, licensing and regulatory approvals
+>
+> A full financial model: investment, breakeven, return, and pricing built for this market
+>
+> Product and regulatory compliance, so what you sell can legally be sold here
+>
+> Commercial real estate and office fit-out
+>
+> Hiring, with local market HR expertise
+>
+> Manufacturing, logistics and supply chain
+>
+> Brand localisation and go-to-market
+>
+> The operating model, and the people to run it once you are live
+>
+
+**buildHeading**
+
+> What we build
+>
+
+**close**
+
+> We take clients from a licence to a functioning, properly priced operation that can actually succeed here. If the model says it will not, we would rather tell you before you spend the money than after.
+>
+
+**closeHeading**
+
+> Where it ends up
+>
+
+**misconception**
+
+> The most common assumption is that a business which works elsewhere can be copied into Dubai. Almost nothing pastes cleanly.
+>
+> The regulatory position changes depending on whether you sit in a free zone or on the mainland. Consumer habits are different: this is a market that lives on delivery apps, expects service levels that would be considered premium elsewhere, and buys through community and word of mouth as much as through marketing.
+>
+> The commercial calendar is different too. Ramadan reshapes trading for a month, and a large part of your customer base leaves the country over the summer, so a plan built on twelve even months will miss badly. Heat changes how logistics, storage and footfall work for half the year. And the culture rewards relationships and patience, so businesses that arrive expecting to transact at home-market speed stall in ways they cannot explain.
+>
+
+**misconceptionHeading**
+
+> The misconception
+>
+
+### The three seat panels on Fractional Leadership
+
+The COO, Chief of Staff and CFO panels went with the section that held them. Their content is in `SEATS` in `src/components/services/Service2FractionalLeadership.tsx`, which is untouched: it is the rendering that was removed, not the copy. Its removal is what the three `id="coo"`, `id="chief-of-staff"` and `id="cfo"` assertions now record.
+

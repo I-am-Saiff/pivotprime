@@ -97,9 +97,10 @@ const EXPECTATIONS = [
     route: "/services/fractional-leadership",
     assert: [
       { spec: "4.2", text: "Fractional Leadership", why: "H1 stays as 4.2 wrote it" },
-      { spec: "4.2", html: 'id="coo"', why: "seat anchor, load-bearing" },
-      { spec: "4.2", html: 'id="chief-of-staff"', why: "seat anchor, load-bearing" },
-      { spec: "4.2", html: 'id="cfo"', why: "seat anchor, load-bearing" },
+      // The three seat anchors were load-bearing assertions until 28 August,
+      // when the client had every service page cut back to its hero. They are
+      // not deleted: they are inverted below, in DECISIONS, so a section coming
+      // back without her say-so fails and names PENDING-COPY 1ar.
     ],
   },
   { route: "/services/build-and-place", assert: [{ spec: "4.3", text: "Build and Place", why: "hero" }] },
@@ -433,6 +434,33 @@ const DECISIONS = [
       return null;
     },
   },
+  {
+    what: "the five service pages stay trimmed to their hero and the one section under it",
+    where: "PENDING-COPY 1ar",
+    run: async (get) => {
+      // 28 August: every service page was cut back on the client's instruction.
+      // Each string below is the first line of a removed block, so this fails
+      // the moment one of those sections is put back without her asking.
+      const removed = [
+        ["/services/operational-clarity-audit", "Why this exists"],
+        ["/services/operational-clarity-audit", "How it runs"],
+        ["/services/fractional-leadership", "Why this exists"],
+        ["/services/fractional-leadership", 'id="coo"'],
+        ["/services/fractional-leadership", 'id="chief-of-staff"'],
+        ["/services/fractional-leadership", 'id="cfo"'],
+        ["/services/build-and-place", "Why this exists"],
+        ["/services/technology-builds", "What we build"],
+        ["/services/uae-market-entry", "Where it ends up"],
+      ];
+      for (const [route, gone] of removed) {
+        const html = await (await get(route)).text();
+        if (html.includes(gone)) {
+          return `"${gone}" is back on ${route}, and PENDING-COPY 1ar records it as removed on the client's instruction`;
+        }
+      }
+      return null;
+    },
+  },
 ];
 
 
@@ -480,8 +508,12 @@ const PANEL_SETS = [
     route: "/services/fractional-leadership",
     spec: "4.2",
     pattern: /What the [^<]*seat covers/g,
-    expect: 3,
-    why: "all three seat panels, not only the active one",
+    // Zero, since 28 August. This assertion was written to catch the tab that
+    // served one panel out of three; it now records that the client had the
+    // whole section removed. Kept rather than deleted so the number is stated
+    // somewhere rather than the check quietly disappearing. PENDING-COPY 1ar.
+    expect: 0,
+    why: "the seat panels were removed on the client's instruction, PENDING-COPY 1ar",
   },
   {
     route: "/services/operational-clarity-audit",

@@ -98,7 +98,7 @@ export default function PersonaSwitcher() {
   return (
     <div className="w-full">
       {/* Chapter header */}
-      <div className="mb-10 text-left max-w-3xl">
+      <div className="mb-7 sm:mb-10 text-left max-w-3xl">
         {/* Her wording, slide 9: "Shouldn't be chapter anything - only WHO WE SERVE". */}
         <span className="mb-3 block font-sans text-xs font-semibold tracking-[0.22em] text-mid uppercase">Who we serve</span>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-forest mb-5">
@@ -120,7 +120,7 @@ export default function PersonaSwitcher() {
                 key={persona.id}
                 type="button"
                 onClick={() => setActiveIdx(idx)}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs md:text-sm font-semibold whitespace-nowrap transition-all ${
+                className={`flex min-h-11 items-center gap-2 px-4 py-2.5 rounded-xl text-xs md:text-sm font-semibold whitespace-nowrap transition-all ${
                   isActive
                     ? "bg-neon text-forest shadow-sm font-bold"
                     : "text-neutral-600 hover:text-forest hover:bg-white/50"
@@ -144,9 +144,9 @@ export default function PersonaSwitcher() {
             <div
               key={persona.id}
               hidden={!isVisible}
-              className="frosted-card-light rounded-[28px] px-8 pt-8 pb-24 transition-all duration-300 sm:pb-8 md:p-12"
+              className="frosted-card-light rounded-[28px] px-8 pt-8 pb-14 transition-all duration-300 sm:pb-8 md:p-12"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 items-start">
                 {/* Left Column: Heading, CTA, Quote */}
                 <div className="lg:col-span-7 flex flex-col">
                   <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest leading-tight mb-8 max-w-xl">

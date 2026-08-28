@@ -123,6 +123,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     sector: "Nurture",
     subtitle: "Childcare technology \u00b7 UAE",
     attribution: "Built by our technology team.",
+    photo: {
+      src: "/case-studies/nurture-app.jpg",
+      alt: "The Nurture app home screen, showing a child profile, the day's summary of activities, meals, sleep and photos, and quick access tiles",
+      width: 738,
+      height: 1600,
+    },
     link: { href: "https://nurtureuae.com", label: "View the product" },
     challenge:
       "In a UAE household the people caring for a child are rarely all in the same place, and often do not share a first language. Parents, nannies and drivers each hold part of the day, and none of them holds the whole of it.",

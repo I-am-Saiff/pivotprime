@@ -220,7 +220,7 @@ export default function DiagnosticApp() {
 
       <div className="flex-grow">
         {step === 0 && (
-          <section className="bg-[#013325] text-white relative overflow-hidden min-h-[calc(100vh-64px)] flex items-center py-16">
+          <section className="bg-[#013325] text-white relative overflow-hidden min-h-[calc(100vh-64px)] flex items-center py-10 sm:py-16">
             <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.13)_1px,transparent_1px)] [background-size:26px_26px] opacity-55" />
             <div className="absolute w-[60vw] h-[60vw] -right-[20vw] -top-[24vw] rounded-full bg-[radial-gradient(circle,rgba(34,197,94,0.2),transparent_62%)]" />
             
@@ -496,7 +496,7 @@ export default function DiagnosticApp() {
                   })}
                 </div>
 
-                <h3 className="text-[19px] font-bold mt-10 mb-2 text-[#0c1a15]">Constraint ranking</h3>
+                <h3 className="text-[19px] font-bold mt-7 sm:mt-10 mb-2 text-[#0c1a15]">Constraint ranking</h3>
                 <p className="text-[#5e6f68] text-[14.5px] mb-4 max-w-3xl">
                   Ranked by weighted deficit rather than lowest score. An area scoring 40 at a weight of 25 holds the business back more than one scoring 30 at a weight of 5. This order is the recommended sequence of work.
                 </p>

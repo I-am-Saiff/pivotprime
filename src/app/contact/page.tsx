@@ -22,11 +22,11 @@ export default async function Contact({
   const prefilledMessage = params.message ?? "";
 
   return (
-    <div className="flex flex-col min-h-screen pt-28 pb-20">
+    <div className="flex flex-col min-h-screen pt-28 pb-12 sm:pb-20">
       <section className="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto py-12 md:py-16 w-full">
         {/* Main Frosted Card Container */}
         <div className="frosted-card-light rounded-[32px] p-8 sm:p-12 md:p-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 sm:gap-12 lg:gap-16 items-start">
             
             {/* Left Column: Chapter header & Discovery call pitch */}
             <div className="lg:col-span-6 flex flex-col justify-between h-full">
@@ -49,7 +49,7 @@ export default async function Contact({
                     href={WHATSAPP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-bold text-forest underline underline-offset-2 hover:text-mid transition-colors"
+                    className="-my-3.5 inline-block py-3.5 font-bold text-forest underline underline-offset-2 hover:text-mid transition-colors"
                   >
                     WhatsApp us on +971 52 440 1075
                   </a>
@@ -58,7 +58,7 @@ export default async function Contact({
                   Or email directly:{" "}
                   <a
                     href="mailto:hello@pivotprime.ae"
-                    className="font-bold text-forest underline underline-offset-2 hover:text-mid transition-colors"
+                    className="-my-3.5 inline-block py-3.5 font-bold text-forest underline underline-offset-2 hover:text-mid transition-colors"
                   >
                     hello@pivotprime.ae
                   </a>

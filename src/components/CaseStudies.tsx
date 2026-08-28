@@ -70,7 +70,7 @@ export default function CaseStudies({
   return (
     <div className="relative overflow-x-clip">
       {showHeading && (
-        <header className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <header className="mb-7 sm:mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-3xl">
             {/* Her wording, slide 8: "Instead of chapter 2, let's put case studies". */}
             <span className="mb-3 block font-sans text-xs font-semibold tracking-[0.22em] text-mid uppercase">Case studies</span>
@@ -208,7 +208,7 @@ export default function CaseStudies({
                     href={study.link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center rounded-xl bg-neon px-5 py-2.5 font-sans text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
+                    className="inline-flex min-h-11 items-center justify-center rounded-xl bg-neon px-5 py-2.5 font-sans text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
                   >
                     {study.link.label}
                     <span aria-hidden="true" className="ml-2 text-base leading-none">
@@ -281,7 +281,7 @@ export default function CaseStudies({
       </ul>
 
       {/* Slide Progress Dots */}
-      <div className="mt-4 flex items-center justify-center" aria-hidden="true">
+      <div className="mt-4 flex flex-wrap items-center justify-center gap-0.5" aria-hidden="true">
         {studies.map((_, idx) => (
           <button
             key={idx}
@@ -292,7 +292,7 @@ export default function CaseStudies({
             onClick={() => scrollToIndex(idx)}
             // The dot stays 8px; the button around it is 44px so a finger can
             // land on it. Measured at 320 they were 8x8 and 13x8.
-            className={`flex h-11 w-11 items-center justify-center [&>span]:transition-all [&>span]:duration-300 motion-reduce:[&>span]:transition-none`}
+            className={`flex h-11 w-11 shrink-0 items-center justify-center [&>span]:transition-all [&>span]:duration-300 motion-reduce:[&>span]:transition-none`}
           >
             <span
               className={`block h-2 rounded-full ${

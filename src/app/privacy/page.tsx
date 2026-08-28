@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <div className="flex min-h-screen flex-col surface-page">
-      <section className="mx-auto w-full max-w-3xl px-4 pt-32 pb-24 sm:px-6 md:pt-40 lg:px-8">
+      <section className="mx-auto w-full max-w-3xl px-4 pt-28 sm:pt-32 pb-14 sm:pb-24 sm:px-6 md:pt-40 lg:px-8">
         <h1 className="mb-6 text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
           {PRIVACY_TITLE}
         </h1>
@@ -33,14 +33,14 @@ export default function PrivacyPage() {
           // policy is presented as binding.
           <p
             role="note"
-            className="mb-10 rounded-md border border-forest/20 bg-forest/[0.04] p-5 text-sm leading-relaxed text-neutral-700"
+            className="mb-7 sm:mb-10 rounded-md border border-forest/20 bg-forest/[0.04] p-5 text-sm leading-relaxed text-neutral-700"
           >
             This policy is a working draft awaiting review by a UAE-qualified adviser. It is
             published here so the wording can be checked, and it is not yet in force.
           </p>
         )}
 
-        <p className="mb-10 text-lg leading-relaxed text-neutral-600">{PRIVACY_INTRO}</p>
+        <p className="mb-7 sm:mb-10 text-lg leading-relaxed text-neutral-600">{PRIVACY_INTRO}</p>
 
         <div className="space-y-10">
           {PRIVACY_SECTIONS.map((section) => (

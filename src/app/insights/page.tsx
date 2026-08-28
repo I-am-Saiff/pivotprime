@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 export default function InsightsPage() {
   return (
     <div className="flex min-h-screen flex-col surface-page">
-      <section className="mx-auto w-full max-w-3xl px-4 pt-32 pb-24 sm:px-6 md:pt-40 lg:px-8">
+      <section className="mx-auto w-full max-w-3xl px-4 pt-28 sm:pt-32 pb-14 sm:pb-24 sm:px-6 md:pt-40 lg:px-8">
         <h1 className="mb-6 text-4xl font-extrabold tracking-tight text-foreground md:text-5xl lg:text-6xl">
           Insights
         </h1>

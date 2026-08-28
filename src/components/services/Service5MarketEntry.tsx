@@ -3,8 +3,6 @@
 import { useState } from "react";
 import { WHATSAPP_URL } from "@/lib/flags";
 import { WHATSAPP_CTA } from "@/content/cta";
-import { MARKET_ENTRY } from "@/content/services-detail";
-import { CopyList, CopyProse } from "./SpecCopyBlocks";
 
 
 export default function Service5MarketEntry() {
@@ -30,7 +28,7 @@ export default function Service5MarketEntry() {
   return (
     <div className="animate-fade-in">
       {/* Hero Section */}
-      <header className="bg-[#013325] text-white relative overflow-hidden pt-32 pb-16 md:pt-40 md:pb-24">
+      <header className="bg-[#013325] text-white relative overflow-hidden pt-28 sm:pt-32 pb-10 sm:pb-16 md:pt-40 md:pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.09)_1px,transparent_1px)] [background-size:28px_28px]" />
         
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -57,9 +55,9 @@ export default function Service5MarketEntry() {
       </header>
 
       {/* Stage / Map Section */}
-      <section className="surface-page py-16 md:py-24">
+      <section className="surface-page py-10 sm:py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-10 max-w-2xl">
+          <div className="mb-7 sm:mb-10 max-w-2xl">
             <span className="block font-sans font-semibold text-[10.5px] tracking-[0.24em] uppercase text-[#009f50]">
               The misconception
             </span>
@@ -75,7 +73,7 @@ export default function Service5MarketEntry() {
             <div className="inline-flex card-dark border border-[#e3eae6] rounded-full p-1 gap-1 mb-6">
               <button
                 onClick={() => setCalMode(0)}
-                className={`px-4 py-2 font-semibold text-[13px] rounded-xl transition-colors ${
+                className={`inline-flex min-h-11 items-center px-4 py-2 font-semibold text-[13px] rounded-xl transition-colors ${
                   calMode === 0 ? "bg-[#013325] text-white" : "text-[#5e6f68] hover:bg-[#e3eae6]"
                 }`}
               >
@@ -83,7 +81,7 @@ export default function Service5MarketEntry() {
               </button>
               <button
                 onClick={() => setCalMode(1)}
-                className={`px-4 py-2 font-semibold text-[13px] rounded-xl transition-colors ${
+                className={`inline-flex min-h-11 items-center px-4 py-2 font-semibold text-[13px] rounded-xl transition-colors ${
                   calMode === 1 ? "bg-[#013325] text-white" : "text-[#5e6f68] hover:bg-[#e3eae6]"
                 }`}
               >
@@ -109,7 +107,7 @@ export default function Service5MarketEntry() {
               })}
             </div>
 
-            <div className="flex flex-wrap gap-3 mt-10 min-h-[60px]">
+            <div className="flex flex-wrap gap-3 mt-7 sm:mt-10 min-h-[60px]">
               <span className={`text-[12.5px] text-[#5e6f68] border border-[#e3eae6] rounded-full px-3.5 py-1.5 transition-all duration-[450ms] ${calMode === 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1.5 absolute pointer-events-none'}`}>
                 <b className="text-[#af8943] font-sans font-semibold">Ramadan</b> reshapes trading for a month
               </span>
@@ -128,97 +126,6 @@ export default function Service5MarketEntry() {
               A flat forecast assumes every month behaves the same way. Press the toggle to see what the year actually looks like, and what it does to a plan built elsewhere.
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* Columns Section */}
-      <section className="py-16 md:py-24 surface-page">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
-          <div>
-            <div className="font-sans font-semibold text-[10.5px] tracking-[0.2em] uppercase text-[#af8943] mb-4">
-              The numbers come first
-            </div>
-            <p className="text-[#0c1a15] mb-3">
-              There are hundreds of company formation experts in Dubai who will get you a licence and sometimes a bank account. We support all of that, but the licence is where we start rather than where we stop.
-            </p>
-            <p className="text-[#0c1a15] mb-3">
-              Before anything else we build a financial model with you: every assumption of the entry priced in, the investment required, the breakeven point and the expected return. We are not interested in beginning a UAE entry that will not make money in the UAE.
-            </p>
-            <p className="text-[#0c1a15]">
-              This is where most international businesses go wrong. They price for this market using home-market assumptions and end up busy but unprofitable.
-            </p>
-          </div>
-          <div>
-            <div className="font-sans font-semibold text-[10.5px] tracking-[0.2em] uppercase text-[#af8943] mb-4">
-              What we build
-            </div>
-            <ul className="space-y-3">
-              {[
-                "Entity structure, licensing and regulatory approvals",
-                "A full financial model: investment, breakeven, return and local pricing",
-                "Product and regulatory compliance, so what you sell can be sold here",
-                "Commercial real estate and office fit-out",
-                "Hiring, with local market HR expertise",
-                "Manufacturing, logistics and supply chain",
-                "Brand localisation and go-to-market",
-                "The operating model, and the people to run it once you are live"
-              ].map((item, i) => (
-                <li key={i} className="flex gap-3 items-start text-[15.5px] text-[#0c1a15]">
-                  <div className="w-[17px] h-[17px] rounded-full bg-[#009f50] flex-shrink-0 mt-1 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" className="w-2.5 h-2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  </div>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Closer Section */}
-      <section className="surface-page py-16 md:py-24">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#02291e] text-white rounded-xl p-8 md:p-12">
-            <span className="block font-sans font-semibold text-[10.5px] tracking-[0.24em] uppercase text-[#00d76d] mb-4">
-              Straight answer
-            </span>
-            <h3 className="text-2xl md:text-3xl font-bold mt-3 mb-3 max-w-lg text-white">
-              We are not interested in launching a business in the UAE which will fail.
-            </h3>
-            <p className="text-[#bfd8cd] mb-8">
-              If after assessment, we feel your business will fail here, we will tell you to save your money and not enter this market or most of the time we will show you how you can make it work.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <a href={WHATSAPP_URL} className="inline-flex items-center px-6 py-3 font-semibold text-[15px] bg-[#00d76d] text-[#013325] rounded-xl hover:bg-white hover:-translate-y-0.5 transition-all">
-                {WHATSAPP_CTA.label}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Spec 4.5, restored. The designed page compressed THE MISCONCEPTION to
-          a single clause and dropped most of WHAT WE BUILD and the CLOSE. The
-          design above is kept; this carries the copy the spec sets verbatim.
-          See docs/PENDING-COPY.md. */}
-      <section className="surface-page py-16 md:py-24">
-        <div className="px-4 sm:px-6 lg:px-8">
-          <CopyProse
-            heading={MARKET_ENTRY.misconceptionHeading}
-            paragraphs={MARKET_ENTRY.misconception}
-          />
-        </div>
-      </section>
-
-      <section className="surface-page py-16 md:py-24">
-        <div className="px-4 sm:px-6 lg:px-8">
-          <CopyList heading={MARKET_ENTRY.buildHeading} items={MARKET_ENTRY.build} />
-        </div>
-      </section>
-
-      <section className="surface-page py-16 md:py-24">
-        <div className="px-4 sm:px-6 lg:px-8">
-          <CopyProse heading={MARKET_ENTRY.closeHeading} paragraphs={[MARKET_ENTRY.close]} />
         </div>
       </section>
 

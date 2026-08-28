@@ -152,9 +152,9 @@
     },
     {
       "text": "Almost every engagement begins with the audit.",
-      "status": "traced",
+      "status": "removed",
       "kind": "client-mockup",
-      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25.",
+      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record.",
       "route": "/services/operational-clarity-audit",
       "element": "h3"
     },
@@ -174,49 +174,49 @@
     },
     {
       "text": "Three seats. Pick the one that is missing.",
-      "status": "traced",
+      "status": "removed",
       "kind": "client-mockup",
-      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25.",
+      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record.",
       "route": "/services/fractional-coo",
       "element": "h2"
     },
     {
       "text": "Where it does not fit",
-      "status": "traced",
+      "status": "removed",
       "kind": "client-mockup",
-      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25.",
+      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record.",
       "route": "/services/fractional-coo",
       "element": "h3"
     },
     {
       "text": "Find out which seat is actually missing.",
-      "status": "traced",
+      "status": "removed",
       "kind": "client-mockup",
-      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25.",
+      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record.",
       "route": "/services/fractional-coo",
       "element": "h3"
     },
     {
       "text": "Fractional COO Owns execution",
-      "status": "traced",
+      "status": "removed",
       "kind": "client-mockup",
-      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25.",
+      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record.",
       "route": "/services/fractional-coo",
       "element": "button"
     },
     {
       "text": "Fractional Chief of Staff Owns follow-through",
-      "status": "awaiting-client",
+      "status": "removed",
       "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record.",
       "route": "/services/fractional-coo",
       "element": "button"
     },
     {
       "text": "Fractional CFO Owns the numbers",
-      "status": "traced",
+      "status": "removed",
       "kind": "client-mockup",
-      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25.",
+      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record.",
       "route": "/services/fractional-coo",
       "element": "button"
     },
@@ -230,17 +230,17 @@
     },
     {
       "text": "The seats we place",
-      "status": "awaiting-client",
+      "status": "removed",
       "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record.",
       "route": "/services/build-and-place",
       "element": "h2"
     },
     {
       "text": "Where it ends up",
-      "status": "awaiting-client",
+      "status": "removed",
       "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record.",
       "route": "/services/uae-market-entry",
       "element": "h2"
     },
@@ -552,9 +552,9 @@
     },
     {
       "text": "We are not interested in launching a business in the UAE which will fail.",
-      "status": "traced",
+      "status": "removed",
       "kind": "client-supplied",
-      "why": "Supplied by the client verbatim in a comment on slide 16 of Website Revisions 2208v3, 22 August. Replaces spec 5.x copy, which her comment postdates. PENDING-COPY 1v."
+      "why": "Supplied by the client verbatim in a comment on slide 16 of Website Revisions 2208v3, 22 August. Replaces spec 5.x copy, which her comment postdates. PENDING-COPY 1v. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record."
     },
     {
       "text": "Senior judgment, on call",
@@ -612,81 +612,81 @@
     },
     {
       "text": "Nine things we build, and one rule about when we build them",
-      "status": "awaiting-client",
+      "status": "removed",
       "kind": "authored",
-      "why": "Written during the rebuild. Heading over the capability grid. Spec 4.4 gives the seven capabilities but no heading for them. PENDING-COPY 1al.",
+      "why": "Written during the rebuild. Heading over the capability grid. Spec 4.4 gives the seven capabilities but no heading for them. PENDING-COPY 1al. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record.",
       "route": "/services/technology-builds",
       "element": "h2"
     },
     {
       "text": "Websites and digital estate",
-      "status": "awaiting-client",
+      "status": "removed",
       "kind": "authored",
-      "why": "Written during the rebuild. Capability tile label. The sentence beneath it is spec 4.4 verbatim; only the short label is ours. PENDING-COPY 1al.",
+      "why": "Written during the rebuild. Capability tile label. The sentence beneath it is spec 4.4 verbatim; only the short label is ours. PENDING-COPY 1al. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record.",
       "route": "/services/technology-builds",
       "element": "h3"
     },
     {
       "text": "CRM builds",
-      "status": "awaiting-client",
+      "status": "removed",
       "kind": "authored",
-      "why": "Written during the rebuild. Capability tile label. The sentence beneath it is spec 4.4 verbatim; only the short label is ours. PENDING-COPY 1al.",
+      "why": "Written during the rebuild. Capability tile label. The sentence beneath it is spec 4.4 verbatim; only the short label is ours. PENDING-COPY 1al. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record.",
       "route": "/services/technology-builds",
       "element": "h3"
     },
     {
       "text": "Business process automation",
-      "status": "awaiting-client",
+      "status": "removed",
       "kind": "authored",
-      "why": "Written during the rebuild. Capability tile label. The sentence beneath it is spec 4.4 verbatim; only the short label is ours. PENDING-COPY 1al.",
+      "why": "Written during the rebuild. Capability tile label. The sentence beneath it is spec 4.4 verbatim; only the short label is ours. PENDING-COPY 1al. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record.",
       "route": "/services/technology-builds",
       "element": "h3"
     },
     {
       "text": "Dashboards and reporting",
-      "status": "awaiting-client",
+      "status": "removed",
       "kind": "authored",
-      "why": "Written during the rebuild. Capability tile label. The sentence beneath it is spec 4.4 verbatim; only the short label is ours. PENDING-COPY 1al.",
+      "why": "Written during the rebuild. Capability tile label. The sentence beneath it is spec 4.4 verbatim; only the short label is ours. PENDING-COPY 1al. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record.",
       "route": "/services/technology-builds",
       "element": "h3"
     },
     {
       "text": "Systems integration",
-      "status": "awaiting-client",
+      "status": "removed",
       "kind": "authored",
-      "why": "Written during the rebuild. Capability tile label. The sentence beneath it is spec 4.4 verbatim; only the short label is ours. PENDING-COPY 1al.",
+      "why": "Written during the rebuild. Capability tile label. The sentence beneath it is spec 4.4 verbatim; only the short label is ours. PENDING-COPY 1al. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record.",
       "route": "/services/technology-builds",
       "element": "h3"
     },
     {
       "text": "Internal tools",
-      "status": "awaiting-client",
+      "status": "removed",
       "kind": "authored",
-      "why": "Written during the rebuild. Capability tile label. The sentence beneath it is spec 4.4 verbatim; only the short label is ours. PENDING-COPY 1al.",
+      "why": "Written during the rebuild. Capability tile label. The sentence beneath it is spec 4.4 verbatim; only the short label is ours. PENDING-COPY 1al. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record.",
       "route": "/services/technology-builds",
       "element": "h3"
     },
     {
       "text": "AI integrations and agents",
-      "status": "awaiting-client",
+      "status": "removed",
       "kind": "authored",
-      "why": "Written during the rebuild. Capability tile label. The sentence beneath it is spec 4.4 verbatim; only the short label is ours. PENDING-COPY 1al.",
+      "why": "Written during the rebuild. Capability tile label. The sentence beneath it is spec 4.4 verbatim; only the short label is ours. PENDING-COPY 1al. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record.",
       "route": "/services/technology-builds",
       "element": "h3"
     },
     {
       "text": "Agentic web applications",
-      "status": "awaiting-client",
+      "status": "removed",
       "kind": "authored",
-      "why": "Written during the rebuild. AUTHORED IN FULL, label and sentence. Named as a capability by Saif on 26 August; spec 4.4 covers AI agents and custom applications but not this phrase. PENDING-COPY 1al.",
+      "why": "Written during the rebuild. AUTHORED IN FULL, label and sentence. Named as a capability by Saif on 26 August; spec 4.4 covers AI agents and custom applications but not this phrase. PENDING-COPY 1al. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record.",
       "route": "/services/technology-builds",
       "element": "h3"
     },
     {
       "text": "Mobile applications",
-      "status": "awaiting-client",
+      "status": "removed",
       "kind": "authored",
-      "why": "Written during the rebuild. AUTHORED IN FULL, label and sentence. Named as a capability by Saif on 26 August; spec 4.4 covers websites but says nothing about mobile. PENDING-COPY 1al.",
+      "why": "Written during the rebuild. AUTHORED IN FULL, label and sentence. Named as a capability by Saif on 26 August; spec 4.4 covers websites but says nothing about mobile. PENDING-COPY 1al. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record.",
       "route": "/services/technology-builds",
       "element": "h3"
     },

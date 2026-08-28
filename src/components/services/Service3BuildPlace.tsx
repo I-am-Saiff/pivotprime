@@ -3,8 +3,6 @@
 import { useRevealOnScroll } from "@/lib/use-reveal-on-scroll";
 import { WHATSAPP_URL } from "@/lib/flags";
 import { WHATSAPP_CTA } from "@/content/cta";
-import { BUILD_AND_PLACE } from "@/content/services-detail";
-import { CopyCards, CopyProse } from "./SpecCopyBlocks";
 
 
 export default function Service3BuildPlace() {
@@ -34,7 +32,7 @@ export default function Service3BuildPlace() {
   return (
     <div className="animate-fade-in">
       {/* Hero Section */}
-      <header className="bg-[#013325] text-white relative overflow-hidden pt-32 pb-16 md:pt-40 md:pb-24">
+      <header className="bg-[#013325] text-white relative overflow-hidden pt-28 sm:pt-32 pb-10 sm:pb-16 md:pt-40 md:pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.09)_1px,transparent_1px)] [background-size:28px_28px]" />
         
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -61,9 +59,9 @@ export default function Service3BuildPlace() {
       </header>
 
       {/* Stage / Map Section */}
-      <section className="surface-page py-16 md:py-24">
+      <section className="surface-page py-10 sm:py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-10 max-w-2xl">
+          <div className="mb-7 sm:mb-10 max-w-2xl">
             <span className="block font-sans font-semibold text-[10.5px] tracking-[0.24em] uppercase text-[#009f50]">
               How it fits together
             </span>
@@ -132,92 +130,6 @@ export default function Service3BuildPlace() {
               Five seats we can fill. You never take all five. The audit says which ones the business actually needs, and that is what gets placed.
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* Columns Section */}
-      <section className="py-16 md:py-24 surface-page">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
-          <div>
-            <div className="font-sans font-semibold text-[10.5px] tracking-[0.2em] uppercase text-[#af8943] mb-4">
-              What you are not carrying
-            </div>
-            <ul className="space-y-3">
-              {[
-                "Recruitment risk, and the cost of getting it wrong",
-                "Performance management and the awkward conversation",
-                "Visas, medical cover and end-of-service liability",
-                "A permanent salary for a temporary problem",
-                "Five separate contracts and five separate invoices"
-              ].map((item, i) => (
-                <li key={i} className="flex gap-3 items-start text-[15.5px] text-[#0c1a15]">
-                  <div className="w-[17px] h-[17px] rounded-full bg-[#009f50] flex-shrink-0 mt-1 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" className="w-2.5 h-2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  </div>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <div className="font-sans font-semibold text-[10.5px] tracking-[0.2em] uppercase text-[#af8943] mb-4">
-              How it is priced
-            </div>
-            <p className="text-[#0c1a15] mb-3">
-              We scope the work with you, agree the days and what good looks like, and put it into a single proposal. You pay Pivot Prime and we pay the delivery partner.
-            </p>
-            <p className="text-[#0c1a15]">
-              If the full team is not affordable, we reduce the scope rather than quietly reducing the quality of who we put in front of you.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Closer Section */}
-      <section className="surface-page py-16 md:py-24">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#02291e] text-white rounded-xl p-8 md:p-12">
-            <span className="block font-sans font-semibold text-[10.5px] tracking-[0.24em] uppercase text-[#00d76d] mb-4">
-              The difference
-            </span>
-            <h3 className="text-2xl md:text-3xl font-bold mt-3 mb-3 max-w-lg text-white">
-              A consultant tells you what to do. A recruiter finds you someone.
-            </h3>
-            <p className="text-[#bfd8cd] mb-8">
-              Neither one is accountable for whether it worked. That is the gap this service exists to close.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <a href={WHATSAPP_URL} className="inline-flex items-center px-6 py-3 font-semibold text-[15px] bg-[#00d76d] text-[#013325] rounded-xl hover:bg-white hover:-translate-y-0.5 transition-all">
-                {WHATSAPP_CTA.label}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Spec 4.3, restored. The designed diagram above carried these five
-          seats as two-word captions; spec section 1 requires the green-block
-          copy verbatim, and a caption is not a compression of a paragraph. The
-          diagram is kept and its descriptor lines removed, so the same words do
-          not appear twice on the page. See docs/PENDING-COPY.md. */}
-      <section className="surface-page py-16 md:py-24">
-        <div className="px-4 sm:px-6 lg:px-8">
-          <CopyProse heading={BUILD_AND_PLACE.whyHeading} paragraphs={BUILD_AND_PLACE.why} />
-        </div>
-      </section>
-
-      <section className="surface-page py-16 md:py-24">
-        <div className="px-4 sm:px-6 lg:px-8">
-          <CopyCards heading={BUILD_AND_PLACE.rolesHeading} cards={BUILD_AND_PLACE.cards} />
-        </div>
-      </section>
-
-      <section className="surface-page py-16 md:py-24">
-        <div className="px-4 sm:px-6 lg:px-8">
-          <CopyProse
-            heading={BUILD_AND_PLACE.pricedHeading}
-            paragraphs={[BUILD_AND_PLACE.priced, BUILD_AND_PLACE.scopeLine]}
-          />
         </div>
       </section>
 

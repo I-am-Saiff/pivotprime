@@ -43,10 +43,10 @@ export default function PatternsList() {
               <button
                 type="button"
                 onClick={() => toggleItem(i)}
-                className={`group flex w-full sm:w-auto items-center gap-3 rounded-2xl px-4 py-3 sm:px-5 sm:py-3.5 text-left text-sm font-semibold transition-all duration-200 border cursor-pointer ${
+                className={`group flex min-h-11 w-full sm:w-auto items-center gap-3 rounded-2xl px-4 py-3 sm:px-5 sm:py-3.5 text-left text-sm font-semibold transition-all duration-200 border cursor-pointer ${
                   isChecked
                     ? "bg-forest text-white border-forest shadow-md scale-[1.02] ring-2 ring-neon/40"
-                    : "frosted-card-light text-forest/90 border-forest/15 hover:border-mid/40 hover:bg-forest/[0.04]"
+                    : "bg-shell text-forest border-forest/15 hover:border-mid/50 hover:shadow-sm"
                 }`}
               >
                 <span

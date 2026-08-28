@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* 3.1 Hero */}
-      <section className="relative flex min-h-[100svh] items-center px-4 pt-28 pb-16 sm:px-6 sm:pt-32 sm:pb-20 md:pt-40 md:pb-28 lg:px-8">
+      <section className="relative flex min-h-[100svh] items-center px-4 pt-28 pb-10 sm:px-6 sm:pt-32 sm:pb-20 md:pt-40 md:pb-28 lg:px-8">
         {/* Background — layered gradient lets the wave texture breathe */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <Image
@@ -51,20 +51,25 @@ export default function Home() {
               words replace an "Operations · Strategy · Execution" that was ours:
               it is in neither the copy document, nor the live site, nor any
               mockup. Styling and position unchanged. PENDING-COPY 1ah. */}
-          {/* Below sm the four words need two lines. With the separators in
-              the flow the break landed after "Technology", so the second line
-              opened with an orphaned "·". The dots are decorative, so they are
-              hidden below sm and the words wrap as words. The separators return
-              at sm, where the line fits. PENDING-COPY 1ah. */}
+          {/* The dots are back at every width, on the client's 28 August
+              instruction: without them the four words read as four unrelated
+              words rather than as one line.
+
+              The dot TRAILS its word rather than leading the next one, and the
+              pair is one inline-block. A break can only land between pairs, and
+              since every pair opens with a word, no line can ever start with a
+              dot. Leading dots were tried first and put "·Technology" at the
+              head of the second row at 360.
+              PENDING-COPY 1ah. */}
           <span className="mb-6 flex flex-wrap gap-x-2 text-xs font-bold tracking-[0.22em] text-neon uppercase">
             {["Strategy", "Operations", "Technology", "Execution"].map((word, i) => (
-              <span key={word} className="contents">
-                {i > 0 && (
-                  <span aria-hidden="true" className="hidden sm:block">
+              <span key={word} className="inline-block whitespace-nowrap">
+                {word}
+                {i < 3 && (
+                  <span aria-hidden="true" className="ml-2">
                     ·
                   </span>
                 )}
-                <span>{word}</span>
               </span>
             ))}
           </span>
@@ -87,7 +92,7 @@ export default function Home() {
           </p>
 
           {/* CTAs */}
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+          <div className="mt-7 sm:mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
             <Link
               href={HERO_CTA.href}
               className="inline-flex items-center justify-center rounded-xl bg-neon px-7 py-3.5 text-xs font-bold tracking-wider text-forest uppercase shadow-lg transition-all duration-200 hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none"
@@ -110,7 +115,7 @@ export default function Home() {
           )}
 
           {/* Social proof micro-line */}
-          <p className="mt-10 text-xs text-white/50 tracking-wide">
+          <p className="mt-7 sm:mt-10 text-xs text-white/50 tracking-wide">
             Trusted by SMEs across insurance, fintech, wellness &amp; retail.
           </p>
         </div>
@@ -132,7 +137,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   title={pub.title}
-                  className="font-semibold text-mid underline underline-offset-2 hover:text-forest"
+                  className="-my-3.5 inline-block py-3.5 font-semibold text-mid underline underline-offset-2 hover:text-forest"
                 >
                   {pub.name}
                 </a>
@@ -161,7 +166,7 @@ export default function Home() {
 
             Only the first copy is announced, so every logo and every label is in
             the accessibility tree exactly once. */}
-        <div className="mt-10 space-y-5">
+        <div className="mt-7 sm:mt-10 space-y-5">
           {LOGO_GROUPS.map((group, rowIndex) => (
             <div key={group.label} className="w-full overflow-hidden">
               <div
@@ -204,9 +209,9 @@ export default function Home() {
           standard body colour. Spec 3.3. */}
       {/* pb-28 below sm: clears the floating WhatsApp button so the last
           card does not end underneath it. PENDING-COPY 1ak. */}
-      <section className="surface-page px-4 pt-20 pb-28 sm:px-6 sm:py-20 lg:px-8">
+      <section className="surface-page px-4 pt-12 pb-10 sm:px-6 sm:pt-20 sm:pb-28 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <header className="mb-12 max-w-3xl">
+          <header className="mb-8 sm:mb-12 max-w-3xl">
             <span className="block font-sans font-semibold text-xs tracking-[0.22em] uppercase text-mid mb-3">
               MEASURED IMPACT
             </span>
@@ -221,9 +226,9 @@ export default function Home() {
       </section>
 
       {/* 3.4 What do we actually do. NEW. The hero's secondary CTA anchors here. */}
-      <section id="services" className="scroll-mt-28 surface-page px-4 pb-24 sm:px-6 lg:px-8">
+      <section id="services" className="scroll-mt-28 surface-page px-4 pb-14 sm:pb-24 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <header className="mb-14 max-w-3xl">
+          <header className="mb-9 sm:mb-14 max-w-3xl">
             <p className="mb-4 text-xs font-semibold tracking-[0.18em] text-mid uppercase">
               {SERVICES_EYEBROW}
             </p>
@@ -239,12 +244,16 @@ export default function Home() {
       {/* 3.5 The patterns. MOVED below the services: having just read what
           Pivot Prime sells, the visitor now recognises their own symptom and
           knows which service it points to. Spec 3.5. */}
-      <section className="surface-page px-4 pb-24 sm:px-6 lg:px-8">
+      <section className="surface-page px-4 pb-14 sm:pb-24 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
-          <p className="mb-4 text-xs font-semibold tracking-[0.18em] text-neon uppercase">
+          {/* Green heading over white chips, on the client's 28 August
+              instruction: it was a black heading over cream chips. The mid
+              green rather than the neon, because neon on the cream ground is
+              barely legible at heading weight. */}
+          <p className="mb-4 text-xs font-semibold tracking-[0.18em] text-mid uppercase">
             {PATTERNS.eyebrow}
           </p>
-          <h2 className="mb-10 text-3xl font-extrabold tracking-tight text-foreground md:text-4xl lg:text-5xl">
+          <h2 className="mb-7 sm:mb-10 text-3xl font-extrabold tracking-tight text-mid md:text-4xl lg:text-5xl">
             {PATTERNS.heading}
           </h2>
           <PatternsList />
@@ -273,8 +282,8 @@ export default function Home() {
           the layout does not collapse and the two-column intent is preserved.
           Spec 8.2: nothing is better than stock, so the placeholder uses
           initials + brand colour rather than any photography. Spec 3.7. */}
-      <section className="surface-page px-4 py-24 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-6xl grid items-center gap-12 md:grid-cols-2">
+      <section className="surface-page px-4 py-14 sm:py-24 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl grid items-center gap-7 sm:gap-12 md:grid-cols-2">
           {/* Copy column — left on desktop */}
           <div>
             <h2 className="mb-8 text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
@@ -293,7 +302,7 @@ export default function Home() {
                 studies", already carries it. */}
             <Link
               href={FOUNDER.ctaHref}
-              className="mt-8 inline-flex items-center justify-center rounded-xl bg-neon px-5 py-2.5 font-sans text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
+              className="mt-8 inline-flex min-h-11 items-center justify-center rounded-xl bg-neon px-5 py-2.5 font-sans text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
             >
               {FOUNDER.ctaLabel}
               <span aria-hidden="true" className="ml-2 text-base leading-none">
@@ -324,16 +333,16 @@ export default function Home() {
           after the founder section and before the personas, so the founder
           section establishes who is behind the work, the case studies prove it,
           and the personas then ask the visitor to place themselves. */}
-      <section className="surface-page px-4 pb-24 sm:px-6 lg:px-8">
+      <section className="surface-page px-4 pb-14 sm:pb-24 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           {/* Slide 8: the anonymised ones "sit only on the about page and you
               link to them", with a "more case studies" button here. */}
           <CaseStudies scope="homepage" />
 
-          <div className="mt-12 text-center">
+          <div className="mt-8 sm:mt-12 text-center">
             <Link
               href="/about#case-studies"
-              className="inline-flex items-center justify-center rounded-xl bg-neon px-5 py-2.5 font-sans text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
+              className="inline-flex min-h-11 items-center justify-center rounded-xl bg-neon px-5 py-2.5 font-sans text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
             >
               More case studies
               <span aria-hidden="true" className="ml-2 text-base leading-none">
@@ -345,7 +354,7 @@ export default function Home() {
       </section>
 
       {/* Audiences Section / Chapter 03 — Who We Serve */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 border-t border-forest/[0.06]">
+      <section className="py-14 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-forest/[0.06]">
         <div className="max-w-6xl mx-auto">
           <PersonaSwitcher />
         </div>
@@ -432,7 +441,7 @@ export default function Home() {
       </section>
 
       {/* 3.11 Close / Banner Card (Chapter 05 Style) */}
-      <section className="px-4 py-20 sm:px-6 lg:px-8 surface-page">
+      <section className="px-4 py-12 sm:py-20 sm:px-6 lg:px-8 surface-page">
         <div className="mx-auto max-w-6xl rounded-[32px] bg-forest text-white p-10 sm:p-14 md:p-20 relative overflow-hidden border border-white/10 shadow-2xl text-center">
           <div aria-hidden="true" className="absolute inset-0 z-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none" />
 
@@ -445,7 +454,7 @@ export default function Home() {
                 the contact page cannot honour. No substitute is invented, because
                 the spec provides none. */}
             {DIAGNOSTIC_ENABLED && (
-              <p className="mx-auto mb-10 max-w-2xl text-lg text-white/85">{CLOSE.standfirst}</p>
+              <p className="mx-auto mb-7 sm:mb-10 max-w-2xl text-lg text-white/85">{CLOSE.standfirst}</p>
             )}
 
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row mt-8">

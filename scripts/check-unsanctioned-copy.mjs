@@ -240,7 +240,13 @@ await browser.close();
 // quietly reverted or reworded, which is the same defect pointing the other way.
 // Compared against the FULL document, chrome included, so moving a label into the
 // header does not read as a deletion.
-const stale = SANCTIONED.entries.filter((e) => !liveNorm.has(norm(e.text)) && e.mustAppear !== false);
+// status "removed" means the client asked for the line to go. The entry stays,
+// so the deletion is recorded rather than the line simply vanishing from the
+// audit, and it is not reported as a line that went missing on its own.
+const stale = SANCTIONED.entries.filter(
+  (e) => !liveNorm.has(norm(e.text)) && e.mustAppear !== false && e.status !== "removed",
+);
+const removedByClient = SANCTIONED.entries.filter((e) => e.status === "removed").length;
 
 console.log(`reverse-audit: inspected ${inspected} headings and calls to action across ${allRoutes.length} routes`);
 
@@ -253,7 +259,8 @@ if (!findings.length && !stale.length && !unreachable.length) {
   const awaiting = SANCTIONED.entries.filter((e) => e.status === "awaiting-client").length;
   console.log(
     `reverse-audit: clean (${SANCTIONED.entries.length - awaiting} traced, ` +
-      `${awaiting} awaiting the client in PENDING-COPY 1f)`,
+      `${awaiting} awaiting the client in PENDING-COPY 1f, ` +
+      `${removedByClient} removed on her instruction in PENDING-COPY 1ar)`,
   );
   process.exit(0);
 }

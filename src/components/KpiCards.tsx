@@ -246,12 +246,12 @@ export default function KpiCards() {
 
           {/* Manual controls. Real buttons, so they are in the tab order and
               answer Enter and Space with no key handling of our own. */}
-          <div className="mt-4 flex items-center justify-center gap-3">
+          <div className="mt-4 flex items-center justify-center gap-1 sm:gap-3">
             <button
               type="button"
               onClick={() => go(active - 1)}
               aria-label="Previous result"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-neon/30 text-neon transition-colors hover:bg-neon/10 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
+              className="hidden h-11 w-11 sm:inline-flex items-center justify-center rounded-xl border border-neon/30 text-neon transition-colors hover:bg-neon/10 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
             >
               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
                 <path d="M15 5l-7 7 7 7" strokeLinecap="round" strokeLinejoin="round" />
@@ -265,7 +265,7 @@ export default function KpiCards() {
                 onClick={() => go(i)}
                 aria-label={`Show ${metric.kpiLabel}`}
                 aria-current={active === i}
-                className="inline-flex h-11 w-6 items-center justify-center focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
+                className="inline-flex h-11 w-11 shrink-0 items-center justify-center focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
               >
                 <span
                   aria-hidden="true"
@@ -280,7 +280,7 @@ export default function KpiCards() {
               type="button"
               onClick={() => go(active + 1)}
               aria-label="Next result"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-neon/30 text-neon transition-colors hover:bg-neon/10 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
+              className="hidden h-11 w-11 sm:inline-flex items-center justify-center rounded-xl border border-neon/30 text-neon transition-colors hover:bg-neon/10 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
             >
               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
                 <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />

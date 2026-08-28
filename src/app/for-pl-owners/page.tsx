@@ -6,10 +6,10 @@ export const metadata: Metadata = pageMetadata("forPlOwners");
 
 export default function ForCorporateOwners() {
   return (
-    <div className="flex flex-col min-h-screen pt-20 pb-16">
+    <div className="flex flex-col min-h-screen pt-12 sm:pt-20 pb-10 sm:pb-16">
       
       {/* Hero Section */}
-      <header className="bg-forest text-white relative overflow-hidden py-16 md:py-24">
+      <header className="bg-forest text-white relative overflow-hidden py-10 sm:py-16 md:py-24">
         <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           {/* Restored with the chapter number stripped. She asked for the labels reworded, not deleted. */}
@@ -27,19 +27,19 @@ export default function ForCorporateOwners() {
       </header>
 
       {/* Detail Sections */}
-      <section className="py-20">
+      <section className="py-12 sm:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-3xl md:text-4xl font-extrabold text-forest">What We Offer</h2>
           </div>
 
           {/* Section 1 */}
-          <div className="frosted-card-light border-forest/20 p-8 md:p-14 rounded-[28px] mb-10">
+          <div className="frosted-card-light border-forest/20 p-8 md:p-14 rounded-[28px] mb-7 sm:mb-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Why your unit isn&apos;t moving faster than the market</h2>
             <h3 className="text-lg font-bold text-mid mb-8">A reset of where capital, leadership attention, and effort are actually going, and what to cut.</h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 items-stretch">
               <div className="md:col-span-7 space-y-4 text-neutral-600 leading-relaxed text-base">
                 <p className="font-semibold text-forest">
                   This is about understanding why you’re not moving faster than the market.
@@ -62,11 +62,11 @@ export default function ForCorporateOwners() {
           </div>
 
           {/* Section 2 */}
-          <div className="frosted-card-light border-forest/20 p-8 md:p-14 rounded-[28px] mb-10">
+          <div className="frosted-card-light border-forest/20 p-8 md:p-14 rounded-[28px] mb-7 sm:mb-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Your decisions don&rsquo;t survive the next layers of the organisation</h2>
             <h3 className="text-lg font-bold text-mid mb-8">Senior-level support that closes the gap between what gets decided and what actually lands.</h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 items-stretch">
               <div className="md:col-span-7 space-y-4 text-neutral-600 leading-relaxed text-base">
                 <p className="font-semibold text-forest">
                   Most corporate strategies fail quietly, not loudly. They get approved, socialised, and then diluted across layers of the organisation.
@@ -89,11 +89,11 @@ export default function ForCorporateOwners() {
           </div>
 
           {/* Section 3 */}
-          <div className="frosted-card-light border-forest/20 p-8 md:p-14 rounded-[28px] mb-10">
+          <div className="frosted-card-light border-forest/20 p-8 md:p-14 rounded-[28px] mb-7 sm:mb-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Grow output without growing the cost base</h2>
             <h3 className="text-lg font-bold text-mid mb-8">Smarter operating design, targeted automation, and AI adoption, applied where it actually reduces drag.</h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 items-stretch">
               <div className="md:col-span-7 space-y-4 text-neutral-600 leading-relaxed text-base">
                 <p className="font-semibold text-forest">
                   Large organisations slow down in invisible ways. Processes calcify, systems are under-used, and teams compensate instead of fixing root causes.
@@ -136,8 +136,8 @@ export default function ForCorporateOwners() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto rounded-[32px] bg-forest text-white p-10 md:p-14 text-center border border-white/10 shadow-2xl relative overflow-hidden">
+      <section className="px-4 py-6 sm:py-16 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto rounded-[32px] bg-forest text-white p-7 sm:p-10 md:p-14 text-center border border-white/10 shadow-2xl relative overflow-hidden">
           <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none" />
           <div className="relative z-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-6">

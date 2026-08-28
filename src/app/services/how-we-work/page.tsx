@@ -12,10 +12,10 @@ export default function WhatWeDo() {
   if (!HOW_WE_WORK_PUBLISHED) notFound();
 
   return (
-    <div className="flex flex-col min-h-screen pt-32 pb-16 overflow-x-clip">
+    <div className="flex flex-col min-h-screen pt-28 sm:pt-32 pb-10 sm:pb-16 overflow-x-clip">
       
       {/* Hero Section */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center py-16 md:py-24">
+      <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center py-10 sm:py-16 md:py-24">
         <h1 className="text-5xl md:text-6xl font-extrabold text-black mb-4 tracking-tight leading-tight">
           How we work
         </h1>
@@ -32,11 +32,11 @@ export default function WhatWeDo() {
       </section>
 
       {/* Core Focus Areas */}
-      <section className="surface-page py-24">
+      <section className="surface-page py-14 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-16">What we do:</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-7 sm:mb-16">What we do:</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-7 sm:gap-12">
             
             {/* Box 1 */}
             <div className="card-dark p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
@@ -115,13 +115,13 @@ export default function WhatWeDo() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-24 bg-forest text-white px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-14 sm:py-24 bg-forest text-white px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-extrabold mb-8 leading-tight">
             Most consultants stop at strategy.<br/>
             We step into the messy middle and help you execute, adapt, and move the business forward.
           </h2>
-          <p className="text-xl md:text-2xl text-primary font-medium mb-16">
+          <p className="text-xl md:text-2xl text-primary font-medium mb-7 sm:mb-16">
             Businesses don’t need more ideas, they need results. With Pivot Prime you get real support, real momentum, and real results.
           </p>
 
@@ -134,7 +134,7 @@ export default function WhatWeDo() {
       </section>
 
       {/* The Method Section */}
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-14 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-extrabold text-black mb-6">The Pivot Prime Method</h2>
           <p className="text-xl md:text-2xl text-gray-600">
@@ -143,7 +143,7 @@ export default function WhatWeDo() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-10">
           
           {/* Method 1 */}
           <div className="border-t-4 border-primary pt-8">
@@ -196,11 +196,11 @@ export default function WhatWeDo() {
       </section>
 
       {/* Pillars Section */}
-      <section className="surface-page py-24">
+      <section className="surface-page py-14 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-16">
+          <div className="max-w-4xl mx-auto text-center mb-7 sm:mb-16">
             <h2 className="text-3xl md:text-4xl font-extrabold mb-6">People, roles, and ways of working must support it.</h2>
-            <p className="text-lg text-gray-600 mb-10 leading-relaxed">
+            <p className="text-lg text-gray-600 mb-7 sm:mb-10 leading-relaxed">
               We can diagnose the right problems and design the right plan, but delivery only happens when people understand the strategy, trust the decisions behind it, and see how their work connects. That is why leadership, decision-making, and ways of working matter; they determine whether plans move forward or stall.
             </p>
             <p className="text-xl font-bold text-primary">
@@ -208,7 +208,7 @@ export default function WhatWeDo() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10">
             <div className="card-dark p-10 md:p-12 rounded-3xl shadow-sm border border-gray-100 flex flex-col justify-between">
               <div>
                 <h3 className="text-2xl font-bold mb-6">Executive coaching and leadership labs</h3>
@@ -243,8 +243,8 @@ export default function WhatWeDo() {
       </section>
 
       {/* The 6 Steps Section */}
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mb-16">
+      <section className="py-14 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mb-7 sm:mb-16">
           <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
             Strategy sets direction, but execution is what creates results
           </h2>
@@ -259,7 +259,7 @@ export default function WhatWeDo() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8 mb-20">
           
           <div className="card-dark p-8 rounded-2xl border border-gray-100">
             <div className="text-4xl font-extrabold text-primary mb-4 opacity-50">01.</div>
@@ -305,7 +305,7 @@ export default function WhatWeDo() {
         </div>
 
         {/* Spec 4.6 routing block, at the end of the Pathway. */}
-        <div className="mx-auto mb-12 max-w-3xl rounded-xl border border-forest/10 bg-forest/[0.04] p-8 text-center">
+        <div className="mx-auto mb-8 sm:mb-12 max-w-3xl rounded-xl border border-forest/10 bg-forest/[0.04] p-8 text-center">
           <h3 className="mb-3 text-2xl font-bold text-forest">Where this starts</h3>
           <p className="mb-6 leading-relaxed text-neutral-600">
             Almost every engagement begins with an Operational Clarity Audit, because we will not
@@ -321,7 +321,7 @@ export default function WhatWeDo() {
         </div>
 
         <div className="text-center bg-forest text-white p-12 md:p-20 rounded-3xl">
-          <h3 className="text-3xl md:text-5xl font-extrabold mb-10 leading-tight">
+          <h3 className="text-3xl md:text-5xl font-extrabold mb-7 sm:mb-10 leading-tight">
             Stop guessing what is holding growth back,<br/>
             start with a proper diagnosis.
           </h3>

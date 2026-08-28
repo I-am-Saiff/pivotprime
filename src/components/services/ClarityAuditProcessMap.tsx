@@ -39,9 +39,9 @@ export default function ClarityAuditProcessMap() {
   const links = mapState ? CLEAN_LINKS : MESSY_LINKS;
 
   return (
-      <section className="surface-page py-16 md:py-24">
+      <section className="surface-page py-10 sm:py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-10 max-w-2xl">
+          <div className="mb-7 sm:mb-10 max-w-2xl">
             <span className="block font-sans font-semibold text-[10.5px] tracking-[0.24em] uppercase text-[#009f50]">
               The deliverable, in one picture
             </span>
@@ -57,7 +57,7 @@ export default function ClarityAuditProcessMap() {
             <div className="inline-flex card-dark border border-[#e3eae6] rounded-full p-1 gap-1 mb-6">
               <button
                 onClick={() => setMapState(0)}
-                className={`px-4 py-2 font-semibold text-[13px] rounded-xl transition-colors ${
+                className={`inline-flex min-h-11 items-center px-4 py-2 font-semibold text-[13px] rounded-xl transition-colors ${
                   mapState === 0 ? "bg-[#013325] text-white" : "text-[#5e6f68] hover:bg-[#e3eae6]"
                 }`}
               >
@@ -65,7 +65,7 @@ export default function ClarityAuditProcessMap() {
               </button>
               <button
                 onClick={() => setMapState(1)}
-                className={`px-4 py-2 font-semibold text-[13px] rounded-xl transition-colors ${
+                className={`inline-flex min-h-11 items-center px-4 py-2 font-semibold text-[13px] rounded-xl transition-colors ${
                   mapState === 1 ? "bg-[#013325] text-white" : "text-[#5e6f68] hover:bg-[#e3eae6]"
                 }`}
               >
