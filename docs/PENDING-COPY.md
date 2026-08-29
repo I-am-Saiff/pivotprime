@@ -3106,3 +3106,30 @@ the one already on Iram's card. Sending Saif's portrait is all that is needed.
 **Still worth knowing:** the small labels in the fees box measure about 3.3:1
 against a 4.5:1 requirement, because mid green on a light ground is faint. Dark
 green would fix it and lose the green accent.
+
+---
+
+## 1b3. A duplicate on Technology Builds, and two more found — **for Iram**
+
+The 29 August restore put sections back without checking whether the page already
+carried them. On **Technology Builds** that meant the seven capability lines
+appeared twice: once in the nine-card grid and again in a "What We Build" list
+below it. **The lower one is removed.** The grid higher up is untouched.
+
+**Two more, found by checking the other four pages and left in place for you to
+decide:**
+
+**Operational Clarity Audit.** The restored spec lists overlap the two columns
+already under the hero. Three of the seven "what we look at" lines and two of the
+six "what you get" lines are word for word the same in both places. The rest
+differ slightly: the columns carry a shortened version and the restored section
+carries your full spec wording. Either the columns go, or the restored section
+goes, or the columns keep the short version and we accept the overlap.
+
+**UAE Market Entry.** Your closing line, "We take clients from a licence to a
+functioning, properly priced operation that can actually succeed here", appears
+twice: once as its own section and once in the new sign-off at the foot, because
+that sign-off was written from your own closing copy. One of the two should go.
+
+**Checked and clean:** Fractional Leadership and Build and Place. Every restored
+block on those two appears exactly once.

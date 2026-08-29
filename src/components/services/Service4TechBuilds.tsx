@@ -1,4 +1,4 @@
-import { CopyProse, CopyList, ServiceSignOff } from "./SpecCopyBlocks";
+import { CopyProse, ServiceSignOff } from "./SpecCopyBlocks";
 import { WHATSAPP_CTA } from "@/content/cta";
 import { TECH_BUILDS } from "@/content/services-detail";
 
@@ -169,7 +169,13 @@ export default function Service4TechBuilds() {
           PENDING-COPY 1ar and 1at. */}
       <section className="surface-page px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
         <div className="space-y-12 sm:space-y-16">
-          <CopyList heading="What We Build" items={TECH_BUILDS.capabilities} />
+          {/* "What We Build" WAS HERE AND WAS A DUPLICATE. The 29 August
+              restore put TECH_BUILDS.capabilities back without checking whether
+              the page already carried it: the nine-card capability grid higher
+              up renders the same seven items, so all seven appeared twice.
+              Removed on her instruction, keeping the version higher on the
+              page. The restore was right about the other three blocks on this
+              page, which appear once each. */}
           <CopyProse heading={TECH_BUILDS.bringUsTheProblem.label} paragraphs={[TECH_BUILDS.bringUsTheProblem.heading, TECH_BUILDS.bringUsTheProblem.body]} />
           <CopyProse heading="How It Runs" paragraphs={[TECH_BUILDS.howItRuns]} />
           <CopyProse heading="Where This Starts" paragraphs={[TECH_BUILDS.whereThisStarts]} />
