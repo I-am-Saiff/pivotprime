@@ -171,6 +171,45 @@
     background-color: var(--page-ground);
   }
 
+  /* INSIGHTS CATEGORY FILTER.
+     
+     Every article card is in the served HTML at every moment. The tabs set
+     data-active-tag on the wrapper and these rules hide what does not match, so
+     with JavaScript off nothing is hidden and every article is readable. This is
+     the standing rule that conditionally rendered content is a defect, and this
+     is the third feature it has applied to.
+
+     One rule per category rather than a clever selector, because CSS cannot
+     compare two attribute values to each other. The list is fixed at six in
+     INSIGHTS_FILTERS, so five rules cover it; "All" hides nothing by design.
+
+     :has() carries the second and third rules of each group: a section label
+     with no cards left under it hides itself, and the "nothing here yet" line
+     appears only when the chosen category matches no article at all. */
+  [data-active-tag="Execution"] [data-post-tag]:not([data-post-tag="Execution"]),
+  [data-active-tag="Leadership"] [data-post-tag]:not([data-post-tag="Leadership"]),
+  [data-active-tag="Technology"] [data-post-tag]:not([data-post-tag="Technology"]),
+  [data-active-tag="Finance"] [data-post-tag]:not([data-post-tag="Finance"]),
+  [data-active-tag="Growth"] [data-post-tag]:not([data-post-tag="Growth"]) {
+    display: none;
+  }
+
+  [data-active-tag="Execution"] [data-post-group]:not(:has([data-post-tag="Execution"])),
+  [data-active-tag="Leadership"] [data-post-group]:not(:has([data-post-tag="Leadership"])),
+  [data-active-tag="Technology"] [data-post-group]:not(:has([data-post-tag="Technology"])),
+  [data-active-tag="Finance"] [data-post-group]:not(:has([data-post-tag="Finance"])),
+  [data-active-tag="Growth"] [data-post-group]:not(:has([data-post-tag="Growth"])) {
+    display: none;
+  }
+
+  [data-active-tag="Execution"]:not(:has([data-post-tag="Execution"])) [data-no-matches],
+  [data-active-tag="Leadership"]:not(:has([data-post-tag="Leadership"])) [data-no-matches],
+  [data-active-tag="Technology"]:not(:has([data-post-tag="Technology"])) [data-no-matches],
+  [data-active-tag="Finance"]:not(:has([data-post-tag="Finance"])) [data-no-matches],
+  [data-active-tag="Growth"]:not(:has([data-post-tag="Growth"])) [data-no-matches] {
+    display: block;
+  }
+
   .glass-nav {
     @apply bg-forest backdrop-blur-xl border border-white/15 shadow-[0_12px_36px_rgba(0,0,0,0.3)];
   }

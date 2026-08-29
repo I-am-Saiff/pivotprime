@@ -56,25 +56,26 @@ export const NAVIGATION: NavItem[] = [
       { label: "Case Studies", href: "/about#case-studies", anchor: true },
     ],
   },
+  { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact" },
 ];
 
 /** Spec 3.12: the footer link list matches the top level of the navigation. */
 /**
- * /insights is deliberately NOT in the main navigation and IS in the footer.
+ * /insights IS in the main navigation, from 29 August.
  *
- * The page has a heading and three lines on it, because the first article has
- * not been written. In the header that is an empty page offered to every
- * visitor; in the footer it is a route that resolves for anyone who already has
- * the link, which is what was asked for. It also keeps the page reachable, so
- * the crawl check does not report it as an orphan.
+ * It was held out of the header while the page was a heading and three lines
+ * with no articles under it: an empty page offered to every visitor. The client
+ * delivered four finished articles and the listing design on 29 August, so the
+ * reason has expired and the entry is back in NAVIGATION above. The noindex and
+ * the sitemap omission went with it. PENDING-COPY 1k, closed.
  *
- * It goes back into the header when there is a first piece to read.
- * PENDING-COPY 1k.
+ * It is no longer repeated here, because FOOTER_LINKS already spreads the top
+ * level of NAVIGATION and a second entry would render the link twice in the
+ * footer.
  */
 export const FOOTER_LINKS: NavLink[] = [
   ...NAVIGATION.map(({ label, href }) => ({ label, href })),
-  { label: "Insights", href: "/insights" },
   { label: "Privacy", href: "/privacy" },
 ];
 

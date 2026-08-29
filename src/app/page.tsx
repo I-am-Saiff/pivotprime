@@ -182,7 +182,7 @@ export default function Home() {
                     className="flex items-center space-x-12 px-6"
                     aria-hidden={copy === 1}
                   >
-                    <h3 className="flex h-20 w-56 flex-shrink-0 items-center justify-center rounded-lg border border-forest/15 bg-forest/[0.04] px-5 text-center font-sans text-xs font-bold tracking-[0.14em] text-forest uppercase md:h-24 md:w-64">
+                    <h3 className="flex h-20 w-56 flex-shrink-0 items-center justify-center rounded-lg border border-forest/15 bg-shell px-5 text-center font-sans text-xs font-bold tracking-[0.14em] text-forest uppercase md:h-24 md:w-64">
                       {group.label}
                     </h3>
                     {group.logos.map((logo) => (
@@ -266,7 +266,7 @@ export default function Home() {
           "Remove this section". It covered the heading "Knowing what is wrong
           is hard. Being the one who has to fix it is harder.", four body
           paragraphs, the pull quote, the CTA, the Diagnose / Align / Rebuild /
-          Embed cards and the 40-60% badge.
+          Embed cards and the process efficiency badge.
 
           SPEC 3.6 MARKS THIS SECTION "NEW", so the document asked for it and
           her comment removes it. The comment is dated 22 August and the

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { DIAGNOSTIC_ENABLED } from "@/lib/flags";
 import { SERVICES } from "@/content/services";
+import { ARTICLE_SLUGS } from "@/content/insights";
 import { SITE_URL } from "@/content/metadata";
 
 /**
@@ -14,9 +15,10 @@ import { SITE_URL } from "@/content/metadata";
  * /about, not separate documents, and listing fragments as URLs misrepresents
  * the site's structure.
  *
- * /insights is omitted for the same reason from 25 August: it carries noindex
- * while it has no articles on it, so listing it would advertise a page we are
- * asking search engines to skip. It returns with the first piece.
+ * /insights and her four articles are listed from 29 August. The page was
+ * omitted while it carried noindex for having nothing on it; the client
+ * delivered four finished pieces, the noindex is gone, and the articles are the
+ * only pages on this site written to rank on their own.
  *
  * /privacy is omitted while its text is unsigned: the page carries noindex until
  * a UAE-qualified adviser has reviewed it, and a sitemap entry would contradict
@@ -32,6 +34,8 @@ const ROUTES = [
   "/for-pl-owners",
   "/about",
   "/contact",
+  "/insights",
+  ...ARTICLE_SLUGS.map((slug) => `/insights/${slug}`),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -51,7 +51,7 @@
       "element": "h3"
     },
     {
-      "text": "You don\u2019t have to figure it all out alone.",
+      "text": "You don’t have to figure it all out alone.",
       "status": "traced",
       "kind": "live-site-keep",
       "why": "Retained from pivotprime.ae under a KEEP instruction. Verified against the live page's served HTML on 2026-08-20."
@@ -87,19 +87,19 @@
       "element": "h3"
     },
     {
-      "text": "Make your business predictable \u2192",
+      "text": "Make your business predictable →",
       "status": "traced",
       "kind": "live-site-keep",
       "why": "Retained from pivotprime.ae under a KEEP instruction. Verified against the live page's served HTML on 2026-08-20."
     },
     {
-      "text": "Get execution support \u2192",
+      "text": "Get execution support →",
       "status": "traced",
       "kind": "live-site-keep",
       "why": "Retained from pivotprime.ae under a KEEP instruction. Verified against the live page's served HTML on 2026-08-20."
     },
     {
-      "text": "Design the execution roadmap \u2192",
+      "text": "Design the execution roadmap →",
       "status": "traced",
       "kind": "client-mockup",
       "why": "Visible text in the client's own mockup, req/pivotprime-persona-pages.html and req/pivotprime-persona-tiles.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25.",
@@ -107,7 +107,7 @@
       "element": "link"
     },
     {
-      "text": "See what you can take off your plate \u2192",
+      "text": "See what you can take off your plate →",
       "status": "traced",
       "kind": "live-site-keep",
       "why": "Retained from pivotprime.ae under a KEEP instruction. Verified against the live page's served HTML on 2026-08-20."
@@ -257,7 +257,7 @@
       "why": "Functional interface copy, not a copy decision. The spec never names interface controls."
     },
     {
-      "text": "Book your first conversation \u2192",
+      "text": "Book your first conversation →",
       "status": "traced",
       "kind": "live-site-keep",
       "why": "Retained from pivotprime.ae under a KEEP instruction. Verified against the live page's served HTML on 2026-08-20."
@@ -269,7 +269,7 @@
       "why": "Functional interface copy, not a copy decision. The spec never names interface controls."
     },
     {
-      "text": "You\u2019ve created something real.",
+      "text": "You’ve created something real.",
       "status": "traced",
       "kind": "live-site-keep",
       "why": "Retained from pivotprime.ae under a KEEP instruction. Verified against the live page's served HTML on 2026-08-20."
@@ -357,7 +357,7 @@
       "element": "h2"
     },
     {
-      "text": "You\u2019re carrying delivery, risk, and outcomes",
+      "text": "You’re carrying delivery, risk, and outcomes",
       "status": "traced",
       "kind": "live-site-keep",
       "why": "Retained from pivotprime.ae under a KEEP instruction. Verified against the live page's served HTML on 2026-08-20."
@@ -421,7 +421,7 @@
       "text": "We do not just understand your challenges.",
       "status": "traced",
       "kind": "live-site-keep",
-      "why": "Retained from the pivotprime.ae homepage under the section 6.2 KEEP instruction, with the contraction expanded: the live site reads \"We don\u2019t just understand your challenges.\". The expansion itself is the open item, and it is in PENDING-COPY 1f. Verified against the live homepage's served HTML on 2026-08-25. OFF THE SITE SINCE THE ABOUT REBUILD, 25 August: relocated here from the homepage under PENDING-COPY 2.4; her About redesign has no place for it. Kept here rather than deleted so the provenance survives the removal. Word for word in PENDING-COPY 1ab.",
+      "why": "Retained from the pivotprime.ae homepage under the section 6.2 KEEP instruction, with the contraction expanded: the live site reads \"We don’t just understand your challenges.\". The expansion itself is the open item, and it is in PENDING-COPY 1f. Verified against the live homepage's served HTML on 2026-08-25. OFF THE SITE SINCE THE ABOUT REBUILD, 25 August: relocated here from the homepage under PENDING-COPY 2.4; her About redesign has no place for it. Kept here rather than deleted so the provenance survives the removal. Word for word in PENDING-COPY 1ab.",
       "route": "/about",
       "element": "h2",
       "mustAppear": false
@@ -430,7 +430,7 @@
       "text": "We have sat in the system.",
       "status": "traced",
       "kind": "live-site-keep",
-      "why": "Retained from the pivotprime.ae homepage under the section 6.2 KEEP instruction, with the contraction expanded: the live site reads \"We\u2019ve sat in the system.\". The expansion itself is the open item, and it is in PENDING-COPY 1f. Verified against the live homepage's served HTML on 2026-08-25. OFF THE SITE SINCE THE ABOUT REBUILD, 25 August: relocated here from the homepage under PENDING-COPY 2.4; her About redesign has no place for it. Kept here rather than deleted so the provenance survives the removal. Word for word in PENDING-COPY 1ab.",
+      "why": "Retained from the pivotprime.ae homepage under the section 6.2 KEEP instruction, with the contraction expanded: the live site reads \"We’ve sat in the system.\". The expansion itself is the open item, and it is in PENDING-COPY 1f. Verified against the live homepage's served HTML on 2026-08-25. OFF THE SITE SINCE THE ABOUT REBUILD, 25 August: relocated here from the homepage under PENDING-COPY 2.4; her About redesign has no place for it. Kept here rather than deleted so the provenance survives the removal. Word for word in PENDING-COPY 1ab.",
       "route": "/about",
       "element": "h2",
       "mustAppear": false
@@ -445,7 +445,7 @@
       "mustAppear": false
     },
     {
-      "text": "\u2022 We structure problem solving",
+      "text": "• We structure problem solving",
       "status": "traced",
       "kind": "live-site-keep",
       "why": "Retained from pivotprime.ae/who-we-are under the section 6.2 KEEP instruction. Verified against that page's served HTML on 2026-08-25. OFF THE SITE SINCE THE ABOUT REBUILD, 25 August: one of the four spec 6.2 capabilities, which her About redesign replaces. Kept here rather than deleted so the provenance survives the removal. Word for word in PENDING-COPY 1ab.",
@@ -454,7 +454,7 @@
       "mustAppear": false
     },
     {
-      "text": "\u2022 We embed operational discipline",
+      "text": "• We embed operational discipline",
       "status": "traced",
       "kind": "live-site-keep",
       "why": "Retained from pivotprime.ae/who-we-are under the section 6.2 KEEP instruction. Verified against that page's served HTML on 2026-08-25. OFF THE SITE SINCE THE ABOUT REBUILD, 25 August: one of the four spec 6.2 capabilities, which her About redesign replaces. Kept here rather than deleted so the provenance survives the removal. Word for word in PENDING-COPY 1ab.",
@@ -463,7 +463,7 @@
       "mustAppear": false
     },
     {
-      "text": "\u2022 We enable data tracking",
+      "text": "• We enable data tracking",
       "status": "traced",
       "kind": "live-site-keep",
       "why": "Retained from pivotprime.ae/who-we-are under the section 6.2 KEEP instruction. Verified against that page's served HTML on 2026-08-25. OFF THE SITE SINCE THE ABOUT REBUILD, 25 August: one of the four spec 6.2 capabilities, which her About redesign replaces. Kept here rather than deleted so the provenance survives the removal. Word for word in PENDING-COPY 1ab.",
@@ -472,7 +472,7 @@
       "mustAppear": false
     },
     {
-      "text": "\u2022 We understand human behaviour",
+      "text": "• We understand human behaviour",
       "status": "traced",
       "kind": "spec",
       "why": "Appears in docs/spec.md. spec 2.5, the typographical corrections table: the document asks for the American spelling on the live About page to be changed to this. Verified 2026-08-25. OFF THE SITE SINCE THE ABOUT REBUILD, 25 August: one of the four spec 6.2 capabilities, which her About redesign replaces. Also the corrected spelling spec 2.5 asks for, so that correction now has nothing on the site to apply to. Kept here rather than deleted so the provenance survives the removal. Word for word in PENDING-COPY 1ab.",
@@ -481,7 +481,7 @@
       "mustAppear": false
     },
     {
-      "text": "Tell us what\u2019s slowing you down.",
+      "text": "Tell us what’s slowing you down.",
       "status": "awaiting-client",
       "kind": "authored",
       "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
@@ -506,7 +506,7 @@
       "text": "Professional Services, UAE",
       "status": "traced",
       "kind": "client-mockup",
-      "why": "Visible text in the client's own mockup, req/pp-about-v2_2.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25. The mockup separates the two halves with a middle dot, \"Professional Services \u00b7 UAE\"; the comma is ours.",
+      "why": "Visible text in the client's own mockup, req/pp-about-v2_2.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25. The mockup separates the two halves with a middle dot, \"Professional Services · UAE\"; the comma is ours.",
       "route": "/",
       "element": "heading"
     },
@@ -575,7 +575,7 @@
       "why": "Supplied by the client verbatim in a comment on slide 20 of Website Revisions 2208v3, 22 August. Replaces spec 5.x copy, which her comment postdates. PENDING-COPY 1v."
     },
     {
-      "text": "Your decisions don\u2019t survive the next layers of the organisation",
+      "text": "Your decisions don’t survive the next layers of the organisation",
       "status": "traced",
       "kind": "client-supplied",
       "why": "Supplied by the client verbatim in a comment on slide 20 of Website Revisions 2208v3, 22 August. Replaces spec 5.x copy, which her comment postdates. PENDING-COPY 1v."
@@ -691,11 +691,275 @@
       "element": "h3"
     },
     {
-      "text": "View the product\u2192",
+      "text": "View the product→",
       "status": "traced",
       "kind": "authored",
       "why": "The outbound link on the Nurture case study, added 28 August 2026 on the client's instruction. Labelled to view the product rather than to download it, because nurtureuae.com currently uses placeholder app store links and no availability claim can be supported. PENDING-COPY 1ap.",
       "route": "/",
+      "element": "link"
+    },
+    {
+      "text": "Thinking fromthe inside out.",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-insights_3.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights",
+      "element": "h1"
+    },
+    {
+      "text": "Insights worth reading.",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-insights_3.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights",
+      "element": "h2"
+    },
+    {
+      "text": "Reading about itis the start. Doing it is the point.",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-insights_3.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights",
+      "element": "h2"
+    },
+    {
+      "text": "Book a call with Iram",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-insights_3.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights",
+      "element": "link"
+    },
+    {
+      "text": "The consultant leaves.The problem stays.",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-1.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/consultant-leaves",
+      "element": "h1"
+    },
+    {
+      "text": "The structural flaw in traditional consulting",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-1.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/consultant-leaves",
+      "element": "h2"
+    },
+    {
+      "text": "What execution actually requires",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-1.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/consultant-leaves",
+      "element": "h2"
+    },
+    {
+      "text": "What changes when someone owns the outcome",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-1.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/consultant-leaves",
+      "element": "h2"
+    },
+    {
+      "text": "The question worth asking before you engage anyone",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-1.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/consultant-leaves",
+      "element": "h2"
+    },
+    {
+      "text": "Ready to close the gapin your business?",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-1.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/consultant-leaves",
+      "element": "h2"
+    },
+    {
+      "text": "LeadershipWhy your decisions don't survive the layersRead →",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-1.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/consultant-leaves",
+      "element": "link"
+    },
+    {
+      "text": "TechnologyAI won't save a broken process. But fixing the process will.Read →",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-1.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/consultant-leaves",
+      "element": "link"
+    },
+    {
+      "text": "AI won't save a broken process.But fixing the process will.",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-2.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/technology-process",
+      "element": "h1"
+    },
+    {
+      "text": "Technology does not fix broken workflows. It accelerates them.",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-2.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/technology-process",
+      "element": "h2"
+    },
+    {
+      "text": "What needs to happen before technology can work",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-2.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/technology-process",
+      "element": "h2"
+    },
+    {
+      "text": "Why adoption fails even when the tool is right",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-2.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/technology-process",
+      "element": "h2"
+    },
+    {
+      "text": "Where AI genuinely creates a step change",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-2.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/technology-process",
+      "element": "h2"
+    },
+    {
+      "text": "Process first.Then technology.",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-2.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/technology-process",
+      "element": "h2"
+    },
+    {
+      "text": "Talk to our technology team",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-2.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/technology-process",
+      "element": "link"
+    },
+    {
+      "text": "ExecutionThe consultant leaves. The problem stays.Read →",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-2.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/technology-process",
+      "element": "link"
+    },
+    {
+      "text": "Why your decisionsdon't survive the layers.",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-3.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/decisions-layers",
+      "element": "h1"
+    },
+    {
+      "text": "This is structural, not a people problem",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-3.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/decisions-layers",
+      "element": "h2"
+    },
+    {
+      "text": "The hierarchy tax on your P&L",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-3.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/decisions-layers",
+      "element": "h2"
+    },
+    {
+      "text": "Why the most capable people leave first",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-3.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/decisions-layers",
+      "element": "h2"
+    },
+    {
+      "text": "What can actually be done about it",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-3.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/decisions-layers",
+      "element": "h2"
+    },
+    {
+      "text": "Your decisions shouldreach the ground intact.",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-3.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/decisions-layers",
+      "element": "h2"
+    },
+    {
+      "text": "Why your margins are thinnerthan your revenue suggests.",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-4.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/margin-revenue",
+      "element": "h1"
+    },
+    {
+      "text": "The pricing problem nobody talks about",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-4.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/margin-revenue",
+      "element": "h2"
+    },
+    {
+      "text": "Cost creep and the baseline problem",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-4.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/margin-revenue",
+      "element": "h2"
+    },
+    {
+      "text": "The unconsolidated spend problem",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-4.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/margin-revenue",
+      "element": "h2"
+    },
+    {
+      "text": "What to do when the margin conversation gets uncomfortable",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-4.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/margin-revenue",
+      "element": "h2"
+    },
+    {
+      "text": "Know where yourmargin is going.",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-4.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/margin-revenue",
+      "element": "h2"
+    },
+    {
+      "text": "Talk to our finance team",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own words. Transcribed by script from pp-blog-4.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "route": "/insights/margin-revenue",
       "element": "link"
     }
   ]

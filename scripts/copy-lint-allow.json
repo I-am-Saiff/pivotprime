@@ -1,4 +1,11 @@
 {
   "_comment": "Reviewed exceptions to the house rules in spec section 1. Each entry needs file, rule and the exact offending text, plus a note saying who accepted it and why. Keep this list short: an entry here is a decision, not a snooze.",
-  "allow": []
+  "allow": [
+    {
+      "file": "src/content/insights.ts",
+      "rule": "em-dash",
+      "match": "—",
+      "note": "Accepted 29 August. The client's own final copy for the four Insights articles and the listing page uses 28 em dashes. The instruction was that her copy ships verbatim, every word, and copy she has signed off outranks a house style rule we set for the copy we write ourselves. This exception covers her words only: src/content/insights.ts is generated from her files and holds nothing else."
+    }
+  ]
 }

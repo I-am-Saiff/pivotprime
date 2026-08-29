@@ -143,7 +143,10 @@ export type Metric = {
   figure: number | null;
   /**
    * What the card prints, exactly as her mockup prints it, sign and range and
-   * all. `figure` cannot express "40-60%" and the page must not paraphrase her.
+   * all. `figure` could not express the "40-60%" this used to carry, and the page
+   * must not paraphrase her. The client replaced that range with a single 43% on
+   * 29 August, so the two agree again, but the split stays: the next figure she
+   * sends may be a range too.
    */
   figureText: string | null;
   suffix: string;
@@ -202,7 +205,7 @@ export type Metric = {
  * The mockup and the deck therefore override the section 9 table.
  *
  * The values are hers, verbatim, including the sign and the range: +7%,
- * 40-60%, +13%, +27%, 67%. `figure` is the magnitude the drawing uses and
+ * 43%, +13%, +27%, 67%. `figure` is the magnitude the drawing uses and
  * `figureText` is what the card prints. Recorded in docs/PENDING-COPY.md 1am so
  * the override is visible to her and can be undone in one edit.
  *
@@ -223,8 +226,8 @@ export const METRICS: Metric[] = [
     context: "Decision rights, operating rhythm and delivery ownership rebuilt.",
   },
   {
-    figure: 60,
-    figureText: "40-60%",
+    figure: 43,
+    figureText: "43%",
     suffix: "%",
     pending: null,
     kpiLabel: "Process Efficiency",

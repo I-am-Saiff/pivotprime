@@ -44,6 +44,12 @@ const ROUTES = [
   "/for-pl-owners",
   "/about",
   "/insights",
+  // Her four articles, 29 August. Each is a long single column, which is the
+  // shape most likely to push a wide element past the viewport on mobile.
+  "/insights/consultant-leaves",
+  "/insights/technology-process",
+  "/insights/decisions-layers",
+  "/insights/margin-revenue",
   "/contact",
   "/privacy",
 ];

@@ -136,7 +136,7 @@ function Waste({ run }: { run: boolean }) {
       ))}
       <line x1="125" y1="40" x2="247" y2="40" stroke="var(--color-neon)" strokeOpacity="0.45" strokeWidth="0.5" strokeDasharray="2 2" />
       <text x="186" y="50" textAnchor="middle" fill="var(--color-neon)" fillOpacity="0.8" fontSize="7.5" letterSpacing="0.06em">
-        40–60% INEFFICIENCY
+        43% INEFFICIENCY
       </text>
 
       <text x="0" y="66" fill="var(--color-neon)" fontSize="8" fontWeight="600" letterSpacing="0.1em">

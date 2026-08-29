@@ -2857,3 +2857,92 @@ the yellow-orange band so a terracotta warning colour is not mistaken for gold.
 **Also on that page:** the "What we look at" and "What you get" columns are a
 comparison pair, so they now follow the site rule — white on the left, green on
 the right. They were two unfilled columns with a gold heading each.
+
+---
+
+## 1ay. Insights built from your five files — **for Iram**
+
+`/insights` and four article pages are built from `pp-insights_3.html` and
+`pp-blog-1` to `pp-blog-4`, delivered 29 August. **Every word is yours**, lifted
+out of your files by a script rather than retyped, and checked back against them:
+112 of 112 strings match, and 74 assertions confirm your copy and your metadata
+are in the served HTML with JavaScript switched off. Your titles, descriptions
+and keywords go into each page exactly as you wrote them.
+
+**Your slugs are kept.** Your files cross-link each other as
+`/blog/consultant-leaves`, `/blog/technology-process`, `/blog/decisions-layers`
+and `/blog/margin-revenue`. Those four names are unchanged, moved under
+`/insights`, and `/blog` and `/blog/*` now redirect, so any link you have already
+sent still works.
+
+Insights is back in the top navigation and in the sitemap, and the `noindex` is
+gone. All three were only there because the page had no articles on it. **1k is
+closed.**
+
+### Four things need a decision from you
+
+**1. The "Growth" tab matches none of the four articles.** Your six category tabs
+are Execution, Leadership, Technology, Finance and Growth. Your four pieces cover
+the first four. Growth currently shows an empty list. Either the tab goes, or a
+Growth piece fills it.
+
+**2. Your ten "Browse by topic" links point nowhere.** Every one is `href="#"` in
+your file. There are no topic archive pages and inventing ten of them was not in
+scope, so they render as labels rather than as links that go nowhere. They need
+either archive pages or removal.
+
+**3. There is no mailing list behind the subscribe form.** It works: the address
+is validated, it reaches `hello@pivotprime.ae`, and the subscriber gets a
+confirmation. But it is delivered as an email, not stored in a list, because the
+site has no database and no email platform beyond the one that sends the contact
+form. Moving these to a real list is a decision and a cost.
+
+**4. Your category tabs did not filter.** The script in your file moves the
+underline and nothing else, so on your page every tab shows every article. A
+control labelled by category that does not filter reads as broken once it is
+live, so it filters now. Flagging it because it is a change to how your file
+behaves, not to how it looks.
+
+### Your five extra colours, mapped
+
+Your files name five values outside the ten-colour palette. Each is mapped to the
+nearest thing already on the site, measured rather than judged by eye:
+
+| Yours | Where you use it | Mapped to | Renders | Difference |
+|---|---|---|---|---|
+| `#f5f5f3` | page background | the site's page ground | `#f8f4ee` | 5.9 |
+| `#ffffff` | cards, filter bar | `shell` | `#fefbf8` | 5.9 |
+| `#0a1a12` | body text | `foreground` | `#000000` | 33 |
+| `#4a6657` | secondary text | `forest` at 75% | `#40655a` | 10.2 |
+| `#dde6e0` | borders and rules | `forest` at 12% | `#e0e3df` | 4.2 |
+| `#001f14` | behind the featured photo | `forest` | `#013325` | 26.3 |
+
+Your `#013325`, `#00d76d` and `#009f50` are already exact palette values and are
+untouched. A sixth value, `#2a3d31`, is in your article files but not on the list
+you gave: it is your article body text, mapped to `forest` at 85%.
+
+**Your em dashes are kept.** Your copy uses 28 of them and the house style rule
+from spec section 1 bans them. Your signed-off copy outranks a rule we set for
+copy we write ourselves, so the rule now carries a recorded exception for your
+words only.
+
+**Your featured photograph** is the Pexels image hard-coded in your file. It is
+copied into the site rather than loaded from Pexels on every visit, so the page
+does not depend on their servers and no reader's address is passed to them.
+
+---
+
+## 1az. Process efficiency is now 43% — **for Iram**
+
+Changed on your instruction of 29 August, from the `40-60%` range that came from
+your KPI mockup. It is updated in the figure, in the label inside the drawing,
+and in the check that pins the five authorised figures.
+
+**One thing to note:** the drawing behind it still shows five wasted blocks out
+of ten, which reads as roughly half. It was drawn against a 40 to 60% range and
+still sits inside it, but if you want the picture to match 43% exactly the block
+split needs redrawing. Say the word.
+
+**This settles a contradiction** your own master table flagged: it carried
+"40 to 60%" in one row and "10 to 40%" in another and marked the row as needing
+resolution before launch. 43% supersedes both.

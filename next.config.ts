@@ -87,6 +87,21 @@ const nextConfig: NextConfig = {
       // Spec 2.1: Prime Insights becomes Insights.
       { source: "/our-blog", destination: "/insights", permanent: true },
 
+      /* HER OWN CROSS-LINKS POINT AT /blog.
+         
+         The four article files she delivered on 29 August link to each other as
+         /blog/consultant-leaves, /blog/technology-process,
+         /blog/decisions-layers and /blog/margin-revenue, and each one links back
+         to /blog for the index. The articles live under /insights, so without
+         these two rules every link she has already written, and anything she has
+         already sent to anyone, lands on a 404.
+
+         The wildcard is listed after the bare path. Next matches in order and
+         /blog/:slug does not match /blog itself, but keeping the specific rule
+         first means the index never depends on that. */
+      { source: "/blog", destination: "/insights", permanent: true },
+      { source: "/blog/:slug", destination: "/insights/:slug", permanent: true },
+
       // Spec 5.4: the nav label changes from Corporate Owners to P&L Owners.
       { source: "/for-corporate-owners", destination: "/for-pl-owners", permanent: true },
 
