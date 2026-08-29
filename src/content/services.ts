@@ -125,8 +125,8 @@ export const SERVICES_STANDFIRST =
  * there is nothing here a contact form could honour.
  */
 export const DIAGNOSTIC_CARD = {
-  eyebrow: "Not sure",
-  title: "Start with the diagnostic",
+  eyebrow: "Not Sure",
+  title: "Start with the Diagnostic",
   body: "Four minutes, six areas, one named constraint. It will tell you which of the five you actually need.",
   ctaLabel: "Take the diagnostic",
   href: "/diagnostic",

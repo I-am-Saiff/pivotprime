@@ -29,7 +29,7 @@ export const BUILD_AND_PLACE = {
   rolesHeading: "The seats we place",
   cards: [
     {
-      title: "Project management",
+      title: "Project Management",
       body: "Runs delivery inside your team: the order and project lifecycle, supplier and stakeholder coordination, SLA and timeline tracking, and documentation that outlives the engagement. Used where the plan is clear and the problem is that nothing is being driven.",
     },
     {
@@ -41,11 +41,11 @@ export const BUILD_AND_PLACE = {
       body: "Engineers who build the automation, the CRM, the dashboards and the internal tools. Scoped after the diagnosis, never before it. If the work is a standalone build rather than an embedded seat, see Technology Builds.",
     },
     {
-      title: "Marketing and brand",
+      title: "Marketing and Brand",
       body: "Positioning, go-to-market, and the client-facing material that carries it. Used where the operation has been fixed but the business still is not being bought.",
     },
     {
-      title: "Web and digital",
+      title: "Web and Digital",
       body: "Website design, build and maintenance, and the digital estate around it. Used where the shopfront no longer matches the business behind it.",
     },
   ] satisfies ServiceDetailCard[],
@@ -260,7 +260,7 @@ export const TECH_BUILDS = {
   ],
   /** Also hers, from the "Where this starts" panel of the same mockup. */
   bringUsTheProblem: {
-    label: "Bring us the problem",
+    label: "Bring Us the Problem",
     heading: "An app you want built, or a process that is eating your team.",
     body: "Either works. The only technology work we take on is the kind pointed at a real problem.",
   },

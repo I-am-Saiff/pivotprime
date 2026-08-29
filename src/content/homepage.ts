@@ -437,11 +437,11 @@ export const HOW_WE_ARE_PAID = {
        *  outright: it exists only to show the split, which is the formula. */
       rows: [
         {
-          label: "We agree a target",
+          label: "We Agree a Target",
           value: "A cost reduction, a margin improvement, or a revenue number. A specific number, and a specific date.",
         },
         {
-          label: "Our fee structure",
+          label: "Our Fee Structure",
           value: "A fixed element covers the work itself. A results element sits against that target.",
         },
       ],
@@ -449,7 +449,7 @@ export const HOW_WE_ARE_PAID = {
   },
   /** Her pull box, _3 and _4, verbatim. It carries the model with no figure in it. */
   commitment: {
-    label: "The commitment",
+    label: "The Commitment",
     body: "If we haven't moved your numbers, most of our fee doesn't get paid.",
   },
   /** Her numbered sequence, _3. Em dashes replaced per section 1. */

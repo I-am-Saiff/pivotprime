@@ -121,7 +121,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     id: "nurture",
     headline: "A childcare app where the household actually shares the day",
     sector: "Nurture",
-    subtitle: "Childcare technology \u00b7 UAE",
+    subtitle: "Childcare Technology \u00b7 UAE",
     attribution: "Built by our technology team.",
     photo: {
       src: "/case-studies/nurture-app.jpg",
