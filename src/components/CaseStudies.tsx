@@ -228,14 +228,30 @@ export default function CaseStudies({
                     // Absolute from lg up, so the picture fills the height the
                     // argument sets rather than setting it. With h-full alone the
                     // 738x1600 phone screenshot pushed the card from 932 to 1110.
-                    className="max-h-[300px] w-full rounded-2xl border border-forest/15 object-cover object-top shadow-sm sm:max-h-[380px] lg:absolute lg:inset-0 lg:h-full lg:max-h-none"
+                    //
+                    // THE FOCAL POINT IS PER STUDY, from 29 August. object-top is
+                    // right for the Nurture phone screenshot, where the content is
+                    // at the top of the screen, and wrong for the Scentmatic
+                    // machine, an 808x540 photograph that a tall frame was
+                    // cropping off-centre. A study with no explicit focus keeps
+                    // the old behaviour, so nothing else moves.
+                    className={`max-h-[300px] w-full rounded-2xl border border-forest/15 object-cover shadow-sm sm:max-h-[380px] lg:absolute lg:inset-0 lg:h-full lg:max-h-none ${study.photo.focus ?? "object-top"}`}
                   />
                 </div>
               )}
 
               {/* The results, under the argument they belong to. The row is
                   pushed to the bottom so a short card does not leave the gap
-                  between the button and the panel. */}
+                  between the button and the panel.
+
+                  MERGED STUDIES HAVE NO SECOND PANEL. On 29 August the client
+                  asked for the pivot and the results to be one section on
+                  Nurture and Cinnacare. Those two carry an empty results list,
+                  which is what removes this panel: the combined points render
+                  once, in the list above, under one heading. It also settles the
+                  duplicate "The Results" heading on those two cards, because
+                  there is now only one of them. */}
+              {study.results.length > 0 && (
               <div
                 className={`w-full self-end ${study.photo ? "lg:col-span-7 lg:col-start-1 lg:row-start-2" : "lg:col-span-12"}`}
               >
@@ -276,6 +292,7 @@ export default function CaseStudies({
                   </div>
                 </div>
               </div>
+              )}
             </div>
           </li>
         ))}

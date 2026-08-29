@@ -2948,3 +2948,65 @@ it shades.
 **This settles a contradiction** your own master table flagged: it carried
 "40 to 60%" in one row and "10 to 40%" in another and marked the row as needing
 resolution before launch. 43% supersedes both.
+
+---
+
+## 1b0. Her WhatsApp instructions of 29 August — **for Iram**
+
+**Your "#ef" was incomplete.** It matches no colour we were offered as an
+option: cream is `#fefbf8` and mist is `#e8f4ec`, and neither starts with "ef".
+The only value in your ten-colour palette that does is **linen `#efeae0`**. Saif
+chose **cream `#fefbf8`** for every instance, so that is what has shipped. If you
+meant linen, it is one line to change.
+
+### The three case studies
+
+**Nurture** and **Cinnacare** now have one list each instead of two. The separate
+results panel is gone on those two cards, which also means each now has one "The
+Results" heading rather than two.
+
+Nurture went from nine points to six. "An activities hub" and "Nurture Academy"
+are one bullet, as you asked. Care logs and photo sharing were combined, and so
+were meal planning and development tracking.
+
+**Cinnacare:** "Two countries set up and compliant, UK and UAE simultaneously" is
+removed on your instruction. **Worth knowing:** that was the only line on the
+card saying the two launches happened at the same time, which is what the
+headline claims. The headline now carries it alone. Say the word and it comes
+back.
+
+**The Instagram figures are new and are not in your section 9 master table.** The
+rule on this site is that result figures come from that table and nowhere else.
+"800 views to 30,000 views" is published on your direct instruction, recorded
+here the same way your five KPI figures were, so it is reversible.
+
+**Scentmatic** keeps its two sections, because you asked to merge only Nurture
+and Cinnacare. Its four results are your words. **This replaces "Zero tax
+liability identified in year one through the UAE structure"**, which was the only
+tax point on the card. You said replace, so it has gone. It can come back as a
+fifth point.
+
+Websites added: **cinnacare.com** and **scentmatic.co.uk**, both labelled "Visit
+the site" to match "View the product" on Nurture. The Scentmatic photograph was
+being cropped from its top edge, which cut the machine off below the middle; it
+is centred now. The crop is set per card, so the Nurture phone screenshot still
+shows the top of its screen.
+
+### The fees box
+
+The box is cream, and it runs wider than before, to the widest width this layout
+uses. Your bright green bar and its writing are kept. The two comparison boxes
+are now exactly the same height: the traditional model is white, ours is cream.
+The calculator and the "If we haven't" line are both cream, and that line now
+runs straight across the bottom instead of sitting beside the calculator.
+
+**One thing you should know.** Everything written in that box was white or bright
+green because the box was dark green. On cream, bright green is unreadable, so
+the small labels are now the mid green used for every other small heading on a
+light background. Measured, that green on cream is **3.35:1 against a 4.5:1
+requirement** for small text. It is the same value already used site-wide, so
+this is not new, but it is below standard. Moving those labels to dark green
+would fix it and would lose the green accent. Your call.
+
+The logo strip cards are back to the faint tint they had before the light green
+round, with the writing still dark green.

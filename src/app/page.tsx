@@ -182,7 +182,7 @@ export default function Home() {
                     className="flex items-center space-x-12 px-6"
                     aria-hidden={copy === 1}
                   >
-                    <h3 className="flex h-20 w-56 flex-shrink-0 items-center justify-center rounded-lg border border-forest/15 bg-mist px-5 text-center font-sans text-xs font-bold tracking-[0.14em] text-forest uppercase md:h-24 md:w-64">
+                    <h3 className="flex h-20 w-56 flex-shrink-0 items-center justify-center rounded-lg border border-forest/15 bg-forest/[0.04] px-5 text-center font-sans text-xs font-bold tracking-[0.14em] text-forest uppercase md:h-24 md:w-64">
                       {group.label}
                     </h3>
                     {group.logos.map((logo) => (
@@ -364,12 +364,22 @@ export default function Home() {
           model is a differentiator and deserves visual weight. No percentage
           or formula published per spec 3.10. */}
       <section className="px-4 py-12 sm:px-6 sm:py-16 lg:px-8 surface-page">
-        <div className="mx-auto max-w-6xl">
-          <div className="relative overflow-hidden rounded-3xl bg-forest px-5 py-8 sm:px-10 sm:py-12 md:px-14 md:py-14">
+        {/* max-w-7xl, not 6xl: her instruction of 29 August was that this box
+            runs the full width horizontally. 7xl is the widest container the
+            page already uses, on the results section directly above, so it goes
+            as wide as this layout goes rather than to an invented width. */}
+        <div className="mx-auto max-w-7xl">
+          {/* CREAM, from 29 August. She marked this box by its bright green bar
+              and asked for the background to change; the bar and its writing are
+              kept. Everything on it was written for a dark ground, so the
+              heading, the lead and both lower boxes move to forest and mid.
+              The dot grid was white at 7% and is invisible on cream, so it is
+              forest at 6% instead: same texture, same idea, readable ground. */}
+          <div className="relative overflow-hidden rounded-3xl border border-forest/10 bg-shell px-5 py-8 sm:px-10 sm:py-12 md:px-14 md:py-14">
             {/* Dot-grid texture */}
             <div
               aria-hidden="true"
-              className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.07)_1px,transparent_1px)] [background-size:26px_26px] pointer-events-none"
+              className="absolute inset-0 bg-[radial-gradient(rgba(1,51,37,0.06)_1px,transparent_1px)] [background-size:26px_26px] pointer-events-none"
             />
 
             {/* Content — her slide 9 of Website Revisions 2208v3, shown on the
@@ -377,21 +387,34 @@ export default function Home() {
                 contrast, and the commitment band. Everything that explained the
                 model at length is gone, which is what "minimal" meant. */}
             <div className="relative z-10">
-              <span className="mb-3 block text-xs font-bold tracking-[0.22em] text-neon uppercase">Our Fees</span>
+              {/* Her bright green bar and its writing, kept. The eyebrow moves
+                  from neon to mid: neon on cream measures about 1.7:1 and is
+                  unreadable. mid is the colour every other eyebrow on a light
+                  ground already uses. */}
+              <span className="mb-3 block text-xs font-bold tracking-[0.22em] text-mid uppercase">Our Fees</span>
               <div className="mb-4 h-[3px] w-10 rounded-full bg-neon" aria-hidden="true" />
 
-              <h2 className="max-w-2xl text-2xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-3xl md:text-4xl">
+              <h2 className="max-w-2xl text-2xl font-extrabold leading-[1.1] tracking-tight text-forest sm:text-3xl md:text-4xl">
                 {HOW_WE_ARE_PAID.mockupHeading}
               </h2>
-              <p className="mt-3 max-w-2xl text-base font-semibold leading-snug text-neon sm:text-lg">
+              <p className="mt-3 max-w-2xl text-base font-semibold leading-snug text-mid sm:text-lg">
                 {HOW_WE_ARE_PAID.lead}
               </p>
 
-              <div className="mt-5 grid items-start gap-3 md:grid-cols-2">
-                {/* White against green: the contrast between the two models is
-                    the point of the pair, so the cards do not share a treatment. */}
-                <div className="rounded-2xl bg-shell p-5 sm:p-6">
-                  <p className="text-[11px] font-bold tracking-[0.18em] text-forest/55 uppercase">
+              {/* items-stretch, not items-start: her instruction of 29 August is
+                  that the two comparison boxes are the same size. items-start let
+                  each size to its own content, and ours carries two rows to their
+                  one, so they never matched. */}
+              <div className="mt-5 grid items-stretch gap-3 md:grid-cols-2">
+                {/* Traditional model: white. Ours: cream. Both on a cream panel,
+                    so the pair is separated by the border and the label colour
+                    rather than by a light-against-dark contrast that no longer
+                    exists now the panel itself is light. */}
+                <div className="rounded-2xl border border-forest/10 bg-white p-5 sm:p-6">
+                  {/* forest/70, not /55: on the white box the lighter tint measured 3.49:1
+                      against a 4.5 requirement. This label is a neutral, not her
+                      green, so darkening it costs the design nothing. */}
+                  <p className="text-[11px] font-bold tracking-[0.18em] text-forest/70 uppercase">
                     {HOW_WE_ARE_PAID.contrast.traditional.label}
                   </p>
                   <h3 className="mt-2 text-base font-bold text-forest sm:text-lg">
@@ -402,17 +425,17 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-neon/30 bg-neon/[0.07] p-5 sm:p-6">
-                  <p className="text-[11px] font-bold tracking-[0.18em] text-neon uppercase">
+                <div className="rounded-2xl border border-mid/30 bg-shell p-5 sm:p-6">
+                  <p className="text-[11px] font-bold tracking-[0.18em] text-mid uppercase">
                     {HOW_WE_ARE_PAID.contrast.pivotPrime.label}
                   </p>
                   <dl className="mt-3 space-y-3">
                     {HOW_WE_ARE_PAID.contrast.pivotPrime.rows.map((row) => (
                       <div key={row.label}>
-                        <dt className="text-[11px] font-bold tracking-[0.16em] text-neon uppercase">
+                        <dt className="text-[11px] font-bold tracking-[0.16em] text-mid uppercase">
                           {row.label}
                         </dt>
-                        <dd className="mt-1 text-[13px] leading-relaxed text-white/85 sm:text-sm">{row.value}</dd>
+                        <dd className="mt-1 text-[13px] leading-relaxed text-forest/80 sm:text-sm">{row.value}</dd>
                       </div>
                     ))}
                   </dl>
@@ -422,18 +445,26 @@ export default function Home() {
               {/* The calculator and her commitment band share a row from md up,
                   so the section carries the new block without growing.
                   PENDING-COPY 1an. */}
-              <div className="mt-3 grid items-stretch gap-3 md:grid-cols-[1.4fr_1fr]">
+              {/* STACKED, NOT SIDE BY SIDE, from 29 August: the calculator takes
+                  the row, and her "If we haven't" line runs horizontally across
+                  the bottom underneath it. It shared a row with the calculator
+                  before, which is the stacking she asked to remove. */}
+              <div className="mt-3">
                 <FeeCalculator />
+              </div>
 
-                {/* Her bottom band, verbatim. It is the section in one sentence. */}
-                <div className="flex flex-col justify-center rounded-2xl bg-neon/[0.14] px-5 py-4 text-center ring-1 ring-neon/40 sm:px-6">
-                  <p className="text-[15px] font-bold leading-snug text-white sm:text-lg">
-                    {HOW_WE_ARE_PAID.commitment.body}
-                  </p>
-                  <p className="mt-1.5 text-[11px] font-bold tracking-[0.2em] text-neon uppercase">
-                    Performance Linked Fee
-                  </p>
-                </div>
+              {/* Her bottom band, verbatim. It is the section in one sentence.
+                  Cream on cream, separated by its ring, with the writing in
+                  forest now the ground is light. The two lines sit side by side
+                  from sm up so the band reads as one horizontal rule across the
+                  foot of the box rather than as two stacked lines. */}
+              <div className="mt-3 flex flex-col items-center justify-center gap-x-5 gap-y-1.5 rounded-2xl bg-shell px-5 py-4 text-center ring-1 ring-mid/40 sm:flex-row sm:px-6">
+                <p className="text-[15px] font-bold leading-snug text-forest sm:text-lg">
+                  {HOW_WE_ARE_PAID.commitment.body}
+                </p>
+                <p className="text-[11px] font-bold tracking-[0.2em] text-mid uppercase">
+                  Performance Linked Fee
+                </p>
               </div>
             </div>
           </div>

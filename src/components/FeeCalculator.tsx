@@ -42,12 +42,12 @@ export default function FeeCalculator() {
   const high = Math.round(value * 0.2);
 
   return (
-    <div className="rounded-2xl border border-white/15 bg-white/[0.06] p-4 sm:p-5">
+    <div className="rounded-2xl border border-forest/12 bg-shell p-4 sm:p-5">
       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-        <label htmlFor="fee-value" className="text-[11px] font-bold tracking-[0.18em] text-white/70 uppercase">
+        <label htmlFor="fee-value" className="text-[11px] font-bold tracking-[0.18em] text-forest/70 uppercase">
           The saving or gain we agree with you
         </label>
-        <p className="font-sans text-xl leading-none font-extrabold tracking-tight text-white tabular-nums sm:text-3xl">
+        <p className="font-sans text-xl leading-none font-extrabold tracking-tight text-forest tabular-nums sm:text-3xl">
           {`AED ${aed(value)}`}
         </p>
       </div>
@@ -62,28 +62,28 @@ export default function FeeCalculator() {
         onChange={(e) => setValue(Number(e.target.value))}
         // A range input is 16px tall by default, which is not a touch target.
         // The extra height is the control, not padding around it.
-        className="mt-1 h-11 w-full accent-[var(--color-neon)]"
+        className="mt-1 h-11 w-full accent-[var(--color-mid)]"
         aria-describedby="fee-note"
       />
 
       {/* Two across at every width: stacked, the pair alone added seventy
           pixels to a section that was told not to grow. */}
       <div className="mt-3 grid grid-cols-2 gap-2.5">
-        <div className="rounded-xl border border-white/12 bg-white/[0.04] px-3 py-2.5 sm:px-4">
-          <p className="text-[10px] font-bold tracking-[0.16em] text-white/50 uppercase">Fixed Element</p>
-          <p className="mt-1 font-sans text-base leading-tight font-extrabold tracking-tight text-white tabular-nums sm:text-2xl">
+        <div className="rounded-xl border border-forest/10 bg-white px-3 py-2.5 sm:px-4">
+          <p className="text-[10px] font-bold tracking-[0.16em] text-forest/75 uppercase">Fixed Element</p>
+          <p className="mt-1 font-sans text-base leading-tight font-extrabold tracking-tight text-forest tabular-nums sm:text-2xl">
             {`AED ${aed(FIXED)}`}
           </p>
         </div>
-        <div className="rounded-xl border border-neon/30 bg-neon/10 px-3 py-2.5 sm:px-4">
-          <p className="text-[10px] font-bold tracking-[0.16em] text-neon uppercase">Results Element</p>
-          <p className="mt-1 font-sans text-base leading-tight font-extrabold tracking-tight text-neon tabular-nums sm:text-2xl">
+        <div className="rounded-xl border border-mid/30 bg-mid/10 px-3 py-2.5 sm:px-4">
+          <p className="text-[10px] font-bold tracking-[0.16em] text-mid uppercase">Results Element</p>
+          <p className="mt-1 font-sans text-base leading-tight font-extrabold tracking-tight text-mid tabular-nums sm:text-2xl">
             {`AED ${aed(low)} to ${aed(high)}`}
           </p>
         </div>
       </div>
 
-      <p id="fee-note" className="mt-2.5 text-[12px] leading-snug text-white/60 sm:text-[12.5px] sm:leading-relaxed">
+      <p id="fee-note" className="mt-2.5 text-[12px] leading-snug text-forest/70 sm:text-[12.5px] sm:leading-relaxed">
         The fixed element covers the work. The results element is only earned if the agreed number moves.
       </p>
     </div>

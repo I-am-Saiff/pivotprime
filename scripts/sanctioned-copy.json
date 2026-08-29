@@ -955,6 +955,14 @@
       "why": "Her own words. Transcribed by script from pp-blog-4.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
       "route": "/insights/margin-revenue",
       "element": "link"
+    },
+    {
+      "text": "Visit the site",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Link label for the Cinnacare and Scentmatic websites, added 29 August on the client's WhatsApp instruction to put www.cinnacare.com and scentmatic.co.uk on those two cards. She gave the URLs and not a label, so this follows the existing 'View the product' on Nurture rather than inventing a second pattern.",
+      "route": "/",
+      "element": "link"
     }
   ]
 }

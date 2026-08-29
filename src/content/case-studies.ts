@@ -80,7 +80,12 @@ export type CaseStudy = {
    * "the pictures are for case study 1 and 2" resolves to once her numbering is
    * read. PENDING-COPY 1y.
    */
-  photo?: { src: string; alt: string; width: number; height: number };
+  /**
+   * `focus` is the object-position utility for the crop, defaulting to
+   * object-top. A tall phone screenshot wants its top; a wide photograph of a
+   * machine wants its centre.
+   */
+  photo?: { src: string; alt: string; width: number; height: number; focus?: string };
   /**
    * One line saying who in the business delivered it, where that is not the
    * consulting engagement the other studies describe. Nurture is our technology
@@ -133,19 +138,22 @@ export const CASE_STUDIES: CaseStudy[] = [
     challenge:
       "In a UAE household the people caring for a child are rarely all in the same place, and often do not share a first language. Parents, nannies and drivers each hold part of the day, and none of them holds the whole of it.",
     pivotLead: "We built one place where the whole household sees the same day.",
+    /**
+     * MERGED, 29 August. Her instruction was to combine what we built with what
+     * it produced into a single list and cut the count: nine points down to six.
+     * "An activities hub" and "Nurture Academy" are one bullet because she named
+     * that merge specifically. `results` is deliberately empty rather than
+     * deleted, which is what tells CaseStudies not to render a second panel.
+     */
     pivot: [
-      "Real-time daily care logs for feeds, naps and nappies",
+      "Real-time care logs for feeds, naps and nappies, with photo and video to a shared family timeline",
       "Instant messaging with one-tap translation across six languages",
-      "Photo and video sharing to a shared family timeline",
       "Role-based access, so parents, nannies and drivers each see only what they should",
+      "An activities hub of age-appropriate developmental guides, with Nurture Academy and its certified early-childhood courses",
+      "AI meal planning, with a caregiver cookbook alongside it, and child development tracking across the household",
+      "Built to UAE PDPL, encrypted in transit, with hashed PINs",
     ],
-    results: [
-      { figure: null, label: "An activities hub with age-appropriate developmental guides" },
-      { figure: null, label: "AI meal planning, with a caregiver cookbook alongside it" },
-      { figure: null, label: "Nurture Academy, carrying certified early-childhood courses" },
-      { figure: null, label: "Child development tracking across the household" },
-      { figure: null, label: "Built to UAE PDPL, encrypted in transit, with hashed PINs" },
-    ],
+    results: [],
   },
   /**
    * CASE STUDY 1 AND 2, named, from pp-case-studies.html of 22 August.
@@ -170,6 +178,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     headline: "From concept to two-country operation, built from scratch",
     sector: "Cinnacare",
     subtitle: "Baby Skincare · UK and UAE Launch",
+    link: { href: "https://www.cinnacare.com", label: "Visit the site" },
     photo: {
       src: "/case-studies/cinnacare-baby-oil.jpg",
       alt: "Two Cinnacare Soothing Baby Oil bottles on a pale surface beside a knitted blanket and eucalyptus leaves",
@@ -180,28 +189,46 @@ export const CASE_STUDIES: CaseStudy[] = [
       "A UK baby skincare founder came to us with a product formula and a vision: launch simultaneously in the UK and UAE. What followed was not a strategy engagement.",
     pivotLead:
       "We built the whole thing, while the founder focused on the product.",
+    /**
+     * MERGED, 29 August, on the same instruction as Nurture.
+     *
+     * "Two countries set up and compliant, UK and UAE simultaneously" is removed
+     * on her instruction. Note that it was the only line on the card that said
+     * the two launches were simultaneous, which is what the headline claims, so
+     * the headline now carries that on its own. Raised in PENDING-COPY.
+     *
+     * THE INSTAGRAM FIGURES ARE HERS AND ARE NOT IN THE SECTION 9 MASTER TABLE.
+     * Spec section 1 says result figures come from that table and nowhere else.
+     * She authorised these two directly on 29 August, so they ship, recorded in
+     * PENDING-COPY the same way her five KPI figures were. They stay in the
+     * label rather than the `figure` slot, because that slot drives the
+     * Verified badge and the master table is what verifies.
+     */
     pivot: [
       "Regulatory approval and company structures in both markets",
       "Brand identity and the supply chain behind it",
       "Pricing, and the UAE market entry itself",
+      "Instagram reach grew from 800 views to 30,000 views",
+      "Formula approved by the UK regulator",
+      "A full operational roadmap: brand, supply chain, pricing and go to market",
     ],
-    results: [
-      { figure: null, label: "Instagram reach grew sharply in the first 30 days" },
-      { figure: null, label: "Two countries set up and compliant, UK and UAE simultaneously" },
-      { figure: null, label: "Formula approved by the UK regulator" },
-      { figure: null, label: "A full operational roadmap: brand, supply chain, pricing and go to market" },
-    ],
+    results: [],
   },
   {
     id: "scentmatic",
     headline: "Sometimes the most valuable advice is: don't.",
     sector: "Scentmatic",
     subtitle: "UAE Market Entry · Financial Modelling",
+    link: { href: "https://scentmatic.co.uk", label: "Visit the site" },
     photo: {
       src: "/case-studies/scentmatic-vendor.jpg",
       alt: "The Scentmatic Vendor fragrance dispensing machine installed on a bar counter",
       width: 808,
       height: 540,
+      // Centred, on her instruction of 29 August. The default object-top was
+      // cropping a landscape photograph from its top edge inside a tall frame,
+      // which cut the machine off below the middle.
+      focus: "object-center",
     },
     challenge:
       "A UK fragrance tech company came to us asking whether UAE expansion made financial sense. We built a full cash-flow model, month by month, venue by venue, sensitivity scenario by sensitivity scenario.",
@@ -212,11 +239,19 @@ export const CASE_STUDIES: CaseStudy[] = [
       "We built an alternative path that worked, and let them decide",
       "They chose to wait, and kept a complete roadmap ready for when the time is right",
     ],
+    /**
+     * HER FOUR POINTS, 29 August, in her words. Only the first letter of each is
+     * capitalised, to match every other list on the site; the wording is hers.
+     *
+     * This replaces "Zero tax liability identified in year one through the UAE
+     * structure", which was the only tax point on the card. She said replace,
+     * so it goes. Raised in PENDING-COPY in case she wanted it kept as a fifth.
+     */
     results: [
-      { figure: null, label: "Capital protected from a loss-making entry plan" },
-      { figure: null, label: "A projected margin modelled on the alternative plan" },
+      { figure: null, label: "Capital protected from a loss-making position" },
+      { figure: null, label: "An alternative plan built, with the client deciding" },
+      { figure: null, label: "A projected margin modelled on the revised plan" },
       { figure: null, label: "A breakeven point established on the revised model" },
-      { figure: null, label: "Zero tax liability identified in year one through the UAE structure" },
     ],
   },
   {
