@@ -70,8 +70,11 @@ export default function Service1ClarityAudit() {
           </div>
           {/* Her paired-box rule, 29 August: left white, right LIGHT green, not
               dark green. This was the dark card fill. */}
-          <div className="rounded-2xl bg-mid p-6 text-foreground sm:p-7">
-            <div className="font-sans font-semibold text-[10.5px] tracking-[0.2em] uppercase text-foreground mb-4">
+{/* Matches the Stretched Founder "What This Looks Like" card on the
+              homepage, her 29 August instruction: same card-dark fill via the
+              same variable, same border, neon label, white body. */}
+          <div className="card-dark rounded-2xl border border-neutral-100 p-6 sm:p-7">
+            <div className="font-sans font-semibold text-[10.5px] tracking-[0.2em] uppercase text-neon mb-4">
               What You Get
             </div>
             <ul className="space-y-3">
@@ -83,9 +86,9 @@ export default function Service1ClarityAudit() {
                 "A costed view of what to fix internally and what needs outside capacity",
                 "An executive summary written for owners and investors"
               ].map((item, i) => (
-                <li key={i} className="flex gap-3 items-start text-[15.5px] text-foreground">
-                  <div className="w-[17px] h-[17px] rounded-full bg-white flex-shrink-0 mt-1 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#009f50" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" className="w-2.5 h-2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <li key={i} className="flex gap-3 items-start text-[15.5px] text-white">
+                  <div className="w-[17px] h-[17px] rounded-full bg-neon flex-shrink-0 mt-1 flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#013325" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" className="w-2.5 h-2.5"><polyline points="20 6 9 17 4 12"/></svg>
                   </div>
                   <span>{item}</span>
                 </li>

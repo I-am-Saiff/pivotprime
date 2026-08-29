@@ -75,9 +75,9 @@ export default function FeeCalculator() {
             {`AED ${aed(FIXED)}`}
           </p>
         </div>
-        <div className="rounded-xl border border-mid/30 bg-mid px-3 py-2.5 sm:px-4">
-          <p className="text-[10px] font-bold tracking-[0.16em] text-foreground uppercase">Results Element</p>
-          <p className="mt-1 font-sans text-base leading-tight font-extrabold tracking-tight text-foreground tabular-nums sm:text-2xl sm:text-white">
+        <div className="card-dark rounded-xl border border-neutral-100 px-3 py-2.5 sm:px-4">
+          <p className="text-[10px] font-bold tracking-[0.16em] text-neon uppercase">Results Element</p>
+          <p className="mt-1 font-sans text-base leading-tight font-extrabold tracking-tight text-white tabular-nums sm:text-2xl">
             {`AED ${aed(low)} to ${aed(high)}`}
           </p>
         </div>

@@ -425,21 +425,20 @@ export default function Home() {
                   </p>
                 </div>
 
-                {/* Mid green, her 29 August item 1. Small text on mid measures 3.46:1
-                    in white and 4.04:1 in forest; foreground is 6.07:1 and is
-                    the only palette colour that clears 4.5:1, so the text here
-                    is foreground. */}
-                <div className="rounded-2xl border border-mid/30 bg-mid p-5 sm:p-6">
-                  <p className="text-[11px] font-bold tracking-[0.18em] text-foreground uppercase">
+                {/* Matches the Stretched Founder card, her 29 August instruction: the
+                    card-dark fill via the same variable, border-neutral-100,
+                    neon labels, white body. White on this fill is 13.99:1. */}
+                <div className="card-dark rounded-2xl border border-neutral-100 p-5 sm:p-6">
+                  <p className="text-[11px] font-bold tracking-[0.18em] text-neon uppercase">
                     {HOW_WE_ARE_PAID.contrast.pivotPrime.label}
                   </p>
                   <dl className="mt-3 space-y-3">
                     {HOW_WE_ARE_PAID.contrast.pivotPrime.rows.map((row) => (
                       <div key={row.label}>
-                        <dt className="text-[11px] font-bold tracking-[0.16em] text-foreground uppercase">
+                        <dt className="text-[11px] font-bold tracking-[0.16em] text-neon uppercase">
                           {row.label}
                         </dt>
-                        <dd className="mt-1 text-[13px] leading-relaxed text-foreground/85 sm:text-sm">{row.value}</dd>
+                        <dd className="mt-1 text-[13px] leading-relaxed text-white sm:text-sm">{row.value}</dd>
                       </div>
                     ))}
                   </dl>

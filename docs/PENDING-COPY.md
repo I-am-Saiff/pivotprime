@@ -3169,3 +3169,21 @@ visuals, the fee calculator and the fractional phase cards are all clean. The
 one remaining legibility fault on the site is the contact form's send button,
 white on bright green at 1.9:1, which is outside this instruction and has been
 reported twice before.
+
+---
+
+## 1b5. Right cards now match your Stretched Founder card — **for Iram**
+
+The medium green from the previous round was the wrong green. All four
+right-hand cards now carry exactly the treatment of the "What This Looks Like"
+card in the Stretched Founder section: the same dark forest fill, the same
+near-white border, the label in bright green, the body in white.
+
+**They cannot drift apart**, because they are not copies of its values: all five
+cards read the same styling rule, so if the dark card colour ever changes again,
+the reference and the four pairs move together.
+
+Verified by reading the computed colours of your reference card in the browser
+and asserting each of the four against them: fill, border, label and body all
+measure identical on all four. White on this fill is 13.99:1 and the bright
+green label is 7.29:1, so the black text from the mid-green round is gone.
