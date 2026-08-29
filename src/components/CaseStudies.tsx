@@ -183,20 +183,14 @@ export default function CaseStudies({
                   <p className="leading-relaxed text-neutral-600 text-sm sm:text-base">{study.challenge}</p>
                 </div>
 
-                <div>
-                  <h4 className="mb-1.5 font-bold text-forest text-base sm:text-lg">The Results</h4>
-                  <p className="mb-2 leading-relaxed text-neutral-700 font-medium text-sm sm:text-base">
-                    {study.pivotLead}
-                  </p>
-                  <ul className="space-y-1.5 text-sm sm:text-base text-neutral-600">
-                    {study.pivot.map((point) => (
-                      <li key={point} className="flex items-start">
-                        <span className="text-mid font-bold mr-2.5">•</span>
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                {/* THE SECOND RESULTS SECTION USED TO BE HERE, and it was the
+                    duplicate. It was "The pivot" until the client renamed that
+                    heading on 29 August, at which point every card carrying both
+                    it and the green panel below showed "The Results" twice. She
+                    asked for one results section per case study, so this one is
+                    gone and the panel is the single one. Its lead sentence moved
+                    into the panel rather than being dropped: it is her copy and
+                    it introduces the list. */}
 
                 {study.link && (
                   <a
@@ -244,14 +238,16 @@ export default function CaseStudies({
                   pushed to the bottom so a short card does not leave the gap
                   between the button and the panel.
 
-                  MERGED STUDIES HAVE NO SECOND PANEL. On 29 August the client
-                  asked for the pivot and the results to be one section on
-                  Nurture and Cinnacare. Those two carry an empty results list,
-                  which is what removes this panel: the combined points render
-                  once, in the list above, under one heading. It also settles the
-                  duplicate "The Results" heading on those two cards, because
-                  there is now only one of them. */}
-              {study.results.length > 0 && (
+                  THE ONLY RESULTS SECTION ON EVERY CARD, from 29 August. There
+                  was a second one in the left column, headed "The pivot" until
+                  she renamed it, and seven of the nine studies were showing "The
+                  Results" twice as a result. This panel is the one that survived
+                  because it is where the four points she supplied for Scentmatic
+                  already were, and because it is the only place a figure and the
+                  Verified badge render at all. Every study now has exactly one.
+
+                  No guard on the list length any more: every study has results,
+                  which is checked by check-content rather than assumed here. */}
               <div
                 className={`w-full self-end ${study.photo ? "lg:col-span-7 lg:col-start-1 lg:row-start-2" : "lg:col-span-12"}`}
               >
@@ -270,6 +266,14 @@ export default function CaseStudies({
                         <span className="text-xs font-semibold text-white/60">Verified</span>
                       ) : null}
                     </div>
+
+                    {/* Her sentence introducing the list. It sat above the
+                        removed section in the left column; it moves here with
+                        the list it belongs to rather than being lost with the
+                        heading. */}
+                    <p className="mb-3 text-sm font-medium leading-relaxed text-white/85 sm:text-base">
+                      {study.resultsLead}
+                    </p>
 
                     <ul className="space-y-2.5">
                       {study.results.map((result) => (
@@ -292,7 +296,6 @@ export default function CaseStudies({
                   </div>
                 </div>
               </div>
-              )}
             </div>
           </li>
         ))}

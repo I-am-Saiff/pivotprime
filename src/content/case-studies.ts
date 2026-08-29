@@ -96,8 +96,19 @@ export type CaseStudy = {
   /** An outbound link to the live product, where one exists. */
   link?: { href: string; label: string };
   challenge: string;
-  pivotLead: string;
-  pivot: string[];
+  /** The sentence that introduces the results list. Was pivotLead. */
+  resultsLead: string;
+  /**
+   * ONE LIST PER STUDY, from 29 August.
+   *
+   * There used to be a second array, `pivot`, rendered as its own section in
+   * the left column. Once "The pivot" was renamed "The Results", every card
+   * carrying both showed the same heading twice, on seven of the nine studies.
+   * The client asked for one results section per case study, so the two arrays
+   * are now one. Scentmatic's three older points were dropped on her
+   * instruction; everywhere else both lists are kept, ordered what-we-did then
+   * what-it-produced, so no copy was deleted without being asked for.
+   */
   results: Result[];
 };
 
@@ -137,7 +148,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     link: { href: "https://nurtureuae.com", label: "View the product" },
     challenge:
       "In a UAE household the people caring for a child are rarely all in the same place, and often do not share a first language. Parents, nannies and drivers each hold part of the day, and none of them holds the whole of it.",
-    pivotLead: "We built one place where the whole household sees the same day.",
+    resultsLead: "We built one place where the whole household sees the same day.",
     /**
      * MERGED, 29 August. Her instruction was to combine what we built with what
      * it produced into a single list and cut the count: nine points down to six.
@@ -145,15 +156,14 @@ export const CASE_STUDIES: CaseStudy[] = [
      * that merge specifically. `results` is deliberately empty rather than
      * deleted, which is what tells CaseStudies not to render a second panel.
      */
-    pivot: [
-      "Real-time care logs for feeds, naps and nappies, with photo and video to a shared family timeline",
-      "Instant messaging with one-tap translation across six languages",
-      "Role-based access, so parents, nannies and drivers each see only what they should",
-      "An activities hub of age-appropriate developmental guides, with Nurture Academy and its certified early-childhood courses",
-      "AI meal planning, with a caregiver cookbook alongside it, and child development tracking across the household",
-      "Built to UAE PDPL, encrypted in transit, with hashed PINs",
+    results: [
+      { figure: null, label: "Real-time care logs for feeds, naps and nappies, with photo and video to a shared family timeline" },
+      { figure: null, label: "Instant messaging with one-tap translation across six languages" },
+      { figure: null, label: "Role-based access, so parents, nannies and drivers each see only what they should" },
+      { figure: null, label: "An activities hub of age-appropriate developmental guides, with Nurture Academy and its certified early-childhood courses" },
+      { figure: null, label: "AI meal planning, with a caregiver cookbook alongside it, and child development tracking across the household" },
+      { figure: null, label: "Built to UAE PDPL, encrypted in transit, with hashed PINs" },
     ],
-    results: [],
   },
   /**
    * CASE STUDY 1 AND 2, named, from pp-case-studies.html of 22 August.
@@ -187,7 +197,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
     challenge:
       "A UK baby skincare founder came to us with a product formula and a vision: launch simultaneously in the UK and UAE. What followed was not a strategy engagement.",
-    pivotLead:
+    resultsLead:
       "We built the whole thing, while the founder focused on the product.",
     /**
      * MERGED, 29 August, on the same instruction as Nurture.
@@ -204,15 +214,14 @@ export const CASE_STUDIES: CaseStudy[] = [
      * label rather than the `figure` slot, because that slot drives the
      * Verified badge and the master table is what verifies.
      */
-    pivot: [
-      "Regulatory approval and company structures in both markets",
-      "Brand identity and the supply chain behind it",
-      "Pricing, and the UAE market entry itself",
-      "Instagram reach grew from 800 views to 30,000 views",
-      "Formula approved by the UK regulator",
-      "A full operational roadmap: brand, supply chain, pricing and go to market",
+    results: [
+      { figure: null, label: "Regulatory approval and company structures in both markets" },
+      { figure: null, label: "Brand identity and the supply chain behind it" },
+      { figure: null, label: "Pricing, and the UAE market entry itself" },
+      { figure: null, label: "Instagram reach grew from 800 views to 30,000 views" },
+      { figure: null, label: "Formula approved by the UK regulator" },
+      { figure: null, label: "A full operational roadmap: brand, supply chain, pricing and go to market" },
     ],
-    results: [],
   },
   {
     id: "scentmatic",
@@ -232,13 +241,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
     challenge:
       "A UK fragrance tech company came to us asking whether UAE expansion made financial sense. We built a full cash-flow model, month by month, venue by venue, sensitivity scenario by sensitivity scenario.",
-    pivotLead:
+    resultsLead:
       "The answer was honest: the way they planned to enter would lose them money.",
-    pivot: [
-      "We showed them exactly why",
-      "We built an alternative path that worked, and let them decide",
-      "They chose to wait, and kept a complete roadmap ready for when the time is right",
-    ],
     /**
      * HER FOUR POINTS, 29 August, in her words. Only the first letter of each is
      * capitalised, to match every other list on the site; the wording is hers.
@@ -261,14 +265,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     sector: "Financial Services Company",
     challenge:
       "Customer onboarding and policy processing were slow and inconsistent. Teams lacked visibility into workload, cost per client, and profitability at a client and transaction level. KYC timelines were unpredictable, creating customer frustration and internal pressure. Leadership could not clearly see where time and cost were being lost.",
-    pivotLead: "We rebuilt operations with discipline and data at the centre.",
-    pivot: [
-      "Mapped end-to-end customer and transaction workflows",
-      "Reduced duplication and rework across compliance and operations",
-      "Offshored selected onboarding activities to reduce bottlenecks and cost",
-      "Built real-time dashboards tracking cost per client, transaction time, CAC, and LTV",
-    ],
+    resultsLead: "We rebuilt operations with discipline and data at the centre.",
     results: [
+      { figure: null, label: "Mapped end-to-end customer and transaction workflows" },
+      { figure: null, label: "Reduced duplication and rework across compliance and operations" },
+      { figure: null, label: "Offshored selected onboarding activities to reduce bottlenecks and cost" },
+      { figure: null, label: "Built real-time dashboards tracking cost per client, transaction time, CAC, and LTV" },
       { figure: "67%", label: "faster transaction processing per customer" },
       { figure: null, label: "KYC completion time reduced substantially" },
       { figure: null, label: "Operational waste reduced across onboarding and processing" },
@@ -282,14 +284,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     sector: "Founder-Led Business",
     challenge:
       "The founder was approving every decision. The team had capability but it lacked clear ownership. We mapped what should and shouldn't escalate, then redesigned roles around judgement, not just task delivery.",
-    pivotLead: "We focused on founder load release through structure and behaviour.",
-    pivot: [
-      "Translated the founder's vision into clear decision standards and success criteria.",
-      "Defined which decisions stayed with the founder and which should never escalate.",
-      "Redesigned roles around ownership and judgement, not just task delivery.",
-      "Introduced simple operating rhythms to reduce ad-hoc interruptions and constant checking.",
-    ],
+    resultsLead: "We focused on founder load release through structure and behaviour.",
     results: [
+      { figure: null, label: "Translated the founder's vision into clear decision standards and success criteria." },
+      { figure: null, label: "Defined which decisions stayed with the founder and which should never escalate." },
+      { figure: null, label: "Redesigned roles around ownership and judgement, not just task delivery." },
+      { figure: null, label: "Introduced simple operating rhythms to reduce ad-hoc interruptions and constant checking." },
       { figure: "Up to 2 days a week", label: "returned to the founder by removing admin work and decision drag" },
       { figure: null, label: "Fewer escalations and faster team decisions" },
       { figure: null, label: "Greater confidence in delegation without loss of quality or control" },
@@ -302,14 +302,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     sector: "Fitness and Wellness Company, UAE",
     challenge:
       "Strong demand, loyal core, but churn was rising and nobody could pinpoint it. The team was focused on new sign-ups while existing members quietly left. We rebuilt retention around experience, behaviour, and team incentives.",
-    pivotLead: "We rebuilt retention around experience, behaviour, and ownership.",
-    pivot: [
-      "Identified the moments that mattered most to members, including onboarding, class atmosphere, music, and post-class follow-up.",
-      "Shifted the focus from transactions to community and identity, reinforcing progress and belonging.",
-      "Aligned team incentives to retention behaviours rather than sign-ups alone.",
-      "Introduced simple dashboards tracking attendance patterns, engagement drop-off, and early churn signals.",
-    ],
+    resultsLead: "We rebuilt retention around experience, behaviour, and ownership.",
     results: [
+      { figure: null, label: "Identified the moments that mattered most to members, including onboarding, class atmosphere, music, and post-class follow-up." },
+      { figure: null, label: "Shifted the focus from transactions to community and identity, reinforcing progress and belonging." },
+      { figure: null, label: "Aligned team incentives to retention behaviours rather than sign-ups alone." },
+      { figure: null, label: "Introduced simple dashboards tracking attendance patterns, engagement drop-off, and early churn signals." },
       { figure: "13%", label: "increase in member retention" },
       { figure: "17%", label: "improvement in profit margin through reduced churn and better utilisation" },
       { figure: null, label: "Clear visibility on why members stayed, allowing teams to act before churn occurred" },
@@ -330,13 +328,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     sector: "Professional Services, UAE",
     challenge:
       "Rapid growth exposed pricing gaps and an unstructured delivery process. The business was winning work but the margin on it varied engagement to engagement, and nobody could say reliably which work was profitable.",
-    pivotLead: "We rebuilt pricing and standardised how delivery runs.",
-    pivot: [
-      "Rebuilt the pricing model against the actual cost of delivery.",
-      "Standardised the delivery process across all client engagements.",
-      "Separated billable work from admin so the split was visible.",
-    ],
+    resultsLead: "We rebuilt pricing and standardised how delivery runs.",
     results: [
+      { figure: null, label: "Rebuilt the pricing model against the actual cost of delivery." },
+      { figure: null, label: "Standardised the delivery process across all client engagements." },
+      { figure: null, label: "Separated billable work from admin so the split was visible." },
       { figure: null, label: "Gross margin improved after the pricing reset" },
       { figure: null, label: "Time spent on non-billable admin reduced" },
       { figure: null, label: "Delivery process standardised across all client engagements" },
@@ -348,13 +344,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     sector: "Retail and Consumer, Gulf",
     challenge:
       "Inventory was misaligned with demand and markdowns were consuming margin quietly. Buying decisions were made on instinct and the cost of getting them wrong only showed up at the end of a season.",
-    pivotLead: "We put demand planning in front of the buying decision.",
-    pivot: [
-      "Introduced and embedded a demand planning process.",
-      "Tracked sell-through by product line rather than in aggregate.",
-      "Made markdown exposure visible before the season rather than after it.",
-    ],
+    resultsLead: "We put demand planning in front of the buying decision.",
     results: [
+      { figure: null, label: "Introduced and embedded a demand planning process." },
+      { figure: null, label: "Tracked sell-through by product line rather than in aggregate." },
+      { figure: null, label: "Made markdown exposure visible before the season rather than after it." },
       { figure: null, label: "Markdown losses reduced over two seasons" },
       { figure: null, label: "Sell-through rate improved across core product lines" },
       { figure: null, label: "Demand planning process introduced and embedded" },
@@ -366,13 +360,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     sector: "Technology and SaaS, MENA",
     challenge:
       "The sales pipeline looked healthy but conversion was slow and the reasons were unclear. Deals were being lost in follow-up rather than on price or product.",
-    pivotLead: "We rebuilt the CRM around the sales motion that actually happens.",
-    pivot: [
-      "Rebuilt the CRM around the real sales motion rather than an idealised one.",
-      "Made the follow-up stage explicit and owned.",
-      "Tracked cycle time by stage so the delay had a location.",
-    ],
+    resultsLead: "We rebuilt the CRM around the sales motion that actually happens.",
     results: [
+      { figure: null, label: "Rebuilt the CRM around the real sales motion rather than an idealised one." },
+      { figure: null, label: "Made the follow-up stage explicit and owned." },
+      { figure: null, label: "Tracked cycle time by stage so the delay had a location." },
       { figure: null, label: "Pipeline-to-close conversion rate improved" },
       { figure: null, label: "Average sales cycle reduced" },
       { figure: null, label: "CRM rebuilt around actual sales motion, not guesswork" },

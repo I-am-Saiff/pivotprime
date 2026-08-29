@@ -3010,3 +3010,45 @@ would fix it and would lose the green accent. Your call.
 
 The logo strip cards are back to the faint tint they had before the light green
 round, with the writing still dark green.
+
+---
+
+## 1b1. One results section per case study — **for Iram**
+
+You spotted the duplicate on Scentmatic. **It was on seven of the nine case
+studies, not one.** Here is what was actually there before this change:
+
+| Case study | "The Results" headings |
+|---|---|
+| Nurture | 1 |
+| Cinnacare | 1 |
+| Scentmatic | **2** |
+| Financial Services Company | **2** |
+| Founder-Led Business | **2** |
+| Fitness and Wellness Company | **2** |
+| Professional Services | **2** |
+| Retail and Consumer | **2** |
+| Technology and SaaS | **2** |
+
+**Nurture and Cinnacare were the only two that were already correct**, and only
+because merging their two lists on 29 August emptied the second one. Every other
+card had both sections. The cause was the rename: the left-hand section was "The
+pivot" until you renamed it "The Results", and the green panel below it was
+already called that.
+
+**The green panel is the section that survived**, on every card. Two reasons: the
+four points you sent for Scentmatic were already in it, and it is the only place
+a figure and the Verified badge appear at all. Four of your case studies publish
+a figure there, including 67%, 13% and 17%.
+
+**Scentmatic:** your four points are now the whole list. The three older points
+in the left column are gone, on your instruction.
+
+**Everywhere else nothing was deleted.** The two lists were joined, in the order
+of what we did and then what it produced, so the anonymised studies keep every
+point they had. Their lists are now six to eight points long.
+
+**Your sentence above each list is kept.** It used to sit above the section that
+has gone, so it moved into the panel with the list it introduces.
+
+All nine cards now have exactly one results section, confirmed on the live site.
