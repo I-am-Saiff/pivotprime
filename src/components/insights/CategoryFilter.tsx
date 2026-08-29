@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { INSIGHTS_FILTERS } from "@/content/insights";
+import { ACTIVE_FILTERS } from "@/content/insights";
 
 /**
  * Her category tabs.
@@ -15,9 +15,13 @@ import { INSIGHTS_FILTERS } from "@/content/insights";
  *
  * The tabs are real buttons in a tablist, so the control is reachable and
  * announced. Her file used bare <button> elements with no state exposed at all.
+ *
+ * ACTIVE_FILTERS, not her full six. "Growth" has no article behind it, and a tab
+ * that opens an empty list is a dead control. Her category stays in the content
+ * module and the tab comes back by itself when a Growth piece is published.
  */
 export default function CategoryFilter({ targetId }: { targetId: string }) {
-  const [active, setActive] = useState(INSIGHTS_FILTERS[0]);
+  const [active, setActive] = useState(ACTIVE_FILTERS[0]);
 
   const select = (label: string) => {
     setActive(label);
@@ -32,7 +36,7 @@ export default function CategoryFilter({ targetId }: { targetId: string }) {
         aria-label="Filter articles by category"
         className="scrollbar-hide mx-auto flex max-w-[1060px] gap-1 overflow-x-auto"
       >
-        {INSIGHTS_FILTERS.map((label) => {
+        {ACTIVE_FILTERS.map((label) => {
           const isActive = label === active;
           return (
             <button

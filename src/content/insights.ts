@@ -254,8 +254,11 @@ export const INSIGHTS_HERO: { eyebrow: string; headline: Segment[]; standfirst: 
  * once it is live, so this one filters. That is a behaviour her file left
  * unfinished rather than a design decision of hers being overridden.
  *
- * "Growth" currently matches none of the four articles. Flagged for the client:
- * either the tab goes or a Growth piece fills it.
+ * HER SIX CATEGORIES STAY IN THIS LIST. "Growth" is not rendered today because
+ * none of her four articles carries that tag and a tab that opens an empty list
+ * is a dead control. It is kept here rather than deleted so that publishing one
+ * Growth article brings the tab back on its own, with no code change: see
+ * ACTIVE_FILTERS below, which is what the page actually renders.
  */
 export const INSIGHTS_FILTERS = ["All", "Execution", "Leadership", "Technology", "Finance", "Growth"];
 
@@ -330,15 +333,31 @@ export const POSTS: PostCard[] = [
   },
 ];
 
+/**
+ * The tabs the page renders: "All", plus every category with an article behind
+ * it right now.
+ *
+ * Derived rather than hand-maintained, so the list cannot drift from the
+ * articles. Adding a Growth piece to ARTICLES and POSTS is the whole of the work
+ * needed to bring the Growth tab back. The CSS that filters by category in
+ * globals.css still carries a Growth rule for the same reason: it is inert while
+ * no article is tagged Growth and correct the moment one is.
+ */
+const TAGS_IN_USE = new Set([FEATURED.tag, ...POSTS.map((p) => p.tag)]);
+
+export const ACTIVE_FILTERS = INSIGHTS_FILTERS.filter(
+  (label, i) => i === 0 || TAGS_IN_USE.has(label),
+);
+
 export const TOPICS_LABEL = "Browse by topic";
 
 /**
- * Her ten topic links.
+ * Her ten topics.
  *
- * Every one points at href="#" in her file. There is no topic archive to point
- * them at and inventing ten routes is not in scope, so each one filters the list
- * above where its wording matches a category and is otherwise inert. Raised
- * with the client: these need either archive pages or removal.
+ * Every one points at href="#" in her file. Confirmed 29 August that they stay
+ * exactly as her file has them: plain labels, not links. There is no topic
+ * archive to point them at, and a link that goes nowhere is worse than a label
+ * that was never one.
  */
 export const TOPICS = ["Strategy execution", "P&L leadership", "Business transformation", "AI and automation", "Operational excellence", "Corporate innovation", "Decision making", "Fractional leadership", "Finance and growth", "Gulf and MENA markets"];
 

@@ -109,7 +109,7 @@ function Track({ run }: { run: boolean }) {
   );
 }
 
-/** Her card 2: ten blocks before, seven after, with the waste marked. */
+/** Her card 2: ten blocks before, seven after, with the wasted four marked. */
 function Waste({ run }: { run: boolean }) {
   const before = [0, 25, 50, 75, 100, 125, 150, 175, 200, 225];
   return (
@@ -125,17 +125,24 @@ function Waste({ run }: { run: boolean }) {
           width="22"
           height="16"
           rx="3"
-          // Her five productive blocks, then five she draws in amber. Same
-          // split, one hue: the wasted five are the lighter weight.
+          // SIX PRODUCTIVE, FOUR WASTED, from 29 August. Her mockup split it
+          // five and five against a 40-60% range. The figure is a single 43%
+          // now, and a half-and-half drawing under a 43% label reads as a
+          // rounding error nobody made. Four of ten is the nearest whole block
+          // to 43% and it is the number in the label.
+          //
+          // The bracket below moves with them: it starts at the first wasted
+          // block rather than at a fixed midpoint, so the marked span and the
+          // shaded blocks are the same four.
           fill="var(--color-mid)"
-          fillOpacity={i < 5 ? 0.3 : 0.62}
-          stroke={i < 5 ? undefined : "var(--color-neon)"}
-          strokeOpacity={i < 5 ? undefined : 0.35}
-          strokeWidth={i < 5 ? undefined : 1}
+          fillOpacity={i < 6 ? 0.3 : 0.62}
+          stroke={i < 6 ? undefined : "var(--color-neon)"}
+          strokeOpacity={i < 6 ? undefined : 0.35}
+          strokeWidth={i < 6 ? undefined : 1}
         />
       ))}
-      <line x1="125" y1="40" x2="247" y2="40" stroke="var(--color-neon)" strokeOpacity="0.45" strokeWidth="0.5" strokeDasharray="2 2" />
-      <text x="186" y="50" textAnchor="middle" fill="var(--color-neon)" fillOpacity="0.8" fontSize="7.5" letterSpacing="0.06em">
+      <line x1="150" y1="40" x2="247" y2="40" stroke="var(--color-neon)" strokeOpacity="0.45" strokeWidth="0.5" strokeDasharray="2 2" />
+      <text x="198" y="50" textAnchor="middle" fill="var(--color-neon)" fillOpacity="0.8" fontSize="7.5" letterSpacing="0.06em">
         43% INEFFICIENCY
       </text>
 

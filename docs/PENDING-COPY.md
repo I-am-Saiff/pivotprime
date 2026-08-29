@@ -2881,27 +2881,29 @@ closed.**
 
 ### Four things need a decision from you
 
-**1. The "Growth" tab matches none of the four articles.** Your six category tabs
-are Execution, Leadership, Technology, Finance and Growth. Your four pieces cover
-the first four. Growth currently shows an empty list. Either the tab goes, or a
-Growth piece fills it.
+**1. The "Growth" tab is not shown, and comes back on its own.** Settled 29
+August. Your six categories are Execution, Leadership, Technology, Finance and
+Growth; your four pieces cover the first four, so a Growth tab would open an
+empty list. Growth is still in the content module and the rendered tabs are
+worked out from the articles that exist, so **publishing one Growth article
+brings the tab back with no code change.**
 
-**2. Your ten "Browse by topic" links point nowhere.** Every one is `href="#"` in
-your file. There are no topic archive pages and inventing ten of them was not in
-scope, so they render as labels rather than as links that go nowhere. They need
-either archive pages or removal.
+**2. Your ten "Browse by topic" items stay as plain labels.** Settled 29 August:
+they are exactly as your file has them. Every one points at `href="#"` in your
+file, there is no topic archive behind them, and a link that goes nowhere is
+worse than a label that was never one.
 
-**3. There is no mailing list behind the subscribe form.** It works: the address
-is validated, it reaches `hello@pivotprime.ae`, and the subscriber gets a
-confirmation. But it is delivered as an email, not stored in a list, because the
-site has no database and no email platform beyond the one that sends the contact
-form. Moving these to a real list is a decision and a cost.
+**3. The subscribe form delivers by email, and stays that way.** Settled 29
+August. The address is validated, it reaches `hello@pivotprime.ae`, and the
+subscriber gets a confirmation. It is not stored in a list, because the site has
+no database and no email platform beyond the one that sends the contact form.
+This is what the rest of the site does and it works today. A real mailing list
+remains available later as a separate decision and cost.
 
-**4. Your category tabs did not filter.** The script in your file moves the
-underline and nothing else, so on your page every tab shows every article. A
-control labelled by category that does not filter reads as broken once it is
-live, so it filters now. Flagging it because it is a change to how your file
-behaves, not to how it looks.
+**4. Your category tabs filter, and that is confirmed.** The script in your file
+moves the underline and nothing else, so on your page every tab showed every
+article. They filter now, confirmed 29 August. Every card stays in the page
+either way, so with JavaScript switched off all four articles are readable.
 
 ### Your five extra colours, mapped
 
@@ -2938,10 +2940,10 @@ Changed on your instruction of 29 August, from the `40-60%` range that came from
 your KPI mockup. It is updated in the figure, in the label inside the drawing,
 and in the check that pins the five authorised figures.
 
-**One thing to note:** the drawing behind it still shows five wasted blocks out
-of ten, which reads as roughly half. It was drawn against a 40 to 60% range and
-still sits inside it, but if you want the picture to match 43% exactly the block
-split needs redrawing. Say the word.
+**The drawing was redrawn to match**, on your instruction of 29 August: four
+wasted blocks of ten rather than five, so the picture and the label agree. The
+marked bracket moved with them, so the span it brackets is the same four blocks
+it shades.
 
 **This settles a contradiction** your own master table flagged: it carried
 "40 to 60%" in one row and "10 to 40%" in another and marked the row as needing
