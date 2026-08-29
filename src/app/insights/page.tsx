@@ -80,7 +80,7 @@ export default async function InsightsPage({
       {/* HERO */}
       <header className="relative overflow-hidden bg-forest px-4 pt-28 pb-12 sm:px-6 sm:pt-32 sm:pb-[76px] md:pt-40 lg:px-8">
         <div aria-hidden="true" className={`pointer-events-none absolute inset-0 ${DOT_GRID}`} />
-        <div className="relative mx-auto grid max-w-[1060px] items-end gap-10 md:grid-cols-[1fr_auto]">
+        <div className="relative mx-auto grid max-w-[1060px] items-end gap-6 md:grid-cols-[1fr_auto] md:gap-10">
           <div>
             <p className="mb-[18px] text-[10px] font-bold tracking-[0.22em] text-neon/60 uppercase">
               {INSIGHTS_HERO.eyebrow}
@@ -89,8 +89,30 @@ export default async function InsightsPage({
               <Segments segments={INSIGHTS_HERO.headline} />
             </h1>
           </div>
-          {/* Hidden below her 720px breakpoint, as her file has it. */}
-          <p className="ml-auto hidden max-w-[260px] text-right text-sm leading-[1.7] text-white/45 md:block">
+          {/* HER STANDFIRST, LEFT ALIGNED.
+              
+              Her file sets text-align:right on this column. Right-aligned prose
+              puts the ragged edge on the left, so every line starts in a
+              different place and the eye loses the return sweep. It also left
+              "it." alone on the last line. The block still sits where she put
+              it, flush right in the hero and bottom-aligned to the heading:
+              md:ml-auto moves the box, the text inside it reads left.
+
+              THE MEASURE IS IN ch, NOT px, so it stays a reading length rather
+              than a number that happens to look right at one font size. Her
+              260px is about 34 characters at this size, so this is her width
+              expressed as what it was for.
+
+              text-pretty asks the browser not to leave a single word on the
+              last line. Chrome and Safari honour it; where it is not supported
+              the paragraph simply wraps normally, so it costs nothing.
+
+              SHOWN AT EVERY WIDTH, which her file does not do: it drops this
+              column entirely below 720px. That hides the sentence that says
+              what the whole page is from every phone. The grid is one column
+              there, so it stacks under the heading. Say the word and the
+              breakpoint goes back. */}
+          <p className="max-w-[34ch] text-sm leading-[1.7] text-pretty text-white/45 md:ml-auto">
             {INSIGHTS_HERO.standfirst}
           </p>
         </div>
