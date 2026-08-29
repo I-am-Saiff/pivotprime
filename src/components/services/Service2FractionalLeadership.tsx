@@ -87,7 +87,7 @@ export default function Service2FractionalLeadership() {
                 <div
                   className={`mt-5 flex flex-col gap-4 ${phase.yourTeamFirst ? "flex-col-reverse" : ""}`}
                 >
-                  <div className="rounded-lg bg-forest p-4 text-white">
+                  <div className="rounded-lg bg-[var(--card-dark-fill)] p-4 text-white">
                     <p className="font-sans text-[11px] font-bold tracking-[0.18em] text-neon uppercase">
                       Pivot Prime
                     </p>

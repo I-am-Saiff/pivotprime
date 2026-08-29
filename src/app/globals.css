@@ -51,6 +51,31 @@
    and dropping the last bg-linen took that variable out of the stylesheet. */
 :root {
   --page-ground: color-mix(in srgb, #efeae0 40%, #fefbf8);
+
+  /* THE DARK CARD FILL. One value, one place, so it can be reverted or retuned
+     in a single line.
+
+     The client's note of 29 August is that the dark cards read too dark. Forest
+     is #013325, which is very close to black. This lifts it a quarter of the way
+     towards mid, #009f50, the next green up in the same swatch. It is a point on
+     the line between two values she has already approved, so it adds no eleventh
+     colour: at 0% it is forest exactly and at 100% it is mid exactly.
+
+     WHY 25% AND NOT MORE. The binding constraint is not the white body text,
+     which still clears 9:1 here. It is the neon eyebrow, #00d76d, which sits on
+     almost every one of these cards at 9 to 12px. Neon is a light green, so it
+     loses contrast against the card faster than white does as the card lifts:
+     5.1:1 at 25%, 4.8:1 at 30%, and it breaks 4.5:1 at about 33%. The numbers
+     are measured per text node in scripts/check-card-contrast.mjs, not
+     estimated. Lift this further and that check fails, which is the point.
+
+     WRITTEN AS LITERAL HEXES, DELIBERATELY, for the same reason --page-ground
+     above is. Tailwind 4 only emits a --color-* custom property while some
+     utility still references it, so var(--color-mid) here would evaluate to
+     nothing and take the whole color-mix declaration with it on the day the last
+     bg-mid or text-mid is deleted. That failure is silent: the cards would go
+     transparent and nobody would see it in a diff. */
+  --card-dark-fill: color-mix(in srgb, #009f50 25%, #013325);
 }
 
 @layer base {
@@ -106,7 +131,7 @@
      rewriting every child's colour: the light-on-dark tokens are remapped in
      place, and the mid green becomes neon so an accent stays an accent. */
   .card-dark {
-    background-color: var(--color-forest);
+    background-color: var(--card-dark-fill);
     color: #fff;
   }
   .card-dark :where(

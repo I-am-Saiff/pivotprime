@@ -42,7 +42,7 @@ export default function KpiCards() {
         <li
           key={metric.label}
           data-kpi-index={i}
-          className="relative flex min-h-[300px] flex-col overflow-hidden rounded-[18px] border border-neon/20 bg-forest px-6 pt-6 pb-5"
+          className="relative flex min-h-[300px] flex-col overflow-hidden rounded-[18px] border border-neon/20 bg-[var(--card-dark-fill)] px-6 pt-6 pb-5"
         >
           {/* Her top glow: a hairline that fades in from both ends. */}
           <span

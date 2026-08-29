@@ -65,7 +65,7 @@ export default function Service1ClarityAudit() {
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl bg-forest p-6 text-white sm:p-7">
+          <div className="rounded-2xl bg-[var(--card-dark-fill)] p-6 text-white sm:p-7">
             <div className="font-sans font-semibold text-[10.5px] tracking-[0.2em] uppercase text-neon mb-4">
               What you get
             </div>

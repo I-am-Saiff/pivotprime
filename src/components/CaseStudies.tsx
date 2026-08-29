@@ -101,7 +101,7 @@ export default function CaseStudies({
               type="button"
               onClick={prevSlide}
               aria-label="Previous case study"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-300 card-dark text-forest shadow-sm transition-all hover:bg-white hover:border-forest hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:outline-none active:scale-95"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-300 bg-forest text-white shadow-sm transition-all hover:bg-white hover:border-forest hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:outline-none active:scale-95"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -116,7 +116,7 @@ export default function CaseStudies({
               type="button"
               onClick={nextSlide}
               aria-label="Next case study"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-300 card-dark text-forest shadow-sm transition-all hover:bg-white hover:border-forest hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:outline-none active:scale-95"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-300 bg-forest text-white shadow-sm transition-all hover:bg-white hover:border-forest hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:outline-none active:scale-95"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -239,7 +239,7 @@ export default function CaseStudies({
               <div
                 className={`w-full self-end ${study.photo ? "lg:col-span-7 lg:col-start-1 lg:row-start-2" : "lg:col-span-12"}`}
               >
-                <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-forest p-5 text-white shadow-xl sm:p-6">
+                <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-[var(--card-dark-fill)] p-5 text-white shadow-xl sm:p-6">
                   <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
                   <div className="relative z-10">
                     <div className="mb-3 flex items-center justify-between border-b border-white/15 pb-2.5">

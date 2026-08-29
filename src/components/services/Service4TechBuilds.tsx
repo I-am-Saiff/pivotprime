@@ -101,7 +101,7 @@ export default function Service4TechBuilds() {
                 className={`rounded-2xl border p-6 sm:p-7 ${
                   i === 0
                     ? "border-forest/15 bg-shell"
-                    : "border-forest/40 bg-forest text-white"
+                    : "border-forest/40 bg-[var(--card-dark-fill)] text-white"
                 }`}
               >
                 <h3
