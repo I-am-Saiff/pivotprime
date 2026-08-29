@@ -27,7 +27,7 @@
 
 export const PRIVACY_SIGNED_OFF = false;
 
-export const PRIVACY_TITLE = "Privacy policy";
+export const PRIVACY_TITLE = "Privacy Policy";
 
 export const PRIVACY_INTRO =
   "Pivot Prime Consultancy FZ-LLC is registered in Ras Al Khaimah, United Arab Emirates. This policy explains what we collect, why, and what you can ask us to do about it.";
@@ -36,19 +36,19 @@ export type PrivacySection = { heading: string; body: string };
 
 export const PRIVACY_SECTIONS: PrivacySection[] = [
   {
-    heading: "What we collect",
+    heading: "What We Collect",
     body: "When you contact us, we collect the name, email address and anything you choose to tell us in the message. We do not collect payment details through this website.",
   },
   {
-    heading: "Why we collect it",
+    heading: "Why We Collect It",
     body: "To reply to you, to produce and send the report you asked for, and to contact you about the work you enquired about. We do not sell your data and we do not share it with third parties for their own marketing.",
   },
   {
-    heading: "How long we keep it",
+    heading: "How Long We Keep It",
     body: "Enquiries are kept for twenty-four months, then deleted, unless you become a client and we need them for the engagement.",
   },
   {
-    heading: "Your rights",
+    heading: "Your Rights",
     body: "You can ask us for a copy of what we hold, ask us to correct it, or ask us to delete it. Email hello@pivotprime.ae and we will respond within thirty days.",
   },
   {

@@ -13,7 +13,7 @@ export default function ForFounders() {
         <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           {/* Her wording, slide 18: "Change the eyebrow heading to FOR FOUNDERS". */}
-          <span className="mb-4 block text-xs font-bold tracking-[0.22em] text-neon uppercase">For founders</span>
+          <span className="mb-4 block text-xs font-bold tracking-[0.22em] text-neon uppercase">For Founders</span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight max-w-4xl mx-auto">
             You’ve created something real.
           </h1>
@@ -29,7 +29,7 @@ export default function ForFounders() {
           
           {/* Section 1 */}
           <div className="frosted-card-light border-forest/20 p-6 md:p-10 rounded-[28px] mb-7 sm:mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">A business that doesn&apos;t depend on you</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">A Business That Doesn&apos;t Depend on You</h2>
             <h3 className="text-lg font-bold text-mid mb-6">Through an Operational Clarity Audit. From AED 15,000.</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 items-stretch">
@@ -42,7 +42,7 @@ export default function ForFounders() {
 
           {/* Section 2 */}
           <div className="frosted-card-light border-forest/20 p-6 md:p-10 rounded-[28px] mb-7 sm:mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">People you can trust to carry the work</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">People You Can Trust to Carry the Work</h2>
             <h3 className="text-lg font-bold text-mid mb-6">Through hiring support, role design and Build and Place.</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 items-stretch">
@@ -55,7 +55,7 @@ export default function ForFounders() {
 
           {/* Section 3 */}
           <div className="frosted-card-light border-forest/20 p-6 md:p-10 rounded-[28px] mb-7 sm:mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Growth without more chaos</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Growth Without More Chaos</h2>
             <h3 className="text-lg font-bold text-mid mb-6">Through Fractional Leadership. Scoped per engagement.</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 items-stretch">

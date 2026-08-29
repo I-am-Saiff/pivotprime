@@ -624,12 +624,26 @@ async function main() {
     }
   };
 
+/**
+ * HEADING COMPARISONS IGNORE CASE, FROM 29 AUGUST.
+ *
+ * The client asked for Title Case on every heading site-wide, so the spec's
+ * "What do we actually do" now renders as "What Do We Actually Do". The spec
+ * supplies the WORDS; the casing is a separate instruction that came later and
+ * overrides it. Comparing case-insensitively keeps this file checking the thing
+ * it exists to check, which is that her copy is on the page, without pinning a
+ * casing decision she has since changed. It still fails if a word changes,
+ * moves or disappears.
+ */
+const eq = (haystack, needle) =>
+  haystack.toLowerCase().includes(needle.toLowerCase());
+
   const check = (page, list, mustBePresent) => {
     const text = textOf(page.html);
     for (const a of list) {
       assertions += 1;
       const needle = a.text ?? a.html;
-      const found = (a.html ? page.html : text).includes(needle);
+      const found = eq(a.html ? page.html : text, needle);
       if (found !== mustBePresent) {
         failures.push({ route: page.route, spec: a.spec, why: a.why, needle, mustBePresent });
       }
@@ -746,7 +760,7 @@ async function main() {
 
     h2.forEach((expected, i) => {
       assertions += 1;
-      if (!found[i].includes(expected)) {
+      if (!eq(found[i], expected)) {
         failures.push({
           route,
           kind: "structure",

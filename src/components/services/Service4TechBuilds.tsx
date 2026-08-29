@@ -6,7 +6,7 @@ import { TECH_BUILDS } from "@/content/services-detail";
  *
  * A SERVER COMPONENT. The previous version was a client component whose
  * capability list and argument sat behind an interactive toggle labelled
- * "Automate everything" / "Fix the constraint first", so half the page existed
+ * "Automate Everything" / "Fix the Constraint First", so half the page existed
  * only in client state and neither label came from the spec. Spec 4.4 also says
  * this page "has to work as a standalone destination, because paid advertising
  * for the software capability will point here directly": a page that renders
@@ -77,7 +77,7 @@ export default function Service4TechBuilds() {
       <section className="surface-page py-12 sm:py-20 md:py-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <p className="font-sans text-xs font-bold tracking-[0.22em] text-mid uppercase">
-            The opening argument
+            The Opening Argument
           </p>
           <h2 className="mt-4 max-w-3xl font-sans text-3xl font-extrabold tracking-tight text-forest md:text-4xl">
             {TECH_BUILDS.argument.claim}
@@ -130,7 +130,7 @@ export default function Service4TechBuilds() {
         />
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <p className="font-sans text-xs font-bold tracking-[0.22em] text-mid uppercase">
-            What we build
+            What We Build
           </p>
           <h2 className="mt-4 max-w-3xl font-sans text-3xl font-extrabold tracking-tight text-forest md:text-4xl">
             {TECH_BUILDS.capabilityHeading}

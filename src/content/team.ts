@@ -27,7 +27,7 @@
 export const TEAM_ANCHOR = "team";
 
 export const TEAM_INTRO = {
-  eyebrow: "Meet the team",
+  eyebrow: "Meet the Team",
   heading: "The people you work with directly.",
 };
 

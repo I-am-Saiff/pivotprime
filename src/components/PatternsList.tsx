@@ -74,7 +74,7 @@ export default function PatternsList() {
             <p className="text-xs font-bold uppercase tracking-wider text-neon leading-tight">
               {selectedCount > 0
                 ? `${selectedCount} Operational Blocker${selectedCount > 1 ? "s" : ""} Identified`
-                : "Select the symptoms that sound familiar"}
+                : "Select the Symptoms That Sound Familiar"}
             </p>
             <p className="text-sm text-white/90 font-medium mt-1 leading-snug">
               {selectedCount > 0

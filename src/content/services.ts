@@ -99,8 +99,8 @@ export const SERVICES: ServiceCard[] = [
   },
 ];
 
-export const SERVICES_EYEBROW = "Our services";
-export const SERVICES_HEADING = "What do we actually do";
+export const SERVICES_EYEBROW = "Our Services";
+export const SERVICES_HEADING = "What Do We Actually Do";
 
 /**
  * AUTHORED, NOT FROM THE SPEC. Section 3.4 gives this page an eyebrow, a heading

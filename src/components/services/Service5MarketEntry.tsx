@@ -60,10 +60,10 @@ export default function Service5MarketEntry() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-7 sm:mb-10 max-w-2xl">
             <span className="block font-sans font-semibold text-[10.5px] tracking-[0.24em] uppercase text-[#009f50]">
-              The misconception
+              The Misconception
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mt-3 text-[#0c1a15]">
-              A plan built on twelve even months <span className="text-[#009f50]">will miss badly.</span>
+              A Plan Built on Twelve Even Months <span className="text-[#009f50]">will miss badly.</span>
             </h2>
             <p className="text-[#5e6f68] mt-3">
               Most businesses arrive with a home-market forecast. This market does not trade that way.

@@ -377,7 +377,7 @@ export default function Home() {
                 contrast, and the commitment band. Everything that explained the
                 model at length is gone, which is what "minimal" meant. */}
             <div className="relative z-10">
-              <span className="mb-3 block text-xs font-bold tracking-[0.22em] text-neon uppercase">Our fees</span>
+              <span className="mb-3 block text-xs font-bold tracking-[0.22em] text-neon uppercase">Our Fees</span>
               <div className="mb-4 h-[3px] w-10 rounded-full bg-neon" aria-hidden="true" />
 
               <h2 className="max-w-2xl text-2xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-3xl md:text-4xl">
@@ -431,7 +431,7 @@ export default function Home() {
                     {HOW_WE_ARE_PAID.commitment.body}
                   </p>
                   <p className="mt-1.5 text-[11px] font-bold tracking-[0.2em] text-neon uppercase">
-                    Performance linked fee
+                    Performance Linked Fee
                   </p>
                 </div>
               </div>

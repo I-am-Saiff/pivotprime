@@ -73,7 +73,7 @@ export default function CaseStudies({
         <header className="mb-7 sm:mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-3xl">
             {/* Her wording, slide 8: "Instead of chapter 2, let's put case studies". */}
-            <span className="mb-3 block font-sans text-xs font-semibold tracking-[0.22em] text-mid uppercase">Case studies</span>
+            <span className="mb-3 block font-sans text-xs font-semibold tracking-[0.22em] text-mid uppercase">Case Studies</span>
             <Heading className="text-3xl font-extrabold tracking-tight text-foreground md:text-4xl lg:text-5xl">
               {CASE_STUDIES_HEADING}
             </Heading>
@@ -179,12 +179,12 @@ export default function CaseStudies({
                 </div>
 
                 <div>
-                  <h4 className="mb-1.5 font-bold text-forest text-base sm:text-lg">The challenge</h4>
+                  <h4 className="mb-1.5 font-bold text-forest text-base sm:text-lg">The Challenge</h4>
                   <p className="leading-relaxed text-neutral-600 text-sm sm:text-base">{study.challenge}</p>
                 </div>
 
                 <div>
-                  <h4 className="mb-1.5 font-bold text-forest text-base sm:text-lg">The pivot</h4>
+                  <h4 className="mb-1.5 font-bold text-forest text-base sm:text-lg">The Results</h4>
                   <p className="mb-2 leading-relaxed text-neutral-700 font-medium text-sm sm:text-base">
                     {study.pivotLead}
                   </p>

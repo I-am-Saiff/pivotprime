@@ -13,7 +13,7 @@ export default function ForCorporateOwners() {
         <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           {/* Restored with the chapter number stripped. She asked for the labels reworded, not deleted. */}
-          <span className="mb-4 block text-xs font-bold tracking-[0.22em] text-neon uppercase">For P&amp;L owners</span>
+          <span className="mb-4 block text-xs font-bold tracking-[0.22em] text-neon uppercase">For P&amp;L Owners</span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight max-w-4xl mx-auto">
             You are responsible for the whole system.
           </h1>
@@ -36,7 +36,7 @@ export default function ForCorporateOwners() {
 
           {/* Section 1 */}
           <div className="frosted-card-light border-forest/20 p-8 md:p-14 rounded-[28px] mb-7 sm:mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Why your unit isn&apos;t moving faster than the market</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Why Your Unit Isn&apos;t Moving Faster Than the Market</h2>
             <h3 className="text-lg font-bold text-mid mb-8">A reset of where capital, leadership attention, and effort are actually going, and what to cut.</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 items-stretch">
@@ -63,7 +63,7 @@ export default function ForCorporateOwners() {
 
           {/* Section 2 */}
           <div className="frosted-card-light border-forest/20 p-8 md:p-14 rounded-[28px] mb-7 sm:mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Your decisions don&rsquo;t survive the next layers of the organisation</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Your Decisions Don&rsquo;t Survive the Next Layers of the Organisation</h2>
             <h3 className="text-lg font-bold text-mid mb-8">Senior-level support that closes the gap between what gets decided and what actually lands.</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 items-stretch">
@@ -90,7 +90,7 @@ export default function ForCorporateOwners() {
 
           {/* Section 3 */}
           <div className="frosted-card-light border-forest/20 p-8 md:p-14 rounded-[28px] mb-7 sm:mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Grow output without growing the cost base</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Grow Output Without Growing the Cost Base</h2>
             <h3 className="text-lg font-bold text-mid mb-8">Smarter operating design, targeted automation, and AI adoption, applied where it actually reduces drag.</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 items-stretch">

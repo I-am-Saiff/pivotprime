@@ -247,7 +247,7 @@ export default function About() {
           them in her file and on no page of the site. */}
       <section className="bg-forest px-4 py-14 sm:py-24 text-center sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <p className="mb-4 text-xs font-bold tracking-[0.22em] text-neon uppercase">Start here</p>
+          <p className="mb-4 text-xs font-bold tracking-[0.22em] text-neon uppercase">Start Here</p>
           <h2 className="mb-7 sm:mb-10 text-3xl font-extrabold tracking-tight text-white md:text-4xl">
             The first conversation costs nothing. Not moving does.
           </h2>

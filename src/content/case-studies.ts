@@ -373,5 +373,5 @@ export const CASE_STUDIES_PULLQUOTE = {
   attribution: "Iram Kauser, Founder and CEO, Pivot Prime",
 };
 
-export const CASE_STUDIES_HEADING = "What we have achieved";
+export const CASE_STUDIES_HEADING = "What We Have Achieved";
 export const CASE_STUDIES_STANDFIRST = "Real problems, real execution, real results.";

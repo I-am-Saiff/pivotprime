@@ -31,12 +31,6 @@
       "why": "Appears in docs/spec.md. Green block, or quoted in a KEEP or section 11 instruction that sanctions the existing wording."
     },
     {
-      "text": "The pivot",
-      "status": "traced",
-      "kind": "spec",
-      "why": "Appears in docs/spec.md. Green block, or quoted in a KEEP or section 11 instruction that sanctions the existing wording."
-    },
-    {
       "text": "The Results",
       "status": "traced",
       "kind": "spec",
