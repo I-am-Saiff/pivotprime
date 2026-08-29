@@ -963,6 +963,38 @@
       "why": "Link label for the Cinnacare and Scentmatic websites, added 29 August on the client's WhatsApp instruction to put www.cinnacare.com and scentmatic.co.uk on those two cards. She gave the URLs and not a label, so this follows the existing 'View the product' on Nurture rather than inventing a second pattern.",
       "route": "/",
       "element": "link"
+    },
+    {
+      "text": "Where this ends up",
+      "status": "traced",
+      "kind": "spec",
+      "why": "Restored 29 August. The client reversed her 28 August instruction to cut the service pages: \"Theres no why this exists you removed too much\". This is spec 4.x copy that was on the page before that cut, put back unchanged. PENDING-COPY 1ar and 1b2.",
+      "route": "/services/operational-clarity-audit",
+      "element": "h2"
+    },
+    {
+      "text": "What the COO seat covers",
+      "status": "traced",
+      "kind": "spec",
+      "why": "Restored 29 August. The client reversed her 28 August instruction to cut the service pages: \"Theres no why this exists you removed too much\". This is spec 4.x copy that was on the page before that cut, put back unchanged. PENDING-COPY 1ar and 1b2.",
+      "route": "/services/fractional-leadership",
+      "element": "h3"
+    },
+    {
+      "text": "What the Chief of Staff seat covers",
+      "status": "traced",
+      "kind": "spec",
+      "why": "Restored 29 August. The client reversed her 28 August instruction to cut the service pages: \"Theres no why this exists you removed too much\". This is spec 4.x copy that was on the page before that cut, put back unchanged. PENDING-COPY 1ar and 1b2.",
+      "route": "/services/fractional-leadership",
+      "element": "h3"
+    },
+    {
+      "text": "What the CFO seat covers",
+      "status": "traced",
+      "kind": "spec",
+      "why": "Restored 29 August. The client reversed her 28 August instruction to cut the service pages: \"Theres no why this exists you removed too much\". This is spec 4.x copy that was on the page before that cut, put back unchanged. PENDING-COPY 1ar and 1b2.",
+      "route": "/services/fractional-leadership",
+      "element": "h3"
     }
   ]
 }

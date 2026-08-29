@@ -267,3 +267,70 @@ export const TECH_BUILDS = {
   howItRuns: "We scope the build against a defined problem and agree what it has to change. We build it, test it with the people who will actually use it, and hand it over with documentation rather than a demo. If you want us to run and maintain it afterwards, we can. If you want to own it outright, you own it, including the code.",
   whereThisStarts: "If you already know what you need built, we can start there. If you are not certain the technology is the actual constraint, start with an Operational Clarity Audit, and we will tell you honestly whether a build is the right answer.",
 };
+
+/**
+ * The three seats, spec 4.2, restored 29 August.
+ *
+ * RECOVERED FROM GIT, NOT RETYPED. The 28 August cut took these panels off the
+ * page and PENDING-COPY 1ar preserved only `why`, so the copy existed nowhere
+ * but in the commit before the cut. It is lifted out of 22a0b4e^ verbatim and
+ * put in the content file this time, so a change to the markup can no longer
+ * take the words with it. PENDING-COPY 1at called this "the core of the page".
+ *
+ * THE ANCHORS ARE LOAD-BEARING. Spec 4.2: the persona pages and the homepage
+ * services card link into #coo, #chief-of-staff and #cfo directly. While these
+ * panels were gone those links landed on a page with no such anchor.
+ *
+ * ALL THREE RENDER AT ONCE. The pre-cut version put them behind a tab, so two
+ * of the three were absent from the served HTML: that is the defect AGENTS.md
+ * records as "two thirds of the fractional page, behind a tab".
+ */
+export type Seat = { title: string; short: string; h: string; l: string[]; n: string };
+
+export const SEATS: Seat[] = [
+    {
+      title: "Fractional COO",
+      short: "Owns execution",
+      h: "What the COO seat covers",
+      l: [
+        "Ownership of execution against an agreed plan, with weekly accountability",
+        "The operating model, decision rights and operating rhythm",
+        "Process design, SOPs and operational governance",
+        "Supplier, cost and margin discipline",
+        "Hiring, team structure and onboarding",
+        "Dashboards and reporting, so decisions are made on numbers rather than instinct",
+        "Managing the delivery team, whether that is your people or ours",
+      ],
+      n: "The operating model, the weekly delivery, the team. For businesses where the work happens but nothing finishes predictably.",
+    },
+    {
+      title: "Fractional Chief of Staff",
+      short: "Owns follow-through",
+      h: "What the Chief of Staff seat covers",
+      l: [
+        "Translating strategic decisions into work that actually moves",
+        "Priority management across functions, and resolving the ones that collide",
+        "Preparing the leadership team for the decisions ahead of them",
+        "Chairing and running the operating rhythm: the meetings, the agendas, the follow-through",
+        "Managing cross-functional programmes that have no natural owner",
+        "Protecting senior attention, so the leadership team works on what only they can do",
+        "Sitting in the meetings that matter, including board and investor conversations",
+      ],
+      n: "Translates decisions into movement across functions, manages the priorities that collide, and keeps senior attention on what matters. For complex organisations where the strategy is right and cannot land on its own.",
+    },
+    {
+      title: "Fractional CFO",
+      short: "Owns the numbers",
+      h: "What the CFO seat covers",
+      l: [
+        "Cash, runway and rolling forecasts",
+        "Management reporting and the board pack",
+        "Collections, credit control and working capital",
+        "Pricing, margin and unit economics",
+        "Fundraising readiness: the model, the data room and the numbers behind the story",
+        "Budgeting, cost control and supplier terms",
+        "Statutory reporting, audit and compliance coordination",
+      ],
+      n: "Cash, runway and forecasting, collections, board and investor reporting, and readiness for the next round. For businesses raising capital, or where the founder feels the absence of a finance seat every week.",
+    },
+  ];

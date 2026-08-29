@@ -75,7 +75,16 @@
      nothing and take the whole color-mix declaration with it on the day the last
      bg-mid or text-mid is deleted. That failure is silent: the cards would go
      transparent and nobody would see it in a diff. */
-  --card-dark-fill: color-mix(in srgb, #009f50 25%, #013325);
+  /* REVERTED 29 August, on her instruction: "I think better revert all to
+     previous colours." This was forest lifted 25% toward mid on the 29 August
+     note that the cards read too dark. It is forest again, so every one of the
+     53 cards that moved is back exactly where it was.
+
+     The variable is kept rather than unwound back to bg-forest at each call
+     site, because one value in one place is what makes this reversible in a
+     line. Set it back to color-mix(in srgb, #009f50 25%, #013325) to restore
+     the lighter fill. */
+  --card-dark-fill: #013325;
 }
 
 @layer base {

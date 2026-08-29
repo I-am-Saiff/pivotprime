@@ -1,16 +1,16 @@
 "use client";
 
+import { CopyProse, CopyCards, ServiceSignOff } from "./SpecCopyBlocks";
+import { BUILD_AND_PLACE } from "@/content/services-detail";
+
 import { useRevealOnScroll } from "@/lib/use-reveal-on-scroll";
 import { WHATSAPP_URL } from "@/lib/flags";
 import { WHATSAPP_CTA } from "@/content/cta";
-
 
 export default function Service3BuildPlace() {
   // Shared so the reveal never hides content from a crawler or from a
   // visitor who has reduced motion enabled. See the hook for why.
   const [benchRef, isVisible] = useRevealOnScroll<HTMLDivElement>();
-
-
 
   // The descriptor line under each node used to read "drives delivery", "owns
   // the numbers" and so on. Those were the designer's compression of spec 4.3's
@@ -133,6 +133,19 @@ export default function Service3BuildPlace() {
         </div>
       </section>
 
+      {/* RESTORED 29 August. The 28 August instruction to cut everything below
+          "Why this exists" was wrong and the client has said so twice. Every
+          block below was in the spec, was never deleted from the content file,
+          and is rendered again here through the components built for it and
+          then left unused. PENDING-COPY 1ar and 1at. */}
+      <section className="surface-page px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
+        <div className="space-y-12 sm:space-y-16">
+        <CopyProse heading={BUILD_AND_PLACE.whyHeading} paragraphs={BUILD_AND_PLACE.why} />
+        <CopyCards heading={BUILD_AND_PLACE.rolesHeading} cards={BUILD_AND_PLACE.cards} />
+        <CopyProse heading={BUILD_AND_PLACE.pricedHeading} paragraphs={[BUILD_AND_PLACE.priced]} />
+        </div>
+      </section>
+      <ServiceSignOff heading="Where this ends up" body="People inside your business, sourced, vetted and managed by us, with one contract and one accountable party. Tell us the gap and we will tell you what it takes to fill it." />
     </div>
   );
 }

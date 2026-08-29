@@ -1,3 +1,5 @@
+import { CopyProse, CopyList, ServiceSignOff } from "./SpecCopyBlocks";
+import { CLARITY_AUDIT } from "@/content/services-detail";
 import { WHATSAPP_URL } from "@/lib/flags";
 import { WHATSAPP_CTA } from "@/content/cta";
 import ClarityAuditProcessMap from "./ClarityAuditProcessMap";
@@ -65,8 +67,10 @@ export default function Service1ClarityAudit() {
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl bg-[var(--card-dark-fill)] p-6 text-white sm:p-7">
-            <div className="font-sans font-semibold text-[10.5px] tracking-[0.2em] uppercase text-neon mb-4">
+          {/* Her paired-box rule, 29 August: left white, right LIGHT green, not
+              dark green. This was the dark card fill. */}
+          <div className="rounded-2xl bg-mist p-6 text-forest sm:p-7">
+            <div className="font-sans font-semibold text-[10.5px] tracking-[0.2em] uppercase text-mid mb-4">
               What You Get
             </div>
             <ul className="space-y-3">
@@ -78,9 +82,9 @@ export default function Service1ClarityAudit() {
                 "A costed view of what to fix internally and what needs outside capacity",
                 "An executive summary written for owners and investors"
               ].map((item, i) => (
-                <li key={i} className="flex gap-3 items-start text-[15.5px] text-white/90">
-                  <div className="w-[17px] h-[17px] rounded-full bg-neon flex-shrink-0 mt-1 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#013325" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" className="w-2.5 h-2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <li key={i} className="flex gap-3 items-start text-[15.5px] text-forest/85">
+                  <div className="w-[17px] h-[17px] rounded-full bg-mid flex-shrink-0 mt-1 flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" className="w-2.5 h-2.5"><polyline points="20 6 9 17 4 12"/></svg>
                   </div>
                   <span>{item}</span>
                 </li>
@@ -90,6 +94,23 @@ export default function Service1ClarityAudit() {
         </div>
       </section>
 
+
+      {/* RESTORED 29 August. The 28 August instruction to cut everything below
+          "Why this exists" was wrong and the client has said so twice. Every
+          block below was in the spec, was never deleted from the content file,
+          and is rendered again here through the components built for it and
+          then left unused. PENDING-COPY 1ar and 1at. */}
+      <section className="surface-page px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
+        <div className="space-y-12 sm:space-y-16">
+        <CopyProse heading={CLARITY_AUDIT.whyHeading} paragraphs={CLARITY_AUDIT.why} />
+        <CopyList heading={CLARITY_AUDIT.lookHeading} items={CLARITY_AUDIT.look} />
+        <CopyProse heading={CLARITY_AUDIT.howHeading} paragraphs={CLARITY_AUDIT.how} />
+        <CopyList heading={CLARITY_AUDIT.getHeading} items={CLARITY_AUDIT.get} />
+        <CopyProse heading={CLARITY_AUDIT.afterHeading} paragraphs={CLARITY_AUDIT.after} />
+        <CopyProse heading={CLARITY_AUDIT.pricingHeading} paragraphs={CLARITY_AUDIT.pricing} />
+        </div>
+      </section>
+      <ServiceSignOff heading="Where this ends up" body="The audit ends with a decision, not a filing cabinet. Tell us what is not working and we will tell you plainly whether an audit is the right first step." />
     </div>
   );
 }

@@ -3052,3 +3052,57 @@ point they had. Their lists are now six to eight points long.
 has gone, so it moved into the panel with the list it introduces.
 
 All nine cards now have exactly one results section, confirmed on the live site.
+
+---
+
+## 1b2. Reverted to the previous colours, and the service pages restored — **for Iram**
+
+**Your shorthand.** You write `#ef` and `#fef`. Checked against your ten-colour
+swatch: **`#ef` can only be linen `#efeae0`** and **`#fef` can only be cream
+`#fefbf8`**. Nothing else on the swatch starts with either. That reading is used
+throughout, and it corrects the round before this one, where `#ef` was read as
+cream.
+
+**1. The colours are back.** The site-wide lightening of the dark cards is
+undone: all 53 cards are `#013325` again, exactly as before. It is one value in
+one place, so it can be moved back the other way in a line.
+
+**2 and 3. Everything cut from the five service pages is back**, along with a
+sign-off section at the foot of each one. The 28 August cut was wrong and you
+said so twice.
+
+**The three seat panels on Fractional Leadership had to be recovered from the
+version history**, because the record here preserved only "Why this exists" for
+that page. They are now in the content file rather than only in the markup, so a
+change to the page cannot take the words with it again. All three are on the page
+at once: the version before the cut hid two of the three behind a tab, which meant
+they were invisible to search engines.
+
+**On Technology Builds you never asked for a removal at all.** Your instruction
+was to change the order. Everything is back, and the current order is in the
+report so you can tell us the order you want.
+
+**4. Fractional Leadership:** the section is `#efeae0`, the "Your Team" boxes are
+`#efeae0`, and the phase tags stay in the darkest green. The phase cards are light
+again: they and the Pivot Prime box inside them were both dark green, so that box
+had no visible edge.
+
+**5. Paired boxes:** left white, right light green, never dark green.
+
+**6 and 7. The fees box** is `#efeae0` with your bright green bar and its writing
+kept. The traditional model is white, the Pivot Prime model is `#efeae0`, the
+calculator and the "If we haven't" line are cream `#fefbf8`, the box runs the full
+width and that line runs across the bottom.
+
+**One conflict in your message.** Item 6 asks for the quote box on the right in
+`#efeae0`; item 7 asks for the two lower boxes inside the fees box in cream
+`#fefbf8`. They are the same box. Cream was used, because item 7 describes where
+it sits. Say the word and it becomes `#efeae0`.
+
+**8. The photo could not be added.** There is no photograph of Saif in the working
+folder. The file there, `WEBSITE PHOTO.jpg`, is byte for byte the same image as
+the one already on Iram's card. Sending Saif's portrait is all that is needed.
+
+**Still worth knowing:** the small labels in the fees box measure about 3.3:1
+against a 4.5:1 requirement, because mid green on a light ground is faint. Dark
+green would fix it and lose the green accent.

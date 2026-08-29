@@ -375,7 +375,7 @@ export default function Home() {
               heading, the lead and both lower boxes move to forest and mid.
               The dot grid was white at 7% and is invisible on cream, so it is
               forest at 6% instead: same texture, same idea, readable ground. */}
-          <div className="relative overflow-hidden rounded-3xl border border-forest/10 bg-shell px-5 py-8 sm:px-10 sm:py-12 md:px-14 md:py-14">
+          <div className="relative overflow-hidden rounded-3xl border border-forest/10 bg-linen px-5 py-8 sm:px-10 sm:py-12 md:px-14 md:py-14">
             {/* Dot-grid texture */}
             <div
               aria-hidden="true"
@@ -425,7 +425,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-mid/30 bg-shell p-5 sm:p-6">
+                <div className="rounded-2xl border border-mid/30 bg-linen p-5 sm:p-6">
                   <p className="text-[11px] font-bold tracking-[0.18em] text-mid uppercase">
                     {HOW_WE_ARE_PAID.contrast.pivotPrime.label}
                   </p>

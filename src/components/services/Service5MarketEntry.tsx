@@ -1,10 +1,12 @@
 "use client";
 
+import { CopyProse, ServiceSignOff } from "./SpecCopyBlocks";
+import { MARKET_ENTRY } from "@/content/services-detail";
+
 import { useState } from "react";
 import PairToggle from "@/components/PairToggle";
 import { WHATSAPP_URL } from "@/lib/flags";
 import { WHATSAPP_CTA } from "@/content/cta";
-
 
 export default function Service5MarketEntry() {
   const [calMode, setCalMode] = useState<0 | 1>(0); // 0 = Home-market plan, 1 = Built for here
@@ -119,6 +121,19 @@ export default function Service5MarketEntry() {
         </div>
       </section>
 
+      {/* RESTORED 29 August. The 28 August instruction to cut everything below
+          "Why this exists" was wrong and the client has said so twice. Every
+          block below was in the spec, was never deleted from the content file,
+          and is rendered again here through the components built for it and
+          then left unused. PENDING-COPY 1ar and 1at. */}
+      <section className="surface-page px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
+        <div className="space-y-12 sm:space-y-16">
+        <CopyProse heading={MARKET_ENTRY.misconceptionHeading} paragraphs={MARKET_ENTRY.misconception} />
+        <CopyProse heading={MARKET_ENTRY.buildHeading} paragraphs={MARKET_ENTRY.build} />
+        <CopyProse heading={MARKET_ENTRY.closeHeading} paragraphs={[MARKET_ENTRY.close]} />
+        </div>
+      </section>
+      <ServiceSignOff heading="Where it ends up" body="We take clients from a licence to a functioning, properly priced operation that can actually succeed here. If the model says it will not, we would rather tell you before you spend the money than after." />
     </div>
   );
 }

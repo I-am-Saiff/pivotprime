@@ -1,3 +1,4 @@
+import { CopyProse, CopyList, ServiceSignOff } from "./SpecCopyBlocks";
 import { WHATSAPP_CTA } from "@/content/cta";
 import { TECH_BUILDS } from "@/content/services-detail";
 
@@ -161,6 +162,20 @@ export default function Service4TechBuilds() {
           </p>
         </div>
       </section>
+
+      {/* RESTORED 29 August. She did not ask for anything to be removed from
+          this page at all: her instruction was to change the ORDER of the
+          sections, and the 28 August blanket cut took content off it anyway.
+          PENDING-COPY 1ar and 1at. */}
+      <section className="surface-page px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
+        <div className="space-y-12 sm:space-y-16">
+          <CopyList heading="What We Build" items={TECH_BUILDS.capabilities} />
+          <CopyProse heading={TECH_BUILDS.bringUsTheProblem.label} paragraphs={[TECH_BUILDS.bringUsTheProblem.heading, TECH_BUILDS.bringUsTheProblem.body]} />
+          <CopyProse heading="How It Runs" paragraphs={[TECH_BUILDS.howItRuns]} />
+          <CopyProse heading="Where This Starts" paragraphs={[TECH_BUILDS.whereThisStarts]} />
+        </div>
+      </section>
+      <ServiceSignOff heading="Where this ends up" body="Software that gets used, scoped after the diagnosis rather than before it. Tell us the constraint and we will tell you whether building is the answer." />
     </>
   );
 }

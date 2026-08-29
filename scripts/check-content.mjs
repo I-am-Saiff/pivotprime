@@ -438,18 +438,21 @@ const DECISIONS = [
     },
   },
   {
-    what: "the five service pages stay trimmed to their hero and the one section under it",
-    where: "PENDING-COPY 1ar",
+    what: "every section the 28 August cut took off the five service pages is back on the page",
+    where: "PENDING-COPY 1ar and 1b2",
     run: async (get) => {
-      // 28 August: every service page was cut back on the client's instruction.
-      // Each string below is the first line of a removed block, so this fails
-      // the moment one of those sections is put back without her asking.
-      // The capability grid was restored on 28 August: the blanket cut took it
-      // with the trailing prose, and the client confirmed it was never the
-      // target. It is no longer on this list. PENDING-COPY 1ar.
-      const removed = [
+      // INVERTED 29 August. The 28 August instruction to cut these pages was
+      // wrong and the client has said so twice: "Theres no why this exists you
+      // removed too much" and "Even on this technology builds you have removed
+      // too much". This asserted their ABSENCE; it now asserts their presence,
+      // so the same check that guarded the removal guards the restoration.
+      //
+      // The three seat anchors are back on this list because spec 4.2 calls
+      // them load-bearing: the persona pages and the homepage services card
+      // link straight into them.
+      const restored = [
         ["/services/operational-clarity-audit", "Why this exists"],
-        ["/services/operational-clarity-audit", "How it runs"],
+        ["/services/operational-clarity-audit", "How we do it"],
         ["/services/fractional-leadership", "Why this exists"],
         ["/services/fractional-leadership", 'id="coo"'],
         ["/services/fractional-leadership", 'id="chief-of-staff"'],
@@ -457,11 +460,19 @@ const DECISIONS = [
         ["/services/build-and-place", "Why this exists"],
         ["/services/uae-market-entry", "Where it ends up"],
       ];
-      for (const [route, gone] of removed) {
+      for (const [route, needed] of restored) {
         const html = await (await get(route)).text();
-        if (html.includes(gone)) {
-          return `"${gone}" is back on ${route}, and PENDING-COPY 1ar records it as removed on the client's instruction`;
+        if (!html.includes(needed)) {
+          return `"${needed}" is missing from ${route}, and the client reversed the removal on 29 August`;
         }
+      }
+      // The sign-off she asked to have back on every one of the five.
+      for (const route of [
+        "/services/operational-clarity-audit", "/services/fractional-leadership",
+        "/services/build-and-place", "/services/technology-builds", "/services/uae-market-entry",
+      ]) {
+        const html = await (await get(route)).text();
+        if (!/Where (this|it) ends up/.test(html)) return `${route} has no sign-off section`;
       }
       return null;
     },
@@ -513,12 +524,12 @@ const PANEL_SETS = [
     route: "/services/fractional-leadership",
     spec: "4.2",
     pattern: /What the [^<]*seat covers/g,
-    // Zero, since 28 August. This assertion was written to catch the tab that
-    // served one panel out of three; it now records that the client had the
-    // whole section removed. Kept rather than deleted so the number is stated
-    // somewhere rather than the check quietly disappearing. PENDING-COPY 1ar.
-    expect: 0,
-    why: "the seat panels were removed on the client's instruction, PENDING-COPY 1ar",
+    // Three again, from 29 August. This assertion was written to catch the tab
+    // that served one panel out of three, then set to zero when the client had
+    // the section cut. She reversed that, so it is back to what it was built
+    // for: all three seats in the served HTML, none behind an interaction.
+    expect: 3,
+    why: "all three seat panels are restored and none is behind a tab, PENDING-COPY 1b2",
   },
   {
     route: "/services/operational-clarity-audit",

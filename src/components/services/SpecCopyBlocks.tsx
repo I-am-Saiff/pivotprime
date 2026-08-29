@@ -1,4 +1,5 @@
 import type { ServiceDetailCard } from "@/content/services-detail";
+import { CONTACT_CTA as SIGN_OFF_CTA } from "@/content/cta";
 
 /**
  * Presentation for spec copy the designed pages omitted.
@@ -35,7 +36,7 @@ export function CopyCards({ heading, cards }: { heading: string; cards: ServiceD
       <h2 className="mb-8 text-2xl font-bold text-forest md:text-3xl">{heading}</h2>
       <ul className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {cards.map((card) => (
-          <li key={card.title} className="rounded-xl border border-forest/10 card-dark p-7">
+          <li key={card.title} className="rounded-xl border border-forest/10 bg-shell p-7">
             <h3 className="mb-3 font-bold text-forest">{card.title}</h3>
             <p className="leading-relaxed text-forest/70">{card.body}</p>
           </li>
@@ -58,5 +59,35 @@ export function CopyList({ heading, items }: { heading: string; items: string[] 
         ))}
       </ul>
     </div>
+  );
+}
+
+/**
+ * The sign-off at the foot of every service page.
+ *
+ * Restored on 29 August. Each page used to end with a closing section and a
+ * call to action; the 28 August cut took the whole tail off all five and this
+ * went with it. One shared component rather than five copies, so the five
+ * cannot drift apart again, and it reads its label and destination from
+ * src/content/cta.ts rather than holding a second copy of either.
+ *
+ * Deliberately light. She has said twice that boxes should not be dark green
+ * across the site, so the sign-off sits on the page ground rather than becoming
+ * a sixth dark panel.
+ */
+export function ServiceSignOff({ heading, body }: { heading: string; body: string }) {
+  return (
+    <section className="surface-page px-4 pb-12 sm:px-6 sm:pb-20 lg:px-8">
+      <div className="mx-auto max-w-3xl rounded-2xl border border-forest/10 bg-linen p-7 text-center sm:p-10">
+        <h2 className="mb-3 text-2xl font-bold text-forest md:text-3xl">{heading}</h2>
+        <p className="mx-auto mb-7 max-w-2xl leading-relaxed text-forest/75">{body}</p>
+        <a
+          href={SIGN_OFF_CTA.href}
+          className="inline-flex min-h-11 items-center justify-center rounded-xl bg-mid px-7 py-3 text-xs font-bold tracking-wider text-white uppercase transition-colors hover:bg-forest"
+        >
+          {SIGN_OFF_CTA.label}
+        </a>
+      </div>
+    </section>
   );
 }

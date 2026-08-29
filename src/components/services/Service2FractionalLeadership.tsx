@@ -1,5 +1,10 @@
 "use client";
 
+import { CopyProse, ServiceSignOff } from "./SpecCopyBlocks";
+import { SEATS } from "@/content/services-detail";
+import { SEAT_IDS } from "@/lib/seat-anchors";
+import { FRACTIONAL } from "@/content/services-detail";
+
 import { WHATSAPP_URL } from "@/lib/flags";
 import { WHATSAPP_CTA } from "@/content/cta";
 import { FRACTIONAL_PHASES, FRACTIONAL_PHASES_CAPTION } from "@/content/services-detail";
@@ -15,8 +20,6 @@ export default function Service2FractionalLeadership() {
   // separately, so /services/fractional-leadership#cfo opens the CFO seat when opened
   // cold, and selecting a seat makes the URL shareable. Spec 4.2 calls these
   // anchors load-bearing: persona pages and the homepage card link into a seat.
-
-
 
   return (
     <div className="animate-fade-in">
@@ -48,7 +51,7 @@ export default function Service2FractionalLeadership() {
       </header>
 
       {/* Curve Section */}
-      <section className="surface-page py-10 sm:py-16 md:py-24">
+      <section className="bg-linen py-10 sm:py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-7 sm:mb-10 max-w-2xl">
             <span className="block font-sans font-semibold text-[10.5px] tracking-[0.24em] uppercase text-[#009f50]">
@@ -69,7 +72,7 @@ export default function Service2FractionalLeadership() {
             {FRACTIONAL_PHASES.map((phase) => (
               <li
                 key={phase.band}
-                className="flex flex-col rounded-xl border border-forest/15 card-dark p-6 shadow-sm"
+                className="flex flex-col rounded-xl border border-forest/15 bg-shell p-6 shadow-sm"
               >
                 <div className="flex items-center gap-3">
                   <span className="font-sans text-xs font-bold tracking-[0.18em] text-mid uppercase">
@@ -93,7 +96,9 @@ export default function Service2FractionalLeadership() {
                     </p>
                     <p className="mt-1.5 text-sm leading-relaxed text-white/85">{phase.pivotPrime}</p>
                   </div>
-                  <div className="rounded-lg border border-forest/12 card-dark p-4">
+                  {/* Her "Your Team" box in #efeae0, 29 August. It was
+                      card-dark, which on this card meant forest on forest. */}
+                  <div className="rounded-lg border border-forest/12 bg-linen p-4">
                     <p className="font-sans text-[11px] font-bold tracking-[0.18em] text-mid uppercase">
                       Your Team
                     </p>
@@ -124,6 +129,46 @@ export default function Service2FractionalLeadership() {
         </div>
       </section>
 
+      {/* RESTORED 29 August. The 28 August instruction to cut everything below
+          "Why this exists" was wrong and the client has said so twice. Every
+          block below was in the spec, was never deleted from the content file,
+          and is rendered again here through the components built for it and
+          then left unused. PENDING-COPY 1ar and 1at. */}
+      <section className="surface-page px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
+        <div className="space-y-12 sm:space-y-16">
+        <CopyProse heading={FRACTIONAL.whyHeading} paragraphs={FRACTIONAL.why} />
+        </div>
+      </section>
+
+      {/* THE THREE SEATS, restored 29 August. All three are in the served HTML
+          at all times and each carries its spec 4.2 anchor. */}
+      <section className="surface-page px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
+        <div className="mx-auto max-w-5xl space-y-6">
+          {SEATS.map((seat, i) => (
+            <article
+              key={seat.title}
+              id={SEAT_IDS[i]}
+              className="rounded-2xl border border-forest/10 bg-shell p-6 sm:p-8"
+            >
+              <p className="font-sans text-[10.5px] font-semibold tracking-[0.2em] text-mid uppercase">
+                {seat.short}
+              </p>
+              <h2 className="mt-2 text-2xl font-bold text-forest md:text-3xl">{seat.title}</h2>
+              <p className="mt-3 leading-relaxed text-forest/75">{seat.n}</p>
+              <h3 className="mt-6 font-sans text-sm font-bold tracking-wide text-forest">{seat.h}</h3>
+              <ul className="mt-3 space-y-2.5">
+                {seat.l.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-forest/80">
+                    <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-mid" />
+                    <span className="leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+      <ServiceSignOff heading="Where this ends up" body="A seat for a season, then a structure that holds without us in it. Tell us what is stretched and we will tell you which seat, and for how long." />
     </div>
   );
 }
