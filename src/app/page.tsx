@@ -425,17 +425,21 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-mid/30 bg-linen p-5 sm:p-6">
-                  <p className="text-[11px] font-bold tracking-[0.18em] text-mid uppercase">
+                {/* Mid green, her 29 August item 1. Small text on mid measures 3.46:1
+                    in white and 4.04:1 in forest; foreground is 6.07:1 and is
+                    the only palette colour that clears 4.5:1, so the text here
+                    is foreground. */}
+                <div className="rounded-2xl border border-mid/30 bg-mid p-5 sm:p-6">
+                  <p className="text-[11px] font-bold tracking-[0.18em] text-foreground uppercase">
                     {HOW_WE_ARE_PAID.contrast.pivotPrime.label}
                   </p>
                   <dl className="mt-3 space-y-3">
                     {HOW_WE_ARE_PAID.contrast.pivotPrime.rows.map((row) => (
                       <div key={row.label}>
-                        <dt className="text-[11px] font-bold tracking-[0.16em] text-mid uppercase">
+                        <dt className="text-[11px] font-bold tracking-[0.16em] text-foreground uppercase">
                           {row.label}
                         </dt>
-                        <dd className="mt-1 text-[13px] leading-relaxed text-forest/80 sm:text-sm">{row.value}</dd>
+                        <dd className="mt-1 text-[13px] leading-relaxed text-foreground/85 sm:text-sm">{row.value}</dd>
                       </div>
                     ))}
                   </dl>

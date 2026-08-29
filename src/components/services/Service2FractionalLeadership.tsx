@@ -1,9 +1,8 @@
 "use client";
 
-import { CopyProse, ServiceSignOff } from "./SpecCopyBlocks";
+import { ServiceSignOff } from "./SpecCopyBlocks";
 import { SEATS } from "@/content/services-detail";
 import { SEAT_IDS } from "@/lib/seat-anchors";
-import { FRACTIONAL } from "@/content/services-detail";
 
 import { WHATSAPP_URL } from "@/lib/flags";
 import { WHATSAPP_CTA } from "@/content/cta";
@@ -25,7 +24,8 @@ export default function Service2FractionalLeadership() {
     <div className="animate-fade-in">
       {/* Hero Section */}
       <header className="bg-[#013325] text-white relative overflow-hidden pt-28 sm:pt-32 pb-10 sm:pb-16 md:pt-40 md:pb-24">
-        <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.09)_1px,transparent_1px)] [background-size:28px_28px]" />
+        {/* The dot pattern was here. Removed from every service-page dark
+            background on her 29 August instruction, item 3. */}
         
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 max-w-2xl font-sans text-white">
@@ -129,16 +129,10 @@ export default function Service2FractionalLeadership() {
         </div>
       </section>
 
-      {/* RESTORED 29 August. The 28 August instruction to cut everything below
-          "Why this exists" was wrong and the client has said so twice. Every
-          block below was in the spec, was never deleted from the content file,
-          and is rendered again here through the components built for it and
-          then left unused. PENDING-COPY 1ar and 1at. */}
-      <section className="surface-page px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
-        <div className="space-y-12 sm:space-y-16">
-        <CopyProse heading={FRACTIONAL.whyHeading} paragraphs={FRACTIONAL.why} />
-        </div>
-      </section>
+      {/* "Why this exists" was the only block in this page's restored section,
+          so when she removed it on 29 August the section wrapper went with it:
+          left in place it rendered as a blank padded band between the phases
+          and the seats. The copy stays in FRACTIONAL.why. */}
 
       {/* THE THREE SEATS, restored 29 August. All three are in the served HTML
           at all times and each carries its spec 4.2 anchor. */}

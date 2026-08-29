@@ -33,7 +33,8 @@ export default function Service3BuildPlace() {
     <div className="animate-fade-in">
       {/* Hero Section */}
       <header className="bg-[#013325] text-white relative overflow-hidden pt-28 sm:pt-32 pb-10 sm:pb-16 md:pt-40 md:pb-24">
-        <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.09)_1px,transparent_1px)] [background-size:28px_28px]" />
+        {/* The dot pattern was here. Removed from every service-page dark
+            background on her 29 August instruction, item 3. */}
         
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 max-w-2xl font-sans text-white">
@@ -108,6 +109,10 @@ export default function Service3BuildPlace() {
                 return (
                   <div 
                     key={i}
+                    // Legibility: light chip inside a .card-dark panel, see the
+                    // data-on-light rule in globals.css. The seat labels were
+                    // white on white at 1.08:1.
+                    data-on-light="true"
                     className={`absolute w-[118px] -translate-x-1/2 -translate-y-1/2 text-center rounded-xl p-2.5 transition-all duration-500
                       ${isVisible ? "opacity-100 border-solid border-[#009f50] bg-[#f2f8f4]" : "opacity-50 border-dashed border-[#cfd9d4] surface-page"}
                     `}
@@ -140,7 +145,8 @@ export default function Service3BuildPlace() {
           then left unused. PENDING-COPY 1ar and 1at. */}
       <section className="surface-page px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
         <div className="space-y-12 sm:space-y-16">
-        <CopyProse heading={BUILD_AND_PLACE.whyHeading} paragraphs={BUILD_AND_PLACE.why} />
+        {/* "Why this exists" removed on her 29 August instruction, item 2.
+            The copy stays in BUILD_AND_PLACE.why; only the render goes. */}
         <CopyCards heading={BUILD_AND_PLACE.rolesHeading} cards={BUILD_AND_PLACE.cards} />
         <CopyProse heading={BUILD_AND_PLACE.pricedHeading} paragraphs={[BUILD_AND_PLACE.priced]} />
         </div>

@@ -176,6 +176,27 @@
     color: var(--color-forest);
   }
 
+  /* LIGHT CHIPS INSIDE A DARK DIAGRAM PANEL.
+
+     The diagram panels on the service pages are .card-dark, and the remap above
+     repaints their text-[#013325] descendants white, which is right for text
+     sitting on the panel and wrong for text sitting on the small light node
+     cards inside it: the process-map stage names and the six seat labels on
+     Build and Place rendered white on white, measured at 1.1:1. Declared after
+     the remap; the :where() in the remap keeps its specificity at a bare class,
+     so these win.
+
+     The dim variant exists for the process map dead-end nodes, which are
+     deliberately muted. */
+  .card-dark [data-on-light],
+  .card-dark [data-on-light] :where(b, span, div) {
+    color: var(--color-forest);
+  }
+  .card-dark [data-on-light="dim"],
+  .card-dark [data-on-light="dim"] :where(b, span, div) {
+    color: color-mix(in srgb, var(--color-forest) 55%, transparent);
+  }
+
   .surface-page {
     background-color: var(--page-ground);
   }

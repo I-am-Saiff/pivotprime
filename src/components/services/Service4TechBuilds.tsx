@@ -102,17 +102,17 @@ export default function Service4TechBuilds() {
                 className={`rounded-2xl border p-6 sm:p-7 ${
                   i === 0
                     ? "border-forest/15 bg-shell"
-                    : "border-forest/40 bg-[var(--card-dark-fill)] text-white"
+                    : "border-mid/40 bg-mid"
                 }`}
               >
                 <h3
-                  className={`font-sans text-lg font-bold ${i === 0 ? "text-forest" : "text-white"}`}
+                  className={`font-sans text-lg font-bold ${i === 0 ? "text-forest" : "text-foreground"}`}
                 >
                   {state.label}
                 </h3>
                 <p
                   className={`mt-3 text-sm leading-relaxed sm:text-base ${
-                    i === 0 ? "text-forest/80" : "text-white/90"
+                    i === 0 ? "text-forest/80" : "text-foreground/85"
                   }`}
                 >
                   {state.body}

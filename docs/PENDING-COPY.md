@@ -3133,3 +3133,39 @@ that sign-off was written from your own closing copy. One of the two should go.
 
 **Checked and clean:** Fractional Leadership and Build and Place. Every restored
 block on those two appears exactly once.
+
+---
+
+## 1b4. Her six items of 29 August, evening — **for Iram**
+
+**1. Right-hand cards in every side-by-side pair are now the medium green
+`#009f50`.** The audit page's "What You Get", the fees "Pivot Prime Model" and
+"Results Element", and the comparison pair on Technology Builds, whose right card
+was still dark green. Left cards stay white.
+
+**On the text colour, one thing to know:** on that green, white measures 3.5:1
+and dark green 4:1, both under the 4.5:1 standard for small text. Black measures
+6.1:1 and is the only colour on your palette that passes, so the small text on
+the green cards is black. The calculator's "Results Element" figure is white,
+which is allowed at its size and weight.
+
+**2. "Why this exists" is off all five service pages.** Only that section; the
+words stay in the content file, so it can return in a line. Three pages carried
+it; the other two never did.
+
+**3. The dot pattern is gone from the dark green backgrounds on all five service
+pages.** Four heroes carried it; Technology Builds' hero never did.
+
+**4 and 5. The unreadable diagram labels are fixed.** The cause was one rule:
+the dark diagram panels repaint their text white, which is right for text on the
+panel and wrong for text on the small light cards inside it. The process-map
+stage names and the six seat labels measured 1.1:1, white on white. Both now
+render dark green on their light chips, checked in both states of the process
+map toggle and after the seats animation.
+
+**6. Every other diagram was swept**, by measuring every piece of text on every
+page against what it actually sits on. The market-entry calendar, the KPI
+visuals, the fee calculator and the fractional phase cards are all clean. The
+one remaining legibility fault on the site is the contact form's send button,
+white on bright green at 1.9:1, which is outside this instruction and has been
+reported twice before.

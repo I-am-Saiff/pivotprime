@@ -450,16 +450,26 @@ const DECISIONS = [
       // The three seat anchors are back on this list because spec 4.2 calls
       // them load-bearing: the persona pages and the homepage services card
       // link straight into them.
+      // "Why this exists" came OFF this list on 29 August: having restored
+      // everything, the client then asked for that one section to go again, on
+      // all five pages, and nothing else. Its absence is asserted just below,
+      // so this guard describes both halves of her instruction.
       const restored = [
-        ["/services/operational-clarity-audit", "Why this exists"],
         ["/services/operational-clarity-audit", "How we do it"],
-        ["/services/fractional-leadership", "Why this exists"],
         ["/services/fractional-leadership", 'id="coo"'],
         ["/services/fractional-leadership", 'id="chief-of-staff"'],
         ["/services/fractional-leadership", 'id="cfo"'],
-        ["/services/build-and-place", "Why this exists"],
         ["/services/uae-market-entry", "Where it ends up"],
       ];
+      for (const route of [
+        "/services/operational-clarity-audit", "/services/fractional-leadership",
+        "/services/build-and-place", "/services/technology-builds", "/services/uae-market-entry",
+      ]) {
+        const html = await (await get(route)).text();
+        if (html.includes("Why this exists")) {
+          return `"Why this exists" is back on ${route}; the client removed it on 29 August`;
+        }
+      }
       for (const [route, needed] of restored) {
         const html = await (await get(route)).text();
         if (!html.includes(needed)) {

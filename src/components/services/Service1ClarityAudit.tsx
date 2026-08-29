@@ -11,7 +11,8 @@ export default function Service1ClarityAudit() {
       {/* Hero Section */}
       <header className="bg-[#013325] text-white relative overflow-hidden pt-28 sm:pt-32 pb-10 sm:pb-16 md:pt-40 md:pb-24">
         {/* Pattern Background */}
-        <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.09)_1px,transparent_1px)] [background-size:28px_28px]" />
+        {/* The dot pattern was here. Removed from every service-page dark
+            background on her 29 August instruction, item 3. */}
         
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 max-w-2xl font-sans text-white">
@@ -69,8 +70,8 @@ export default function Service1ClarityAudit() {
           </div>
           {/* Her paired-box rule, 29 August: left white, right LIGHT green, not
               dark green. This was the dark card fill. */}
-          <div className="rounded-2xl bg-mist p-6 text-forest sm:p-7">
-            <div className="font-sans font-semibold text-[10.5px] tracking-[0.2em] uppercase text-mid mb-4">
+          <div className="rounded-2xl bg-mid p-6 text-foreground sm:p-7">
+            <div className="font-sans font-semibold text-[10.5px] tracking-[0.2em] uppercase text-foreground mb-4">
               What You Get
             </div>
             <ul className="space-y-3">
@@ -82,9 +83,9 @@ export default function Service1ClarityAudit() {
                 "A costed view of what to fix internally and what needs outside capacity",
                 "An executive summary written for owners and investors"
               ].map((item, i) => (
-                <li key={i} className="flex gap-3 items-start text-[15.5px] text-forest/85">
-                  <div className="w-[17px] h-[17px] rounded-full bg-mid flex-shrink-0 mt-1 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" className="w-2.5 h-2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <li key={i} className="flex gap-3 items-start text-[15.5px] text-foreground">
+                  <div className="w-[17px] h-[17px] rounded-full bg-white flex-shrink-0 mt-1 flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#009f50" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" className="w-2.5 h-2.5"><polyline points="20 6 9 17 4 12"/></svg>
                   </div>
                   <span>{item}</span>
                 </li>
@@ -102,7 +103,8 @@ export default function Service1ClarityAudit() {
           then left unused. PENDING-COPY 1ar and 1at. */}
       <section className="surface-page px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
         <div className="space-y-12 sm:space-y-16">
-        <CopyProse heading={CLARITY_AUDIT.whyHeading} paragraphs={CLARITY_AUDIT.why} />
+        {/* "Why this exists" removed on her 29 August instruction, item 2.
+            The copy stays in CLARITY_AUDIT.why; only the render goes. */}
         <CopyList heading={CLARITY_AUDIT.lookHeading} items={CLARITY_AUDIT.look} />
         <CopyProse heading={CLARITY_AUDIT.howHeading} paragraphs={CLARITY_AUDIT.how} />
         <CopyList heading={CLARITY_AUDIT.getHeading} items={CLARITY_AUDIT.get} />

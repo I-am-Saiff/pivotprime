@@ -106,6 +106,10 @@ export default function ClarityAuditProcessMap() {
                 return (
                   <div
                     key={i}
+                    // data-on-light is what makes the label legible: these
+                    // chips sit light-on-dark inside a .card-dark panel whose
+                    // descendant remap was repainting the text white on white.
+                    data-on-light={isDead ? "dim" : "true"}
                     className={`absolute w-[74px] h-[34px] rounded-lg border flex items-center justify-center font-sans font-semibold text-[10.5px] transition-all duration-700 ease-in-out z-10
                       ${isDead ? "surface-page border-forest/25 text-forest/55" : "surface-page border-[#e3eae6] text-[#013325]"}
                     `}
