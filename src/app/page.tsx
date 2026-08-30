@@ -375,7 +375,7 @@ export default function Home() {
               heading, the lead and both lower boxes move to forest and mid.
               The dot grid was white at 7% and is invisible on cream, so it is
               forest at 6% instead: same texture, same idea, readable ground. */}
-          <div className="relative overflow-hidden rounded-3xl border border-forest/10 bg-linen px-5 py-8 sm:px-10 sm:py-12 md:px-14 md:py-14">
+          <div className="relative overflow-hidden rounded-3xl border border-forest/10 bg-mist px-5 py-8 sm:px-10 sm:py-12 md:px-14 md:py-14">
             {/* Dot-grid texture */}
             <div
               aria-hidden="true"
@@ -391,7 +391,7 @@ export default function Home() {
                   from neon to mid: neon on cream measures about 1.7:1 and is
                   unreadable. mid is the colour every other eyebrow on a light
                   ground already uses. */}
-              <span className="mb-3 block text-xs font-bold tracking-[0.22em] text-mid uppercase">Our Fees</span>
+              <span className="mb-3 block text-xs font-bold tracking-[0.22em] text-mid uppercase">Our fees</span>
               <div className="mb-4 h-[3px] w-10 rounded-full bg-neon" aria-hidden="true" />
 
               <h2 className="max-w-2xl text-2xl font-extrabold leading-[1.1] tracking-tight text-forest sm:text-3xl md:text-4xl">
@@ -461,11 +461,14 @@ export default function Home() {
                   forest now the ground is light. The two lines sit side by side
                   from sm up so the band reads as one horizontal rule across the
                   foot of the box rather than as two stacked lines. */}
-              <div className="mt-3 flex flex-col items-center justify-center gap-x-5 gap-y-1.5 rounded-2xl bg-shell px-5 py-4 text-center ring-1 ring-mid/40 sm:flex-row sm:px-6">
-                <p className="text-[15px] font-bold leading-snug text-forest sm:text-lg">
+{/* HER NAMED EXCEPTION, 30 August: this box stays dark green with a
+                  clear heading while everything around it lightens. It was cream
+                  at the time, so honouring that meant returning it to dark. */}
+              <div className="mt-3 flex flex-col items-center justify-center gap-x-5 gap-y-1.5 rounded-2xl bg-forest px-5 py-4 text-center ring-1 ring-neon/40 sm:flex-row sm:px-6">
+                <p className="text-[15px] font-bold leading-snug text-white sm:text-lg">
                   {HOW_WE_ARE_PAID.commitment.body}
                 </p>
-                <p className="text-[11px] font-bold tracking-[0.2em] text-mid uppercase">
+                <p className="text-[11px] font-bold tracking-[0.2em] text-neon uppercase">
                   Performance Linked Fee
                 </p>
               </div>

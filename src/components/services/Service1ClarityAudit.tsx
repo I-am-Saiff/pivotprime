@@ -48,7 +48,7 @@ export default function Service1ClarityAudit() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
           <div className="rounded-2xl bg-shell p-6 sm:p-7">
             <div className="font-sans font-semibold text-[10.5px] tracking-[0.2em] uppercase text-mid mb-4">
-              What We Look At
+              What we look at
             </div>
             <ul className="space-y-3">
               {[
@@ -75,7 +75,7 @@ export default function Service1ClarityAudit() {
               same variable, same border, neon label, white body. */}
           <div className="card-dark rounded-2xl border border-neutral-100 p-6 sm:p-7">
             <div className="font-sans font-semibold text-[10.5px] tracking-[0.2em] uppercase text-neon mb-4">
-              What You Get
+              What you get
             </div>
             <ul className="space-y-3">
               {[

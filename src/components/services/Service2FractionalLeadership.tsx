@@ -51,11 +51,11 @@ export default function Service2FractionalLeadership() {
       </header>
 
       {/* Curve Section */}
-      <section className="bg-linen py-10 sm:py-16 md:py-24">
+      <section className="bg-mist py-10 sm:py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-7 sm:mb-10 max-w-2xl">
             <span className="block font-sans font-semibold text-[10.5px] tracking-[0.24em] uppercase text-[#009f50]">
-              Why It Costs Less Than It Looks
+              Why it costs less than it looks
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mt-3 text-[#0c1a15]">
               Heavy at the start. <span className="text-[#009f50]">Light by the end.</span>
@@ -98,9 +98,9 @@ export default function Service2FractionalLeadership() {
                   </div>
                   {/* Her "Your Team" box in #efeae0, 29 August. It was
                       card-dark, which on this card meant forest on forest. */}
-                  <div className="rounded-lg border border-forest/12 bg-linen p-4">
+                  <div className="rounded-lg border border-forest/12 bg-mist p-4">
                     <p className="font-sans text-[11px] font-bold tracking-[0.18em] text-mid uppercase">
-                      Your Team
+                      Your team
                     </p>
                     <p className="mt-1.5 text-sm leading-relaxed text-forest/80">{phase.yourTeam}</p>
                   </div>
@@ -116,7 +116,7 @@ export default function Service2FractionalLeadership() {
                     />
                   </div>
                   <p className="mt-2 font-sans text-[11px] font-bold tracking-[0.16em] text-forest/55 uppercase">
-                    Pivot Prime Involvement
+                    Pivot Prime involvement
                   </p>
                 </div>
               </li>

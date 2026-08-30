@@ -99,8 +99,8 @@ export const SERVICES: ServiceCard[] = [
   },
 ];
 
-export const SERVICES_EYEBROW = "Our Services";
-export const SERVICES_HEADING = "What Do We Actually Do";
+export const SERVICES_EYEBROW = "Our services";
+export const SERVICES_HEADING = "What do we actually do";
 
 /**
  * AUTHORED, NOT FROM THE SPEC. Section 3.4 gives this page an eyebrow, a heading
@@ -125,8 +125,8 @@ export const SERVICES_STANDFIRST =
  * there is nothing here a contact form could honour.
  */
 export const DIAGNOSTIC_CARD = {
-  eyebrow: "Not Sure",
-  title: "Start with the Diagnostic",
+  eyebrow: "Not sure",
+  title: "Start with the diagnostic",
   body: "Four minutes, six areas, one named constraint. It will tell you which of the five you actually need.",
   ctaLabel: "Take the diagnostic",
   href: "/diagnostic",

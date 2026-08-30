@@ -13,7 +13,7 @@ import { CONTACT_CTA } from "@/content/cta";
 
 // 3.1 HERO
 export const HERO = {
-  heading: "The Consultancy That Actually Executes",
+  heading: "The consultancy that actually executes",
   /** Set noticeably larger than the paragraph beneath it. Spec 3.1: "That
    *  sentence is doing the most work on the page, so give it room." */
   lead: "Most consultants recommend the fix. We build it.",
@@ -82,7 +82,7 @@ export type LogoGroup = { label: string; logos: { src: string; alt: string }[] }
 
 export const LOGO_GROUPS: LogoGroup[] = [
   {
-    label: "Experience Inside Global Institutions",
+    label: "Experience inside global institutions",
     logos: [
       { src: "/logos/clogo1a.jpg", alt: "MetLife" },
       { src: "/logos/clogo3a.jpg", alt: "Gallagher" },
@@ -93,7 +93,7 @@ export const LOGO_GROUPS: LogoGroup[] = [
     ],
   },
   {
-    label: "Companies We Have Delivered For",
+    label: "Companies we have delivered for",
     logos: [
       { src: "/logos/Frame-17.jpg", alt: "Democrance" },
       { src: "/logos/insurancehub-with-bg-white.jpg", alt: "Insurance Hub" },
@@ -115,7 +115,7 @@ export const LOGO_GROUPS: LogoGroup[] = [
  * GALLAGHER IS REMOVED, and not because of the open naming decision.
  * clogo3a.jpg is the Gallagher wordmark. Gallagher is one of Iram's former
  * employers and is named as such in her credential further down this same page.
- * Under a heading reading "Companies We Have Delivered For", that reads as a
+ * Under a heading reading "Companies we have delivered for", that reads as a
  * client. It goes back the day she confirms Gallagher is a delivery client.
  * PENDING-COPY 1n.
  *
@@ -131,7 +131,7 @@ export const LOGOS_NEED_ALT_TEXT = true;
 
 // 3.3 RESULTS
 export const RESULTS = {
-  heading: "This Is What Our Team Has Delivered",
+  heading: "This is what our team has delivered",
   standfirst: "We do not measure success in slide decks. We measure what changed.",
 };
 
@@ -286,8 +286,8 @@ export const METRICS: Metric[] = [
 
 // 3.5 THE PATTERNS
 export const PATTERNS = {
-  heading: "These Are the Patterns Before Growth Stalls",
-  eyebrow: "Recognise Any of These",
+  heading: "These are the patterns before growth stalls",
+  eyebrow: "Recognise any of these",
   items: [
     "Sales sells things operations cannot deliver",
     "Quality slips whenever volume rises",
@@ -325,7 +325,7 @@ export const FOUNDER = {
     "Iram Kauser is one of roughly 75,000 qualified actuaries worldwide. She spent sixteen years in senior operating roles at AIG, MetLife and Gallagher across the UK, the Middle East and Africa: Chief of Staff to a regional CEO across more than 150 staff, and pricing and portfolio strategy for a multi-line book worth more than $120 million.",
     "People will tell you a process is fine, or that the real problem is headcount. A numbers-led approach takes the emotion out of it. We measure how long each step actually takes, the pass and fail rates, the man hours per function and the cost per transaction, before anyone argues about what to change.",
   ],
-  ctaLabel: "Meet the Team",
+  ctaLabel: "Meet the team",
   ctaHref: "/about#team",
   /**
    * Supplied by the client on 22 August 2026 and dropped in at
@@ -349,7 +349,7 @@ export const FOUNDER = {
 
 // 3.10 HOW WE ARE PAID
 export const HOW_WE_ARE_PAID = {
-  heading: "Most Consultants Are Paid for the Recommendation",
+  heading: "Most consultants are paid for the recommendation",
   lead: "We are paid partly on whether the numbers move.",
   body: [
     "Before anything changes we baseline it: how long each step takes, pass and fail rates, man hours per function, cost per transaction. Then we agree which of those numbers has to move and by when, and a meaningful part of our fee sits on the other side of them moving.",
@@ -421,27 +421,27 @@ export const HOW_WE_ARE_PAID = {
   mockupHeading: "Most consultants charge whether it works or not.",
   contrast: {
     traditional: {
-      label: "The Traditional Model",
+      label: "The traditional model",
       /** Spec 3.10 block 0, verbatim: it is the traditional model in her words. */
-      headline: "Most Consultants Are Paid for the Recommendation",
+      headline: "Most consultants are paid for the recommendation",
       body: [
         "You pay for the advice. Whether anything actually improves is not really their problem.",
         "The invoice arrives either way.",
       ],
     },
     pivotPrime: {
-      label: "The Pivot Prime Model",
+      label: "The Pivot Prime model",
       headline: "We only fully earn when you do.",
       /** Her four boxes. Every figure in them is replaced by what the figure was
        *  there to demonstrate. The "You keep" and "We earn" pair is dropped
        *  outright: it exists only to show the split, which is the formula. */
       rows: [
         {
-          label: "We Agree a Target",
+          label: "We agree a target",
           value: "A cost reduction, a margin improvement, or a revenue number. A specific number, and a specific date.",
         },
         {
-          label: "Our Fee Structure",
+          label: "Our fee structure",
           value: "A fixed element covers the work itself. A results element sits against that target.",
         },
       ],
@@ -449,7 +449,7 @@ export const HOW_WE_ARE_PAID = {
   },
   /** Her pull box, _3 and _4, verbatim. It carries the model with no figure in it. */
   commitment: {
-    label: "The Commitment",
+    label: "The commitment",
     body: "If we haven't moved your numbers, most of our fee doesn't get paid.",
   },
   /** Her numbered sequence, _3. Em dashes replaced per section 1. */
@@ -477,7 +477,7 @@ export const HOW_WE_ARE_PAID = {
 
 // 3.11 CLOSE
 export const CLOSE = {
-  heading: "Find Out What Is Actually Holding the Business Back",
+  heading: "Find out what is actually holding the business back",
   /**
    * Rendered only when the diagnostic is live. The sentence promises "a scored
    * view of your biggest constraint in four minutes", which the contact page

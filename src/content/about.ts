@@ -26,7 +26,7 @@ export const ABOUT_HERO = {
 };
 
 export const WHO_WE_ARE = {
-  eyebrow: "Who We Are",
+  eyebrow: "Who we are",
   heading: "We've been on both sides of the table.",
   body: [
     "Our team has worked inside complex organisations, managing targets, navigating real constraints, and carrying responsibility for results. We've also advised from the outside, helping leaders understand why effort isn't translating into outcomes.",
@@ -43,7 +43,7 @@ export const WHO_WE_ARE = {
  * that looks broken", and twenty labels close it.
  */
 export const BENCH = {
-  eyebrow: "The Bench",
+  eyebrow: "The bench",
   headingLines: ["One partnership.", "Every capability", "you will ever need."],
   /** The middle line is the accented one on the slide. */
   accentLineIndex: 1,
@@ -59,7 +59,7 @@ export const BENCH = {
   ],
   pill: "One point of contact. Zero coordination overhead.",
   capabilities: [
-    "Project Management",
+    "Project management",
     "Data Analytics",
     "AI & Automation",
     "Legal & Compliance",

@@ -41,9 +41,9 @@ export const NAVIGATION: NavItem[] = [
     label: "Who It's For",
     href: "/for-founders",
     children: [
-      { label: "For Founders", href: "/for-founders" },
+      { label: "For founders", href: "/for-founders" },
       { label: "For SMEs", href: "/for-smes" },
-      { label: "For Corporate Leaders", href: "/for-corporate-leaders" },
+      { label: "For corporate leaders", href: "/for-corporate-leaders" },
       { label: "For P&L Owners", href: "/for-pl-owners" },
     ],
   },
@@ -53,7 +53,7 @@ export const NAVIGATION: NavItem[] = [
     children: [
       { label: "About Pivot Prime", href: "/about" },
       { label: "Our Team", href: "/about#team", anchor: true },
-      { label: "Case Studies", href: "/about#case-studies", anchor: true },
+      { label: "Case studies", href: "/about#case-studies", anchor: true },
     ],
   },
   { label: "Insights", href: "/insights" },

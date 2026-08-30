@@ -44,10 +44,10 @@ export default function ClarityAuditProcessMap() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-7 sm:mb-10 max-w-2xl">
             <span className="block font-sans font-semibold text-[10.5px] tracking-[0.24em] uppercase text-[#009f50]">
-              The Deliverable, in One Picture
+              The deliverable, in one picture
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mt-3 text-[#0c1a15]">
-              How the Work Runs Today, <span className="text-[#009f50]">and what it becomes.</span>
+              How the work runs today, <span className="text-[#009f50]">and what it becomes.</span>
             </h2>
             <p className="text-[#5e6f68] mt-3">
               Every audit produces an as-is versus to-be map. Press the toggle to see the difference we are looking for.

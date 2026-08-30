@@ -70,13 +70,13 @@ export default function FeeCalculator() {
           pixels to a section that was told not to grow. */}
       <div className="mt-3 grid grid-cols-2 gap-2.5">
         <div className="rounded-xl border border-forest/10 bg-white px-3 py-2.5 sm:px-4">
-          <p className="text-[10px] font-bold tracking-[0.16em] text-forest/75 uppercase">Fixed Element</p>
+          <p className="text-[10px] font-bold tracking-[0.16em] text-forest/75 uppercase">Fixed element</p>
           <p className="mt-1 font-sans text-base leading-tight font-extrabold tracking-tight text-forest tabular-nums sm:text-2xl">
             {`AED ${aed(FIXED)}`}
           </p>
         </div>
         <div className="card-dark rounded-xl border border-neutral-100 px-3 py-2.5 sm:px-4">
-          <p className="text-[10px] font-bold tracking-[0.16em] text-neon uppercase">Results Element</p>
+          <p className="text-[10px] font-bold tracking-[0.16em] text-neon uppercase">Results element</p>
           <p className="mt-1 font-sans text-base leading-tight font-extrabold tracking-tight text-white tabular-nums sm:text-2xl">
             {`AED ${aed(low)} to ${aed(high)}`}
           </p>

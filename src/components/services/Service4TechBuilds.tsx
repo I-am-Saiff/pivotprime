@@ -7,7 +7,7 @@ import { TECH_BUILDS } from "@/content/services-detail";
  *
  * A SERVER COMPONENT. The previous version was a client component whose
  * capability list and argument sat behind an interactive toggle labelled
- * "Automate Everything" / "Fix the Constraint First", so half the page existed
+ * "Automate everything" / "Fix the constraint first", so half the page existed
  * only in client state and neither label came from the spec. Spec 4.4 also says
  * this page "has to work as a standalone destination, because paid advertising
  * for the software capability will point here directly": a page that renders
@@ -78,7 +78,7 @@ export default function Service4TechBuilds() {
       <section className="surface-page py-12 sm:py-20 md:py-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <p className="font-sans text-xs font-bold tracking-[0.22em] text-mid uppercase">
-            The Opening Argument
+            The opening argument
           </p>
           <h2 className="mt-4 max-w-3xl font-sans text-3xl font-extrabold tracking-tight text-forest md:text-4xl">
             {TECH_BUILDS.argument.claim}
@@ -131,7 +131,7 @@ export default function Service4TechBuilds() {
         />
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <p className="font-sans text-xs font-bold tracking-[0.22em] text-mid uppercase">
-            What We Build
+            What we build
           </p>
           <h2 className="mt-4 max-w-3xl font-sans text-3xl font-extrabold tracking-tight text-forest md:text-4xl">
             {TECH_BUILDS.capabilityHeading}
@@ -169,7 +169,7 @@ export default function Service4TechBuilds() {
           PENDING-COPY 1ar and 1at. */}
       <section className="surface-page px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
         <div className="space-y-12 sm:space-y-16">
-          {/* "What We Build" WAS HERE AND WAS A DUPLICATE. The 29 August
+          {/* "What we build" WAS HERE AND WAS A DUPLICATE. The 29 August
               restore put TECH_BUILDS.capabilities back without checking whether
               the page already carried it: the nine-card capability grid higher
               up renders the same seven items, so all seven appeared twice.
@@ -177,8 +177,8 @@ export default function Service4TechBuilds() {
               page. The restore was right about the other three blocks on this
               page, which appear once each. */}
           <CopyProse heading={TECH_BUILDS.bringUsTheProblem.label} paragraphs={[TECH_BUILDS.bringUsTheProblem.heading, TECH_BUILDS.bringUsTheProblem.body]} />
-          <CopyProse heading="How It Runs" paragraphs={[TECH_BUILDS.howItRuns]} />
-          <CopyProse heading="Where This Starts" paragraphs={[TECH_BUILDS.whereThisStarts]} />
+          <CopyProse heading="How it runs" paragraphs={[TECH_BUILDS.howItRuns]} />
+          <CopyProse heading="Where this starts" paragraphs={[TECH_BUILDS.whereThisStarts]} />
         </div>
       </section>
       <ServiceSignOff heading="Where this ends up" body="Software that gets used, scoped after the diagnosis rather than before it. Tell us the constraint and we will tell you whether building is the answer." />

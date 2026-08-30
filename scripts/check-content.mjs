@@ -286,8 +286,11 @@ const DECISIONS = [
     where: "spec 5.3",
     run: async (get) => {
       const html = await (await get("/for-pl-owners")).text();
-      if (/<h1[^>]*>[^<]*What We Offer/.test(html)) return "it is an H1, spec 5.3 says demote to H2";
-      return /<h2[^>]*>[^<]*What We Offer/.test(html) ? null : "heading not found as an H2";
+      // Case-insensitive from 30 August: the heading went to sentence case on
+      // the selective-capitalisation instruction, and this check is about the
+      // heading LEVEL, not its casing.
+      if (/<h1[^>]*>[^<]*What we offer/i.test(html)) return "it is an H1, spec 5.3 says demote to H2";
+      return /<h2[^>]*>[^<]*What we offer/i.test(html) ? null : "heading not found as an H2";
     },
   },
   {

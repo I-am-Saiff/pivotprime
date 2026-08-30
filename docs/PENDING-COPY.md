@@ -3187,3 +3187,41 @@ Verified by reading the computed colours of your reference card in the browser
 and asserting each of the four against them: fill, border, label and body all
 measure identical on all four. White on this fill is 13.99:1 and the bright
 green label is 7.29:1, so the black text from the mid-green round is gone.
+
+---
+
+## 1b6. EF confirmed as #e8f4ec, and capitalisation made selective — **for Iram**
+
+**Colour.** EF is `#e8f4ec`, confirmed on the 30 August call. The three surfaces
+painted on your EF instructions moved to it: the fees panel, the phase section on
+Fractional Leadership, and the "Your team" boxes inside its cards. Your named
+exception is honoured the other way round: the Performance Linked Fees box was
+cream at the time, so keeping it dark green meant returning it to dark green,
+with the white sentence and the bright green heading.
+
+Left as they were, and why: the calculator and the two white comparison boxes
+came from your "#fef" cream instruction, not EF; the sign-off cards at the foot
+of the service pages were never an EF instruction. Right-hand cards untouched,
+for batch two, as you said.
+
+**Capitalisation.** 111 headings went back to sentence case. The dividing line
+used your rule: does it name something, or describe something? Where my earlier
+sweep had capitalised a description, it went back to its exact previous wording
+rather than being re-lowercased, so the spec's and your own original phrasing is
+restored letter for letter. Your four article headings are verbatim yours again,
+checked against your files.
+
+**Kept capitalised as names:** Pivot Prime, Nurture, Cinnacare, Scentmatic, the
+five service names, The Results, Performance Linked Fee, the sector lines
+including "Childcare Technology · UAE", the case-study company descriptors on
+/about, the team names, and the seat names (Finance Seat, Fractional Chief of
+Staff and so on).
+
+**Judgement calls, kept capitalised — say the word to change any:**
+- The five KPI labels on the homepage results cards (Execution, Process
+  Efficiency, Customer Retention, Profit Growth, Transaction Speed). They render
+  in small caps regardless, so this is only about the files.
+- "Through Fractional Leadership Services" on For Corporate Leaders: "Services"
+  is riding on the service name.
+- "Pivot Prime is led by a Mathematician…": "Mathematician" is capitalised in
+  the spec's own wording, so it stays.

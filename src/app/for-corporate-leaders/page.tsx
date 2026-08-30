@@ -13,9 +13,9 @@ export default function ForCorporateLeaders() {
         <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           {/* Restored with the chapter number stripped. She asked for the labels reworded, not deleted. */}
-          <span className="mb-4 block text-xs font-bold tracking-[0.22em] text-neon uppercase">For Corporate Leaders</span>
+          <span className="mb-4 block text-xs font-bold tracking-[0.22em] text-neon uppercase">For corporate leaders</span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight max-w-4xl mx-auto">
-            You’re Carrying Delivery, Risk, and Outcomes
+            You’re carrying delivery, risk, and outcomes
           </h1>
           <p className="text-lg md:text-xl text-neon font-semibold leading-relaxed max-w-3xl mx-auto mb-4">
             You are often expected to do it without enough people or budget.
@@ -32,7 +32,7 @@ export default function ForCorporateLeaders() {
           
           {/* Section 1 */}
           <div className="frosted-card-light border-forest/20 p-8 md:p-14 rounded-[28px] mb-7 sm:mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Execution Support Without Headcount</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Execution support without headcount</h2>
             <h3 className="text-lg font-bold text-mid mb-8">Through Build and Place. Scoped per engagement.</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 items-stretch">
@@ -56,7 +56,7 @@ export default function ForCorporateLeaders() {
 
           {/* Section 2 */}
           <div className="frosted-card-light border-forest/20 p-8 md:p-14 rounded-[28px] mb-7 sm:mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">On-Demand Specialist Bench</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">On-demand specialist bench</h2>
             <h3 className="text-lg font-bold text-mid mb-8">Through Build and Place. Scoped per engagement.</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 items-stretch">
@@ -80,7 +80,7 @@ export default function ForCorporateLeaders() {
 
           {/* Section 3 */}
           <div className="frosted-card-light border-forest/20 p-8 md:p-14 rounded-[28px] mb-7 sm:mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Senior Judgment, on Call</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Senior judgment, on call</h2>
             <h3 className="text-lg font-bold text-mid mb-8">Through Fractional Leadership Services. A confidential resource to pressure-test decisions before they cost you.</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 items-stretch">

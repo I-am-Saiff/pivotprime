@@ -29,7 +29,7 @@ export const BUILD_AND_PLACE = {
   rolesHeading: "The seats we place",
   cards: [
     {
-      title: "Project Management",
+      title: "Project management",
       body: "Runs delivery inside your team: the order and project lifecycle, supplier and stakeholder coordination, SLA and timeline tracking, and documentation that outlives the engagement. Used where the plan is clear and the problem is that nothing is being driven.",
     },
     {
@@ -41,11 +41,11 @@ export const BUILD_AND_PLACE = {
       body: "Engineers who build the automation, the CRM, the dashboards and the internal tools. Scoped after the diagnosis, never before it. If the work is a standalone build rather than an embedded seat, see Technology Builds.",
     },
     {
-      title: "Marketing and Brand",
+      title: "Marketing and brand",
       body: "Positioning, go-to-market, and the client-facing material that carries it. Used where the operation has been fixed but the business still is not being bought.",
     },
     {
-      title: "Web and Digital",
+      title: "Web and digital",
       body: "Website design, build and maintenance, and the digital estate around it. Used where the shopfront no longer matches the business behind it.",
     },
   ] satisfies ServiceDetailCard[],
@@ -57,13 +57,13 @@ export const BUILD_AND_PLACE = {
 
 /** Spec 4.5, THE MISCONCEPTION and WHAT WE BUILD and CLOSE. */
 export const MARKET_ENTRY = {
-  misconceptionHeading: "The Misconception",
+  misconceptionHeading: "The misconception",
   misconception: [
     "The most common assumption is that a business which works elsewhere can be copied into Dubai. Almost nothing pastes cleanly.",
     "The regulatory position changes depending on whether you sit in a free zone or on the mainland. Consumer habits are different: this is a market that lives on delivery apps, expects service levels that would be considered premium elsewhere, and buys through community and word of mouth as much as through marketing.",
     "The commercial calendar is different too. Ramadan reshapes trading for a month, and a large part of your customer base leaves the country over the summer, so a plan built on twelve even months will miss badly. Heat changes how logistics, storage and footfall work for half the year. And the culture rewards relationships and patience, so businesses that arrive expecting to transact at home-market speed stall in ways they cannot explain.",
   ],
-  buildHeading: "What We Build",
+  buildHeading: "What we build",
   build: [
     "Entity structure, licensing and regulatory approvals",
     "A full financial model: investment, breakeven, return, and pricing built for this market",
@@ -152,7 +152,7 @@ export const CLARITY_AUDIT = {
     "Every business has a theory about why growth is harder than it should be. Usually the theory is wrong, or it describes a symptom of something further upstream.",
     "Leaders carry an idealistic picture of how the business works. The people doing the work know what is actually possible. The gap between those two pictures is where almost every operational problem lives. The audit closes it with evidence rather than opinion.",
   ],
-  lookHeading: "What We Look At",
+  lookHeading: "What we look at",
   look: [
     "The commercial model, pricing, and margin by product, client or service",
     "The P&L, cost structure, working capital and how reliably cash is collected",
@@ -167,7 +167,7 @@ export const CLARITY_AUDIT = {
     "One-to-one interviews with the people doing the work, not only the leadership team. Private conversations surface what people will not say in a room.",
     "Process mapping end to end. A facilitated workshop per function, where the team walks the process on screen and stress tests it together, so the findings are owned rather than imposed. Direct observation where it helps.",
   ],
-  getHeading: "What You Get",
+  getHeading: "What you get",
   get: [
     "An as-is versus to-be map of how work runs today and exactly what changes",
     "A findings report with every gap ranked by risk and by effort",
@@ -214,19 +214,19 @@ export const TECH_BUILDS = {
    */
   /** Authored. The grid needed a heading and the two authored tiles needed
    *  naming as ours in public. PENDING-COPY 1al. */
-  capabilityHeading: "Nine Things We Build, and One Rule About When We Build Them",
+  capabilityHeading: "Nine things we build, and one rule about when we build them",
   capabilityNote:
     "Every one of these is scoped against a defined problem first. We do not start a build to find out whether it was needed.",
   capabilityGrid: [
-    { label: "Websites and Digital Estate", spec: true, body: "Websites: design, build, maintenance and the digital estate around them" },
-    { label: "CRM Builds", spec: true, body: "CRM build and configuration, including migration from spreadsheets and inherited systems" },
-    { label: "Business Process Automation", spec: true, body: "Workflow automation across sales, operations, finance and fulfilment" },
-    { label: "Dashboards and Reporting", spec: true, body: "Dashboards and management reporting, so decisions are made on numbers rather than instinct" },
-    { label: "Systems Integration", spec: true, body: "Integrations between the systems you already pay for and are not getting value from" },
-    { label: "Internal Tools", spec: true, body: "Internal tools and custom applications where nothing off the shelf fits" },
-    { label: "AI Integrations and Agents", spec: true, body: "AI agents and assistants, where they remove real cost rather than add a feature" },
-    { label: "Agentic Web Applications", spec: false, body: "Web applications that carry out a task end to end rather than presenting a form and waiting." },
-    { label: "Mobile Applications", spec: false, body: "Native and cross-platform apps, where the work genuinely happens away from a desk." },
+    { label: "Websites and digital estate", spec: true, body: "Websites: design, build, maintenance and the digital estate around them" },
+    { label: "CRM builds", spec: true, body: "CRM build and configuration, including migration from spreadsheets and inherited systems" },
+    { label: "Business process automation", spec: true, body: "Workflow automation across sales, operations, finance and fulfilment" },
+    { label: "Dashboards and reporting", spec: true, body: "Dashboards and management reporting, so decisions are made on numbers rather than instinct" },
+    { label: "Systems integration", spec: true, body: "Integrations between the systems you already pay for and are not getting value from" },
+    { label: "Internal tools", spec: true, body: "Internal tools and custom applications where nothing off the shelf fits" },
+    { label: "AI integrations and agents", spec: true, body: "AI agents and assistants, where they remove real cost rather than add a feature" },
+    { label: "Agentic web applications", spec: false, body: "Web applications that carry out a task end to end rather than presenting a form and waiting." },
+    { label: "Mobile applications", spec: false, body: "Native and cross-platform apps, where the work genuinely happens away from a desk." },
   ],
   capabilities: [
     "Websites: design, build, maintenance and the digital estate around them",
@@ -250,17 +250,17 @@ export const TECH_BUILDS = {
    */
   constraintContrast: [
     {
-      label: "Automate Everything",
+      label: "Automate everything",
       body: "Speed up everything except the bottleneck and the queue in front of it simply gets longer. The business feels busier and delivers exactly as much as it did before.",
     },
     {
-      label: "Fix the Constraint First",
+      label: "Fix the constraint first",
       body: "Automate the approval step itself and the whole line clears. Nothing else in the process changed. That is why we find the constraint before we build anything.",
     },
   ],
   /** Also hers, from the "Where this starts" panel of the same mockup. */
   bringUsTheProblem: {
-    label: "Bring Us the Problem",
+    label: "Bring us the problem",
     heading: "An app you want built, or a process that is eating your team.",
     body: "Either works. The only technology work we take on is the kind pointed at a real problem.",
   },

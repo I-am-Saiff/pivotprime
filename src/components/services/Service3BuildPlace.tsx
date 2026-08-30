@@ -38,7 +38,7 @@ export default function Service3BuildPlace() {
         
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 max-w-2xl font-sans text-white">
-            Build And <span className="text-[#00d76d]">Place.</span>
+            Build and <span className="text-[#00d76d]">Place.</span>
           </h1>
           <p className="text-[#bfd8cd] text-lg max-w-2xl">
             We put people inside your business to execute the fix, rather than leaving you to run it yourself.
@@ -64,7 +64,7 @@ export default function Service3BuildPlace() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-7 sm:mb-10 max-w-2xl">
             <span className="block font-sans font-semibold text-[10.5px] tracking-[0.24em] uppercase text-[#009f50]">
-              How It Fits Together
+              How it fits together
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mt-3 text-[#0c1a15]">
               One contract. <span className="text-[#009f50]">One accountable party.</span>
