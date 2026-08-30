@@ -166,7 +166,7 @@ export default function PersonaSwitcher() {
                   </div>
 
                   {/* Quote Container */}
-                  <div className="rounded-2xl border border-neutral-200/80 card-dark p-6 mt-auto">
+                  <div className="rounded-2xl border border-forest/10 bg-mist p-6 mt-auto">
                     <p className="text-base sm:text-lg font-semibold text-forest leading-snug mb-3">
                       “{persona.quote}”
                     </p>
