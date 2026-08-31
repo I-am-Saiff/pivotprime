@@ -3738,3 +3738,26 @@ hero on all four pages, at both desktop and mobile widths. The requirement is
 4.5:1 for text this size, so it clears it with room. For comparison the white it
 replaced was about 15:1, so the line is less bright than it was but comfortably
 readable, and it now matches the eyebrow exactly as you asked.
+
+## 1c4 Homepage results standfirst, and the two logo-row label cards
+
+**1 September, on your instruction from the live site.**
+
+**The comma.** The results standfirst read "We do not measure success in slide
+decks. We measure what changed." It now reads "We do not measure success in
+slide decks, we measure what changed." Your wording is unchanged; only the full
+stop between the two halves became a comma, and "We" became "we" because it is
+no longer the start of a sentence.
+
+This one is worth flagging because the sentence is yours out of the copy
+document, section 3.3, where it is written with the full stop. The site now
+differs from the document by that one mark. If the document is the version you
+want, say so and it goes back.
+
+**The two label cards.** "Experience inside global institutions" and "Companies
+we have delivered for", the two cards that travel in the logo rows, are now the
+same green as the Talk to us button in the header, with the same dark green
+text. They have been three things in two days: a very pale green that read as a
+grey patch against the cream, then no fill at all so they matched the page, and
+now the button green you asked for. Nothing else about them changed, and the
+words are untouched.

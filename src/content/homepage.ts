@@ -132,7 +132,7 @@ export const LOGOS_NEED_ALT_TEXT = true;
 // 3.3 RESULTS
 export const RESULTS = {
   heading: "This is what our team has delivered",
-  standfirst: "We do not measure success in slide decks. We measure what changed.",
+  standfirst: "We do not measure success in slide decks, we measure what changed.",
 };
 
 export type Metric = {

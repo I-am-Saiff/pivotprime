@@ -182,14 +182,16 @@ export default function Home() {
                     className="flex items-center space-x-12 px-6"
                     aria-hidden={copy === 1}
                   >
-                    {/* NO FILL OF ITS OWN, so the card reads as the page rather
-                        than as a panel laid on it. bg-forest/[0.04] composited
-                        to rgb(238,234,228) against the section's
-                        rgb(248,244,238), ten points darker on every channel and
-                        visible as a grey patch between the logo cards. The
-                        border stays, which is what still reads it as a card
-                        travelling in the row. */}
-                    <h3 className="flex h-20 w-56 flex-shrink-0 items-center justify-center rounded-lg border border-forest/15 px-5 text-center font-sans text-xs font-bold tracking-[0.14em] text-forest uppercase md:h-24 md:w-64">
+                    {/* NEON FILL, on the client's 1 September instruction that these
+                        two read as the header's Talk to us button. It has gone
+                        through three states: bg-forest/[0.04], which composited
+                        ten points darker than the section and read as a grey
+                        patch; no fill at all, which matched the page exactly;
+                        and now bg-neon, which is the same token the header CTA
+                        uses. The border went with the change, because the CTA
+                        does not carry one and a forest/15 outline over neon
+                        reads as an artefact. Forest on neon measures 7.29:1. */}
+                    <h3 className="flex h-20 w-56 flex-shrink-0 items-center justify-center rounded-lg bg-neon px-5 text-center font-sans text-xs font-bold tracking-[0.14em] text-forest uppercase md:h-24 md:w-64">
                       {group.label}
                     </h3>
                     {group.logos.map((logo) => (
