@@ -365,7 +365,7 @@ export const TECH_BUILDS = {
     "If you want us to run and maintain it afterwards, we can. If you want to own it outright, you own it, including the code.",
   ],
   whereThisStartsHeading: "Where this starts",
-  whereThisStarts: "If you already know what you need built, we can start there. If you are not certain the technology is the actual constraint, start with an Operational Clarity Audit, and we will tell you honestly whether a build is the right answer.",
+  whereThisStarts: "If you already know what you need built, we can start there. If you are not certain the technology is the actual constraint, start with an audit and we will tell you honestly whether a build is the right answer.",
 };
 
 /**

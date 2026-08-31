@@ -490,7 +490,7 @@ export default function Home() {
                   verbatim. PENDING-COPY 1b7. */}
               <div className="mt-3 rounded-2xl bg-forest px-5 py-5 text-center ring-1 ring-neon/40 sm:px-6">
                 <h3 className="font-sans text-base font-bold tracking-tight text-neon sm:text-lg">
-                  Performance Linked Fees
+                  Performance linked fees
                 </h3>
                 <p className="mt-2 text-[15px] font-bold leading-snug text-white sm:text-lg">
                   {HOW_WE_ARE_PAID.commitment.body}

@@ -2595,7 +2595,7 @@ the only honest form it can take.
 
 **whereThisStarts**
 
-> If you already know what you need built, we can start there. If you are not certain the technology is the actual constraint, start with an Operational Clarity Audit, and we will tell you honestly whether a build is the right answer.
+> If you already know what you need built, we can start there. If you are not certain the technology is the actual constraint, start with an audit and we will tell you honestly whether a build is the right answer.
 >
 
 ### UAE Market Entry — `/services/uae-market-entry`, spec 4.5
@@ -3817,3 +3817,35 @@ the 22 August deck reads *"Add the Fractional COO"*, along with *"Change Project
 Manager (capital M)"* and *"Software Engineer, instead of Engineer"*. All three
 are live. Adding the sixth seat made the caption's "five" wrong, and it had been
 counting five ever since.
+
+---
+
+### 1c5 continued: the rest of the capitalisation, 31 August
+
+Four more, all following your 30 August instruction that capitalised headings
+come down to sentence case, and today's request for industries in sentence case.
+
+**"The Results" is now "The results",** on all three homepage case studies. It was
+set in capitals twice over: the words were title case and the styling put the
+whole line in capitals on top of that, so it read THE RESULTS. Both are gone, and
+it now matches "The challenge" directly above it, which was already correct.
+
+**"Performance Linked Fees" is now "Performance linked fees".** Your 30 August
+note was to keep this heading and strip the text around it, which we read as
+being about keeping the heading rather than about its capitals. The heading
+itself is unchanged in every other way.
+
+**"organizational" is now "organisational",** on the P&L owner card in Who we
+serve. The site is British English throughout and this was the only American
+spelling on it.
+
+**"Where this starts" now matches your file word for word.** It read *"start with
+an Operational Clarity Audit"* where your own service pages file reads *"start
+with an audit"*. Your wording is back, and the quote in 1c0 above has been
+corrected to match, so the record and the page say the same thing.
+
+**The case study industries were checked and left alone.** They are not in
+capitals: they read "Childcare Technology · UAE", "Baby Skincare · UK and UAE
+Launch" and "UAE Market Entry · Financial Modelling", which is title case, not
+capitals. If you want those in sentence case too, that is a separate change and
+we have not guessed at it.

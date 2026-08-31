@@ -84,7 +84,7 @@ const PERSONAS: PersonaData[] = [
     quote: "Every team finally knows their numbers and operating cadence. Noise turned into rhythm.",
     author: "Chief Operating Officer, Distribution group · Abu Dhabi",
     bullets: [
-      "Progress is slow and organizational change feels expensive.",
+      "Progress is slow and organisational change feels expensive.",
       "Every new strategic initiative competes with ten legacy tasks.",
       "Execution happens, but not always aligned in the direction you intend.",
       "You need structural governance and predictable execution cadences.",
