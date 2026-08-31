@@ -111,6 +111,20 @@ export function TickList({ items, onDark = false }: { items: string[]; onDark?: 
  * written for a light ground is repainted for the dark one rather than needing
  * a second set of classes at every call site.
  *
+ * SENTENCE CASE FROM 1 SEPTEMBER, on the client instruction relayed that day.
+ * These labels were her .lab treatment: 10.5px, 0.2em tracking and
+ * text-transform uppercase, which is what her own file sets. She has asked for
+ * the first letter capital and the rest normal, so the transform is off and the
+ * caps tracking with it, for the same reason it came off "The results" and the
+ * case study attribution: 0.2em exists to open up capitals and reads loose on a
+ * sentence. 10.5px was also a size chosen for caps, so it goes to 12px to stay
+ * legible in mixed case. Colour, weight and position are unchanged.
+ *
+ * THIS IS SHARED, so it moves four pages, not the two she named: the audit page
+ * and Fractional Leadership that she pointed at, plus Build and Place and UAE
+ * Market Entry, which use the same pair. Leaving those two in capitals would
+ * have split the treatment across sibling pages. PENDING-COPY 1c8.
+ *
  * ONE THING FROM THAT PANEL IS DELIBERATELY NOT COPIED: its radial dot texture.
  * The 29 August instruction was to take the dot pattern off every dark
  * background on the service pages, and that instruction has not been reversed.
@@ -129,7 +143,7 @@ export function PairLight({
   return (
     <div className="rounded-2xl border border-forest/10 bg-white p-6 shadow-sm sm:p-7">
       {label ? (
-        <Label className="font-sans text-[10.5px] font-semibold tracking-[0.2em] text-mid uppercase">
+        <Label className="font-sans text-[12px] font-semibold text-mid">
           {label}
         </Label>
       ) : null}
@@ -151,7 +165,7 @@ export function PairDark({
   return (
     <div className="card-dark rounded-2xl border border-white/10 p-6 shadow-xl sm:p-7">
       {label ? (
-        <Label className="font-sans text-[10.5px] font-semibold tracking-[0.2em] text-neon uppercase">
+        <Label className="font-sans text-[12px] font-semibold text-neon">
           {label}
         </Label>
       ) : null}

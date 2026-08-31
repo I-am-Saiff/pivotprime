@@ -3967,3 +3967,37 @@ Four differences, all of them already decided:
 your five service pages opens with one above the heading, and none of the five is
 on the site. We can find no instruction of yours removing them, so this is ours
 and not deliberate as far as the record shows. Say the word and all five go back.
+
+## 1c8 The card labels on the service pages read as sentences
+
+**1 September, on your instruction.**
+
+The small green labels that head each card on the service pages were in capitals
+and now read with only the first letter capital:
+
+| Page | Labels changed |
+|---|---|
+| Operational Clarity Audit | What we look at · What you get · How we do it · What happens after |
+| Fractional Leadership | What the COO seat covers · What the Chief of Staff seat covers · What the CFO seat covers · Where it does not fit · How it runs |
+| Build and Place | What you are not carrying · How it is priced |
+| UAE Market Entry | The numbers come first · What we build |
+
+**Two of those pages you did not name.** Build and Place and UAE Market Entry use
+the same card as the two you did, so they moved with them. Leaving them in
+capitals would have put the same kind of label in two different styles on pages
+sitting next to each other.
+
+**These were your own styling.** Your service pages file sets these labels to
+capitals, so this overrides your file rather than matching it. It is a
+straightforward instruction and it is done, but it is worth knowing that is what
+changed, in case the capitals were deliberate.
+
+The letter spacing came off with the capitals, and the size went from 10.5px to
+12px. Both existed to make a line of capitals readable, and neither is right for
+a sentence. Colour, weight and position are untouched.
+
+**One label did not change and you should decide about it.** Technology Builds
+has a "How it runs" label that is a different piece of the design and still reads
+HOW IT RUNS in capitals. Fractional Leadership now says "How it runs" in sentence
+case. The same words in two styles on two service pages is the one thing this
+leaves untidy. One word from you and it matches.
