@@ -1,10 +1,20 @@
 import Link from "next/link";
+import ServiceLinkButtons from "@/components/ServiceLinkButtons";
 import type { Metadata } from "next";
 import { pageMetadata } from "@/content/metadata";
 
 export const metadata: Metadata = pageMetadata("forCorporateLeaders");
 
 export default function ForCorporateLeaders() {
+  // The sub-line under each card heading, in card order. One definition, so
+  // the heading and the service button beneath it cannot drift apart: the
+  // button is chosen by reading this text, in src/content/service-links.ts.
+  const SUBLINES = [
+    "Through Build and Place. Scoped per engagement.",
+    "Through Build and Place. Scoped per engagement.",
+    "Through Fractional Leadership Services. A confidential resource to pressure-test decisions before they cost you.",
+  ];
+
   return (
     <div className="flex flex-col min-h-screen pt-12 sm:pt-20 pb-10 sm:pb-16">
       
@@ -33,7 +43,7 @@ export default function ForCorporateLeaders() {
           {/* Section 1 */}
           <div className="frosted-card-light border-forest/20 p-8 md:p-14 rounded-[28px] mb-7 sm:mb-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Execution support without headcount</h2>
-            <h3 className="text-lg font-bold text-mid mb-8">Through Build and Place. Scoped per engagement.</h3>
+            <h3 className="text-lg font-bold text-mid mb-8">{SUBLINES[0]}</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 items-stretch">
               <div className="md:col-span-7 space-y-4 text-neutral-600 leading-relaxed text-base">
@@ -52,12 +62,13 @@ export default function ForCorporateLeaders() {
                 <p className="text-forest text-sm font-medium leading-relaxed">Most leaders start here when delivery pressure is high and internal bandwidth is stretched.</p>
               </div>
             </div>
+            <ServiceLinkButtons subline={SUBLINES[0]} />
           </div>
 
           {/* Section 2 */}
           <div className="frosted-card-light border-forest/20 p-8 md:p-14 rounded-[28px] mb-7 sm:mb-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">On-demand specialist bench</h2>
-            <h3 className="text-lg font-bold text-mid mb-8">Through Build and Place. Scoped per engagement.</h3>
+            <h3 className="text-lg font-bold text-mid mb-8">{SUBLINES[1]}</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 items-stretch">
               <div className="md:col-span-7 space-y-4 text-neutral-600 leading-relaxed text-base">
@@ -76,12 +87,13 @@ export default function ForCorporateLeaders() {
                 <p className="text-forest text-sm font-medium leading-relaxed">Often used when workload spikes or specialist input is required fast.</p>
               </div>
             </div>
+            <ServiceLinkButtons subline={SUBLINES[1]} />
           </div>
 
           {/* Section 3 */}
           <div className="frosted-card-light border-forest/20 p-8 md:p-14 rounded-[28px] mb-7 sm:mb-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Senior judgment, on call</h2>
-            <h3 className="text-lg font-bold text-mid mb-8">Through Fractional Leadership Services. A confidential resource to pressure-test decisions before they cost you.</h3>
+            <h3 className="text-lg font-bold text-mid mb-8">{SUBLINES[2]}</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 items-stretch">
               <div className="md:col-span-7 space-y-4 text-neutral-600 leading-relaxed text-base">
@@ -100,6 +112,7 @@ export default function ForCorporateLeaders() {
                 <p className="text-forest text-sm font-medium leading-relaxed">This is like having an Executive Board that you can consult when you need.</p>
               </div>
             </div>
+            <ServiceLinkButtons subline={SUBLINES[2]} />
           </div>
 
         </div>

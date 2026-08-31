@@ -987,6 +987,30 @@
       "why": "Restored 29 August. The client reversed her 28 August instruction to cut the service pages: \"Theres no why this exists you removed too much\". This is spec 4.x copy that was on the page before that cut, put back unchanged. PENDING-COPY 1ar and 1b2.",
       "route": "/services/fractional-leadership",
       "element": "h3"
+    },
+    {
+      "text": "See the audit",
+      "status": "traced",
+      "kind": "client-instruction",
+      "why": "Her own wording. The 31 August instruction adding a service button to each persona card gave the five labels verbatim and told us to use the same label everywhere: \"See the audit\", \"See fractional leadership\", \"See build and place\", \"See technology builds\", \"See market entry\". They are in src/content/service-links.ts, which is the only place any of them is written, and the button on a card is chosen by reading the service named in that card's sub-line rather than assigned per page. PENDING-COPY 1c2.",
+      "route": "/for-founders",
+      "element": "link"
+    },
+    {
+      "text": "See build and place",
+      "status": "traced",
+      "kind": "client-instruction",
+      "why": "Her own wording. The 31 August instruction adding a service button to each persona card gave the five labels verbatim and told us to use the same label everywhere: \"See the audit\", \"See fractional leadership\", \"See build and place\", \"See technology builds\", \"See market entry\". They are in src/content/service-links.ts, which is the only place any of them is written, and the button on a card is chosen by reading the service named in that card's sub-line rather than assigned per page. PENDING-COPY 1c2.",
+      "route": "/for-founders",
+      "element": "link"
+    },
+    {
+      "text": "See fractional leadership",
+      "status": "traced",
+      "kind": "client-instruction",
+      "why": "Her own wording. The 31 August instruction adding a service button to each persona card gave the five labels verbatim and told us to use the same label everywhere: \"See the audit\", \"See fractional leadership\", \"See build and place\", \"See technology builds\", \"See market entry\". They are in src/content/service-links.ts, which is the only place any of them is written, and the button on a card is chosen by reading the service named in that card's sub-line rather than assigned per page. PENDING-COPY 1c2.",
+      "route": "/for-founders",
+      "element": "link"
     }
   ]
 }

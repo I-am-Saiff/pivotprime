@@ -1,10 +1,20 @@
 import Link from "next/link";
+import ServiceLinkButtons from "@/components/ServiceLinkButtons";
 import type { Metadata } from "next";
 import { pageMetadata } from "@/content/metadata";
 
 export const metadata: Metadata = pageMetadata("forPlOwners");
 
 export default function ForCorporateOwners() {
+  // The sub-line under each card heading, in card order. One definition, so
+  // the heading and the service button beneath it cannot drift apart: the
+  // button is chosen by reading this text, in src/content/service-links.ts.
+  const SUBLINES = [
+    "A reset of where capital, leadership attention, and effort are actually going, and what to cut.",
+    "Senior-level support that closes the gap between what gets decided and what actually lands.",
+    "Smarter operating design, targeted automation, and AI adoption, applied where it actually reduces drag.",
+  ];
+
   return (
     <div className="flex flex-col min-h-screen pt-12 sm:pt-20 pb-10 sm:pb-16">
       
@@ -34,7 +44,7 @@ export default function ForCorporateOwners() {
           {/* Section 1 */}
           <div className="frosted-card-light border-forest/20 p-8 md:p-14 rounded-[28px] mb-7 sm:mb-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Why your unit isn&apos;t moving faster than the market</h2>
-            <h3 className="text-lg font-bold text-mid mb-8">A reset of where capital, leadership attention, and effort are actually going, and what to cut.</h3>
+            <h3 className="text-lg font-bold text-mid mb-8">{SUBLINES[0]}</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 items-stretch">
               <div className="md:col-span-7 space-y-4 text-neutral-600 leading-relaxed text-base">
@@ -46,12 +56,13 @@ export default function ForCorporateOwners() {
                 <p className="text-mid font-bold text-base">This is a 2 to 12 week reset, depending on scope and complexity.</p>
               </div>
             </div>
+            <ServiceLinkButtons subline={SUBLINES[0]} />
           </div>
 
           {/* Section 2 */}
           <div className="frosted-card-light border-forest/20 p-8 md:p-14 rounded-[28px] mb-7 sm:mb-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Your decisions don&rsquo;t survive the next layers of the organisation</h2>
-            <h3 className="text-lg font-bold text-mid mb-8">Senior-level support that closes the gap between what gets decided and what actually lands.</h3>
+            <h3 className="text-lg font-bold text-mid mb-8">{SUBLINES[1]}</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 items-stretch">
               <div className="md:col-span-7 space-y-4 text-neutral-600 leading-relaxed text-base">
@@ -63,12 +74,13 @@ export default function ForCorporateOwners() {
                 <p className="text-mid font-bold text-base">Engaged on a flexible basis, typically over 3–6 months.</p>
               </div>
             </div>
+            <ServiceLinkButtons subline={SUBLINES[1]} />
           </div>
 
           {/* Section 3 */}
           <div className="frosted-card-light border-forest/20 p-8 md:p-14 rounded-[28px] mb-7 sm:mb-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-forest mb-3">Grow output without growing the cost base</h2>
-            <h3 className="text-lg font-bold text-mid mb-8">Smarter operating design, targeted automation, and AI adoption, applied where it actually reduces drag.</h3>
+            <h3 className="text-lg font-bold text-mid mb-8">{SUBLINES[2]}</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 items-stretch">
               <div className="md:col-span-7 space-y-4 text-neutral-600 leading-relaxed text-base">
@@ -80,6 +92,7 @@ export default function ForCorporateOwners() {
                 <p className="text-mid font-bold text-base">Typically delivered over 3–9 months, depending on the scope of change.</p>
               </div>
             </div>
+            <ServiceLinkButtons subline={SUBLINES[2]} />
           </div>
 
         </div>

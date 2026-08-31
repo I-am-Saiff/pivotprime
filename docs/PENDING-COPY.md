@@ -3636,3 +3636,64 @@ required assertions, meaning the checks failed if the page stopped carrying them
 Rather than deleting those four, they are inverted: the checks now fail if the
 routing block ever comes **back** without your say-so, and the failure names this
 entry. Proved by putting one back on purpose and watching the check fail.
+
+---
+
+## 1c2. Service buttons on the persona cards — **for Iram**
+
+Each card that names a service in its sub-line now carries a button to that
+service, styled like the "Talk to us" button in the header. **Which button a card
+gets is read from its own sub-line**, using one list of the five services, so the
+four pages cannot disagree with each other and a card whose sub-line changes gets
+the right button without anyone remembering to update it.
+
+| Page | Card | Sub-line names | Button |
+|---|---|---|---|
+| For Founders | 1 | Operational Clarity Audit | See the audit |
+| For Founders | 2 | Build and Place | See build and place |
+| For Founders | 3 | Fractional Leadership | See fractional leadership |
+| For SMEs | 1 | Operational Clarity Audit | See the audit |
+| For SMEs | 2 | Operational Clarity Audit | See the audit |
+| For SMEs | 3 | Fractional Leadership | See fractional leadership |
+| For Corporate Leaders | 1 | Build and Place | See build and place |
+| For Corporate Leaders | 2 | Build and Place | See build and place |
+| For Corporate Leaders | 3 | Fractional Leadership | See fractional leadership |
+| For P&L Owners | 1, 2, 3 | *none* | *none* |
+
+### For P&L Owners has no buttons, and that needs a decision from you
+
+Your rule was "where a card names none, add nothing", and none of the three
+sub-lines on that page names a service. They read:
+
+- "A reset of where capital, leadership attention, and effort are actually going,
+  and what to cut."
+- "Senior-level support that closes the gap between what gets decided and what
+  actually lands."
+- "Smarter operating design, targeted automation, and AI adoption, applied where
+  it actually reduces drag."
+
+The other three pages say "Through an Operational Clarity Audit…", "Through Build
+and Place…" and so on; this page describes the work instead of naming the
+service. So it is the only one of the four with no buttons at all.
+
+**Two ways to fix it, both one line, your call.** Either the sub-lines gain the
+service name, the way the other three pages word theirs, or you tell me which
+service each of those three cards should point at and I will map them directly.
+I have not guessed, because guessing here would point a reader at the wrong
+service.
+
+### Two labels are not used yet
+
+"See technology builds" and "See market entry" are in the list and correct, but
+no card's sub-line names Technology Builds or UAE Market Entry, so neither
+renders anywhere yet. They will appear the moment a sub-line names one.
+
+### The button
+
+Neon fill, dark green text, the same padding, radius, weight and letter-spacing
+as the header button, confirmed by measuring both against each other rather than
+by eye. Two deliberate differences: the header button's focus outline is set
+against the dark header and would draw a dark halo on a light card, so it uses
+the standard one; and these are 44px tall, because the header button is hidden on
+phones and never has to be tapped, while these are on the page at every width and
+44px is the smallest target a finger reliably hits.
