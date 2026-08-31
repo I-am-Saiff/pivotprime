@@ -1,8 +1,10 @@
 "use client";
 
-import { ServiceSignOff } from "./SpecCopyBlocks";
-import { SEATS } from "@/content/services-detail";
-import { SEAT_IDS } from "@/lib/seat-anchors";
+import { useState, useSyncExternalStore } from "react";
+
+import { Lab, NoteCard, SectionHead, ServiceSignOff } from "./SpecCopyBlocks";
+import { FRACTIONAL_FIT, SEATS, SERVICE_CLOSERS } from "@/content/services-detail";
+import { SEAT_IDS, seatIndexFromHash } from "@/lib/seat-anchors";
 
 import { WHATSAPP_URL } from "@/lib/flags";
 import { WHATSAPP_CTA } from "@/content/cta";
@@ -13,12 +15,24 @@ import { FRACTIONAL_PHASES, FRACTIONAL_PHASES_CAPTION } from "@/content/services
 // always empty, and React re-reads on the client after hydration. Reading
 // location.hash during render, or syncing it with setState inside an effect,
 // would either mismatch or trigger the cascading render the lint rule flags.
+function subscribeToHash(onChange: () => void) {
+  window.addEventListener("hashchange", onChange);
+  return () => window.removeEventListener("hashchange", onChange);
+}
 
 export default function Service2FractionalLeadership() {
   // Which seat is open is derived from the fragment rather than held
-  // separately, so /services/fractional-leadership#cfo opens the CFO seat when opened
-  // cold, and selecting a seat makes the URL shareable. Spec 4.2 calls these
-  // anchors load-bearing: persona pages and the homepage card link into a seat.
+  // separately, so /services/fractional-leadership#cfo opens the CFO seat when
+  // opened cold, and a click afterwards takes precedence over it. Spec 4.2
+  // calls these anchors load-bearing: persona pages and the homepage card link
+  // into a seat.
+  const hash = useSyncExternalStore(
+    subscribeToHash,
+    () => window.location.hash,
+    () => "",
+  );
+  const [picked, setPicked] = useState<number | null>(null);
+  const openSeat = picked ?? seatIndexFromHash(hash);
 
   return (
     <div className="animate-fade-in">
@@ -26,7 +40,7 @@ export default function Service2FractionalLeadership() {
       <header className="bg-[#013325] text-white relative overflow-hidden pt-28 sm:pt-32 pb-10 sm:pb-16 md:pt-40 md:pb-24">
         {/* The dot pattern was here. Removed from every service-page dark
             background on her 29 August instruction, item 3. */}
-        
+
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 max-w-2xl font-sans text-white">
             Fractional <span className="text-[#00d76d]">Leadership.</span>
@@ -34,7 +48,7 @@ export default function Service2FractionalLeadership() {
           <p className="text-[#bfd8cd] text-lg max-w-2xl">
             Senior leadership for a season, not a lifetime. COO, Chief of Staff and CFO seats.
           </p>
-          
+
           <div className="flex flex-wrap items-baseline gap-6 mt-8 pt-6 border-t border-white/20">
             <b className="font-sans font-bold text-2xl text-[#00d76d] tracking-tight">Scoped per engagement.</b>
             <span className="text-sm text-[#8fb3a4]">Three-month minimum</span>
@@ -129,40 +143,118 @@ export default function Service2FractionalLeadership() {
         </div>
       </section>
 
-      {/* "Why this exists" was the only block in this page's restored section,
-          so when she removed it on 29 August the section wrapper went with it:
-          left in place it rendered as a blank padded band between the phases
-          and the seats. The copy stays in FRACTIONAL.why. */}
+      {/* THE THREE SEATS, as her file builds them, from 30 August.
 
-      {/* THE THREE SEATS, restored 29 August. All three are in the served HTML
-          at all times and each carries its spec 4.2 anchor. */}
+          Her pattern is a tab set: three clickable seat cards, and the chosen
+          seat's duties below them. The meeting instruction is the same, so this
+          is her markup rather than the three stacked panels this page carried
+          after the 29 August restore.
+
+          ALL THREE PANELS ARE IN THE SERVED HTML. Her own file renders one, from
+          script, into an empty div, so two thirds of this page's substance never
+          reaches a crawler; that is the exact defect AGENTS.md records against
+          this section. Here every panel is rendered and the two that are not
+          open carry the `hidden` attribute, so the copy is in the page with
+          JavaScript off and the tabs are the only thing that needs it.
+
+          THE ANCHORS SIT ON THE BUTTONS, not on the panels, because a fragment
+          pointing at a hidden element scrolls nowhere. #coo, #chief-of-staff and
+          #cfo land on the card, and the fragment also chooses which panel opens,
+          so an inbound link to a seat still shows that seat. */}
       <section className="surface-page px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
-        <div className="mx-auto max-w-5xl space-y-6">
+        <div className="mx-auto max-w-5xl">
+          <SectionHead
+            eyebrow={FRACTIONAL_FIT.seatsEyebrow}
+            heading={
+              <>
+                {FRACTIONAL_FIT.seatsHeading}{" "}
+                <span className="text-mid">{FRACTIONAL_FIT.seatsHeadingAccent}</span>
+              </>
+            }
+          />
+
+          <div className="grid gap-3 md:grid-cols-3">
+            {SEATS.map((seat, i) => {
+              const isOpen = i === openSeat;
+              return (
+                <button
+                  key={seat.title}
+                  type="button"
+                  id={SEAT_IDS[i]}
+                  onClick={() => setPicked(i)}
+                  aria-expanded={isOpen}
+                  aria-controls={`${SEAT_IDS[i]}-panel`}
+                  className={`rounded-xl border p-5 text-left transition-all ${
+                    isOpen
+                      ? "border-forest bg-forest"
+                      : "border-forest/12 bg-shell hover:-translate-y-0.5 hover:border-mid/40 hover:shadow-[0_14px_30px_rgba(1,51,37,0.07)]"
+                  }`}
+                >
+                  <span
+                    className={`block font-sans text-base font-bold ${isOpen ? "text-white" : "text-forest"}`}
+                  >
+                    {seat.title}
+                  </span>
+                  <span
+                    className={`mt-1.5 block text-sm ${isOpen ? "text-mist" : "text-forest/70"}`}
+                  >
+                    {seat.short}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
           {SEATS.map((seat, i) => (
-            <article
+            <div
               key={seat.title}
-              id={SEAT_IDS[i]}
-              className="rounded-2xl border border-forest/10 bg-shell p-6 sm:p-8"
+              id={`${SEAT_IDS[i]}-panel`}
+              hidden={i !== openSeat}
+              className="mt-6 border-t border-forest/10 pt-6 md:grid md:grid-cols-2 md:gap-10"
             >
-              <p className="font-sans text-[10.5px] font-semibold tracking-[0.2em] text-mid uppercase">
-                {seat.short}
-              </p>
-              <h2 className="mt-2 text-2xl font-bold text-forest md:text-3xl">{seat.title}</h2>
-              <p className="mt-3 leading-relaxed text-forest/75">{seat.n}</p>
-              <h3 className="mt-6 font-sans text-sm font-bold tracking-wide text-forest">{seat.h}</h3>
-              <ul className="mt-3 space-y-2.5">
+              <div>
+                <h3 className="font-sans text-[10.5px] font-semibold tracking-[0.2em] text-mid uppercase">
+                  {seat.h}
+                </h3>
+                <p className="mt-3 leading-relaxed text-forest/70">{seat.n}</p>
+              </div>
+              <ul className="mt-5 grid gap-2.5 md:mt-0">
                 {seat.l.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-forest/80">
-                    <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-mid" />
+                  <li key={item} className="flex items-start gap-3 text-[15.5px] text-forest/85">
+                    <span
+                      aria-hidden="true"
+                      className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-mid"
+                    />
                     <span className="leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
-            </article>
+            </div>
           ))}
         </div>
       </section>
-      <ServiceSignOff heading="Where this ends up" body="A seat for a season, then a structure that holds without us in it. Tell us what is stretched and we will tell you which seat, and for how long." />
+
+      {/* Her closing pair: the honest disqualifier beside how the retainer
+          actually runs. Both are hers, out of pivotprimeservicepages.html, and
+          neither has been on this page before. The aside is her `.notefit`,
+          which is gold in her file and green here. */}
+      <section className="surface-page px-4 pb-10 sm:px-6 sm:pb-16 lg:px-8">
+        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2 md:gap-12">
+          <NoteCard heading={FRACTIONAL_FIT.notFitHeading} body={FRACTIONAL_FIT.notFit} />
+          <div>
+            <Lab>{FRACTIONAL_FIT.howHeading}</Lab>
+            <div className="mt-3 space-y-3">
+              {FRACTIONAL_FIT.how.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)} className="leading-relaxed text-forest/75">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <ServiceSignOff {...SERVICE_CLOSERS.fractional} />
     </div>
   );
 }

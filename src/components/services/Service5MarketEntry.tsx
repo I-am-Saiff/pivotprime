@@ -1,7 +1,7 @@
 "use client";
 
-import { CopyProse, ServiceSignOff } from "./SpecCopyBlocks";
-import { MARKET_ENTRY } from "@/content/services-detail";
+import { Lab, TickList, ServiceSignOff } from "./SpecCopyBlocks";
+import { MARKET_ENTRY, SERVICE_CLOSERS } from "@/content/services-detail";
 
 import { useState } from "react";
 import PairToggle from "@/components/PairToggle";
@@ -88,8 +88,18 @@ export default function Service5MarketEntry() {
                 const isDip = calMode === 1 && d.dip;
                 return (
                   <div key={i} className="relative flex flex-col justify-end h-full">
-                    <div 
-                      className={`rounded-t-sm md:rounded-t-md transition-all duration-[900ms] ease-[cubic-bezier(.6,.02,.2,1)] ${isDip ? "bg-mid" : "bg-[#009f50]"}`}
+                    {/* HER 30 AUGUST COLOUR OVERRIDE: up months green, dip
+                        months a lighter green. Her file paints the dips in
+                        --gold and the standing instruction is that no gold
+                        appears anywhere, so the lighter value is neon, the next
+                        green up in the same swatch.
+
+                        Both branches read bg-mid before this, which is the same
+                        colour twice: the dip months were not distinguishable
+                        from the rest at all, so the toggle changed the heights
+                        and nothing else. */}
+                    <div
+                      className={`rounded-t-sm md:rounded-t-md transition-all duration-[900ms] ease-[cubic-bezier(.6,.02,.2,1)] ${isDip ? "bg-neon" : "bg-mid"}`}
                       style={{ height: `${h}%` }}
                     />
                     <div className="text-center font-sans font-semibold text-[8.5px] md:text-[10px] text-[#5e6f68] mt-2 tracking-[0.04em] absolute -bottom-6 left-0 right-0">
@@ -122,19 +132,38 @@ export default function Service5MarketEntry() {
         </div>
       </section>
 
-      {/* RESTORED 29 August. The 28 August instruction to cut everything below
-          "Why this exists" was wrong and the client has said so twice. Every
-          block below was in the spec, was never deleted from the content file,
-          and is rendered again here through the components built for it and
-          then left unused. PENDING-COPY 1ar and 1at. */}
+      {/* HER PAIR, from 30 August: "The numbers come first" beside "What we
+          build", which is the structure her file gives this page between the
+          calendar and the closer. The left column is hers and is new to the
+          site; the right is spec 4.5's list, which was prose here and is her
+          tick list now.
+
+          WHAT WENT: the three-paragraph "The misconception" block, which said
+          at length what the calendar above says in one picture, and the "Where
+          it ends up" block, whose second sentence is the closer's line. Both
+          are preserved in docs/PENDING-COPY.md 1b7 and both stay in
+          MARKET_ENTRY. */}
       <section className="surface-page px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
-        <div className="space-y-12 sm:space-y-16">
-        <CopyProse heading={MARKET_ENTRY.misconceptionHeading} paragraphs={MARKET_ENTRY.misconception} />
-        <CopyProse heading={MARKET_ENTRY.buildHeading} paragraphs={MARKET_ENTRY.build} />
-        <CopyProse heading={MARKET_ENTRY.closeHeading} paragraphs={[MARKET_ENTRY.close]} />
+        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2 md:gap-12">
+          <div>
+            <Lab>{MARKET_ENTRY.numbersHeading}</Lab>
+            <div className="mt-3 space-y-3">
+              {MARKET_ENTRY.numbers.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)} className="leading-relaxed text-forest/75">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
+          <div>
+            <Lab>{MARKET_ENTRY.buildHeading}</Lab>
+            <div className="mt-3">
+              <TickList items={MARKET_ENTRY.build} />
+            </div>
+          </div>
         </div>
       </section>
-      <ServiceSignOff heading="Where it ends up" body="We take clients from a licence to a functioning, properly priced operation that can actually succeed here. If the model says it will not, we would rather tell you before you spend the money than after." />
+      <ServiceSignOff {...SERVICE_CLOSERS.marketEntry} />
     </div>
   );
 }

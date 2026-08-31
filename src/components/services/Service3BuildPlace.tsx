@@ -1,7 +1,7 @@
 "use client";
 
-import { CopyProse, CopyCards, ServiceSignOff } from "./SpecCopyBlocks";
-import { BUILD_AND_PLACE } from "@/content/services-detail";
+import { Lab, TickList, ServiceSignOff } from "./SpecCopyBlocks";
+import { BUILD_AND_PLACE, SERVICE_CLOSERS } from "@/content/services-detail";
 
 import { useRevealOnScroll } from "@/lib/use-reveal-on-scroll";
 import { WHATSAPP_URL } from "@/lib/flags";
@@ -138,20 +138,37 @@ export default function Service3BuildPlace() {
         </div>
       </section>
 
-      {/* RESTORED 29 August. The 28 August instruction to cut everything below
-          "Why this exists" was wrong and the client has said so twice. Every
-          block below was in the spec, was never deleted from the content file,
-          and is rendered again here through the components built for it and
-          then left unused. PENDING-COPY 1ar and 1at. */}
+      {/* HER PAIR, from 30 August: "What you are not carrying" beside "How it
+          is priced", which is the structure her file gives this page between
+          the bench diagram and the closer. The left column is hers and is new
+          to the site; the right is spec 4.3, split at her paragraph break.
+
+          WHAT WENT: "The seats we place", the five role paragraphs that stood
+          here. They are not in her file and not in the structure the meeting
+          states for this page, and the bench diagram above names the same six
+          seats. Every word is preserved in docs/PENDING-COPY.md 1b7 and stays
+          in BUILD_AND_PLACE.cards, so putting them back is a render. */}
       <section className="surface-page px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
-        <div className="space-y-12 sm:space-y-16">
-        {/* "Why this exists" removed on her 29 August instruction, item 2.
-            The copy stays in BUILD_AND_PLACE.why; only the render goes. */}
-        <CopyCards heading={BUILD_AND_PLACE.rolesHeading} cards={BUILD_AND_PLACE.cards} />
-        <CopyProse heading={BUILD_AND_PLACE.pricedHeading} paragraphs={[BUILD_AND_PLACE.priced]} />
+        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2 md:gap-12">
+          <div>
+            <Lab>{BUILD_AND_PLACE.notCarryingHeading}</Lab>
+            <div className="mt-3">
+              <TickList items={BUILD_AND_PLACE.notCarrying} />
+            </div>
+          </div>
+          <div>
+            <Lab>{BUILD_AND_PLACE.pricedHeading}</Lab>
+            <div className="mt-3 space-y-3">
+              {BUILD_AND_PLACE.priced.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)} className="leading-relaxed text-forest/75">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
-      <ServiceSignOff heading="Where this ends up" body="People inside your business, sourced, vetted and managed by us, with one contract and one accountable party. Tell us the gap and we will tell you what it takes to fill it." />
+      <ServiceSignOff {...SERVICE_CLOSERS.buildAndPlace} />
     </div>
   );
 }

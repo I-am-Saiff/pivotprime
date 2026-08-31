@@ -1,5 +1,5 @@
-import { CopyProse, CopyList, ServiceSignOff } from "./SpecCopyBlocks";
-import { CLARITY_AUDIT } from "@/content/services-detail";
+import { ServiceSignOff } from "./SpecCopyBlocks";
+import { SERVICE_CLOSERS } from "@/content/services-detail";
 import { WHATSAPP_URL } from "@/lib/flags";
 import { WHATSAPP_CTA } from "@/content/cta";
 import ClarityAuditProcessMap from "./ClarityAuditProcessMap";
@@ -40,82 +40,23 @@ export default function Service1ClarityAudit() {
       {/* Stage / Map Section */}
       <ClarityAuditProcessMap />
 
-      {/* Columns Section */}
-      <section className="py-10 sm:py-16 md:py-24 surface-page">
-        {/* A comparison pair, so the site rule applies: white on the left,
-            green on the right. They were two unfilled columns with a gold
-            eyebrow each. */}
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
-          <div className="rounded-2xl bg-shell p-6 sm:p-7">
-            <div className="font-sans font-semibold text-[10.5px] tracking-[0.2em] uppercase text-mid mb-4">
-              What we look at
-            </div>
-            <ul className="space-y-3">
-              {[
-                "The commercial model, pricing, and margin by product, client or service",
-                "The P&L, cost structure, working capital and how reliably cash is collected",
-                "How work actually flows day to day, and where it stalls or reverses",
-                "Which decisions route through the founder, and which genuinely need to",
-                "Roles, ownership and accountability, and where they are unclear",
-                "Where automation would remove real cost, and where it would add a tool"
-              ].map((item, i) => (
-                <li key={i} className="flex gap-3 items-start text-[15.5px] text-[#0c1a15]">
-                  <div className="w-[17px] h-[17px] rounded-full bg-[#009f50] flex-shrink-0 mt-1 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" className="w-2.5 h-2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  </div>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          {/* Her paired-box rule, 29 August: left white, right LIGHT green, not
-              dark green. This was the dark card fill. */}
-{/* Matches the Stretched Founder "What This Looks Like" card on the
-              homepage, her 29 August instruction: same card-dark fill via the
-              same variable, same border, neon label, white body. */}
-          <div className="card-dark rounded-2xl border border-neutral-100 p-6 sm:p-7">
-            <div className="font-sans font-semibold text-[10.5px] tracking-[0.2em] uppercase text-neon mb-4">
-              What you get
-            </div>
-            <ul className="space-y-3">
-              {[
-                "An as-is versus to-be map of how work runs today and what changes",
-                "A findings report with every gap ranked by risk and by effort",
-                "A prioritised roadmap: what to fix now, what can wait",
-                "A baseline set of measurements to judge the improvements against",
-                "A costed view of what to fix internally and what needs outside capacity",
-                "An executive summary written for owners and investors"
-              ].map((item, i) => (
-                <li key={i} className="flex gap-3 items-start text-[15.5px] text-white">
-                  <div className="w-[17px] h-[17px] rounded-full bg-neon flex-shrink-0 mt-1 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#013325" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" className="w-2.5 h-2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  </div>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+      {/* THE PAGE ENDS HERE, from 30 August. Her file builds this page as hero,
+          the as-is versus to-be map, and the closer, with four blocks in
+          between; the meeting instruction is to take those four out as
+          redundant clutter, so the structure below the map is the closer alone.
 
+          WHAT WENT: the "What we look at" and "What you get" pair that sat here
+          in her design, and the "How we do it", "What happens after" and
+          "Pricing and margin engagements" blocks below it. Every word of all
+          five is preserved in docs/PENDING-COPY.md 1b7. The copy also stays in
+          CLARITY_AUDIT in the content file, so restoring any of them is a
+          render, not a retype.
 
-      {/* RESTORED 29 August. The 28 August instruction to cut everything below
-          "Why this exists" was wrong and the client has said so twice. Every
-          block below was in the spec, was never deleted from the content file,
-          and is rendered again here through the components built for it and
-          then left unused. PENDING-COPY 1ar and 1at. */}
-      <section className="surface-page px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
-        <div className="space-y-12 sm:space-y-16">
-        {/* "Why this exists" removed on her 29 August instruction, item 2.
-            The copy stays in CLARITY_AUDIT.why; only the render goes. */}
-        <CopyList heading={CLARITY_AUDIT.lookHeading} items={CLARITY_AUDIT.look} />
-        <CopyProse heading={CLARITY_AUDIT.howHeading} paragraphs={CLARITY_AUDIT.how} />
-        <CopyList heading={CLARITY_AUDIT.getHeading} items={CLARITY_AUDIT.get} />
-        <CopyProse heading={CLARITY_AUDIT.afterHeading} paragraphs={CLARITY_AUDIT.after} />
-        <CopyProse heading={CLARITY_AUDIT.pricingHeading} paragraphs={CLARITY_AUDIT.pricing} />
-        </div>
-      </section>
-      <ServiceSignOff heading="Where this ends up" body="The audit ends with a decision, not a filing cabinet. Tell us what is not working and we will tell you plainly whether an audit is the right first step." />
+          The pricing block is the one removal she did not name. It is not in her
+          file and it is not in the structure the meeting states for this page,
+          so it goes with the rest and is flagged for her rather than kept
+          quietly. */}
+      <ServiceSignOff {...SERVICE_CLOSERS.clarityAudit} />
     </div>
   );
 }

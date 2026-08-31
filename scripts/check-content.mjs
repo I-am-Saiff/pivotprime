@@ -441,51 +441,83 @@ const DECISIONS = [
     },
   },
   {
-    what: "every section the 28 August cut took off the five service pages is back on the page",
-    where: "PENDING-COPY 1ar and 1b2",
+    what: "the five service pages carry the structure of her own file, and the blocks the 30 August meeting removed are gone",
+    where: "PENDING-COPY 1b7",
     run: async (get) => {
-      // INVERTED 29 August. The 28 August instruction to cut these pages was
-      // wrong and the client has said so twice: "Theres no why this exists you
-      // removed too much" and "Even on this technology builds you have removed
-      // too much". This asserted their ABSENCE; it now asserts their presence,
-      // so the same check that guarded the removal guards the restoration.
-      //
-      // The three seat anchors are back on this list because spec 4.2 calls
-      // them load-bearing: the persona pages and the homepage services card
-      // link straight into them.
-      // "Why this exists" came OFF this list on 29 August: having restored
-      // everything, the client then asked for that one section to go again, on
-      // all five pages, and nothing else. Its absence is asserted just below,
-      // so this guard describes both halves of her instruction.
-      const restored = [
-        ["/services/operational-clarity-audit", "How we do it"],
-        ["/services/fractional-leadership", 'id="coo"'],
-        ["/services/fractional-leadership", 'id="chief-of-staff"'],
-        ["/services/fractional-leadership", 'id="cfo"'],
-        ["/services/uae-market-entry", "Where it ends up"],
-      ];
-      for (const route of [
+      // THIRD STATE OF THIS GUARD. It asserted the absence of these sections
+      // after the 28 August cut, then their presence after she reversed that on
+      // 29 August. The 30 August meeting rebuilds each page to the structure of
+      // pivotprimeservicepages.html, so what it asserts now is that structure:
+      // what her file has is present, what the meeting took out is gone, and
+      // the load-bearing anchors survived the rebuild.
+      const SERVICE_ROUTES = [
         "/services/operational-clarity-audit", "/services/fractional-leadership",
         "/services/build-and-place", "/services/technology-builds", "/services/uae-market-entry",
-      ]) {
+      ];
+
+      // Still hers, still absent, from 29 August.
+      for (const route of SERVICE_ROUTES) {
         const html = await (await get(route)).text();
         if (html.includes("Why this exists")) {
           return `"Why this exists" is back on ${route}; the client removed it on 29 August`;
         }
       }
-      for (const [route, needed] of restored) {
+
+      // Present: her structure. The seat anchors are the load-bearing ones,
+      // spec 4.2, and the two columns each page gained on 30 August.
+      const present = [
+        ["/services/fractional-leadership", 'id="coo"'],
+        ["/services/fractional-leadership", 'id="chief-of-staff"'],
+        ["/services/fractional-leadership", 'id="cfo"'],
+        ["/services/fractional-leadership", "Where it does not fit"],
+        ["/services/fractional-leadership", "How it runs"],
+        ["/services/build-and-place", "What you are not carrying"],
+        ["/services/build-and-place", "How it is priced"],
+        ["/services/technology-builds", "Where this starts"],
+        ["/services/uae-market-entry", "The numbers come first"],
+      ];
+      for (const [route, needed] of present) {
         const html = await (await get(route)).text();
         if (!html.includes(needed)) {
-          return `"${needed}" is missing from ${route}, and the client reversed the removal on 29 August`;
+          return `"${needed}" is missing from ${route}, and her file's structure for that page has it`;
         }
       }
-      // The sign-off she asked to have back on every one of the five.
-      for (const route of [
-        "/services/operational-clarity-audit", "/services/fractional-leadership",
-        "/services/build-and-place", "/services/technology-builds", "/services/uae-market-entry",
-      ]) {
+
+      // Absent: what the meeting took out. Matched on an invariant sentence
+      // rather than on a heading, because two of these headings still appear
+      // elsewhere on their own page: "What we build" heads a list on Technology
+      // Builds and on UAE Market Entry, and "The misconception" is still the
+      // eyebrow over the trading calendar.
+      const absent = [
+        ["/services/operational-clarity-audit", "Roles, ownership and accountability", "the What we look at block"],
+        ["/services/operational-clarity-audit", "An executive summary written for owners", "the What you get block"],
+        ["/services/operational-clarity-audit", "Private conversations surface", "the How we do it block"],
+        ["/services/operational-clarity-audit", "not a filing cabinet", "the What happens after block"],
+        ["/services/operational-clarity-audit", "Pricing and margin engagements", "the pricing block"],
+        ["/services/build-and-place", "The seats we place", "the five role cards"],
+        ["/services/uae-market-entry", "Almost nothing pastes cleanly", "the misconception prose"],
+      ];
+      for (const [route, needle, what] of absent) {
         const html = await (await get(route)).text();
-        if (!/Where (this|it) ends up/.test(html)) return `${route} has no sign-off section`;
+        if (html.includes(needle)) {
+          return `${what} is back on ${route}; the 30 August meeting removed it`;
+        }
+      }
+
+      // The closer she asked to keep on all five, now the dark one her file
+      // builds: eyebrow, heading, line and CTA. Checked by its eyebrow, which
+      // is per page and appears nowhere else on it.
+      const closers = [
+        ["/services/operational-clarity-audit", "Start here", "Almost every engagement begins with the audit."],
+        ["/services/fractional-leadership", "Next step", "Find out which seat is actually missing."],
+        ["/services/build-and-place", "The difference", "A consultant tells you what to do."],
+        ["/services/technology-builds", "Bring us the problem", "An app you want built"],
+        ["/services/uae-market-entry", "Straight answer", "will not make money here."],
+      ];
+      for (const [route, eyebrow, heading] of closers) {
+        const html = await (await get(route)).text();
+        if (!html.includes(eyebrow)) return `${route} has no closer eyebrow ("${eyebrow}")`;
+        if (!html.includes(heading)) return `${route} has no closer heading ("${heading}")`;
       }
       return null;
     },

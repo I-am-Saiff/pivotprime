@@ -146,9 +146,9 @@
     },
     {
       "text": "Almost every engagement begins with the audit.",
-      "status": "removed",
+      "status": "traced",
       "kind": "client-mockup",
-      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record.",
+      "why": "RESTORED 30 August 2026. The meeting note rebuilds each service page to the structure of her own file, pivotprimeservicepages.html, and this is her wording in it. The entry read \"removed 28 August\", which stopped being true the moment the page carried it again. PENDING-COPY 1b7.",
       "route": "/services/operational-clarity-audit",
       "element": "h3"
     },
@@ -176,17 +176,17 @@
     },
     {
       "text": "Where it does not fit",
-      "status": "removed",
+      "status": "traced",
       "kind": "client-mockup",
-      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record.",
+      "why": "RESTORED 30 August 2026. The meeting note rebuilds each service page to the structure of her own file, pivotprimeservicepages.html, and this is her wording in it. The entry read \"removed 28 August\", which stopped being true the moment the page carried it again. PENDING-COPY 1b7.",
       "route": "/services/fractional-coo",
       "element": "h3"
     },
     {
       "text": "Find out which seat is actually missing.",
-      "status": "removed",
+      "status": "traced",
       "kind": "client-mockup",
-      "why": "Visible text in the client's own mockup, req/pivotprime-service-pages.html. The reverse audit checked the copy document, the live site and this file, but not her mockups, so anything taken from one was recorded as ours. Verified as rendered text rather than a script string on 2026-08-25. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record.",
+      "why": "RESTORED 30 August 2026. The meeting note rebuilds each service page to the structure of her own file, pivotprimeservicepages.html, and this is her wording in it. The entry read \"removed 28 August\", which stopped being true the moment the page carried it again. PENDING-COPY 1b7.",
       "route": "/services/fractional-coo",
       "element": "h3"
     },
@@ -606,9 +606,9 @@
     },
     {
       "text": "Nine things we build, and one rule about when we build them",
-      "status": "removed",
+      "status": "traced",
       "kind": "authored",
-      "why": "Written during the rebuild. Heading over the capability grid. Spec 4.4 gives the seven capabilities but no heading for them. PENDING-COPY 1al. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record.",
+      "why": "Authored, not from any source: the capability list needed a heading. It was recorded here as removed on 28 August, but the 29 August restore put it back and it has been rendered ever since, so the record was wrong rather than the page. PENDING-COPY 1al.",
       "route": "/services/technology-builds",
       "element": "h2"
     },
@@ -963,14 +963,6 @@
       "why": "Link label for the Cinnacare and Scentmatic websites, added 29 August on the client's WhatsApp instruction to put www.cinnacare.com and scentmatic.co.uk on those two cards. She gave the URLs and not a label, so this follows the existing 'View the product' on Nurture rather than inventing a second pattern.",
       "route": "/",
       "element": "link"
-    },
-    {
-      "text": "Where this ends up",
-      "status": "traced",
-      "kind": "spec",
-      "why": "Restored 29 August. The client reversed her 28 August instruction to cut the service pages: \"Theres no why this exists you removed too much\". This is spec 4.x copy that was on the page before that cut, put back unchanged. PENDING-COPY 1ar and 1b2.",
-      "route": "/services/operational-clarity-audit",
-      "element": "h2"
     },
     {
       "text": "What the COO seat covers",

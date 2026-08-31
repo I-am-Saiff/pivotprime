@@ -3225,3 +3225,236 @@ Staff and so on).
   is riding on the service name.
 - "Pivot Prime is led by a Mathematician…": "Mathematician" is capitalised in
   the spec's own wording, so it stays.
+
+---
+
+## 1b7. Batch two, page structure — **for Iram**
+
+Your service pages are rebuilt to the structure of `pivotprimeservicepages.html`,
+with the 30 August meeting overriding the file wherever the two disagreed. Your
+email said not to copy the file exactly, so the file gave the section order and
+the meeting gave the content and the colour.
+
+**Every word removed is written out below. Nothing here is gone from the
+repository — say the word on any item and it comes back as it was.**
+
+### The five pages now
+
+| Page | Sections, in order |
+|---|---|
+| Operational Clarity Audit | hero, the as-is versus to-be map with its toggle, closer |
+| Fractional Leadership | hero, the three phase cards, the three seats as a tab set, "Where it does not fit" beside "How it runs", closer |
+| Build and Place | hero, the bench diagram, "What you are not carrying" beside "How it is priced", closer |
+| Technology Builds | hero, a brief introduction and the "What we build" list, "How it runs" with "Where this starts", the philosophy section, closer |
+| UAE Market Entry | hero, the trading calendar with its toggle, "The numbers come first" beside "What we build", closer |
+
+### New on the site, and all of it yours
+
+Three blocks in your file had never been built. They are on the pages now, word
+for word from your file: **"Where it does not fit"** and **"How it runs"** on
+Fractional Leadership, **"What you are not carrying"** on Build and Place, and
+**"The numbers come first"** on UAE Market Entry.
+
+The three seats are a tab set, as you asked: three cards, and the chosen seat's
+duties underneath. All three seats are in the page as it arrives, so a search
+engine reads every one of them; the tabs only decide which is on screen. The
+links that point straight at a seat still work, and now open that seat.
+
+### Removed from the Operational Clarity Audit page
+
+You asked for four blocks out as redundant clutter. They were on the page twice,
+once in your designed pair and once as plain text below it, and both are gone.
+
+- **What we look at.** "The commercial model, pricing, and margin by product,
+  client or service" · "The P&L, cost structure, working capital and how
+  reliably cash is collected" · "How work actually flows day to day, and where it
+  stalls, duplicates or reverses" · "Which decisions route through the founder,
+  and which of those genuinely need to" · "Roles, ownership and accountability,
+  and where they are unclear" · "Where automation or AI would remove real cost,
+  and where it would only add another tool" · "Data: what is captured, what is
+  trusted, and what leaders are actually deciding on"
+- **What you get.** "An as-is versus to-be map of how work runs today and exactly
+  what changes" · "A findings report with every gap ranked by risk and by effort"
+  · "A prioritised roadmap: what to fix now, what can wait, what will move
+  results" · "A baseline set of measurements that the improvements will later be
+  judged against" · "A costed view of what to fix internally and what needs
+  outside capacity" · "An executive summary written for owners and investors, not
+  only for operations"
+- **How we do it.** "One-to-one interviews with the people doing the work, not
+  only the leadership team. Private conversations surface what people will not
+  say in a room." / "Process mapping end to end. A facilitated workshop per
+  function, where the team walks the process on screen and stress tests it
+  together, so the findings are owned rather than imposed. Direct observation
+  where it helps."
+- **What happens after.** "The audit ends with a decision, not a filing cabinet.
+  Some clients take the roadmap and execute it themselves, and that is a
+  legitimate outcome. Most ask us to run some or all of it, which is where the
+  fractional COO retainer, a placed project manager, CFO or engineer, or a
+  technology build comes in. We will tell you plainly which of those the findings
+  actually justify."
+
+**One removal you did not name, and I want you to rule on it.** **Pricing and
+margin engagements** also came off. It is not in your file and it is not in the
+structure the meeting gives this page, so leaving it would have left one plain
+block on an otherwise designed page. It is a service with commercial value and I
+would rather you decided than assumed. Its words: "Sometimes the constraint is
+not the process, it is the price. We look at contribution margin, delivery
+effort, variability and risk across every client, product and contract, then
+design pricing logic you can defend." / "This runs either as part of a full
+audit, or as a standalone piece of work where pricing is clearly the problem."
+
+### Removed from Build and Place
+
+**The seats we place**, five cards. The bench diagram above them already names
+the same six seats, and the block is not in your file or in the structure the
+meeting gives this page.
+
+- *Project management.* "Runs delivery inside your team: the order and project
+  lifecycle, supplier and stakeholder coordination, SLA and timeline tracking,
+  and documentation that outlives the engagement. Used where the plan is clear
+  and the problem is that nothing is being driven."
+- *Finance.* "Fractional CFO support: board and investor reporting, cash, runway
+  and forecasting, collections and credit control, statutory reporting, and
+  readiness for the next round. Used where the founder feels the absence of a
+  finance seat every single week."
+- *Technology.* "Engineers who build the automation, the CRM, the dashboards and
+  the internal tools. Scoped after the diagnosis, never before it. If the work is
+  a standalone build rather than an embedded seat, see Technology Builds."
+- *Marketing and brand.* "Positioning, go-to-market, and the client-facing
+  material that carries it. Used where the operation has been fixed but the
+  business still is not being bought."
+- *Web and digital.* "Website design, build and maintenance, and the digital
+  estate around it. Used where the shopfront no longer matches the business
+  behind it."
+
+### Removed from UAE Market Entry
+
+- **The misconception**, three paragraphs. The trading calendar directly above
+  makes the same argument in one picture. "The most common assumption is that a
+  business which works elsewhere can be copied into Dubai. Almost nothing pastes
+  cleanly." / "The regulatory position changes depending on whether you sit in a
+  free zone or on the mainland. Consumer habits are different: this is a market
+  that lives on delivery apps, expects service levels that would be considered
+  premium elsewhere, and buys through community and word of mouth as much as
+  through marketing." / "The commercial calendar is different too. Ramadan
+  reshapes trading for a month, and a large part of your customer base leaves the
+  country over the summer, so a plan built on twelve even months will miss badly.
+  Heat changes how logistics, storage and footfall work for half the year. And
+  the culture rewards relationships and patience, so businesses that arrive
+  expecting to transact at home-market speed stall in ways they cannot explain."
+- **Where it ends up**, one paragraph, whose second sentence is now the closer's
+  line. The sentence that is no longer on the page: "We take clients from a
+  licence to a functioning, properly priced operation that can actually succeed
+  here."
+
+### Changed on Technology Builds
+
+The order is the meeting's: the philosophy section, the "automate everything
+versus fix the constraint" argument, is at the foot of the page now instead of
+the top, and the list comes first. Not a word of the argument changed, and its
+eyebrow reads "The argument" rather than "The opening argument", since it no
+longer opens anything.
+
+The list reads conversationally now, as you asked. It was nine tiles with an
+icon and a short technical label above each of your sentences; the icons and the
+labels are gone and your sentences are a plain ticked list. **The nine labels
+removed were ours, not yours:** Websites and digital estate · CRM builds ·
+Business process automation · Dashboards and reporting · Systems integration ·
+Internal tools · AI integrations and agents · Agentic web applications · Mobile
+applications.
+
+### The closer at the foot of all five pages
+
+Dark again, with the eyebrow, heading, line and button your file has. It had been
+a light card without an eyebrow, on the earlier note that boxes should not be
+dark green across the site; the meeting is explicit that this one is dark, and
+the meeting wins.
+
+**The eyebrows, headings and lines are now yours**, from the closer on the
+matching page of your file, replacing five that we had written. The five ours
+that went: "Where this ends up" on four pages and "Where it ends up" on UAE
+Market Entry, with the lines "The audit ends with a decision, not a filing
+cabinet. Tell us what is not working and we will tell you plainly whether an
+audit is the right first step." / "People inside your business, sourced, vetted
+and managed by us, with one contract and one accountable party. Tell us the gap
+and we will tell you what it takes to fill it." / "Software that gets used,
+scoped after the diagnosis rather than before it. Tell us the constraint and we
+will tell you whether building is the answer."
+
+**One line of yours is not used.** Your Fractional Leadership closer reads "The
+diagnostic will tell you in four minutes, before anyone quotes you anything."
+The diagnostic is not built yet, so that sentence would promise something the
+site cannot do. Your heading above it is used, and the line under it is the one
+that page already carried. It goes in the moment the diagnostic is live.
+
+### Colour
+
+No gold anywhere, and the two places your file uses it are green: the small
+uppercase labels above each column, and the bordered aside, which is a green rule
+over your EF, #e8f4ec.
+
+**The trading calendar.** Up months are the mid green, dip months a lighter
+green, as you asked, replacing the gold your file uses. Worth knowing: both
+states were painted the same green before this, so the dip months were not
+distinguishable at all and the toggle appeared to change only the heights.
+Measured on the live page: Ramadan, Summer, Heat and Q4 each read at 7.3:1 for
+the green word and 14:1 for the sentence, against a 4.5:1 requirement.
+
+**The Performance Linked Fees box** stays dark green and now leads with
+"Performance Linked Fees" as a heading at a legible size. It was an 11px
+uppercase tag trailing after the sentence, which is what came off. Your sentence
+under it is untouched.
+
+### The three persona pages
+
+Eighteen paragraphs removed so the text reads concise. On **For Founders** and
+**For SMEs**, the second line inside each of the three boxes: "Most founders
+start here. It gives clarity before any hiring or operational changes are made."
+· "Founders usually come here after the diagnostic, when it's clear what needs to
+be taken off their plate." · "This typically follows hiring or growth pressure,
+when the business needs to stabilise at a new level." · "This is where most SMEs
+start. It creates a clear baseline before structural or operational changes are
+made." · "Most SMEs come here after the profit and cash flow review, once it's
+clear where margin instability is coming from." · "This typically follows growth
+or hiring pressure, when the business needs to stabilise at a new level."
+
+On **For P&L Owners**, the same three box lines ("Most CEOs start here when
+growth plateaus, regulation shifts, or competitive pressure increases." ·
+"Typically engaged after priorities are reset, when execution needs senior-level
+coordination, follow-through, and momentum." · "Usually engaged once direction is
+set, to modernise how work actually gets done."), the second paragraph of the
+hero ("The business is stable, but progress is slow, change is expensive, and
+every initiative competes with ten others. Growth exists, but momentum is harder
+to create. Execution happens, but not always in the direction you intend."), and
+each of the three sections cut to a single opening paragraph. Removed there:
+"This is about understanding why you're not moving faster than the market."
+(which restated its own heading almost word for word, so the paragraph after it
+is the one kept) · "This work surfaces where margin and growth are leaking, which
+initiatives are noise versus advantage and what must change to outperform peers,
+not just keep pace." · "The outcome is a small number of moves that materially
+shift trajectory, not a long list of initiatives." · "We operate as a Chief of
+Staff or executive extension to ensure the decisions that matter actually land,
+across functions, regions, and senior teams." · "This includes translating
+strategic intent into executable priorities, managing cross-functional
+dependencies and politics, keeping momentum when priorities collide and giving
+you real visibility on what is moving and what is stuck." · "This is how strategy
+survives scale." · "We help remove friction that limits speed and scale, using
+smarter operating design, automation, and selective AI adoption." · "This is not
+transformation theatre. It is targeted change that improves execution velocity,
+cost discipline, and decision quality without destabilising the organisation."
+
+### Case studies
+
+Modest breathing room under the results panel on each one, set in a single place
+so all three are identical rather than merely similar.
+
+### Two things I did not touch, and think you should see
+
+Neither is from this batch and neither is new, but both are on a page this batch
+rebuilds, so you should know they are there. On the audit page, the two greyed
+"Approval" and "Rework" boxes in the process map read at 3.4:1 against a 4.5:1
+requirement, so they are hard to read for anyone with low vision. They are
+deliberately faded, being the dead ends, and darkening them slightly would fix
+it. Separately, the "Send enquiry" button on the contact page is white on bright
+green at 1.9:1, which is the worst on the site. Both are one-line changes
+whenever you want them.

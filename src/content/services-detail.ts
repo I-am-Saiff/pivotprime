@@ -19,6 +19,48 @@
 
 export type ServiceDetailCard = { title: string; body: string };
 
+/**
+ * The closer at the foot of each service page, 30 August.
+ *
+ * HERS, VERBATIM, out of the `.closer` block on the matching page of
+ * pivotprimeservicepages.html. The pages used to end with a sign-off written
+ * here rather than by her; the meeting note keeps the block and points at her
+ * file for it, so her eyebrow, heading and line are what ship.
+ *
+ * ONE LINE IS NOT HERS. Her Fractional Leadership closer reads "The diagnostic
+ * will tell you in four minutes, before anyone quotes you anything." The
+ * diagnostic is not built, so that sentence would promise an instrument the
+ * site cannot honour. The line kept in its place is the one this page has been
+ * carrying. PENDING-COPY 0.4 and 1b7.
+ */
+export const SERVICE_CLOSERS = {
+  clarityAudit: {
+    eyebrow: "Start here",
+    heading: "Almost every engagement begins with the audit.",
+    body: "We will not commit to owning outcomes in a business we have not properly diagnosed.",
+  },
+  fractional: {
+    eyebrow: "Next step",
+    heading: "Find out which seat is actually missing.",
+    body: "A seat for a season, then a structure that holds without us in it. Tell us what is stretched and we will tell you which seat, and for how long.",
+  },
+  buildAndPlace: {
+    eyebrow: "The difference",
+    heading: "A consultant tells you what to do. A recruiter finds you someone.",
+    body: "Neither one is accountable for whether it worked. That is the gap this service exists to close.",
+  },
+  techBuilds: {
+    eyebrow: "Bring us the problem",
+    heading: "An app you want built, or a process that is eating your team.",
+    body: "Either works. The only technology work we take on is the kind pointed at a real problem.",
+  },
+  marketEntry: {
+    eyebrow: "Straight answer",
+    heading: "We are not interested in launching a business here that will not make money here.",
+    body: "If the model says it will not, we would rather tell you before you spend the money than after.",
+  },
+};
+
 /** Spec 4.3, blocks 6 to 25. */
 export const BUILD_AND_PLACE = {
   whyHeading: "Why this exists",
@@ -49,9 +91,25 @@ export const BUILD_AND_PLACE = {
       body: "Website design, build and maintenance, and the digital estate around it. Used where the shopfront no longer matches the business behind it.",
     },
   ] satisfies ServiceDetailCard[],
+  /**
+   * Her column, out of the Build and Place page of
+   * pivotprimeservicepages.html. The 30 August structure puts this beside "How
+   * it is priced", and neither has been on the page until now.
+   */
+  notCarryingHeading: "What you are not carrying",
+  notCarrying: [
+    "Recruitment risk, and the cost of getting it wrong",
+    "Performance management and the awkward conversation",
+    "Visas, medical cover and end-of-service liability",
+    "A permanent salary for a temporary problem",
+    "Five separate contracts and five separate invoices",
+  ],
   pricedHeading: "How it is priced",
-  priced:
-    "We scope the work with you, agree the days and what good looks like, and put it into a single proposal. You pay Pivot Prime and we pay the delivery partner. If the full team is not affordable, we reduce the scope rather than quietly reducing the quality of who we put in front of you.",
+  /** Spec 4.3, split at her file's paragraph break. Same words either way. */
+  priced: [
+    "We scope the work with you, agree the days and what good looks like, and put it into a single proposal. You pay Pivot Prime and we pay the delivery partner.",
+    "If the full team is not affordable, we reduce the scope rather than quietly reducing the quality of who we put in front of you.",
+  ],
   scopeLine: "Priced on the roles, the days a month and the length of the engagement.",
 };
 
@@ -62,6 +120,17 @@ export const MARKET_ENTRY = {
     "The most common assumption is that a business which works elsewhere can be copied into Dubai. Almost nothing pastes cleanly.",
     "The regulatory position changes depending on whether you sit in a free zone or on the mainland. Consumer habits are different: this is a market that lives on delivery apps, expects service levels that would be considered premium elsewhere, and buys through community and word of mouth as much as through marketing.",
     "The commercial calendar is different too. Ramadan reshapes trading for a month, and a large part of your customer base leaves the country over the summer, so a plan built on twelve even months will miss badly. Heat changes how logistics, storage and footfall work for half the year. And the culture rewards relationships and patience, so businesses that arrive expecting to transact at home-market speed stall in ways they cannot explain.",
+  ],
+  /**
+   * Her left column on the UAE Market Entry page of
+   * pivotprimeservicepages.html, verbatim. The 30 August structure puts it
+   * beside "What we build"; it has not been on the page before.
+   */
+  numbersHeading: "The numbers come first",
+  numbers: [
+    "There are hundreds of company formation experts in Dubai who will get you a licence and sometimes a bank account. We support all of that, but the licence is where we start rather than where we stop.",
+    "Before anything else we build a financial model with you: every assumption priced in, the investment required, the breakeven point and the expected return.",
+    "This is where most international businesses go wrong. They price for this market using home-market assumptions and end up busy but unprofitable.",
   ],
   buildHeading: "What we build",
   build: [
@@ -133,6 +202,31 @@ export const FRACTIONAL_PHASES = [
 /** Her closing line under the phase cards, 22 August wording. */
 export const FRACTIONAL_PHASES_CAPTION =
   "Most businesses do not need a permanent executive. They need executive-level expertise for a defined season, then a much more junior lead running the day-to-day, with us available, not resident.";
+
+/**
+ * The two columns that close the Fractional Leadership page, hers, out of
+ * pivotprimeservicepages.html. Neither has been on the site before: the 30
+ * August structure puts "Where it does not fit" beside "How it runs", after the
+ * seats and before the closer.
+ *
+ * The first is the page's honest disqualifier, which is why it is worth having:
+ * it names the three cases where this service is the wrong answer.
+ */
+export const FRACTIONAL_FIT = {
+  notFitHeading: "Where it does not fit",
+  notFit:
+    "A complex operation with 200 or more staff, several products and sites in multiple countries needs a permanent COO. A Chief of Staff seat only works where there is a leadership team to serve. And if the problem is one defined project rather than the way the business runs, you need a project manager, which costs less.",
+  howHeading: "How it runs",
+  how: [
+    "Almost every retainer begins with an Operational Clarity Audit, because we will not commit to owning outcomes in a business we have not properly diagnosed. The audit also tells us what the retainer needs to cover, which is why we scope it afterwards rather than before.",
+    "The CFO seat is the exception. Where the need is cash, reporting or an imminent raise, we can start there and diagnose alongside it.",
+    "Three-month minimum, reviewed quarterly. A meaningful part of the fee can be structured against agreed KPIs.",
+  ],
+  /** Her section head above the three seat cards. */
+  seatsEyebrow: "The seats we fill",
+  seatsHeading: "Three seats.",
+  seatsHeadingAccent: "Pick the one that is missing.",
+};
 
 export const FRACTIONAL = {
   whyHeading: "Why this exists",
@@ -264,7 +358,13 @@ export const TECH_BUILDS = {
     heading: "An app you want built, or a process that is eating your team.",
     body: "Either works. The only technology work we take on is the kind pointed at a real problem.",
   },
-  howItRuns: "We scope the build against a defined problem and agree what it has to change. We build it, test it with the people who will actually use it, and hand it over with documentation rather than a demo. If you want us to run and maintain it afterwards, we can. If you want to own it outright, you own it, including the code.",
+  howItRunsHeading: "How it runs",
+  /** Spec 4.4, split at her file's paragraph break. Same words either way. */
+  howItRuns: [
+    "We scope the build against a defined problem and agree what it has to change. We build it, test it with the people who will actually use it, and hand it over with documentation rather than a demo.",
+    "If you want us to run and maintain it afterwards, we can. If you want to own it outright, you own it, including the code.",
+  ],
+  whereThisStartsHeading: "Where this starts",
   whereThisStarts: "If you already know what you need built, we can start there. If you are not certain the technology is the actual constraint, start with an Operational Clarity Audit, and we will tell you honestly whether a build is the right answer.",
 };
 

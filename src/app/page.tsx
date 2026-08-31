@@ -461,15 +461,23 @@ export default function Home() {
                   forest now the ground is light. The two lines sit side by side
                   from sm up so the band reads as one horizontal rule across the
                   foot of the box rather than as two stacked lines. */}
-{/* HER NAMED EXCEPTION, 30 August: this box stays dark green with a
-                  clear heading while everything around it lightens. It was cream
-                  at the time, so honouring that meant returning it to dark. */}
-              <div className="mt-3 flex flex-col items-center justify-center gap-x-5 gap-y-1.5 rounded-2xl bg-forest px-5 py-4 text-center ring-1 ring-neon/40 sm:flex-row sm:px-6">
-                <p className="text-[15px] font-bold leading-snug text-white sm:text-lg">
+{/* HER NAMED EXCEPTION, 30 and 31 August: this box stays dark
+                  green with a clear heading. It was cream when she named it, so
+                  honouring "stays dark green" meant returning it to dark.
+
+                  THE HEADING IS A HEADING NOW. "Performance Linked Fee" was an
+                  11px uppercase label trailing after the sentence, which is a
+                  tag rather than the clear heading she asked for. It leads the
+                  box at a legible size, and the small trailing label it used to
+                  be is the extraneous text that goes with the change. No word of
+                  hers is deleted: the sentence under it is her pull box
+                  verbatim. PENDING-COPY 1b7. */}
+              <div className="mt-3 rounded-2xl bg-forest px-5 py-5 text-center ring-1 ring-neon/40 sm:px-6">
+                <h3 className="font-sans text-base font-bold tracking-tight text-neon sm:text-lg">
+                  Performance Linked Fees
+                </h3>
+                <p className="mt-2 text-[15px] font-bold leading-snug text-white sm:text-lg">
                   {HOW_WE_ARE_PAID.commitment.body}
-                </p>
-                <p className="text-[11px] font-bold tracking-[0.2em] text-neon uppercase">
-                  Performance Linked Fee
                 </p>
               </div>
             </div>

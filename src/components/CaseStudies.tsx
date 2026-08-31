@@ -136,7 +136,10 @@ export default function CaseStudies({
         {studies.map((study, i) => (
           <li
             key={study.id}
-            className="flex flex-shrink-0 w-full snap-center frosted-card-light rounded-[28px] p-5 sm:p-8 md:p-9 shadow-sm"
+            // Modest breathing room under the results panel, from 30 August,
+            // and one class so it is the same on every card rather than three
+            // cards that happen to look similar.
+            className="flex flex-shrink-0 w-full snap-center frosted-card-light rounded-[28px] p-5 pb-9 sm:p-8 sm:pb-12 md:p-9 md:pb-14 shadow-sm"
           >
             {/* ONE COLUMN OF ARGUMENT, THE PICTURE BESIDE IT.
 
