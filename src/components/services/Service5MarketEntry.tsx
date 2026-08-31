@@ -1,6 +1,6 @@
 "use client";
 
-import { Lab, TickList, ServiceSignOff } from "./SpecCopyBlocks";
+import { PairDark, PairLight, TickList, ServiceSignOff } from "./SpecCopyBlocks";
 import { MARKET_ENTRY, SERVICE_CLOSERS } from "@/content/services-detail";
 
 import { useState } from "react";
@@ -88,18 +88,19 @@ export default function Service5MarketEntry() {
                 const isDip = calMode === 1 && d.dip;
                 return (
                   <div key={i} className="relative flex flex-col justify-end h-full">
-                    {/* HER 30 AUGUST COLOUR OVERRIDE: up months green, dip
-                        months a lighter green. Her file paints the dips in
-                        --gold and the standing instruction is that no gold
-                        appears anywhere, so the lighter value is neon, the next
-                        green up in the same swatch.
+                    {/* UP MONTHS GREEN, DIP MONTHS WHITE, from 31 August.
 
-                        Both branches read bg-mid before this, which is the same
-                        colour twice: the dip months were not distinguishable
-                        from the rest at all, so the toggle changed the heights
-                        and nothing else. */}
+                        Three states in three days, because each one was not
+                        separable enough on the dark panel. Both branches read
+                        bg-mid to begin with, which is the same colour twice, so
+                        the dips were not distinguishable at all. Neon made them
+                        differ but only as two shades of green, which is what she
+                        ruled out. White is unambiguous against both the mid
+                        green bars and the forest panel behind them, and it is
+                        not a new colour: her file's gold is what it replaces,
+                        and no gold appears anywhere on the site. */}
                     <div
-                      className={`rounded-t-sm md:rounded-t-md transition-all duration-[900ms] ease-[cubic-bezier(.6,.02,.2,1)] ${isDip ? "bg-neon" : "bg-mid"}`}
+                      className={`rounded-t-sm md:rounded-t-md transition-all duration-[900ms] ease-[cubic-bezier(.6,.02,.2,1)] ${isDip ? "bg-white" : "bg-mid"}`}
                       style={{ height: `${h}%` }}
                     />
                     <div className="text-center font-sans font-semibold text-[8.5px] md:text-[10px] text-[#5e6f68] mt-2 tracking-[0.04em] absolute -bottom-6 left-0 right-0">
@@ -144,23 +145,19 @@ export default function Service5MarketEntry() {
           are preserved in docs/PENDING-COPY.md 1b7 and both stay in
           MARKET_ENTRY. */}
       <section className="surface-page px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
-        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2 md:gap-12">
-          <div>
-            <Lab>{MARKET_ENTRY.numbersHeading}</Lab>
-            <div className="mt-3 space-y-3">
+        <div className="mx-auto grid max-w-5xl items-stretch gap-5 md:grid-cols-2 md:gap-6">
+          <PairLight label={MARKET_ENTRY.numbersHeading}>
+            <div className="space-y-3">
               {MARKET_ENTRY.numbers.map((paragraph) => (
                 <p key={paragraph.slice(0, 40)} className="leading-relaxed text-forest/75">
                   {paragraph}
                 </p>
               ))}
             </div>
-          </div>
-          <div>
-            <Lab>{MARKET_ENTRY.buildHeading}</Lab>
-            <div className="mt-3">
-              <TickList items={MARKET_ENTRY.build} />
-            </div>
-          </div>
+          </PairLight>
+          <PairDark label={MARKET_ENTRY.buildHeading}>
+            <TickList items={MARKET_ENTRY.build} onDark />
+          </PairDark>
         </div>
       </section>
       <ServiceSignOff {...SERVICE_CLOSERS.marketEntry} />

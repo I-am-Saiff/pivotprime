@@ -3531,3 +3531,66 @@ white panel by its border and by the panel's dot texture, which is what stops th
 two reading as one flat area. The green line under the heading measures 3.5:1 on
 white, which is better than the 3.1:1 it had on the EF green, though still on the
 low side if you ever want it darkened.
+
+---
+
+## 1c0. Pairs, the capability grid, and the calendar — **for Iram**
+
+**Left white, right dark green, on every two-column pair.** Four pairs now follow
+it, and all four are built from one definition so they cannot drift apart:
+
+| Page | White, left | Dark green, right |
+|---|---|---|
+| Fractional Leadership | "What the COO seat covers" and the seat's summary | the seat's duties |
+| Fractional Leadership | "Where it does not fit" | "How it runs" |
+| Build and Place | "What you are not carrying" | "How it is priced" |
+| UAE Market Entry | "The numbers come first" | "What we build" |
+
+Both halves of the seat panel were plain text on the page background until now,
+and "Where it does not fit" was the bordered aside. The philosophy pair at the
+foot of Technology Builds already followed the rule and has been aligned to the
+same white and the same border, so all five pairs on the site match.
+
+The dark half copies the case study results panel: the same fill, the same white
+border, the same shadow, white body text and the label in bright green, which
+measures 7.3:1 for the label and 14:1 for the text. **One thing from that panel
+is deliberately not copied:** its faint dot texture. Your 29 August instruction
+was to take the dot pattern off every dark background on the service pages, and
+nothing since has reversed it, so the cards are plain. Say the word if you want
+the texture on them and it is one line.
+
+**Technology Builds: the grid is back.** The nine capability cards are restored
+exactly as they were before batch two, out of the commit that was live when you
+saw them: the faded line background, the mark on each card, the name and the
+short description. The section reads eyebrow, heading, the line about scoping,
+then the grid. Batch two had replaced this with a plain ticked list, on the
+instruction that the list should read conversationally; the grid is what you
+asked for on the call and the list is gone.
+
+**Two blocks removed from that page**, both of which had been on it for one day.
+Preserved here in full:
+
+- **How it runs.** "We scope the build against a defined problem and agree what
+  it has to change. We build it, test it with the people who will actually use
+  it, and hand it over with documentation rather than a demo." / "If you want us
+  to run and maintain it afterwards, we can. If you want to own it outright, you
+  own it, including the code."
+- **Where this starts.** "If you already know what you need built, we can start
+  there. If you are not certain the technology is the actual constraint, start
+  with an Operational Clarity Audit, and we will tell you honestly whether a
+  build is the right answer."
+
+A note so it is not confusing later: "How it runs" is still a heading on
+Fractional Leadership. That is a different block with the same name, and it
+stays.
+
+The philosophy section and the sign-off are where batch two put them, at the end
+and after it.
+
+**The calendar dips are white.** This is the third colour in three days for these
+bars, and the first two were both wrong for the same reason: they were not
+separable enough. They started as the same green as the up months, which made the
+dips invisible; then a lighter green, which you ruled out as two shades of green.
+White is unambiguous against both the green bars and the dark panel behind them.
+It is not a new colour on the site, and it replaces the gold your own file uses,
+which no longer appears anywhere.

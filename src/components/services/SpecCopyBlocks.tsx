@@ -54,15 +54,24 @@ export function SectionHead({
   );
 }
 
-/** Her `.ticks`: a list with the mid green tick disc against each line. */
-export function TickList({ items }: { items: string[] }) {
+/**
+ * Her `.ticks`: a list with the tick disc against each line.
+ *
+ * onDark inverts the disc for a list inside the dark half of a pair: neon disc
+ * with a forest tick, which is the treatment the right-hand cards have carried
+ * since 29 August. Mid green discs on the dark fill would be nearly invisible.
+ */
+export function TickList({ items, onDark = false }: { items: string[]; onDark?: boolean }) {
   return (
     <ul className="grid gap-3">
       {items.map((item) => (
-        <li key={item} className="flex items-start gap-3 text-[15.5px] text-forest">
+        <li
+          key={item}
+          className={`flex items-start gap-3 text-[15.5px] ${onDark ? "text-white" : "text-forest"}`}
+        >
           <span
             aria-hidden="true"
-            className="mt-1 flex h-[17px] w-[17px] flex-shrink-0 items-center justify-center rounded-full bg-mid"
+            className={`mt-1 flex h-[17px] w-[17px] flex-shrink-0 items-center justify-center rounded-full ${onDark ? "bg-neon" : "bg-mid"}`}
           >
             {/* The tick is drawn in the inherited colour rather than a
                 literal, so this file needs no entry in the palette guard's
@@ -74,7 +83,7 @@ export function TickList({ items }: { items: string[] }) {
               strokeWidth="3.4"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="h-2.5 w-2.5 text-white"
+              className={`h-2.5 w-2.5 ${onDark ? "text-forest" : "text-white"}`}
             >
               <polyline points="20 6 9 17 4 12" />
             </svg>
@@ -83,6 +92,71 @@ export function TickList({ items }: { items: string[] }) {
         </li>
       ))}
     </ul>
+  );
+}
+
+/**
+ * THE TWO-COLUMN PAIR: white on the left, dark green on the right, every time.
+ *
+ * Her 31 August instruction, and the rule the site has been applying to pairs
+ * since 29 August, now applied to the content pairs on the service pages as
+ * well. Both halves are defined here once, so the four pairs across four pages
+ * cannot drift from each other the way two copies of a card already have on
+ * this branch.
+ *
+ * THE DARK HALF MATCHES THE CASE STUDY RESULTS PANEL: the same
+ * --card-dark-fill, the same white border at a tenth, the same shadow, white
+ * body text and the label in neon. It uses the .card-dark class to get that
+ * fill, which also carries the descendant remap, so a list or a paragraph
+ * written for a light ground is repainted for the dark one rather than needing
+ * a second set of classes at every call site.
+ *
+ * ONE THING FROM THAT PANEL IS DELIBERATELY NOT COPIED: its radial dot texture.
+ * The 29 August instruction was to take the dot pattern off every dark
+ * background on the service pages, and that instruction has not been reversed.
+ * PENDING-COPY 1c0.
+ */
+export function PairLight({
+  label,
+  labelAs = "div",
+  children,
+}: {
+  label?: string;
+  labelAs?: "div" | "h3";
+  children: React.ReactNode;
+}) {
+  const Label = labelAs;
+  return (
+    <div className="rounded-2xl border border-forest/10 bg-white p-6 shadow-sm sm:p-7">
+      {label ? (
+        <Label className="font-sans text-[10.5px] font-semibold tracking-[0.2em] text-mid uppercase">
+          {label}
+        </Label>
+      ) : null}
+      <div className={label ? "mt-3" : ""}>{children}</div>
+    </div>
+  );
+}
+
+export function PairDark({
+  label,
+  labelAs = "div",
+  children,
+}: {
+  label?: string;
+  labelAs?: "div" | "h3";
+  children: React.ReactNode;
+}) {
+  const Label = labelAs;
+  return (
+    <div className="card-dark rounded-2xl border border-white/10 p-6 shadow-xl sm:p-7">
+      {label ? (
+        <Label className="font-sans text-[10.5px] font-semibold tracking-[0.2em] text-neon uppercase">
+          {label}
+        </Label>
+      ) : null}
+      <div className={label ? "mt-3" : ""}>{children}</div>
+    </div>
   );
 }
 

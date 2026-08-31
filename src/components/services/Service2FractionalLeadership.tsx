@@ -2,7 +2,7 @@
 
 import { useState, useSyncExternalStore } from "react";
 
-import { Lab, NoteCard, SectionHead, ServiceSignOff } from "./SpecCopyBlocks";
+import { PairDark, PairLight, SectionHead, ServiceSignOff } from "./SpecCopyBlocks";
 import { FRACTIONAL_FIT, SEATS, SERVICE_CLOSERS } from "@/content/services-detail";
 import { SEAT_IDS, seatIndexFromHash } from "@/lib/seat-anchors";
 
@@ -210,25 +210,26 @@ export default function Service2FractionalLeadership() {
               key={seat.title}
               id={`${SEAT_IDS[i]}-panel`}
               hidden={i !== openSeat}
-              className="mt-6 border-t border-forest/10 pt-6 md:grid md:grid-cols-2 md:gap-10"
+              className="mt-6 grid gap-5 md:grid-cols-2 md:gap-6"
             >
-              <div>
-                <h3 className="font-sans text-[10.5px] font-semibold tracking-[0.2em] text-mid uppercase">
-                  {seat.h}
-                </h3>
-                <p className="mt-3 leading-relaxed text-forest/70">{seat.n}</p>
-              </div>
-              <ul className="mt-5 grid gap-2.5 md:mt-0">
-                {seat.l.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-[15.5px] text-forest/85">
-                    <span
-                      aria-hidden="true"
-                      className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-mid"
-                    />
-                    <span className="leading-relaxed">{item}</span>
-                  </li>
-                ))}
-              </ul>
+              {/* Left white, right dark green, her 31 August rule. Both halves
+                  were plain text on the page ground until now. */}
+              <PairLight label={seat.h} labelAs="h3">
+                <p className="leading-relaxed text-forest/70">{seat.n}</p>
+              </PairLight>
+              <PairDark>
+                <ul className="grid gap-2.5">
+                  {seat.l.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-[15.5px] text-white">
+                      <span
+                        aria-hidden="true"
+                        className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-neon"
+                      />
+                      <span className="leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </PairDark>
             </div>
           ))}
         </div>
@@ -239,18 +240,21 @@ export default function Service2FractionalLeadership() {
           neither has been on this page before. The aside is her `.notefit`,
           which is gold in her file and green here. */}
       <section className="surface-page px-4 pb-10 sm:px-6 sm:pb-16 lg:px-8">
-        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2 md:gap-12">
-          <NoteCard heading={FRACTIONAL_FIT.notFitHeading} body={FRACTIONAL_FIT.notFit} />
-          <div>
-            <Lab>{FRACTIONAL_FIT.howHeading}</Lab>
-            <div className="mt-3 space-y-3">
+        <div className="mx-auto grid max-w-5xl items-stretch gap-5 md:grid-cols-2 md:gap-6">
+          {/* "Where it does not fit" was her gold-turned-green aside; it is the
+              white half of the pair now, on her 31 August instruction. */}
+          <PairLight label={FRACTIONAL_FIT.notFitHeading} labelAs="h3">
+            <p className="leading-relaxed text-forest/75">{FRACTIONAL_FIT.notFit}</p>
+          </PairLight>
+          <PairDark label={FRACTIONAL_FIT.howHeading}>
+            <div className="space-y-3">
               {FRACTIONAL_FIT.how.map((paragraph) => (
-                <p key={paragraph.slice(0, 40)} className="leading-relaxed text-forest/75">
+                <p key={paragraph.slice(0, 40)} className="leading-relaxed text-white/90">
                   {paragraph}
                 </p>
               ))}
             </div>
-          </div>
+          </PairDark>
         </div>
       </section>
 

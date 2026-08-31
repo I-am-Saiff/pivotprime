@@ -473,8 +473,12 @@ const DECISIONS = [
         ["/services/fractional-leadership", "How it runs"],
         ["/services/build-and-place", "What you are not carrying"],
         ["/services/build-and-place", "How it is priced"],
-        ["/services/technology-builds", "Where this starts"],
         ["/services/uae-market-entry", "The numbers come first"],
+        // Her capability grid, restored 31 August. Batch two had it as a plain
+        // tick list; the label below is on the card and not in the sentence, so
+        // it is absent whenever the list version is what renders.
+        ["/services/technology-builds", "Websites and digital estate"],
+        ["/services/technology-builds", "Agentic web applications"],
       ];
       for (const [route, needed] of present) {
         const html = await (await get(route)).text();
@@ -496,6 +500,12 @@ const DECISIONS = [
         ["/services/operational-clarity-audit", "Pricing and margin engagements", "the pricing block"],
         ["/services/build-and-place", "The seats we place", "the five role cards"],
         ["/services/uae-market-entry", "Almost nothing pastes cleanly", "the misconception prose"],
+        // Both added by batch two out of her file and removed the next day.
+        // "How it runs" is matched on its first sentence rather than on the
+        // heading, because the heading is still correct on Fractional
+        // Leadership, where it names a different block.
+        ["/services/technology-builds", "Where this starts", "the Where this starts aside"],
+        ["/services/technology-builds", "We scope the build against a defined problem", "the How it runs block"],
       ];
       for (const [route, needle, what] of absent) {
         const html = await (await get(route)).text();

@@ -1,6 +1,6 @@
 "use client";
 
-import { Lab, TickList, ServiceSignOff } from "./SpecCopyBlocks";
+import { PairDark, PairLight, TickList, ServiceSignOff } from "./SpecCopyBlocks";
 import { BUILD_AND_PLACE, SERVICE_CLOSERS } from "@/content/services-detail";
 
 import { useRevealOnScroll } from "@/lib/use-reveal-on-scroll";
@@ -149,23 +149,19 @@ export default function Service3BuildPlace() {
           seats. Every word is preserved in docs/PENDING-COPY.md 1b7 and stays
           in BUILD_AND_PLACE.cards, so putting them back is a render. */}
       <section className="surface-page px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
-        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2 md:gap-12">
-          <div>
-            <Lab>{BUILD_AND_PLACE.notCarryingHeading}</Lab>
-            <div className="mt-3">
-              <TickList items={BUILD_AND_PLACE.notCarrying} />
-            </div>
-          </div>
-          <div>
-            <Lab>{BUILD_AND_PLACE.pricedHeading}</Lab>
-            <div className="mt-3 space-y-3">
+        <div className="mx-auto grid max-w-5xl items-stretch gap-5 md:grid-cols-2 md:gap-6">
+          <PairLight label={BUILD_AND_PLACE.notCarryingHeading}>
+            <TickList items={BUILD_AND_PLACE.notCarrying} />
+          </PairLight>
+          <PairDark label={BUILD_AND_PLACE.pricedHeading}>
+            <div className="space-y-3">
               {BUILD_AND_PLACE.priced.map((paragraph) => (
-                <p key={paragraph.slice(0, 40)} className="leading-relaxed text-forest/75">
+                <p key={paragraph.slice(0, 40)} className="leading-relaxed text-white/90">
                   {paragraph}
                 </p>
               ))}
             </div>
-          </div>
+          </PairDark>
         </div>
       </section>
       <ServiceSignOff {...SERVICE_CLOSERS.buildAndPlace} />
