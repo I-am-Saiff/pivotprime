@@ -71,9 +71,9 @@ export default function PatternsList() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           {/* Label + description */}
           <div className="min-w-0">
-            <p className="text-xs font-bold uppercase tracking-wider text-neon leading-tight">
+            <p className="text-[13px] font-bold text-neon leading-tight">
               {selectedCount > 0
-                ? `${selectedCount} Operational Blocker${selectedCount > 1 ? "s" : ""} Identified`
+                ? `${selectedCount} operational blocker${selectedCount > 1 ? "s" : ""} identified`
                 : "Select the symptoms that sound familiar"}
             </p>
             <p className="text-sm text-white/90 font-medium mt-1 leading-snug">
