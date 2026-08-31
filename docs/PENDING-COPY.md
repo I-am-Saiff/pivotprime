@@ -3293,11 +3293,10 @@ once in your designed pair and once as plain text below it, and both are gone.
   technology build comes in. We will tell you plainly which of those the findings
   actually justify."
 
-**One removal you did not name, and I want you to rule on it.** **Pricing and
-margin engagements** also came off. It is not in your file and it is not in the
-structure the meeting gives this page, so leaving it would have left one plain
-block on an otherwise designed page. It is a service with commercial value and I
-would rather you decided than assumed. Its words: "Sometimes the constraint is
+**Pricing and margin engagements** came off with them. It was on your list at the
+meeting alongside "What we look at" and "What you get", so this is your
+instruction rather than a judgement of ours, and it is off for good unless you
+say otherwise. Its words, kept here like the rest: "Sometimes the constraint is
 not the process, it is the price. We look at contribution margin, delivery
 effort, variability and risk across every client, product and contract, then
 design pricing logic you can defend." / "This runs either as part of a full
@@ -3381,11 +3380,16 @@ and we will tell you what it takes to fill it." / "Software that gets used,
 scoped after the diagnosis rather than before it. Tell us the constraint and we
 will tell you whether building is the answer."
 
-**One line of yours is not used.** Your Fractional Leadership closer reads "The
-diagnostic will tell you in four minutes, before anyone quotes you anything."
-The diagnostic is not built yet, so that sentence would promise something the
-site cannot do. Your heading above it is used, and the line under it is the one
-that page already carried. It goes in the moment the diagnostic is live.
+**One line of yours is held, and here is exactly what releases it.** Your
+Fractional Leadership closer reads "The diagnostic will tell you in four minutes,
+before anyone quotes you anything." The diagnostic is not built yet, so that
+sentence would promise something the site cannot do. Your heading above it is
+used, and the line under it is the one that page already carried.
+
+> **Trigger:** it is a one-line swap the day the diagnostic ships. That needs
+> your 12-question quiz, which has not arrived yet. When the quiz is on the site
+> and answering, your line replaces the holding one and the closer is yours end
+> to end. Nothing else on the page changes.
 
 ### Colour
 
@@ -3401,9 +3405,10 @@ Measured on the live page: Ramadan, Summer, Heat and Q4 each read at 7.3:1 for
 the green word and 14:1 for the sentence, against a 4.5:1 requirement.
 
 **The Performance Linked Fees box** stays dark green and now leads with
-"Performance Linked Fees" as a heading at a legible size. It was an 11px
-uppercase tag trailing after the sentence, which is what came off. Your sentence
-under it is untouched.
+"Performance Linked Fees" as a heading at a legible size, which is what
+"extraneous text removed, focus on the heading" asked for. The heading was an
+11px uppercase tag trailing after the sentence; that tag is the extraneous text
+and it is gone. Your sentence under it is untouched, word for word.
 
 ### The three persona pages
 
@@ -3448,13 +3453,39 @@ cost discipline, and decision quality without destabilising the organisation."
 Modest breathing room under the results panel on each one, set in a single place
 so all three are identical rather than merely similar.
 
-### Two things I did not touch, and think you should see
+### One thing left, on a page this batch rebuilds
 
-Neither is from this batch and neither is new, but both are on a page this batch
-rebuilds, so you should know they are there. On the audit page, the two greyed
-"Approval" and "Rework" boxes in the process map read at 3.4:1 against a 4.5:1
-requirement, so they are hard to read for anyone with low vision. They are
-deliberately faded, being the dead ends, and darkening them slightly would fix
-it. Separately, the "Send enquiry" button on the contact page is white on bright
-green at 1.9:1, which is the worst on the site. Both are one-line changes
-whenever you want them.
+On the audit page, the two greyed "Approval" and "Rework" boxes in the process
+map read at 3.4:1 against a 4.5:1 requirement, so they are hard to read for
+anyone with low vision. They are deliberately faded, being the dead ends of the
+messy process, so this is a design intention slightly overshot rather than a
+mistake. Darkening them a little fixes it and keeps the effect. Not changed,
+because it was not in this batch. One line whenever you want it.
+
+The "Send enquiry" button, which was in the same position, **is fixed** — see
+1b8 below.
+
+---
+
+## 1b8. The "Send enquiry" button is readable — **for Iram**
+
+The submit button on the contact page was **white on bright green at 1.9:1**,
+against a 4.5:1 requirement. It was the worst contrast on the site, on the one
+button the whole site exists to get pressed, and it had been reported four times
+without being fixed. It reads in **forest green on your bright green at 7.3:1**
+now, which is the same treatment every other primary button on the site already
+uses.
+
+**It was never written as white.** The button has always asked for the dark green
+label. The form around it is one of the dark cards, and those cards carry a rule
+that turns dark text white so that writing on them stays readable, which is right
+everywhere except on a bright green button sitting inside one. The button is now
+marked as an exception to that rule, using the same mechanism that already fixes
+the pale labels inside the diagrams on the service pages.
+
+The hover changed with it: it used to go dark green with a white label, which
+the fix would have turned into dark green on dark green. It goes white on hover
+now, which is what your other bright green buttons do, and the label stays dark
+green in both states, at 14:1 on the white.
+
+No new colours. Palette values only.

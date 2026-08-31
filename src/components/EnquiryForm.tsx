@@ -196,7 +196,20 @@ export default function EnquiryForm({
       <button
         type="submit"
         disabled={state === "sending"}
-        className="w-full rounded-xl bg-neon px-8 py-3.5 font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-forest hover:text-white hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:outline-none disabled:opacity-70 text-xs"
+        // THE LABEL WAS WHITE ON NEON AT 1.92:1, the worst ratio on the site,
+        // on the one button that has to work. It was not written that way: the
+        // class here has always said text-forest, and the form around it is
+        // .card-dark, whose descendant remap repaints every text-forest child
+        // white. That is right for text sitting on the dark form and wrong for a
+        // label sitting on a bright green button inside it, which is the exact
+        // case data-on-light was added for. Forest on neon measures 7.29:1.
+        //
+        // The hover went with it. It used to swap to forest with white text,
+        // which data-on-light would have turned forest on forest. It is white
+        // now, which is what every other neon button on the site does, and the
+        // label stays forest in both states at 13.98:1.
+        data-on-light="true"
+        className="w-full rounded-xl bg-neon px-8 py-3.5 font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-white hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:outline-none disabled:opacity-70 text-xs"
       >
         {state === "sending" ? "Sending..." : ENQUIRY_SUBMIT_CTA.label}
       </button>
