@@ -246,14 +246,15 @@ export default function Home() {
           knows which service it points to. Spec 3.5. */}
       <section className="surface-page px-4 pb-14 sm:pb-24 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
-          {/* Green heading over white chips, on the client's 28 August
-              instruction: it was a black heading over cream chips. The mid
-              green rather than the neon, because neon on the cream ground is
-              barely legible at heading weight. */}
+          {/* The heading is black again, on her 31 August instruction. It was
+              black over cream chips, went green on 28 August with the chips,
+              and is black over the white chips now. The eyebrow stays green:
+              she named the heading only. Black on the page ground is 18.9:1
+              against the 4.0:1 the mid green managed. */}
           <p className="mb-4 text-xs font-semibold tracking-[0.18em] text-mid uppercase">
             {PATTERNS.eyebrow}
           </p>
-          <h2 className="mb-7 sm:mb-10 text-3xl font-extrabold tracking-tight text-mid md:text-4xl lg:text-5xl">
+          <h2 className="mb-7 sm:mb-10 text-3xl font-extrabold tracking-tight text-foreground md:text-4xl lg:text-5xl">
             {PATTERNS.heading}
           </h2>
           <PatternsList />
@@ -375,7 +376,13 @@ export default function Home() {
               heading, the lead and both lower boxes move to forest and mid.
               The dot grid was white at 7% and is invisible on cream, so it is
               forest at 6% instead: same texture, same idea, readable ground. */}
-          <div className="relative overflow-hidden rounded-3xl border border-forest/10 bg-mist px-5 py-8 sm:px-10 sm:py-12 md:px-14 md:py-14">
+          {/* WHITE, from 31 August, matching the other cards on the page. It
+              was cream, then mist on the EF instruction, and she has now taken
+              it to white. The two comparison boxes and the calculator inside it
+              keep the fills they have. The dot grid is what separates the white
+              traditional-model box from the white panel behind it: the panel is
+              textured, the box is flat with a border. */}
+          <div className="relative overflow-hidden rounded-3xl border border-forest/10 bg-white px-5 py-8 sm:px-10 sm:py-12 md:px-14 md:py-14">
             {/* Dot-grid texture */}
             <div
               aria-hidden="true"

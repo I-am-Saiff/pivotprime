@@ -32,7 +32,14 @@ export default function KpiVisual({ metric, index }: { metric: Metric; index: nu
   const [ref, run] = useRevealOnScroll<HTMLDivElement>(index * 70);
 
   return (
-    <div ref={ref} className="mb-[18px] flex min-h-[96px] flex-1 items-center" aria-hidden="true">
+    <div
+      ref={ref}
+      // data-kpi-visual is the hook the rotating state scales up, alongside
+      // data-kpi-figure on the metric. Her static grid keeps the 96px well.
+      data-kpi-visual
+      className="mb-[18px] flex min-h-[96px] flex-1 items-center"
+      aria-hidden="true"
+    >
       {metric.visual === "track" && <Track run={run} />}
       {metric.visual === "before-after-blocks" && <Waste run={run} />}
       {metric.visual === "dot-grid" && <Dots run={run} />}

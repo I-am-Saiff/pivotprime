@@ -152,7 +152,15 @@ export default function CaseStudies({
                 reading order, and the picture is alone on the right where it
                 spans both of them. Cards with no picture use the same order in
                 one column, so every card reads the same way. PENDING-COPY 1i. */}
-            <div className="grid h-full gap-5 sm:gap-6 lg:grid-cols-12 lg:gap-10">
+            {/* content-start is what actually closes the gap. Every card in
+                the carousel takes the height of the tallest, and a grid with
+                h-full and no content alignment stretches its ROWS to fill that
+                height, so aligning the panel inside row two still left the
+                surplus above it. With the rows at their natural height the
+                surplus falls to the foot of the card instead. Measured: the
+                self-start change alone took Cinnacare from 148px to 78px, and
+                this takes it to the same gap Nurture has. */}
+            <div className="grid h-full content-start gap-5 sm:gap-6 lg:grid-cols-12 lg:gap-x-10 lg:gap-y-6">
               {/* The argument. */}
               <div
                 className={`space-y-5 ${study.photo ? "lg:col-span-7 lg:col-start-1 lg:row-start-1" : "lg:col-span-12"}`}
@@ -251,8 +259,19 @@ export default function CaseStudies({
 
                   No guard on the list length any more: every study has results,
                   which is checked by check-content rather than assumed here. */}
+              {/* self-START, from 31 August. It was self-end, on the reasoning
+                  that pushing the panel down would stop a short card leaving a
+                  gap above it. It did the opposite. Every card in the carousel
+                  takes the height of the tallest, so on all but that one card
+                  the surplus was dumped between the button and the panel:
+                  measured on the live site at 148px on Cinnacare, 154px on
+                  Scentmatic and up to 336px on the /about-only cards, against
+                  40px on Nurture, which is the card setting the height. The
+                  panel now sits directly under the argument on every card and
+                  the surplus falls to the foot of the card, where it reads as
+                  the breathing room added on 30 August. */}
               <div
-                className={`w-full self-end ${study.photo ? "lg:col-span-7 lg:col-start-1 lg:row-start-2" : "lg:col-span-12"}`}
+                className={`w-full self-start ${study.photo ? "lg:col-span-7 lg:col-start-1 lg:row-start-2" : "lg:col-span-12"}`}
               >
                 <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-[var(--card-dark-fill)] p-5 text-white shadow-xl sm:p-6">
                   <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />

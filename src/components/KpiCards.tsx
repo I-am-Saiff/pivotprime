@@ -65,6 +65,10 @@ export default function KpiCards() {
               to 42px in her file because the range is twice as long. */}
           {metric.figureText !== null && (
             <p
+              // data-kpi-figure is the hook the rotating state scales up. It
+              // does nothing to her static five-across grid, which keeps the
+              // 54px and 42px her file specifies.
+              data-kpi-figure
               className={`mb-1 font-sans leading-none font-extrabold tracking-[-0.03em] text-linen tabular-nums ${
                 metric.figureText.length > 5 ? "text-[42px]" : "text-[54px]"
               }`}

@@ -328,12 +328,46 @@ h3 {
     visibility 0s linear 420ms;
 }
 
+/* THE ROTATING CARD IS TWO THIRDS OF THE CONTAINER, from 31 August.
+
+   It was a third: the grid was three columns and the card sat in the middle
+   one, about 337px of the 1080px container. Six columns spanning four gives
+   about 715px, which is two thirds, and it stays centred because one column is
+   left either side. Her static five-across grid is untouched, because every
+   rule here is scoped to [data-kpi-active], which only the rotator sets.
+
+   Below 640 none of this applies: the card is already the full width of a
+   single-column grid, and the figure and visual keep the sizes her file gives
+   them so the card still fits at 360. */
 @media (min-width: 640px) {
   [data-kpi-active] [data-metric-cards] {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
   }
   [data-kpi-active] [data-kpi-index] {
-    grid-column: 2;
+    grid-column: 2 / span 4;
+  }
+
+  /* The visual and the figure scale with the card, on her instruction. The
+     well grows from her 96px, and the svg inside it carries a fixed height
+     attribute, so it is set here rather than left to the wrapper. The dot-grid
+     visual is a div grid of aspect-square cells and widens on its own. */
+  [data-kpi-active] [data-kpi-visual] {
+    min-height: 172px;
+  }
+  /* Her svgs carry a viewBox and a fixed height, so they letterbox rather than
+     stretch: at 140px the drawing filled about 60% of the wider card and sat in
+     a band of empty green. 172px puts the widest of them at roughly 85% of the
+     card, which is what "scale the visual up with it" looks like. Measured per
+     visual rather than picked: the viewBox ratios run 3.15 to 3.6. */
+  [data-kpi-active] [data-kpi-visual] svg {
+    height: 172px;
+  }
+  [data-kpi-active] [data-kpi-figure] {
+    font-size: 76px;
+  }
+  /* The two-part figures, 42px in her file, keep the same ratio to the rest. */
+  [data-kpi-active] [data-kpi-figure].text-\[42px\] {
+    font-size: 60px;
   }
 }
 

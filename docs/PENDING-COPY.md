@@ -3489,3 +3489,45 @@ now, which is what your other bright green buttons do, and the label stays dark
 green in both states, at 14:1 on the white.
 
 No new colours. Palette values only.
+
+---
+
+## 1b9. Four changes of 31 August — **for Iram**
+
+**The results card is bigger.** The rotating card on the homepage was a third of
+the width; it is two thirds now, still centred, with the drawing and the figure
+scaled up with it: the figure from 54px to 76px and the visual well from 96px to
+172px. Your static five-across grid is untouched — every one of these rules
+applies only while the cards are rotating, so with JavaScript off, or under
+reduced motion, the five cards are exactly as your design file has them. Checked
+at 360: the card is full width there, keeps the sizes your file gives it, and
+nothing overflows.
+
+**"These are the patterns before growth stalls" is black.** It was black, went
+green on 28 August when the chips went white, and is black again. The eyebrow
+above it stays green, as you said. Black reads at 19.2:1 where the green managed
+4.0:1.
+
+**The gap under "Visit the site" is closed on every card.** It was not only
+Cinnacare. Every card in the carousel takes the height of the tallest, and the
+results panel was pinned to the bottom of the card, so every card except the
+tallest had the difference sitting between the button and the panel: measured at
+148px on Cinnacare, 154px on Scentmatic and up to 336px on the /about-only
+cards, against 40px on Nurture. All nine now sit at the same 24px, on the
+homepage and on /about, at both desktop and mobile widths.
+
+One consequence worth seeing: the spare height has to go somewhere, and it is now
+below the results panel instead of above it, so the shorter cards have space at
+the foot. That reads as padding rather than as a hole, which is why it is the
+better of the two. If you would rather have no spare space at all, each card can
+size to its own content instead of matching the tallest — one line, but the
+carousel will change height as you swipe through it, so I have not assumed it.
+
+**The fees section is white.** This replaces the EF colour recorded in 1b6 for
+this panel: it was cream, then EF on your instruction, and it is white now,
+matching the other cards on the page. The two comparison boxes and the calculator
+keep the fills they had. The white traditional-model box is separated from the
+white panel by its border and by the panel's dot texture, which is what stops the
+two reading as one flat area. The green line under the heading measures 3.5:1 on
+white, which is better than the 3.1:1 it had on the EF green, though still on the
+low side if you ever want it darkened.
