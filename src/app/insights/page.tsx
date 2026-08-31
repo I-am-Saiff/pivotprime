@@ -195,9 +195,10 @@ export default async function InsightsPage({
           <p className="mb-6 text-[10px] font-bold tracking-[0.2em] text-mid uppercase">
             {POSTS_LABEL}
           </p>
-          {/* THE LAST CARD SPANS THE ROW FROM 768 TO 1023, audit item 19. Three
+          {/* THE LAST CARD SPANS THE ROW FROM 640 TO 1023, audit item 19. Three
               cards in the two-column band left the third alone beside 368px of
-              empty grid at 768 and 401px at 834. md:col-span-2 fills that row
+              empty grid at 768 and 401px at 834, and the same gap from 640 up.
+              sm:col-span-2 fills that row for the whole two-column band
               and lg:col-span-1 hands it back at 1024, where three into three
               divides evenly.
 
@@ -216,7 +217,7 @@ export default async function InsightsPage({
                 data-post-tag={post.tag}
                 className={`group flex flex-col overflow-hidden rounded-[18px] border border-forest/12 bg-shell transition-[border-color,box-shadow] duration-250 hover:border-mid hover:shadow-[0_6px_28px_rgba(1,51,37,0.09)] ${
                   i === POSTS.length - 1 && POSTS.length % 2 === 1
-                    ? "md:col-span-2 lg:col-span-1"
+                    ? "sm:col-span-2 lg:col-span-1"
                     : ""
                 }`}
               >

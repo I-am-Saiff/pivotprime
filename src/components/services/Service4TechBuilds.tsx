@@ -106,9 +106,10 @@ export default function Service4TechBuilds() {
             {TECH_BUILDS.capabilityNote}
           </p>
 
-          {/* THE LAST TILE SPANS THE ROW FROM 768 TO 1023, audit item 15. Nine
+          {/* THE LAST TILE SPANS THE ROW FROM 640 TO 1023, audit item 15. Nine
               tiles in the two-column band left the ninth alone beside 368px of
-              empty grid at 768 and 401px at 834. md:col-span-2 fills that row
+              empty grid at 768 and 401px at 834, and the same gap from 640 up.
+              sm:col-span-2 fills that row for the whole two-column band
               and lg:col-span-1 hands it back at 1024, where nine into three
               divides evenly and no span is wanted.
 
@@ -128,7 +129,7 @@ export default function Service4TechBuilds() {
                 className={`group/cap flex flex-col rounded-2xl border border-forest/12 card-dark p-6 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-mid/40 hover:shadow-[0_14px_36px_rgba(1,51,37,0.08)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 ${
                   i === TECH_BUILDS.capabilityGrid.length - 1 &&
                   TECH_BUILDS.capabilityGrid.length % 2 === 1
-                    ? "md:col-span-2 lg:col-span-1"
+                    ? "sm:col-span-2 lg:col-span-1"
                     : ""
                 }`}
               >
