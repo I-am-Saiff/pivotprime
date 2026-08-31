@@ -516,6 +516,15 @@ const DECISIONS = [
         // PENDING-COPY 1c0.
         ["/services/technology-builds", "Where this starts"],
         ["/services/technology-builds", "We scope the build against a defined problem"],
+        // INVERTED 1 September, same reason as the two above: these four sat in
+        // the absent list until her file was ruled over her 30 August wording.
+        // Asserted present now so the decision fails if any goes missing again.
+        // The pricing block is deliberately NOT here and stays in absent: it is
+        // not one of the four and its removal is hers. PENDING-COPY 1c7.
+        ["/services/operational-clarity-audit", "Roles, ownership and accountability"],
+        ["/services/operational-clarity-audit", "An executive summary written for owners"],
+        ["/services/operational-clarity-audit", "Private conversations surface"],
+        ["/services/operational-clarity-audit", "not a filing cabinet"],
       ];
       for (const [route, needed] of present) {
         const html = await (await get(route)).text();
@@ -530,10 +539,6 @@ const DECISIONS = [
       // Builds and on UAE Market Entry, and "The misconception" is still the
       // eyebrow over the trading calendar.
       const absent = [
-        ["/services/operational-clarity-audit", "Roles, ownership and accountability", "the What we look at block"],
-        ["/services/operational-clarity-audit", "An executive summary written for owners", "the What you get block"],
-        ["/services/operational-clarity-audit", "Private conversations surface", "the How we do it block"],
-        ["/services/operational-clarity-audit", "not a filing cabinet", "the What happens after block"],
         ["/services/operational-clarity-audit", "Pricing and margin engagements", "the pricing block"],
         ["/services/build-and-place", "The seats we place", "the five role cards"],
         ["/services/uae-market-entry", "Almost nothing pastes cleanly", "the misconception prose"],

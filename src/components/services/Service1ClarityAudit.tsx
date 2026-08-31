@@ -1,5 +1,5 @@
-import { ServiceSignOff } from "./SpecCopyBlocks";
-import { SERVICE_CLOSERS } from "@/content/services-detail";
+import { PairDark, PairLight, ServiceSignOff, TickList } from "./SpecCopyBlocks";
+import { CLARITY_AUDIT, SERVICE_CLOSERS } from "@/content/services-detail";
 import { WHATSAPP_URL } from "@/lib/flags";
 import { WHATSAPP_CTA } from "@/content/cta";
 import ClarityAuditProcessMap from "./ClarityAuditProcessMap";
@@ -40,22 +40,74 @@ export default function Service1ClarityAudit() {
       {/* Stage / Map Section */}
       <ClarityAuditProcessMap />
 
-      {/* THE PAGE ENDS HERE, from 30 August. Her file builds this page as hero,
-          the as-is versus to-be map, and the closer, with four blocks in
-          between; the meeting instruction is to take those four out as
-          redundant clutter, so the structure below the map is the closer alone.
+      {/* FOUR BLOCKS RESTORED, 1 September, reversing the batch-two deletion.
 
-          WHAT WENT: the "What we look at" and "What you get" pair that sat here
-          in her design, and the "How we do it", "What happens after" and
-          "Pricing and margin engagements" blocks below it. Every word of all
-          five is preserved in docs/PENDING-COPY.md 1b7. The copy also stays in
-          CLARITY_AUDIT in the content file, so restoring any of them is a
-          render, not a retype.
+          That deletion followed her 30 August wording exactly, which named
+          "what we look at", "what you get", "how we do it" and pricing. It is
+          reversed on Saif's ruling, because her file and that instruction
+          contradict each other and she has since resent the file and said the
+          service pages do not match it. The file wins. PENDING-COPY 1c7.
 
-          The pricing block is the one removal she did not name. It is not in her
-          file and it is not in the structure the meeting states for this page,
-          so it goes with the rest and is flagged for her rather than kept
-          quietly. */}
+          HER STRUCTURE, READ FROM HER MARKUP RATHER THAN ASSUMED. Between the
+          process map and the closer her page zero has two sections, each one a
+          two-column `cols` row:
+
+            <section>       .lab "What we look at" + .ticks | .lab "What you get" + .ticks
+            <section paper> .lab "How we do it" + 2 <p>     | .notefit "What happens after"
+
+          So both are pairs, and the 31 August left-white-right-dark rule
+          applies: PairLight on the left, PairDark on the right, which is what
+          the equivalent pairs already use on Fractional Leadership, Build and
+          Place and UAE Market Entry. Her reading order within each pair is
+          kept, so the white half is her left column in both.
+
+          TickList onDark on the right-hand list, the same inversion Build and
+          Place and UAE Market Entry use for a tick list on the dark half.
+
+          THE COPY IS THE CONTENT FILE'S, NOT THE MOCKUP'S. CLARITY_AUDIT already
+          holds all four blocks, and its strings are spec 4.1's, which run fuller
+          than the abbreviated versions in the mockup: seven look-at points
+          rather than six, and a longer "What happens after". Rendering what was
+          preserved is what the brief asked for, and the spec is the copy source
+          of record. PENDING-COPY 1c7 notes the difference.
+
+          THE PRICING BLOCK STAYS OFF. It is not one of the four, it is not in
+          her file, and its removal was separately confirmed as her instruction
+          rather than ours. Its guard assertion stays in the absent list. */}
+      <section className="surface-page px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
+        <div className="mx-auto grid max-w-5xl items-stretch gap-5 md:grid-cols-2 md:gap-6">
+          <PairLight label={CLARITY_AUDIT.lookHeading} labelAs="h3">
+            <TickList items={CLARITY_AUDIT.look} />
+          </PairLight>
+          <PairDark label={CLARITY_AUDIT.getHeading} labelAs="h3">
+            <TickList items={CLARITY_AUDIT.get} onDark />
+          </PairDark>
+        </div>
+      </section>
+
+      <section className="surface-page px-4 pb-10 sm:px-6 sm:pb-16 lg:px-8">
+        <div className="mx-auto grid max-w-5xl items-stretch gap-5 md:grid-cols-2 md:gap-6">
+          <PairLight label={CLARITY_AUDIT.howHeading} labelAs="h3">
+            <div className="space-y-3">
+              {CLARITY_AUDIT.how.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)} className="leading-relaxed text-forest/75">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </PairLight>
+          <PairDark label={CLARITY_AUDIT.afterHeading} labelAs="h3">
+            <div className="space-y-3">
+              {CLARITY_AUDIT.after.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)} className="leading-relaxed text-white/90">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </PairDark>
+        </div>
+      </section>
+
       <ServiceSignOff {...SERVICE_CLOSERS.clarityAudit} />
     </div>
   );

@@ -3870,3 +3870,59 @@ throughout.
 carried extra space between the letters, which is normal for a line set in caps.
 In sentence case it read loose next to "The challenge" directly above it, so the
 two now use the same spacing and read as the pair they are.
+
+---
+
+## 1c7 The four audit blocks are back, and what Build and Place is missing
+
+**1 September.**
+
+### The Operational Clarity Audit page has its four blocks again
+
+"What we look at", "What you get", "How we do it" and "What happens after" are
+back on the page, in the order and the positions your own service pages file
+gives them: two side-by-side pairs sitting between the process map and the
+closing block.
+
+**This reverses a deletion we made on 30 August, and the deletion was not wrong
+at the time.** Your instruction that day named "what we look at", "what you get",
+"how we do it" and the pricing block, and we took them out on your word. Your
+file keeps all four. The two instructions contradict each other, and the file has
+been chosen over the wording on Saif's ruling, because you have since resent the
+file and said the service pages do not match it. If the 30 August instruction is
+the one you meant to stand, say so and they come back off.
+
+**One of the five stays off: "Pricing and margin engagements".** It is not in
+your file, it was on your deletion list, and its removal was separately confirmed
+as your instruction rather than ours. It is untouched by this.
+
+**A note on which words are on the page.** Your file's versions of these four
+blocks are shorter than the ones in your copy document: six things you look at
+rather than seven, and a shorter "What happens after". The page carries the copy
+document's fuller versions, because that is the copy of record and it was already
+preserved. If you would rather the page matched the file's shorter versions, that
+is a small change and we have not assumed it.
+
+### Build and Place, checked against your file. Nothing changed
+
+Everything of yours renders, word for word: the hero and its standfirst, the
+pricing line, "How it fits together", all five things you are not carrying, both
+paragraphs of "How it is priced", and the closing "The difference" block.
+
+Four differences, all of them already decided:
+
+- **A sixth seat, and two renamed ones.** The diagram carries Fractional COO,
+  Project Manager with a capital M and Software Engineer instead of Engineer.
+  All three are your slide 14 comment from the 22 August deck.
+- **The caption says six.** Your file says five, because it was written before
+  you added the sixth seat. Changed on Saif's ruling, recorded in 1c6.
+- **"Watch the seats fill." is gone**, on your own slide 14 comment.
+- **The one-line role descriptions under each seat are gone**, the "drives
+  delivery" and "owns the numbers" lines. Recorded earlier as ours.
+
+### One thing to look at, across all five service pages
+
+**Your "Service one" to "Service five" eyebrows do not appear anywhere.** Each of
+your five service pages opens with one above the heading, and none of the five is
+on the site. We can find no instruction of yours removing them, so this is ours
+and not deliberate as far as the record shows. Say the word and all five go back.
