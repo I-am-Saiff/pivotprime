@@ -3584,6 +3584,13 @@ A note so it is not confusing later: "How it runs" is still a heading on
 Fractional Leadership. That is a different block with the same name, and it
 stays.
 
+> **Reversed later the same day, 31 August. Both blocks are back on the page.**
+> The removal was our call and not yours: neither block was on your 30 August
+> deletion list, and both are in your own service pages file. They are restored
+> in the positions your file gives them, after the build list and before the
+> closer, with "Where this starts" sitting under "How it runs" as your file
+> nests it. Nothing above this line was deleted, so the record reads in order.
+
 The philosophy section and the sign-off are where batch two put them, at the end
 and after it.
 
@@ -3790,3 +3797,23 @@ straight back.
 case study attributions, which also carry the industry in capitals, and the small
 uppercase eyebrows and labels across the site, which are your own style from your
 HTML file.
+
+## 1c6 The bench caption now says six seats
+
+**31 August.**
+
+The Build and Place diagram caption read *"Five seats we can fill. You never take
+all five."* while six seats were on the diagram. It now reads:
+
+> Six seats we can fill. You never take all six. The audit says which ones the
+> business actually needs, and that is what gets placed.
+
+The rest of that sentence is unchanged, and the diagram itself is untouched: the
+six seats, their labels, the Pivot Prime hub and the phone layout all stay
+exactly as they were.
+
+**The caption was the stale half of your own notes.** Your comment on slide 14 of
+the 22 August deck reads *"Add the Fractional COO"*, along with *"Change Project
+Manager (capital M)"* and *"Software Engineer, instead of Engineer"*. All three
+are live. Adding the sixth seat made the caption's "five" wrong, and it had been
+counting five ever since.

@@ -207,7 +207,7 @@ export default function Service3BuildPlace() {
             </div>
 
             <p className="text-[14px] text-[#5e6f68] mt-6 min-h-[44px] max-w-2xl">
-              Five seats we can fill. You never take all five. The audit says which ones the business actually needs, and that is what gets placed.
+              Six seats we can fill. You never take all six. The audit says which ones the business actually needs, and that is what gets placed.
             </p>
           </div>
         </div>

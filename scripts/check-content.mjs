@@ -506,6 +506,16 @@ const DECISIONS = [
         // it is absent whenever the list version is what renders.
         ["/services/technology-builds", "Websites and digital estate"],
         ["/services/technology-builds", "Agentic web applications"],
+        // INVERTED, NOT DELETED. These two sat in the absent list below until
+        // 31 August, when the removal that put them there was reversed: it was
+        // our call rather than hers, and both blocks are in her own file. They
+        // are asserted present now so the decision still fails if either goes
+        // missing again. "How it runs" is matched on its first sentence rather
+        // than on the heading, because the heading is also correct on
+        // Fractional Leadership, where it names a different block.
+        // PENDING-COPY 1c0.
+        ["/services/technology-builds", "Where this starts"],
+        ["/services/technology-builds", "We scope the build against a defined problem"],
       ];
       for (const [route, needed] of present) {
         const html = await (await get(route)).text();
@@ -527,12 +537,6 @@ const DECISIONS = [
         ["/services/operational-clarity-audit", "Pricing and margin engagements", "the pricing block"],
         ["/services/build-and-place", "The seats we place", "the five role cards"],
         ["/services/uae-market-entry", "Almost nothing pastes cleanly", "the misconception prose"],
-        // Both added by batch two out of her file and removed the next day.
-        // "How it runs" is matched on its first sentence rather than on the
-        // heading, because the heading is still correct on Fractional
-        // Leadership, where it names a different block.
-        ["/services/technology-builds", "Where this starts", "the Where this starts aside"],
-        ["/services/technology-builds", "We scope the build against a defined problem", "the How it runs block"],
       ];
       for (const [route, needle, what] of absent) {
         const html = await (await get(route)).text();

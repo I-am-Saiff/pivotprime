@@ -1,4 +1,4 @@
-import { ServiceSignOff } from "./SpecCopyBlocks";
+import { Lab, NoteCard, ServiceSignOff } from "./SpecCopyBlocks";
 import { WHATSAPP_CTA } from "@/content/cta";
 import { SERVICE_CLOSERS, TECH_BUILDS } from "@/content/services-detail";
 
@@ -149,13 +149,46 @@ export default function Service4TechBuilds() {
         </div>
       </section>
 
-      {/* "HOW IT RUNS" AND "WHERE THIS STARTS" WERE HERE and are removed on her
-          31 August instruction. Both were on this page for one day, added by
-          batch two out of her own file. The copy is preserved in
-          docs/PENDING-COPY.md 1c0 and stays in TECH_BUILDS, so restoring either
-          is a render rather than a retype. "How it runs" survives elsewhere: it
-          is the dark half of the pair on Fractional Leadership, which is a
-          different block with the same name. */}
+      {/* HOW IT RUNS, WITH "WHERE THIS STARTS" UNDER IT. Restored 31 August,
+          reversing the removal made earlier the same day. That removal was ours,
+          not hers: both blocks are in her own
+          req/pivotprime-service-pages-2208.html and neither was on the
+          30 August deletion list. Recorded in docs/PENDING-COPY.md 1c0.
+
+          STACKED, NOT A PAIR, because that is what her file does. Her markup
+          nests the .notefit inside the same block as the .lab, below its two
+          paragraphs, in one column:
+
+            <div class="lab">How it runs</div>
+            <p>We scope the build...</p>
+            <p>If you want us to run and maintain it...</p>
+            <div class="notefit"><h3>Where this starts</h3><p>...</p></div>
+
+          So the 31 August left-white-right-dark rule does not apply here: it
+          governs two-column content pairs, and this is not one. The version
+          batch two built did set them side by side, which is why they were in
+          the way of that rule; her own file was not asking for a pair.
+
+          Lab and NoteCard ARE her .lab and .notefit, so the treatment matches
+          the other service pages by construction rather than by imitation. */}
+      <section className="surface-page px-4 pb-12 sm:px-6 sm:pb-20 lg:px-8">
+        <div className="mx-auto max-w-5xl">
+          <Lab>{TECH_BUILDS.howItRunsHeading}</Lab>
+          <div className="mt-3 max-w-2xl space-y-3">
+            {TECH_BUILDS.howItRuns.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)} className="leading-relaxed text-forest/75">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+          <div className="mt-7 max-w-2xl">
+            <NoteCard
+              heading={TECH_BUILDS.whereThisStartsHeading}
+              body={TECH_BUILDS.whereThisStarts}
+            />
+          </div>
+        </div>
+      </section>
 
       {/* THE PHILOSOPHY SECTION, at the end from 30 August. The eyebrow read
           "The opening argument" while it was the opening; it is her own word
