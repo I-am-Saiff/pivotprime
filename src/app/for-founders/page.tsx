@@ -66,21 +66,16 @@ export default function ForFounders() {
         </div>
       </section>
 
-      {/* Spec 5 routing block: each persona page points at the service the
-          findings actually justify. */}
-      <section className="px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-4 max-w-4xl rounded-2xl border border-forest/15 bg-forest/[0.04] p-8 text-center backdrop-blur-sm">
-          <p className="mb-6 text-base sm:text-lg leading-relaxed text-neutral-700">
-            Most founders start with the audit, because it is the cheapest way to find out whether the problem is the process, the people, or the founder.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link href="/services/operational-clarity-audit" className="inline-flex items-center justify-center rounded-xl bg-forest px-8 py-3.5 text-xs font-bold tracking-wider text-white uppercase transition-all hover:bg-mid hover:scale-105">
-              See what the audit covers
-              <span aria-hidden="true" className="ml-2 text-base leading-none">&rarr;</span>
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* THE SPEC 5 ROUTING BLOCK WAS HERE and is removed on her 31 August
+          instruction, on all four "Who it's for" pages. It was a sentence
+          pointing the reader at a service plus a link to it. Every sentence is
+          preserved in docs/PENDING-COPY.md 1c1, and its absence is asserted in
+          the DECISIONS list in scripts/check-content.mjs rather than the old
+          assertions simply being deleted.
+
+          Nothing is orphaned by this: each service it linked to is also linked
+          from the homepage and from /services, which check-links verifies by
+          walking the site. */}
 
       {/* CTA Section */}
       <section className="px-4 py-6 sm:py-16 sm:px-6 lg:px-8">

@@ -3594,3 +3594,45 @@ dips invisible; then a lighter green, which you ruled out as two shades of green
 White is unambiguous against both the green bars and the dark panel behind them.
 It is not a new colour on the site, and it replaces the gold your own file uses,
 which no longer appears anywhere.
+
+---
+
+## 1c1. The routing block is off all four "Who it's for" pages — **for Iram**
+
+Each of the four pages ended with a sentence pointing the reader at a service and
+a link to it. All four are removed on your 31 August instruction. **This is spec
+copy, so every sentence and every link is written out here.**
+
+**/for-founders** — "Most founders start with the audit, because it is the
+cheapest way to find out whether the problem is the process, the people, or the
+founder." Link: *See what the audit covers* → the Operational Clarity Audit page.
+
+**/for-smes** — "Most SMEs start with the audit, because margin instability
+almost never comes from where the business assumes it does." Link: *See what the
+audit covers* → the Operational Clarity Audit page.
+
+**/for-corporate-leaders** — "You do not need to hire for everything. You do need
+access to people who know what they are doing, without a long approval cycle or a
+permanent cost." Link: *How we staff an engagement* → the Build and Place page.
+
+**/for-pl-owners** — "The outcome is a small number of moves that materially
+shift trajectory, rather than a long list of initiatives that compete with each
+other." Links: *How we staff an engagement* → Build and Place, and *See what tech
+we can build* → Technology Builds.
+
+Each page still ends with its dark call-to-action block and its button, which is
+untouched.
+
+**Nothing is stranded by this.** Every service those links pointed at is also
+linked from the homepage and from the services page, so all five service pages
+are still reachable. That is not an assumption: `check:links` walks the site from
+the homepage and fails if any page in the sitemap is linked from nowhere, and it
+followed 562 links after the change with nothing unreachable. It matters because
+a navigation dropdown once left a whole page linked from nowhere at all and every
+other check still passed on it.
+
+**The checks were changed the careful way.** Four of these sentences were
+required assertions, meaning the checks failed if the page stopped carrying them.
+Rather than deleting those four, they are inverted: the checks now fail if the
+routing block ever comes **back** without your say-so, and the failure names this
+entry. Proved by putting one back on purpose and watching the check fail.

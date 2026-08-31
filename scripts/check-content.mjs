@@ -115,7 +115,6 @@ const EXPECTATIONS = [
       { spec: "5.1", text: "Through an Operational Clarity Audit. From AED 15,000.", why: "block 1 sub-line" },
       { spec: "5.1", text: "Through hiring support, role design and Build and Place.", why: "block 2 sub-line" },
       { spec: "5.1", text: "Through Fractional Leadership. Scoped per engagement.", why: "block 3 sub-line, renamed from the spec's \"Fractional COO retainer\" per slide 13. PENDING-COPY 1u" },
-      { spec: "5.1", text: "Most founders start with the audit", why: "routing block" },
     ],
   },
   {
@@ -124,15 +123,12 @@ const EXPECTATIONS = [
       { spec: "5.2", text: "Through an Operational Clarity Audit. From AED 15,000.", why: "block 1 sub-line" },
       { spec: "5.2", text: "Part of an Operational Clarity Audit, or scoped on its own.", why: "block 2 sub-line" },
       { spec: "5.2", text: "Through Fractional Leadership. Scoped per engagement.", why: "block 3 sub-line, renamed from the spec's \"Fractional COO retainer\" per slide 13. PENDING-COPY 1u" },
-      { spec: "5.2", text: "Most SMEs start with the audit", why: "routing block" },
     ],
   },
   {
     route: "/for-corporate-leaders",
     assert: [
       { spec: "5.3", text: "Through Build and Place. Scoped per engagement.", why: "blocks 1 and 2 sub-line" },
-      { spec: "5.3", text: "You do not need to hire for everything", why: "routing block" },
-      { spec: "5.3", text: "How we staff an engagement", why: "routing block CTA" },
     ],
   },
   {
@@ -324,6 +320,37 @@ const DECISIONS = [
       return /contribution margin, delivery effort, variability and risk/.test(html)
         ? "the paragraph is rendering again; the three cards on the page no longer match each other"
         : null;
+    },
+  },
+  {
+    what: "the spec 5 routing block is off all four Who it's for pages",
+    where: "PENDING-COPY 1c1",
+    run: async (get) => {
+      // INVERTED, NOT DELETED. Four of these sentences were required
+      // assertions until 31 August, when she asked for the block removed from
+      // every persona page. Asserting their absence keeps the decision guarded:
+      // a failure here reads as "the routing block came back", which is what
+      // deleting the assertions outright would have stopped anyone noticing.
+      const gone = [
+        ["/for-founders", "Most founders start with the audit"],
+        ["/for-smes", "Most SMEs start with the audit"],
+        ["/for-corporate-leaders", "You do not need to hire for everything"],
+        ["/for-corporate-leaders", "How we staff an engagement"],
+        ["/for-pl-owners", "rather than a long list of initiatives that compete"],
+        // The links that sat under each sentence. They are still on the
+        // homepage and on /services, which is why removing them orphans
+        // nothing; here they must be absent.
+        ["/for-founders", "See what the audit covers"],
+        ["/for-smes", "See what the audit covers"],
+        ["/for-pl-owners", "See what tech we can build"],
+      ];
+      for (const [route, needle] of gone) {
+        const html = await (await get(route)).text();
+        if (html.includes(needle)) {
+          return `the routing block is back on ${route}: "${needle}" is rendering again`;
+        }
+      }
+      return null;
     },
   },
   {
