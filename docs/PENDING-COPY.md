@@ -3761,3 +3761,32 @@ text. They have been three things in two days: a very pale green that read as a
 grey patch against the cream, then no fill at all so they matched the page, and
 now the button green you asked for. Nothing else about them changed, and the
 words are untouched.
+
+## 1c5 The four "Who we serve" attributions are sentence case now
+
+**1 September, on your instruction.**
+
+The industry in each testimonial attribution on the homepage was set in capitals
+and now reads in sentence case:
+
+| Was | Now |
+|---|---|
+| Founder & CEO, TECH-ENABLED LOGISTICS · Dubai | Founder & CEO, Tech-enabled logistics · Dubai |
+| Managing Director, INSURANCE BROKERAGE · Dubai | Managing Director, Insurance brokerage · Dubai |
+| VP Innovation, REGIONAL RETAIL GROUP · Qatar | VP Innovation, Regional retail group · Qatar |
+| Chief Operating Officer, DISTRIBUTION GROUP · Abu Dhabi | Chief Operating Officer, Distribution group · Abu Dhabi |
+
+The roles, the cities and the middle dot are untouched, and so is everything
+else in the section.
+
+**This reverses something you asked for**, which is the only reason it is worth
+your attention. Your comment on slide 9 of the 22 August deck reads: *"Industries
+all to be in caps e.g. Regional Retail Group."* That is why they were in capitals,
+and the example you gave is one of the four lines above. If the capitals were
+still what you wanted and this was meant for somewhere else, say so and they go
+straight back.
+
+**Not changed, because you have not asked and they are a different thing:** the
+case study attributions, which also carry the industry in capitals, and the small
+uppercase eyebrows and labels across the site, which are your own style from your
+HTML file.
