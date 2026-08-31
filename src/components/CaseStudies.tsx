@@ -277,7 +277,7 @@ export default function CaseStudies({
                   <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
                   <div className="relative z-10">
                     <div className="mb-3 flex items-center justify-between border-b border-white/15 pb-2.5">
-                      <h4 className="font-bold text-neon text-sm tracking-wider sm:text-base">
+                      <h4 className="font-bold text-neon text-sm sm:text-base">
                         The results
                       </h4>
                       {/* "Verified" is only true of a figure the master table

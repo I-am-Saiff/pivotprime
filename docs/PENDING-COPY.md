@@ -3844,8 +3844,21 @@ an Operational Clarity Audit"* where your own service pages file reads *"start
 with an audit"*. Your wording is back, and the quote in 1c0 above has been
 corrected to match, so the record and the page say the same thing.
 
-**The case study industries were checked and left alone.** They are not in
-capitals: they read "Childcare Technology · UAE", "Baby Skincare · UK and UAE
-Launch" and "UAE Market Entry · Financial Modelling", which is title case, not
-capitals. If you want those in sentence case too, that is a separate change and
-we have not guessed at it.
+**The case study industries were checked and left alone at first.** They were
+never in capitals: they read as title case, not capitals, which is why the
+measurement said to leave them. You have since asked for the trailing common
+noun to come down, and two of the three have changed:
+
+| Was | Now |
+|---|---|
+| Baby Skincare · UK and UAE Launch | Baby Skincare · UK and UAE launch |
+| UAE Market Entry · Financial Modelling | UAE Market Entry · Financial modelling |
+
+Nurture's "Childcare Technology · UAE" is untouched, and so is everything else in
+those two lines: the sector names, the acronyms and the place names keep their
+capitals.
+
+**"The results" lost its letterspacing.** With the words in capitals the heading
+carried extra space between the letters, which is normal for a line set in caps.
+In sentence case it read loose next to "The challenge" directly above it, so the
+two now use the same spacing and read as the pair they are.

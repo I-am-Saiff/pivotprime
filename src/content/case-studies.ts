@@ -187,7 +187,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     id: "cinnacare",
     headline: "From concept to two-country operation, built from scratch",
     sector: "Cinnacare",
-    subtitle: "Baby Skincare · UK and UAE Launch",
+    subtitle: "Baby Skincare · UK and UAE launch",
     link: { href: "https://www.cinnacare.com", label: "Visit the site" },
     photo: {
       src: "/case-studies/cinnacare-baby-oil.jpg",
@@ -227,7 +227,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     id: "scentmatic",
     headline: "Sometimes the most valuable advice is: don't.",
     sector: "Scentmatic",
-    subtitle: "UAE Market Entry · Financial Modelling",
+    subtitle: "UAE Market Entry · Financial modelling",
     link: { href: "https://scentmatic.co.uk", label: "Visit the site" },
     photo: {
       src: "/case-studies/scentmatic-vendor.jpg",
