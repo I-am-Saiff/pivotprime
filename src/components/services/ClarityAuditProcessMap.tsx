@@ -63,7 +63,7 @@ export default function ClarityAuditProcessMap() {
               className="mb-6"
             />
 
-            {/* BELOW 640: A VERTICAL STACK, from the 31 August narrow-width
+            {/* BELOW 768: A VERTICAL STACK, from the 31 August narrow-width
                 report. The scattered map positions seven 74px-wide chips by
                 percentage across a 900-unit viewBox. At 400px that leaves each
                 chip far narrower than its label, so "Enquiry", "Approval",
@@ -72,7 +72,7 @@ export default function ClarityAuditProcessMap() {
                 edge. Widening the chips is not available: seven of them across
                 a 320px panel cannot each hold a word.
 
-                So below sm the same steps render as one node per row, in
+                So below md the same steps render as one node per row, in
                 sequence, auto-width so the label sets the width rather than the
                 other way round. Node fill, border, radius, type and the
                 dimmed treatment for the two dead steps are the map's own
@@ -95,7 +95,7 @@ export default function ClarityAuditProcessMap() {
                 step. The dashed connector and the dimmed nodes carry that the
                 two steps are the problem, and the caption below states it in
                 words, unchanged. */}
-            <div className="sm:hidden">
+            <div className="md:hidden">
               <ul
                 className="mx-auto flex w-fit flex-col items-center justify-center"
                 style={{ minHeight: maxNodes * 34 + (maxNodes - 1) * 16 }}
@@ -124,8 +124,11 @@ export default function ClarityAuditProcessMap() {
               </ul>
             </div>
 
-            {/* 640 AND UP: the scattered map, unchanged. */}
-            <div className="relative hidden h-[240px] w-full sm:block md:h-[340px]">
+            {/* 768 AND UP: the scattered map, unchanged. This was sm until the
+                1 September pass: at exactly 640 the clean state left the
+                Enquiry node 1px over its clipping ancestor, and 768 is the
+                narrowest width the map was ever measured clean at. */}
+            <div className="relative hidden h-[240px] w-full md:block md:h-[340px]">
               <svg viewBox="0 0 900 240" preserveAspectRatio="none" className="absolute inset-0 w-full h-full overflow-visible">
                 {links.map(([a, b], idx) => {
                   const A = set[a];

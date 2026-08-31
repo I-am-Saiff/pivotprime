@@ -103,7 +103,20 @@ export default function ServiceCards({ headingLevel = "h3" }: { headingLevel?: "
                     a rendering fault rather than a summary, and clamping copy
                     the document sets verbatim is the wrong instinct anyway.
                     Cards are stretched to a common height by the grid instead. */}
-                <div className="mt-4 space-y-3">
+                {/* grow, from the 1 September pass. The grid stretches every
+                    card in a row to the tallest one, and the slack used to land
+                    on the CTA's mt-auto: on "Build and Place" at 1024 that was
+                    283px of empty card between the scope note and the link,
+                    against 21px on the card beside it. The cards were level and
+                    the insides were not.
+
+                    The description takes the slack instead, so the scope note
+                    and the CTA stay together as a footer group at the foot of
+                    the card and the distance from the last line of text to the
+                    link is the pt-5 that was always intended. Equal height is
+                    untouched: this redistributes space inside the card, it does
+                    not change the card's height. No copy was shortened. */}
+                <div className="mt-4 grow space-y-3">
                   {service.body.map((paragraph) => (
                     <p
                       key={paragraph.slice(0, 40)}
