@@ -75,7 +75,81 @@ export default function Service3BuildPlace() {
           </div>
 
           <div className="card-dark border border-[#e3eae6] rounded-xl p-6 md:p-8 overflow-hidden shadow-sm">
-            <div className="relative h-[290px] md:h-[420px] w-full" ref={benchRef}>
+            {/* The reveal now observes a wrapper holding both layouts rather
+                than the scattered map alone. Below 430 the map is display:none,
+                and an element with no box reports top 0, which the hook reads as
+                already on screen and returns early from: the stack would have
+                been stuck in its un-revealed dashed state for good. At 430 and
+                up the stack has no box, so the wrapper's geometry is the map's
+                geometry and the hook sees exactly what it saw before. */}
+            <div ref={benchRef}>
+            {/* BELOW 430: A VERTICAL STACK, audit items 8 and 9, same root cause
+                as the process map. The six role chips are 118px wide, placed by
+                percentage inside an 800-unit viewBox and pulled back by half
+                their own width. At 320 the panel is ~240px, so 16% and 84% land
+                the outer chips less than 40px from each edge: Software Engineer
+                and Web and digital hung 5px past the panel, and four pairs
+                overlapped, worst 37x24px where Project Manager met Fractional
+                COO. The percentages are fine at 430 and meaningless below it.
+
+                So below 430 the bench runs vertically: the hub first, because it
+                is what the six report into, then one role per row at full width
+                so the label sets nothing and simply fits. Node fill, border
+                weight, radius, type, the data-on-light legibility flag and the
+                staggered reveal are the diagram's own; the connector is its own
+                #cfe0d8 stroke, run vertically between rows the way the process
+                map's is.
+
+                NO RESERVED HEIGHT HERE. The process map needed one because its
+                toggle swaps a seven-step state for a six-step one and the panel
+                would jump. This diagram has one state and six nodes always, so
+                nothing changes height under it and the panel sizes to content.
+
+                WHAT THE STACK CANNOT SHOW: six lines radiating from a centre.
+                A vertical run has one spine, so the star becomes a sequence.
+                The hub sitting first, above every role, is what carries "one
+                contract, one accountable party" here, and the section heading
+                and the caption below both state it in words, unchanged. */}
+            <div className="min-[430px]:hidden">
+              <div className="flex w-full flex-col">
+                <div className="rounded-xl bg-[#013325] px-5 py-3.5 text-center text-white">
+                  <b className="block font-sans text-[14px] font-semibold">Pivot Prime</b>
+                  <span className="text-[11px] text-[#8fb3a4]">manages, invoices, accountable</span>
+                </div>
+                {slots.map((s, i) => (
+                  <div key={s.b} className="flex flex-col">
+                    <span
+                      aria-hidden="true"
+                      className="mx-auto block h-4 w-0 border-l border-[#cfe0d8]"
+                    />
+                    <div
+                      data-on-light="true"
+                      className={`w-full rounded-xl p-2.5 text-center transition-all duration-500 ${
+                        isVisible
+                          ? "border-solid border-[#009f50] bg-[#f2f8f4]"
+                          : "border-dashed border-[#cfd9d4] surface-page opacity-50"
+                      }`}
+                      style={{
+                        borderWidth: "1.6px",
+                        transitionDelay: `${isVisible ? 280 + i * 260 : 0}ms`,
+                      }}
+                    >
+                      <b
+                        className={`block font-sans text-[12.5px] font-semibold transition-colors duration-500 ${
+                          isVisible ? "text-[#013325]" : "text-[#5e6f68]"
+                        }`}
+                        style={{ transitionDelay: `${isVisible ? 280 + i * 260 : 0}ms` }}
+                      >
+                        {s.b}
+                      </b>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 430 AND UP: the scattered bench, unchanged. */}
+            <div className="relative hidden h-[290px] w-full min-[430px]:block md:h-[420px]">
               <svg viewBox="0 0 800 290" preserveAspectRatio="none" className="absolute inset-0 w-full h-full overflow-visible">
                 {slots.map((s, i) => {
                   const delay = 280 + i * 260;
@@ -130,7 +204,8 @@ export default function Service3BuildPlace() {
                 );
               })}
             </div>
-            
+            </div>
+
             <p className="text-[14px] text-[#5e6f68] mt-6 min-h-[44px] max-w-2xl">
               Five seats we can fill. You never take all five. The audit says which ones the business actually needs, and that is what gets placed.
             </p>
