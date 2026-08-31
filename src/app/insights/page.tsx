@@ -195,13 +195,30 @@ export default async function InsightsPage({
           <p className="mb-6 text-[10px] font-bold tracking-[0.2em] text-mid uppercase">
             {POSTS_LABEL}
           </p>
+          {/* THE LAST CARD SPANS THE ROW FROM 768 TO 1023, audit item 19. Three
+              cards in the two-column band left the third alone beside 368px of
+              empty grid at 768 and 401px at 834. md:col-span-2 fills that row
+              and lg:col-span-1 hands it back at 1024, where three into three
+              divides evenly.
+
+              THREE COLUMNS AT 768 WAS THE OTHER OPTION and it measured worse:
+              at 229px every byline breaks over two lines, and it sits on one
+              line at every width the site currently renders, 309px at 1024
+              included. The card is built for that width.
+
+              Literal class strings, same reason as ServiceCards: Tailwind scans
+              source text, so an interpolated span never gets generated. */}
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {POSTS.map((post) => (
+            {POSTS.map((post, i) => (
               <Link
                 key={post.slug}
                 href={`/insights/${post.slug}`}
                 data-post-tag={post.tag}
-                className="group flex flex-col overflow-hidden rounded-[18px] border border-forest/12 bg-shell transition-[border-color,box-shadow] duration-250 hover:border-mid hover:shadow-[0_6px_28px_rgba(1,51,37,0.09)]"
+                className={`group flex flex-col overflow-hidden rounded-[18px] border border-forest/12 bg-shell transition-[border-color,box-shadow] duration-250 hover:border-mid hover:shadow-[0_6px_28px_rgba(1,51,37,0.09)] ${
+                  i === POSTS.length - 1 && POSTS.length % 2 === 1
+                    ? "md:col-span-2 lg:col-span-1"
+                    : ""
+                }`}
               >
                 <div className="flex flex-1 flex-col px-6 pt-[26px] pb-5">
                   <p className="mb-3.5 text-[10px] font-bold tracking-[0.18em] text-mid uppercase">

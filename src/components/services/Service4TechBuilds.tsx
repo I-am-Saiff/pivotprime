@@ -106,11 +106,31 @@ export default function Service4TechBuilds() {
             {TECH_BUILDS.capabilityNote}
           </p>
 
+          {/* THE LAST TILE SPANS THE ROW FROM 768 TO 1023, audit item 15. Nine
+              tiles in the two-column band left the ninth alone beside 368px of
+              empty grid at 768 and 401px at 834. md:col-span-2 fills that row
+              and lg:col-span-1 hands it back at 1024, where nine into three
+              divides evenly and no span is wanted.
+
+              THE OTHER OPTION WAS THREE COLUMNS AT 768, and it was measured
+              rather than guessed at: it makes the tiles 229px, and five of the
+              nine labels that sit on one line at every width today wrap to two.
+              The tiles are built for the 309px they get at 1024. Spanning the
+              last one costs nothing the grid was not already doing on the
+              service cards.
+
+              Literal class strings, same reason as ServiceCards: Tailwind scans
+              source text, so an interpolated span never gets generated. */}
           <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {TECH_BUILDS.capabilityGrid.map((item, i) => (
               <li
                 key={item.label}
-                className="group/cap flex flex-col rounded-2xl border border-forest/12 card-dark p-6 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-mid/40 hover:shadow-[0_14px_36px_rgba(1,51,37,0.08)] motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                className={`group/cap flex flex-col rounded-2xl border border-forest/12 card-dark p-6 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-mid/40 hover:shadow-[0_14px_36px_rgba(1,51,37,0.08)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 ${
+                  i === TECH_BUILDS.capabilityGrid.length - 1 &&
+                  TECH_BUILDS.capabilityGrid.length % 2 === 1
+                    ? "md:col-span-2 lg:col-span-1"
+                    : ""
+                }`}
               >
                 <span
                   aria-hidden="true"
