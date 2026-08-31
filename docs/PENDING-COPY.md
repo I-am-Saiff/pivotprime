@@ -3896,12 +3896,47 @@ the one you meant to stand, say so and they come back off.
 your file, it was on your deletion list, and its removal was separately confirmed
 as your instruction rather than ours. It is untouched by this.
 
-**A note on which words are on the page.** Your file's versions of these four
-blocks are shorter than the ones in your copy document: six things you look at
-rather than seven, and a shorter "What happens after". The page carries the copy
-document's fuller versions, because that is the copy of record and it was already
-preserved. If you would rather the page matched the file's shorter versions, that
-is a small change and we have not assumed it.
+**The page now carries your file's wording, not the copy document's.** The two
+disagree on all four blocks, and your file wins because it is what you are
+reviewing against. Every difference is a reduction, so the page is shorter than
+it was this morning:
+
+| Block | Copy document | Your file, which is what is live |
+|---|---|---|
+| What we look at | seven points | **six**, the data point dropped |
+| What you get | longer endings on three points | **your shorter ones** |
+| How we do it | ends "Direct observation where it helps." | **ends at "owned rather than imposed."** |
+| What happens after | names the retainer, the placed roles and the build | **"Most ask us to run some or all of it."** |
+
+**Nothing is lost. The copy document's fuller versions are kept here in full**, so
+putting any of them back is a copy and paste rather than a retype:
+
+- *Seventh look-at point:* "Data: what is captured, what is trusted, and what
+  leaders are actually deciding on"
+- *Three longer what-you-get points:* "An as-is versus to-be map of how work runs
+  today and exactly what changes" / "A prioritised roadmap: what to fix now, what
+  can wait, what will move results" / "A baseline set of measurements that the
+  improvements will later be judged against" / "An executive summary written for
+  owners and investors, not only for operations"
+- *Longer how-we-do-it second paragraph:* "Process mapping end to end. A
+  facilitated workshop per function, where the team walks the process on screen
+  and stress tests it together, so the findings are owned rather than imposed.
+  Direct observation where it helps."
+- *Longer what-happens-after:* "...Most ask us to run some or all of it, which is
+  where the fractional COO retainer, a placed project manager, CFO or engineer,
+  or a technology build comes in. We will tell you plainly which of those the
+  findings actually justify."
+
+**One consequence worth knowing.** Our internal check that traces your copy
+document onto the site now reports ten more of its blocks as not appearing, up
+from thirty-one to forty-one, and this page from nine to sixteen. That is the
+arithmetic of choosing your file over the document, not a fault: those ten
+sentences are the longer versions above. If the document is meant to be the
+master, this is the number that says so.
+
+**Your "Service one" to "Service five" eyebrows are back**, on all five service
+pages, above each heading. They are green on the dark hero because that is what
+your own file specifies for a hero.
 
 ### Build and Place, checked against your file. Nothing changed
 

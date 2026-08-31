@@ -525,6 +525,15 @@ const DECISIONS = [
         ["/services/operational-clarity-audit", "An executive summary written for owners"],
         ["/services/operational-clarity-audit", "Private conversations surface"],
         ["/services/operational-clarity-audit", "not a filing cabinet"],
+        // HER PER-PAGE HERO EYEBROWS, restored 1 September. All five were absent
+        // from the site with no instruction of hers removing them, so their
+        // absence was ours. Asserted here because they now live only as markup
+        // and nothing else would notice them going again. PENDING-COPY 1c7.
+        ["/services/operational-clarity-audit", "Service one"],
+        ["/services/fractional-leadership", "Service two"],
+        ["/services/build-and-place", "Service three"],
+        ["/services/technology-builds", "Service four"],
+        ["/services/uae-market-entry", "Service five"],
       ];
       for (const [route, needed] of present) {
         const html = await (await get(route)).text();

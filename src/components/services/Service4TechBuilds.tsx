@@ -56,6 +56,17 @@ export default function Service4TechBuilds() {
       {/* HERO */}
       <section className="bg-forest pt-28 sm:pt-32 pb-12 sm:pb-20 text-white md:pt-40 md:pb-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          {/* HER HERO EYEBROW, restored 1 September. Her file opens every
+              service page with one of these above the h1 and none of the five
+              was on the site. No instruction of hers removed them, so their
+              absence was ours. Neon rather than mid green because her own CSS
+              says so: .eyebrow is mid, and .ondark .eyebrow is neon, and every
+              one of these heroes is class="hero ondark" in her file. Same
+              10.5px, 600 weight and 0.24em tracking the light-ground section
+              eyebrows on these pages already use. PENDING-COPY 1c7. */}
+          <span className="mb-4 block font-sans text-[10.5px] font-semibold tracking-[0.24em] text-neon uppercase">
+            Service four
+          </span>
           <h1 className="font-sans text-4xl font-extrabold tracking-tight md:text-6xl">
             {TECH_BUILDS.heading}
           </h1>
