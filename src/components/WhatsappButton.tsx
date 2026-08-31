@@ -6,19 +6,22 @@ import { HAS_WHATSAPP, WHATSAPP_URL } from "@/lib/flags";
 /* Smaller and tighter into the corner below sm. A fixed button passes over
    whatever is beneath it as the page scrolls, so it cannot be made never to
    overlap; at 360 it was 64px square over a full-width text column and covered
-   the tail of a line. 48px in the corner, plus a bottom gutter on the sections
-   a reader actually stops at, is what is available short of removing it.
+   the tail of a line. 48px in the corner is the minimum footprint, and from
+   31 August it also stands down entirely over the footer, which is where the
+   overlap actually cost something. Over body copy mid-page it still passes over
+   line-ends: that is inherent to a fixed button and is not solved here.
    PENDING-COPY 1ak. */
 export default function WhatsappButton() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isPastHero, setIsPastHero] = useState(false);
+  const [footerInView, setFooterInView] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       // 500px is roughly past the hero section, you can adjust this value if needed
-      if (window.scrollY > 500) { 
-        setIsVisible(true);
+      if (window.scrollY > 500) {
+        setIsPastHero(true);
       } else {
-        setIsVisible(false);
+        setIsPastHero(false);
       }
     };
 
@@ -27,6 +30,38 @@ export default function WhatsappButton() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  /**
+   * STAND DOWN OVER THE FOOTER, from the 31 August responsive audit.
+   *
+   * The button is fixed, so at the foot of every page it landed on the two
+   * controls that live in the same corner: it covered a fifth of the "Back to
+   * top" hit area at 768 and up to 15% of the copyright line at 320. Both are
+   * footer content, so the button yields to the footer rather than the footer
+   * being rebuilt around the button — "Back to top" has not moved and the
+   * footer's structure is untouched.
+   *
+   * threshold 0 fires the moment any part of the footer crosses into the
+   * viewport. The footer is several hundred pixels tall, so the button is
+   * already gone well before either control is on screen, and it comes back as
+   * soon as the footer leaves.
+   *
+   * If IntersectionObserver is missing the state simply stays false and the
+   * button behaves as it did before, which is the safe direction to fail.
+   */
+  useEffect(() => {
+    const footer = document.querySelector("[data-site-footer]");
+    if (!footer || typeof IntersectionObserver === "undefined") return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setFooterInView(entry.isIntersecting),
+      { threshold: 0 },
+    );
+    observer.observe(footer);
+    return () => observer.disconnect();
+  }, []);
+
+  const isVisible = isPastHero && !footerInView;
 
   return (
     // #25D366 is Meta's mandated WhatsApp brand green and is deliberately not a
@@ -44,7 +79,11 @@ export default function WhatsappButton() {
       target={HAS_WHATSAPP ? "_blank" : undefined}
       rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined}
       aria-label={HAS_WHATSAPP ? "Message Pivot Prime on WhatsApp" : "Talk to us"}
-      className={`fixed bottom-4 right-4 z-50 bg-[#25D366] text-white p-3 rounded-full shadow-lg transition-all duration-500 ease-in-out hover:scale-110 hover:shadow-xl sm:bottom-6 sm:right-6 sm:p-4 ${
+      // duration-300: long enough to read as a fade rather than a pop, short
+      // enough that the button is out of the way by the time the footer's own
+      // controls are on screen. It was 500ms, which only ever animated the
+      // scroll reveal.
+      className={`fixed bottom-4 right-4 z-50 bg-[#25D366] text-white p-3 rounded-full shadow-lg transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl sm:bottom-6 sm:right-6 sm:p-4 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"
       }`}
     >

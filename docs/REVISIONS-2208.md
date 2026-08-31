@@ -825,3 +825,22 @@ fill", add Fractional COO, "Project Manager" capital M, "Software Engineer" not
    says; the email is not in the working folder.
 7. **The new services page animations** promised on slide 13, not yet sent.
 8. **The section 9 figures**, still.
+
+---
+
+## Queued after the layout pass
+
+Recorded 31 August, alongside the shared-layout responsive fixes. Nothing here
+has been changed. These are copy and content items, out of scope for a layout
+and spacing pass, and are queued for the page-by-page passes that follow.
+
+1. **Homepage case study headings read "The Results" in title case, three
+   instances.** Should be sentence case per the 30 August capitalisation
+   instruction.
+2. **Homepage P&L owner card uses "organizational".** The site is British
+   English, so this should be "organisational".
+3. **Fractional Leadership tab panels.** Confirm the Chief of Staff and CFO
+   panels each carry their own "What the ... seat covers" heading, as the COO
+   panel does.
+4. **"Performance Linked Fees" heading is title case.** Confirm with Iram before
+   changing, since she named that heading specifically on the call.

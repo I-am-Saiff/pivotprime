@@ -54,7 +54,16 @@ export default function Footer() {
               site standardises on /contact and /contact-us redirects to it. */}
           {/* -my-2 py-2 keeps the visual spacing while giving every link a 44px
               hit area. Measured at 320: these were 16px tall. */}
-          <div className="-my-2 flex flex-wrap gap-x-6">
+          {/* TWO COLUMNS BELOW 400, from the 31 August responsive audit. As a
+              flex-wrap the seven links broke 3/3/1 at 320, leaving "Privacy"
+              alone on a row of its own. grid-flow-col with grid-rows-4 fills
+              down the first column before starting the second, which is what
+              produces 4/3 rather than the 2/2/2/1 a plain two-column grid
+              would give. auto-cols-fr keeps the two columns even.
+
+              From 400 up, min-[400px]:flex restores the wrap exactly as it
+              was, so 400 to 767 and everything from 768 are untouched. */}
+          <div className="-my-2 grid auto-cols-fr grid-flow-col grid-rows-4 gap-x-6 min-[400px]:flex min-[400px]:flex-wrap">
             {FOOTER_LINKS.map((link) => (
               <Link
                 key={link.href}

@@ -114,7 +114,12 @@ export default function Navbar() {
         <Link
           key={item.label}
           href={item.href}
-          className="rounded-xl px-3 py-1.5 text-xs font-semibold tracking-wider text-white/80 uppercase transition-colors hover:text-neon focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
+          // py-3.5 over py-1.5, from the 31 August responsive audit: these were
+          // 28px tall against a 44px target. Vertical padding only — the font
+          // size, the horizontal padding and the gap between items are
+          // unchanged, and 44px still sits inside the 64px bar, so the header
+          // does not grow.
+          className="rounded-xl px-3 py-3.5 text-xs font-semibold tracking-wider text-white/80 uppercase transition-colors hover:text-neon focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
         >
           {item.label}
         </Link>
@@ -155,7 +160,10 @@ export default function Navbar() {
               setPinned(true);
             }
           }}
-          className="flex items-center rounded-xl px-3 py-1.5 text-xs font-semibold tracking-wider text-white/80 uppercase transition-colors hover:text-neon focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
+          // py-3.5 to match the plain links above: same 44px target, vertical
+          // padding only. The wrapper stays h-full, so the dropdown's
+          // top-full anchor is unaffected.
+          className="flex items-center rounded-xl px-3 py-3.5 text-xs font-semibold tracking-wider text-white/80 uppercase transition-colors hover:text-neon focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
         >
           {item.label}
           <svg
@@ -207,7 +215,10 @@ export default function Navbar() {
               href={HEADER_CTA.href}
               target={HEADER_CTA.external ? "_blank" : undefined}
               rel={HEADER_CTA.external ? "noopener noreferrer" : undefined}
-              className="ml-3 inline-flex items-center justify-center rounded-xl bg-neon px-5 py-2 text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none"
+              // py-3.5 over py-2: this was the tallest nav item at 32px and is
+              // still short of 44. Vertical padding only, so the neon fill, the
+              // label and the ml-3 gap are untouched.
+              className="ml-3 inline-flex items-center justify-center rounded-xl bg-neon px-5 py-3.5 text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none"
             >
               {HEADER_CTA.label}
             </a>
