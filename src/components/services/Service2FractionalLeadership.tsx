@@ -64,8 +64,15 @@ export default function Service2FractionalLeadership() {
         </div>
       </header>
 
-      {/* Curve Section */}
-      <section className="bg-mist py-10 sm:py-16 md:py-24">
+      {/* Curve Section.
+
+          CREAM, from 31 August. This was the last pale green band on any
+          service page: every other section on all five sits on the page ground,
+          so this one read as a stripe across an otherwise continuous page. The
+          cards inside it keep their own fills, which is where the colour
+          belongs. The phase cards are shell and stay lighter than the ground
+          behind them, so the pale green going does not cost them their edge. */}
+      <section className="surface-page py-10 sm:py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-7 sm:mb-10 max-w-2xl">
             <span className="block font-sans font-semibold text-[10.5px] tracking-[0.24em] uppercase text-[#009f50]">
