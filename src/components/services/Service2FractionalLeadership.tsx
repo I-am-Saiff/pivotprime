@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useSyncExternalStore } from "react";
+import { Fragment, useState, useSyncExternalStore } from "react";
 
 import { PairDark, PairLight, SectionHead, ServiceSignOff } from "./SpecCopyBlocks";
 import { FRACTIONAL_FIT, SEATS, SERVICE_CLOSERS } from "@/content/services-detail";
@@ -180,65 +180,85 @@ export default function Service2FractionalLeadership() {
             }
           />
 
-          <div className="grid gap-3 md:grid-cols-3">
+          {/* ONE GRID, BUTTON THEN ITS OWN PANEL, from the 31 August narrow-width
+              report. The button row and the panel row used to be two separate
+              blocks, so below md the three buttons stacked and the open panel
+              landed underneath all three: on a phone you tapped the CFO seat and
+              the content appeared two cards further down, with nothing tying it
+              to what you pressed.
+
+              Interleaved in the DOM, the panel is the accordion body directly
+              beneath its own header at every width below 768. At md the order
+              utilities put all three buttons back in row one and the panel below
+              them spanning the full width, which is the tab layout unchanged.
+
+              THE STATE MACHINE IS UNTOUCHED. This was already a single-open
+              disclosure: one openSeat index, real buttons carrying aria-expanded
+              and aria-controls pointing at the panel ids, all three panels in the
+              served HTML with the closed two marked hidden, and the COO seat open
+              by default because seatIndexFromHash returns 0 for an empty
+              fragment. Only the layout moved.
+
+              SPACING HOLDS AT md: the panel's mt-6 became the grid's md:gap-y-6,
+              so the 24px between the buttons and the panel is the same 24px it
+              was, and the 12px between the buttons is untouched. */}
+          <div className="grid gap-3 md:grid-cols-3 md:gap-y-6">
             {SEATS.map((seat, i) => {
               const isOpen = i === openSeat;
               return (
-                <button
-                  key={seat.title}
-                  type="button"
-                  id={SEAT_IDS[i]}
-                  onClick={() => setPicked(i)}
-                  aria-expanded={isOpen}
-                  aria-controls={`${SEAT_IDS[i]}-panel`}
-                  className={`rounded-xl border p-5 text-left transition-all ${
-                    isOpen
-                      ? "border-forest bg-forest"
-                      : "border-forest/12 bg-shell hover:-translate-y-0.5 hover:border-mid/40 hover:shadow-[0_14px_30px_rgba(1,51,37,0.07)]"
-                  }`}
-                >
-                  <span
-                    className={`block font-sans text-base font-bold ${isOpen ? "text-white" : "text-forest"}`}
+                <Fragment key={seat.title}>
+                  <button
+                    type="button"
+                    id={SEAT_IDS[i]}
+                    onClick={() => setPicked(i)}
+                    aria-expanded={isOpen}
+                    aria-controls={`${SEAT_IDS[i]}-panel`}
+                    className={`rounded-xl border p-5 text-left transition-all md:order-1 ${
+                      isOpen
+                        ? "border-forest bg-forest"
+                        : "border-forest/12 bg-shell hover:-translate-y-0.5 hover:border-mid/40 hover:shadow-[0_14px_30px_rgba(1,51,37,0.07)]"
+                    }`}
                   >
-                    {seat.title}
-                  </span>
-                  <span
-                    className={`mt-1.5 block text-sm ${isOpen ? "text-mist" : "text-forest/70"}`}
+                    <span
+                      className={`block font-sans text-base font-bold ${isOpen ? "text-white" : "text-forest"}`}
+                    >
+                      {seat.title}
+                    </span>
+                    <span
+                      className={`mt-1.5 block text-sm ${isOpen ? "text-mist" : "text-forest/70"}`}
+                    >
+                      {seat.short}
+                    </span>
+                  </button>
+
+                  <div
+                    id={`${SEAT_IDS[i]}-panel`}
+                    hidden={i !== openSeat}
+                    className="grid gap-5 md:order-2 md:col-span-3 md:grid-cols-2 md:gap-6"
                   >
-                    {seat.short}
-                  </span>
-                </button>
+                    {/* Left white, right dark green, her 31 August rule. Both halves
+                        were plain text on the page ground until now. */}
+                    <PairLight label={seat.h} labelAs="h3">
+                      <p className="leading-relaxed text-forest/70">{seat.n}</p>
+                    </PairLight>
+                    <PairDark>
+                      <ul className="grid gap-2.5">
+                        {seat.l.map((item) => (
+                          <li key={item} className="flex items-start gap-3 text-[15.5px] text-white">
+                            <span
+                              aria-hidden="true"
+                              className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-neon"
+                            />
+                            <span className="leading-relaxed">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </PairDark>
+                  </div>
+                </Fragment>
               );
             })}
           </div>
-
-          {SEATS.map((seat, i) => (
-            <div
-              key={seat.title}
-              id={`${SEAT_IDS[i]}-panel`}
-              hidden={i !== openSeat}
-              className="mt-6 grid gap-5 md:grid-cols-2 md:gap-6"
-            >
-              {/* Left white, right dark green, her 31 August rule. Both halves
-                  were plain text on the page ground until now. */}
-              <PairLight label={seat.h} labelAs="h3">
-                <p className="leading-relaxed text-forest/70">{seat.n}</p>
-              </PairLight>
-              <PairDark>
-                <ul className="grid gap-2.5">
-                  {seat.l.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-[15.5px] text-white">
-                      <span
-                        aria-hidden="true"
-                        className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-neon"
-                      />
-                      <span className="leading-relaxed">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </PairDark>
-            </div>
-          ))}
         </div>
       </section>
 

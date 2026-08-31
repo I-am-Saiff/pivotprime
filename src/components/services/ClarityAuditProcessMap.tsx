@@ -63,7 +63,69 @@ export default function ClarityAuditProcessMap() {
               className="mb-6"
             />
 
-            <div className="relative h-[240px] md:h-[340px] w-full">
+            {/* BELOW 640: A VERTICAL STACK, from the 31 August narrow-width
+                report. The scattered map positions seven 74px-wide chips by
+                percentage across a 900-unit viewBox. At 400px that leaves each
+                chip far narrower than its label, so "Enquiry", "Approval",
+                "Onboard" and "Deliver" rendered as "Enquir", "Approv", "Onboa"
+                and "Delive", and the leftmost chips were clipped by the panel
+                edge. Widening the chips is not available: seven of them across
+                a 320px panel cannot each hold a word.
+
+                So below sm the same steps render as one node per row, in
+                sequence, auto-width so the label sets the width rather than the
+                other way round. Node fill, border, radius, type and the
+                dimmed treatment for the two dead steps are the map's own
+                classes, and the connector keeps the map's two strokes: solid
+                #c8d9d0 for a forward step, dashed #5e6f68 leaving a dead one,
+                which is exactly where the map draws its doubling-back lines.
+
+                THE HEIGHT IS RESERVED, NOT REMOVED, and the stack is centred in
+                it. The two states have seven and six steps, so a stack that
+                sizes to its content shrinks by one row when the toggle is
+                pressed and drags the caption up with it. The desktop map is a
+                fixed height for the same reason. minHeight is the taller of the
+                two states, so the messy state fills it exactly and the clean
+                state sits centred with about 25px above and below: far less
+                than the ~130px dead band the fixed 240px left underneath the
+                scattered map, and no jump on toggle.
+
+                WHAT THE STACK CANNOT SHOW: the map's back-links as arcs. A
+                sequence has no room to draw a line returning to an earlier
+                step. The dashed connector and the dimmed nodes carry that the
+                two steps are the problem, and the caption below states it in
+                words, unchanged. */}
+            <div className="sm:hidden">
+              <ul
+                className="mx-auto flex w-fit flex-col items-center justify-center"
+                style={{ minHeight: maxNodes * 34 + (maxNodes - 1) * 16 }}
+              >
+                {set.map((s, i) => {
+                  const isDead = "dead" in s ? (s as { dead?: boolean }).dead : false;
+                  return (
+                    <li key={s.t} className="flex flex-col items-center">
+                      <div
+                        data-on-light={isDead ? "dim" : "true"}
+                        className={`flex min-h-[34px] items-center justify-center rounded-lg border px-4 py-2 font-sans text-[10.5px] font-semibold
+                          ${isDead ? "surface-page border-forest/25 text-forest/55" : "surface-page border-[#e3eae6] text-[#013325]"}
+                        `}
+                      >
+                        {s.t}
+                      </div>
+                      {i < set.length - 1 ? (
+                        <span
+                          aria-hidden="true"
+                          className={`block h-4 w-0 ${isDead ? "border-l border-dashed border-[#5e6f68]" : "border-l border-[#c8d9d0]"}`}
+                        />
+                      ) : null}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+
+            {/* 640 AND UP: the scattered map, unchanged. */}
+            <div className="relative hidden h-[240px] w-full sm:block md:h-[340px]">
               <svg viewBox="0 0 900 240" preserveAspectRatio="none" className="absolute inset-0 w-full h-full overflow-visible">
                 {links.map(([a, b], idx) => {
                   const A = set[a];
