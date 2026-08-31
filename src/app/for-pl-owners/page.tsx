@@ -27,8 +27,10 @@ export default function ForCorporateOwners() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight max-w-4xl mx-auto">
             You are responsible for the whole system.
           </h1>
-          <p className="text-lg md:text-xl text-white/85 font-medium leading-relaxed max-w-3xl mx-auto">
-            Performance, risk, and long-term direction all sit with you. You’re running a complex organisation with multiple products, senior leaders, regulators, boards, and markets to answer to.
+          {/* The same token as the eyebrow above the heading, text-neon, her
+              31 August instruction that the two match precisely. */}
+          <p className="text-lg md:text-xl text-neon font-medium leading-relaxed max-w-3xl mx-auto">
+            Performance, risk, and long-term direction all sit with you.
           </p>
         </div>
       </header>

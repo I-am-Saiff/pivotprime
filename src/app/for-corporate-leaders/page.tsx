@@ -27,11 +27,8 @@ export default function ForCorporateLeaders() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight max-w-4xl mx-auto">
             You’re carrying delivery, risk, and outcomes
           </h1>
-          <p className="text-lg md:text-xl text-neon font-semibold leading-relaxed max-w-3xl mx-auto mb-4">
+          <p className="text-lg md:text-xl text-neon font-semibold leading-relaxed max-w-3xl mx-auto">
             You are often expected to do it without enough people or budget.
-          </p>
-          <p className="text-base md:text-lg text-white/85 font-medium leading-relaxed max-w-3xl mx-auto">
-            You’re expected to make things work across functions, vendors, and priorities, while keeping the organisation steady and your own credibility intact.
           </p>
         </div>
       </header>

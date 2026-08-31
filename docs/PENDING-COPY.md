@@ -3697,3 +3697,44 @@ against the dark header and would draw a dark halo on a light card, so it uses
 the standard one; and these are 44px tall, because the header button is hidden on
 phones and never has to be tapped, while these are on the page at every width and
 44px is the smallest target a finger reliably hits.
+
+---
+
+## 1c3. Four hero sentences removed, and the standfirst turns green — **for Iram**
+
+**Removed from the hero of each page**, on your 31 August instruction. This is
+spec copy, so each sentence is written out in full:
+
+- **/for-corporate-leaders** — "You're expected to make things work across
+  functions, vendors, and priorities, while keeping the organisation steady and
+  your own credibility intact." This was the whole second paragraph of that
+  hero, so the paragraph went with it.
+- **/for-founders** — "Decisions funnel back to your desk, growth feels harder
+  than it should and stepping away feels risky."
+- **/for-smes** — "Cash flow needs attention, costs creep quietly, and
+  performance depends too much on who is chasing what. You're past early chaos,
+  but not yet operating with the consistency, visibility, or control that scale
+  demands."
+- **/for-pl-owners** — "You're running a complex organisation with multiple
+  products, senior leaders, regulators, boards, and markets to answer to."
+
+**No hero is left empty.** You asked to be told if one was, so here is what each
+one now says under its heading:
+
+| Page | What remains |
+|---|---|
+| For Founders | "It works, but behind the scenes, everything still depends on you." |
+| For SMEs | "Some months feel strong, others feel tighter than they should." |
+| For Corporate Leaders | "You are often expected to do it without enough people or budget." |
+| For P&L Owners | "Performance, risk, and long-term direction all sit with you." |
+
+**The remaining line is now the same green as the eyebrow above the heading**, on
+all four. It is the same token, not a colour picked to look similar: For
+Corporate Leaders already used it on that line, which is where the value comes
+from. The heading itself stays white.
+
+**Contrast, since you asked.** The green measures **7.29:1** against the dark
+hero on all four pages, at both desktop and mobile widths. The requirement is
+4.5:1 for text this size, so it clears it with room. For comparison the white it
+replaced was about 15:1, so the line is less bright than it was but comfortably
+readable, and it now matches the eyebrow exactly as you asked.

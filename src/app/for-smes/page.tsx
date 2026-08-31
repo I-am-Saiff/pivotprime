@@ -27,8 +27,10 @@ export default function ForSMEs() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight max-w-4xl mx-auto">
             Revenue is increasing, but margins are uneven.
           </h1>
-          <p className="text-lg md:text-xl text-white/85 font-medium leading-relaxed max-w-3xl mx-auto">
-            Some months feel strong, others feel tighter than they should. Cash flow needs attention, costs creep quietly, and performance depends too much on who is chasing what. You’re past early chaos, but not yet operating with the consistency, visibility, or control that scale demands.
+          {/* The same token as the eyebrow above the heading, text-neon, her
+              31 August instruction that the two match precisely. */}
+          <p className="text-lg md:text-xl text-neon font-medium leading-relaxed max-w-3xl mx-auto">
+            Some months feel strong, others feel tighter than they should.
           </p>
         </div>
       </header>

@@ -27,8 +27,10 @@ export default function ForFounders() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight max-w-4xl mx-auto">
             You’ve created something real.
           </h1>
-          <p className="text-lg md:text-xl text-white/85 font-medium leading-relaxed max-w-3xl mx-auto">
-            It works, but behind the scenes, everything still depends on you. Decisions funnel back to your desk, growth feels harder than it should and stepping away feels risky.
+          {/* The same token as the eyebrow above the heading, text-neon, her
+              31 August instruction that the two match precisely. */}
+          <p className="text-lg md:text-xl text-neon font-medium leading-relaxed max-w-3xl mx-auto">
+            It works, but behind the scenes, everything still depends on you.
           </p>
         </div>
       </header>
