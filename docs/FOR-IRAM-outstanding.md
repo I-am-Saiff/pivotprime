@@ -1135,3 +1135,22 @@ want them back as a strapline under each domain name:
 
 They were written against the old page order, so they do not map one to one onto
 the six domains as they now stand.
+
+---
+
+## The hero button, and where it goes next
+
+**1 September.** The first button in the homepage hero, *"Find out what is
+holding your business back"*, now scrolls down to the patterns section on the
+same page, the one headed *"These are the patterns before growth stalls"*. It
+used to open the contact form.
+
+**This is an interim destination, not the final one.** That button is one of two
+switches that point at the diagnostic once you send the twelve-question HTML and
+the feature is turned on. The code still carries both destinations: the patterns
+section while the diagnostic is off, and the diagnostic itself the moment it is
+enabled. Nothing needs redoing at that point, and nothing has been lost by
+pointing it here in the meantime.
+
+The second hero button, *"See what we actually do"*, is unchanged and still goes
+to the services section.

@@ -110,5 +110,18 @@ export const ENQUIRY_SUBMIT_CTA: Cta = {
  */
 export const HERO_CTA: Cta = {
   label: "Find out what is holding your business back",
-  href: DIAGNOSTIC_ENABLED ? "/diagnostic" : "/contact",
+  /**
+   * INTERIM DESTINATION, 1 September: the patterns section on the same page,
+   * not /contact. The button asks the reader to find out what is holding the
+   * business back, and the patterns list is the nearest thing the site has to
+   * an answer while the diagnostic is off; a contact form was a weaker honour
+   * of the same label.
+   *
+   * THE DIAGNOSTIC BRANCH IS UNTOUCHED. This is one of the two switches that
+   * flip when NEXT_PUBLIC_ENABLE_DIAGNOSTIC is turned on, so #patterns is the
+   * off-state only and /diagnostic still wins when the flag is set. Recorded in
+   * docs/FOR-IRAM-outstanding.md so the wiring is not lost behind an anchor
+   * that looks deliberate.
+   */
+  href: DIAGNOSTIC_ENABLED ? "/diagnostic" : "#patterns",
 };

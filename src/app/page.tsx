@@ -257,7 +257,12 @@ export default function Home() {
       {/* 3.5 The patterns. MOVED below the services: having just read what
           Pivot Prime sells, the visitor now recognises their own symptom and
           knows which service it points to. Spec 3.5. */}
-      <section className="surface-page px-4 pb-14 sm:pb-24 sm:px-6 lg:px-8">
+      {/* id and scroll-mt-28 mirror the #services section above, which is the
+          only other anchor target on this page. The hero's first button points
+          here. globals.css already gives every [id] a 7rem scroll-margin-top so
+          a target does not land under the floating nav; scroll-mt-28 is the same
+          7rem stated locally, which is how #services carries it. */}
+      <section id="patterns" className="scroll-mt-28 surface-page px-4 pb-14 sm:pb-24 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
           {/* The heading is black again, on her 31 August instruction. It was
               black over cream chips, went green on 28 August with the chips,
