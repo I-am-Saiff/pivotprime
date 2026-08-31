@@ -3866,6 +3866,12 @@ that read as a grey patch, then no fill at all, then the Talk to us button green
 and now this. The words, the size and the position in the row are unchanged
 throughout.
 
+**"Built by our technology team." reads as a sentence now.** The words were
+always stored that way; the styling was putting the whole line in capitals on
+top of them, so it read BUILT BY OUR TECHNOLOGY TEAM. The capitals are off and
+the extra letter spacing that went with them is off too, for the same reason as
+below. One line, on the Nurture case study.
+
 **"The results" lost its letterspacing.** With the words in capitals the heading
 carried extra space between the letters, which is normal for a line set in caps.
 In sentence case it read loose next to "The challenge" directly above it, so the

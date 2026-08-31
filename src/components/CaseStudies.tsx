@@ -183,7 +183,7 @@ export default function CaseStudies({
                   {/* Who delivered it, where that is not the consulting
                       engagement the other cards describe. */}
                   {study.attribution && (
-                    <p className="mt-2 text-xs font-bold tracking-[0.14em] text-mid uppercase">
+                    <p className="mt-2 text-xs font-bold text-mid">
                       {study.attribution}
                     </p>
                   )}
