@@ -3858,6 +3858,14 @@ Nurture's "Childcare Technology · UAE" is untouched, and so is everything else 
 those two lines: the sector names, the acronyms and the place names keep their
 capitals.
 
+**The two logo carousel tiles are on mist now.** "Experience inside global
+institutions" and "Companies we have delivered for" carry the same fill as the
+testimonial quote box in Who we serve, with the label in dark green. That is the
+fourth fill these two have had in two days, so for the record: a very pale green
+that read as a grey patch, then no fill at all, then the Talk to us button green,
+and now this. The words, the size and the position in the row are unchanged
+throughout.
+
 **"The results" lost its letterspacing.** With the words in capitals the heading
 carried extra space between the letters, which is normal for a line set in caps.
 In sentence case it read loose next to "The challenge" directly above it, so the

@@ -182,16 +182,20 @@ export default function Home() {
                     className="flex items-center space-x-12 px-6"
                     aria-hidden={copy === 1}
                   >
-                    {/* NEON FILL, on the client's 1 September instruction that these
-                        two read as the header's Talk to us button. It has gone
-                        through three states: bg-forest/[0.04], which composited
-                        ten points darker than the section and read as a grey
-                        patch; no fill at all, which matched the page exactly;
-                        and now bg-neon, which is the same token the header CTA
-                        uses. The border went with the change, because the CTA
-                        does not carry one and a forest/15 outline over neon
-                        reads as an artefact. Forest on neon measures 7.29:1. */}
-                    <h3 className="flex h-20 w-56 flex-shrink-0 items-center justify-center rounded-lg bg-neon px-5 text-center font-sans text-xs font-bold tracking-[0.14em] text-forest uppercase md:h-24 md:w-64">
+                    {/* MIST FILL, the fourth and current state, on the client's
+                        1 September instruction that these two carry the same
+                        fill as the testimonial quote card in Who we serve. That
+                        card is bg-mist with forest text, so this is the same
+                        token rather than a colour matched by eye.
+
+                        The full sequence, since this tile has moved more than
+                        anything else on the page: bg-forest/[0.04], which
+                        composited ten points darker than the section and read as
+                        a grey patch; no fill, which matched the page exactly;
+                        bg-neon, the header CTA's green; and now bg-mist. The
+                        text has been text-forest throughout. No border, which is
+                        how it has been since the neon change. */}
+                    <h3 className="flex h-20 w-56 flex-shrink-0 items-center justify-center rounded-lg bg-mist px-5 text-center font-sans text-xs font-bold tracking-[0.14em] text-forest uppercase md:h-24 md:w-64">
                       {group.label}
                     </h3>
                     {group.logos.map((logo) => (
