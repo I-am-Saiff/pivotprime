@@ -137,7 +137,22 @@ export default function About() {
                 key={person.name}
                 className="flex flex-col overflow-hidden rounded-[28px] border border-forest/20 card-dark shadow-[0_16px_48px_rgba(1,51,37,0.06)]"
               >
-                <Portrait person={person} className="aspect-[16/10] w-full sm:aspect-[4/5]" />
+                {/* PORTRAIT ASPECT AT EVERY WIDTH, from 1 September. This was
+                      aspect-[16/10] below sm and aspect-[4/5] above it, which is
+                      the wrong way round for portrait photographs: measured on
+                      live, the box was 1.6 under 640 against source ratios of
+                      0.80 and 0.75, so 50% of Justin's photograph and 53% of
+                      Khushi's were being discarded, top-anchored. At 640 and up
+                      the same photographs lose 0% and 6%.
+
+                      4/5 everywhere matches the source files, matches the founder
+                      card directly above, which has always been aspect-[4/5] at
+                      every width, and is the shape Saif's photograph will need
+                      when it arrives; his card renders initials until then and
+                      was going to inherit the same bad crop. The cards are taller
+                      on a phone as a result, which is the cost of not cutting the
+                      subject in half. */}
+                <Portrait person={person} className="aspect-[4/5] w-full" />
                 <div className="flex flex-1 flex-col p-6 md:p-8">
                   <p className="text-xs font-bold tracking-[0.18em] text-mid uppercase">
                     {person.role}

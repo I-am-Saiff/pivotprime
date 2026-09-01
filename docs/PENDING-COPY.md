@@ -4048,3 +4048,24 @@ out, so it has been left. Say the word and it matches.
 **The phase card labels on Fractional Leadership**, the "Months 1–2", "Build",
 "Pivot Prime" and "Your team" tags inside the three cards. Same reason: they were
 in frame and were not picked out, and they are tags rather than headings.
+
+## 1d0 The team photographs on About are no longer cropped in half on a phone
+
+**1 September.**
+
+On a phone the three team cards under your own were putting each portrait into a
+wide landscape frame, which cut the photographs roughly in half. Measured on the
+live site: Justin's photograph was losing 50% and Khushi's 53%, on every width
+below 640px. On a laptop the same photographs were losing 0% and 6%, so the
+problem only ever showed on a phone.
+
+They now use the same upright shape at every width, which is the shape the
+photographs were taken in and the shape your own card above them has always used.
+Nothing is cropped away now beyond a few per cent.
+
+**This also fixes Saif's card before his photograph arrives.** His card shows his
+initials for now, and it was sitting in the same wide frame, so the picture would
+have landed into a crop that cut it in half on the day it was added.
+
+The cards are taller on a phone than they were, because a photograph that is not
+cut in half takes more room. Nothing else on the page changed.
