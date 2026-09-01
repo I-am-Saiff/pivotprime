@@ -4145,3 +4145,43 @@ Nothing else in the section moved. The "We agree a target" line above it, the
 "Our fee structure" label itself, the calculator, the figures and the closing
 line below are all untouched. The box is one line taller than it was, because
 the sentence is longer.
+
+## 1d3 The block labels on the service pages are bigger than the text under them
+
+**1 September.** You flagged that the label at the top of each paired block was
+smaller than the bullets underneath it, which reads backwards. It was.
+
+Measured on the live site before the change: every one of those labels was
+**12px**, and the text underneath was **15.5px** for a tick list and **16px**
+for a paragraph. Thirteen labels across the five service pages, and every
+single one of them was the smallest thing in its own block.
+
+They are **18px** now. Not a new size: it is already the size of the "Where
+this starts" heading on Technology Builds and of the two-column pair at the
+foot of that same page, so the labels now agree with the blocks doing the same
+job beside them rather than sitting a size below.
+
+**The wording, the capitals, the letter spacing and the green are exactly as
+they were.** Only the size moved.
+
+**Every label this covers**, taken from the pages rather than from the list you
+sent, which missed three:
+
+| Page | Labels |
+| --- | --- |
+| Operational Clarity Audit | What we look at · What you get · How we do it · What happens after |
+| Fractional Leadership | What the COO seat covers · What the Chief of Staff seat covers · What the CFO seat covers · Where it does not fit · How it runs |
+| Build and Place | What you are not carrying · How it is priced |
+| Technology Builds | How it runs |
+| UAE Market Entry | The numbers come first · What we build |
+
+The three your list did not name are the seat labels on Fractional Leadership,
+one inside each of the COO, Chief of Staff and CFO panels. They are the same
+block as the others and they have moved with them.
+
+**"Where this starts" on Technology Builds needed nothing.** It was already
+18px and already larger than its own text, so it has been left alone and now
+matches the rest.
+
+**Nothing else on those pages moved.** The section eyebrows, the section
+headings and the line above each page title are all the size they were.

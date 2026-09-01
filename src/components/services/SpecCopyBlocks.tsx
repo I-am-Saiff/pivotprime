@@ -24,10 +24,11 @@ import { CONTACT_CTA as SIGN_OFF_CTA } from "@/content/cta";
  * a second, plainer version of the same page.
  */
 
-/** Her `.lab`: the small uppercase label that heads a column. Gold in her file. */
+/** Her `.lab`: the label that heads a column. Gold in her file. Sized with the
+ *  pair labels below, which is the same role on the same pages. */
 export function Lab({ children }: { children: React.ReactNode }) {
   return (
-    <div className="font-sans text-[12px] font-semibold text-mid">
+    <div className="font-sans text-lg font-semibold text-mid">
       {children}
     </div>
   );
@@ -117,8 +118,21 @@ export function TickList({ items, onDark = false }: { items: string[]; onDark?: 
  * the first letter capital and the rest normal, so the transform is off and the
  * caps tracking with it, for the same reason it came off "The results" and the
  * case study attribution: 0.2em exists to open up capitals and reads loose on a
- * sentence. 10.5px was also a size chosen for caps, so it goes to 12px to stay
- * legible in mixed case. Colour, weight and position are unchanged.
+ * sentence. Colour, weight and position are unchanged.
+ *
+ * 18px FROM 1 SEPTEMBER, the second half of that. Sentence case took the size
+ * from 10.5px to 12px, which kept it legible but left every label SMALLER than
+ * the text underneath it: the tick lines are 15.5px and the paragraphs 16px, so
+ * all thirteen labels across the five pages measured 12 against 15.5 or 16 and
+ * the heading of each block was the smallest thing in it. She flagged that as
+ * backwards and she is right.
+ *
+ * text-lg, not a new value, because 18px is already the label size on these
+ * pages twice over: NoteCard's heading below, and the hand-built contrast pair
+ * at the foot of Technology Builds, which copies this pair rather than using
+ * it. Picking anything else would have made the shared pair disagree with the
+ * two blocks doing the same job beside it. Case, tracking, colour, weight and
+ * position are untouched; only the size moves. PENDING-COPY 1d3.
  *
  * THIS IS SHARED, so it moves four pages, not the two she named: the audit page
  * and Fractional Leadership that she pointed at, plus Build and Place and UAE
@@ -143,7 +157,7 @@ export function PairLight({
   return (
     <div className="rounded-2xl border border-forest/10 bg-white p-6 shadow-sm sm:p-7">
       {label ? (
-        <Label className="font-sans text-[12px] font-semibold text-mid">
+        <Label className="font-sans text-lg font-semibold text-mid">
           {label}
         </Label>
       ) : null}
@@ -165,7 +179,7 @@ export function PairDark({
   return (
     <div className="card-dark rounded-2xl border border-white/10 p-6 shadow-xl sm:p-7">
       {label ? (
-        <Label className="font-sans text-[12px] font-semibold text-neon">
+        <Label className="font-sans text-lg font-semibold text-neon">
           {label}
         </Label>
       ) : null}
