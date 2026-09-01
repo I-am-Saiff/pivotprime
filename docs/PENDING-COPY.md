@@ -4310,3 +4310,28 @@ this page the strip above ends on a hard border with nothing beneath it.
 There is now a small gap above the box, 24px on a phone and 40px on a laptop.
 The space underneath is still the larger of the two, 48px and 80px, so your
 30 August rule that the weight sits at the bottom still holds.
+
+## 1d7 The footer logo is the real logo now
+
+**1 September.** You spotted that the logo at the foot of the page did not match
+the one in the header, and that the header one is correct. It was not a smaller
+version of the same mark. It was a different mark.
+
+**The header** carries the Pivot Prime mark: sixteen rectangles, in the bright
+green.
+
+**The footer** was carrying nine plain squares in a three by three grid, in the
+darker green, each one a bit more transparent than the last, so it faded out
+towards the bottom right. Nothing about it was the logo. It was a stand-in from
+early in the build that was never swapped for the real thing.
+
+The footer now carries the same mark, in the same green. Not a copy of it: both
+are drawn from one file, so they cannot come apart again.
+
+**The footer's is slightly larger, on purpose.** The word "PivotPrime" beside it
+is bigger in the footer than in the header, so the mark is scaled by the same
+amount to keep the two in the same proportion the header uses. Same drawing,
+same colour, sized to sit properly next to the larger word.
+
+**The header is untouched.** Its mark was compared against the live site before
+and after, and the markup and the position are identical to the character.

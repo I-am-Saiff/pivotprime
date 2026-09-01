@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import PivotMark from "./PivotMark";
 import { FOOTER_LINKS } from "@/content/navigation";
 
 
@@ -17,18 +18,18 @@ export default function Footer() {
         <div className="flex justify-between items-center mb-8">
           <div>
             <Link href="/" className="-my-1.5 inline-flex min-h-11 items-center py-1.5">
-              <span className="text-2xl font-bold text-white flex items-center gap-2">
-                <div className="grid grid-cols-3 gap-1 w-6 h-6">
-                  <div className="bg-primary rounded-sm"></div>
-                  <div className="bg-primary/80 rounded-sm"></div>
-                  <div className="bg-primary/60 rounded-sm"></div>
-                  <div className="bg-primary/80 rounded-sm"></div>
-                  <div className="bg-primary/60 rounded-sm"></div>
-                  <div className="bg-primary/40 rounded-sm"></div>
-                  <div className="bg-primary/60 rounded-sm"></div>
-                  <div className="bg-primary/40 rounded-sm"></div>
-                  <div className="bg-primary/20 rounded-sm"></div>
-                </div>
+              {/* THE REAL MARK, 1 September. This was nine CSS squares in mid
+                  green at descending opacities, which is not the logo: the mark
+                  is the sixteen-rectangle one the header carries, and it is neon,
+                  not mid. Her instruction is that the header is correct.
+
+                  37px rather than the header's 28px because the wordmark beside
+                  it is larger here, text-2xl against the header's text-lg, and
+                  the mark is sized to hold the header's own mark-to-wordmark
+                  ratio of 28:18. Same artwork, same colour, scaled to its
+                  setting. PENDING-COPY 1d7. */}
+              <span className="text-2xl font-bold text-white flex items-center gap-2.5">
+                <PivotMark size={37} className="text-neon" />
                 PivotPrime
               </span>
             </Link>

@@ -4,36 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { NAVIGATION, type NavItem } from "@/content/navigation";
 import { HEADER_CTA } from "@/content/cta";
+import PivotMark from "./PivotMark";
 
 function PivotLogo() {
   return (
     <div className="flex items-center gap-2.5">
-      <svg
-        width="28"
-        height="28"
-        viewBox="0 0 36 35"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="shrink-0 text-neon"
-        aria-hidden="true"
-      >
-        <path d="M24.711 0.003H18.048V6.581H24.711V0.003Z" fill="currentColor" />
-        <path d="M13.533 0H8.056V5.407H13.533V0Z" fill="currentColor" />
-        <path d="M24.117 10.927H18.64V16.334H24.117V10.927Z" fill="currentColor" />
-        <path d="M23.407 21.489H19.349V25.496H23.407V21.489Z" fill="currentColor" />
-        <path d="M13.052 11.627H8.993V15.634H13.052V11.627Z" fill="currentColor" />
-        <path d="M12.598 21.715H9V25.267H12.598V21.715Z" fill="currentColor" />
-        <path d="M3.34 11.988H0.01V15.276H3.34V11.988Z" fill="currentColor" />
-        <path d="M23.042 31.713H19.712V35H23.042V31.713Z" fill="currentColor" />
-        <path d="M35.528 31.713H32.198V35H35.528V31.713Z" fill="currentColor" />
-        <path d="M3.33 0.213H0V3.5H3.33V0.213Z" fill="currentColor" />
-        <path d="M2.872 22.073H0V24.909H2.872V22.073Z" fill="currentColor" />
-        <path d="M12.257 31.948H9.385V34.784H12.257V31.948Z" fill="currentColor" />
-        <path d="M1.977 32.851H0.02V34.784H1.977V32.851Z" fill="currentColor" />
-        <path d="M35.531 10.343H28.868V16.921H35.531V10.343Z" fill="currentColor" />
-        <path d="M35.528 20.789H30.051V26.196H35.528V20.789Z" fill="currentColor" />
-        <path d="M35.531 0.003H28.868V6.581H35.531V0.003Z" fill="currentColor" />
-      </svg>
+      <PivotMark className="text-neon" />
       {/* One word, one weight. "Pivot" was font-bold text-white and "Prime" was
           font-semibold text-white/95, so the two halves differed in weight AND
           in opacity. Levelled down to Prime's weight rather than up, so the
