@@ -254,8 +254,8 @@ export default function CaseStudies({
                   she renamed it, and seven of the nine studies were showing "The
                   Results" twice as a result. This panel is the one that survived
                   because it is where the four points she supplied for Scentmatic
-                  already were, and because it is the only place a figure and the
-                  Verified badge render at all. Every study now has exactly one.
+                  already were, and because it is the only place a figure renders
+                  at all. Every study now has exactly one.
 
                   No guard on the list length any more: every study has results,
                   which is checked by check-content rather than assumed here. */}
@@ -276,17 +276,28 @@ export default function CaseStudies({
                 <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-[var(--card-dark-fill)] p-5 text-white shadow-xl sm:p-6">
                   <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
                   <div className="relative z-10">
-                    <div className="mb-3 flex items-center justify-between border-b border-white/15 pb-2.5">
+                    {/* THE "VERIFIED" BADGE IS GONE, 1 September, on her
+                        instruction. It sat at the right-hand end of this rule and
+                        rendered on any card publishing a figure the section 9
+                        master table carries, which was three of the nine studies
+                        and all three of them on /about only.
+
+                        THE FLEX ROW WENT WITH IT. It existed to push the badge to
+                        the far end away from the heading; with one child left,
+                        justify-between has nothing to distribute and the rule is a
+                        plain block again. The heading, the border and the spacing
+                        are untouched, so the header measures the same 35px it did
+                        with the badge in it.
+
+                        THE figure FIELD STAYS. It is not a badge field: it renders
+                        the number in neon inside each result line, and it is what
+                        the section 9 master-table rule is enforced against.
+                        Deleting it would have taken every published figure off the
+                        case studies with it. PENDING-COPY 1d4. */}
+                    <div className="mb-3 border-b border-white/15 pb-2.5">
                       <h4 className="font-bold text-neon text-sm sm:text-base">
                         The results
                       </h4>
-                      {/* "Verified" is only true of a figure the master table
-                          carries. On a card whose figures are all withheld it was
-                          asserting the opposite of the truth, so it renders only
-                          when the card actually publishes one. */}
-                      {study.results.some((r) => r.figure) ? (
-                        <span className="text-xs font-semibold text-white/60">Verified</span>
-                      ) : null}
                     </div>
 
                     {/* Her sentence introducing the list. It sat above the

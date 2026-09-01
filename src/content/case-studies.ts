@@ -178,9 +178,11 @@ export const CASE_STUDIES: CaseStudy[] = [
    * table and nowhere else, and none of these is in it. The non-numeric markers
    * she wrote — the regulatory approval, the roadmap, the tax position — are not
    * result figures and stay, but they stay in the label rather than in the
-   * figure slot: `figure` means a number the master table carries, and the
-   * Verified badge and the two-column layout both read it. A tick in that slot
-   * put a Verified badge on a card with no verified number on it.
+   * figure slot: `figure` means a number the master table carries, and it is
+   * what renders the number in neon on the card. A tick in that slot published
+   * a figure the master table does not carry. The Verified badge used to read
+   * this field too; it came off on 1 September, PENDING-COPY 1d4, and the rule
+   * is unchanged without it.
    * PENDING-COPY 1ab carries the rule question.
    */
   {
@@ -211,8 +213,8 @@ export const CASE_STUDIES: CaseStudy[] = [
      * Spec section 1 says result figures come from that table and nowhere else.
      * She authorised these two directly on 29 August, so they ship, recorded in
      * PENDING-COPY the same way her five KPI figures were. They stay in the
-     * label rather than the `figure` slot, because that slot drives the
-     * Verified badge and the master table is what verifies.
+     * label rather than the `figure` slot, because that slot is for figures
+     * the master table carries and these are not in it.
      */
     results: [
       { figure: null, label: "Regulatory approval and company structures in both markets" },

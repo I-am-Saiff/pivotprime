@@ -4185,3 +4185,38 @@ matches the rest.
 
 **Nothing else on those pages moved.** The section eyebrows, the section
 headings and the line above each page title are all the size they were.
+
+## 1d4 The "Verified" badge is off the case studies
+
+**1 September**, on your instruction. It is gone from every case study on every
+page.
+
+**Where it actually was.** It sat at the right-hand end of the rule under "The
+results", and it did not appear on all nine studies: it only rendered on a card
+publishing a figure the section 9 master table carries. Measured on the live
+site before removing it, that was **three of the nine, and all three of them on
+the About page**:
+
+| Study | Page |
+| --- | --- |
+| Financial Services Company | About only |
+| Founder-Led Business | About only |
+| Fitness and Wellness Company, UAE | About only |
+
+**The homepage never showed it.** The three studies there are Nurture,
+Cinnacare and Scentmatic, and every figure on all three is withheld under the
+master-table rule, so the badge had nothing to attach to. The badge was checked
+on both pages rather than assumed from the screenshot.
+
+**Nothing was left behind.** The badge was the second half of a two-item row;
+with it gone the row is a plain rule with the heading on it, and the heading
+sits exactly where it always did, hard against the left edge. Measured before
+and after on all twelve panels across both pages: the header is 31px tall on a
+phone and 35px on a laptop, in both versions, with the heading at the same
+offset. There is no empty slot and nothing has shifted up.
+
+**One thing deliberately kept.** The badge read a field called `figure` on each
+result line. That field has not been removed, because it is also what puts the
+number in green inside each line: "67%", "13%", "17%", "Up to 2 days a week".
+Deleting it would have taken every published figure off the case studies along
+with the badge.
