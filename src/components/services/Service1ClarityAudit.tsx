@@ -22,7 +22,13 @@ export default function Service1ClarityAudit() {
               says so: .eyebrow is mid, and .ondark .eyebrow is neon, and every
               one of these heroes is class="hero ondark" in her file. Same
               10.5px, 600 weight and 0.24em tracking the light-ground section
-              eyebrows on these pages already use. PENDING-COPY 1c7. */}
+              eyebrows carried when this was written.
+
+              THOSE SECTION EYEBROWS ARE SENTENCE CASE NOW, from 1 September, and
+              these hero ones deliberately are not: they were in frame in the
+              screenshots that asked for the change and were not among the lines
+              picked out, so they keep the capitals until asked. PENDING-COPY
+              1c7 and 1c9. */}
           <span className="mb-4 block font-sans text-[10.5px] font-semibold tracking-[0.24em] text-neon uppercase">
             Service one
           </span>

@@ -43,7 +43,7 @@ export default function ClarityAuditProcessMap() {
       <section className="surface-page py-10 sm:py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-7 sm:mb-10 max-w-2xl">
-            <span className="block font-sans font-semibold text-[10.5px] tracking-[0.24em] uppercase text-[#009f50]">
+            <span className="block font-sans font-semibold text-[13px] text-[#009f50]">
               The deliverable, in one picture
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mt-3 text-[#0c1a15]">

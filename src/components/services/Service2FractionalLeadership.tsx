@@ -49,7 +49,13 @@ export default function Service2FractionalLeadership() {
               says so: .eyebrow is mid, and .ondark .eyebrow is neon, and every
               one of these heroes is class="hero ondark" in her file. Same
               10.5px, 600 weight and 0.24em tracking the light-ground section
-              eyebrows on these pages already use. PENDING-COPY 1c7. */}
+              eyebrows carried when this was written.
+
+              THOSE SECTION EYEBROWS ARE SENTENCE CASE NOW, from 1 September, and
+              these hero ones deliberately are not: they were in frame in the
+              screenshots that asked for the change and were not among the lines
+              picked out, so they keep the capitals until asked. PENDING-COPY
+              1c7 and 1c9. */}
           <span className="mb-4 block font-sans text-[10.5px] font-semibold tracking-[0.24em] text-neon uppercase">
             Service two
           </span>
@@ -86,7 +92,7 @@ export default function Service2FractionalLeadership() {
       <section className="surface-page py-10 sm:py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-7 sm:mb-10 max-w-2xl">
-            <span className="block font-sans font-semibold text-[10.5px] tracking-[0.24em] uppercase text-[#009f50]">
+            <span className="block font-sans font-semibold text-[13px] text-[#009f50]">
               Why it costs less than it looks
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mt-3 text-[#0c1a15]">

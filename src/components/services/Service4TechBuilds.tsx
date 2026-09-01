@@ -63,7 +63,13 @@ export default function Service4TechBuilds() {
               says so: .eyebrow is mid, and .ondark .eyebrow is neon, and every
               one of these heroes is class="hero ondark" in her file. Same
               10.5px, 600 weight and 0.24em tracking the light-ground section
-              eyebrows on these pages already use. PENDING-COPY 1c7. */}
+              eyebrows carried when this was written.
+
+              THOSE SECTION EYEBROWS ARE SENTENCE CASE NOW, from 1 September, and
+              these hero ones deliberately are not: they were in frame in the
+              screenshots that asked for the change and were not among the lines
+              picked out, so they keep the capitals until asked. PENDING-COPY
+              1c7 and 1c9. */}
           <span className="mb-4 block font-sans text-[10.5px] font-semibold tracking-[0.24em] text-neon uppercase">
             Service four
           </span>
@@ -107,7 +113,7 @@ export default function Service4TechBuilds() {
           className="pointer-events-none absolute inset-0 opacity-[0.5] [background-image:linear-gradient(var(--color-forest)_1px,transparent_1px),linear-gradient(90deg,var(--color-forest)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,black,transparent)] [opacity:0.06]"
         />
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <p className="font-sans text-xs font-bold tracking-[0.22em] text-mid uppercase">
+          <p className="font-sans text-[13px] font-bold text-mid">
             What we build
           </p>
           <h2 className="mt-4 max-w-3xl font-sans text-3xl font-extrabold tracking-tight text-forest md:text-4xl">
@@ -206,7 +212,7 @@ export default function Service4TechBuilds() {
           for it now that it is not. */}
       <section className="surface-page pb-12 sm:pb-20 md:pb-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <p className="font-sans text-xs font-bold tracking-[0.22em] text-mid uppercase">
+          <p className="font-sans text-[13px] font-bold text-mid">
             The argument
           </p>
           <h2 className="mt-4 max-w-3xl font-sans text-3xl font-extrabold tracking-tight text-forest md:text-4xl">

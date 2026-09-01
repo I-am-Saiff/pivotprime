@@ -4013,3 +4013,38 @@ has a "How it runs" label that is a different piece of the design and still read
 HOW IT RUNS in capitals. Fractional Leadership now says "How it runs" in sentence
 case. The same words in two styles on two service pages is the one thing this
 leaves untidy. One word from you and it matches.
+
+## 1c9 The section eyebrows on the service pages read as sentences
+
+**1 September, on your instruction.**
+
+The small green line that sits above each section heading was in capitals and now
+reads with only the first letter capital, on all five service pages:
+
+| Page | Eyebrows changed |
+|---|---|
+| Operational Clarity Audit | The deliverable, in one picture · Start here |
+| Fractional Leadership | Why it costs less than it looks · The seats we fill · Next step |
+| Build and Place | How it fits together · The difference |
+| Technology Builds | What we build · The argument · How it runs · Bring us the problem |
+| UAE Market Entry | The misconception · Straight answer · What we build |
+
+**The "How it runs" label on Technology Builds went with them.** That was the one
+loose end left from the last change: the same words read in capitals on Technology
+Builds and as a sentence on Fractional Leadership. They match now.
+
+**These were your own styling**, the same as the card labels in 1c8. Your file
+sets these to capitals, so this overrides your file rather than following it.
+
+The letter spacing came off with the capitals and the size went from 10.5px to
+13px, both because they existed to make a line of capitals readable.
+
+### Two things on those pages are still in capitals, on purpose
+
+**The "Service one" to "Service five" line above each page title.** It was on
+screen in the shots that asked for this change and was not one of the lines picked
+out, so it has been left. Say the word and it matches.
+
+**The phase card labels on Fractional Leadership**, the "Months 1–2", "Build",
+"Pivot Prime" and "Your team" tags inside the three cards. Same reason: they were
+in frame and were not picked out, and they are tags rather than headings.

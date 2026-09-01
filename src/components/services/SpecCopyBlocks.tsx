@@ -27,7 +27,7 @@ import { CONTACT_CTA as SIGN_OFF_CTA } from "@/content/cta";
 /** Her `.lab`: the small uppercase label that heads a column. Gold in her file. */
 export function Lab({ children }: { children: React.ReactNode }) {
   return (
-    <div className="font-sans text-[10.5px] font-semibold tracking-[0.2em] text-mid uppercase">
+    <div className="font-sans text-[12px] font-semibold text-mid">
       {children}
     </div>
   );
@@ -45,7 +45,7 @@ export function SectionHead({
 }) {
   return (
     <div className="mb-7 max-w-2xl sm:mb-10">
-      <span className="block font-sans text-[10.5px] font-semibold tracking-[0.24em] text-mid uppercase">
+      <span className="block font-sans text-[13px] font-semibold text-mid">
         {eyebrow}
       </span>
       <h2 className="mt-3 text-3xl font-bold text-forest md:text-4xl">{heading}</h2>
@@ -218,7 +218,7 @@ export function ServiceSignOff({
   return (
     <section className="surface-page px-4 pb-12 sm:px-6 sm:pb-20 lg:px-8">
       <div className="mx-auto max-w-5xl rounded-2xl bg-forest p-7 sm:p-10 md:p-11">
-        <span className="block font-sans text-[10.5px] font-semibold tracking-[0.24em] text-neon uppercase">
+        <span className="block font-sans text-[13px] font-semibold text-neon">
           {eyebrow}
         </span>
         <h2 className="mt-3 max-w-[22ch] text-2xl font-bold text-white md:text-3xl">{heading}</h2>
