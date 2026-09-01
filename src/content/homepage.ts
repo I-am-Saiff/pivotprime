@@ -227,7 +227,12 @@ export const METRICS: Metric[] = [
   },
   {
     figure: 43,
-    figureText: "43%",
+    // A MINUS SIGN, from her 1 September screenshots. The card measures a
+    // reduction and printed it as a bare 43%, which reads as a gain in a row
+    // where the other four are gains. The value is untouched: it is still the
+    // 43% she authorised on 27 August, now carrying its direction.
+    // PENDING-COPY 1d1.
+    figureText: "-43%",
     suffix: "%",
     pending: null,
     kpiLabel: "Process Efficiency",

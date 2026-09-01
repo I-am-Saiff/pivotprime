@@ -225,7 +225,10 @@ const DECISIONS = [
       // version searched the raw HTML and reported four of the five missing on
       // a page that showed all five.
       const text = block[0].replace(/<[^>]+>/g, "").replace(/<!--[\s\S]*?-->/g, "");
-      const authorised = ["+7%", "43%", "+13%", "+27%", "67%"];
+      // "-43%" carries its minus from 1 September: the card measures a
+      // reduction and she asked for the sign. Asserted with the sign on, so a
+      // revert to a bare "43%" fails here rather than passing on a substring.
+      const authorised = ["+7%", "-43%", "+13%", "+27%", "67%"];
       const missing = authorised.filter((f) => !text.includes(f));
       if (missing.length) {
         return `${missing.join(", ")} missing from the cards, but PENDING-COPY 1am records all five as authorised by the client on 27 August`;

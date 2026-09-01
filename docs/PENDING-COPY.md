@@ -4069,3 +4069,52 @@ have landed into a crop that cut it in half on the day it was added.
 
 The cards are taller on a phone than they were, because a photograph that is not
 cut in half takes more room. Nothing else on the page changed.
+
+## 1d1 The four changes to the results cards
+
+**1 September**, from your four screenshots of the "Measured impact" section.
+All four are done and are live. Nothing outside these five cards was touched.
+
+**1. The dot in front of each label is gone, and the label is bigger.** Your own
+file puts a small lit dot in front of "Execution", "Process efficiency" and the
+rest, and sets those labels at 9px. The dot is removed on all five cards and the
+label is now 12px. The capitals, the letter spacing and the green are yours and
+have not been altered. 12px was chosen against the figure below it, which is 54px
+when all five cards are on screen and 76px when they rotate one at a time, so the
+label reads at a glance without starting to look like a second heading.
+
+**2. The % now matches the number.** Your file colours the number green and
+leaves the % in the cream, and on all five cards the two now share the green, so
+"+7%", "-43%", "+13%", "+27%" and "67%" each read as one value.
+
+**3. Process efficiency.**
+
+The figure reads **-43%** rather than 43%. It is the same number you authorised
+on 27 August, now carrying its direction: it is the one card of the five that
+measures something going down, and without the sign it read like the four
+increases either side of it.
+
+The two rows of blocks have swapped emphasis, as you asked. The **before** row is
+now ten solid blocks, the whole workload drawn whole. The **after** row is the
+same ten positions with six coloured and four left as empty outlines, so what was
+removed is visible as the gap rather than as a shorter row. Six and four is the
+split this card has carried since 29 August, four of ten being the nearest whole
+block to 43%; no number was recalculated. The dashed "43% inefficiency" marker
+sits over exactly those four outlined blocks.
+
+**4. Transaction speed.**
+
+The before label reads **10 days**. "avg." is removed.
+
+The **before** bar is now filled solid across its full width, because ten days is
+the baseline being measured against. It used to be a faint tint inside a hairline
+box, which read as an empty track waiting to be filled and left the shorter after
+bar looking like the bigger quantity. The after bar is unchanged at three days.
+
+### One thing worth knowing
+
+**Your file says "10 days avg." and the site now says "10 days".** That is your
+instruction overriding your own mockup, recorded here so the difference between
+the two is visible rather than looking like a transcription error. Same for the
+dot in front of the labels and for the cream %: all three are your file, changed
+on your say-so.

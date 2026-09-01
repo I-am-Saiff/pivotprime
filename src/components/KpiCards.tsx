@@ -6,10 +6,14 @@ import KpiRotator from "./KpiRotator";
  * The five result cards, spec 3.3, built from her own design file.
  *
  * SOURCE: req/pivot-prime-kpi-cards_3.html, the client's approved design for
- * this section. Everything below — the grid, the card, the label with its lit
- * dot, the 96px visual well, the metric with its neon figure and cream suffix,
- * the name, and the rule above the supporting line — is transcribed from that
- * file rather than designed here.
+ * this section. Everything below — the grid, the card, the label, the 96px
+ * visual well, the metric, the name, and the rule above the supporting line —
+ * is transcribed from that file rather than designed here.
+ *
+ * TWO DEVIATIONS FROM HER FILE, both from her 1 September screenshots and both
+ * recorded in PENDING-COPY 1d1: the lit dot in front of the label is gone and
+ * the label is larger, and the % takes the figure's colour rather than her
+ * cream. Nothing else about the card has moved.
  *
  * WHAT THIS REPLACES. A rotating carousel of one card, which went through
  * clip-path shapes, pills and ellipses over three rounds. None of it was hers.
@@ -50,31 +54,44 @@ export default function KpiCards() {
             className="pointer-events-none absolute inset-x-[15%] top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(0,215,109,0.5),transparent)]"
           />
 
-          {/* Her label, with the lit dot in front of it. */}
-          <p className="mb-[18px] flex items-center gap-[7px] text-[9px] font-semibold tracking-[0.15em] text-neon uppercase">
-            <span
-              aria-hidden="true"
-              className="h-[5px] w-[5px] shrink-0 rounded-full bg-neon shadow-[0_0_7px_rgba(0,215,109,0.7)]"
-            />
+          {/* HER LABEL, WITHOUT THE LIT DOT AND AT 12px, from her 1 September
+              screenshots. Her file puts a 5px glowing dot in front of every
+              .kpi-label and sets the label at 9px. She asked for the marker
+              removed on all five cards and the label raised until it reads at a
+              glance. The uppercase, the 0.15em tracking and the neon are hers
+              and are untouched.
+
+              12px, not larger: the figure below is 54px in the static grid and
+              76px while the card rotates, so the label sits at a fifth to a
+              sixth of it and cannot read as a second headline. The flex row went
+              with the dot, which was the only thing it was aligning.
+              PENDING-COPY 1d1. */}
+          <p className="mb-[18px] text-[12px] font-semibold tracking-[0.15em] text-neon uppercase">
             {metric.kpiLabel}
           </p>
 
           <KpiVisual metric={metric} index={i} />
 
-          {/* Her metric: the figure in neon, the unit in cream. Card two drops
-              to 42px in her file because the range is twice as long. */}
+          {/* Her metric. Card two drops to 42px in her file because the range is
+              twice as long.
+
+              THE UNIT IS NEON NOW, NOT CREAM. Her file colours the number neon
+              and leaves the % in the cream, and her 1 September screenshots ask
+              for the two to match on all five cards so "+7%" reads as one value
+              rather than a number with a mark after it. One colour across the
+              whole string is all that is left to do, so the span that split it
+              is gone with the second colour. PENDING-COPY 1d1. */}
           {metric.figureText !== null && (
             <p
               // data-kpi-figure is the hook the rotating state scales up. It
               // does nothing to her static five-across grid, which keeps the
               // 54px and 42px her file specifies.
               data-kpi-figure
-              className={`mb-1 font-sans leading-none font-extrabold tracking-[-0.03em] text-linen tabular-nums ${
+              className={`mb-1 font-sans leading-none font-extrabold tracking-[-0.03em] text-neon tabular-nums ${
                 metric.figureText.length > 5 ? "text-[42px]" : "text-[54px]"
               }`}
             >
-              <span className="text-neon">{metric.figureText.replace(/%$/, "")}</span>
-              {metric.figureText.endsWith("%") ? "%" : ""}
+              {metric.figureText}
             </p>
           )}
 
