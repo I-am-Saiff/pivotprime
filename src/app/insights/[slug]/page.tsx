@@ -149,8 +149,12 @@ export default async function ArticlePage({
         </div>
       </div>
 
-      {/* HER PER-ARTICLE CTA */}
-      <section className="relative overflow-hidden bg-forest px-4 py-12 text-center sm:px-6 sm:py-[72px] lg:px-8">
+      {/* HER PER-ARTICLE CTA, BOXED 1 September, on the service closer's
+          geometry. One file, so all four articles move together. The dot
+          texture and overflow-hidden move inside the box with the fill they
+          belong to. Nothing inside changes. PENDING-COPY 1d5. */}
+      <section className="surface-page px-4 pb-12 text-center sm:px-6 sm:pb-20 lg:px-8">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl bg-forest p-7 sm:p-10 md:p-11">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.035)_1px,transparent_1px)] [background-size:22px_22px]"
@@ -166,6 +170,7 @@ export default async function ArticlePage({
           >
             {article.cta.button}
           </Link>
+        </div>
         </div>
       </section>
 

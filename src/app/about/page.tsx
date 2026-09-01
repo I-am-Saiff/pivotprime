@@ -260,8 +260,19 @@ export default function About() {
       {/* Her close, pp-about-v2_2.html. The button was here without the two
           lines above it that give it a reason: check-dropped-mockup-copy found
           them in her file and on no page of the site. */}
-      <section className="bg-forest px-4 py-14 sm:py-24 text-center sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl">
+      {/* BOXED, 1 September. It was a full-bleed forest band, py-14/sm:py-24
+          edge to edge. The container is now the service page closer's exactly:
+          the same rounded-2xl, the same p-7 sm:p-10 md:p-11, the same
+          max-w-5xl inside the same px-4 sm:px-6 lg:px-8, and the same
+          bottom-only section padding, which is her 30 August rule that the
+          empty space sits under a block rather than over it.
+
+          The fill, the eyebrow, the heading, the button and the centring are
+          untouched. The inner max-w-4xl is gone because the box is the width
+          constraint now, which is how the service closers are built.
+          PENDING-COPY 1d5. */}
+      <section className="surface-page px-4 pb-12 text-center sm:px-6 sm:pb-20 lg:px-8">
+        <div className="mx-auto max-w-5xl rounded-2xl bg-forest p-7 sm:p-10 md:p-11">
           <p className="mb-4 text-xs font-bold tracking-[0.22em] text-neon uppercase">Start here</p>
           <h2 className="mb-7 sm:mb-10 text-3xl font-extrabold tracking-tight text-white md:text-4xl">
             The first conversation costs nothing. Not moving does.

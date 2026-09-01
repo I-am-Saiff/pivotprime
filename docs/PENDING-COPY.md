@@ -4220,3 +4220,55 @@ result line. That field has not been removed, because it is also what puts the
 number in green inside each line: "67%", "13%", "17%", "Up to 2 days a week".
 Deleting it would have taken every published figure off the case studies along
 with the badge.
+
+## 1d5 The closing blocks are boxes now, not full-width bands
+
+**1 September**, on your instruction, and following your 30 August rule that
+boxed sections carry their empty space at the bottom rather than the top.
+
+**Four sections changed**, found from the code rather than from the three you
+photographed:
+
+| Page | Section | Was |
+| --- | --- | --- |
+| About | The closing "Start here" block | Full-width green band |
+| Insights | The newsletter signup | Full width, no box at all |
+| Insights | The closing block under it | Full-width green band |
+| Insights, all four articles | The closing block at the foot of each article | Full-width green band |
+
+The article one is the extra: it is the same block on all four articles, built
+once, so all four moved together.
+
+**They match the service page closers exactly.** Measured against all five of
+them, on a phone and on a laptop: the same corner radius, the same padding
+inside the box, the same box width, the same distance from the edge of the
+screen, and the same empty space under the box with none above it. Not similar
+to them, identical.
+
+**One decision you should know about.** The newsletter block had no colour of
+its own, so there was nothing to put a rounded edge around. A box needs a
+surface. It now uses the same off-white as the topics strip directly above it
+on that same page, so no new colour enters the site and no existing colour
+changes. Green was the alternative and was rejected: a dark box would have
+forced the heading, the standfirst and the "No spam" line to be recoloured, and
+your instruction was that everything inside stays exactly as it is. Say the
+word and it becomes green with the text inverted.
+
+**The signup form is untouched and still works.** The field, the Subscribe
+button and their colours are unchanged, the field is not cut off at either
+width, an invalid address is still refused before anything is sent, and a valid
+one still produces "You are on the list."
+
+### Two full-width bands are still there, on purpose
+
+**The topics strip on Insights** is neither a closing block nor a signup, so it
+was left. **The Technology Builds page title area** is a page opening, not a
+closing block. Say the word if you want either boxed.
+
+### Something worth deciding
+
+The closing blocks on the homepage and on the four "who it's for" pages were
+already boxes, so this batch did not touch them. But they do not match: their
+corners are rounder and their padding is larger than the service page closers.
+If the aim is that every box on the site reads the same, those five are the
+remaining difference, and it is a small change to bring them in line.

@@ -286,8 +286,25 @@ export default async function InsightsPage({
         </div>
       </div>
 
-      {/* SUBSCRIBE */}
-      <div className="px-4 py-14 text-center sm:px-6 sm:py-20 lg:px-8">
+      {/* SUBSCRIBE, BOXED 1 September. It ran the full width of the viewport
+          with no container at all, so between the topics strip above and the
+          closer below it read as open ground rather than as a block.
+
+          THE BOX CARRIES A FILL, WHICH IS THE ONE JUDGEMENT IN THIS BATCH. This
+          block had no fill of its own, and a rounded box with no fill is not a
+          box. bg-shell is not a new colour: it is the fill of the topics strip
+          immediately above it on this same page, so nothing new enters the
+          palette and no existing fill changes. Forest would have been the other
+          option and is rejected, because a dark ground would have forced the
+          eyebrow, heading, standfirst and the "No spam" line to be recoloured,
+          and the instruction is that they stay exactly as they are.
+
+          Geometry is the service closer's, verbatim. The inner max-w-[520px]
+          column stays: it is what sets the measure her headline and standfirst
+          wrap to, and widening it to the box would re-break her copy.
+          PENDING-COPY 1d5. */}
+      <div className="px-4 pb-12 text-center sm:px-6 sm:pb-20 lg:px-8">
+        <div className="mx-auto max-w-5xl rounded-2xl bg-shell p-7 sm:p-10 md:p-11">
         <div className="mx-auto max-w-[520px]">
           <p className="mb-3.5 text-[10px] font-bold tracking-[0.22em] text-mid uppercase">
             {SUBSCRIBE.eyebrow}
@@ -301,10 +318,17 @@ export default async function InsightsPage({
             initialError={error ?? null}
           />
         </div>
+        </div>
       </div>
 
-      {/* CLOSING CTA */}
-      <section className="relative overflow-hidden bg-forest px-4 py-12 text-center sm:px-6 sm:py-[72px] lg:px-8">
+      {/* CLOSING CTA, BOXED 1 September, on the service closer's geometry.
+
+          The dot texture moves INSIDE the box with the fill it belongs to, and
+          overflow-hidden moves with it, so the dots are clipped to the rounded
+          corners instead of running to the viewport edges. Fill, heading, body
+          and button are untouched. PENDING-COPY 1d5. */}
+      <section className="surface-page px-4 pb-12 text-center sm:px-6 sm:pb-20 lg:px-8">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl bg-forest p-7 sm:p-10 md:p-11">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.035)_1px,transparent_1px)] [background-size:22px_22px]"
@@ -320,6 +344,7 @@ export default async function InsightsPage({
           >
             {INSIGHTS_CTA.button}
           </Link>
+        </div>
         </div>
       </section>
     </div>
