@@ -4118,3 +4118,30 @@ instruction overriding your own mockup, recorded here so the difference between
 the two is visible rather than looking like a transcription error. Same for the
 dot in front of the labels and for the cream %: all three are your file, changed
 on your say-so.
+
+## 1d2 Your wording on the fee structure line
+
+**1 September.** One paragraph on the homepage, inside the Pivot Prime box in
+the fees section, under the "Our fee structure" label.
+
+It read:
+
+> A fixed element covers the work itself. A results element sits against that
+> target.
+
+It now reads, in your words:
+
+> Our fee has a smaller fixed part and then a bigger part linked to the results
+> we achieve for your business.
+
+**Why yours is better and not just different.** "Fixed element" and "results
+element" are the words the brief uses when it describes the model to us. They
+are not the words a visitor arrives with, and this is part of your ask for
+plainer language for people who are not technical. Your sentence also says
+which of the two parts is the bigger one, which the old line never did, and
+that is the whole point of the model.
+
+Nothing else in the section moved. The "We agree a target" line above it, the
+"Our fee structure" label itself, the calculator, the figures and the closing
+line below are all untouched. The box is one line taller than it was, because
+the sentence is longer.

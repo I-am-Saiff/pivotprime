@@ -447,7 +447,15 @@ export const HOW_WE_ARE_PAID = {
         },
         {
           label: "Our fee structure",
-          value: "A fixed element covers the work itself. A results element sits against that target.",
+          // HER OWN WORDING, 1 September, replacing "A fixed element covers the
+          // work itself. A results element sits against that target." Part of
+          // her ask for plainer language for visitors who are not technical:
+          // "fixed element" and "results element" are the terms the spec uses
+          // about the model, not the terms a reader arrives with. Her sentence
+          // also says which part is the bigger one, which ours never did.
+          // PENDING-COPY 1d2.
+          value:
+            "Our fee has a smaller fixed part and then a bigger part linked to the results we achieve for your business.",
         },
       ],
     },
