@@ -107,26 +107,26 @@
       "why": "Retained from pivotprime.ae under a KEEP instruction. Verified against the live page's served HTML on 2026-08-20."
     },
     {
-      "text": "01 Scaling SME leader",
+      "text": "02 Scaling SME leader",
       "status": "awaiting-client",
       "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f. Renumbered 1 September: the tab numbers are derived from position now, and the four tabs read 01 to 04 in her slide 9 order. The label is unchanged; only the number in front of it moved. PENDING-COPY 1d6.",
       "route": "/",
       "element": "button"
     },
     {
-      "text": "02 Corporate innovator",
+      "text": "03 Corporate innovator",
       "status": "awaiting-client",
       "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f. Renumbered 1 September: the tab numbers are derived from position now, and the four tabs read 01 to 04 in her slide 9 order. The label is unchanged; only the number in front of it moved. PENDING-COPY 1d6.",
       "route": "/",
       "element": "button"
     },
     {
-      "text": "04 Stretched founder",
+      "text": "01 Stretched founder",
       "status": "awaiting-client",
       "kind": "authored",
-      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f.",
+      "why": "Written during the rebuild. Traces to neither a spec block nor the live site. Structural or connective copy the spec did not supply. PENDING-COPY section 1f. Renumbered 1 September: the tab numbers are derived from position now, and the four tabs read 01 to 04 in her slide 9 order. The label is unchanged; only the number in front of it moved. PENDING-COPY 1d6.",
       "route": "/",
       "element": "button"
     },
@@ -593,10 +593,10 @@
       "why": "Supplied by the client verbatim in a comment on slide 20 of Website Revisions 2208v3, 22 August. Replaces spec 5.x copy, which her comment postdates. PENDING-COPY 1v."
     },
     {
-      "text": "03 P&L owner",
+      "text": "04 P&L owner",
       "status": "traced",
       "kind": "client-supplied",
-      "why": "Slide 20: 'On the main home page too it should read as P&L owners'. Replaces 'Mid-market execution owner'. PENDING-COPY 1y."
+      "why": "Slide 20: 'On the main home page too it should read as P&L owners'. Replaces 'Mid-market execution owner'. PENDING-COPY 1y. Renumbered 1 September: the tab numbers are derived from position now, and the four tabs read 01 to 04 in her slide 9 order. The label is unchanged; only the number in front of it moved. PENDING-COPY 1d6."
     },
     {
       "text": "More case studies",

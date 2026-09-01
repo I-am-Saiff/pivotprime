@@ -6,7 +6,6 @@ import Link from "next/link";
 interface PersonaData {
   id: string;
   tabLabel: string;
-  tabNumber: string;
   heading: string;
   ctaLabel: string;
   ctaHref: string;
@@ -26,7 +25,6 @@ const PERSONAS: PersonaData[] = [
   // renames to P&L owner.
   {
     id: "founder",
-    tabNumber: "04",
     tabLabel: "Stretched founder",
     heading: "You built something real, and everything still runs through you.",
     ctaLabel: "See what you can take off your plate",
@@ -42,7 +40,6 @@ const PERSONAS: PersonaData[] = [
   },
   {
     id: "sme",
-    tabNumber: "01",
     tabLabel: "Scaling SME leader",
     heading: "You're running an SME that is growing but not settled.",
     ctaLabel: "Make your business predictable",
@@ -58,7 +55,6 @@ const PERSONAS: PersonaData[] = [
   },
   {
     id: "corporate",
-    tabNumber: "02",
     tabLabel: "Corporate innovator",
     heading: "You are expected to deliver change without the team it really takes.",
     ctaLabel: "Get execution support",
@@ -75,7 +71,6 @@ const PERSONAS: PersonaData[] = [
   },
   {
     id: "pl-owner",
-    tabNumber: "03",
     // Slide 20: "On the main home page too it should read as P&L owners".
     tabLabel: "P&L owner",
     heading: "The business is stable, but strategic momentum is hard to create.",
@@ -126,8 +121,22 @@ export default function PersonaSwitcher() {
                     : "text-neutral-600 hover:text-forest hover:bg-white/50"
                 }`}
               >
+                {/* THE NUMBER COMES FROM THE POSITION, from 1 September.
+
+                    It used to be a stored tabNumber on each persona, and it
+                    read 04, 01, 02, 03 across the four tabs. The numbers were
+                    the original ordering; her slide 9 instruction reordered the
+                    tabs ("put stretched founder first please, then SME, then
+                    corporate innovator and lastly the mid market execution
+                    owner") and the stored numbers were never moved with them,
+                    so the founder tab kept the 04 it had when it was last.
+
+                    Deriving from the index rather than renumbering the four
+                    strings, because renumbering fixes today's order and leaves
+                    the same trap set for the next reorder. The order below is
+                    hers and is unchanged. PENDING-COPY 1d6. */}
                 <span className={`text-[10px] tracking-wider font-bold ${isActive ? "text-forest/70" : "text-neutral-400"}`}>
-                  {persona.tabNumber}
+                  {String(idx + 1).padStart(2, "0")}
                 </span>
                 <span>{persona.tabLabel}</span>
               </button>

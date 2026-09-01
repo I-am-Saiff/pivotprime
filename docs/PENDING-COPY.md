@@ -4272,3 +4272,41 @@ already boxes, so this batch did not touch them. But they do not match: their
 corners are rounder and their padding is larger than the service page closers.
 If the aim is that every box on the site reads the same, those five are the
 remaining difference, and it is a small change to bring them in line.
+
+## 1d6 The persona tab numbers run in order now, and the signup box has a gap above it
+
+**1 September**, two small things you spotted.
+
+### The numbers on "Who we serve"
+
+The four tabs read **04, 01, 02, 03**. They now read **01, 02, 03, 04**.
+
+The order of the tabs is not what was wrong, and it has not been touched. Your
+slide 9 instruction was "put stretched founder first please, then SME, then
+corporate innovator and lastly the mid market execution owner", and that is the
+order on the page. The numbers were the *old* order, from before that
+instruction, and nobody moved them when the tabs were reordered, so the founder
+tab kept the 04 it had when it was last in the row.
+
+The number is worked out from the tab's position now rather than written next
+to each one. If the tabs are ever reordered again the numbers follow on their
+own, so this cannot come back.
+
+| Position | Tab | Was | Now |
+| --- | --- | --- | --- |
+| 1 | Stretched founder | 04 | 01 |
+| 2 | Scaling SME leader | 01 | 02 |
+| 3 | Corporate innovator | 02 | 03 |
+| 4 | P&L owner | 03 | 04 |
+
+### The gap above the signup box on Insights
+
+The "Insights worth reading" box was sitting flush against the bottom of the
+"Browse by topic" strip: measured at exactly 0px between them, on a phone and
+on a laptop. That was a side effect of boxing it earlier the same day, because
+the pattern used for these boxes puts all its empty space underneath, and on
+this page the strip above ends on a hard border with nothing beneath it.
+
+There is now a small gap above the box, 24px on a phone and 40px on a laptop.
+The space underneath is still the larger of the two, 48px and 80px, so your
+30 August rule that the weight sits at the bottom still holds.

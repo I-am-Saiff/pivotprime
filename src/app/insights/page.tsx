@@ -299,11 +299,20 @@ export default async function InsightsPage({
           eyebrow, heading, standfirst and the "No spam" line to be recoloured,
           and the instruction is that they stay exactly as they are.
 
-          Geometry is the service closer's, verbatim. The inner max-w-[520px]
+          A SMALL TOP GAP, added 1 September on her follow-up. Everywhere else
+          this pattern is bottom-padding only, which is her 30 August rule, and
+          that works on the service pages because the block above always has
+          its own space underneath. Here the topics strip is a full-bleed band
+          that ends on a border, so the box landed flush against it: measured at
+          exactly 0px between the strip's bottom edge and the box's top, at both
+          widths. pt-6 sm:pt-10 lifts it clear. The bottom still carries more
+          than the top, 48 against 24 and 80 against 40, so the rule holds.
+
+          Geometry is otherwise the service closer's, verbatim. The inner max-w-[520px]
           column stays: it is what sets the measure her headline and standfirst
           wrap to, and widening it to the box would re-break her copy.
           PENDING-COPY 1d5. */}
-      <div className="px-4 pb-12 text-center sm:px-6 sm:pb-20 lg:px-8">
+      <div className="px-4 pt-6 pb-12 text-center sm:px-6 sm:pt-10 sm:pb-20 lg:px-8">
         <div className="mx-auto max-w-5xl rounded-2xl bg-shell p-7 sm:p-10 md:p-11">
         <div className="mx-auto max-w-[520px]">
           <p className="mb-3.5 text-[10px] font-bold tracking-[0.22em] text-mid uppercase">
