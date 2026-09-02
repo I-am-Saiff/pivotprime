@@ -11,9 +11,15 @@ export const metadata: Metadata = pageMetadata("about");
 
 /**
  * The portrait tile. Her slide draws all four as initials on a dark tile; we
- * hold real photographs for three of them, so the tile takes a photo when there
- * is one and the monogram when there is not. Same shape either way, so a card
- * with initials does not read as a card that failed to load.
+ * hold real photographs for all four, so the tile takes a photo when there is
+ * one and the monogram when there is not. Same shape either way, so a card with
+ * initials does not read as a card that failed to load.
+ *
+ * THE MONOGRAM BRANCH IS UNREACHABLE TODAY, since Saif's photograph arrived on
+ * 1 September and he was the last card without one. It stays: it is the generic
+ * fallback for anyone added to the team without a photograph, keyed on
+ * person.photo rather than hardcoded to a name, and deleting it would mean the
+ * next such card renders an empty frame. PENDING-COPY 1d8.
  */
 function Portrait({ person, className }: { person: Person; className: string }) {
   if (person.photo) {

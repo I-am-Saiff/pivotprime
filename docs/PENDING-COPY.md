@@ -4335,3 +4335,33 @@ same colour, sized to sit properly next to the larger word.
 
 **The header is untouched.** Its mark was compared against the live site before
 and after, and the markup and the position are identical to the character.
+
+## 1d8 Saif's photograph is on his card
+
+**1 September.** The third team card was showing his initials on a green tile
+because there was no photograph. There is one now, and the card carries it.
+
+Nothing else on that card moved. The label above the name, the name, the
+paragraph, the pill under it and the green are exactly as they were, and the
+card is the same size to the pixel as it was with the initials, at every width
+checked.
+
+**The initials are still there for anyone who needs them.** They were never
+built for his card in particular: any team member without a photograph gets
+them, and that is left working for whoever joins next. All four people have
+photographs today, so nothing on the page shows initials now.
+
+### About the photograph
+
+The one supplied is a taller shape than the frame the cards use. Everyone's
+card is a 4 by 5 frame, and his photograph came in at 2 by 3, which is taller
+still. It has been trimmed to fit rather than left for the browser to cut,
+which is the mistake that halved Justin's photograph before.
+
+**17% came off the bottom, and it is the table and his hands.** His head and
+shoulders are untouched and sit with room above them. The trim was worked out
+against where his face is before it was made, not checked afterwards.
+
+**For any future photograph, 4 by 5 is the shape to supply** — 1280 by 1600
+pixels is ideal, which is what Justin's is. Anything taller loses its bottom;
+anything wider would lose its sides.

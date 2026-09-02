@@ -41,8 +41,11 @@ export type Person = {
   seat?: string;
   /**
    * A portrait, or null. Her slide draws all four as initials; we hold real
-   * photographs for three of the four, and Saif's card renders initials as the
-   * slide does rather than an empty frame.
+   * photographs for all four now, Saif's having arrived on 1 September.
+   *
+   * STILL NULLABLE ON PURPOSE. The monogram below is the generic fallback for
+   * anyone added without a photograph, not something built for one card, so the
+   * branch stays even though no person currently takes it.
    */
   photo: { src: string; alt: string } | null;
   /** Fallback monogram, used when photo is null. */
@@ -71,8 +74,13 @@ export const FOUNDER: Person & { tags: string[] } = {
  *
  * Saif Ur Rehman was deliberately absent until now, on his own instruction. He
  * is on the slide with a title and a biography, and is included on instruction.
- * No photograph, so the card renders initials, which is what the slide draws for
- * every one of the four.
+ *
+ * HIS PHOTOGRAPH ARRIVED 1 SEPTEMBER and the card carries it, so all three seats
+ * are photographs and none renders a monogram. The source was 1023x1537, a 2:3
+ * portrait against the card's 4:5 box, so it was cropped to 4:5 at prepare time
+ * rather than left for the browser: 17% off the bottom, which is the table and
+ * his hands. The crop was measured against the face before it was made, not
+ * after. PENDING-COPY 1d8.
  */
 export const PEOPLE: Person[] = [
   {
@@ -92,7 +100,7 @@ export const PEOPLE: Person[] = [
     body: [
       "AI and technology solutions lead. Scoped after the diagnosis so we build at the constraint, not over the parts that already work. Custom automation, workflow design, CRM build and reporting systems that actually get used.",
     ],
-    photo: null,
+    photo: { src: "/saif-ur-rehman.jpg", alt: "Saif Ur Rehman Khan" },
     initials: "SR",
   },
   {
