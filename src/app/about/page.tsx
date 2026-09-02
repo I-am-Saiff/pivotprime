@@ -50,9 +50,19 @@ function Portrait({ person, className }: { person: Person; className: string }) 
 
 export default function About() {
   return (
-    <div className="flex min-h-screen flex-col pt-12 sm:pt-20 pb-10 sm:pb-16">
+    <div className="flex min-h-screen flex-col pb-10 sm:pb-16">
       {/* HERO, slide 21 */}
-      <header className="relative overflow-hidden bg-forest py-12 sm:py-20 text-white md:py-28">
+      {/* FLUSH TO THE TOP, 3 September. The page wrapper carried
+          "pt-12 sm:pt-20", which pushed this dark hero 48px, then 80px, down
+          the viewport and left a band of page ground above it. The header is a
+          floating pill inset from the edges, so that band showed around it and
+          the header read as sitting on cream rather than on the hero.
+
+          The wrapper padding is gone and the clearance moved into the hero
+          itself, which is how the homepage and all five service pages already
+          do it: pt-28 sm:pt-32 md:pt-40, copied from them rather than picked.
+          Bottom padding is untouched. PENDING-COPY 1d9. */}
+      <header className="relative overflow-hidden bg-forest pt-28 pb-12 text-white sm:pt-32 sm:pb-20 md:pt-40 md:pb-28">
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:28px_28px]"

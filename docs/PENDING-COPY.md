@@ -4365,3 +4365,41 @@ against where his face is before it was made, not checked afterwards.
 **For any future photograph, 4 by 5 is the shape to supply** — 1280 by 1600
 pixels is ideal, which is what Justin's is. Anything taller loses its bottom;
 anything wider would lose its sides.
+
+## 1d9 The dark banner now starts at the very top on five more pages
+
+**3 September.** On the homepage and on all five service pages, the dark banner
+at the top of the page runs right to the top edge of the screen and the
+navigation bar sits on top of it. On the About page and on the four "who it's
+for" pages it did not: a strip of cream sat above the banner, so the navigation
+bar floated on the page background instead, with cream showing around it.
+
+Five pages fixed: **About**, **For founders**, **For SMEs**, **For corporate
+leaders**, **For P&L owners**.
+
+**The cause was padding on the page, not on the banner.** Those five pages had
+a gap set at the very top of the page itself, which pushed everything down,
+banner included, by 48px on a phone and 80px on a laptop. The pages that were
+already right have no such gap: their banner carries its own clearance for the
+navigation bar instead.
+
+They now do the same, using the exact spacing the homepage and the service
+pages already use rather than a new number.
+
+**One consequence worth knowing.** The banner text sits in a slightly different
+place than it did, because it now uses the correct spacing instead of the wrong
+spacing plus a gap. On a phone it sits a little lower, on a laptop a little
+higher. After the change it sits at exactly the same distance from the top as
+on the service pages, which is the point.
+
+**Nothing else moved.** The homepage, the five service pages and Insights were
+already correct and were not touched; they were measured before and after and
+are identical. Contact, Services and Privacy have no dark banner at all, so
+there was nothing to make flush on them.
+
+### Worth deciding separately
+
+The four "who it's for" pages each hold their own copy of the banner rather than
+sharing one. They are identical today, and this change had to be made four
+times as a result. If one is ever edited alone they will drift. Worth pulling
+into a single shared banner, which is a separate piece of work.

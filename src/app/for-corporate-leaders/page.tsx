@@ -16,10 +16,20 @@ export default function ForCorporateLeaders() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen pt-12 sm:pt-20 pb-10 sm:pb-16">
+    <div className="flex flex-col min-h-screen pb-10 sm:pb-16">
       
       {/* Hero Section */}
-      <header className="bg-forest text-white relative overflow-hidden py-10 sm:py-16 md:py-24">
+      {/* FLUSH TO THE TOP, 3 September. The page wrapper carried
+          "pt-12 sm:pt-20", which pushed this dark hero 48px, then 80px, down
+          the viewport and left a band of page ground above it. The header is a
+          floating pill inset from the edges, so that band showed around it and
+          the header read as sitting on cream rather than on the hero.
+
+          The wrapper padding is gone and the clearance moved into the hero
+          itself, which is how the homepage and all five service pages already
+          do it: pt-28 sm:pt-32 md:pt-40, copied from them rather than picked.
+          Bottom padding is untouched. PENDING-COPY 1d9. */}
+      <header className="bg-forest text-white relative overflow-hidden pt-28 pb-10 sm:pt-32 sm:pb-16 md:pt-40 md:pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           {/* Restored with the chapter number stripped. She asked for the labels reworded, not deleted. */}
