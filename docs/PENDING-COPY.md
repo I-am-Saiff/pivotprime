@@ -4366,6 +4366,16 @@ against where his face is before it was made, not checked afterwards.
 pixels is ideal, which is what Justin's is. Anything taller loses its bottom;
 anything wider would lose its sides.
 
+### Cropped closer, later the same day
+
+On your instruction the picture is framed tighter on you now, rather than showing
+the whole desk and the room behind it. It is cut from the original photograph
+again rather than from the first crop, so nothing has been squeezed twice.
+
+It now runs from just above your head down to the chest, which puts your face at
+roughly the same size as Justin's and Khushi's. The three cards read as one set;
+before this, yours sat further back than the other two.
+
 ## 1d9 The dark banner now starts at the very top on five more pages
 
 **3 September.** On the homepage and on all five service pages, the dark banner
