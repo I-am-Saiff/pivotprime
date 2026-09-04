@@ -20,7 +20,24 @@ import { Resend } from "resend";
  */
 
 const TO = "hello@pivotprime.ae";
-const FROM = "Pivot Prime <hello@pivotprime.ae>";
+/**
+ * THE VERIFIED SENDING DOMAIN, not the apex, from 3 September.
+ *
+ * This was "hello@pivotprime.ae". Resend is verified for send.pivotprime.ae and
+ * only for that, so the apex address had no DKIM key of its own to sign with:
+ * mail sent from it is unsigned at best and rejected at worst. TO is unchanged,
+ * because that is a real mailbox somebody reads; FROM is the envelope the
+ * signature belongs to, and the two are not the same thing.
+ */
+const FROM = "Pivot Prime <hello@send.pivotprime.ae>";
+
+/** The timestamp the inbox sees, in the timezone she actually works in. */
+const stampGST = () =>
+  new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Asia/Dubai",
+    dateStyle: "full",
+    timeStyle: "short",
+  }).format(new Date()) + " (Gulf Standard Time)";
 
 const EnquirySchema = z.object({
   name: z.string().trim().min(1, "Enter your name").max(120),
@@ -132,13 +149,26 @@ export async function POST(request: NextRequest) {
   }
 
   const resend = new Resend(apiKey);
+  const sentAt = stampGST();
 
   try {
     const enquiry = await resend.emails.send({
       from: FROM,
       to: TO,
       replyTo: email, // Spec 2.3: replies work directly from the inbox.
-      subject: `Website enquiry from ${name} — ${industryLine}`,
+      // A colon, not an em dash: section 1 of her document bans them and
+      // scripts/lint-copy.mjs enforces it everywhere else.
+      subject: `Website enquiry from ${name}: ${industryLine}`,
+      // Plain text alongside the HTML. A message with no text/plain part is a
+      // spam signal in its own right, and this one has no images and nothing to
+      // track, so the two parts say the same thing.
+      text: [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Industry: ${industryLine}`,
+        `Message: ${message || "(none left)"}`,
+        `Received: ${sentAt}`,
+      ].join("\n"),
       html: `<p><strong>Name</strong><br>${escapeHtml(name)}</p>
 <p><strong>Email</strong><br><a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>
 <p><strong>Industry</strong><br>${escapeHtml(industryLine)}</p>
@@ -146,7 +176,8 @@ ${
         message
           ? `<p><strong>Message</strong><br>${escapeHtml(message).replace(/\n/g, "<br>")}</p>`
           : "<p><em>No message was left. Reply to this email to reach them.</em></p>"
-      }`,
+      }
+<p style="color:#5e6f68;font-size:13px"><strong>Received</strong><br>${escapeHtml(sentAt)}</p>`,
     });
 
     if (enquiry.error) {
@@ -156,22 +187,27 @@ ${
 
     // Autoresponder. Spec 2.3. A failure here is logged but not surfaced: the
     // enquiry itself arrived, and telling the sender otherwise would be wrong.
+    // SHORT ON PURPOSE, from 3 September. It used to quote their own message
+    // back at them, name their industry and recommend WhatsApp, which is three
+    // things they did not ask for in a receipt. It now does the two things a
+    // receipt is for: confirm it arrived, and say what happens next. No pitch,
+    // no attachment, no tracking pixel, and the only link is the site.
     const receipt = await resend.emails.send({
       from: FROM,
       to: email,
       replyTo: TO,
       subject: "We have your enquiry",
+      text: [
+        "Thank you for getting in touch with Pivot Prime.",
+        "",
+        "We have your enquiry. Someone will reply with a first read on your bottleneck and a time to talk it through.",
+        "",
+        "Pivot Prime",
+        "https://pivotprime.ae",
+      ].join("\n"),
       html: `<p>Thank you for getting in touch with Pivot Prime.</p>
-<p>We have your enquiry and someone will reply within one working day. If it is urgent, WhatsApp is the fastest way to reach us.</p>
-<p>You told us your industry is <strong>${escapeHtml(industryLine)}</strong>.</p>
-${
-        message
-          ? `<p>For reference, this is what you sent:</p>
-<blockquote style="border-left:3px solid #009f50;margin:0;padding-left:16px;color:#5e6f68">
-${escapeHtml(message).replace(/\n/g, "<br>")}
-</blockquote>`
-          : ""
-      }<p>Pivot Prime<br><a href="mailto:${TO}">${TO}</a></p>`,
+<p>We have your enquiry. Someone will reply with a first read on your bottleneck and a time to talk it through.</p>
+<p>Pivot Prime<br><a href="https://pivotprime.ae">pivotprime.ae</a></p>`,
     });
 
     if (receipt.error) {
