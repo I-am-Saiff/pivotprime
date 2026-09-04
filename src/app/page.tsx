@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import AnchorLink from "@/components/AnchorLink";
 import { DIAGNOSTIC_ENABLED } from "@/lib/flags";
 import { CONTACT_CTA, HERO_CTA, JOURNEY_CTA, WHATSAPP_CTA } from "@/content/cta";
 import {
@@ -93,19 +94,26 @@ export default function Home() {
 
           {/* CTAs */}
           <div className="mt-7 sm:mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
-            <Link
+            {/* AnchorLink, not next/link, from 3 September. The green button
+                was a next/link and scrolled on the first click only; measured
+                on a production build, clicks two and three left scrollY at 0.
+                The black one is a plain anchor and never had the fault, and is
+                moved across for the same treatment rather than left as a second
+                way of doing the same thing. Both keep their href, so both still
+                work with JavaScript off. src/lib/anchor-scroll.ts. */}
+            <AnchorLink
               href={HERO_CTA.href}
               className="inline-flex items-center justify-center rounded-xl bg-neon px-7 py-3.5 text-xs font-bold tracking-wider text-forest uppercase shadow-lg transition-all duration-200 hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none"
             >
               {HERO_CTA.label}
-            </Link>
+            </AnchorLink>
 
-            <a
+            <AnchorLink
               href={HERO.secondaryHref}
               className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-black backdrop-blur-md px-7 py-3.5 text-xs font-bold tracking-wider text-white uppercase transition-all duration-200 hover:border-white/45 hover:bg-black/85 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
             >
               {HERO.secondaryLabel}
-            </a>
+            </AnchorLink>
           </div>
 
           {DIAGNOSTIC_ENABLED && (

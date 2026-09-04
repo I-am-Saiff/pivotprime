@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { NAVIGATION, type NavItem } from "@/content/navigation";
 import { HEADER_CTA } from "@/content/cta";
+import { handleAnchorClick } from "@/lib/anchor-scroll";
 import PivotMark from "./PivotMark";
 
 function PivotLogo() {
@@ -162,9 +163,18 @@ export default function Navbar() {
           <ul className="rounded-2xl bg-forest backdrop-blur-xl border border-white/15 py-2 shadow-2xl ring-1 ring-black/20">
             {item.children.map((child) => (
               <li key={child.href}>
+                {/* Our Team and Case studies are /about#team and
+                    /about#case-studies. Opened from another page they navigate
+                    as normal; opened while already on /about, next/link decided
+                    there was nothing to do and never scrolled at all, on the
+                    first click as much as the fifth. handleAnchorClick takes
+                    over only in that second case. */}
                 <Link
                   href={child.href}
-                  onClick={closeAll}
+                  onClick={(e) => {
+                    closeAll();
+                    handleAnchorClick(e, child.href);
+                  }}
                   className="block mx-1.5 rounded-xl px-3.5 py-2 text-xs font-medium text-white/85 transition-colors hover:bg-white/10 hover:text-neon focus-visible:bg-white/10 focus-visible:text-neon focus-visible:outline-none"
                 >
                   {child.label}
@@ -267,7 +277,10 @@ export default function Navbar() {
                         <li key={child.href}>
                           <Link
                             href={child.href}
-                            onClick={closeAll}
+                            onClick={(e) => {
+                              closeAll();
+                              handleAnchorClick(e, child.href);
+                            }}
                             className="block rounded-lg px-3 py-1.5 text-xs font-medium text-white/70 hover:bg-white/10 hover:text-neon"
                           >
                             {child.label}
