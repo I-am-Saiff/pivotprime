@@ -11,6 +11,7 @@ import {
   createRateLimiter,
 } from "@/lib/email";
 import { DOMAIN_NAME, DOMAIN_ORDER } from "@/content/diagnostic-quiz";
+import { buildReportEmail } from "@/lib/diagnostic-report-email";
 
 /**
  * Diagnostic result handler.
@@ -147,29 +148,24 @@ export async function POST(request: NextRequest) {
       return fail(502, "Your results could not be sent. Please email hello@pivotprime.ae.");
     }
 
-    // The receipt. A failure here is logged and not surfaced: her results
-    // arrived, and telling the sender otherwise would be wrong. Same shape as
-    // the enquiry autoresponder: short, plain, no pitch, no tracking, and the
-    // only link is the site.
+    // THE RECEIPT CARRIES THE WHOLE REPORT, from 12 September. It used to say
+    // someone would follow up with a first read, while the form above it
+    // promised a written report by email and nothing sent one. The reader was
+    // told twice that something was coming and it never was. Now the promise
+    // and the send are the same act, and no separate email is promised.
+    //
+    // Built by src/lib/diagnostic-report-email.ts from the same modules the
+    // results screen renders, so her commentary exists once rather than twice.
+    // A failure here is still logged and not surfaced: her results arrived, and
+    // telling the sender otherwise would be wrong.
+    const report = buildReportEmail(name, { domainScores, overall, constraint, band });
     const receipt = await resend.emails.send({
       from: FROM,
       to: email,
       replyTo: TO,
-      subject: "We have your diagnostic results",
-      text: [
-        `Thank you for completing the diagnostic, ${name}.`,
-        "",
-        `We have your results. Your score was ${overall} of 100, and the area holding the business back most is ${DOMAIN_NAME[constraint]}.`,
-        "",
-        "Someone will follow up with a first read on what that means for you and a time to talk it through.",
-        "",
-        "Pivot Prime",
-        "https://pivotprime.ae",
-      ].join("\n"),
-      html: `<p>Thank you for completing the diagnostic, ${escapeHtml(name)}.</p>
-<p>We have your results. Your score was <strong>${overall} of 100</strong>, and the area holding the business back most is <strong>${escapeHtml(DOMAIN_NAME[constraint])}</strong>.</p>
-<p>Someone will follow up with a first read on what that means for you and a time to talk it through.</p>
-<p>Pivot Prime<br><a href="https://pivotprime.ae">pivotprime.ae</a></p>`,
+      subject: report.subject,
+      text: report.text,
+      html: report.html,
     });
 
     if (receipt.error) {

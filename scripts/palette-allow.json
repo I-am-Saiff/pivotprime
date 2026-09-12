@@ -25,6 +25,31 @@
       "file": "src/app/api/diagnostic/route.ts",
       "hex": "#5e6f68",
       "reason": "Inline styles in a transactional email, the same constraint as the two entries for /api/enquiry above. Email clients do not support CSS custom properties, so a token cannot be used and the literal is the only option. The muted grey used for the received-at line, matching the enquiry notification."
+    },
+    {
+      "file": "src/lib/diagnostic-report-email.ts",
+      "hex": "#013325",
+      "reason": "Inline styles in a transactional email, the same constraint as the /api/enquiry entries. Email clients do not support CSS custom properties, so a token cannot be referenced and the literal is the only option. This file builds the diagnostic report email; keep these in step if the tokens change."
+    },
+    {
+      "file": "src/lib/diagnostic-report-email.ts",
+      "hex": "#009f50",
+      "reason": "Inline styles in a transactional email, the same constraint as the /api/enquiry entries. Email clients do not support CSS custom properties, so a token cannot be referenced and the literal is the only option. This file builds the diagnostic report email; keep these in step if the tokens change."
+    },
+    {
+      "file": "src/lib/diagnostic-report-email.ts",
+      "hex": "#5e6f68",
+      "reason": "Inline styles in a transactional email, the same constraint as the /api/enquiry entries. Email clients do not support CSS custom properties, so a token cannot be referenced and the literal is the only option. This file builds the diagnostic report email; keep these in step if the tokens change."
+    },
+    {
+      "file": "src/lib/diagnostic-report-email.ts",
+      "hex": "#dfe6e2",
+      "reason": "Inline styles in a transactional email, the same constraint as the /api/enquiry entries. Email clients do not support CSS custom properties, so a token cannot be referenced and the literal is the only option. This file builds the diagnostic report email; keep these in step if the tokens change."
+    },
+    {
+      "file": "src/lib/diagnostic-report-email.ts",
+      "hex": "#ffffff",
+      "reason": "Inline styles in a transactional email, the same constraint as the /api/enquiry entries. Email clients do not support CSS custom properties, so a token cannot be referenced and the literal is the only option. This file builds the diagnostic report email; keep these in step if the tokens change."
     }
   ]
 }
