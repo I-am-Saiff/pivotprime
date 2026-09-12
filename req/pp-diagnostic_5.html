@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Diagnostic | Pivot Prime</title>
+<meta name="description" content="Find out what is limiting your business in four minutes. Twelve questions across six operational domains. Free diagnostic from Pivot Prime.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+:root{--forest:#013325;--neon:#00d76d;--mid:#009f50;--paper:#f5f5f3;--ink:#0a1a12;--muted:#4a6657;--line:#dde6e0;--card:#ffffff}
+body{font-family:'Poppins',system-ui,sans-serif;background:var(--paper);color:var(--ink)}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(1,51,37,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-weight:800;font-size:15px;color:#fff;letter-spacing:-.02em;text-decoration:none}
+.nav-logo span{color:var(--neon)}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-link{font-size:12px;font-weight:500;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s}
+.nav-link:hover{color:#fff}
+
+/* PROGRESS */
+.progress-shell{position:fixed;top:56px;left:0;right:0;z-index:199;height:3px;background:rgba(255,255,255,.08);display:none}
+.progress-fill{height:100%;background:var(--neon);width:0%;transition:width .45s cubic-bezier(.4,0,.2,1)}
+
+/* SCREENS */
+.screen{display:none;min-height:100vh;padding-top:56px;flex-direction:column}
+.screen.active{display:flex}
+
+/* ====== INTRO ====== */
+#s-intro{background:var(--forest);align-items:center;justify-content:center;position:relative;overflow:hidden}
+#s-intro::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.038) 1px,transparent 1px);background-size:26px 26px;pointer-events:none}
+.intro-wrap{max-width:720px;margin:0 auto;padding:72px 32px;text-align:center;position:relative}
+.eyebrow{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(0,215,109,.6);margin-bottom:22px}
+.intro-title{font-size:clamp(36px,5.5vw,60px);font-weight:800;color:#fff;line-height:1.06;letter-spacing:-.028em;text-wrap:balance;margin-bottom:20px}
+.intro-title em{font-style:normal;color:var(--neon)}
+.intro-deck{font-size:16px;color:rgba(255,255,255,.5);line-height:1.78;max-width:480px;margin:0 auto 36px}
+.domain-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:40px}
+.dpill{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:5px 13px}
+/* ICP grid */
+.icp-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:32px;text-align:left}
+@media(max-width:520px){.icp-grid{grid-template-columns:1fr}}
+.icp-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px 18px}
+.icp-icon{font-size:18px;display:block;margin-bottom:8px}
+.icp-label{font-size:12px;font-weight:700;color:#fff;letter-spacing:-.01em;margin-bottom:5px}
+.icp-text{font-size:11px;color:rgba(255,255,255,.42);line-height:1.65}
+
+.intro-stats{display:flex;align-items:center;justify-content:center;gap:28px;margin-bottom:36px;flex-wrap:wrap}
+.istat{font-size:12px;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:6px}
+.istat::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--neon);opacity:.6;flex-shrink:0}
+.start-btn{display:inline-flex;align-items:center;gap:9px;background:var(--neon);color:var(--forest);font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;padding:17px 40px;border-radius:100px;border:none;cursor:pointer;transition:opacity .2s,transform .15s;letter-spacing:-.01em}
+.start-btn:hover{opacity:.9;transform:translateY(-1px)}
+.intro-note{font-size:11px;color:rgba(255,255,255,.28);margin-top:16px}
+
+/* ====== QUESTION ====== */
+#s-question{background:var(--paper);align-items:center;justify-content:center}
+.q-outer{width:100%;max-width:660px;margin:0 auto;padding:32px 24px 48px;display:flex;flex-direction:column;align-items:center}
+.q-meta{display:flex;align-items:center;justify-content:space-between;width:100%;margin-bottom:28px}
+.q-counter{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.q-domain-chip{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);background:rgba(0,159,80,.08);border:1px solid rgba(0,159,80,.18);border-radius:100px;padding:4px 11px}
+.q-card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:38px 40px 32px;width:100%;box-shadow:0 4px 32px rgba(1,51,37,.06);margin-bottom:20px}
+@media(max-width:520px){.q-card{padding:26px 22px 22px;border-radius:16px}}
+.q-text{font-size:clamp(17px,2.6vw,22px);font-weight:700;color:var(--forest);line-height:1.44;letter-spacing:-.016em;text-wrap:balance;margin-bottom:2px}
+.q-helper{font-size:12px;color:var(--muted);margin-top:10px;font-style:italic}
+.scale-opts{display:flex;flex-direction:column;gap:9px;width:100%}
+.sopt{display:flex;align-items:center;gap:14px;padding:13px 18px;border:1.5px solid var(--line);border-radius:12px;cursor:pointer;transition:border-color .18s,background .18s;background:var(--card);user-select:none}
+.sopt:hover{border-color:var(--mid);background:rgba(0,159,80,.03)}
+.sopt.chosen{border-color:var(--forest);background:rgba(1,51,37,.05)}
+.sopt-radio{width:18px;height:18px;border-radius:50%;border:2px solid var(--line);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:border-color .18s,background .18s}
+.sopt.chosen .sopt-radio{border-color:var(--forest);background:var(--forest)}
+.sopt-dot{width:7px;height:7px;border-radius:50%;background:var(--neon);display:none}
+.sopt.chosen .sopt-dot{display:block}
+.sopt-text{font-size:13px;font-weight:500;color:var(--ink);flex:1;line-height:1.4}
+.sopt.chosen .sopt-text{color:var(--forest);font-weight:600}
+.q-next{align-self:flex-end;display:inline-flex;align-items:center;gap:8px;background:var(--forest);color:var(--neon);font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;padding:13px 30px;border-radius:100px;border:none;cursor:pointer;transition:opacity .2s,transform .15s;opacity:0;pointer-events:none;margin-top:8px}
+.q-next.show{opacity:1;pointer-events:all}
+.q-next:hover{opacity:.85}
+
+/* ====== CAPTURE ====== */
+#s-capture{background:var(--forest);align-items:center;justify-content:center;position:relative;overflow:hidden}
+#s-capture::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.038) 1px,transparent 1px);background-size:26px 26px;pointer-events:none}
+.cap-wrap{max-width:540px;margin:0 auto;padding:64px 32px;width:100%;position:relative}
+.cap-check{width:48px;height:48px;border-radius:50%;background:rgba(0,215,109,.12);border:1px solid rgba(0,215,109,.25);display:flex;align-items:center;justify-content:center;margin-bottom:24px;font-size:20px}
+.cap-title{font-size:clamp(26px,3.5vw,36px);font-weight:800;color:#fff;letter-spacing:-.022em;line-height:1.15;margin-bottom:10px;text-wrap:balance}
+.cap-title em{font-style:normal;color:var(--neon)}
+.cap-sub{font-size:14px;color:rgba(255,255,255,.45);line-height:1.75;margin-bottom:36px}
+.cap-form{display:flex;flex-direction:column;gap:14px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:500px){.frow{grid-template-columns:1fr}}
+.fgroup{display:flex;flex-direction:column;gap:5px}
+.flabel{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.finput,.fselect{font-family:'Poppins',sans-serif;font-size:13px;padding:13px 17px;border:1.5px solid rgba(255,255,255,.1);border-radius:11px;background:rgba(255,255,255,.06);color:#fff;outline:none;transition:border-color .2s;width:100%;-webkit-appearance:none}
+.finput::placeholder{color:rgba(255,255,255,.22)}
+.finput:focus,.fselect:focus{border-color:rgba(0,215,109,.4)}
+.fselect{cursor:pointer}
+.fselect option{background:#013325;color:#fff}
+.cap-submit{background:var(--neon);color:var(--forest);font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;padding:15px 32px;border-radius:100px;border:none;cursor:pointer;width:100%;transition:opacity .2s;margin-top:6px;letter-spacing:-.01em}
+.cap-submit:hover{opacity:.88}
+.cap-privacy{font-size:11px;color:rgba(255,255,255,.28);text-align:center;margin-top:10px;line-height:1.6}
+
+/* ====== RESULTS (screen) ====== */
+#s-results{background:var(--paper);align-items:stretch}
+.res-hero{background:var(--forest);padding:60px 32px 52px;text-align:center;position:relative;overflow:hidden}
+.res-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.038) 1px,transparent 1px);background-size:26px 26px;pointer-events:none}
+.res-hero-inner{max-width:600px;margin:0 auto;position:relative}
+.res-eyebrow{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(0,215,109,.55);margin-bottom:28px}
+.score-ring{width:164px;height:164px;border-radius:50%;border:2px solid rgba(0,215,109,.2);background:rgba(0,215,109,.05);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 24px}
+.score-num{font-size:58px;font-weight:800;color:#fff;line-height:1;letter-spacing:-.04em}
+.score-of{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(0,215,109,.5);margin-top:4px}
+.band-chip{display:inline-block;background:var(--neon);color:var(--forest);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 20px;border-radius:100px;margin-bottom:14px}
+.band-desc{font-size:15px;color:rgba(255,255,255,.5);line-height:1.72;max-width:460px;margin:0 auto}
+
+.res-body{max-width:680px;margin:0 auto;padding:52px 32px 80px;width:100%}
+.section-lbl{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:22px}
+.domain-bars{display:flex;flex-direction:column;gap:18px;margin-bottom:48px}
+.dbar-row{display:flex;flex-direction:column;gap:7px}
+.dbar-top{display:flex;justify-content:space-between;align-items:center}
+.dbar-name{font-size:13px;font-weight:700;color:var(--forest);display:flex;align-items:center;gap:8px}
+.constraint-tag{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--forest);background:var(--neon);border-radius:100px;padding:2px 9px}
+.dbar-pct{font-size:13px;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums}
+.dbar-track{height:8px;background:var(--line);border-radius:100px;overflow:hidden}
+.dbar-fill{height:100%;border-radius:100px;background:var(--mid);width:0%;transition:width 1.1s cubic-bezier(.16,1,.3,1)}
+.dbar-fill.is-constraint{background:var(--neon)}
+
+/* Report prompt card */
+.report-prompt{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px 32px 32px;margin-bottom:28px}
+.rp-inner{display:flex;gap:20px;align-items:flex-start;margin-bottom:22px}
+.rp-icon{width:48px;height:48px;border-radius:14px;background:rgba(1,51,37,.06);border:1px solid rgba(1,51,37,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--forest)}
+.rp-title{font-size:16px;font-weight:800;color:var(--forest);letter-spacing:-.015em;margin-bottom:7px}
+.rp-sub{font-size:13px;color:var(--muted);line-height:1.72}
+.rp-download{width:100%;background:var(--forest);color:var(--neon);font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;padding:15px 28px;border-radius:100px;border:none;cursor:pointer;transition:opacity .2s;letter-spacing:-.01em}
+.rp-download:hover{opacity:.85}
+
+.res-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+.rcta-primary{display:inline-flex;align-items:center;background:var(--neon);color:var(--forest);font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;padding:14px 28px;border-radius:100px;text-decoration:none;transition:opacity .2s}
+.rcta-primary:hover{opacity:.88}
+.rcta-wa{display:inline-flex;align-items:center;background:transparent;color:var(--forest);font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;padding:14px 28px;border-radius:100px;text-decoration:none;border:1.5px solid var(--line);transition:border-color .2s}
+.rcta-wa:hover{border-color:var(--mid)}
+.res-footer-note{font-size:12px;color:var(--muted);}
+.res-footer-note a{color:var(--mid);text-decoration:none}
+
+/* ====== PDF REPORT (hidden on screen, visible only when printing) ====== */
+#pdf-report{display:none}
+
+/* ====== PRINT STYLES ====== */
+@media print{
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff;margin:0;padding:0}
+  .nav,.progress-shell,.screen{display:none!important}
+  #pdf-report{display:block!important}
+
+  /* Cover page */
+  .pdf-cover{background:#013325;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:60px 72px;page-break-after:always}
+  .pdf-cover-inner{width:100%;max-width:580px}
+  .pdf-logo{font-family:'Poppins',sans-serif;font-size:18px;font-weight:800;color:rgba(255,255,255,.5);letter-spacing:-.02em;margin-bottom:40px}
+  .pdf-logo span{color:#00d76d}
+  .pdf-cover-rule{width:48px;height:3px;background:#00d76d;border-radius:2px;margin-bottom:36px}
+  .pdf-cover-title{font-family:'Poppins',sans-serif;font-size:44px;font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.08;margin-bottom:16px}
+  .pdf-cover-sub{font-family:'Poppins',sans-serif;font-size:14px;color:rgba(255,255,255,.4);margin-bottom:60px}
+  .pdf-cover-score-wrap{display:flex;align-items:center;gap:32px;background:rgba(0,215,109,.06);border:1px solid rgba(0,215,109,.16);border-radius:20px;padding:32px 36px;margin-bottom:52px}
+  .pdf-cover-score-ring{width:100px;height:100px;border-radius:50%;border:2px solid rgba(0,215,109,.25);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}
+  .pdf-cover-score-num{font-family:'Poppins',sans-serif;font-size:40px;font-weight:800;color:#fff;line-height:1;letter-spacing:-.04em}
+  .pdf-cover-score-label{font-family:'Poppins',sans-serif;font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(0,215,109,.45);margin-top:3px}
+  .pdf-cover-band-wrap{}
+  .pdf-cover-band{display:inline-block;background:#00d76d;color:#013325;font-family:'Poppins',sans-serif;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 16px;border-radius:100px;margin-bottom:10px}
+  .pdf-cover-band-desc{font-family:'Poppins',sans-serif;font-size:15px;color:rgba(255,255,255,.55);line-height:1.65;max-width:320px}
+  .pdf-cover-note{font-family:'Poppins',sans-serif;font-size:11px;color:rgba(255,255,255,.25);line-height:1.7;border-top:1px solid rgba(255,255,255,.08);padding-top:24px}
+
+  /* Content page */
+  .pdf-page{padding:56px 72px 48px;background:#fff}
+  .pdf-section-header{margin-bottom:28px}
+  .pdf-section-tag{font-family:'Poppins',sans-serif;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#009f50;display:block;margin-bottom:8px}
+  .pdf-section-title{font-family:'Poppins',sans-serif;font-size:22px;font-weight:800;color:#013325;letter-spacing:-.02em;line-height:1.2}
+  .pdf-divider{height:1px;background:#dde6e0;margin:36px 0}
+  .pdf-commentary{font-family:'Poppins',sans-serif;font-size:13px;color:#4a6657;line-height:1.82}
+
+  /* Domain grid */
+  .pdf-domain-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 32px;margin-bottom:8px}
+  .pdf-drow{display:flex;flex-direction:column;gap:6px}
+  .pdf-drow-top{display:flex;justify-content:space-between;align-items:center}
+  .pdf-drow-name{font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;color:#013325;display:flex;align-items:center;gap:6px}
+  .pdf-drow-ctag{font-family:'Poppins',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#013325;background:#00d76d;border-radius:100px;padding:1px 7px}
+  .pdf-drow-pct{font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;color:#4a6657}
+  .pdf-drow-track{height:7px;background:#dde6e0;border-radius:100px;overflow:hidden}
+  .pdf-drow-fill{height:100%;border-radius:100px;background:#009f50}
+  .pdf-drow-fill.pdf-constraint-fill{background:#00d76d}
+
+  /* Checks */
+  .pdf-check{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid #dde6e0}
+  .pdf-check:last-child{border-bottom:none}
+  .pdf-check-num{width:30px;height:30px;border-radius:50%;background:rgba(0,159,80,.08);border:1px solid rgba(0,159,80,.2);display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-size:11px;font-weight:800;color:#009f50;flex-shrink:0}
+  .pdf-check-text{font-family:'Poppins',sans-serif;font-size:13px;color:#0a1a12;line-height:1.72}
+
+  /* Offer */
+  .pdf-offer-block{background:#013325;border-radius:16px;padding:30px 36px;margin-bottom:32px}
+  .pdf-offer-label{font-family:'Poppins',sans-serif;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(0,215,109,.5);margin-bottom:8px}
+  .pdf-offer-title{font-family:'Poppins',sans-serif;font-size:18px;font-weight:800;color:#fff;letter-spacing:-.018em;margin-bottom:12px}
+  .pdf-offer-text{font-family:'Poppins',sans-serif;font-size:13px;color:rgba(255,255,255,.55);line-height:1.8}
+
+  /* CTA block */
+  .pdf-cta-block{display:flex;gap:0;border:1px solid #dde6e0;border-radius:14px;overflow:hidden;margin-bottom:48px}
+  .pdf-cta-left,.pdf-cta-right{flex:1;padding:22px 26px}
+  .pdf-cta-divider{width:1px;background:#dde6e0;flex-shrink:0}
+  .pdf-cta-prompt{font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#009f50;margin-bottom:6px}
+  .pdf-cta-url{font-family:'Poppins',sans-serif;font-size:15px;font-weight:800;color:#013325;letter-spacing:-.015em;margin-bottom:4px}
+  .pdf-cta-or{font-family:'Poppins',sans-serif;font-size:11px;color:#4a6657}
+
+  /* Footer */
+  .pdf-footer{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #dde6e0;padding-top:16px}
+  .pdf-footer-logo{font-family:'Poppins',sans-serif;font-size:13px;font-weight:800;color:rgba(1,51,37,.4);letter-spacing:-.015em}
+  .pdf-footer-logo span{color:#009f50}
+  .pdf-footer-mid{font-family:'Poppins',sans-serif;font-size:11px;color:#4a6657}
+  .pdf-footer-right{font-family:'Poppins',sans-serif;font-size:11px;color:#4a6657}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">Pivot<span>Prime</span></a>
+  <div class="nav-right">
+    <a href="/" class="nav-link">← Back to site</a>
+  </div>
+</nav>
+
+<div class="progress-shell" id="progress-shell">
+  <div class="progress-fill" id="progress-fill"></div>
+</div>
+
+<!-- ====== INTRO ====== -->
+<section class="screen active" id="s-intro">
+  <div class="intro-wrap">
+    <p class="eyebrow">Pivot Prime · Free Diagnostic</p>
+    <h1 class="intro-title">What is your business<br><em>actually running on?</em></h1>
+    <p class="intro-deck">Twelve questions. Four minutes. A clear picture of what is holding your operations back — and the one constraint worth fixing first.</p>
+
+    <div class="icp-grid">
+      <div class="icp-card">
+        <span class="icp-icon">⚡</span>
+        <p class="icp-label">The stretched founder</p>
+        <p class="icp-text">Everything runs through you. You are the decision-maker, the closer, and the safety net — and it is slowing growth down.</p>
+      </div>
+      <div class="icp-card">
+        <span class="icp-icon">📈</span>
+        <p class="icp-label">The growing SME</p>
+        <p class="icp-text">Revenue is moving. But the business is not keeping up. You are hiring into chaos rather than into structure.</p>
+      </div>
+      <div class="icp-card">
+        <span class="icp-icon">🏢</span>
+        <p class="icp-label">The P&amp;L owner</p>
+        <p class="icp-text">You run a division or business unit and need operational clarity to hit your numbers without asking for more headcount.</p>
+      </div>
+      <div class="icp-card">
+        <span class="icp-icon">🎯</span>
+        <p class="icp-label">The scale-ready business</p>
+        <p class="icp-text">Growth is the plan. But before you put fuel on it, you need to know which part of the engine will break first.</p>
+      </div>
+    </div>
+
+    <div class="intro-stats">
+      <span class="istat">12 questions</span>
+      <span class="istat">4 minutes</span>
+      <span class="istat">6 operational domains</span>
+      <span class="istat">Personalised report</span>
+    </div>
+    <button class="start-btn" onclick="startDiagnostic()">Start the diagnostic →</button>
+    <p class="intro-note">No email required until the end. Free, always.</p>
+  </div>
+</section>
+
+<!-- ====== QUESTION ====== -->
+<section class="screen" id="s-question">
+  <div class="q-outer">
+    <div class="q-meta">
+      <span class="q-counter" id="q-counter">Question 1 of 12</span>
+    </div>
+    <div class="q-card">
+      <p class="q-text" id="q-text"></p>
+      <p class="q-helper">Rate how true this is for your business right now.</p>
+    </div>
+    <div class="scale-opts" id="scale-opts"></div>
+    <button class="q-next" id="q-next" onclick="nextQuestion()">Next →</button>
+  </div>
+</section>
+
+<!-- ====== CAPTURE ====== -->
+<section class="screen" id="s-capture">
+  <div class="cap-wrap">
+    <div class="cap-check">✓</div>
+    <h2 class="cap-title">Almost there.<br>Where should we send<br>your <em>full report?</em></h2>
+    <p class="cap-sub">Your score will appear on screen immediately. A detailed written report — with specific next steps for your constraint area — goes to your inbox.</p>
+    <form class="cap-form" id="cap-form">
+      <div class="frow">
+        <div class="fgroup">
+          <label class="flabel">Your name</label>
+          <input class="finput" type="text" id="f-name" placeholder="Iram Kauser" required>
+        </div>
+        <div class="fgroup">
+          <label class="flabel">Business name</label>
+          <input class="finput" type="text" id="f-biz" placeholder="Pivot Prime" required>
+        </div>
+      </div>
+      <div class="fgroup">
+        <label class="flabel">Business email</label>
+        <input class="finput" type="email" id="f-email" placeholder="you@yourcompany.com" required>
+      </div>
+      <div class="frow">
+        <div class="fgroup">
+          <label class="flabel">Industry</label>
+          <select class="fselect" id="f-industry" required>
+            <option value="" disabled selected>Select industry</option>
+            <option>Professional Services</option>
+            <option>Financial Services</option>
+            <option>Technology</option>
+            <option>Healthcare</option>
+            <option>Real Estate &amp; Construction</option>
+            <option>Retail &amp; E-commerce</option>
+            <option>Hospitality &amp; Tourism</option>
+            <option>Manufacturing &amp; Industrial</option>
+            <option>Media &amp; Marketing</option>
+            <option>Education</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fgroup">
+          <label class="flabel">Your role</label>
+          <select class="fselect" id="f-role" required>
+            <option value="" disabled selected>Select role</option>
+            <option>Founder / CEO</option>
+            <option>Managing Director</option>
+            <option>COO / Operations</option>
+            <option>CFO / Finance</option>
+            <option>Business Unit Head</option>
+            <option>General Manager</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <button type="button" class="cap-submit" onclick="submitCapture()">See my results →</button>
+      <p class="cap-privacy">Your details are used only to send your report. We do not share them with third parties or add you to marketing lists without your consent.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ====== RESULTS (screen only) ====== -->
+<section class="screen" id="s-results">
+
+  <div class="res-hero">
+    <div class="res-hero-inner">
+      <p class="res-eyebrow">Your Operational Readiness Score</p>
+      <div class="score-ring">
+        <span class="score-num" id="res-score">—</span>
+        <span class="score-of">out of 100</span>
+      </div>
+      <div class="band-chip" id="res-band">—</div>
+      <p class="band-desc" id="res-band-desc"></p>
+    </div>
+  </div>
+
+  <div class="res-body">
+
+    <p class="section-lbl">Domain breakdown</p>
+    <div class="domain-bars" id="domain-bars"></div>
+
+    <div class="report-prompt">
+      <div class="rp-inner">
+        <div class="rp-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <div class="rp-text">
+          <p class="rp-title">Your full diagnostic report is ready</p>
+          <p class="rp-sub">It includes your primary constraint analysis, three specific actions to take this week, and how Pivot Prime can help. Download it as a PDF to keep and share.</p>
+        </div>
+      </div>
+      <button class="rp-download" onclick="downloadReport()">Download your report (PDF)</button>
+    </div>
+
+    <div class="res-ctas">
+      <a href="/contact" class="rcta-primary">Book a call with Iram →</a>
+      <a href="https://wa.me/971000000000" class="rcta-wa" target="_blank">WhatsApp us</a>
+    </div>
+
+    <p class="res-footer-note">Prepared by Pivot Prime · <a href="mailto:hello@pivotprime.ae">hello@pivotprime.ae</a></p>
+
+  </div>
+
+</section>
+
+<!-- ====== PDF REPORT (print only, always hidden on screen) ====== -->
+<div id="pdf-report" aria-hidden="true">
+
+  <div class="pdf-cover">
+    <div class="pdf-cover-inner">
+      <div class="pdf-logo">Pivot<span>Prime</span></div>
+      <div class="pdf-cover-rule"></div>
+      <h1 class="pdf-cover-title">Operational Readiness<br>Report</h1>
+      <p class="pdf-cover-sub" id="pdf-prepared">—</p>
+      <div class="pdf-cover-score-wrap">
+        <div class="pdf-cover-score-ring">
+          <span class="pdf-cover-score-num" id="pdf-score-num">—</span>
+          <span class="pdf-cover-score-label">out of 100</span>
+        </div>
+        <div class="pdf-cover-band-wrap">
+          <div class="pdf-cover-band" id="pdf-band-chip">—</div>
+          <p class="pdf-cover-band-desc" id="pdf-band-desc">—</p>
+        </div>
+      </div>
+      <p class="pdf-cover-note">This assessment is based on your self-reported responses and is intended as a directional diagnostic, not an audit. Results reflect operational readiness at the time of completion.</p>
+    </div>
+  </div>
+
+  <div class="pdf-page">
+
+    <div class="pdf-section-header">
+      <span class="pdf-section-tag">Domain Breakdown</span>
+      <h2 class="pdf-section-title">How your business scores across six operational areas</h2>
+    </div>
+
+    <div class="pdf-domain-grid" id="pdf-domain-grid"></div>
+
+    <div class="pdf-divider"></div>
+
+    <div class="pdf-section-header">
+      <span class="pdf-section-tag">Primary Constraint</span>
+      <h2 class="pdf-section-title" id="pdf-constraint-title">—</h2>
+    </div>
+
+    <p class="pdf-commentary" id="pdf-commentary"></p>
+
+    <div class="pdf-divider"></div>
+
+    <div class="pdf-checks-header">
+      <span class="pdf-section-tag">This Week</span>
+      <h2 class="pdf-section-title">Three things to check right now</h2>
+    </div>
+
+    <div id="pdf-checks"></div>
+
+    <div class="pdf-divider"></div>
+
+    <div class="pdf-offer-block">
+      <div class="pdf-offer-label">What Pivot Prime would do about it</div>
+      <h3 class="pdf-offer-title">The Operational Clarity Audit</h3>
+      <p class="pdf-offer-text" id="pdf-offer-text"></p>
+    </div>
+
+    <div class="pdf-cta-block">
+      <div class="pdf-cta-left">
+        <p class="pdf-cta-prompt">Ready to work on this?</p>
+        <p class="pdf-cta-url">pivotprime.ae/contact</p>
+        <p class="pdf-cta-or">or email us at hello@pivotprime.ae</p>
+      </div>
+      <div class="pdf-cta-divider"></div>
+      <div class="pdf-cta-right">
+        <p class="pdf-cta-prompt">Prefer a quick conversation?</p>
+        <p class="pdf-cta-url">wa.me/971000000000</p>
+        <p class="pdf-cta-or">WhatsApp · we respond within one business day</p>
+      </div>
+    </div>
+
+    <div class="pdf-footer">
+      <div class="pdf-footer-logo">Pivot<span>Prime</span></div>
+      <div class="pdf-footer-mid">Operational Readiness Report · <span id="pdf-footer-date"></span></div>
+      <div class="pdf-footer-right">pivotprime.ae</div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [
+  { domain:'fd', text:'If the founder were uncontactable for two weeks, the business would continue without disruption.' },
+  { domain:'pd', text:'Our core processes are documented well enough that a new person could follow them.' },
+  { domain:'cm', text:'We know our profit margin by product, service or client — not just overall.' },
+  { domain:'dv', text:'I can see how the business is performing this month without asking someone to prepare it.' },
+  { domain:'pa', text:'Every important outcome in the business has one clearly named owner.' },
+  { domain:'tl', text:'Our systems reduce manual work rather than creating more of it.' },
+  { domain:'fd', text:'Decisions below a certain value are made without needing the founder to approve them.' },
+  { domain:'pd', text:'Work is delivered on time without someone having to chase it.' },
+  { domain:'cm', text:'Our prices were set deliberately and have been reviewed in the last twelve months.' },
+  { domain:'dv', text:'When two people in the business report the same number, they agree.' },
+  { domain:'pa', text:'The team has the capacity to absorb the growth we are planning.' },
+  { domain:'tl', text:'Information moves between our tools without anyone re-entering it manually.' },
+];
+
+const SCALE = [
+  { value:0, label:'Strongly disagree' },
+  { value:1, label:'Disagree' },
+  { value:2, label:'Neither agree nor disagree' },
+  { value:3, label:'Agree' },
+  { value:4, label:'Strongly agree' },
+];
+
+const DOMAIN_META = {
+  fd:{ name:'Founder Dependency', short:'Founder Dependency' },
+  pd:{ name:'Process and Delivery', short:'Process and Delivery' },
+  cm:{ name:'Commercial and Margin', short:'Commercial and Margin' },
+  dv:{ name:'Data and Visibility', short:'Data and Visibility' },
+  pa:{ name:'People and Accountability', short:'People and Accountability' },
+  tl:{ name:'Technology Leverage', short:'Technology Leverage' },
+};
+
+const DOMAIN_ORDER = ['fd','pd','cm','dv','pa','tl'];
+
+const BANDS = [
+  { min:0,  max:39,  label:'Constrained',     desc:'The business is being held back in more than one place at once.' },
+  { min:40, max:64,  label:'Straining',        desc:'The business works, but it is absorbing effort it should not need to.' },
+  { min:65, max:84,  label:'Stable',           desc:'The foundations hold. One area is limiting what the rest could do.' },
+  { min:85, max:100, label:'Built to Scale',   desc:'Structurally sound. The constraint is likely to be demand rather than operations.' },
+];
+
+const DOMAIN_CONTENT = {
+  fd:{
+    commentary:'When growth depends on the founder being present for every significant decision, it creates a ceiling that neither investment nor effort can raise. The founder becomes the bottleneck in their own business, unable to step back far enough to work on it rather than in it. Over time this erodes the team\'s confidence in acting without approval, and the business loses the organisational muscle it needs to scale. The cost is not always visible in a single quarter, but it compounds.',
+    checks:[
+      'List every decision you made last week that someone else could have made. For each one, write down why it came to you instead of being handled by the team.',
+      'Check whether your team has written clarity on what they are authorised to decide without your sign-off. If they do not, drafting that document is this week\'s task.',
+      'Identify one recurring process that only works reliably when you are present, and this week, teach someone else to own it completely.',
+    ],
+    offer:'The Operational Clarity Audit begins by mapping every decision that sits with the founder by habit rather than by design. We redesign the delegation structure, document the authority framework, and work with the team until they are genuinely operating independently in the areas where the founder\'s time is most expensive. For founder-dependent businesses, this is typically where the largest gains are available fastest.',
+  },
+  pd:{
+    commentary:'When core processes live in people\'s heads rather than in documented systems, every departure becomes a delivery risk and every growth hire takes longer to become productive. The business can be excellent at what it does while remaining structurally fragile — dependent on the specific people who happen to be there right now. In practice this means delivering consistently requires constant supervision, clients experience variability they cannot predict, and the team spends energy improvising rather than executing.',
+    checks:[
+      'Pick your most important recurring deliverable and ask whether a capable person joining this week could produce it at your standard, using only what is currently documented. If the answer is no, that documentation does not yet exist.',
+      'Review the last time something was delivered late or incorrectly, and trace it to its root cause. In most cases it will point to a handoff or a step that was never clearly defined.',
+      'Ask three team members independently to describe the same core process. The gaps between their answers show you exactly where the documentation work needs to begin.',
+    ],
+    offer:'The Operational Clarity Audit maps how work actually flows through your business — not how it is supposed to on paper, but how decisions are made, where handoffs happen, and where the team invents workarounds because the official process does not reflect reality. We then redesign the core processes and stay until they are documented, adopted, and running without us.',
+  },
+  cm:{
+    commentary:'A business can grow revenue consistently while quietly eroding the margin that makes growth worth having. Pricing set without a current view of costs, discounts given without tracking their cumulative effect, and contracts never reviewed against a cost base that has since changed all contribute to a gap between what the business turns over and what it actually keeps. That gap is almost always larger than leadership expects when it finally gets measured properly, and it compounds year on year until someone looks closely enough to see it.',
+    checks:[
+      'Pull the last three months\' numbers and calculate your actual gross margin by service line or client type. Compare it to what you expected. If there is a gap, it will show you exactly where to look.',
+      'Identify the last pricing decision your business made, and check whether it was based on your current cost structure or on a number that was set some time ago and has not been revisited.',
+      'List the clients or services where you have a sense that the margin is thinner than it should be. Quantify that suspicion this week. The number will tell you what to prioritise.',
+    ],
+    offer:'The Operational Clarity Audit includes a structured margin review — mapping pricing decisions against current costs, identifying where discounting has become habitual, and finding the contracts and relationships where the commercial terms no longer reflect what the business is worth. Our fractional CFO works directly inside your numbers, not from a spreadsheet we hand back to you to implement.',
+  },
+  dv:{
+    commentary:'When a business leader cannot see how the business is performing without asking someone to compile the data, decisions are always made on information that is already out of date. The problem is rarely that the data does not exist — it almost always does — but that it lives in formats that require assembly rather than inspection. This creates a lag between what is happening and what leadership can respond to. In a competitive market, that lag has a real cost. It also means that when two people discuss performance, they are often working from different numbers without realising it.',
+    checks:[
+      'Try to answer the following without asking anyone to prepare anything: what is the business\'s revenue this month so far, and what is the margin on that revenue? The friction you experience in getting that answer shows you exactly what the problem is.',
+      'Identify the most important operational metric in your business and track how long it currently takes to produce it on demand. Anything over 24 hours is worth addressing.',
+      'Find a number that appears in more than one report or is produced by more than one person. Check whether it is consistent across sources. If it is not, that inconsistency is eroding confidence in your own data.',
+    ],
+    offer:'The Operational Clarity Audit designs the reporting infrastructure your business needs to run on current information rather than historical summaries. We establish the handful of metrics that actually matter, connect them to the systems that hold the data, and build the dashboard that gives leadership a real-time view without manual preparation. The goal is visibility that requires no one to ask.',
+  },
+  pa:{
+    commentary:'In most businesses that struggle with accountability, the problem is not that people do not care — it is that ownership has never been made explicit. When outcomes have sponsors and contributors but no single named owner, the natural human tendency is to assume someone else is holding the thread. Important things fall through gaps that nobody created intentionally, and when they do, it is genuinely difficult to establish what went wrong because responsibility was distributed rather than assigned. The highest performers feel this most acutely, and they do not stay long in environments where it persists.',
+    checks:[
+      'Take the three most important things your business is trying to achieve in the next 90 days. Write down, for each one, the single person who will be accountable if it does not happen. If you cannot write one name for each, the accountability does not yet exist.',
+      'Look at something that was supposed to happen last month and did not. Be honest about whether there was a single owner, and whether that person knew they were the owner.',
+      'Talk to two or three of your strongest performers and ask them directly: do they feel that their authority matches their accountability? Their answer will tell you something important about retention risk.',
+    ],
+    offer:'The Operational Clarity Audit restructures how outcomes are owned inside your business — mapping every critical deliverable to a single accountable person, redesigning the meeting and review cadence so that accountability is visible rather than assumed, and building the performance framework that lets good people do their best work without chasing clarity they should not need to chase.',
+  },
+  tl:{
+    commentary:'Technology that was supposed to reduce work and has instead added to it is one of the most common and least-discussed drains on operational capacity in growing businesses. The tools are usually not the problem — the problem is that they were implemented before the process underneath them was properly designed, which means the software is running on a broken foundation. The result is low adoption, workarounds that have become normalised, and data that moves between systems because someone copies it rather than because the systems are connected. This absorbs hours of productive time every week across the team and is rarely captured in any single number.',
+    checks:[
+      'Ask the team to name the biggest manual task they do regularly that they expected a tool to handle for them. Their answer will show you where the technology gap is in practice rather than on paper.',
+      'List the tools the business currently pays for. For each one, estimate what percentage of its available functionality the team actually uses. Anything below 40 per cent is worth a conversation about why.',
+      'Identify anywhere information is manually re-entered from one system into another. Estimate the time this takes across the team each week. That number is the minimum value of fixing the integration.',
+    ],
+    offer:'The Operational Clarity Audit maps the technology stack against the actual processes it is supposed to support, identifies where tools were built on top of unclear workflows rather than clean ones, and redesigns the operational foundation before recommending any new system or integration. Our technology lead works directly inside the business, not as an external advisor — which means the changes actually get implemented.',
+  },
+};
+
+let currentQ = 0;
+let answers = new Array(12).fill(null);
+let userData = {};
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function startDiagnostic() {
+  document.getElementById('progress-shell').style.display = 'block';
+  currentQ = 0;
+  answers = new Array(12).fill(null);
+  renderQuestion();
+  showScreen('s-question');
+}
+
+function renderQuestion() {
+  const q = QUESTIONS[currentQ];
+  const pct = ((currentQ) / 12) * 100;
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('q-counter').textContent = `Question ${currentQ + 1} of 12`;
+  document.getElementById('q-text').textContent = q.text;
+
+  const opts = document.getElementById('scale-opts');
+  opts.innerHTML = '';
+  SCALE.forEach(s => {
+    const div = document.createElement('div');
+    div.className = 'sopt' + (answers[currentQ] === s.value ? ' chosen' : '');
+    div.innerHTML = `<div class="sopt-radio"><div class="sopt-dot"></div></div><span class="sopt-text">${s.label}</span>`;
+    div.onclick = () => selectAnswer(s.value);
+    opts.appendChild(div);
+  });
+
+  const nextBtn = document.getElementById('q-next');
+  nextBtn.textContent = currentQ === 11 ? 'Finish →' : 'Next →';
+  nextBtn.classList.toggle('show', answers[currentQ] !== null);
+}
+
+function selectAnswer(value) {
+  answers[currentQ] = value;
+  document.querySelectorAll('.sopt').forEach((el, i) => {
+    el.classList.toggle('chosen', SCALE[i].value === value);
+  });
+  document.getElementById('q-next').classList.add('show');
+}
+
+function nextQuestion() {
+  if (answers[currentQ] === null) return;
+  document.getElementById('progress-fill').style.width = ((currentQ + 1) / 12 * 100) + '%';
+  currentQ++;
+  if (currentQ >= 12) {
+    showScreen('s-capture');
+  } else {
+    renderQuestion();
+  }
+}
+
+function submitCapture() {
+  const name = document.getElementById('f-name').value.trim();
+  const biz = document.getElementById('f-biz').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const industry = document.getElementById('f-industry').value;
+  const role = document.getElementById('f-role').value;
+
+  if (!name || !biz || !email || !industry || !role) {
+    // highlight empty fields
+    [['f-name',name],['f-biz',biz],['f-email',email],['f-industry',industry],['f-role',role]].forEach(([id,val]) => {
+      document.getElementById(id).style.borderColor = val ? '' : 'rgba(255,80,80,.6)';
+    });
+    return;
+  }
+
+  userData = { name, biz, email, industry, role };
+  buildResults();
+  showScreen('s-results');
+  document.getElementById('progress-shell').style.display = 'none';
+  setTimeout(animateBars, 300);
+}
+
+function calcScores() {
+  const domainScores = {};
+  DOMAIN_ORDER.forEach(d => {
+    const qIndexes = QUESTIONS.map((q,i) => q.domain === d ? i : -1).filter(i => i >= 0);
+    const sum = qIndexes.reduce((acc, i) => acc + (answers[i] || 0), 0);
+    domainScores[d] = Math.round((sum / 8) * 100);
+  });
+  const overall = Math.round(DOMAIN_ORDER.reduce((s, d) => s + domainScores[d], 0) / 6);
+  let constraint = DOMAIN_ORDER[0];
+  DOMAIN_ORDER.forEach(d => { if (domainScores[d] < domainScores[constraint]) constraint = d; });
+  const band = BANDS.find(b => overall >= b.min && overall <= b.max) || BANDS[0];
+  return { domainScores, overall, constraint, band };
+}
+
+function buildResults() {
+  const { domainScores, overall, constraint, band } = calcScores();
+  const dateStr = new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+
+  // ---- SCREEN: score hero ----
+  document.getElementById('res-score').textContent = overall;
+  document.getElementById('res-band').textContent = band.label;
+  document.getElementById('res-band-desc').textContent = band.desc;
+
+  // ---- SCREEN: domain bars ----
+  const dbWrap = document.getElementById('domain-bars');
+  dbWrap.innerHTML = '';
+  DOMAIN_ORDER.forEach(d => {
+    const isC = d === constraint;
+    const pct = domainScores[d];
+    dbWrap.innerHTML += `
+      <div class="dbar-row">
+        <div class="dbar-top">
+          <span class="dbar-name">${DOMAIN_META[d].name}${isC ? ' <span class="constraint-tag">Constraint</span>' : ''}</span>
+          <span class="dbar-pct">${pct}</span>
+        </div>
+        <div class="dbar-track"><div class="dbar-fill ${isC ? 'is-constraint' : ''}" data-pct="${pct}" style="width:0%"></div></div>
+      </div>`;
+  });
+
+  // ---- PDF: cover ----
+  document.getElementById('pdf-prepared').textContent = `Prepared for ${userData.name}, ${userData.biz} · ${dateStr}`;
+  document.getElementById('pdf-score-num').textContent = overall;
+  document.getElementById('pdf-band-chip').textContent = band.label;
+  document.getElementById('pdf-band-desc').textContent = band.desc;
+  document.getElementById('pdf-footer-date').textContent = dateStr;
+
+  // ---- PDF: domain grid ----
+  const pdfGrid = document.getElementById('pdf-domain-grid');
+  pdfGrid.innerHTML = '';
+  DOMAIN_ORDER.forEach(d => {
+    const isC = d === constraint;
+    const pct = domainScores[d];
+    pdfGrid.innerHTML += `
+      <div class="pdf-drow">
+        <div class="pdf-drow-top">
+          <span class="pdf-drow-name">${DOMAIN_META[d].name}${isC ? ' <span class="pdf-drow-ctag">Primary</span>' : ''}</span>
+          <span class="pdf-drow-pct">${pct}</span>
+        </div>
+        <div class="pdf-drow-track"><div class="pdf-drow-fill ${isC ? 'pdf-constraint-fill' : ''}" style="width:${pct}%"></div></div>
+      </div>`;
+  });
+
+  // ---- PDF: constraint ----
+  const content = DOMAIN_CONTENT[constraint];
+  document.getElementById('pdf-constraint-title').textContent = DOMAIN_META[constraint].name;
+  document.getElementById('pdf-commentary').textContent = content.commentary;
+
+  // ---- PDF: checks ----
+  document.getElementById('pdf-checks').innerHTML = content.checks.map((c, i) => `
+    <div class="pdf-check">
+      <div class="pdf-check-num">${i + 1}</div>
+      <p class="pdf-check-text">${c}</p>
+    </div>`).join('');
+
+  // ---- PDF: offer ----
+  document.getElementById('pdf-offer-text').textContent = content.offer;
+}
+
+function downloadReport() {
+  window.print();
+}
+
+function animateBars() {
+  document.querySelectorAll('.dbar-fill').forEach(el => {
+    el.style.width = el.dataset.pct + '%';
+  });
+}
+</script>
+</body>
+</html>

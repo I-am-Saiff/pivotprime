@@ -4413,3 +4413,69 @@ The four "who it's for" pages each hold their own copy of the banner rather than
 sharing one. They are identical today, and this change had to be made four
 times as a result. If one is ever edited alone they will drift. Worth pulling
 into a single shared banner, which is a separate piece of work.
+
+## 1e0 Your diagnostic is built
+
+**12 September.** The twelve-question diagnostic from your file is now a page on
+the site at **/diagnostic**. Your file is what it was built from: all twelve
+statements word for word, the six areas, the order you put them in, the
+five-point scale, your scoring, your four bands, and the commentary, the three
+checks and the closing paragraph for each of the six areas.
+
+It is not switched on yet. One setting turns it on, and everything else follows
+by itself.
+
+### The one thing that changed about how it works
+
+**Your score now appears before the form, not after it.**
+
+Your file asks for name, business, email, industry and role after the twelfth
+question, and only shows the score once they are filled in. The 30 August
+meeting agreed the opposite: score first, with the booking button on the page,
+and the email captured afterwards for follow-up. That is how it is built.
+
+Your own file is on both sides of this. The form screen in it reads "Your score
+will appear on screen immediately" above a form that stops exactly that from
+happening. Score first is the version that matches what the sentence promises.
+
+### Two lines had to move with it
+
+**"No email required until the end. Free, always."** No email is required at any
+point now, so "until the end" was no longer true. It reads "Free, always. Your
+results appear on screen before anything is asked of you."
+
+**"Your score will appear on screen immediately."** By the time a reader reaches
+the form they are already looking at the score, so this sentence has gone and
+the one about the written report stays.
+
+### Your results now reach you
+
+Your file had nowhere to send them. Anyone completing it would have filled in the
+form and had their answers vanish when they closed the tab.
+
+Every submission now emails **hello@pivotprime.ae** with the full picture: name,
+business, email, industry, role, the overall score, the band, all six area scores
+and the named constraint. Not just the contact details, so you can open the call
+already knowing what the person told us. They get a short confirmation back.
+
+### Three small fixes
+
+**The WhatsApp button** in your file points at a placeholder number. It now uses
+the real one, the same as every other WhatsApp button on the site.
+
+**Nine em dashes** in your commentary, and three more in the screen copy, were
+changed one at a time to a comma, a colon or a full stop. Section 1 of your own
+document rules them out. Your wording is otherwise untouched.
+
+**The six area names** are sentence case now, so "Founder dependency" rather than
+"Founder Dependency", matching the change you asked for on 1 September. The
+statements and everything else keep your capitalisation.
+
+### One thing to decide
+
+**Your industry list is not the same as the contact form's.** Yours offers
+Healthcare, Media and Marketing, and a few others; the contact form offers
+Insurance, Fintech, Wellness and healthcare and several more. The diagnostic
+uses the contact form's list, so that the enquiries reaching you are all
+described the same way. Say the word if you would rather it used yours, and the
+two lists can be reconciled either direction.

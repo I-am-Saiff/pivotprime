@@ -29,6 +29,22 @@
 const BASE = process.argv[2] ?? process.env.CHECK_BASE_URL ?? "http://localhost:3000";
 
 /**
+ * THE DIAGNOSTIC'S GATE, READ RATHER THAN ASSUMED.
+ *
+ * Four assertions below used to state the gated-off world as a fact: the route
+ * 404s, the sitemap omits it, robots disallows it, and two phrases must not
+ * appear. All four were correct while NEXT_PUBLIC_ENABLE_DIAGNOSTIC was unset
+ * and all four failed the moment it was set, which is the guard working.
+ *
+ * They are flag-aware now rather than inverted, so each one asserts whichever
+ * world the flag actually selects. Inverting them would have protected the live
+ * diagnostic and stopped protecting the gate, and the gate is the state this
+ * project has spent most of its life in. Set the same variable for the checker
+ * as for the build it is checking. PENDING-COPY 1e0.
+ */
+const DIAGNOSTIC_ENABLED = process.env.NEXT_PUBLIC_ENABLE_DIAGNOSTIC === "true";
+
+/**
  * `text` is matched against the tag-stripped page, so a phrase split across
  * elements still matches. `html` is matched raw, for attributes such as anchor
  * ids and for figures where the surrounding tags disambiguate.
@@ -245,11 +261,20 @@ const DECISIONS = [
     },
   },
   {
-    what: "/diagnostic 404s while the flag is off",
-    where: "PENDING-COPY 0.1",
+    what: DIAGNOSTIC_ENABLED
+      ? "/diagnostic serves while the flag is on"
+      : "/diagnostic 404s while the flag is off",
+    where: "PENDING-COPY 0.1 and 1e0",
     run: async (get) => {
       const res = await get("/diagnostic");
-      return res.status === 404 ? null : `expected 404, got ${res.status}`;
+      const want = DIAGNOSTIC_ENABLED ? 200 : 404;
+      if (res.status !== want) return `expected ${want}, got ${res.status}`;
+      if (!DIAGNOSTIC_ENABLED) return null;
+      // On, the page must carry her first question rather than an empty shell.
+      const html = await res.text();
+      return html.includes("What is your business")
+        ? null
+        : "the route serves but her intro copy is not in it";
     },
   },
   {
@@ -263,11 +288,15 @@ const DECISIONS = [
     },
   },
   {
-    what: "the sitemap excludes the gated diagnostic",
+    what: DIAGNOSTIC_ENABLED
+      ? "the sitemap lists the live diagnostic"
+      : "the sitemap excludes the gated diagnostic",
     where: "PENDING-COPY 0.1",
     run: async (get) => {
       const xml = await (await get("/sitemap.xml")).text();
-      return xml.includes("/diagnostic") ? "sitemap lists the gated route" : null;
+      const listed = xml.includes("/diagnostic");
+      if (DIAGNOSTIC_ENABLED) return listed ? null : "the diagnostic is live but not in the sitemap";
+      return listed ? "sitemap lists the gated route" : null;
     },
   },
   {
@@ -276,7 +305,9 @@ const DECISIONS = [
     run: async (get) => {
       const txt = await (await get("/robots.txt")).text();
       if (!txt.includes("Disallow: /api/")) return "does not disallow /api/";
-      if (!txt.includes("Disallow: /diagnostic")) return "does not disallow the gated route";
+      const blocked = txt.includes("Disallow: /diagnostic");
+      if (DIAGNOSTIC_ENABLED && blocked) return "the diagnostic is live but robots still blocks it";
+      if (!DIAGNOSTIC_ENABLED && !blocked) return "does not disallow the gated route";
       return txt.includes("Sitemap:") ? null : "does not point at the sitemap";
     },
   },
@@ -648,8 +679,15 @@ const FORBIDDEN = [
   {
     route: "/",
     assert: [
-      { spec: "stage one", text: "four-minute assessment", why: "diagnostic explainer is gated" },
-      { spec: "stage one", text: "Start with the diagnostic", why: "services card 6 is gated" },
+      // Both are gated copy: they belong on the page once the diagnostic is
+      // live, and must not appear while it 404s. Asserted only in the off
+      // state, for the same reason as the four decisions above. PENDING-COPY 1e0.
+      ...(DIAGNOSTIC_ENABLED
+        ? []
+        : [
+            { spec: "stage one", text: "four-minute assessment", why: "diagnostic explainer is gated" },
+            { spec: "stage one", text: "Start with the diagnostic", why: "services card 6 is gated" },
+          ]),
       { spec: "3", text: "sat in the system", why: "relocated to /about, must not remain on the homepage. Matched on the invariant substring: the homepage rendered the contraction \"We've\" while the relocated copy reads \"We have\", and an assertion on either full form passes while the section is still there" },
       { spec: "3", text: "understand your challenges", why: "relocated to /about, matched on the invariant substring" },
     ],

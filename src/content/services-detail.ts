@@ -1,3 +1,5 @@
+import { DIAGNOSTIC_ENABLED } from "@/lib/flags";
+
 /**
  * Spec copy for the service pages that the build compressed.
  *
@@ -27,11 +29,18 @@ export type ServiceDetailCard = { title: string; body: string };
  * here rather than by her; the meeting note keeps the block and points at her
  * file for it, so her eyebrow, heading and line are what ship.
  *
- * ONE LINE IS NOT HERS. Her Fractional Leadership closer reads "The diagnostic
- * will tell you in four minutes, before anyone quotes you anything." The
- * diagnostic is not built, so that sentence would promise an instrument the
- * site cannot honour. The line kept in its place is the one this page has been
- * carrying. PENDING-COPY 0.4 and 1b7.
+ * HER FRACTIONAL LINE IS BACK, from 12 September. It reads "The diagnostic
+ * will tell you in four minutes, before anyone quotes you anything." It was
+ * held out because the diagnostic did not exist and the sentence would have
+ * promised an instrument the site could not honour. It exists now, at
+ * /diagnostic, so the line ships again.
+ *
+ * STILL CONDITIONAL, for the same reason it was held. The diagnostic is behind
+ * NEXT_PUBLIC_ENABLE_DIAGNOSTIC; with the flag off the route 404s and her
+ * sentence would be a promise to nowhere, so the interim line this page has
+ * been carrying is still what renders in that case. This is the second of the
+ * two switches, the first being HERO_CTA in cta.ts.
+ * PENDING-COPY 0.4, 1b7 and 1e0.
  */
 export const SERVICE_CLOSERS = {
   clarityAudit: {
@@ -42,7 +51,9 @@ export const SERVICE_CLOSERS = {
   fractional: {
     eyebrow: "Next step",
     heading: "Find out which seat is actually missing.",
-    body: "A seat for a season, then a structure that holds without us in it. Tell us what is stretched and we will tell you which seat, and for how long.",
+    body: DIAGNOSTIC_ENABLED
+      ? "The diagnostic will tell you in four minutes, before anyone quotes you anything."
+      : "A seat for a season, then a structure that holds without us in it. Tell us what is stretched and we will tell you which seat, and for how long.",
   },
   buildAndPlace: {
     eyebrow: "The difference",

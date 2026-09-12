@@ -2,6 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { z } from "zod";
 import { INDUSTRIES } from "@/content/industries";
 import { Resend } from "resend";
+import { TO, FROM, stampGST, escapeHtml, clientIp, createRateLimiter } from "@/lib/email";
 
 /**
  * Contact form handler. Spec 2.3.
@@ -19,25 +20,10 @@ import { Resend } from "resend";
  * route exists to avoid.
  */
 
-const TO = "hello@pivotprime.ae";
-/**
- * THE VERIFIED SENDING DOMAIN, not the apex, from 3 September.
- *
- * This was "hello@pivotprime.ae". Resend is verified for send.pivotprime.ae and
- * only for that, so the apex address had no DKIM key of its own to sign with:
- * mail sent from it is unsigned at best and rejected at worst. TO is unchanged,
- * because that is a real mailbox somebody reads; FROM is the envelope the
- * signature belongs to, and the two are not the same thing.
- */
-const FROM = "Pivot Prime <hello@send.pivotprime.ae>";
-
-/** The timestamp the inbox sees, in the timezone she actually works in. */
-const stampGST = () =>
-  new Intl.DateTimeFormat("en-GB", {
-    timeZone: "Asia/Dubai",
-    dateStyle: "full",
-    timeStyle: "short",
-  }).format(new Date()) + " (Gulf Standard Time)";
+/* TO, FROM, stampGST, escapeHtml and the rate limiter moved to src/lib/email.ts
+   on 12 September so /api/diagnostic could use them rather than hold a second
+   copy of each. Behaviour here is unchanged: same sender, same window, same
+   limit, same escaping. */
 
 const EnquirySchema = z.object({
   name: z.string().trim().min(1, "Enter your name").max(120),
@@ -67,27 +53,8 @@ const EnquirySchema = z.object({
   message: "Tell us which industry you are in",
 });
 
-/** Fixed-window limit, per IP. In-memory: one instance, no store, by scope. */
-const WINDOW_MS = 10 * 60 * 1000;
-const MAX_PER_WINDOW = 5;
-const hits = new Map<string, { count: number; resetAt: number }>();
-
-function rateLimited(ip: string): boolean {
-  const now = Date.now();
-  const entry = hits.get(ip);
-
-  if (!entry || now > entry.resetAt) {
-    hits.set(ip, { count: 1, resetAt: now + WINDOW_MS });
-    return false;
-  }
-  entry.count += 1;
-  return entry.count > MAX_PER_WINDOW;
-}
-
-const escapeHtml = (value: string) =>
-  value.replace(/[&<>"']/g, (c) =>
-    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c] as string,
-  );
+/** This route's own bucket, so the diagnostic does not spend its attempts. */
+const rateLimited = createRateLimiter();
 
 export async function POST(request: NextRequest) {
   const contentType = request.headers.get("content-type") ?? "";
@@ -101,12 +68,7 @@ export async function POST(request: NextRequest) {
           303,
         );
 
-  const ip =
-    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
-    request.headers.get("x-real-ip") ??
-    "unknown";
-
-  if (rateLimited(ip)) {
+  if (rateLimited(clientIp(request.headers))) {
     return fail(429, "Too many messages from this address. Try again shortly.");
   }
 
