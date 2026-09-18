@@ -270,11 +270,19 @@ const DECISIONS = [
       const want = DIAGNOSTIC_ENABLED ? 200 : 404;
       if (res.status !== want) return `expected ${want}, got ${res.status}`;
       if (!DIAGNOSTIC_ENABLED) return null;
-      // On, the page must carry her first question rather than an empty shell.
+      // ON, THE PAGE MUST SERVE QUESTION ONE. This asserted her intro heading
+      // until 13 September, when she had the intro screen removed and the quiz
+      // made to open on the first question. The assertion moved with it rather
+      // than being dropped: an empty shell is still the failure worth catching.
+      //
+      // Matched on her first statement, not on the "Question 1 of 12" counter.
+      // React splits an interpolated counter with comment markers in server
+      // output, so it renders as "Question <!-- -->1<!-- --> of <!-- -->12" and
+      // a literal search for the readable string finds nothing.
       const html = await res.text();
-      return html.includes("What is your business")
+      return html.includes("If the founder were uncontactable for two weeks")
         ? null
-        : "the route serves but her intro copy is not in it";
+        : "the route serves but question one is not in the served HTML";
     },
   },
   {

@@ -28,6 +28,18 @@
  * PENDING-COPY 1e0 carries both for her to confirm.
  */
 
+/**
+ * HER INTRO SCREEN, NO LONGER RENDERED, from 13 September.
+ *
+ * She asked for the intro removed: the hero button and a direct visit both open
+ * on question one now. This block is kept rather than deleted because the
+ * decision is hers to reverse, and the four persona cards are finished copy she
+ * wrote. Nothing imports it while the intro is off. The full wording is also in
+ * PENDING-COPY 1e1 so she can read it without opening the repository.
+ *
+ * To bring the intro back: render it from QuizApp again and start the stage at
+ * "intro" rather than "questions".
+ */
 export const DIAGNOSTIC_INTRO = {
   eyebrow: "Pivot Prime · Free diagnostic",
   headingLead: "What is your business",
@@ -74,17 +86,22 @@ export const DIAGNOSTIC_RESULTS = {
 } as const;
 
 export const DIAGNOSTIC_CAPTURE = {
-  heading: "Where should we send",
-  headingAccent: "your full report?",
-  // Her first sentence promised the score was coming; it is already above this
-  // form. Her em dashes around the middle clause are commas.
-  sub: "A detailed written report, with specific next steps for your constraint area, goes to your inbox.",
-  submitLabel: "Send me the full report",
+  heading: "Unlock your score and",
+  headingAccent: "get the full report",
+  /**
+   * THE FORM IS THE GATE AGAIN, from 13 September, which is what her original
+   * file does. The score and the breakdown render blurred above this, and the
+   * copy has to say plainly what the reader gets for filling it in, because a
+   * blurred number with no explanation reads as a page that failed to load.
+   */
+  sub: "Enter your details to unlock your score and get the full report, with what your result means and the three things to check this week.",
+  submitLabel: "Unlock my score",
   privacy:
     "Your details are used only to send your report. We do not share them with third parties.",
-  sentHeading: "Your report is on its way",
+  sentHeading: "Your score is unlocked",
+  /** Her instruction of 13 September is that this says to check the inbox. */
   sentBody:
-    "We have your results. Someone will follow up with a first read on what they mean and a time to talk it through.",
+    "Your full report has been emailed to you. Check your inbox for what your result means, the three things to check this week and what we would do about it.",
   roles: [
     "Founder / CEO",
     "Managing Director",

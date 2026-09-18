@@ -4479,3 +4479,73 @@ Insurance, Fintech, Wellness and healthcare and several more. The diagnostic
 uses the contact form's list, so that the enquiries reaching you are all
 described the same way. Say the word if you would rather it used yours, and the
 two lists can be reconciled either direction.
+
+## 1e1 The diagnostic: three changes from your screenshots
+
+**13 September.** All three are yours, and two of them reverse what shipped on
+the 12th. Nothing about the questions, the scale, the scoring or the bands has
+changed.
+
+### 1. The opening screen is gone
+
+The diagnostic used to open on a page with your four reader cards and a "Start
+the diagnostic" button. Clicking the button on the homepage, or going straight
+to the page, now lands on question one.
+
+**Your opening copy is kept, not deleted**, so this is a one-line change to undo
+if you want it back. It is written out in full at the end of this entry.
+
+### 2. The score is blurred until the form is filled in
+
+On the last question you now see your score, your band and the six-area
+breakdown, all blurred, with the form directly underneath and a line telling you
+to enter your details to unlock the score and get the full report. Filling it in
+clears the blur and confirms the report has been emailed.
+
+This is back to what your original file does. The version from the 12th showed
+everything straight away with the form below it.
+
+**One thing to be aware of.** The blur is a reason to fill in the form, not a
+lock. The score is worked out in the visitor's own browser, so somebody who knows
+how to open the developer tools can read it through the blur. Making it a real
+lock would mean sending every answer to the server one at a time, which would
+make the quiz slower for everyone to stop a handful of people. Not worth it.
+
+### 3. The constraint section is off the screen entirely
+
+The primary constraint heading, the "what this means for your business"
+paragraph, the three things to check this week and the closing paragraph about
+the audit no longer appear on the page at all, before or after unlocking. They
+are in the emailed report and nowhere else.
+
+The constraint is still marked on the breakdown, as in your screenshot: the area
+holding the business back most carries a "constraint" tag next to its name.
+
+**The emailed report is unchanged.** It still carries everything: the score, the
+band, all six areas, the constraint, the commentary, the three checks and the
+closing paragraph.
+
+### Your opening copy, kept for if you want it back
+
+> **Pivot Prime · Free diagnostic**
+>
+> **What is your business actually running on?**
+>
+> Twelve questions. Four minutes. A clear picture of what is holding your
+> operations back, and the one constraint worth fixing first.
+>
+> **The stretched founder.** Everything runs through you. You are the
+> decision-maker, the closer, and the safety net, and it is slowing growth down.
+>
+> **The growing SME.** Revenue is moving. But the business is not keeping up. You
+> are hiring into chaos rather than into structure.
+>
+> **The P&L owner.** You run a division or business unit and need operational
+> clarity to hit your numbers without asking for more headcount.
+>
+> **The scale-ready business.** Growth is the plan. But before you put fuel on
+> it, you need to know which part of the engine will break first.
+>
+> 12 questions · 4 minutes · 6 operational domains · Personalised report
+>
+> **Start the diagnostic**

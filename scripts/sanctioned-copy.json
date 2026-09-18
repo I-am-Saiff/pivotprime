@@ -1011,6 +1011,14 @@
       "why": "Her own wording. The 31 August instruction adding a service button to each persona card gave the five labels verbatim and told us to use the same label everywhere: \"See the audit\", \"See fractional leadership\", \"See build and place\", \"See technology builds\", \"See market entry\". They are in src/content/service-links.ts, which is the only place any of them is written, and the button on a card is chosen by reading the service named in that card's sub-line rather than assigned per page. PENDING-COPY 1c2.",
       "route": "/for-founders",
       "element": "link"
+    },
+    {
+      "text": "Neither agree nor disagree",
+      "status": "traced",
+      "kind": "client-supplied",
+      "why": "The midpoint of her five-point scale, from the SCALE array in req/pp-diagnostic_5.html. The reverse audit reads her mockups as rendered markup, and her scale options are written into the page by her own JavaScript at runtime rather than sitting in the HTML, so it cannot see them. The other four labels trace elsewhere; this one is hers and only hers. PENDING-COPY 1e0.",
+      "route": "/diagnostic",
+      "element": "button"
     }
   ]
 }
