@@ -227,9 +227,19 @@ export default function QuizApp() {
    * without scrolling, so the score block and the breakdown are sized to leave
    * room for it: a smaller ring and tighter rows below sm, opening out above.
    */
-  const veil = unlocked
-    ? ""
-    : "blur-[7px] select-none pointer-events-none";
+  /**
+   * THE VEIL, STRENGTHENED 14 SEPTEMBER. It was a single blur-[7px] over both
+   * blocks and it did not hold: at 1440 the score digits and the constraint tag
+   * were both readable, and the bar fills gave away all six scores as a chart
+   * even with the numbers blurred.
+   *
+   * Large glyphs survive blur far better than small text, which is why the
+   * 56px score read through 7px while the 13px labels did not. So the two
+   * blocks are blurred separately now, the score harder than the list, and the
+   * score panel carries a scrim on top of the blur as well.
+   */
+  const scoreVeil = unlocked ? "" : "blur-[14px] select-none";
+  const listVeil = unlocked ? "" : "blur-[12px] select-none";
 
   return (
     <section className="surface-page px-4 pt-24 pb-16 sm:px-6 sm:pt-28 sm:pb-24 md:pt-32 lg:px-8">
@@ -238,8 +248,13 @@ export default function QuizApp() {
         <div
           data-diagnostic-veiled={unlocked ? "false" : "true"}
           aria-hidden={unlocked ? undefined : "true"}
-          className={`transition-[filter] duration-500 ${veil}`}
+          className={unlocked ? "" : "pointer-events-none"}
         >
+          {/* The scrim is a sibling, not a child: a child would sit inside the
+              filtered element and be blurred along with the digits, which would
+              make it a smear rather than a veil. */}
+          <div className="relative">
+          <div className={`transition-[filter] duration-500 ${scoreVeil}`}>
           <div className="rounded-2xl bg-forest px-5 py-6 text-center text-white sm:px-8 sm:py-8">
             <p className="text-[9px] font-bold tracking-[0.2em] text-neon/60 uppercase sm:text-[10px]">
               {DIAGNOSTIC_RESULTS.eyebrow}
@@ -263,7 +278,16 @@ export default function QuizApp() {
               {band.desc}
             </p>
           </div>
+          </div>
+          {unlocked ? null : (
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 rounded-2xl bg-forest/45"
+            />
+          )}
+          </div>
 
+          <div className={`transition-[filter] duration-500 ${listVeil}`}>
           <p className="pt-6 pb-3 text-[10px] font-bold tracking-[0.2em] text-mid uppercase">
             {DIAGNOSTIC_RESULTS.breakdownLabel}
           </p>
@@ -275,7 +299,14 @@ export default function QuizApp() {
                   <div className="flex items-center justify-between">
                     <span className="text-[12px] font-semibold text-forest sm:text-[13px]">
                       {DOMAIN_NAME[d]}
-                      {isConstraint ? (
+                      {/* THE TAG IS WITHHELD UNTIL UNLOCK, not just blurred.
+                          Blurring it hides the word and keeps the disclosure:
+                          a green chip on one row of six says which domain is
+                          the constraint, which is the single most valuable
+                          fact in the report. Caught by looking at a capture at
+                          1440 rather than by reading the CSS. It renders as
+                          hers on unlock. */}
+                      {isConstraint && unlocked ? (
                         <span className="ml-2 rounded-[100px] bg-mid/10 px-2 py-0.5 text-[9px] font-bold tracking-[0.12em] text-mid uppercase">
                           {DIAGNOSTIC_RESULTS.constraintTag}
                         </span>
@@ -285,16 +316,30 @@ export default function QuizApp() {
                       {domainScores[d]}
                     </span>
                   </div>
+                  {/* THE BARS CARRY NO DATA UNTIL UNLOCK, chosen over blurring
+                      them harder. Blur cannot hide a bar: an empty track next
+                      to a full one is a difference of shape, not of detail, so
+                      the constraint row at 0 and a row at 100 stay obvious at
+                      any strength. Six identical neutral bars still read as a
+                      breakdown, which is what the section is there to promise,
+                      and disclose nothing. */}
                   <div className="h-1.5 overflow-hidden rounded-full bg-forest/8">
                     <div
-                      className={`h-full rounded-full ${isConstraint ? "bg-mid" : "bg-neon"}`}
-                      style={{ width: `${domainScores[d]}%` }}
+                      className={`h-full rounded-full ${
+                        unlocked
+                          ? isConstraint
+                            ? "bg-mid"
+                            : "bg-neon"
+                          : "bg-forest/15"
+                      }`}
+                      style={{ width: unlocked ? `${domainScores[d]}%` : "100%" }}
                     />
                   </div>
                 </li>
               );
             })}
           </ul>
+          </div>
         </div>
 
         {/* ---- the gate, directly beneath with no gap ---- */}
