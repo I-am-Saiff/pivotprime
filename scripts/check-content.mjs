@@ -991,22 +991,40 @@ const HEADING_ORDER = [
   {
     route: "/",
     spec: "3",
+    /**
+     * REORDERED 27 September TO HER SLIDE 2, and this list is the reason the
+     * move was safe to make.
+     *
+     * It caught the reorder on the first run with six positional mismatches,
+     * which is exactly what it exists for: presence checks cannot see order,
+     * and every one of these eight headings was still on the page. Moved to her
+     * sequence rather than loosened, so it goes on catching the next accidental
+     * move. Her order, verbatim from the slide: Hero, Logos and institutions,
+     * Pain accordion, Who we serve, Measured Impact, What do we actually do,
+     * Meet Iram, Case Studies, Sign off CTA. The hero is an H1 and the logos
+     * carry no heading, so the eight below are her nine minus those two, plus
+     * the fees block she does not name. PENDING-COPY 1f0.
+     */
     h2: [
       // The proof strip's two labels are H3 inside the row, not H2 above it.
       // They were image cards on the live site, briefly a static H2 here, and
       // are now headings travelling in the row as the client asked. They are
       // asserted by the reverse audit and by the strip's own structure rather
       // than by this list, which tracks the page's H2 spine.
-      "This is what our team has delivered", // 3.3
+      "These are the patterns before growth stalls", // 3.5, her "Pain accordion"
+      "You don", // 3.9 Who we serve, contraction differs by apostrophe encoding
+      "This is what our team has delivered", // 3.3, her "Measured Impact"
       "What do we actually do", // 3.4
-      "These are the patterns before growth stalls", // 3.5
-      "Pivot Prime is led by a Mathematician", // 3.7
-      "What we have achieved", // 3.8
-      "You don", // 3.9, contraction differs by apostrophe encoding
+      "Pivot Prime is led by a Mathematician", // 3.7, her "Meet Iram"
+      "What we have achieved", // 3.8 Case Studies
       // 27 August: the authored SEO H2 was cut with the rest of the fees
       // explanation on the client's verbal instruction, so the spine heading is
       // hers again. Her lead survives beneath it and "Most consultants are paid
       // for the recommendation" is the H3 over the traditional column.
+      //
+      // NOT IN HER SLIDE 2 AT ALL. It is kept directly before the closer, which
+      // is where it already sat, so its relationship to the closer is
+      // unchanged. It is the only section on the page her order does not name.
       "Most consultants charge whether it works or not.", // 3.10
       "Find out what is holding your business back.", // 3.11, her slide 9 wording
     ],

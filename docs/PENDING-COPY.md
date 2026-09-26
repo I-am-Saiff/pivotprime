@@ -5133,3 +5133,64 @@ through the site with a keyboard the carousel stops while you are on the
 controls and starts again when you leave them. With reduced motion turned on in
 the operating system it does not move at all and all five cards are shown at
 once, which is unchanged.
+
+---
+
+## 1f0 The homepage sections are in your order now
+
+**27 September.** Your slide 2 gives the running order and the page follows it.
+
+### Before and after
+
+| | Was | Now |
+|---|---|---|
+| 1 | Hero | Hero |
+| 2 | Logos and institutions | Logos and institutions |
+| 3 | Measured Impact | **Pain accordion** |
+| 4 | What do we actually do | **Who we serve** |
+| 5 | Pain accordion | **Measured Impact** |
+| 6 | Meet Iram | **What do we actually do** |
+| 7 | Case Studies | **Meet Iram** |
+| 8 | Who we serve | **Case Studies** |
+| 9 | Fees | Fees |
+| 10 | Sign off CTA | Sign off CTA |
+
+Four sections moved. Nothing was added, removed, merged or edited.
+
+**We checked that rather than assuming it.** Every one of the ten sections was
+measured before and after, and all ten are identical to the character: the same
+number of elements and the same number of characters inside each. The whole page
+is also exactly the same height as before, on a phone and on a desktop.
+
+### The fees section, which is not in your list
+
+Your order names nine sections and the page has ten. **The fees block, the one
+about most consultants charging whether it works or not, is not in your list.**
+We have kept it and left it directly before the closing CTA, which is where it
+already sat, so its relationship to the closer is unchanged.
+
+**It is the only section your list does not name.** Say the word if you meant it
+somewhere else, or meant it gone.
+
+### What the move could have broken, and did not
+
+**The hero's second button** scrolls down the page to "What do we actually do".
+We clicked it at all three sizes rather than reading the code: it still lands on
+that section with the heading just below the header. The other in-page address,
+the one the hero's first button uses when the diagnostic is switched off, also
+still lands on the pain accordion.
+
+**The drawings on the results cards** fade in as you scroll to them. That section
+is much further down the page now, so it was worth checking: all five are fully
+visible after scrolling, and none is stuck part-drawn.
+
+**Nothing overflows sideways** at any of the three sizes.
+
+### One thing we noticed and left alone
+
+The pain accordion has no space of its own above it, by design: it borrows the
+space below whatever sits above it. It used to follow "What do we actually do"
+and now follows the logos, which carries slightly less space on a wide screen,
+so there is about 40 pixels less above that heading than there was. We looked at
+it and it reads correctly, so nothing was changed. Tell us if you want it opened
+up.

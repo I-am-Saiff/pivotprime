@@ -28,6 +28,23 @@ export const metadata: Metadata = pageMetadata("home");
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
+      {/* THE ORDER OF THESE SECTIONS IS HERS, NOT THE SPEC'S NUMBERING.
+
+          Slide 2 of her 26 September deck gives the running order verbatim:
+          Hero, Logos and institutions, Pain accordion, Who we serve, Measured
+          Impact, What do we actually do, Meet Iram, Case Studies, Sign off CTA.
+          "Pain accordion" is her name for the patterns section, which she
+          spells out in the same note.
+
+          SO THE 3.x COMMENTS BELOW NO LONGER RUN IN NUMERICAL ORDER, and that
+          is correct rather than a mistake to tidy. Each one still names the
+          spec clause its section answers; the sequence on the page is hers.
+
+          THE FEES BLOCK, 3.10, IS NOT IN HER NINE. It is kept and left directly
+          before the closing CTA, which is where it already sat, so its
+          relationship to the closer is unchanged. It is the only section on the
+          page her list does not name. PENDING-COPY 1f0. */}
+
       {/* 3.1 Hero */}
       <section className="relative flex min-h-[100svh] items-center px-4 pt-28 pb-10 sm:px-6 sm:pt-32 sm:pb-20 md:pt-40 md:pb-28 lg:px-8">
         {/* Background — layered gradient lets the wave texture breathe */}
@@ -270,10 +287,58 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3.3 Results. NEW. Sits immediately under the proof bar, before the
-          services: after "we build it" the visitor's next thought is "prove it".
-          Figures are green and count up on scroll; labels and context are in the
-          standard body colour. Spec 3.3. */}
+      {/* 3.5 The patterns, her "Pain accordion", which is the name she uses
+          for it on slide 2 and spells out in her own note.
+
+          IT IS THIRD ON THE PAGE NOW, straight after the logos. The paragraph
+          below is the reason it used to sit below the services and is kept for
+          the record, because it is the argument her slide 2 overrules rather
+          than a description of where it is. PENDING-COPY 1f0.
+
+          THE OLD REASON: MOVED below the services: having just read what
+          Pivot Prime sells, the visitor now recognises their own symptom and
+          knows which service it points to. Spec 3.5. */}
+      {/* id and scroll-mt-28 mirror the #services section above, which is the
+          only other anchor target on this page. The hero's first button points
+          here. globals.css already gives every [id] a 7rem scroll-margin-top so
+          a target does not land under the floating nav; scroll-mt-28 is the same
+          7rem stated locally, which is how #services carries it. */}
+      <section id="patterns" className="scroll-mt-28 surface-page px-4 pb-14 sm:pb-24 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl">
+          {/* The heading is black again, on her 31 August instruction. It was
+              black over cream chips, went green on 28 August with the chips,
+              and is black over the white chips now. The eyebrow stays green:
+              she named the heading only. Black on the page ground is 18.9:1
+              against the 4.0:1 the mid green managed. */}
+          <p className="mb-4 text-xs font-semibold tracking-[0.18em] text-mid uppercase">
+            {PATTERNS.eyebrow}
+          </p>
+          <h2 className="mb-7 sm:mb-10 text-3xl font-extrabold tracking-tight text-foreground md:text-4xl lg:text-5xl">
+            {PATTERNS.heading}
+          </h2>
+          <PatternsList />
+        </div>
+      </section>
+
+      {/* Audiences Section / Chapter 03 — Who We Serve */}
+      <section className="py-14 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-forest/[0.06]">
+        <div className="max-w-6xl mx-auto">
+          <PersonaSwitcher />
+        </div>
+      </section>
+
+      {/* 3.3 Results, her "Measured Impact". Figures are green and count up on
+          scroll; labels and context are in the standard body colour. Spec 3.3.
+
+          IT NO LONGER SITS UNDER THE PROOF BAR. This block used to open with
+          "Sits immediately under the proof bar, before the services: after 'we
+          build it' the visitor's next thought is 'prove it'". Her slide 2 of 26
+          September puts the pain accordion and Who we serve between the logos
+          and this, so that sentence stopped being true and has gone rather than
+          been left to mislead. Its own padding is small, 32px at 375 and 48px
+          at 1440, which was chosen for the proof bar adjacency; the section
+          above it now carries 56px and 96px of its own, so the space above this
+          heading grew rather than collapsed. PENDING-COPY 1f0. */}
       {/* pb-28 below sm: clears the floating WhatsApp button so the last
           card does not end underneath it. PENDING-COPY 1ak. */}
       <section className="surface-page px-4 pt-8 pb-8 sm:px-6 sm:pt-12 sm:pb-12 lg:px-8">
@@ -305,31 +370,6 @@ export default function Home() {
           </header>
 
           <ServiceCards />
-        </div>
-      </section>
-
-      {/* 3.5 The patterns. MOVED below the services: having just read what
-          Pivot Prime sells, the visitor now recognises their own symptom and
-          knows which service it points to. Spec 3.5. */}
-      {/* id and scroll-mt-28 mirror the #services section above, which is the
-          only other anchor target on this page. The hero's first button points
-          here. globals.css already gives every [id] a 7rem scroll-margin-top so
-          a target does not land under the floating nav; scroll-mt-28 is the same
-          7rem stated locally, which is how #services carries it. */}
-      <section id="patterns" className="scroll-mt-28 surface-page px-4 pb-14 sm:pb-24 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-5xl">
-          {/* The heading is black again, on her 31 August instruction. It was
-              black over cream chips, went green on 28 August with the chips,
-              and is black over the white chips now. The eyebrow stays green:
-              she named the heading only. Black on the page ground is 18.9:1
-              against the 4.0:1 the mid green managed. */}
-          <p className="mb-4 text-xs font-semibold tracking-[0.18em] text-mid uppercase">
-            {PATTERNS.eyebrow}
-          </p>
-          <h2 className="mb-7 sm:mb-10 text-3xl font-extrabold tracking-tight text-foreground md:text-4xl lg:text-5xl">
-            {PATTERNS.heading}
-          </h2>
-          <PatternsList />
         </div>
       </section>
 
@@ -423,13 +463,6 @@ export default function Home() {
               </span>
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* Audiences Section / Chapter 03 — Who We Serve */}
-      <section className="py-14 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-forest/[0.06]">
-        <div className="max-w-6xl mx-auto">
-          <PersonaSwitcher />
         </div>
       </section>
 
