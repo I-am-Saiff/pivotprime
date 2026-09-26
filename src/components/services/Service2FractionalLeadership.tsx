@@ -2,8 +2,8 @@
 
 import { Fragment, useState, useSyncExternalStore } from "react";
 
-import { PairDark, PairLight, SectionHead, ServiceSignOff } from "./SpecCopyBlocks";
-import { FRACTIONAL_FIT, SEATS, SERVICE_CLOSERS } from "@/content/services-detail";
+import { PairDark, PairLight, SectionHead, ServiceCrossLink, ServiceSignOff } from "./SpecCopyBlocks";
+import { FRACTIONAL_FIT, SEATS, SERVICE_CLOSERS, SERVICE_CROSS_LINKS } from "@/content/services-detail";
 import { SEAT_IDS, seatIndexFromHash } from "@/lib/seat-anchors";
 
 import { WHATSAPP_URL } from "@/lib/flags";
@@ -301,6 +301,12 @@ export default function Service2FractionalLeadership() {
           </PairDark>
         </div>
       </section>
+
+      {/* HER CROSS-LINK BLOCK, slide 12 of the 26 September deck.
+          Position read off this file rather than taken on trust: it sits after
+          the last pair section and immediately before the closer, which is
+          where she placed it. PENDING-COPY 1e6. */}
+      <ServiceCrossLink {...SERVICE_CROSS_LINKS.fractional} />
 
       <ServiceSignOff {...SERVICE_CLOSERS.fractional} />
     </div>

@@ -4828,3 +4828,90 @@ once it is tapped. That makes no difference to a reader, and both now show the
 same three services, but it does mean search engines only ever see the desktop
 one. It is not a problem today because both carry the same links. It is worth
 fixing at some point and is outside what you asked for here.
+
+---
+
+## 1e6 The two cross-link blocks, slides 11 and 12
+
+**26 September.** Your slides 11 and 12 add one block to the Operational Clarity
+Audit page and one to Fractional Leadership, each pointing at one of the two
+services that came off the header menu on slide 10. This is the other half of
+that change: it is how those two pages are reached now.
+
+### Where they sit
+
+We read both pages before adding anything rather than working from the
+description, and your placement was right in both cases.
+
+**Operational Clarity Audit.** The new block sits between "How we do it / What
+happens after" and the closing block. Nothing above or below it moved.
+
+**Fractional Leadership.** The new block sits between "Where it does not fit /
+How it runs" and the closing block. Nothing above or below it moved.
+
+### Your wording, as it appears
+
+> **UAE Market Entry**
+>
+> For international businesses looking to enter the UAE market, market entry
+> feasibility is included as part of the audit. We scope the financial model,
+> entity structure, regulatory requirements and operational setup. We then can
+> also support in full set up end to end, including logistics and supply chain.
+>
+> **Find out more about UAE Market Entry**
+
+> **Need other staff?**
+>
+> Need people in the seats to execute? We source, vet and manage Project
+> Managers, Software Engineers and Operations Leads on your behalf, placed
+> temporarily and managed by us for the duration of the engagement.
+>
+> **Find out more about Build and Place**
+
+Both paragraphs are word for word as you wrote them. Neither needed anything
+changed for the house rules: no dashes to convert and both were already in
+British English.
+
+### Two things about the wording we decided, and either is one line to reverse
+
+**The headings are not in capitals.** You wrote them as "UAE MARKET ENTRY" and
+"NEED OTHER STAFF?". Earlier this month you asked for every block heading on the
+service pages to come out of capitals, and we recorded at the time that this
+overrides your design file rather than following it. That is why "Where it does
+not fit", "How it runs", "The misconception" and the rest all read as sentences
+today. Putting these two in capitals would have put back on these pages the exact
+thing you had taken off them, so they match their neighbours. **Say the word and
+they go back to capitals.**
+
+"UAE Market Entry" keeps its capitals because it is the name of the service,
+which is how you wrote it in the link underneath it.
+
+**"Build and place" became "Build and Place"** in the link, so the button and the
+page it opens agree. Saif raised this when sending the slides and we have
+followed it.
+
+### How they look
+
+Each is a single white card the full width of the page, with the heading in
+green, your paragraph under it and a green button below that.
+
+**That is the card these two pages are already built from.** Every other block
+on both pages is one half of a white-and-dark-green pair, and this is the white
+half on its own, at full width, since you said the pair rule does not apply to a
+single block. A reader meets the same card, corner, border and green heading
+they have already seen twice further up the page.
+
+**The button is the same green service button the reader pages use** under each
+reader card, so it reads as a route to another service rather than as a general
+call to action. We measured the two against each other rather than assuming:
+they are identical.
+
+### One thing worth knowing
+
+You asked us to match the treatment of the existing single blocks on those two
+pages. **Neither page has a single block.** Every heading-and-paragraph block on
+both is half of a two-column pair, and the only single block anywhere on the
+service pages is on Technology Builds, which is a different shape and is on
+neither of these pages. So we used the card those pages already use, at full
+width, which is the closest thing that exists. If you had a different treatment
+in mind, tell us what it should look like.

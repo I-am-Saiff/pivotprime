@@ -295,6 +295,45 @@ const DECISIONS = [
     },
   },
   {
+    what: "the two cross-link blocks carry her copy and point at the two de-navigated pages",
+    where: "PENDING-COPY 1e6",
+    run: async (get) => {
+      /**
+       * HER SLIDES 11 AND 12, the other half of the dropdown removal on slide
+       * 10. These two blocks are how she wants Build and Place and UAE Market
+       * Entry reached now that neither is in the header.
+       *
+       * ASSERTED TOGETHER WITH THE LINK, not just the prose. A block whose
+       * paragraph survives while its button is dropped would leave both pages
+       * exactly as hard to reach as before the blocks were added, and the
+       * paragraph would read as an orphan. The href is matched raw for that
+       * reason, and the first clause of each body is matched on the
+       * tag-stripped page so a phrase split across elements still counts.
+       */
+      const blocks = [
+        [
+          "/services/operational-clarity-audit",
+          "market entry feasibility is included as part of the audit",
+          'href="/services/uae-market-entry"',
+          "Find out more about UAE Market Entry",
+        ],
+        [
+          "/services/fractional-leadership",
+          "We source, vet and manage Project Managers, Software Engineers and Operations Leads",
+          'href="/services/build-and-place"',
+          "Find out more about Build and Place",
+        ],
+      ];
+      for (const [route, body, href, label] of blocks) {
+        const html = await (await get(route)).text();
+        if (!textOf(html).includes(body)) return `${route} has lost her cross-link paragraph`;
+        if (!html.includes(href)) return `${route} carries the paragraph but no longer links the page it is about`;
+        if (!textOf(html).includes(label)) return `${route} has lost the "${label}" button`;
+      }
+      return null;
+    },
+  },
+  {
     what: "two services are off the header dropdown while both pages stay live and linked",
     where: "PENDING-COPY 1e5",
     run: async (get) => {

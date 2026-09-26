@@ -1020,6 +1020,30 @@
       "route": "/diagnostic",
       "element": "button",
       "mustAppear": false
+    },
+    {
+      "text": "Need other staff?",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own wording, slide 12 of the 26 September deck, which adds a cross-link block to Fractional Leadership pointing at Build and Place. She wrote the heading as \"NEED OTHER STAFF?\"; it is sentence case here because her earlier instruction took every block heading on the service pages out of capitals and PENDING-COPY records that it overrides her file rather than following it. Capitals here would put back on this page exactly what she had removed. PENDING-COPY 1e6.",
+      "route": "/services/fractional-leadership",
+      "element": "h3"
+    },
+    {
+      "text": "Find out more about UAE Market Entry",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own wording, slide 11 of the 26 September deck. The block exists because UAE Market Entry came off the header services dropdown on her slide 10, and this is how she wants that page reached from the audit page. PENDING-COPY 1e6.",
+      "route": "/services/operational-clarity-audit",
+      "element": "link"
+    },
+    {
+      "text": "Find out more about Build and Place",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own wording, slide 12 of the 26 September deck, with one change she was told about rather than it being made quietly: she wrote \"Build and place\" with a lowercase p and Saif raised it to the page’s own title casing so the link and the page it opens agree. The block exists because Build and Place came off the header services dropdown on her slide 10. PENDING-COPY 1e6.",
+      "route": "/services/fractional-leadership",
+      "element": "link"
     }
   ]
 }

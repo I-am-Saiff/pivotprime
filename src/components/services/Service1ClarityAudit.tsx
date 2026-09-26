@@ -1,5 +1,5 @@
-import { PairDark, PairLight, ServiceSignOff, TickList } from "./SpecCopyBlocks";
-import { CLARITY_AUDIT, SERVICE_CLOSERS } from "@/content/services-detail";
+import { PairDark, PairLight, ServiceCrossLink, ServiceSignOff, TickList } from "./SpecCopyBlocks";
+import { CLARITY_AUDIT, SERVICE_CLOSERS, SERVICE_CROSS_LINKS } from "@/content/services-detail";
 import { WHATSAPP_URL } from "@/lib/flags";
 import { WHATSAPP_CTA } from "@/content/cta";
 import ClarityAuditProcessMap from "./ClarityAuditProcessMap";
@@ -124,6 +124,12 @@ export default function Service1ClarityAudit() {
           </PairDark>
         </div>
       </section>
+
+      {/* HER CROSS-LINK BLOCK, slide 11 of the 26 September deck.
+          Position read off this file rather than taken on trust: it sits after
+          the last pair section and immediately before the closer, which is
+          where she placed it. PENDING-COPY 1e6. */}
+      <ServiceCrossLink {...SERVICE_CROSS_LINKS.clarityAudit} />
 
       <ServiceSignOff {...SERVICE_CLOSERS.clarityAudit} />
     </div>

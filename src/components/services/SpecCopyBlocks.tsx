@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CONTACT_CTA as SIGN_OFF_CTA } from "@/content/cta";
 
 /**
@@ -185,6 +186,67 @@ export function PairDark({
       ) : null}
       <div className={label ? "mt-3" : ""}>{children}</div>
     </div>
+  );
+}
+
+/**
+ * HER CROSS-LINK BLOCK, slides 11 and 12 of the 26 September deck. One heading,
+ * one paragraph, one button through to another service page.
+ *
+ * WHY PairLight AND NOT NoteCard. Her brief asked for the treatment the
+ * existing single blocks on those two pages already use. Read rather than
+ * assumed, and the premise does not hold: neither the Operational Clarity Audit
+ * page nor Fractional Leadership has a single block at all. Every heading and
+ * body block on both is half of a two-column pair, and PairLight is used inside
+ * a md:grid-cols-2 row on all five service pages and nowhere else. The only
+ * single block anywhere on the service pages is Lab plus NoteCard on Technology
+ * Builds, which is her `.notefit` aside and is on neither of these pages.
+ *
+ * So this renders the card those two pages are already built from, at full
+ * width instead of at half. A reader meets the same white card, the same
+ * corner, the same border and the same green label they have already seen twice
+ * further up the page, which is as close to "the treatment they already use" as
+ * exists. Her own note points the same way: a single block means the
+ * left-white-right-dark pair rule does not apply, which leaves the light card
+ * without its dark partner. Reported in PENDING-COPY 1e6.
+ *
+ * THE BUTTON IS THE PERSONA PAGES' SERVICE BUTTON, her instruction, so a reader
+ * recognises it as a route to another service. Its classes are copied from
+ * ServiceLinkButtons rather than shared with it: that component chooses its
+ * links from a card's sub-line through serviceLinksIn and carries its own
+ * labels, so it cannot render her wording, and rewiring it is outside the scope
+ * she set for this change. THIS IS A SECOND COPY OF THAT CLASS LIST AND IS NOT
+ * CLAIMED AS CONSOLIDATED. The two are asserted equal by measuring the rendered
+ * buttons rather than by reading the strings. Worth doing properly in a later
+ * pass.
+ */
+export function ServiceCrossLink({
+  heading,
+  body,
+  linkLabel,
+  href,
+}: {
+  heading: string;
+  body: string;
+  linkLabel: string;
+  href: string;
+}) {
+  return (
+    <section className="surface-page px-4 pb-10 sm:px-6 sm:pb-16 lg:px-8">
+      <div className="mx-auto max-w-5xl">
+        <PairLight label={heading} labelAs="h3">
+          <p className="leading-relaxed text-forest/75">{body}</p>
+          <div className="mt-6">
+            <Link
+              href={href}
+              className="inline-flex min-h-11 items-center justify-center rounded-xl bg-neon px-5 py-2 text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:outline-none"
+            >
+              {linkLabel}
+            </Link>
+          </div>
+        </PairLight>
+      </div>
+    </section>
   );
 }
 

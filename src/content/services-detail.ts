@@ -457,3 +457,48 @@ export const SEATS: Seat[] = [
       n: "Cash, runway and forecasting, collections, board and investor reporting, and readiness for the next round. For businesses raising capital, or where the founder feels the absence of a finance seat every week.",
     },
   ];
+
+/**
+ * HER TWO CROSS-LINK BLOCKS, slides 11 and 12 of the 26 September deck.
+ *
+ * WHY THEY EXIST. Build and Place and UAE Market Entry came off the header
+ * services dropdown on her slide 10. These are the other half of that change:
+ * they are how she wants those two pages reached now, from the two services a
+ * reader is most likely to be on when the other one becomes relevant.
+ *
+ * HER WORDING, VERBATIM. Neither body carries an em dash and both are already
+ * British English, so the house rules cost them nothing. The phrasing is hers
+ * throughout, including "We then can also support in full set up end to end",
+ * which is not tidied.
+ *
+ * THE HEADINGS ARE NOT IN CAPITALS, AND THAT IS HER OWN LATER INSTRUCTION
+ * RATHER THAN OUR PREFERENCE. She wrote them as "UAE MARKET ENTRY" and "NEED
+ * OTHER STAFF?" on the slides. Her earlier instruction took every block heading
+ * on the service pages out of capitals, and PENDING-COPY records that it
+ * "overrides your file rather than following it": "The misconception",
+ * "Straight answer", "What we build", "Where it does not fit", "How it runs"
+ * all read as sentences now for that reason. Rendering these two in capitals
+ * would put back on these pages exactly what she had taken off them. Flagged
+ * for her in PENDING-COPY 1e6 and one line to reverse.
+ *
+ * "UAE Market Entry" keeps its capitals because it is the service's name, which
+ * is how her own link text writes it.
+ *
+ * THE LINK LABEL IS HERS. On slide 12 she wrote "Build and place" with a
+ * lowercase p and Saif raised it to the page's own title casing so the link and
+ * the page it opens agree. Recorded rather than silently applied.
+ */
+export const SERVICE_CROSS_LINKS = {
+  clarityAudit: {
+    heading: "UAE Market Entry",
+    body: "For international businesses looking to enter the UAE market, market entry feasibility is included as part of the audit. We scope the financial model, entity structure, regulatory requirements and operational setup. We then can also support in full set up end to end, including logistics and supply chain.",
+    linkLabel: "Find out more about UAE Market Entry",
+    href: "/services/uae-market-entry",
+  },
+  fractional: {
+    heading: "Need other staff?",
+    body: "Need people in the seats to execute? We source, vet and manage Project Managers, Software Engineers and Operations Leads on your behalf, placed temporarily and managed by us for the duration of the engagement.",
+    linkLabel: "Find out more about Build and Place",
+    href: "/services/build-and-place",
+  },
+} as const;
