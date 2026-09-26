@@ -136,14 +136,27 @@ export default function QuizApp() {
   };
 
   /* ---------------------------------------------------------------- intro */
+  /*
+   * IT FILLS THE SCREEN AND CENTRES, from 26 September, when the four persona
+   * cards came off. They were most of this screen's height, and without them
+   * the green band stopped 245px above the footer at 768 and 1440 and left a
+   * strip of bare page ground under it: a hole, not a margin. Measured before
+   * and after rather than judged from the class list.
+   *
+   * flex min-h-[100svh] items-center is the homepage hero's own treatment,
+   * copied rather than invented, svh included: on a phone with the browser
+   * chrome showing, 100vh is taller than the screen and would push the start
+   * button under the fold. The padding stays as it was and still sets the
+   * minimum clearance under the floating header.
+   */
   if (stage === "intro") {
     return (
-      <section className="relative overflow-hidden bg-forest px-4 pt-28 pb-16 text-white sm:px-6 sm:pt-32 sm:pb-24 md:pt-40 lg:px-8">
+      <section className="relative flex min-h-[100svh] items-center overflow-hidden bg-forest px-4 pt-28 pb-16 text-white sm:px-6 sm:pt-32 sm:pb-24 md:pt-40 lg:px-8">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.038)_1px,transparent_1px)] [background-size:26px_26px]"
         />
-        <div className="relative mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto w-full max-w-3xl text-center">
           <p className="mb-5 text-[10px] font-bold tracking-[0.22em] text-neon uppercase">
             {DIAGNOSTIC_INTRO.eyebrow}
           </p>
@@ -155,16 +168,19 @@ export default function QuizApp() {
             {DIAGNOSTIC_INTRO.deck}
           </p>
 
-          <ul className="mx-auto mt-10 grid gap-3 text-left sm:grid-cols-2">
-            {DIAGNOSTIC_INTRO.audience.map((a) => (
-              <li key={a.label} className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                <p className="text-[13px] font-bold text-white">{a.label}</p>
-                <p className="mt-1.5 text-xs leading-relaxed text-white/45">{a.text}</p>
-              </li>
-            ))}
-          </ul>
+          {/* HER FOUR PERSONA CARDS CAME OFF HERE, 26 September, on her
+              instruction. They sat between the deck and the meta line. The copy
+              is kept unrendered in DIAGNOSTIC_INTRO.audience with a note on
+              switching it back on, the same way the whole intro was kept when
+              it was removed on 18 September. PENDING-COPY 1e3. */}
 
-          <ul className="mt-9 flex flex-wrap items-center justify-center gap-x-7 gap-y-2">
+          {/* THE META LINE BELONGS TO THE BUTTON, NOT TO THE DECK. With the
+              cards between them, the deck opened a 40px gap and the meta line
+              read as the top of the lower block. Taking the cards out left
+              32px above it and 36px below, near enough equal that it floated
+              between the two. Back to 40 above and 28 below, so the meta line,
+              the button and its note read as one cluster under the heading. */}
+          <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-7 gap-y-2">
             {DIAGNOSTIC_INTRO.stats.map((s) => (
               <li key={s} className="flex items-center gap-2 text-xs text-white/45">
                 <span aria-hidden="true" className="h-[5px] w-[5px] rounded-full bg-neon/60" />
@@ -176,7 +192,7 @@ export default function QuizApp() {
           <button
             type="button"
             onClick={start}
-            className="mt-9 inline-flex min-h-11 items-center justify-center rounded-[100px] bg-neon px-10 py-4 text-sm font-bold text-forest transition-opacity hover:opacity-90"
+            className="mt-7 inline-flex min-h-11 items-center justify-center rounded-[100px] bg-neon px-10 py-4 text-sm font-bold text-forest transition-opacity hover:opacity-90"
           >
             {DIAGNOSTIC_INTRO.startLabel}
           </button>

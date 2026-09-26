@@ -46,7 +46,26 @@ export const DIAGNOSTIC_INTRO = {
   // Her em dash before "and the one constraint" is a comma.
   deck: "Twelve questions. Four minutes. A clear picture of what is holding your operations back, and the one constraint worth fixing first.",
   stats: ["12 questions", "4 minutes", "6 operational domains", "Personalised report"],
-  /** Her four ICP cards, verbatim but for the one em dash in the first. */
+  /**
+   * HER FOUR ICP CARDS, NO LONGER RENDERED, from 26 September.
+   *
+   * She asked for the cards taken off the intro screen: it keeps the eyebrow,
+   * the heading, the deck, the meta line and the start button with its note.
+   * Nothing reads this array while they are off.
+   *
+   * KEPT RATHER THAN DELETED, the same way the whole intro was kept when it was
+   * removed on 18 September, and for the reason that decision proved out: the
+   * intro came back eight days later and her wording was still here to come
+   * back with it. These four are finished copy she wrote. The full wording is
+   * also in PENDING-COPY 1e3 so she can read it without opening the repository.
+   *
+   * To switch them back on: map this array in QuizApp's intro screen again,
+   * between the deck and the meta line, and put back the spacing that came out
+   * with it (the deck's bottom margin and the meta line's top margin). The
+   * removed markup is in the commit that took them off.
+   *
+   * Verbatim but for the one em dash in the first.
+   */
   audience: [
     {
       label: "The stretched founder",

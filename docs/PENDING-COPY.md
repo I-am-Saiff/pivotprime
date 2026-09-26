@@ -4602,3 +4602,59 @@ Entry 1e1 above wrote your opening copy out for you to read, and it stopped at
 the "Start the diagnostic" button without the note line. The code kept the
 complete version, which is the one that has been used. Nothing is missing from
 the screen.
+
+---
+
+## 1e3 The four reader cards are off the opening screen
+
+**26 September.** You asked for the four cards removed. The opening screen now
+carries the eyebrow, the heading, the line about twelve questions and four
+minutes, the meta line and the start button with its note. Nothing else on the
+diagnostic changed: the questions, the blurred score, the form and the emailed
+report are all as they were.
+
+### Your card copy is kept, not deleted
+
+All four titles and all four paragraphs are still in the file, switched off. It
+is a small change to put them back, and they are written out below so you can
+read them without asking us. This is the same thing we did on the 18th when the
+whole opening screen came off, and it is the reason the screen could go straight
+back up on the 26th with your wording intact.
+
+> **The stretched founder.** Everything runs through you. You are the
+> decision-maker, the closer, and the safety net, and it is slowing growth down.
+>
+> **The growing SME.** Revenue is moving. But the business is not keeping up. You
+> are hiring into chaos rather than into structure.
+>
+> **The P&L owner.** You run a division or business unit and need operational
+> clarity to hit your numbers without asking for more headcount.
+>
+> **The scale-ready business.** Growth is the plan. But before you put fuel on
+> it, you need to know which part of the engine will break first.
+
+### The spacing had to change with them
+
+The cards were most of that screen's height. Taking them out left the dark green
+band stopping about a quarter of the way up from the bottom of the screen, with a
+strip of bare cream page underneath it before the footer. That read as something
+missing rather than as space.
+
+Two changes, both about the screen holding together:
+
+**The dark band fills the screen again.** It now behaves the way the homepage
+banner does, filling the window and sitting its content in the middle, so there
+is no strip of bare page under it at any size.
+
+**The meta line moved down to join the button.** With the cards between them it
+sat at the top of the lower half of the screen. Without them it was floating
+almost exactly halfway between your opening line and the button, belonging to
+neither. It now sits closer to the button, so the meta line, the button and the
+note under it read as one group.
+
+### One thing worth knowing
+
+Our automatic checks did not notice the cards going. They read headings and
+buttons, and your card titles are written as paragraphs in your own file, so
+nothing flagged it. This entry is the only record that the copy exists and is
+switched off rather than gone.
