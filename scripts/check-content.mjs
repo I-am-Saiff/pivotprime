@@ -270,19 +270,28 @@ const DECISIONS = [
       const want = DIAGNOSTIC_ENABLED ? 200 : 404;
       if (res.status !== want) return `expected ${want}, got ${res.status}`;
       if (!DIAGNOSTIC_ENABLED) return null;
-      // ON, THE PAGE MUST SERVE QUESTION ONE. This asserted her intro heading
-      // until 13 September, when she had the intro screen removed and the quiz
-      // made to open on the first question. The assertion moved with it rather
-      // than being dropped: an empty shell is still the failure worth catching.
+      // ON, THE PAGE MUST SERVE HER INTRO SCREEN. This is the third position
+      // for the same assertion, and it has moved with the flow each time rather
+      // than being dropped: an empty shell is the failure worth catching, and
+      // what counts as a shell changes when the opening screen changes.
       //
-      // Matched on her first statement, not on the "Question 1 of 12" counter.
-      // React splits an interpolated counter with comment markers in server
-      // output, so it renders as "Question <!-- -->1<!-- --> of <!-- -->12" and
-      // a literal search for the readable string finds nothing.
+      // It asserted her intro heading until 18 September, when she had the
+      // intro removed and the quiz opened on question one; it asserted her
+      // first statement from then until 26 September, when she reversed that.
+      //
+      // Both her heading and her start button, because the intro is the only
+      // screen in the served HTML now and a heading with no way out of it is
+      // still a broken page. Not the "Question 1 of 12" counter, which is one
+      // click away and, in any case, is split by React's comment markers in
+      // server output: it renders as "Question <!-- -->1<!-- --> of <!-- -->12"
+      // and a literal search for the readable string finds nothing.
       const html = await res.text();
-      return html.includes("If the founder were uncontactable for two weeks")
+      if (!html.includes("What is your business")) {
+        return "the route serves but her intro copy is not in it";
+      }
+      return html.includes("Start the diagnostic")
         ? null
-        : "the route serves but question one is not in the served HTML";
+        : "her intro copy is served but the start button is not, so the quiz cannot be begun";
     },
   },
   {

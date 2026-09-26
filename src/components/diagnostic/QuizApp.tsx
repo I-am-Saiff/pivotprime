@@ -3,7 +3,11 @@
 import { useEffect, useState, type SubmitEvent } from "react";
 import { INDUSTRIES } from "@/content/industries";
 import { DOMAIN_NAME, DOMAIN_ORDER, QUESTIONS, SCALE } from "@/content/diagnostic-quiz";
-import { DIAGNOSTIC_CAPTURE, DIAGNOSTIC_RESULTS } from "@/content/diagnostic-copy";
+import {
+  DIAGNOSTIC_CAPTURE,
+  DIAGNOSTIC_INTRO,
+  DIAGNOSTIC_RESULTS,
+} from "@/content/diagnostic-copy";
 import { scoreDiagnostic } from "@/lib/diagnostic-score";
 
 /**
@@ -15,13 +19,18 @@ import { scoreDiagnostic } from "@/lib/diagnostic-score";
  * the site already loads instead of her Google Fonts link, React state instead
  * of display:none screen swapping.
  *
- * THREE CHANGES FROM 13 SEPTEMBER, all hers, all reversing or trimming what
- * shipped on the 12th. PENDING-COPY 1e1.
+ * THE INTRO SCREEN IS BACK, 26 SEPTEMBER, on her instruction, reversing the
+ * removal of 18 September. It opens on her four persona cards behind a "Start
+ * the diagnostic" button again, and the hero button and a direct visit both
+ * land there. Nothing after it changed: the questions, the scoring, the veiled
+ * score, the capture form and the email are all as they were.
  *
- *   NO INTRO SCREEN. It opened on her four persona cards behind a "Start the
- *   diagnostic" button. The hero button and a direct visit both land on
- *   question one now. Her intro copy is kept in diagnostic-copy.ts and in
- *   PENDING-COPY, unrendered, so the decision is reversible.
+ * The removal was written to be reversible and that is what it cost to reverse:
+ * her copy was still in diagnostic-copy.ts and in PENDING-COPY 1e1, so no
+ * wording had to be reconstructed. PENDING-COPY 1e2.
+ *
+ * TWO CHANGES FROM 13 SEPTEMBER, both hers, both reversing what shipped on the
+ * 12th. PENDING-COPY 1e1.
  *
  *   THE SCORE IS GATED AGAIN, which is what her original file does. The ring,
  *   the band and the six-domain breakdown render blurred, with the form
@@ -41,16 +50,16 @@ import { scoreDiagnostic } from "@/lib/diagnostic-score";
  * would mean a round trip per question and is deliberately not done.
  *
  * WHY NOT useRevealOnScroll HERE. Nothing is hidden from the server for effect.
- * Questions and results are state the reader creates by answering, so there is
- * no copy a crawler should see and cannot.
+ * The intro is the served HTML; questions and results are state the reader
+ * creates by answering. There is no copy a crawler should see and cannot, which
+ * is the failure that rule exists to prevent.
  */
 
-type Stage = "questions" | "results";
+type Stage = "intro" | "questions" | "results";
 type SendState = "idle" | "sending" | "sent" | "error";
 
 export default function QuizApp() {
-  // No "intro" member: question one is where this opens.
-  const [stage, setStage] = useState<Stage>("questions");
+  const [stage, setStage] = useState<Stage>("intro");
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState<(number | null)[]>(
     () => new Array(QUESTIONS.length).fill(null),
@@ -63,7 +72,8 @@ export default function QuizApp() {
   /**
    * BACK TO THE TOP ON EVERY STEP, which is what her file does in showScreen().
    *
-   * Dropping it was a defect that only showed at 375: the next screen opened
+   * Dropping it was a defect that only showed at 375: the reader scrolls down
+   * the intro to reach the start button, and the next screen then opens
    * mid-question with the footer in view because the page kept its scroll
    * position. Keyed on the step as well as the stage so it fires between
    * questions, not only between screens. "instant" rather than smooth: this is
@@ -72,6 +82,12 @@ export default function QuizApp() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [stage, current]);
+
+  const start = () => {
+    setAnswers(new Array(QUESTIONS.length).fill(null));
+    setCurrent(0);
+    setStage("questions");
+  };
 
   const choose = (value: number) => {
     setAnswers((prev) => {
@@ -119,6 +135,57 @@ export default function QuizApp() {
     }
   };
 
+  /* ---------------------------------------------------------------- intro */
+  if (stage === "intro") {
+    return (
+      <section className="relative overflow-hidden bg-forest px-4 pt-28 pb-16 text-white sm:px-6 sm:pt-32 sm:pb-24 md:pt-40 lg:px-8">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.038)_1px,transparent_1px)] [background-size:26px_26px]"
+        />
+        <div className="relative mx-auto max-w-3xl text-center">
+          <p className="mb-5 text-[10px] font-bold tracking-[0.22em] text-neon uppercase">
+            {DIAGNOSTIC_INTRO.eyebrow}
+          </p>
+          <h1 className="text-4xl font-extrabold tracking-tight text-balance md:text-6xl">
+            <span className="block">{DIAGNOSTIC_INTRO.headingLead}</span>
+            <span className="block text-neon">{DIAGNOSTIC_INTRO.headingAccent}</span>
+          </h1>
+          <p className="mx-auto mt-6 max-w-xl leading-relaxed text-white/55">
+            {DIAGNOSTIC_INTRO.deck}
+          </p>
+
+          <ul className="mx-auto mt-10 grid gap-3 text-left sm:grid-cols-2">
+            {DIAGNOSTIC_INTRO.audience.map((a) => (
+              <li key={a.label} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <p className="text-[13px] font-bold text-white">{a.label}</p>
+                <p className="mt-1.5 text-xs leading-relaxed text-white/45">{a.text}</p>
+              </li>
+            ))}
+          </ul>
+
+          <ul className="mt-9 flex flex-wrap items-center justify-center gap-x-7 gap-y-2">
+            {DIAGNOSTIC_INTRO.stats.map((s) => (
+              <li key={s} className="flex items-center gap-2 text-xs text-white/45">
+                <span aria-hidden="true" className="h-[5px] w-[5px] rounded-full bg-neon/60" />
+                {s}
+              </li>
+            ))}
+          </ul>
+
+          <button
+            type="button"
+            onClick={start}
+            className="mt-9 inline-flex min-h-11 items-center justify-center rounded-[100px] bg-neon px-10 py-4 text-sm font-bold text-forest transition-opacity hover:opacity-90"
+          >
+            {DIAGNOSTIC_INTRO.startLabel}
+          </button>
+          <p className="mt-4 text-[11px] text-white/30">{DIAGNOSTIC_INTRO.note}</p>
+        </div>
+      </section>
+    );
+  }
+
   /* ------------------------------------------------------------ questions */
   if (stage === "questions") {
     const question = QUESTIONS[current];
@@ -152,12 +219,18 @@ export default function QuizApp() {
           </div>
 
           <div className="rounded-2xl border border-forest/10 bg-white p-7 shadow-sm sm:p-9">
-            <h1
+            {/* An H2, not an H1, because the intro screen is the served HTML and
+                carries the page's H1 again. It was promoted to an H1 while the
+                intro was gone and question one was what the page served. aria-live
+                so a reader using assistive technology is told the question
+                changed; the heading itself is the only thing that moves between
+                steps. */}
+            <h2
               aria-live="polite"
               className="text-lg font-bold leading-snug text-balance text-forest sm:text-xl"
             >
               {question.text}
-            </h1>
+            </h2>
 
             <div className="mt-7 grid gap-2.5">
               {SCALE.map((point) => {
@@ -194,14 +267,13 @@ export default function QuizApp() {
           </div>
 
           <div className="mt-5 flex items-center justify-between">
-            {/* No intro to go back to, so question one has nothing behind it.
-                Rendered disabled rather than removed, so the Next button does
-                not jump across the row between question one and two. */}
+            {/* Back at question one returns to the intro, which is her own
+                behaviour and is possible again now the intro exists. It was
+                disabled on question one while there was nothing behind it. */}
             <button
               type="button"
-              onClick={() => setCurrent((c) => c - 1)}
-              disabled={current === 0}
-              className="-mx-2 inline-flex min-h-11 items-center px-2 text-xs font-semibold text-forest/55 transition-colors hover:text-forest disabled:pointer-events-none disabled:opacity-0"
+              onClick={() => (current === 0 ? setStage("intro") : setCurrent((c) => c - 1))}
+              className="-mx-2 inline-flex min-h-11 items-center px-2 text-xs font-semibold text-forest/55 transition-colors hover:text-forest"
             >
               Back
             </button>

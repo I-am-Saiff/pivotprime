@@ -10,35 +10,34 @@
  * build on one. These are separate from the nine in the domain content, which
  * are handled in diagnostic-quiz.ts.
  *
- * TWO LINES THAT THE FLOW CHANGE MADE UNTRUE. Her file gates the score behind
- * the capture form while telling the reader it appears immediately; the score
- * comes first now, per the 30 August meeting, so two sentences that described
- * the old order had to move with it:
+ * TWO LINES THAT THE 30 AUGUST FLOW CHANGE MADE UNTRUE. That build put the
+ * score before the form, so two sentences of hers that described the old order
+ * were rewritten with it. The gate came back on 18 September and one of the two
+ * is hers again; the other is still ours:
  *
  *   "No email required until the end. Free, always."
- *     Her line, written when the form sat between the last question and the
- *     score. There is no email required at any point now, so "until the end" is
- *     no longer the truth and has gone.
+ *     RESTORED 26 September. Rewritten while no email was required at any
+ *     point, so "until the end" was not the truth. The email is asked for after
+ *     the twelfth question again, so her line is accurate again and is back
+ *     verbatim. See DIAGNOSTIC_INTRO.note below. PENDING-COPY 1e2.
  *
  *   "Your score will appear on screen immediately. A detailed written report,
  *    with specific next steps for your constraint area, goes to your inbox."
- *     The first sentence promised something the reader is already looking at by
- *     the time they reach this form. Only the report sentence survives.
+ *     STILL CUT. The first sentence is not true of the veiled score either: it
+ *     appears blurred, and only the report sentence survives. The capture copy
+ *     that replaced it says plainly what filling the form in gets them.
  *
  * PENDING-COPY 1e0 carries both for her to confirm.
  */
 
 /**
- * HER INTRO SCREEN, NO LONGER RENDERED, from 13 September.
+ * HER INTRO SCREEN, RENDERED AGAIN FROM 26 SEPTEMBER.
  *
- * She asked for the intro removed: the hero button and a direct visit both open
- * on question one now. This block is kept rather than deleted because the
- * decision is hers to reverse, and the four persona cards are finished copy she
- * wrote. Nothing imports it while the intro is off. The full wording is also in
- * PENDING-COPY 1e1 so she can read it without opening the repository.
- *
- * To bring the intro back: render it from QuizApp again and start the stage at
- * "intro" rather than "questions".
+ * It was removed on 18 September on her instruction and restored on hers. The
+ * block was kept unrendered through that week rather than deleted, precisely so
+ * a reversal would not mean reconstructing her wording, and that is what it was
+ * worth: every string below is the one she wrote, unchanged by the round trip.
+ * The full wording is also in PENDING-COPY 1e1. PENDING-COPY 1e2.
  */
 export const DIAGNOSTIC_INTRO = {
   eyebrow: "Pivot Prime · Free diagnostic",
@@ -67,8 +66,21 @@ export const DIAGNOSTIC_INTRO = {
     },
   ],
   startLabel: "Start the diagnostic",
-  // Her "No email required until the end" line is gone with the gate. See above.
-  note: "Free, always. Your results appear on screen before anything is asked of you.",
+  /**
+   * HER OWN LINE IS BACK, because the gate it describes is back.
+   *
+   * Her file reads "No email required until the end. Free, always." It was
+   * rewritten on 30 August, when the score came before the form, to
+   * "Free, always. Your results appear on screen before anything is asked of
+   * you." That was true of that build and is false of this one: the score has
+   * been veiled behind the form since 18 September, so the adapted line would
+   * have gone back on screen promising the opposite of what the page does.
+   *
+   * Restoring her wording rather than writing a third version: "until the end"
+   * is accurate again, because the email is asked for after the twelfth
+   * question and not before. PENDING-COPY 1e2.
+   */
+  note: "No email required until the end. Free, always.",
 } as const;
 
 export const DIAGNOSTIC_RESULTS = {

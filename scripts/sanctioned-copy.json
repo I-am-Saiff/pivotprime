@@ -1016,9 +1016,10 @@
       "text": "Neither agree nor disagree",
       "status": "traced",
       "kind": "client-supplied",
-      "why": "The midpoint of her five-point scale, from the SCALE array in req/pp-diagnostic_5.html. The reverse audit reads her mockups as rendered markup, and her scale options are written into the page by her own JavaScript at runtime rather than sitting in the HTML, so it cannot see them. The other four labels trace elsewhere; this one is hers and only hers. PENDING-COPY 1e0.",
+      "why": "The midpoint of her five-point scale, from the SCALE array in req/pp-diagnostic_5.html. The reverse audit reads her mockups as rendered markup, and her scale options are written into the page by her own JavaScript at runtime rather than sitting in the HTML, so it cannot see them. The other four labels trace elsewhere; this one is hers and only hers. PENDING-COPY 1e0. NOT IN THE SERVED HTML SINCE 26 SEPTEMBER, when she had the intro screen restored: the scale is on the question screen, one click behind the start button, and this audit reads every route with JavaScript disabled. It was served while the quiz opened on question one, between 18 and 26 September. mustAppear is off for that reason and not because the line went anywhere. PENDING-COPY 1e2.",
       "route": "/diagnostic",
-      "element": "button"
+      "element": "button",
+      "mustAppear": false
     }
   ]
 }

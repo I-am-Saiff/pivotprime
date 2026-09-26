@@ -4549,3 +4549,56 @@ closing paragraph.
 > 12 questions · 4 minutes · 6 operational domains · Personalised report
 >
 > **Start the diagnostic**
+
+---
+
+## 1e2 The opening screen is back
+
+**26 September.** You asked for the opening screen returned, with a short
+explanation of what the diagnostic is and a button to begin. It is back, and
+nothing after it has changed.
+
+The homepage button and a direct visit to the diagnostic both land on the
+opening screen again. "Start the diagnostic" takes you to question one. From
+there it is exactly as it was: the twelve questions, the blurred score, the form
+that unlocks it, and the emailed report.
+
+### Your copy came back word for word
+
+When the opening screen was removed on the 18th, your wording was kept rather
+than deleted, in the code and written out in full in entry 1e1 above. Nothing
+had to be rewritten or remembered. What is on screen now is:
+
+- the eyebrow, **Pivot Prime · Free diagnostic**
+- the heading, **What is your business actually running on?**
+- the opening paragraph about twelve questions and four minutes
+- all four reader cards: the stretched founder, the growing SME, the P&L owner
+  and the scale-ready business
+- the line of four facts: 12 questions, 4 minutes, 6 operational domains,
+  Personalised report
+- the **Start the diagnostic** button
+- the note underneath it
+
+### One line under the button, and which version it is
+
+The note under the button was yours: **"No email required until the end. Free,
+always."**
+
+It was rewritten on 30 August, when the score came before the form, because at
+that point no email was required at any point and "until the end" was no longer
+true. It read "Free, always. Your results appear on screen before anything is
+asked of you."
+
+The form went back in front of the score on the 18th, so that rewritten line
+would have gone back on screen saying the opposite of what the page does. Your
+original is true again, so your original is what is there. Not a third version.
+
+**If you would rather it said something else, tell us and it changes.** This is
+the only line on the opening screen that is not exactly as it was on the 12th.
+
+### One thing the opening screen does not carry
+
+Entry 1e1 above wrote your opening copy out for you to read, and it stopped at
+the "Start the diagnostic" button without the note line. The code kept the
+complete version, which is the one that has been used. Nothing is missing from
+the screen.
