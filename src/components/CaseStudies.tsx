@@ -203,19 +203,10 @@ export default function CaseStudies({
                     into the panel rather than being dropped: it is her copy and
                     it introduces the list. */}
 
-                {study.link && (
-                  <a
-                    href={study.link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex min-h-11 items-center justify-center rounded-xl bg-neon px-5 py-2.5 font-sans text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
-                  >
-                    {study.link.label}
-                    <span aria-hidden="true" className="ml-2 text-base leading-none">
-                      &rarr;
-                    </span>
-                  </a>
-                )}
+                {/* THE LINK USED TO SIT HERE, at the foot of the argument and
+                    above the results panel. Her slide 8: "The results to come
+                    before the view the product links." It is below the panel
+                    now, which is the last thing in the card. PENDING-COPY 1f2. */}
               </div>
 
               {/* The picture, alone on the right, spanning both rows so it
@@ -328,6 +319,30 @@ export default function CaseStudies({
                     </ul>
                   </div>
                 </div>
+
+                {/* HER SLIDE 8: THE RESULTS COME BEFORE THE LINK. It was the
+                    last thing in the argument column, so a reader met "View the
+                    product" before the numbers that earn the click. It is below
+                    the panel now, in the same grid cell, so it stays in the left
+                    column beside the photograph and nothing else about it
+                    changes: same href, same label, same treatment, same new tab.
+
+                    mt-5 is the space the argument column's space-y-5 was giving
+                    it, carried across by hand because a margin utility is not
+                    inherited by a child of a different parent. PENDING-COPY 1f2. */}
+                {study.link && (
+                  <a
+                    href={study.link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex min-h-11 items-center justify-center rounded-xl bg-neon px-5 py-2.5 font-sans text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
+                  >
+                    {study.link.label}
+                    <span aria-hidden="true" className="ml-2 text-base leading-none">
+                      &rarr;
+                    </span>
+                  </a>
+                )}
               </div>
             </div>
           </li>

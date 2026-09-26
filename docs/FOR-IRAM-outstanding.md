@@ -1154,3 +1154,38 @@ pointing it here in the meantime.
 
 The second hero button, *"See what we actually do"*, is unchanged and still goes
 to the services section.
+
+---
+
+## Two things from the 26 September deck are waiting on you
+
+### A live screenshot of the Nurture app, slide 8
+
+**27 September.** Your slide 8 asks for the Nurture image to be replaced with a
+live screenshot, because the one on the site shows **"test app" as a person's
+name**.
+
+You are right, and it is on the case study card on both the homepage and the
+About page, at a size where it is readable.
+
+**We cannot fix this without a new image.** Nothing in the repository is a
+substitute and cropping the current one does not remove the name. **Send a
+screenshot of the live app** and it goes straight in: same card, same place,
+nothing else changes.
+
+The rest of your slide 8, the results moving above the product link, is done.
+
+### LinkedIn links under each person, slide 7
+
+**27 September.** Your slide 7 asks for a LinkedIn link under every team member,
+reading **"Connect with Iram on LinkedIn"** and the same for the others.
+
+**We have not built it, because we do not have the addresses.** We need four
+LinkedIn profile URLs: yours, Justin's, Saif's and Ali's. Guessing a profile
+address is the one thing worse than not having the link, because it could point
+at a stranger.
+
+**Send the four and it is a short job.** The wording will be yours, with each
+person's first name in it.
+
+The rest of your slide 7, your biography and the tag line, is done and live.

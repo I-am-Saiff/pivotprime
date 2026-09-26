@@ -750,13 +750,74 @@ const DECISIONS = [
     },
   },
   {
-    what: "the About card says $100 million and the homepage says $120 million, deliberately",
-    where: "PENDING-COPY 1i",
+    what: "the case study results sit above the product link on both pages",
+    where: "PENDING-COPY 1f2",
     run: async (get) => {
+      /**
+       * HER SLIDE 8: "The results to come before the view the product links."
+       *
+       * MEASURED PER LINK, NOT PER PAGE. Three of the nine studies carry a
+       * link and all three render on both routes, so a first-occurrence check
+       * would pass on the strength of card one while cards two and three had
+       * drifted. For every link on the page this walks back from it and asks
+       * which marker it meets first: within a card the order is challenge,
+       * results, link, so the nearest one behind a link must be the results
+       * panel. If the link went back above the panel the nearest marker behind
+       * it would be the challenge heading instead, which is precisely the
+       * arrangement she asked us to change.
+       */
+      for (const route of ["/", "/about"]) {
+        const html = await (await get(route)).text();
+        for (const label of ["View the product", "Visit the site"]) {
+          let from = 0;
+          for (;;) {
+            const at = html.indexOf(label, from);
+            if (at === -1) break;
+            from = at + 1;
+            const results = html.lastIndexOf("The results", at);
+            const challenge = html.lastIndexOf("The challenge", at);
+            if (results === -1) return `${route}: a "${label}" link has no results panel before it`;
+            if (challenge > results) {
+              return `${route}: a "${label}" link sits above its results panel, and her slide 8 puts the results first`;
+            }
+          }
+        }
+      }
+      return null;
+    },
+  },
+  {
+    what: "both the About card and the homepage say 120, after her slide 7 settled it",
+    where: "PENDING-COPY 1i and 1f2",
+    run: async (get) => {
+      /**
+       * THIS DECISION HAS FLIPPED, AND THE GUARD IS WHAT CAUGHT IT.
+       *
+       * It used to assert a deliberate DISAGREEMENT: the About card said
+       * "worth over $100 million" because her slide 21 said so, and the
+       * homepage said "more than $120 million" because spec 3.7 and the live
+       * site did. Two figures for one book, each with a source, recorded rather
+       * than quietly reconciled.
+       *
+       * Her slide 7 of 26 September rewrites the About biography and writes
+       * "$120M" in it. That is the later instruction and it supersedes slide
+       * 21, so the disagreement is hers to have ended and the two now agree on
+       * the number. This assertion follows it rather than being deleted: the
+       * pair still has to be checked, because one of them drifting back is
+       * exactly what it was written for.
+       *
+       * THE FORM STILL DIFFERS AND THAT IS DELIBERATE. She writes "$120M" and
+       * the homepage says "$120 million"; hers is her wording on her card and
+       * the homepage's is spec 3.7's. Reported to her in PENDING-COPY 1f2
+       * rather than regularised on her behalf.
+       */
       const about = await (await get("/about")).text();
       const home = await (await get("/")).text();
-      if (!about.includes("worth over $100 million")) {
-        return "the About card no longer says $100 million, which is what slide 21 says";
+      if (about.includes("worth over $100 million")) {
+        return "the About card is back to $100 million, and her slide 7 replaced that paragraph with one saying $120M";
+      }
+      if (!about.includes("$120M book")) {
+        return "the About card no longer says $120M, which is her slide 7 wording";
       }
       if (!home.includes("more than $120 million")) {
         return "the homepage no longer says $120 million, which is what spec 3.7 and the live site say";

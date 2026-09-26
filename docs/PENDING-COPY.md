@@ -5304,3 +5304,93 @@ been written in a way that made the page print the code for it rather than the
 symbol. It reads correctly now.
 
 We swept every page on the site for the same fault. **That was the only one.**
+
+---
+
+## 1f2 The case study results moved above the link, and your biography
+
+**26 September, your slides 8 and 7.**
+
+### The results now come before the product link
+
+**Your note:** "The results to come before the view the product links."
+
+On each case study card the order was:
+
+> case study number → sector → the challenge → **the link** → **the results**
+
+It is now:
+
+> case study number → sector → the challenge → **the results** → **the link**
+
+**Nothing else on the cards changed.** The challenge text, the image, the tags,
+where the link goes and what it says are all exactly as they were.
+
+**Both pages use the same card**, so the change lands everywhere at once. Three
+of the nine case studies carry a link, Nurture, Cinnacare and Scentmatic, and
+all three appear on the homepage and on About. The other six have no link and
+are unaffected.
+
+### The Nurture screenshot
+
+Your slide 8 also asks for a live screenshot because the current image shows
+"test app" as a person's name. **We have left it, because we do not have a
+replacement image.** It is recorded in the outstanding file as waiting on you.
+
+### Your biography
+
+**What was there before**, preserved here:
+
+> Fellow of the Institute and Faculty of Actuaries. One of roughly 75,000
+> qualified actuaries worldwide. Sixteen years in senior operating roles at AIG,
+> MetLife and Gallagher across the UK, Middle East and Africa. Chief of Staff to
+> a regional CEO across more than 150 staff. Pricing and portfolio strategy for a
+> multi-line book worth over $100 million.
+>
+> Founded Pivot Prime to close the gap between what a business decides and what
+> it actually delivers.
+>
+> Tags: Fellow, IFoA · AIG · MetLife · Gallagher · UK · Middle East · Africa ·
+> 16 years senior leadership
+
+**Your new copy is live, word for word**, in five paragraphs under your name.
+
+### Three things about the wording
+
+**"Actuaries,and holds" is "Actuaries, and holds".** Your deck runs the two
+together with no space. Saif said that was a text box artefact rather than your
+intent, and that is how it reads on the page.
+
+**"$120M" is yours and it stays.** The old paragraph said "$100 million". A check
+existed specifically to hold the two figures apart, because your slide 21 said
+$100 million on this card while the homepage said $120 million, and that
+disagreement was deliberate and recorded. **Your slide 7 ends it**, so both now
+say 120 and the check follows your instruction instead of the old one.
+
+One thing you may want to level: your card says **"$120M"** and the homepage
+paragraph says **"$120 million"**. Same number, different form. Yours is on your
+card because it is your wording; the homepage one is the copy document's. Say
+the word if you want them matched.
+
+**Nothing else changed.** No dashes to remove and no American spellings, so the
+house rules cost your copy nothing.
+
+### The tag line, and a choice we made
+
+You wrote it as one line: *Fellow, IFoA · Gallagher · AIG · MetLife · UK ·
+Middle East · Africa · 16 years senior leadership*.
+
+The card already had a row of tags, so it uses that same treatment. **We split
+your line on your own dots, which gives eight tags** in your order.
+
+**That is eight where there were four.** The old row grouped the companies into
+one tag and the regions into another. Reading your line that way would have
+meant choosing your grouping for you, and it would have lost your reordering,
+which puts Gallagher first. **Say the word and we will group them back into
+four.**
+
+### The LinkedIn links
+
+Your slide 7 also asks for "Connect with Iram on LinkedIn" under each person.
+**We have not built it: we do not have the four profile addresses**, and guessing
+one could point at a stranger. Recorded in the outstanding file.

@@ -52,19 +52,65 @@ export type Person = {
   initials: string;
 };
 
+/**
+ * HER BIOGRAPHY, slide 7 of the 26 September deck, verbatim.
+ *
+ * WHAT IT REPLACES is preserved in PENDING-COPY 1f2: two paragraphs opening
+ * "Fellow of the Institute and Faculty of Actuaries. One of roughly 75,000
+ * qualified actuaries worldwide..." and closing "Founded Pivot Prime to close
+ * the gap between what a business decides and what it actually delivers."
+ * Hers says more and says it in her own voice, so it replaces rather than joins
+ * it.
+ *
+ * THREE THINGS ABOUT HER WORDING, none of them a silent change.
+ *
+ *   "Actuaries,and holds" IS "Actuaries, and holds". Her deck runs the two
+ *   together with no space, which is a text box artefact rather than her
+ *   intent, and Saif said so when sending the slide.
+ *
+ *   "$120M" IS HERS AND STAYS. The old paragraph said "$100 million"; she
+ *   writes $120M and the figure and the form are both hers. It is a book size
+ *   rather than a price, so the one-price rule does not reach it.
+ *
+ *   THE HOUSE RULES COST HER COPY NOTHING ELSE. No em dash anywhere in it, and
+ *   no American spelling: lint-copy is clean on both after the change.
+ */
 export const FOUNDER: Person & { tags: string[] } = {
   name: "Iram Kauser",
   role: "Founder & CEO",
   body: [
-    "Fellow of the Institute and Faculty of Actuaries. One of roughly 75,000 qualified actuaries worldwide. Sixteen years in senior operating roles at AIG, MetLife and Gallagher across the UK, Middle East and Africa. Chief of Staff to a regional CEO across more than 150 staff. Pricing and portfolio strategy for a multi-line book worth over $100 million.",
-    "Founded Pivot Prime to close the gap between what a business decides and what it actually delivers.",
+    "Iram has held the roles that Pivot Prime now provides for its clients.",
+    "Chief of Staff to the CEO of AIG GCCNA. Head of Operations at Gallagher's Middle East brokerage, with full accountability for compliance, finance, IT, HR, claims and offshore delivery. Head of Pricing and Portfolio Management for a $120M book spanning the Middle East, Africa and Israel. She has not studied these functions from the outside. She has run them.",
+    "Over sixteen years at AIG, MetLife and Gallagher, she built operating models from scratch, led enterprise transformation aligned with DFSA standards, scaled delivery capability across borders, and closed major commercial partnerships in the region. She has been based in Dubai for ten years and understands the market the way only someone who has operated inside it does.",
+    "She is a Fellow of the Institute and Faculty of Actuaries, and holds an MSc in Mathematics with Distinction from the University of Birmingham.",
+    "She founded Pivot Prime on one conviction: the people best placed to fix a business are those who have run one.",
   ],
   photo: { src: "/iram-kauser.jpg", alt: "Iram Kauser" },
   initials: "IK",
+  /**
+   * HER TAG LINE, slide 7, split on her own separator.
+   *
+   * She wrote it as one line: "Fellow, IFoA · Gallagher · AIG · MetLife · UK ·
+   * Middle East · Africa · 16 years senior leadership", and the brief says it
+   * is a list of chips rather than a sentence. The middle dot is what divides
+   * her items, so it divides them here: eight chips, in her order.
+   *
+   * THAT IS EIGHT WHERE THERE WERE FOUR. The old row grouped the companies into
+   * one chip and the regions into another, with the dots living INSIDE a chip.
+   * Reading her line that way would have meant choosing her grouping for her,
+   * and it would also have lost her reordering, which puts Gallagher first.
+   * Flagged in PENDING-COPY 1f2 with the four-chip alternative.
+   *
+   * The chip treatment itself is the card's own and is untouched.
+   */
   tags: [
     "Fellow, IFoA",
-    "AIG · MetLife · Gallagher",
-    "UK · Middle East · Africa",
+    "Gallagher",
+    "AIG",
+    "MetLife",
+    "UK",
+    "Middle East",
+    "Africa",
     "16 years senior leadership",
   ],
 };
