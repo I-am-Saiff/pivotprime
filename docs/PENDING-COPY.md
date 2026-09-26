@@ -5394,3 +5394,88 @@ four.**
 Your slide 7 also asks for "Connect with Iram on LinkedIn" under each person.
 **We have not built it: we do not have the four profile addresses**, and guessing
 one could point at a stranger. Recorded in the outstanding file.
+
+---
+
+## 1f3 The homepage services section is three cards now
+
+**26 September, your slide 4:** "Have refined it so it reads as 3 cards under
+diagnose, lead and build. And only 3 offers now."
+
+### ⚠️ This copy was read off a screenshot, not a file
+
+Everything below was transcribed from an image of your artifact rather than
+copied out of something you sent, so it is your wording at one remove. **Please
+check it against your original.** One phrase in particular may be a mis-read:
+
+> "Project Managers, Software Engineers, **Operational Leads**, all sourced,
+> vetted and managed by us."
+
+Your article copy elsewhere says **"Operations Leads"**. We have left it as
+transcribed rather than tidying it.
+
+### What the old section had
+
+Five cards in a grid, plus the diagnostic as a sixth card inside that grid:
+
+> Operational Clarity Audit · Fractional COO, CFO and Chief of Staff ·
+> Build and Place · Technology Builds · UAE Market Entry · Start with the
+> diagnostic
+
+On a phone it was a sideways swipe carousel with a row of dots. On a wide screen
+it was three columns, with the last card stretched across two or three columns so
+an odd number did not leave an empty square.
+
+### What it has now
+
+**Three cards in a row**, then a **full-width dark panel** beneath them.
+
+| | Card 1 | Card 2 | Card 3 |
+|---|---|---|---|
+| Eyebrow | WE DIAGNOSE | WE LEAD | WE BUILD |
+| Title | Operational Clarity Audit | Fractional COO, CFO and Chief of Staff | Technology and Market Entry |
+| Price | From AED 15,000 | Scoped per engagement | Scoped per engagement |
+| Second block | none | Build and Place | UAE Market Entry |
+| Scope note | yes | no | no |
+
+**All five services are still one click from the homepage:**
+
+| Link | Goes to |
+|---|---|
+| See what the audit covers | /services/operational-clarity-audit |
+| How the fractional leadership works | /services/fractional-leadership |
+| How we staff an engagement | /services/build-and-place |
+| See what tech we can build | /services/technology-builds |
+| What market entry includes | /services/uae-market-entry |
+| Take the diagnostic | /diagnostic |
+
+That matters more than usual: **Build and Place and UAE Market Entry came off
+the header menu on your slide 10**, so inside these two cards is now one of the
+few places either is reachable from. A check now fails if either link goes.
+
+### What we removed
+
+**The sideways swipe on phones**, and its dots. Your brief asks for three cards
+"stacking cleanly on narrow", so they stack in a single column. Three cards in a
+column read better than three cards you have to swipe.
+
+**The column stretching.** The old grid widened the last card to fill an odd row.
+Three cards divide into three columns exactly, so there is nothing left to fill.
+
+**The whole card as one link.** Each old card was a single link. Cards two and
+three now hold two blocks with a link each, so the card is a container and the
+links sit on the blocks.
+
+### One thing to decide
+
+**The Services page still shows five cards.** Your note said three offers, but
+the instruction with it was the homepage section only, so we have not touched
+/services. The two pages now describe the same five offers differently.
+
+**Tell us if the Services page should follow**, and it becomes the same three.
+
+### On the wording
+
+Nothing changed. No dashes to remove and no American spellings, so the house
+rules cost your copy nothing. **You repeat "immediately" in the last sentence of
+the panel and "diagnostic" in the first two; both are yours and both are left.**

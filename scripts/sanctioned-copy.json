@@ -1052,6 +1052,14 @@
       "why": "Her own wording, slide 1 of the 26 September deck, replacing the spec 3.1 hero button label \"Find out what is holding your business back\". That sentence has not left the site: her slide 9 makes it the homepage closing heading, so the wording moved down the page rather than being dropped, which is why the two slides were given together. She wrote it in capitals; it is stored in sentence case because the capitals on this site are a CSS text-transform, measured as uppercase before the string was touched. The destination is unchanged. PENDING-COPY 1e7.",
       "route": "/",
       "element": "link"
+    },
+    {
+      "text": "Technology and Market Entry",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her wording, slide 4 of the 26 September deck, which groups the five offers into three homepage cards under diagnose, lead and build: \"Have refined it so it reads as 3 cards under diagnose, lead and build. And only 3 offers now.\" This is the third card’s title, covering Technology Builds and UAE Market Entry, both of which keep their own names as sub-headings inside it and their own pages. TRANSCRIBED FROM A SCREENSHOT OF HER ARTIFACT rather than from a file she sent, so it is her wording at one remove and PENDING-COPY 1f3 records it as transcribed for checking against her original. PENDING-COPY 1f3.",
+      "route": "/",
+      "element": "h3"
     }
   ]
 }

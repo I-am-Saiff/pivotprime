@@ -131,3 +131,122 @@ export const DIAGNOSTIC_CARD = {
   ctaLabel: "Take the diagnostic",
   href: "/diagnostic",
 };
+
+/**
+ * HER SLIDE 4, 26 September: THE HOMEPAGE SECTION IS THREE CARDS, NOT FIVE.
+ *
+ * Her note: "Have refined it so it reads as 3 cards under diagnose, lead and
+ * build. And only 3 offers now." The five offers are still five pages; they are
+ * grouped into three cards, with Build and Place living inside the Lead card
+ * and UAE Market Entry inside the Build card.
+ *
+ * TRANSCRIBED FROM A SCREENSHOT OF HER ARTIFACT, NOT FROM A FILE. Every string
+ * below was read off an image rather than copied out of something she sent, so
+ * it is her wording at one remove. PENDING-COPY 1f3 records it as transcribed
+ * rather than verbatim so it can be checked against her original. One phrase is
+ * flagged there as a possible mis-read: "Operational Leads", where her article
+ * copy elsewhere says "Operations Leads". It is left as transcribed.
+ *
+ * THIS IS SEPARATE FROM SERVICES ABOVE, DELIBERATELY. SERVICES is rendered by
+ * ServiceCards on BOTH the homepage and /services, and her scope for this change
+ * is "the services section on the homepage only. No other page." So /services
+ * keeps the five-card grid and this drives the homepage alone. The two now say
+ * different things about the same offers, which is her instruction rather than
+ * drift, and it is written down in PENDING-COPY 1f3 for her to settle.
+ *
+ * EYEBROWS AND BUTTON LABELS ARE STORED IN SENTENCE CASE. She writes them in
+ * capitals; the capitals are a CSS text-transform on this site, so storing them
+ * would double up.
+ *
+ * HOUSE RULES COST HER COPY NOTHING: no em dash anywhere in it and no American
+ * spelling. "prioritised" and "licence" are already British.
+ */
+export type HomeServiceBlock = {
+  /** Absent on a card's first block, where the card title is the heading. */
+  heading?: string;
+  body: string;
+  ctaLabel: string;
+  href: string;
+};
+
+export type HomeServiceCard = {
+  eyebrow: string;
+  title: string;
+  priceLine: string;
+  /** Her slide gives one only to the audit card. Cards two and three have none. */
+  scopeLine?: string;
+  blocks: HomeServiceBlock[];
+};
+
+export const HOME_SERVICES: HomeServiceCard[] = [
+  {
+    eyebrow: "We diagnose",
+    title: "Operational Clarity Audit",
+    priceLine: "From AED 15,000",
+    scopeLine:
+      "Scope depends on the size of the business, how many functions are in review, and how many people we interview.",
+    blocks: [
+      {
+        body: "We map exactly where your business is losing time and money. We find the constraints, the cost leaks and the processes eating your capacity, then give you a prioritised roadmap of what to fix and in what order. Most engagements start here.",
+        ctaLabel: "See what the audit covers",
+        href: "/services/operational-clarity-audit",
+      },
+    ],
+  },
+  {
+    eyebrow: "We lead",
+    title: "Fractional COO, CFO and Chief of Staff",
+    priceLine: "Scoped per engagement",
+    blocks: [
+      {
+        body: "COO, Chief of Staff and CFO seats for businesses that need executive capability for a season rather than a lifetime. We build the operating model and run the weekly execution, then hand it to an operations lead so the structure holds long after the intensive phase ends.",
+        ctaLabel: "How the fractional leadership works",
+        href: "/services/fractional-leadership",
+      },
+      {
+        heading: "Build and Place",
+        body: "We put the right people inside your business temporarily to execute your priorities. Project Managers, Software Engineers, Operational Leads, all sourced, vetted and managed by us.",
+        ctaLabel: "How we staff an engagement",
+        href: "/services/build-and-place",
+      },
+    ],
+  },
+  {
+    eyebrow: "We build",
+    title: "Technology and Market Entry",
+    priceLine: "Scoped per engagement",
+    blocks: [
+      {
+        heading: "Technology Builds",
+        body: "Apps, websites, CRMs, workflow automation, AI agents and dashboards where technology genuinely removes cost. Come to us with a system you want built or a manual process costing your team hours every week, and we will build it.",
+        ctaLabel: "See what tech we can build",
+        href: "/services/technology-builds",
+      },
+      {
+        heading: "UAE Market Entry",
+        body: "We help international businesses set up in Dubai, from licence to functioning operation. We build the financial model first, then handle the entity, approvals, premises, hiring, compliance, logistics and supply chain. Everything, end to end.",
+        ctaLabel: "What market entry includes",
+        href: "/services/uae-market-entry",
+      },
+    ],
+  },
+];
+
+/**
+ * The diagnostic, out of the grid and full width beneath it, her slide 4.
+ *
+ * It was card six inside the five-card grid. She repeats "immediately" in the
+ * last sentence and repeats "diagnostic" in the first two; both are hers and
+ * both are left alone on instruction.
+ *
+ * STILL GATED on NEXT_PUBLIC_ENABLE_DIAGNOSTIC, like the card it replaces:
+ * every line of it describes the instrument by duration and output, so there is
+ * nothing here a contact form could honour if the route were off.
+ */
+export const HOME_DIAGNOSTIC_PANEL = {
+  eyebrow: "Not sure",
+  heading: "Start with the diagnostic",
+  body: "If you aren't sure exactly what service you need, take our operational diagnostic. A four-minute diagnostic that scores your business and tells you exactly where the constraint is. You get the result immediately and also some steps on how to improve, immediately.",
+  ctaLabel: "Take the diagnostic",
+  href: "/diagnostic",
+};

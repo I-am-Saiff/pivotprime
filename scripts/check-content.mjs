@@ -750,6 +750,46 @@ const DECISIONS = [
     },
   },
   {
+    what: "the homepage services section is three cards and still links all five service pages",
+    where: "PENDING-COPY 1f3",
+    run: async (get) => {
+      /**
+       * HER SLIDE 4: five cards become three, grouped under diagnose, lead and
+       * build, with the diagnostic lifted out of the grid into a full-width
+       * panel beneath them.
+       *
+       * THE HALF THAT MATTERS IS THE LINKS, NOT THE COUNT. Build and Place and
+       * UAE Market Entry came off the header dropdown on her slide 10, so the
+       * homepage is now one of the few places either is reachable from, and
+       * they are reachable only from INSIDE cards two and three. Dropping a
+       * block while reorganising a card would strand a page, which is exactly
+       * how /services/how-we-work became linked from nowhere. check-links
+       * walks the site and would catch it; this says so in one line, here.
+       *
+       * Three h3 card titles, her three, and six links out of the section.
+       */
+      const html = await (await get("/")).text();
+      for (const title of ["Operational Clarity Audit", "Fractional COO, CFO and Chief of Staff", "Technology and Market Entry"]) {
+        if (!textOf(html).includes(title)) return `the homepage services section has lost the "${title}" card`;
+      }
+      for (const slug of ["operational-clarity-audit", "fractional-leadership", "build-and-place", "technology-builds", "uae-market-entry"]) {
+        if (!html.includes(`href="/services/${slug}"`)) {
+          return `/services/${slug} is no longer linked from the homepage, and it is off the header dropdown too`;
+        }
+      }
+      for (const sub of ["Build and Place", "Technology Builds", "UAE Market Entry"]) {
+        if (!textOf(html).includes(sub)) return `the "${sub}" block has gone from inside its card`;
+      }
+      if (!DIAGNOSTIC_ENABLED) return null;
+      // The panel, not a sixth card: its heading has to be OUTSIDE the card
+      // list, which is the one structural thing her slide changed about it.
+      const list = html.indexOf("Operational Clarity Audit");
+      const panel = html.indexOf("Start with the diagnostic");
+      if (panel === -1) return "the diagnostic panel is not on the homepage";
+      return panel > list ? null : "the diagnostic sits above the three cards rather than in a panel beneath them";
+    },
+  },
+  {
     what: "the case study results sit above the product link on both pages",
     where: "PENDING-COPY 1f2",
     run: async (get) => {

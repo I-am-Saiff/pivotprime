@@ -14,7 +14,7 @@ import {
   RESULTS,
 } from "@/content/homepage";
 import { SERVICES_EYEBROW, SERVICES_HEADING } from "@/content/services";
-import ServiceCards from "@/components/ServiceCards";
+import HomeServices from "@/components/HomeServices";
 import PatternsList from "@/components/PatternsList";
 import CaseStudies from "@/components/CaseStudies";
 import PersonaSwitcher from "@/components/PersonaSwitcher";
@@ -369,7 +369,7 @@ export default function Home() {
             </h2>
           </header>
 
-          <ServiceCards />
+          <HomeServices />
         </div>
       </section>
 
