@@ -166,7 +166,7 @@ export default async function ArticlePage({
           <p className="mb-7 text-[15px] leading-[1.65] text-white/50">{article.cta.body}</p>
           <Link
             href="/contact"
-            className="inline-flex items-center rounded-[100px] bg-neon px-[30px] py-3.5 text-[13px] font-bold text-forest transition-opacity hover:opacity-88"
+            className="inline-flex items-center rounded-xl bg-neon px-[30px] py-3.5 text-[13px] font-bold text-forest transition-opacity hover:opacity-88"
           >
             {article.cta.button}
           </Link>

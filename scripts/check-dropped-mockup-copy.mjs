@@ -109,6 +109,10 @@ const KNOWN_ABSENT = [
     match: "Clients are anonymised",
     why: "her two files disagree on this and the contradiction is logged for her rather than resolved here. PENDING-COPY 1ac",
   },
+  {
+    match: "Book a call with Iram",
+    why: "shortened to \"Book a call\" on her 26 September instruction, every instance, the report email included. It sat in both pp-diagnostic_5.html and pp-all-reports.html and the site rendered it on the two insights closers until then. Worth noting how it surfaced: the string has been off the diagnostic results screen since 18 September, and this check did not report it, because /insights was still rendering it and this check asks whether the SITE renders a mockup line anywhere rather than whether a particular page does. Shortening the last two instances is what made it visible. PENDING-COPY 1e4",
+  },
 ];
 
 function mockupCopy() {

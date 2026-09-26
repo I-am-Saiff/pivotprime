@@ -349,7 +349,7 @@ export default async function InsightsPage({
           <p className="mb-7 text-[15px] leading-[1.65] text-white/50">{INSIGHTS_CTA.body}</p>
           <Link
             href="/contact"
-            className="inline-flex items-center rounded-[100px] bg-neon px-[30px] py-3.5 text-[13px] font-bold text-forest transition-opacity hover:opacity-88"
+            className="inline-flex items-center rounded-xl bg-neon px-[30px] py-3.5 text-[13px] font-bold text-forest transition-opacity hover:opacity-88"
           >
             {INSIGHTS_CTA.button}
           </Link>

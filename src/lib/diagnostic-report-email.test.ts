@@ -138,7 +138,7 @@ describe("the report email carries everything the results screen shows", () => {
       "What this means for your business",
       "Three things to check this week",
       "What Pivot Prime would do about it",
-      "Book a call with Iram",
+      "Book a call",
     ];
     let lastText = -1;
     let lastHtml = -1;

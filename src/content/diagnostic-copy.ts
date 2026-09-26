@@ -112,7 +112,20 @@ export const DIAGNOSTIC_RESULTS = {
   checksLabel: "Three things to check this week",
   offerTag: "What Pivot Prime would do about it",
   offerTitle: "The Operational Clarity Audit",
-  bookLabel: "Book a call with Iram",
+  /**
+   * SHORTENED FROM "Book a call with Iram" ON 26 SEPTEMBER, her instruction,
+   * everywhere the string appeared.
+   *
+   * THE EMAIL IS THE ONLY THING THAT READS THIS NOW. The results screen stopped
+   * rendering the constraint section on 18 September, so this label reaches a
+   * reader through buildReportEmail and nowhere else. It is in her scope for
+   * that reason: she asked for the email included deliberately, so the site and
+   * the emailed report do not disagree on what the button says.
+   *
+   * The site's own three instances live in src/content/insights.ts.
+   * PENDING-COPY 1e4.
+   */
+  bookLabel: "Book a call",
   whatsappLabel: "Talk to us on WhatsApp",
 } as const;
 

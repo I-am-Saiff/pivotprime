@@ -97,7 +97,7 @@ export default function SubscribeForm({
             <button
               type="submit"
               disabled={state === "sending"}
-              className="min-h-[50px] cursor-pointer rounded-[100px] bg-forest px-6 py-[13px] text-xs font-bold whitespace-nowrap text-neon transition-opacity hover:opacity-85 disabled:opacity-70"
+              className="min-h-[50px] cursor-pointer rounded-xl bg-forest px-6 py-[13px] text-xs font-bold whitespace-nowrap text-neon transition-opacity hover:opacity-85 disabled:opacity-70"
             >
               {state === "sending" ? "Sending" : SUBSCRIBE.button}
             </button>

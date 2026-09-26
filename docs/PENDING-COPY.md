@@ -4658,3 +4658,87 @@ Our automatic checks did not notice the cards going. They read headings and
 buttons, and your card titles are written as paragraphs in your own file, so
 nothing flagged it. This entry is the only record that the copy exists and is
 switched off rather than gone.
+
+---
+
+## 1e4 The buttons are square-cornered now, and the booking button is shorter
+
+**26 September.** You flagged on six slides that buttons should be rectangular
+rather than pill-shaped, and each time you pasted the same button as the correct
+example: **"Find out what is holding your business back"** on the homepage.
+
+### The shape we matched
+
+That button is not square. It has a small rounded corner, and we measured it
+before changing anything so the rest would match it exactly rather than
+approximately. **12 pixels** of corner rounding. That is the shape every button
+on the site now uses.
+
+### Three buttons were pill-shaped and are not any more
+
+| Where | Button |
+|---|---|
+| Insights, at the foot of the page | Book a call |
+| Any article, at the foot of the page | Book a call |
+| Insights, the newsletter box | Subscribe |
+
+**Everything else already matched.** We checked every button on every page at
+phone and desktop size, not only the ones you named. The rest, the header
+buttons, the service buttons on the reader cards, the enquiry button, the
+persona tabs, the before-and-after toggles, the case study buttons and the
+closers on the service and reader pages, were already at 12 pixels.
+
+### The buttons on the service cards
+
+You named these, and there is nothing to change on them, so we would rather say
+so than quietly do nothing. **The service cards have no button.** The call to
+action on each card is plain text with an arrow after it, and the card itself is
+a panel, not a button. The nearest thing, the green service buttons on the
+reader cards, is already at 12 pixels.
+
+If what you meant is the **corner of the card itself**, that is a panel rather
+than a button and we left it alone, because your note was about buttons. Tell us
+and we will change the cards too.
+
+### What we deliberately left round
+
+- **The WhatsApp button**, which you excluded.
+- **The two arrows on the case study carousel**, which are small circular icon
+  controls rather than labelled buttons.
+- **The social icons in the footer**, same reason.
+- **The symptom chips on the homepage**, the tappable list of "Sales sells
+  things operations cannot deliver" and the rest. They are 16 pixels rather than
+  12, and they are chips rather than buttons, so we have reported them rather
+  than changed them. Say the word if you want them at 12 too.
+- **Cards and panels** everywhere, which keep their own corners.
+
+### The diagnostic is untouched, as you asked
+
+The start button, the next button and the unlock button on the diagnostic are
+all still pill-shaped. If you want them matched as well, it is the same change
+in one file and they would go from a full pill to the same 12 pixel corner as
+everything else.
+
+### "Book a call with Iram" is now "Book a call"
+
+Changed in five places: both insights closers, the shared closer those are built
+from, the label the report email uses, and the test that checks the email.
+
+**The emailed report says "Book a call" too**, which is what you asked for, so
+the button in the inbox and the button on the site say the same thing.
+
+### Two things to decide, and we would change both
+
+**The email box next to Subscribe is still a pill.** Your note was about
+buttons, and a box you type into is not a button, so we did not touch it. But
+the two sit side by side as one control, and with the button square and the box
+still fully rounded the newsletter block now looks half finished. It is more
+obvious on a phone, where the box sits directly above the button. **We think
+this one should change and we are asking rather than assuming**, because
+squaring a form field is outside what you asked for.
+
+**The button inside the emailed report is still a pill.** You scoped the email
+to the wording only, so we changed the wording and left the shape. It is the
+same argument you made about the label, though: a reader who clicks through from
+the email to the site sees a pill in one place and a square corner in the other.
+Say the word and we will square the email button as well.

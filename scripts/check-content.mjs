@@ -295,6 +295,61 @@ const DECISIONS = [
     },
   },
   {
+    what: "the site's buttons carry the hero button's radius, and the diagnostic keeps its own",
+    where: "PENDING-COPY 1e4",
+    run: async (get) => {
+      /**
+       * HER 26 SEPTEMBER INSTRUCTION, WHICH LIVES ONLY AS A CLASS NAME.
+       *
+       * She flagged on six slides that buttons should be rectangular rather
+       * than pill-shaped, and pasted the homepage hero primary button as the
+       * correct example each time. That button measures 12px, from rounded-xl,
+       * so 12px is the target rather than square.
+       *
+       * Three buttons were pills at rounded-[100px] and are not any more: the
+       * two insights closers and the newsletter subscribe button. Matched on
+       * the class next to its neighbours rather than on "rounded-xl" alone,
+       * which appears dozens of times per page and would pass on any of them.
+       *
+       * AND THE DIAGNOSTIC IS ASSERTED STILL PILL-SHAPED, because she put that
+       * route out of scope explicitly. A later sweep that "finished the job"
+       * would be undoing her decision, not completing it, and this is the line
+       * that says so.
+       */
+      const pages = [
+        ["/insights", "inline-flex items-center rounded-xl bg-neon px-[30px]", "the /insights closer button"],
+        ["/insights/consultant-leaves", "inline-flex items-center rounded-xl bg-neon px-[30px]", "the article closer button"],
+        ["/insights", "cursor-pointer rounded-xl bg-forest px-6 py-[13px]", "the newsletter subscribe button"],
+      ];
+      for (const [route, needle, name] of pages) {
+        const html = await (await get(route)).text();
+        if (!html.includes(needle)) return `${name} on ${route} is not at the hero button's radius`;
+      }
+      if (!DIAGNOSTIC_ENABLED) return null;
+      const diag = await (await get("/diagnostic")).text();
+      return diag.includes("rounded-[100px] bg-neon px-10 py-4")
+        ? null
+        : "the diagnostic start button lost its own radius, and that route is out of scope";
+    },
+  },
+  {
+    what: "every instance of the booking label reads 'Book a call'",
+    where: "PENDING-COPY 1e4",
+    run: async (get) => {
+      // Her 26 September instruction, shortened from "Book a call with Iram".
+      // Asserted on the served pages rather than in src, because the string
+      // lives in a content module and a page could stop reading it. The
+      // diagnostic report email carries the same label from the same
+      // instruction; it is covered by its own test, not by an HTTP check.
+      for (const route of ["/insights", "/insights/consultant-leaves"]) {
+        const html = await (await get(route)).text();
+        if (html.includes("Book a call with Iram")) return `${route} still says "Book a call with Iram"`;
+        if (!html.includes("Book a call")) return `${route} carries no booking button at all`;
+      }
+      return null;
+    },
+  },
+  {
     what: "/privacy carries noindex while the policy is unsigned",
     where: "PENDING-COPY item 1.8",
     run: async (get) => {

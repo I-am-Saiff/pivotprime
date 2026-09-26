@@ -717,10 +717,10 @@
       "element": "h2"
     },
     {
-      "text": "Book a call with Iram",
+      "text": "Book a call",
       "status": "traced",
       "kind": "client-file",
-      "why": "Her own words. Transcribed by script from pp-insights_3.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us.",
+      "why": "Her own words. Transcribed by script from pp-insights_3.html, the approved design and final copy the client delivered on 2026-08-29, and reproduced verbatim. The instruction with the files was \"Copy is verbatim, every word.\" Nothing here is written by us. SHORTENED TO \"Book a call\" ON 26 SEPTEMBER, on her instruction, which supersedes the verbatim rule for this one string. It read \"Book a call with Iram\" from her file until then, on both insights closers and in the diagnostic report email; she asked for every instance, the email included, so the site and the email do not disagree on what the button says. The original wording is recorded here rather than lost. PENDING-COPY 1e4.",
       "route": "/insights",
       "element": "link"
     },

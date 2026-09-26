@@ -87,7 +87,7 @@ export const ARTICLES: Article[] = [
     cta: {
       headline: [{ t: "Ready to close the gap" }, { br: true }, { t: "in " }, { em: "your" }, { t: " business?" }],
       body: "The first conversation costs nothing. Not moving does.",
-      button: "Book a call with Iram",
+      button: "Book a call",
     },
     moreLabel: "More from Pivot Prime",
     more: [
@@ -171,7 +171,7 @@ export const ARTICLES: Article[] = [
     cta: {
       headline: [{ t: "Your decisions should" }, { br: true }, { t: "reach the ground " }, { em: "intact." }],
       body: "We work with P&L owners and business unit leaders to build the operating structures that let good decisions move at the speed the market demands.",
-      button: "Book a call with Iram",
+      button: "Book a call",
     },
     moreLabel: "More from Pivot Prime",
     more: [
@@ -376,5 +376,5 @@ export const SUBSCRIBE: {
 export const INSIGHTS_CTA: { headline: Segment[]; body: string; button: string } = {
   headline: [{ t: "Reading about it" }, { br: true }, { t: "is the start. " }, { em: "Doing it" }, { t: " is the point." }],
   body: "The first conversation costs nothing. Not moving does.",
-  button: "Book a call with Iram",
+  button: "Book a call",
 };
