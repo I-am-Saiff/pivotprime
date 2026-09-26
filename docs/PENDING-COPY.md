@@ -4915,3 +4915,100 @@ service pages is on Technology Builds, which is a different shape and is on
 neither of these pages. So we used the card those pages already use, at full
 width, which is the closest thing that exists. If you had a different treatment
 in mind, tell us what it should look like.
+
+---
+
+## 1e7 The homepage hero and the closing block, slides 1 and 9
+
+**26 September.** Your two slides go together because your wording moves between
+them: the sentence that was the hero button is the closing heading now.
+
+### The hero, slide 1
+
+| | Before | Now |
+|---|---|---|
+| Button | Find out what is holding your business back | **Get your operations score** |
+| Destination | /diagnostic | unchanged |
+| Grey line | A four-minute assessment across six areas of the business. It scores where you are strongest and weakest, and names the one constraint holding back the rest. You get the result immediately. | **A four-minute diagnostic that scores your business and tells you exactly where the constraint is. You get the result immediately.** |
+
+### The closing block, slide 9
+
+| | Before | Now |
+|---|---|---|
+| Heading | Find out what is actually holding the business back | **Find out what is holding your business back.** |
+| Subtext | Two ways to start. Take the diagnostic and get a scored view of your biggest constraint in four minutes, or message us and we will walk through it together. | **The four-minute diagnostic tells you exactly where your business is losing capacity and what to fix first. If you would rather talk it through, we are on WhatsApp.** |
+| First button | Take the 4-minute diagnostic, to the diagnostic | **Take the diagnostic**, to the diagnostic |
+| Second button | Talk to us on WhatsApp, to WhatsApp | **Talk to us**, to WhatsApp |
+
+**Two things there were already true.** You asked for a subtext line to be added
+beneath the heading: there was one, and your wording has replaced it rather than
+been added under it. And you asked for the first button to point at the
+diagnostic: it already did. Neither destination has changed.
+
+### Why the grey line ran across both buttons
+
+You asked what was holding it full width. It was not centred or stretched by
+anything. It was simply written as a separate paragraph **after** the row of
+buttons rather than inside a column with the button it describes, and it was
+allowed to run to 672px. Measured at desktop before we touched it: the line ran
+to 672 pixels wide while the two buttons together end at 635, so it reached past
+the second button.
+
+It now sits inside the first button's own column, so it is bounded by that
+button rather than by the row, and it starts exactly where that button starts.
+
+**One consequence worth seeing.** Because the line is now part of the first
+button's column, the second button sits further to the right than it did: the
+column is as wide as the line beneath it. The two buttons are still level with
+each other and still on one line. On a phone, where the buttons stack, the line
+now sits between them rather than under both. Both are direct results of what
+you asked for, but say the word if you would rather the buttons stayed close
+together and the line were narrower.
+
+### Both trusted-by lines are gone
+
+You asked for **"Trusted by SMEs across insurance, fintech, wellness & retail."**
+removed in full, and asked us to look for a longer variant of the same line on
+the page.
+
+**There was one.** The proof bar, just under the hero, carried **"Trusted by
+businesses across insurance, wellness, retail, fragrance, fintech and consumer
+goods."** Two sentences making the same claim in different words, about a screen
+apart. Both are off the page.
+
+**The second one is from your copy document**, so removing it is this
+instruction overriding that one rather than a tidy-up. Both sentences are kept
+in the code, switched off, and a check now fails if either comes back by
+accident. The rest of the proof bar is untouched: "As featured in", both
+publication links and the logo rows are all still there.
+
+### The heading size, which you were right about
+
+You wrote that the heading "seems wrong size and the text is too big". We
+measured it against every other section heading on the homepage before changing
+anything.
+
+| Width | Closing heading was | Other section headings |
+|---|---|---|
+| 375 | 30px | 30px — already matched |
+| 768 | 48px | 36px — **one step larger** |
+| 1440 | 60px | 48px — **one step larger** |
+
+It is now on exactly the same size ladder as its neighbours at all three widths,
+using their own settings rather than a new value picked to look right. Only the
+size changed; the colour, weight and spacing are as they were.
+
+### On the capitals
+
+You wrote all three button labels in capitals. We checked before editing
+anything: **the capitals on this site are applied by styling, not stored in the
+wording.** Every button label is stored as a sentence and displayed in capitals.
+So the three labels are stored as sentences and appear on screen exactly as you
+wrote them. Storing the capitals as well would have made them shout in places
+the styling does not reach.
+
+### One note on the second button
+
+"Talk to us" is set for this block only. The same button on the five service
+pages reads "Talk to us on WhatsApp" and was not in your scope, so it is
+unchanged there. Both still go to the same WhatsApp number.

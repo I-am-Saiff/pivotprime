@@ -1044,6 +1044,14 @@
       "why": "Her own wording, slide 12 of the 26 September deck, with one change she was told about rather than it being made quietly: she wrote \"Build and place\" with a lowercase p and Saif raised it to the page’s own title casing so the link and the page it opens agree. The block exists because Build and Place came off the header services dropdown on her slide 10. PENDING-COPY 1e6.",
       "route": "/services/fractional-leadership",
       "element": "link"
+    },
+    {
+      "text": "Get your operations score",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own wording, slide 1 of the 26 September deck, replacing the spec 3.1 hero button label \"Find out what is holding your business back\". That sentence has not left the site: her slide 9 makes it the homepage closing heading, so the wording moved down the page rather than being dropped, which is why the two slides were given together. She wrote it in capitals; it is stored in sentence case because the capitals on this site are a CSS text-transform, measured as uppercase before the string was touched. The destination is unchanged. PENDING-COPY 1e7.",
+      "route": "/",
+      "element": "link"
     }
   ]
 }

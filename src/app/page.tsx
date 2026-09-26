@@ -93,7 +93,21 @@ export default function Home() {
           </p>
 
           {/* CTAs */}
-          <div className="mt-7 sm:mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+          {/* THE EXPLAINER SITS UNDER THE FIRST BUTTON ONLY, her slide 1.
+
+              WHAT WAS HOLDING IT FULL WIDTH: it was a block-level sibling AFTER
+              this row, with max-w-2xl. Measured at 1440 before changing it, it
+              ran 672px from x=144 while the two buttons together end at x=779,
+              so it reached past the second button rather than belonging to the
+              first. Nothing was centring or stretching it; it simply was not in
+              a column with the button it describes.
+
+              It is inside the first button's column now, so it is bounded by
+              that button's own stack rather than by the row. items-start, not
+              items-center: with a paragraph under the first button, centring
+              would push the second button halfway down the column instead of
+              keeping its top edge level with the first. PENDING-COPY 1e7. */}
+          <div className="mt-7 sm:mt-10 flex flex-col gap-3 sm:flex-row sm:items-start sm:gap-4">
             {/* AnchorLink, not next/link, from 3 September. The green button
                 was a next/link and scrolled on the first click only; measured
                 on a production build, clicks two and three left scrollY at 0.
@@ -101,12 +115,20 @@ export default function Home() {
                 moved across for the same treatment rather than left as a second
                 way of doing the same thing. Both keep their href, so both still
                 work with JavaScript off. src/lib/anchor-scroll.ts. */}
-            <AnchorLink
-              href={HERO_CTA.href}
-              className="inline-flex items-center justify-center rounded-xl bg-neon px-7 py-3.5 text-xs font-bold tracking-wider text-forest uppercase shadow-lg transition-all duration-200 hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none"
-            >
-              {HERO_CTA.label}
-            </AnchorLink>
+            <div className="flex flex-col items-stretch sm:items-start">
+              <AnchorLink
+                href={HERO_CTA.href}
+                className="inline-flex items-center justify-center rounded-xl bg-neon px-7 py-3.5 text-xs font-bold tracking-wider text-forest uppercase shadow-lg transition-all duration-200 hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none"
+              >
+                {HERO_CTA.label}
+              </AnchorLink>
+
+              {DIAGNOSTIC_ENABLED && (
+                <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">
+                  {HERO.diagnosticExplainer}
+                </p>
+              )}
+            </div>
 
             <AnchorLink
               href={HERO.secondaryHref}
@@ -116,16 +138,12 @@ export default function Home() {
             </AnchorLink>
           </div>
 
-          {DIAGNOSTIC_ENABLED && (
-            <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/70">
-              {HERO.diagnosticExplainer}
-            </p>
-          )}
-
-          {/* Social proof micro-line */}
-          <p className="mt-7 sm:mt-10 text-xs text-white/50 tracking-wide">
-            Trusted by SMEs across insurance, fintech, wellness &amp; retail.
-          </p>
+          {/* HER SOCIAL PROOF MICRO-LINE IS GONE, her slide 1, 26 September:
+              "Trusted by SMEs across insurance, fintech, wellness & retail."
+              She asked for the whole sentence removed rather than reworded. It
+              is preserved unrendered as PROOF.trustedHeroLine and written out
+              in PENDING-COPY 1e7, and the longer variant of the same claim in
+              the proof bar below has gone with it. */}
         </div>
       </section>
 
@@ -133,9 +151,16 @@ export default function Home() {
           and belong directly under the hero. */}
       <section className="border-b border-neutral-100 surface-page py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="mx-auto max-w-3xl text-center text-base font-medium text-neutral-600 md:text-lg">
-            {PROOF.trusted}
-          </p>
+          {/* THE SECOND TRUSTED-BY LINE IS GONE TOO, and it is the one worth
+              noticing: {PROOF.trusted} read "Trusted by businesses across
+              insurance, wellness, retail, fragrance, fintech and consumer
+              goods.", which is the same claim as the hero micro-line in
+              different words, and it is spec 3.2 green-block copy. She asked us
+              to look for a longer variant on the page and remove it if we found
+              one. Removing her own spec copy is her later instruction beating
+              her earlier document, so the assertion on it has moved to
+              check-content's FORBIDDEN list rather than being dropped. The rest
+              of this bar is untouched. PENDING-COPY 1e7. */}
           <p className="mx-auto mt-3 max-w-3xl text-center text-sm text-neutral-500">
             {PROOF.featuredPrefix}
             {PROOF.publications.map((pub, i) => (
@@ -524,7 +549,25 @@ export default function Home() {
           <div aria-hidden="true" className="absolute inset-0 z-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none" />
 
           <div className="relative z-10 mx-auto w-full max-w-4xl text-center text-white">
-            <h2 className="mb-6 text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl leading-tight">
+            {/* SIZED WITH THE OTHER SECTION HEADINGS, her slide 9: "seems
+                wrong size and the text is too big". Measured before changing
+                anything. This heading ran 30 / 36 / 48 / 60px while every other
+                section heading on the page runs 30 / 36 / 48 from
+                "text-3xl md:text-4xl lg:text-5xl", so it was a step larger at
+                768 and at 1440 and already matched at 375.
+
+                The class list below is now that same ladder, character for
+                character, rather than a new value chosen to look right: the
+                sm:text-4xl that only this heading carried has gone with the
+                lg:text-6xl, so all three breakpoints line up with its
+                neighbours.
+
+                ONE THING IS DELIBERATELY NOT COPIED ACROSS: the neighbours also
+                carry text-foreground, which is right on the light page ground
+                and would be dark text on dark inside this closer. Only the size
+                ladder is matched; the colour is inherited from the panel as
+                before. PENDING-COPY 1e7. */}
+            <h2 className="mb-6 text-3xl font-extrabold tracking-tight md:text-4xl lg:text-5xl leading-tight">
               {CLOSE.heading}
             </h2>
 
@@ -548,7 +591,7 @@ export default function Home() {
                 rel={WHATSAPP_CTA.external ? "noopener noreferrer" : undefined}
                 className="inline-flex items-center justify-center rounded-xl border border-white/40 backdrop-blur-md px-8 py-4 text-xs font-bold tracking-wider text-white uppercase transition-all hover:border-neon hover:text-neon hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
               >
-                {WHATSAPP_CTA.label}
+                {CLOSE.whatsappLabel}
               </a>
             </div>
           </div>

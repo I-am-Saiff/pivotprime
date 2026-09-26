@@ -28,14 +28,48 @@ export const HERO = {
    * and duration, so it must not appear while the primary CTA routes to the
    * contact page instead.
    */
+  /**
+   * HER SLIDE 1 WORDING, 26 September, replacing ours. The sentence it replaces
+   * described the instrument at length; hers names it and says what it tells
+   * you. Still gated on the flag for the original reason: it describes an
+   * instrument by name and duration and must not appear while the primary CTA
+   * routes somewhere else. PENDING-COPY 1e7.
+   */
   diagnosticExplainer:
-    "A four-minute assessment across six areas of the business. It scores where you are strongest and weakest, and names the one constraint holding back the rest. You get the result immediately.",
+    "A four-minute diagnostic that scores your business and tells you exactly where the constraint is. You get the result immediately.",
 };
 
 // 3.2 PROOF BAR
 export const PROOF = {
+  /**
+   * BOTH TRUSTED-BY LINES ARE OFF THE PAGE, her slide 1, 26 September. Neither
+   * is deleted.
+   *
+   * She asked for "Trusted by SMEs across insurance, fintech, wellness &
+   * retail." to go in full rather than be reworded, and asked us to look for a
+   * second, longer variant of the same line on the same page. THERE WAS ONE:
+   * this one, the proof bar line, which is spec 3.2 copy out of her own
+   * document. Two sentences making the same claim in different words, sitting
+   * about 800px apart. Both are off the page now.
+   *
+   * THE SPEC ONE IS THE HARDER CALL AND IS RECORDED AS SUCH. This string is
+   * green-block copy from docs/spec.md, so removing it is her later instruction
+   * overriding her own earlier document rather than a tidy-up. Its
+   * check-content assertion has moved to the FORBIDDEN list rather than being
+   * deleted, so the removal is asserted rather than merely unasserted.
+   * PENDING-COPY 1e7.
+   *
+   * The rest of the proof bar stays: "As featured in", both publication links
+   * and the logo rows are untouched.
+   */
   trusted:
     "Trusted by businesses across insurance, wellness, retail, fragrance, fintech and consumer goods.",
+  /**
+   * The hero micro-line, the one she named. It was written into page.tsx rather
+   * than held in a content file; it is preserved here so both variants of the
+   * same claim live in one place and either is one line to put back.
+   */
+  trustedHeroLine: "Trusted by SMEs across insurance, fintech, wellness & retail.",
   /**
    * Spec 3.2 says to link the two publication names to the two articles. The
    * URLs were carried as hyperlinks in the document rather than written out in
@@ -490,7 +524,27 @@ export const HOW_WE_ARE_PAID = {
 
 // 3.11 CLOSE
 export const CLOSE = {
-  heading: "Find out what is actually holding the business back",
+  /**
+   * HER SLIDE 9, 26 September. It read "Find out what is actually holding the
+   * business back", which is spec 3.11 wording. Hers is the sentence that was
+   * the hero primary button until this same change: the wording moves down the
+   * page rather than leaving the site, which is why her slides 1 and 9 were
+   * given together. The full stop is hers. PENDING-COPY 1e7.
+   */
+  heading: "Find out what is holding your business back.",
+  /**
+   * HER SECOND BUTTON LABEL, slide 9: "TALK TO US". Sentence case, because the
+   * capitals are a CSS transform on the button.
+   *
+   * IT LIVES HERE RATHER THAN ON WHATSAPP_CTA, and that is the whole reason it
+   * exists as a separate string. WHATSAPP_CTA.label reads "Talk to us on
+   * WhatsApp" and is rendered by all five service pages and the parked
+   * diagnostic app as well as by this closer; renaming it there would have
+   * retitled a button on six other pages, which her scope excludes. The href,
+   * the target and the rel still come from WHATSAPP_CTA, so the destination
+   * cannot drift from the other six. PENDING-COPY 1e7.
+   */
+  whatsappLabel: "Talk to us",
   /**
    * Rendered only when the diagnostic is live. The sentence promises "a scored
    * view of your biggest constraint in four minutes", which the contact page
@@ -499,7 +553,7 @@ export const CLOSE = {
    * the section without it.
    */
   standfirst:
-    "Two ways to start. Take the diagnostic and get a scored view of your biggest constraint in four minutes, or message us and we will walk through it together.",
+    "The four-minute diagnostic tells you exactly where your business is losing capacity and what to fix first. If you would rather talk it through, we are on WhatsApp.",
 };
 
 /**

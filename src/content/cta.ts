@@ -31,7 +31,18 @@ export type Cta = { label: string; href: string; external?: boolean };
 
 /** Spec 2.2 secondary CTA. The phase two destination. */
 export const DIAGNOSTIC_CTA: Cta = {
-  label: "Take the 4-minute diagnostic",
+  /**
+   * HER SLIDE 9, 26 September: "TAKE THE DIAGNOSTIC". Sentence case here for
+   * the same reason as HERO_CTA above: the capitals are a CSS transform.
+   *
+   * SAFE TO CHANGE HERE RATHER THAN AT THE CALL SITE, checked rather than
+   * assumed: this constant is read only through JOURNEY_CTA, and JOURNEY_CTA is
+   * read only by the homepage closer. Changing it moves one button. The
+   * flag-driven substitution below is untouched, so with the diagnostic off the
+   * closer still falls back to CONTACT_CTA and its own label rather than
+   * promising an instrument that 404s. PENDING-COPY 1e7.
+   */
+  label: "Take the diagnostic",
   href: "/diagnostic",
 };
 
@@ -109,7 +120,22 @@ export const ENQUIRY_SUBMIT_CTA: Cta = {
  * and a scored result. That is rendered only when the diagnostic is live.
  */
 export const HERO_CTA: Cta = {
-  label: "Find out what is holding your business back",
+  /**
+   * HER SLIDE 1, 26 September. It read "Find out what is holding your business
+   * back", which is spec 3.1 wording; that sentence has not left the site, it
+   * has moved down the page and is the homepage closing heading now, which is
+   * her slide 9. The destination is unchanged and was already /diagnostic with
+   * the flag on.
+   *
+   * STORED IN SENTENCE CASE ON PURPOSE. She wrote it as "GET YOUR OPERATIONS
+   * SCORE" and it renders in capitals, but the capitals are a CSS
+   * text-transform on the button, measured as uppercase before this string was
+   * touched. The 1 September sentence-case pass left button labels as
+   * transforms deliberately, so storing the capitals here would double up and
+   * leave the string shouting anywhere the transform does not apply.
+   * PENDING-COPY 1e7.
+   */
+  label: "Get your operations score",
   /**
    * INTERIM DESTINATION, 1 September: the patterns section on the same page,
    * not /contact. The button asks the reader to find out what is holding the

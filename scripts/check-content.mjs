@@ -55,9 +55,25 @@ const EXPECTATIONS = [
     assert: [
       { spec: "3.1", text: "The consultancy that actually executes", why: "hero H1" },
       { spec: "3.1", text: "Most consultants recommend the fix. We build it.", why: "hero lead" },
-      { spec: "3.1", text: "Find out what is holding your business back", why: "hero primary CTA" },
+      /**
+       * THE HERO PRIMARY CTA, RETARGETED 26 September rather than deleted.
+       *
+       * THIS ASSERTION WOULD HAVE GONE ON PASSING AND MEANT NOTHING. It read
+       * "Find out what is holding your business back", and her slide 9 makes
+       * that exact sentence the homepage CLOSING HEADING. So after her change
+       * the string is still on the page, 3000px further down, and a presence
+       * check on it would have stayed green while the hero button said
+       * something else entirely. Same shape as the "43%" assertion that "-43%"
+       * satisfied by substring. It is matched on her new label now, and the old
+       * sentence is asserted separately below as the closing heading.
+       */
+      { spec: "3.1 + her slide 1", text: "Get your operations score", why: "hero primary CTA" },
       { spec: "3.1", text: "See what we actually do", why: "hero secondary CTA" },
-      { spec: "3.2", text: "Trusted by businesses across insurance", why: "proof bar" },
+      // The proof bar's trusted-by line is NOT asserted present any more. She
+      // had both trusted-by sentences removed on 26 September, so the
+      // assertion moved to the FORBIDDEN list below rather than being deleted:
+      // removing spec copy on a later instruction is a decision worth failing
+      // on if it is ever silently reverted. PENDING-COPY 1e7.
       { spec: "3.2", html: "westasiawatch.com", why: "publication link" },
       { spec: "3.2", html: "thearabianmirror.com", why: "publication link" },
       { spec: "3.3", text: "This is what our team has delivered", why: "results heading" },
@@ -89,7 +105,11 @@ const EXPECTATIONS = [
       { spec: "3.10", text: "Most consultants are paid for the recommendation", why: "3.10 block 0, now the H3 over the traditional-model column" },
       { spec: "her fees mockup", text: "Most consultants charge whether it works or not.", why: "her heading, now the lead line under the H2" },
       { spec: "3.10", text: "We are paid partly on whether the numbers move.", why: "how we are paid lead" },
-      { spec: "3.11", text: "Find out what is actually holding the business back", why: "close heading" },
+      // Her slide 9 wording, which is the sentence that was the hero primary
+      // button until the same change. The full stop is hers and is asserted
+      // with it, so the two cannot be confused for one another.
+      { spec: "3.11 + her slide 9", text: "Find out what is holding your business back.", why: "close heading" },
+      { spec: "her slide 9", text: "tells you exactly where your business is losing capacity", why: "close subtext" },
     ],
   },
 
@@ -868,6 +888,21 @@ const FORBIDDEN = [
           ]),
       { spec: "3", text: "sat in the system", why: "relocated to /about, must not remain on the homepage. Matched on the invariant substring: the homepage rendered the contraction \"We've\" while the relocated copy reads \"We have\", and an assertion on either full form passes while the section is still there" },
       { spec: "3", text: "understand your challenges", why: "relocated to /about, matched on the invariant substring" },
+      /**
+       * BOTH TRUSTED-BY SENTENCES, her slide 1, 26 September.
+       *
+       * She asked for "Trusted by SMEs across insurance, fintech, wellness &
+       * retail." removed in full, and asked us to find any longer variant of
+       * the same claim on the page. There was one: the proof bar's line, which
+       * is spec 3.2 green-block copy out of her own document. Both are off.
+       *
+       * Asserted here rather than simply unasserted because one of them is her
+       * spec's own wording: a later instruction overriding an earlier document
+       * is exactly the kind of decision that gets quietly reverted by someone
+       * reading the spec and finding a line missing. Matched on "Trusted by",
+       * which neither variant can come back without. PENDING-COPY 1e7.
+       */
+      { spec: "her slide 1", text: "Trusted by", why: "both trusted-by lines were removed in full, the hero micro-line and the longer spec 3.2 proof bar variant" },
     ],
   },
 ];
@@ -904,7 +939,7 @@ const HEADING_ORDER = [
       // hers again. Her lead survives beneath it and "Most consultants are paid
       // for the recommendation" is the H3 over the traditional column.
       "Most consultants charge whether it works or not.", // 3.10
-      "Find out what is actually holding the business back", // 3.11
+      "Find out what is holding your business back.", // 3.11, her slide 9 wording
     ],
   },
   {
