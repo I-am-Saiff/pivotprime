@@ -35,6 +35,23 @@ import type { DiagnosticResult } from "@/lib/diagnostic-score";
  * scripts/palette-allow.json with that reason, as the enquiry route's are.
  */
 
+/**
+ * THE BUTTON'S CORNER, 12px FROM 26 SEPTEMBER.
+ *
+ * Her radius instruction was about the site and she scoped this email to the
+ * wording only, so the button kept its 100px pill through that pass and was
+ * flagged rather than changed. She has now asked for it: a reader who clicks
+ * through from the report to the site should not meet two different buttons.
+ *
+ * 12px is the homepage hero primary button's measured radius, which is the
+ * reference she pasted on six slides. Written as a literal because an email
+ * cannot read a CSS custom property, the same reason the hexes below are.
+ *
+ * THIS IS THE EMAIL, NOT THE /diagnostic ROUTE. That route is still out of
+ * scope and its three buttons are still pills, which check-content asserts.
+ */
+const BUTTON_RADIUS = "12px";
+
 const FOREST = "#013325";
 const MID = "#009f50";
 const MUTED = "#5e6f68";
@@ -141,7 +158,7 @@ ${label(escapeHtml(DIAGNOSTIC_RESULTS.offerTag))}
 <p style="margin:0 0 10px;font-size:17px;font-weight:bold;color:${FOREST}">${escapeHtml(DIAGNOSTIC_RESULTS.offerTitle)}</p>
 ${p(escapeHtml(content.offer))}
 ${rule}
-<p style="margin:0 0 22px"><a href="${BOOK_URL}" style="background:${MID};color:#ffffff;text-decoration:none;font-size:15px;font-weight:bold;padding:13px 26px;border-radius:100px;display:inline-block">${escapeHtml(DIAGNOSTIC_RESULTS.bookLabel)}</a></p>
+<p style="margin:0 0 22px"><a href="${BOOK_URL}" style="background:${MID};color:#ffffff;text-decoration:none;font-size:15px;font-weight:bold;padding:13px 26px;border-radius:${BUTTON_RADIUS};display:inline-block">${escapeHtml(DIAGNOSTIC_RESULTS.bookLabel)}</a></p>
 ${p(`Pivot Prime<br><a href="${SITE}" style="color:${MID}">pivotprime.ae</a>`, `color:${MUTED};font-size:14px`)}
 </div>`;
 

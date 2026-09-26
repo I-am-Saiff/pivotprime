@@ -82,7 +82,14 @@ export default function SubscribeForm({
               required
               autoComplete="email"
               placeholder={SUBSCRIBE.placeholder}
-              className="min-h-[50px] flex-1 rounded-[100px] border-[1.5px] border-forest/12 bg-shell px-[18px] py-[13px] text-[13px] text-foreground transition-colors outline-none placeholder:text-forest/75 focus:border-mid"
+              // THE FIELD MATCHES THE BUTTON, from 26 September. Squaring the
+              // button on her radius instruction left this a full pill beside
+              // it, and the two are one control: worst at 375, where they stack
+              // and a pill sits directly on top of a 12px corner. Her follow-up
+              // asked for the field brought to the same 12px. It is a form
+              // field rather than a button, which is why it waited to be asked
+              // for rather than being swept in with the buttons.
+              className="min-h-[50px] flex-1 rounded-xl border-[1.5px] border-forest/12 bg-shell px-[18px] py-[13px] text-[13px] text-foreground transition-colors outline-none placeholder:text-forest/75 focus:border-mid"
             />
             {/* Bots fill hidden fields; people do not. Same trick as the
                 enquiry form, and cheaper than a captcha for a reader. */}

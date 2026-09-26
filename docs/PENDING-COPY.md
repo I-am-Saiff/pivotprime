@@ -4742,3 +4742,89 @@ to the wording only, so we changed the wording and left the shape. It is the
 same argument you made about the label, though: a reader who clicks through from
 the email to the site sees a pill in one place and a square corner in the other.
 Say the word and we will square the email button as well.
+
+---
+
+## 1e5 Two services off the header menu, and the reader menu labels
+
+**26 September.** Three changes to the header and one leftover from the button
+work finished off. Nothing else on any page moved.
+
+### Build and Place and UAE Market Entry are off the services menu
+
+Your slide 10. The services menu in the header now shows three items:
+
+> All Services · Operational Clarity Audit · Fractional Leadership ·
+> Technology Builds
+
+**Both pages are still live and nothing else changed about them.** They answer
+normally, they are still in the sitemap, they are still open to Google, and
+every other link to them is untouched:
+
+- the **Services page** still lists all five
+- the **homepage** service cards still list all five
+- the **reader pages** still link both through their green service buttons
+
+You said they would be linked from the other service pages in a later pass. The
+only link that has gone is the one in the header menu.
+
+### What the Services page and the homepage list today
+
+You asked us to report these and not touch them, so here they are exactly as
+they stand. Both lists are identical and both are unchanged by this work:
+
+> Operational Clarity Audit · Fractional COO, CFO and Chief of Staff ·
+> Build and Place · Technology Builds · UAE Market Entry ·
+> Start with the diagnostic
+
+The homepage cards are the ones you said are being reduced separately.
+
+### The reader menu labels now read as you wrote them
+
+| Before | Now |
+|---|---|
+| For founders | **For Founders** |
+| For SMEs | For SMEs |
+| For corporate leaders | **For Corporate Innovators** |
+| For P&L Owners | **For P&L owners** |
+
+**"owners" is lowercase on purpose**, because that is how you wrote it on slide
+13. We have not tidied it, and a check will now fail if anyone does.
+
+**"For Corporate Innovators" is the menu label only.** The page address, its
+title in Google and everything on the page are unchanged, and the homepage
+reader tab still says "Corporate innovator" as before.
+
+### On the capitals question you raised
+
+You asked us to check whether the capitals were being applied by styling before
+we edited any wording, because that assumption was wrong once before. We
+measured it first: **the capitals are stored in the wording, not applied by
+styling.** So editing the four lines is the only thing that changes what a
+reader sees, and nothing will override them.
+
+### The two leftovers from the button work are done
+
+**The email box on Insights** now has the same corner as the Subscribe button
+beside it, so the pair reads as one control. This was the thing we flagged and
+recommended last time.
+
+**The button inside the emailed report** is now the same shape as the buttons on
+the site, so clicking through from your report no longer means meeting two
+different buttons. The diagnostic page itself is still untouched and its buttons
+are still fully rounded, which is what you asked for, and a check now asserts it
+so a later tidy-up cannot quietly include it.
+
+### Two things we noticed and did not touch
+
+**The confirmation message on the newsletter box is still fully rounded.** After
+somebody subscribes, the box is replaced by a line saying they are on the list,
+and that line is still a pill. It is a message rather than a field or a button,
+and you named the field, so we left it. Say the word.
+
+**The phone menu is built differently from the desktop one.** The desktop menu is
+always present in the page and hidden until opened; the phone menu only exists
+once it is tapped. That makes no difference to a reader, and both now show the
+same three services, but it does mean search engines only ever see the desktop
+one. It is not a problem today because both carry the same links. It is worth
+fixing at some point and is outside what you asked for here.

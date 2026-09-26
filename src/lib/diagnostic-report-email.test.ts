@@ -113,6 +113,21 @@ describe("the report email carries everything the results screen shows", () => {
         urls.forEach((u) => expect(u.startsWith("https://pivotprime.ae")).toBe(true));
       });
 
+      /**
+       * HER 26 SEPTEMBER FOLLOW-UP. The site's buttons went to the homepage
+       * hero's measured 12px and this one stayed a 100px pill, so a reader
+       * clicking through from the report met a different button from the one
+       * they landed on. Asserted here rather than in check-content because
+       * nothing serves this over HTTP.
+       *
+       * The pill is asserted ABSENT as well as 12px present: a second button
+       * added later at the old radius would satisfy the first half alone.
+       */
+      it("gives its button the same 12px corner as the site's buttons", () => {
+        expect(mail.html).toContain("border-radius:12px");
+        expect(mail.html).not.toContain("border-radius:100px");
+      });
+
       it("keeps the markup flat, with no layout tables or nested wrappers", () => {
         expect(mail.html).not.toContain("<table");
         // One wrapper div and nothing nested inside another div.

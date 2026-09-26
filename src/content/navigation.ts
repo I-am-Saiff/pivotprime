@@ -32,19 +32,56 @@ export const NAVIGATION: NavItem[] = [
       // reverses Saif's earlier ruling that fixed the fractional-coo slug.
       // PENDING-COPY 1u.
       { label: "Fractional Leadership", href: "/services/fractional-leadership" },
-      { label: "Build and Place", href: "/services/build-and-place" },
+      /**
+       * BUILD AND PLACE AND UAE MARKET ENTRY ARE OFF THIS DROPDOWN, her slide
+       * 10, 26 September. THE PAGES ARE NOT GONE.
+       *
+       * /services/build-and-place and /services/uae-market-entry stay live,
+       * stay in the sitemap, stay indexable and keep every other link to them:
+       * the /services index and the homepage service cards both still list all
+       * five services, and the persona pages still link both through
+       * ServiceLinkButtons. Her plan is to link them from the other service
+       * pages in a later pass. Only the header entry has gone.
+       *
+       * DO NOT READ THIS AS "THE PAGES ARE UNUSED". A page that disappeared
+       * from the navigation is exactly how /services/how-we-work became
+       * linked from nowhere at all while every check passed on it, which is
+       * why check-links walks the site and fails on a sitemap route nothing
+       * links. That check is the reason this removal is safe, and it is run
+       * against the build that carries it. PENDING-COPY 1e5.
+       */
       { label: "Technology Builds", href: "/services/technology-builds" },
-      { label: "UAE Market Entry", href: "/services/uae-market-entry" },
     ],
   },
   {
     label: "Who It's For",
     href: "/for-founders",
+    /**
+     * HER SLIDE 13 CAPITALISATION, 26 September, copied exactly as she wrote
+     * the four lines rather than regularised.
+     *
+     * THE CAPITALS ARE STORED HERE, NOT APPLIED BY CSS. Measured before any
+     * string was touched: computed text-transform is "none" on all four labels
+     * at 375 and at 1440, in the mobile menu and the desktop dropdown. So
+     * editing these strings is the only thing that can change what a reader
+     * sees, and there is no CSS rule that will now fight them. Worth measuring
+     * because the same premise was inverted on the persona industry lines
+     * earlier this month, where the capitals turned out to be in the copy.
+     *
+     * "owners" IS LOWERCASE IN HER THIRD AND FOURTH ITEMS and that is not a
+     * typo of hers to tidy: she wrote "For Corporate Innovators" and "For P&L
+     * owners", and the fourth read "For P&L Owners" here until now. Hers wins.
+     *
+     * "For Corporate Innovators" IS A LABEL, NOT A ROUTE. The page stays at
+     * /for-corporate-leaders, its metadata and content are untouched, and the
+     * homepage persona tab keeps its own wording ("03 Corporate innovator"),
+     * which is derived separately in PersonaSwitcher. PENDING-COPY 1e5.
+     */
     children: [
-      { label: "For founders", href: "/for-founders" },
+      { label: "For Founders", href: "/for-founders" },
       { label: "For SMEs", href: "/for-smes" },
-      { label: "For corporate leaders", href: "/for-corporate-leaders" },
-      { label: "For P&L Owners", href: "/for-pl-owners" },
+      { label: "For Corporate Innovators", href: "/for-corporate-leaders" },
+      { label: "For P&L owners", href: "/for-pl-owners" },
     ],
   },
   {

@@ -295,6 +295,68 @@ const DECISIONS = [
     },
   },
   {
+    what: "two services are off the header dropdown while both pages stay live and linked",
+    where: "PENDING-COPY 1e5",
+    run: async (get) => {
+      /**
+       * HER SLIDE 10, 26 September: Build and Place and UAE Market Entry come
+       * off the services dropdown. The pages stay.
+       *
+       * THIS GUARD IS POINTED AT THE DANGEROUS HALF. Removing a page from the
+       * navigation is how /services/how-we-work ended up linked from nowhere
+       * at all while every check passed on it. So the dropdown removal is
+       * asserted together with the three things that must remain true for it
+       * to be safe: both routes answer 200, both are in the sitemap, and
+       * neither has been quietly retired as "unused" later.
+       *
+       * Counted on /privacy, which carries no service cards of its own, so a
+       * link to either route on that page can only have come from the header.
+       * Counting on / or /services would measure the cards instead and pass
+       * whatever the header did.
+       */
+      const privacy = await (await get("/privacy")).text();
+      for (const slug of ["build-and-place", "uae-market-entry"]) {
+        const n = privacy.split(`href="/services/${slug}"`).length - 1;
+        if (n !== 0) return `/services/${slug} is still linked ${n} time(s) from the header`;
+      }
+      // And the three that stay, so this fails if the dropdown is emptied too.
+      for (const slug of ["operational-clarity-audit", "fractional-leadership", "technology-builds"]) {
+        if (!privacy.includes(`href="/services/${slug}"`)) {
+          return `/services/${slug} has gone from the header dropdown as well`;
+        }
+      }
+      const sitemap = await (await get("/sitemap.xml")).text();
+      for (const slug of ["build-and-place", "uae-market-entry"]) {
+        const res = await get(`/services/${slug}`);
+        if (res.status !== 200) return `/services/${slug} answers ${res.status}, but it is meant to stay live`;
+        if (!sitemap.includes(`/services/${slug}`)) return `/services/${slug} has fallen out of the sitemap`;
+      }
+      return null;
+    },
+  },
+  {
+    what: "the persona dropdown carries her slide 13 capitalisation",
+    where: "PENDING-COPY 1e5",
+    run: async (get) => {
+      // Asserted on the served HTML because the capitals are stored in the
+      // copy, not applied by CSS: measured text-transform is "none" on all
+      // four at 375 and 1440. A text-transform added later would make the page
+      // read differently from the string and this check would not see it,
+      // which is recorded in navigation.ts rather than guarded here.
+      //
+      // "For P&L owners" carries a lowercase "owners" because she wrote it
+      // that way. It is asserted exactly, so tidying it fails the run.
+      const html = await (await get("/privacy")).text();
+      const wanted = ["For Founders", "For SMEs", "For Corporate Innovators", "For P&amp;L owners"];
+      for (const label of wanted) {
+        if (!html.includes(label)) return `the persona dropdown does not say "${label}"`;
+      }
+      return html.includes("For P&amp;L Owners")
+        ? 'the persona dropdown still capitalises "Owners", and her slide 13 does not'
+        : null;
+    },
+  },
+  {
     what: "the site's buttons carry the hero button's radius, and the diagnostic keeps its own",
     where: "PENDING-COPY 1e4",
     run: async (get) => {
@@ -320,6 +382,11 @@ const DECISIONS = [
         ["/insights", "inline-flex items-center rounded-xl bg-neon px-[30px]", "the /insights closer button"],
         ["/insights/consultant-leaves", "inline-flex items-center rounded-xl bg-neon px-[30px]", "the article closer button"],
         ["/insights", "cursor-pointer rounded-xl bg-forest px-6 py-[13px]", "the newsletter subscribe button"],
+        // The field beside that button, squared on 26 September so the pair
+        // reads as one control. Not a button, so it is asserted here rather
+        // than under the button rule, and it is in this list because leaving
+        // the two out of step is what the change was for.
+        ["/insights", "flex-1 rounded-xl border-[1.5px]", "the newsletter email field"],
       ];
       for (const [route, needle, name] of pages) {
         const html = await (await get(route)).text();
