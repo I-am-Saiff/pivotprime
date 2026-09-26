@@ -40,23 +40,27 @@ export default function PatternsList() {
           they meet the things to tap, so it is the first thing after the
           heading now and the items follow it.
 
-          THE CALL TO ACTION CAME WITH IT, AND THAT IS WORTH KNOWING. Her note
-          describes the bar and the call to action as two things, "then the
-          green bar ... then the CTA". They are one element: the button is
-          inside this bar, to the right of the two lines above sm and beneath
-          them at 375. Moving the bar moves the button, so the section ends on
-          the ten items rather than on a button. Splitting them would be
-          redesigning the bar rather than moving it, so it is reported in
-          PENDING-COPY 1e8 for her to decide instead.
+          THE BUTTON IS NOT IN HERE ANY MORE, 27 September. When the bar moved
+          it took the button with it, because the two were one element, and the
+          section ended on ten chips with nothing to act on. That is weaker than
+          it was and it is not what her slide 5 draws: her own layout keeps the
+          call to action at the foot. It is below the list now and this bar is
+          the two lines and the live count, which is what she asked for in both
+          notes read together.
+
+          THE COUNT STAYS HERE AND IS NOT DUPLICATED, her instruction. It does
+          mean that on a phone the count can be off screen while somebody is
+          tapping, which follows from putting the instruction above the chips
+          and is accepted rather than worked around.
 
           mt-8 has gone with the move: it was the space below the list and this
           sits directly under the heading now, which brings its own margin.
 
           "above" IS "below" IN THE SECOND LINE, her 2b, because the items are
           underneath it now. Nothing else in that sentence changed and the first
-          line is untouched. PENDING-COPY 1e8. */}
+          line is untouched. PENDING-COPY 1e8 and 1e9. */}
       <div className="rounded-2xl bg-forest p-5 sm:p-6 text-white shadow-xl border border-white/10">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
           {/* Label + description */}
           <div className="min-w-0">
             <p className="text-[13px] font-bold text-neon leading-tight">
@@ -70,15 +74,6 @@ export default function PatternsList() {
                 : "Tap any blockers below to see how we structure the fix."}
             </p>
           </div>
-
-          {/* Full-width on mobile, auto-width on sm+ */}
-          <Link
-            href={contactHref}
-            className="inline-flex w-full sm:w-auto flex-shrink-0 items-center justify-center px-6 py-3 rounded-xl text-sm font-bold bg-neon text-forest hover:bg-white transition-all shadow-md"
-          >
-            {CONTACT_CTA.label}
-            <span aria-hidden="true" className="ml-2">→</span>
-          </Link>
         </div>
       </div>
 
@@ -115,6 +110,34 @@ export default function PatternsList() {
           );
         })}
       </ul>
+
+      {/* THE CALL TO ACTION, BACK AT THE FOOT OF THE SECTION, 27 September.
+
+          It travelled up with the bar when the bar moved, because it was inside
+          it. Her slide 5 keeps it here, under the ten items, and a section that
+          ends on ten chips with nothing to act on is weaker than one that ends
+          on the way to act.
+
+          NOTHING ABOUT THE BUTTON ITSELF CHANGED. Same label from CONTACT_CTA,
+          same arrow, same treatment, and the same href: contactHref still
+          carries every selected symptom into the contact form's message, so
+          choosing three chips and following the button still arrives with those
+          three written out. Verified by selecting and following it rather than
+          by reading the diff.
+
+          w-full sm:w-auto is the button's own rule from inside the bar, kept so
+          it still fills the width on a phone. It needs a wrapper to sit left on
+          a wide screen rather than stretching, which the bar's flex row used to
+          give it. PENDING-COPY 1e9. */}
+      <div className="mt-8">
+        <Link
+          href={contactHref}
+          className="inline-flex w-full sm:w-auto flex-shrink-0 items-center justify-center px-6 py-3 rounded-xl text-sm font-bold bg-neon text-forest hover:bg-white transition-all shadow-md"
+        >
+          {CONTACT_CTA.label}
+          <span aria-hidden="true" className="ml-2">→</span>
+        </Link>
+      </div>
 
     </div>
   );

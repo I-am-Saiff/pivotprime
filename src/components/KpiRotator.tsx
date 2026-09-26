@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState, useSyncExternalStore } from "react";
 
 /**
- * Shows one result card at a time, on a three second beat.
+ * Shows one result card at a time, on a six second beat.
  *
  * IT DOES NOT OWN THE CARDS. Every card is rendered by KpiCards, a server
  * component, and passed in as `children`. This wrapper sets one attribute,
@@ -17,9 +17,26 @@ import { useCallback, useEffect, useState, useSyncExternalStore } from "react";
  * lay out as her grid, static, with nothing hidden.
  *
  * The stack takes the height of the tallest card, so advancing never moves the
- * page. Hover, focus and the manual controls all pause the beat.
+ * page.
+ *
+ * SIX SECONDS, FROM 27 September, AND WHY IT WAS THREE. Her note: "on mobile,
+ * it is flashing too fast, so has to move a bit slower". Each card carries a
+ * four-stage diagram, a figure, a name and a supporting line, eleven words of
+ * prose in all, and the cross-fade below eats 420ms of every beat. Three
+ * seconds left about 2.6 seconds to take all of that in. Six leaves 5.6, which
+ * is a comfortable read of eleven words with a look at the diagram, and puts a
+ * full cycle of five cards at thirty seconds.
+ *
+ * ONE INTERVAL, NOT TWO, because the cards carry identical content at every
+ * width and there is nothing to read at 375 that is not also there at 1440. Her
+ * brief asked for one unless two could be justified, and they cannot be here.
  */
-const INTERVAL = 3000;
+const INTERVAL = 6000;
+/**
+ * How long a manual choice holds before the beat resumes. One full interval, so
+ * the card someone chose gets the same dwell as one the timer chose.
+ */
+const HOLD = INTERVAL;
 const REDUCED = "(prefers-reduced-motion: reduce)";
 
 function subscribeToMotion(onChange: () => void) {
@@ -42,41 +59,75 @@ export default function KpiRotator({
   const rotating = useSyncExternalStore(subscribeToMotion, isMotionWelcome, () => false);
 
   const [active, setActive] = useState(0);
+  /**
+   * PAUSED IS KEYBOARD FOCUS ONLY NOW, AND HOVER NO LONGER PAUSES AT ALL. This
+   * is the fix for the half of her note that reads "on desktop it doesn't seem
+   * to work, it is not changing", and the cause was not the timer.
+   *
+   * MEASURED BEFORE CHANGING ANYTHING. With the pointer parked away from it the
+   * carousel advanced on a 3000ms beat at 1440 exactly as it did at 375: four
+   * changes in fourteen seconds at both. With the pointer resting anywhere on
+   * it, nine seconds produced zero changes. It is a wide block high on the page,
+   * so on a desktop the pointer sits on it while somebody reads, and it looks
+   * dead. That is the difference between her desktop and her phone, where there
+   * is no hover at all and the thing she saw was the speed.
+   *
+   * Pausing on hover is a courtesy and WCAG 2.2.2 does not ask for it; what it
+   * asks for is a way to stop moving content, which the dots and the arrows
+   * are. Focus pause stays, so a keyboard reader stepping into the controls is
+   * not pulled off the card they are on.
+   *
+   * BUT ONLY KEYBOARD FOCUS, WHICH IS :focus-visible AND NOT :focus. Dropping
+   * the hover pause and keeping a plain focus pause put the same bug back
+   * through a different door, and the probe caught it rather than the diff:
+   * clicking a dot focuses that dot, nothing ever blurs it, and the carousel
+   * froze for good at both widths. Tapping did the same on touch. Matching
+   * :focus-visible is the difference between a reader who tabbed in, who should
+   * not be pulled along, and one who clicked, who has just told us which card
+   * they want and is covered by the hold below. PENDING-COPY 1e9.
+   */
   const [paused, setPaused] = useState(false);
-  // A manual choice holds that card until the pointer or focus leaves, so the
-  // beat does not pull the page away from something being read.
-  const [held, setHeld] = useState(false);
-  const frozen = paused || held;
+  /**
+   * A manual choice holds the beat for one interval and then lets it go.
+   *
+   * IT USED TO HOLD UNTIL THE POINTER OR FOCUS LEFT, and on a touch screen
+   * neither ever does: measured at 375 with touch emulation, tapping a dot
+   * stopped the carousel for the whole ten seconds that followed and it never
+   * restarted. A timed hold cannot strand it, on any input.
+   */
+  const [heldUntil, setHeldUntil] = useState(0);
 
   useEffect(() => {
-    // Torn down and rebuilt when frozen rather than ticking and skipping, so the
-    // next card gets a full three seconds after a hover.
-    if (!rotating || frozen) return;
-    const id = window.setInterval(() => {
+    if (!rotating || paused) return;
+    // Rebuilt rather than left ticking, so the card showing now always gets a
+    // full interval whether it arrived by timer or by a tap.
+    const wait = Math.max(INTERVAL, heldUntil - Date.now());
+    const id = window.setTimeout(() => {
       setActive((current) => (current + 1) % labels.length);
-    }, INTERVAL);
-    return () => window.clearInterval(id);
-  }, [labels.length, rotating, frozen]);
+      setHeldUntil(0);
+    }, wait);
+    return () => window.clearTimeout(id);
+  }, [labels.length, rotating, paused, active, heldUntil]);
 
   const go = useCallback(
     (i: number) => {
-      setHeld(true);
+      setHeldUntil(Date.now() + HOLD);
       setActive(((i % labels.length) + labels.length) % labels.length);
     },
     [labels.length],
   );
 
-  const release = useCallback(() => {
-    setPaused(false);
-    setHeld(false);
-  }, []);
+  const release = useCallback(() => setPaused(false), []);
 
   return (
     <div
       data-kpi-active={rotating ? active : undefined}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={release}
-      onFocusCapture={() => setPaused(true)}
+      onFocusCapture={(event) => {
+        // :focus-visible is only true when the browser would draw a focus ring,
+        // which is keyboard navigation and not a click or a tap.
+        const target = event.target;
+        if (target instanceof HTMLElement && target.matches(":focus-visible")) setPaused(true);
+      }}
       onBlurCapture={release}
     >
       {children}

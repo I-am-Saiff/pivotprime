@@ -5073,3 +5073,63 @@ counts them and the button carries them through to the contact form. With the
 bar above the items, that count now updates above where you are tapping rather
 than below it, so on a phone it can be off screen while you choose. It still
 works exactly as before.
+
+---
+
+## 1e9 The patterns button is back at the foot, and the carousel timing
+
+**27 September.**
+
+### The button is below the ten items again
+
+When the green bar moved up, the button moved with it, because the button was
+inside the bar. That left the section ending on ten chips with nothing to act
+on, which is weaker than it was and is not what your slide 5 draws.
+
+The button is now at the foot, under the items, where your layout puts it. The
+bar keeps its two lines and its live count and stays directly under the heading.
+
+**Nothing about the button itself changed**: same wording, same destination, same
+look, and selecting symptoms still carries them through. We checked this by
+selecting two symptoms and following the button at all three sizes: the contact
+form opens with both of them already written into the message.
+
+**The count stays above the items and is not repeated**, as you asked. On a phone
+that does mean the count can be off screen while somebody is tapping.
+
+### The carousel: what was actually wrong
+
+You wrote that on desktop it "doesn't seem to work, it is not changing". **It was
+changing.** We watched it with the mouse parked away from it and it advanced
+every three seconds on a desktop exactly as it did on a phone.
+
+**The reason you saw it frozen is that it stopped whenever the mouse was over
+it.** It is a wide block near the top of the page, so on a desktop the pointer
+tends to sit on it while you read, and it looked dead. There is no hover on a
+phone, which is why you only saw the speed problem there. That pause is gone.
+
+We also found something you had not reported. **On a phone, tapping one of the
+dots stopped the carousel permanently.** It was written to restart when the mouse
+left, and on a touch screen the mouse never leaves. Tapping a dot now holds that
+card for one turn and then carries on.
+
+### The speed
+
+**Three seconds became six.** We did not pick that from a rule. Each card carries
+a four-stage diagram, a big figure, a name and a supporting line, and the fade
+between cards takes almost half a second of every turn. Three seconds left about
+two and a half to take all of that in, which is why it felt like flashing. Six
+leaves five and a half, and a full run of the five cards now takes thirty
+seconds.
+
+**The same speed at every size.** The cards say exactly the same thing on a phone
+as on a desktop, so there is nothing to justify two different speeds.
+
+### The controls
+
+The arrows and the dots work as before. Choosing a card holds it for one turn
+before the carousel moves on, rather than fighting you for it. If you are moving
+through the site with a keyboard the carousel stops while you are on the
+controls and starts again when you leave them. With reduced motion turned on in
+the operating system it does not move at all and all five cards are shown at
+once, which is unchanged.

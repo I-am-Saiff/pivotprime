@@ -341,6 +341,22 @@ const DECISIONS = [
       if (bar > firstItem) return "the instruction bar is below the symptoms again, and her slide 5 puts it above them";
       if (!html.includes("Tap any blockers below")) return "the instruction no longer points down at the symptoms";
       if (html.includes("Tap any blockers above")) return "the instruction still says \"above\" while the symptoms sit below it";
+      /**
+       * AND THE BUTTON IS BELOW THE TEN ITEMS, 27 September. It was inside the
+       * bar and travelled up with it, leaving the section ending on ten chips
+       * with nothing to act on. Her slide 5 keeps it at the foot, so the three
+       * pieces are asserted in her order: instruction, items, button. Matched
+       * on the button class rather than its label, because "Talk to us" also
+       * appears in the header and the footer, and NOT on its href: the href
+       * only carries ?message= once symptoms are selected, and this check
+       * fetches with JavaScript off, so the static state is a plain /contact.
+       * The first version of this assertion looked for ?message= and could
+       * never have passed. The class string occurs exactly once on the page.
+       */
+      const lastItem = html.indexOf("You keep losing customers");
+      const sectionCta = html.indexOf("px-6 py-3 rounded-xl text-sm font-bold bg-neon text-forest", lastItem);
+      if (lastItem === -1) return "the tenth symptom is not in the served HTML";
+      if (sectionCta === -1) return "the patterns call to action is no longer below the ten items";
       return null;
     },
   },
