@@ -247,7 +247,7 @@ function Speed({ run }: { run: boolean }) {
   return (
     <div className="flex w-full flex-col gap-3.5">
       <div className="flex flex-col gap-[5px]">
-        <p className="text-[9px] font-semibold tracking-[0.1em] text-linen/70 uppercase">Before — KYC completion</p>
+        <p className="text-[9px] font-semibold tracking-[0.1em] text-linen/70 uppercase">Before: KYC completion</p>
         <div className="h-6 overflow-hidden rounded-[5px] bg-white/[0.04]">
           {/* HER AMBER "BEFORE" FILL, still drawn in green because this section
               carries no brown (PENDING-COPY 1av), and SOLID ACROSS THE FULL
@@ -271,7 +271,7 @@ function Speed({ run }: { run: boolean }) {
         </div>
       </div>
       <div className="flex flex-col gap-[5px]">
-        <p className="text-[9px] font-semibold tracking-[0.1em] text-linen/70 uppercase">After — KYC completion</p>
+        <p className="text-[9px] font-semibold tracking-[0.1em] text-linen/70 uppercase">After: KYC completion</p>
         <div className="h-6 overflow-hidden rounded-[5px] bg-white/[0.04]">
           <div
             className="flex h-full items-center overflow-hidden rounded-[5px] bg-neon px-2.5 text-[10px] font-semibold whitespace-nowrap text-forest"

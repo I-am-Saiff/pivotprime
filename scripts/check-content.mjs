@@ -315,6 +315,72 @@ const DECISIONS = [
     },
   },
   {
+    what: "no em dash or double hyphen reaches a reader on any route",
+    where: "PENDING-COPY 1f1",
+    run: async (get) => {
+      /**
+       * HER SLIDE 14: "Remove the emdash from the articles and anywhere on the
+       * website."
+       *
+       * ASSERTED ON THE RENDERED OUTPUT, NOT THE SOURCE, and that is the point
+       * of it. lint-copy reads src/content string literals and JSX text, and it
+       * found two of the thirty em dashes that were actually on the page: the
+       * other twenty-eight were in insights.ts fields it does not walk. Copy
+       * reaches a reader from places a linter does not read, so the check that
+       * matters is the one that looks at what was served.
+       *
+       * EN DASHES ARE NOT INCLUDED. Seven survive, every one a numeric range:
+       * "Months 1-2", "3-6 months", "30-90 days". That is correct British
+       * typography for a span of numbers and is not what she asked to remove.
+       * Reported to her in PENDING-COPY 1f1 rather than changed.
+       */
+      const routes = ["/", "/about", "/services", "/contact", "/privacy", "/insights",
+        "/insights/consultant-leaves", "/insights/technology-process",
+        "/insights/decisions-layers", "/insights/margin-revenue",
+        "/services/operational-clarity-audit", "/services/fractional-leadership",
+        "/services/build-and-place", "/services/technology-builds",
+        "/services/uae-market-entry", "/for-founders", "/for-smes",
+        "/for-pl-owners", "/for-corporate-leaders"];
+      for (const route of routes) {
+        const html = await (await get(route)).text();
+        // The served HTML, entities included: an em dash can arrive as a raw
+        // character or as &mdash; and both read the same to a reader.
+        const text = textOf(html).replace(/&mdash;/g, "\u2014");
+        const em = text.indexOf("\u2014");
+        if (em !== -1) return `${route} still carries an em dash: "...${text.slice(Math.max(0, em - 60), em + 60).trim()}..."`;
+        const dh = text.indexOf("--");
+        if (dh !== -1) return `${route} carries a double hyphen: "...${text.slice(Math.max(0, dh - 60), dh + 60).trim()}..."`;
+      }
+      return null;
+    },
+  },
+  {
+    what: "her P&L reads as P&L rather than as an escaped entity",
+    where: "PENDING-COPY 1f1",
+    run: async (get) => {
+      /**
+       * HER SLIDE 16 CORRECTION, and working out what she was correcting took
+       * looking at the page rather than at the string.
+       *
+       * She gave the sentence back as "a P&L within a larger organization". The
+       * source already read "a P&L within a larger organisation", so the only
+       * visible difference was her z, which the site's British English does not
+       * take. What she had actually seen was the rendering: the source held
+       * "P&amp;L" as a plain string, React escaped the ampersand again, and the
+       * reader met "P&amp;L" on screen. A site-wide sweep for entities visible
+       * in text found exactly one, this one.
+       *
+       * Asserted both ways: the entity absent and the real thing present.
+       */
+      const html = await (await get("/insights/decisions-layers")).text();
+      const text = textOf(html);
+      if (text.includes("P&amp;L")) return "the lead sentence still shows the escaped entity P&amp;L to the reader";
+      return text.includes("a P&L within a larger organisation")
+        ? null
+        : "her corrected lead sentence is not on the page";
+    },
+  },
+  {
     what: "the patterns instruction sits above the ten symptoms and points down at them",
     where: "PENDING-COPY 1e8",
     run: async (get) => {

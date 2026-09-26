@@ -5194,3 +5194,113 @@ and now follows the logos, which carries slightly less space on a wide screen,
 so there is about 40 pixels less above that heading than there was. We looked at
 it and it reads correctly, so nothing was changed. Tell us if you want it opened
 up.
+
+---
+
+## 1f1 Em dashes, the spell check, and your P&L correction
+
+**26 September, your slides 14 and 16.**
+
+### The em dashes are gone, all thirty of them
+
+You asked for them removed from the articles and anywhere on the website. There
+were **30 in copy a reader can see**: 28 across the four articles and their
+summaries, and 2 on the homepage. There are now none, on any page.
+
+Your example was a rewrite rather than a swap, so each sentence was read and
+given whatever it wanted: a full stop where two statements were being joined, a
+colon where the second half defines the first, a comma where the clause really
+does continue, and a rewrite where the dashes were working in pairs and no
+single mark replaces them.
+
+**The consultant leaves. The problem stays.**
+
+| Was | Now |
+|---|---|
+| ...fail at execution — and what business leaders should look for instead. | ...fail at execution, and what business leaders should look for instead. |
+| ...end at the slide deck — and what that gap costs you. | ...end at the slide deck, and what that gap costs you. |
+| It is an execution failure — and it happens not because... | It is an execution failure. It happens not because... |
+| ...transfers to the client team — a team that was already stretched... | ...transfers to the client team. That team was already stretched... |
+| ...requires someone in the room — not quarterly, not monthly... | ...requires someone in the room, not quarterly, not monthly... |
+
+The last one is your own example from slide 14, word for word.
+
+**AI won't save a broken process.**
+
+| Was | Now |
+|---|---|
+| ...seeing weak returns — and what needs to happen before technology can work. | ...seeing weak returns, and what needs to happen before technology can work. |
+| ...seeing weak returns — and what actually needs to happen first. | ...seeing weak returns, and what actually needs to happen first. |
+| ...was asked to do — and what it found underneath when it got there. | ...was asked to do, and what it found underneath when it got there. |
+| ...used by the team — because they solve a real, visible problem... | ...used by the team, because they solve a real, visible problem... |
+| The automation of routine administrative tasks alone — the kind that consumes a large fraction of your most capable people's time without generating anything proportionate in return — can return meaningful hours to the business every week. | Think of the routine administrative tasks that consume a large fraction of your most capable people's time without generating anything proportionate in return. Automating those alone can return meaningful hours to the business every week. |
+| ...not the first move — and as a result, everything they implemented actually worked. | ...not the first move. As a result, everything they implemented actually worked. |
+
+**Why your decisions don't survive the layers.**
+
+| Was | Now |
+|---|---|
+| ...more than they realise — and what to do about it. | ...more than they realise, and what to do about it. |
+| ...barely resembles what you originally decided — if it returns at all. | ...barely resembles what you originally decided. If it returns at all. |
+| ...is not being obstructionist — they are managing their own accountability... | ...is not being obstructionist. They are managing their own accountability... |
+| ...is not being bureaucratic for its own sake — they are applying a governance standard... | ...is not being bureaucratic for its own sake. They are applying a governance standard... |
+| ...the speed and quality of what gets done — and on the quality of the people... | ...the speed and quality of what gets done, and on the quality of the people... |
+| The people with the most options — your highest performers, your most commercially sharp operators, the ones whose judgment you most rely on — are also the ones who feel the constraint most acutely. | The people with the most options are your highest performers, your most commercially sharp operators, the ones whose judgment you most rely on. They are also the ones who feel the constraint most acutely. |
+
+**Why your margins are thinner than your revenue suggests.**
+
+| Was | Now |
+|---|---|
+| ...cost creep, and unconsolidated spend — and never quite see where it went. | ...cost creep and unconsolidated spend. They never quite see where it went. |
+| The second category is cost creep — the slow accumulation of expenditure... | The second category is cost creep: the slow accumulation of expenditure... |
+| That is not a failure of management — it is a very normal consequence... | That is not a failure of management. It is a very normal consequence... |
+| It is visibility — a consolidated view of what the business is spending... | It is visibility: a consolidated view of what the business is spending... |
+| ...building it full-time is not the right move — the business is not yet at the scale... | ...building it full-time is not the right move. The business is not yet at the scale... |
+| The value of having someone in the room who can read the numbers and translate them into specific operational decisions — who to talk to about pricing, which costs to challenge, where the spend is unconsolidated — is disproportionate to the cost of having that person. | Someone in the room can read the numbers and translate them into specific operational decisions: who to talk to about pricing, which costs to challenge, where the spend is unconsolidated. That value is disproportionate to the cost of having that person. |
+
+**On the homepage**, the two labels on the before-and-after chart read
+"Before: KYC completion" and "After: KYC completion" instead of using a dash.
+
+### What we found but left alone
+
+**Seven short dashes in number ranges**: "Months 1–2", "3–6 months", "3–9
+months", "2–4 week", "30–90 days", "1–2 weeks". These are the short dash used
+between two numbers, which is correct in British writing and is not the long dash
+you asked us to remove. Say the word if you want them as "1 to 2" instead.
+
+**Dashes inside the code notes.** There are 23 more in the developers' own notes
+in the files, which no visitor ever sees. Left as they are.
+
+### The spell check
+
+We read every word of all four articles against a dictionary and checked the
+grammar and punctuation mechanically as well.
+
+**No spelling mistakes. No grammar mistakes.** Nothing was changed.
+
+Two things looked wrong at first and are correct:
+
+- **"The money is just... not there."** The three dots are yours and the pause is
+  the point. Left.
+- **"a best-practice approach."** In British English "practice" with a c is right
+  here, because it is being used as a describing word rather than a doing word.
+  Left.
+
+One thing is a genuine choice rather than an error: **"tradeoffs"**. British
+writing more often has "trade-offs". Both are in use and we have not changed
+your wording. Say the word.
+
+### Your correction, and what it actually was
+
+You gave the sentence back as: *"If you run a business unit, a regional
+subsidiary, or a P&L within a larger organization,..."*
+
+The wording already matched yours exactly. The only differences were the "z" in
+organization, which the site does not use because it is written in British
+English throughout, and **the P&L, which is what you had actually spotted.**
+
+**The page was showing "P&amp;L" on screen instead of "P&L".** The ampersand had
+been written in a way that made the page print the code for it rather than the
+symbol. It reads correctly now.
+
+We swept every page on the site for the same fault. **That was the only one.**
