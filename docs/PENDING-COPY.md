@@ -5012,3 +5012,64 @@ the styling does not reach.
 "Talk to us" is set for this block only. The same button on the five service
 pages reads "Talk to us on WhatsApp" and was not in your scope, so it is
 unchanged there. Both still go to the same WhatsApp number.
+
+---
+
+## 1e8 The hero button gap, and the patterns instruction moved above the list
+
+**26 September.**
+
+### The two hero buttons are back together
+
+Putting the grey line under the first button widened that button's column, which
+pushed the second button away. You were right that it read as a mistake.
+
+| Width | Gap before | Gap now |
+|---|---|---|
+| 768 | 148px | **16px** |
+| 1024 | 148px | **16px** |
+| 1440 | 148px | **16px** |
+
+16px is what it was before any of this. The line is still under the first button
+and nowhere else; it is now exactly that button's width and wraps to four lines
+instead of three, which is the trade you asked for.
+
+### On a phone, the line moved below both buttons
+
+You asked us to look at it rather than apply a rule. **It read as an
+interruption.** With the buttons stacked full width, a paragraph between them
+stopped them looking like a pair and pushed the second button down the screen.
+So on a phone the order is now the two buttons together, then the line
+underneath both. At tablet size and up it is unchanged: the line sits under the
+first button only.
+
+### The patterns section
+
+The green bar now sits directly under the heading, before the ten items, so a
+reader is told what to do before they meet the things to tap. The items, their
+order and what happens when you tap them are all unchanged, and the section is
+exactly as tall as it was.
+
+The sentence reads **"Tap any blockers below to see how we structure the fix."**
+The first line is unchanged.
+
+**The section has not moved up the page.** Your slide 5 also asks for that, and
+it is the separate reorder pass.
+
+### One thing to decide
+
+**The "Talk to us" button came with the bar.** Your note describes the bar and
+the button as two things. They are one: the button lives inside the green bar,
+to its right on a desktop and underneath the two lines on a phone. Moving the
+bar moved the button with it, so the section now ends on the ten items rather
+than on a button.
+
+We have not split them, because separating the button from the bar would be
+redesigning it rather than moving it. **Say the word if you want the button left
+at the foot of the section** and we will do that instead.
+
+There is a second effect worth knowing. The bar is live: as you tap symptoms it
+counts them and the button carries them through to the contact form. With the
+bar above the items, that count now updates above where you are tapping rather
+than below it, so on a phone it can be off screen while you choose. It still
+works exactly as before.

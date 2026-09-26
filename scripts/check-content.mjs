@@ -315,6 +315,59 @@ const DECISIONS = [
     },
   },
   {
+    what: "the patterns instruction sits above the ten symptoms and points down at them",
+    where: "PENDING-COPY 1e8",
+    run: async (get) => {
+      /**
+       * HER SLIDE 5, 26 September: the green bar moved from under the symptom
+       * list to directly under the heading, so a reader is told what to do
+       * before meeting the things to tap.
+       *
+       * ASSERTED BY POSITION, not by presence. Both strings were on the page
+       * before the move and both are on it after, so a presence check would
+       * have passed either way and proved nothing about the one thing that
+       * changed. The order in the served HTML is the decision.
+       *
+       * AND THE WORD IT TURNS ON. "Tap any blockers below" only reads correctly
+       * while the bar is above the list; if the bar ever goes back under it,
+       * the sentence points at nothing. "above" is asserted absent so the pair
+       * cannot drift apart silently.
+       */
+      const html = await (await get("/")).text();
+      const bar = html.indexOf("Select the symptoms that sound familiar");
+      const firstItem = html.indexOf("Sales sells things operations cannot deliver");
+      if (bar === -1) return "the patterns instruction bar is not in the served HTML";
+      if (firstItem === -1) return "the ten symptoms are not in the served HTML";
+      if (bar > firstItem) return "the instruction bar is below the symptoms again, and her slide 5 puts it above them";
+      if (!html.includes("Tap any blockers below")) return "the instruction no longer points down at the symptoms";
+      if (html.includes("Tap any blockers above")) return "the instruction still says \"above\" while the symptoms sit below it";
+      return null;
+    },
+  },
+  {
+    what: "the hero line is sized by the first button rather than sizing the row",
+    where: "PENDING-COPY 1e8",
+    run: async (get) => {
+      /**
+       * Her 26 September note: the line under the first button, the buttons
+       *16px apart. Those fight, and w-0 min-w-full is what settles it: the
+       * line contributes nothing to the grid column's width and is then laid
+       * out at that column's width. A max-width in its place put the buttons
+       * 148px apart at 768, 1024 and 1440.
+       *
+       * The class is asserted rather than the geometry because this check
+       * reads HTML with no browser and cannot measure a gap. The geometry is
+       * measured in the browser at four widths instead, and recorded in the
+       * commit rather than here.
+       */
+      const html = await (await get("/")).text();
+      if (!DIAGNOSTIC_ENABLED) return null;
+      return /class="[^"]*\bw-0 min-w-full\b[^"]*"/.test(html)
+        ? null
+        : "the hero explainer no longer carries w-0 min-w-full, so it is sizing the button row again";
+    },
+  },
+  {
     what: "the two cross-link blocks carry her copy and point at the two de-navigated pages",
     where: "PENDING-COPY 1e6",
     run: async (get) => {

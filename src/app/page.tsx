@@ -93,21 +93,35 @@ export default function Home() {
           </p>
 
           {/* CTAs */}
-          {/* THE EXPLAINER SITS UNDER THE FIRST BUTTON ONLY, her slide 1.
+          {/* THE CTA AREA IS A GRID, from 26 September, and it is a grid
+              because two of her instructions pull in opposite directions at
+              different widths.
 
-              WHAT WAS HOLDING IT FULL WIDTH: it was a block-level sibling AFTER
-              this row, with max-w-2xl. Measured at 1440 before changing it, it
-              ran 672px from x=144 while the two buttons together end at x=779,
-              so it reached past the second button rather than belonging to the
-              first. Nothing was centring or stretching it; it simply was not in
-              a column with the button it describes.
+              SHE WANTED THE LINE UNDER THE FIRST BUTTON ONLY. Putting it in a
+              flex column with that button did that, and cost 132px of gap: the
+              column took its width from the line's max-w-sm, so the second
+              button went from 16px away to 148px away at 768, 1024 and 1440.
+              Measured before and after rather than guessed.
 
-              It is inside the first button's column now, so it is bounded by
-              that button's own stack rather than by the row. items-start, not
-              items-center: with a paragraph under the first button, centring
-              would push the second button halfway down the column instead of
-              keeping its top edge level with the first. PENDING-COPY 1e7. */}
-          <div className="mt-7 sm:mt-10 flex flex-col gap-3 sm:flex-row sm:items-start sm:gap-4">
+              AND SHE WANTED THE BUTTONS BACK TOGETHER. So the line no longer
+              sizes anything: w-0 min-w-full below means it contributes nothing
+              to the column's width and is then laid out at that column's width,
+              which is the button's. It wraps to four lines instead of three,
+              which is what she asked for in preference to the gap.
+
+              AND AT 375 IT READS WRONG UNDER THE FIRST BUTTON. Judged by
+              looking, not by the rule: with the buttons stacked full width, a
+              paragraph between them stops them reading as a pair and pushes the
+              second one down the screen. She asked for it moved below both at
+              that width only if it looked that way, and it does.
+
+              A grid is what does both. One column at 375 with the line ordered
+              last, two columns above it with the line in row two under the
+              first button. Flex could not: order inside the first button's
+              column cannot move a child out of that column, and taking it out
+              of the column would make it a third button-row item at every
+              width. PENDING-COPY 1e8. */}
+          <div className="mt-7 grid grid-cols-1 gap-3 sm:mt-10 sm:grid-cols-[auto_auto] sm:justify-start sm:gap-4">
             {/* AnchorLink, not next/link, from 3 September. The green button
                 was a next/link and scrolled on the first click only; measured
                 on a production build, clicks two and three left scrollY at 0.
@@ -115,27 +129,34 @@ export default function Home() {
                 moved across for the same treatment rather than left as a second
                 way of doing the same thing. Both keep their href, so both still
                 work with JavaScript off. src/lib/anchor-scroll.ts. */}
-            <div className="flex flex-col items-stretch sm:items-start">
-              <AnchorLink
-                href={HERO_CTA.href}
-                className="inline-flex items-center justify-center rounded-xl bg-neon px-7 py-3.5 text-xs font-bold tracking-wider text-forest uppercase shadow-lg transition-all duration-200 hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none"
-              >
-                {HERO_CTA.label}
-              </AnchorLink>
-
-              {DIAGNOSTIC_ENABLED && (
-                <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">
-                  {HERO.diagnosticExplainer}
-                </p>
-              )}
-            </div>
+            <AnchorLink
+              href={HERO_CTA.href}
+              className="order-1 inline-flex items-center justify-center rounded-xl bg-neon px-7 py-3.5 text-xs font-bold tracking-wider text-forest uppercase shadow-lg transition-all duration-200 hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none sm:col-start-1 sm:row-start-1"
+            >
+              {HERO_CTA.label}
+            </AnchorLink>
 
             <AnchorLink
               href={HERO.secondaryHref}
-              className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-black backdrop-blur-md px-7 py-3.5 text-xs font-bold tracking-wider text-white uppercase transition-all duration-200 hover:border-white/45 hover:bg-black/85 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none"
+              className="order-2 inline-flex items-center justify-center rounded-xl border border-white/20 bg-black px-7 py-3.5 text-xs font-bold tracking-wider text-white uppercase backdrop-blur-md transition-all duration-200 hover:border-white/45 hover:bg-black/85 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none sm:col-start-2 sm:row-start-1 sm:self-start"
             >
               {HERO.secondaryLabel}
             </AnchorLink>
+
+            {/* w-0 min-w-full, NOT a max-width, and the two halves do different
+                jobs. width:0 is what the browser uses when it works out how wide
+                this grid column wants to be, so the line contributes nothing to
+                that figure and the column comes out the width of the button
+                alone. min-width:100% is what it is actually laid out at, which
+                is that same width, so it wraps rather than widening anything.
+
+                mt-2 tops the mobile row gap up from 12px to 20px, which is the
+                space the line had under the button row before any of this. */}
+            {DIAGNOSTIC_ENABLED && (
+              <p className="order-3 mt-2 w-0 min-w-full text-sm leading-relaxed text-white/70 sm:col-start-1 sm:row-start-2 sm:mt-0">
+                {HERO.diagnosticExplainer}
+              </p>
+            )}
           </div>
 
           {/* HER SOCIAL PROOF MICRO-LINE IS GONE, her slide 1, 26 September:
