@@ -846,10 +846,17 @@ const DECISIONS = [
        * pair still has to be checked, because one of them drifting back is
        * exactly what it was written for.
        *
-       * THE FORM STILL DIFFERS AND THAT IS DELIBERATE. She writes "$120M" and
-       * the homepage says "$120 million"; hers is her wording on her card and
-       * the homepage's is spec 3.7's. Reported to her in PENDING-COPY 1f2
-       * rather than regularised on her behalf.
+       * THE FORM MATCHED ON 27 SEPTEMBER TOO. This assertion held the About
+       * card at "$120M" and the homepage at "$120 million" for a day and
+       * reported the difference to her rather than regularising it on her
+       * behalf. She asked for the homepage levelled to her form, so both read
+       * "$120M" now and this checks for that.
+       *
+       * THIRD POSITION FOR ONE ASSERTION, AND EVERY MOVE HAS BEEN HERS. Slide
+       * 21 set the disagreement, slide 7 of 26 September ended it on the
+       * number, and her follow-up ended it on the form. It has been moved each
+       * time rather than deleted, which is why the drift was visible at all.
+       * PENDING-COPY 1f4.
        */
       const about = await (await get("/about")).text();
       const home = await (await get("/")).text();
@@ -859,8 +866,11 @@ const DECISIONS = [
       if (!about.includes("$120M book")) {
         return "the About card no longer says $120M, which is her slide 7 wording";
       }
-      if (!home.includes("more than $120 million")) {
-        return "the homepage no longer says $120 million, which is what spec 3.7 and the live site say";
+      if (home.includes("$120 million")) {
+        return "the homepage is back to $120 million, and her follow-up levelled it to her own $120M";
+      }
+      if (!home.includes("more than $120M")) {
+        return "the homepage no longer says $120M, which is the form her slide 7 uses on the About card";
       }
       return null;
     },

@@ -5479,3 +5479,71 @@ the instruction with it was the homepage section only, so we have not touched
 Nothing changed. No dashes to remove and no American spellings, so the house
 rules cost your copy nothing. **You repeat "immediately" in the last sentence of
 the panel and "diagnostic" in the first two; both are yours and both are left.**
+
+---
+
+## 1f4 The newsletter works now, and the figure is levelled
+
+**26 September, your slide 20:** "Fix this, it doesn't work when we subscribe."
+
+### What it was doing, and it was not nothing
+
+We tested the live site before changing anything. Subscribing returned an
+error: **"That did not go through. Please email hello@pivotprime.ae."** No email
+reached you and none reached the subscriber.
+
+**The cause was one line.** Email from this site is sent from a verified
+address at **send.pivotprime.ae**. The subscribe form had its own copy of that
+address, written as **hello@pivotprime.ae**, which is not the verified one. The
+mail service refuses to send from an address it has not verified, so every
+subscription failed at the first step. The enquiry form and the diagnostic both
+use the correct address, which is why only this one was broken.
+
+It now uses the same shared address as the other two, so there is no second copy
+left to drift.
+
+### How a subscription works
+
+Two emails, from the same verified sender as your other forms:
+
+1. **To you at hello@pivotprime.ae**, with the address that subscribed.
+2. **To the subscriber**, a two-line confirmation:
+
+> Thank you for subscribing to Pivot Prime Insights.
+>
+> New articles from the team will come to you, with no round-ups and no filler.
+
+**There is still no mailing list.** The address arrives as an email rather than
+being stored anywhere. That is a working subscribe button, not a list.
+
+### Why not a proper list
+
+The mail service does offer contact lists, and it could be set up without anyone
+logging into a dashboard. **We did not use it**, because it needs the key to have
+a permission that a send-only key does not have, and we cannot check which kind
+of key it is without reading it. If it turned out to be the wrong kind, the form
+would break again for the same reader who reported it broken.
+
+**Sending mail is the thing this key is known to do**, in two other forms,
+today. When you want a real list, this is the first thing to revisit and it is a
+small job.
+
+### Also fixed in the same pass
+
+**The confirmation panel** that replaces the box after a successful subscription
+was still fully rounded while the box and button beside it are square-cornered.
+It now matches them.
+
+### The figure
+
+**Before:** the homepage said *"a multi-line book worth more than $120 million"*
+while your About biography said *"a $120M book"*.
+
+**After:** both say **$120M**, which is the form you used on slide 7.
+
+### One thing worth recording
+
+A check has now moved three times on this one figure, and every move was yours:
+your slide 21 set the two pages deliberately apart, your slide 7 brought the
+number together, and this brings the form together. It was moved rather than
+deleted each time, which is the only reason the difference was visible at all.

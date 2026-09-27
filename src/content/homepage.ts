@@ -361,7 +361,7 @@ export const ACCOUNTABLE = {
 export const FOUNDER = {
   heading: "Pivot Prime is led by a Mathematician, and that changes how the work gets done.",
   body: [
-    "Iram Kauser is one of roughly 75,000 qualified actuaries worldwide. She spent sixteen years in senior operating roles at AIG, MetLife and Gallagher across the UK, the Middle East and Africa: Chief of Staff to a regional CEO across more than 150 staff, and pricing and portfolio strategy for a multi-line book worth more than $120 million.",
+    "Iram Kauser is one of roughly 75,000 qualified actuaries worldwide. She spent sixteen years in senior operating roles at AIG, MetLife and Gallagher across the UK, the Middle East and Africa: Chief of Staff to a regional CEO across more than 150 staff, and pricing and portfolio strategy for a multi-line book worth more than $120M.",
     "People will tell you a process is fine, or that the real problem is headcount. A numbers-led approach takes the emotion out of it. We measure how long each step actually takes, the pass and fail rates, the man hours per function and the cost per transaction, before anyone argues about what to change.",
   ],
   ctaLabel: "Meet the team",

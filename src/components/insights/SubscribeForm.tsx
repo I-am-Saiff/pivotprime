@@ -61,7 +61,12 @@ export default function SubscribeForm({
         {state === "done" ? (
           <p
             role="status"
-            className="mx-auto flex min-h-[50px] max-w-[420px] items-center justify-center rounded-[100px] border border-mid/30 bg-mid/5 px-6 text-sm font-semibold text-forest"
+            // 12px, not a 100px pill, from 27 September. The field and the
+            // button beside it came to 12px on her radius instruction; this
+            // panel replaces both of them in the same slot when a subscription
+            // succeeds, so a pill here meant the box changed shape the moment
+            // it worked. PENDING-COPY 1f4.
+            className="mx-auto flex min-h-[50px] max-w-[420px] items-center justify-center rounded-xl border border-mid/30 bg-mid/5 px-6 text-sm font-semibold text-forest"
           >
             You are on the list. The next piece comes to you.
           </p>
