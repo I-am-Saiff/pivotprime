@@ -110,10 +110,22 @@ export const SERVICES_HEADING = "What do we actually do";
  * One sentence saying what the page is. Logged for Iram in PENDING-COPY 1r.
  */
 export const SERVICES_STANDFIRST =
-  "Five services, used on their own or together. Most engagements begin with the audit, because we will not take responsibility for a fix we have not measured.";
+  "Three services, used on their own or together. Most engagements begin with the audit, because we will not take responsibility for a fix we have not measured.";
 
 /**
- * Spec 3.4 card 6.
+ * Spec 3.4 card 6. NOTHING RENDERS THIS ANY MORE, and it is kept rather than
+ * deleted.
+ *
+ * It was the diagnostic card inside ServiceCards' grid. HOME_DIAGNOSTIC_PANEL
+ * below replaced it on the homepage on 26 September, and her v3 slide 2 points
+ * /services at the same component, so ServiceCards renders nowhere and this card
+ * renders nowhere with it. Preserved unrendered because it is transcribed spec
+ * copy and the grid can be switched back on.
+ *
+ * "WHICH OF THE FIVE" IS NOW "WHICH OF THE THREE" ANYWAY. Her v3 slide 2 asked
+ * for that word changed, and it is changed here even though the sentence no
+ * longer reaches a page, so nothing in the repository still says five. What the
+ * reader sees in its place is HOME_DIAGNOSTIC_PANEL, which never named a count.
  *
  * The spec reads "START WITH THE DIAGNOSTIC (TEXT AS PER CARD SHOWN)". The card
  * it points at is one of the embedded reference images, in which the copy is
@@ -127,55 +139,79 @@ export const SERVICES_STANDFIRST =
 export const DIAGNOSTIC_CARD = {
   eyebrow: "Not sure",
   title: "Start with the diagnostic",
-  body: "Four minutes, six areas, one named constraint. It will tell you which of the five you actually need.",
+  body: "Four minutes, six areas, one named constraint. It will tell you which of the three you actually need.",
   ctaLabel: "Take the diagnostic",
   href: "/diagnostic",
 };
 
 /**
- * HER SLIDE 4, 26 September: THE HOMEPAGE SECTION IS THREE CARDS, NOT FIVE.
+ * HER SLIDE 2 OF THE v3 DECK, 30 September: THREE OFFERS, NOT FIVE DRESSED AS
+ * THREE.
  *
- * Her note: "Have refined it so it reads as 3 cards under diagnose, lead and
- * build. And only 3 offers now." The five offers are still five pages; they are
- * grouped into three cards, with Build and Place living inside the Lead card
- * and UAE Market Entry inside the Build card.
+ * Her 26 September slide 4 asked for three cards and we grouped the five offers
+ * into them, with Build and Place a full sub-offer inside the Lead card and UAE
+ * Market Entry a full sub-offer inside the Build card, each with its own
+ * sub-heading, its own paragraph and its own link. Her status note says that is
+ * not what she meant by three: "Build and Place is still a full offer inside the
+ * Lead card, and UAE Market Entry is still a full offer inside the Build card.
+ * Fold both into short notes as in the mock-up, so there are only 3 offers."
  *
- * TRANSCRIBED FROM A SCREENSHOT OF HER ARTIFACT, NOT FROM A FILE. Every string
- * below was read off an image rather than copied out of something she sent, so
- * it is her wording at one remove. PENDING-COPY 1f3 records it as transcribed
- * rather than verbatim so it can be checked against her original. One phrase is
- * flagged there as a possible mis-read: "Operational Leads", where her article
- * copy elsewhere says "Operations Leads". It is left as transcribed.
+ * SO BOTH SUB-BLOCKS ARE GONE, headings and links with them. UAE market entry
+ * survives as one sentence inside the audit card's note and placing people as
+ * one sentence inside the lead card's note. Neither is an offer on this page any
+ * more.
  *
- * THIS IS SEPARATE FROM SERVICES ABOVE, DELIBERATELY. SERVICES is rendered by
- * ServiceCards on BOTH the homepage and /services, and her scope for this change
- * is "the services section on the homepage only. No other page." So /services
- * keeps the five-card grid and this drives the homepage alone. The two now say
- * different things about the same offers, which is her instruction rather than
- * drift, and it is written down in PENDING-COPY 1f3 for her to settle.
+ * BOTH PAGES ARE STILL LIVE AND STILL LINKED, which is the half that can strand
+ * a page. They are reached from the UAE Market Entry block on the audit page and
+ * the Need other staff block on the fractional page, her slides 11 and 12, and
+ * both of those pages are linked from here. The homepage and /services no longer
+ * link either one directly, so the check that used to assert the homepage links
+ * /services/build-and-place now asserts that pair of blocks instead.
+ *
+ * THE PRICE LINE COMES OFF CARDS TWO AND THREE. Both read "Scoped per
+ * engagement" until now; her mockup gives neither any price line. Only the
+ * audit, the one priced offer, keeps one.
+ *
+ * CARD THREE IS "Technology Builds" AGAIN. "Technology and Market Entry" only
+ * covered two things because market entry was inside it.
+ *
+ * TRANSCRIBED FROM A SCREENSHOT OF HER MOCKUP, NOT FROM A FILE, as the 26
+ * September copy was. PENDING-COPY 1f6 records it as transcribed rather than
+ * verbatim. ONE EARLIER MIS-READ FLAG IS NOW SETTLED BY HER OWN TEXT: the
+ * Build and Place block was transcribed as "Operational Leads" and flagged as
+ * probably "Operations Leads"; her new note writes "Operations Leads", which is
+ * also what the fractional page's own block has said since her slide 12.
+ *
+ * NOW SHARED WITH /services, WHICH IS A REVERSAL OF THE 26 SEPTEMBER NOTE HERE.
+ * That note said this component was homepage-only and /services kept the
+ * five-card grid, because her scope then was "the homepage only". Her v3 slide 2
+ * ends that: "Make /services render the same three cards and diagnostic panel as
+ * the homepage, from the same component, so the two cannot drift again." So
+ * ServiceCards renders nowhere now and this is the only services grid on the
+ * site.
  *
  * EYEBROWS AND BUTTON LABELS ARE STORED IN SENTENCE CASE. She writes them in
- * capitals; the capitals are a CSS text-transform on this site, so storing them
- * would double up.
+ * capitals; the capitals are a CSS text-transform here, so storing them would
+ * double up.
  *
- * HOUSE RULES COST HER COPY NOTHING: no em dash anywhere in it and no American
- * spelling. "prioritised" and "licence" are already British.
+ * HOUSE RULES COST HER COPY NOTHING AGAIN: no em dash in any of it, and
+ * "prioritised" is already British.
  */
-export type HomeServiceBlock = {
-  /** Absent on a card's first block, where the card title is the heading. */
-  heading?: string;
-  body: string;
-  ctaLabel: string;
-  href: string;
-};
-
 export type HomeServiceCard = {
   eyebrow: string;
   title: string;
-  priceLine: string;
-  /** Her slide gives one only to the audit card. Cards two and three have none. */
-  scopeLine?: string;
-  blocks: HomeServiceBlock[];
+  /** The audit only. Her v3 mockup takes the price line off cards two and three. */
+  priceLine?: string;
+  body: string;
+  /**
+   * The pale note under the body, which is what Build and Place and UAE Market
+   * Entry were folded into. dividedAbove where her mockup draws a rule above it,
+   * which is card two only: card one's note runs straight on from the body. That
+   * asymmetry is hers and is followed rather than regularised.
+   */
+  note?: { text: string; dividedAbove?: boolean };
+  ctaLabel: string;
+  href: string;
 };
 
 export const HOME_SERVICES: HomeServiceCard[] = [
@@ -183,52 +219,36 @@ export const HOME_SERVICES: HomeServiceCard[] = [
     eyebrow: "We diagnose",
     title: "Operational Clarity Audit",
     priceLine: "From AED 15,000",
-    scopeLine:
-      "Scope depends on the size of the business, how many functions are in review, and how many people we interview.",
-    blocks: [
-      {
-        body: "We map exactly where your business is losing time and money. We find the constraints, the cost leaks and the processes eating your capacity, then give you a prioritised roadmap of what to fix and in what order. Most engagements start here.",
-        ctaLabel: "See what the audit covers",
-        href: "/services/operational-clarity-audit",
-      },
-    ],
+    body: "We map exactly where your business is losing time and money. We find the constraints, the cost leaks and the processes eating your capacity, then give you a prioritised roadmap of what to fix and in what order. Most engagements start here.",
+    // This note replaces the audit card's old scope line as well as absorbing
+    // market entry. Her mockup has one note on this card, not a note and a
+    // scope line, and the old scope line was ours rather than hers.
+    note: {
+      text: "Scope covers operations, finance, technology, compliance and people. For international businesses looking to set up in Dubai, we include UAE market entry feasibility as part of the audit scope.",
+    },
+    ctaLabel: "See what the audit covers",
+    href: "/services/operational-clarity-audit",
   },
   {
     eyebrow: "We lead",
     title: "Fractional COO, CFO and Chief of Staff",
-    priceLine: "Scoped per engagement",
-    blocks: [
-      {
-        body: "COO, Chief of Staff and CFO seats for businesses that need executive capability for a season rather than a lifetime. We build the operating model and run the weekly execution, then hand it to an operations lead so the structure holds long after the intensive phase ends.",
-        ctaLabel: "How the fractional leadership works",
-        href: "/services/fractional-leadership",
-      },
-      {
-        heading: "Build and Place",
-        body: "We put the right people inside your business temporarily to execute your priorities. Project Managers, Software Engineers, Operational Leads, all sourced, vetted and managed by us.",
-        ctaLabel: "How we staff an engagement",
-        href: "/services/build-and-place",
-      },
-    ],
+    body: "COO, Chief of Staff and CFO seats for businesses that need executive capability for a season rather than a lifetime. We build the operating model and run the weekly execution, then hand it to an operations lead so the structure holds long after the intensive phase ends.",
+    note: {
+      dividedAbove: true,
+      text: "Need people in the seats to execute? We also source, vet and manage Project Managers, Software Engineers and Operations Leads on your behalf.",
+    },
+    // "How fractional leadership works", not "How the fractional leadership
+    // works". She dropped the article.
+    ctaLabel: "How fractional leadership works",
+    href: "/services/fractional-leadership",
   },
   {
     eyebrow: "We build",
-    title: "Technology and Market Entry",
-    priceLine: "Scoped per engagement",
-    blocks: [
-      {
-        heading: "Technology Builds",
-        body: "Apps, websites, CRMs, workflow automation, AI agents and dashboards where technology genuinely removes cost. Come to us with a system you want built or a manual process costing your team hours every week, and we will build it.",
-        ctaLabel: "See what tech we can build",
-        href: "/services/technology-builds",
-      },
-      {
-        heading: "UAE Market Entry",
-        body: "We help international businesses set up in Dubai, from licence to functioning operation. We build the financial model first, then handle the entity, approvals, premises, hiring, compliance, logistics and supply chain. Everything, end to end.",
-        ctaLabel: "What market entry includes",
-        href: "/services/uae-market-entry",
-      },
-    ],
+    title: "Technology Builds",
+    body: "Apps, websites, CRMs, workflow automation, AI agents and dashboards where technology genuinely removes cost. Come to us with a system you want built or a manual process costing your team hours every week, and we will build it.",
+    // "See what we can build", not "See what tech we can build".
+    ctaLabel: "See what we can build",
+    href: "/services/technology-builds",
   },
 ];
 

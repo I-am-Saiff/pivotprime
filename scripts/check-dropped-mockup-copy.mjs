@@ -83,7 +83,11 @@ const KNOWN_ABSENT = [
     //   spec 3.4 block 27: "See what tech we can build"  vs mockup "See what we build"
     //   spec 3.4 block 33: "What market entry includes"  vs mockup "How market entry works"
     match: "See what we build",
-    why: "spec 3.4 block 27 gives this button as \"See what tech we can build\", a green block, and that is what the site carries",
+    why: "SUPERSEDED TWICE AND SHE HAS WON. The spec gave this button as \"See what tech we can build\", a green block, and that was what the site carried. Her v3 slide 2 of 30 September writes it \"See what we can build\", which is her second go at shortening it, so the site carries hers now and neither of the two older forms. PENDING-COPY 1f6",
+  },
+  {
+    match: "How the fractional leadership works",
+    why: "her v3 slide 2 of 30 September drops the article: the lead card links \"How fractional leadership works\". Her services mockup and spec 3.4 block 20 both carry the older form, and her deck is the later instruction. PENDING-COPY 1f6",
   },
   {
     match: "How market entry works",

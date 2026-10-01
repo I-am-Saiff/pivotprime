@@ -5547,3 +5547,222 @@ A check has now moved three times on this one figure, and every move was yours:
 your slide 21 set the two pages deliberately apart, your slide 7 brought the
 number together, and this brings the form together. It was moved rather than
 deleted each time, which is the only reason the difference was visible at all.
+
+---
+
+## 1f5 Meet the CEO, your new founder section
+
+**30 September, your slide 3.** The heading and both paragraphs on the homepage
+founder section are replaced with yours. **Your photograph and the section's
+place on the page are unchanged.**
+
+### ⚠️ This copy was read off a screenshot, not a file
+
+As with your slide 2, everything below was transcribed from an image of your
+mockup rather than copied out of something you sent, so it is your wording at one
+remove. **Please check it against your original.**
+
+### ⚠️ Your image and your note disagree about the eyebrow
+
+| Your mockup image says | Your written note says |
+|---|---|
+| OUR CEO AND FOUNDER | **MEET THE CEO & FOUNDER** |
+
+**We have used the written wording**, because a written instruction is the one
+you can see you gave. Say the word and it becomes the other in a minute. The
+section had **no eyebrow at all** before this, so either way it is a new line
+rather than a changed one.
+
+### What was there before, preserved
+
+> **Pivot Prime is led by a Mathematician, and that changes how the work gets
+> done.**
+>
+> Iram Kauser is one of roughly 75,000 qualified actuaries worldwide. She spent
+> sixteen years in senior operating roles at AIG, MetLife and Gallagher across
+> the UK, the Middle East and Africa: Chief of Staff to a regional CEO across
+> more than 150 staff, and pricing and portfolio strategy for a multi-line book
+> worth more than $120M.
+>
+> People will tell you a process is fine, or that the real problem is headcount.
+> A numbers-led approach takes the emotion out of it. We measure how long each
+> step actually takes, the pass and fail rates, the man hours per function and
+> the cost per transaction, before anyone argues about what to change.
+>
+> *Button: Meet the team*
+
+**The actuary line and the numbers-led paragraph are now nowhere on the site.**
+Your new copy is about the operating record rather than the qualification, so it
+replaces them rather than sitting alongside them. They are written out above so
+nothing is lost if you want either one back.
+
+### What is there now
+
+| | |
+|---|---|
+| Eyebrow | MEET THE CEO & FOUNDER |
+| Heading | Iram Kauser has spent sixteen years running operations inside billion-dollar organisations. Pivot Prime is built from that. |
+| Paragraph 1 | Senior operating roles at AIG, MetLife and Gallagher… |
+| Paragraph 2 | She moved to Dubai from the UK ten years ago… |
+| Button | MEET THE FULL TEAM → /about#team |
+
+The button is at the same 12px corner as every other button on the site.
+
+### The $120 million figure has moved back, and that is yours
+
+**On 27 September you asked for the homepage levelled to "$120M"**, the form in
+your About biography. Your new paragraph writes it out in full as **"$120 million"**.
+That instruction is the later one, so the homepage follows it.
+
+**Your About biography still says "$120M"**, because you have not asked for that
+to change. So the two now use different forms of the same figure again,
+deliberately. The number is 120 in both places.
+
+A check has now moved **four times** on this one figure and every move has been
+yours. It is moved rather than deleted each time, which is the only reason the
+difference is visible at all.
+
+---
+
+## 1f6 Three offers, not five dressed as three
+
+**30 September, your slide 2.** "Build and Place is still a full offer inside the
+Lead card, and UAE Market Entry is still a full offer inside the Build card. Fold
+both into short notes as in the mock-up, so there are only 3 offers."
+
+**You are right, and that is what we built on 26 September.** Your slide 4 asked
+for three cards, and we grouped the five offers into three: each of cards two and
+three carried a second offer underneath, with its own sub-heading, its own
+paragraph and its own link. Three cards, five offers.
+
+### ⚠️ Read off a screenshot again
+
+Transcribed from an image of your mockup rather than a file. **Please check it
+against your original.**
+
+**One earlier flag is now settled by your own words.** In September we flagged
+"Operational Leads" as a possible mis-read. Your new note writes **"Operations
+Leads"**, which is also what the Build and Place block on the fractional page has
+said since your slide 12. Settled.
+
+### What the cards look like now
+
+| | Card 1 | Card 2 | Card 3 |
+|---|---|---|---|
+| Eyebrow | WE DIAGNOSE | WE LEAD | WE BUILD |
+| Title | Operational Clarity Audit | Fractional COO, CFO and Chief of Staff | **Technology Builds** |
+| Price | From AED 15,000 | **none** | **none** |
+| Note | UAE market entry feasibility, in the audit scope | people in the seats, placed and managed | none |
+| Link | See what the audit covers | **How fractional leadership works** | **See what we can build** |
+
+### What we removed, so you can see it listed
+
+1. **The Build and Place block** inside card two: its sub-heading, its paragraph
+   and its link.
+2. **The UAE Market Entry block** inside card three: the same three things.
+3. **"Scoped per engagement"** from cards two and three. Your mockup gives
+   neither a price line, so the audit is now the only card with one. **This is
+   the one deletion you did not name in words**, so it is listed here.
+4. **The old card three title**, "Technology and Market Entry". It only covered
+   two things because market entry sat inside it.
+5. **The audit card's old scope note**, "Scope depends on the size of the
+   business…", which was ours. Your new note replaces it.
+
+### Both pages are still live, and still reachable
+
+Build and Place and UAE Market Entry are **still full pages** and nothing has
+been deleted. They are reached from the two cross-link blocks you asked for on
+slides 11 and 12:
+
+| Page | Reached from |
+|---|---|
+| UAE Market Entry | the **UAE Market Entry** block on the Operational Clarity Audit page |
+| Build and Place | the **Need other staff?** block on the Fractional Leadership page |
+
+Both of those pages are linked from the cards above, so neither is more than one
+click further away than it was.
+
+### ⚠️ One thing in your slide we could not do both halves of
+
+Your slide lists **/services** as a third route to those two pages. It cannot be,
+because your next instruction makes /services show the same three cards as the
+homepage, and those three cards do not link them. **So /services no longer links
+either page directly.** If you would rather it did, a short "also available" line
+under the cards would do it, but that would be a line of copy you have not
+written, so we have not invented one. **Your call.**
+
+---
+
+## 1f7 /services shows the same three cards now
+
+**30 September, your slide 2.** "The page still says which of the five you
+actually need."
+
+### What /services showed before
+
+The eyebrow **OUR SERVICES**, the heading **What do we actually do**, a line
+saying **"Five services, used on their own or together…"**, and then **six
+cards**:
+
+> Operational Clarity Audit · *From AED 15,000*
+> Fractional COO, CFO and Chief of Staff · *Scoped per engagement*
+> Build and Place · *Scoped per engagement*
+> Technology Builds · *Scoped per engagement*
+> UAE Market Entry · *Scoped per engagement*
+> Start with the diagnostic
+
+So the page said five, listed five, and showed six.
+
+### What it shows now
+
+**Exactly what the homepage shows**: your three cards and the full-width
+diagnostic panel, from the same piece of code. The two pages can no longer drift
+apart, because there is only one of them to change.
+
+The line above the cards now reads **"Three services, used on their own or
+together…"**
+
+### The sentence you asked us to change has gone instead
+
+"It will tell you which of the five you actually need" lived in the old
+diagnostic **card**, which was the sixth card in that grid. The full-width panel
+replaced it, and the panel has never named a count. **So the sentence is not on
+the site at all** rather than being changed from five to three. We have changed
+the word in the stored copy as well, so nothing anywhere still says five.
+
+---
+
+## 1f8 Two things in your new styling are hard to read
+
+**Your slide 2 asks for the eyebrow in a pale mist pill and the card title in the
+mid green.** Both are built exactly as you asked. **Both fall below the
+readability standard** the rest of the site meets, and that is worth your
+decision rather than ours.
+
+Measured on the built page:
+
+| | Colour on colour | Measured | Needs |
+|---|---|---|---|
+| Card title, e.g. **Technology Builds** | mid green on card cream | **3.15 : 1** | 4.5 : 1 |
+| Eyebrow, e.g. **WE DIAGNOSE** | mid green on mist | **3.06 : 1** | 4.5 : 1 |
+
+The eyebrow was already at 3.15 before this change, so the pill barely moves it.
+**The titles are the real change**: they were near-black at 12.8 : 1 and are now
+at 3.15 : 1.
+
+Two ways out, either of them a one-line change:
+
+1. **Keep your green and make the titles two pixels larger.** At that size the
+   standard relaxes and the green passes. The cards look almost identical.
+2. **Keep the titles dark** and let the green eyebrow carry the colour.
+
+**Nothing is broken** and the text is perfectly visible on a good screen. It is a
+standard for small screens, bright light and older eyes, and the rest of your
+site meets it.
+
+### Also: the pill is square-cornered, not round
+
+You wrote "pill". We have used the **12px corner** the rest of the site uses,
+which is the same shape as the seat tags on your Fractional Leadership page,
+rather than a fully round capsule. A fully round one would be the only round
+thing on the page. Say if you want it rounder.

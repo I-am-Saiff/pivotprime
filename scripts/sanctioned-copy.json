@@ -1055,11 +1055,52 @@
     },
     {
       "text": "Technology and Market Entry",
-      "status": "traced",
+      "status": "removed",
       "kind": "client-file",
-      "why": "Her wording, slide 4 of the 26 September deck, which groups the five offers into three homepage cards under diagnose, lead and build: \"Have refined it so it reads as 3 cards under diagnose, lead and build. And only 3 offers now.\" This is the third card’s title, covering Technology Builds and UAE Market Entry, both of which keep their own names as sub-headings inside it and their own pages. TRANSCRIBED FROM A SCREENSHOT OF HER ARTIFACT rather than from a file she sent, so it is her wording at one remove and PENDING-COPY 1f3 records it as transcribed for checking against her original. PENDING-COPY 1f3.",
+      "why": "Her wording, slide 4 of the 26 September deck, which groups the five offers into three homepage cards under diagnose, lead and build: \"Have refined it so it reads as 3 cards under diagnose, lead and build. And only 3 offers now.\" This is the third card’s title, covering Technology Builds and UAE Market Entry, both of which keep their own names as sub-headings inside it and their own pages. TRANSCRIBED FROM A SCREENSHOT OF HER ARTIFACT rather than from a file she sent, so it is her wording at one remove and PENDING-COPY 1f3 records it as transcribed for checking against her original. PENDING-COPY 1f3. REMOVED 30 September 2026 BY HER v3 SLIDE 2. The title only covered two things because UAE Market Entry was a sub-offer inside the card, and her status note says that was not three offers: \"UAE Market Entry is still a full offer inside the Build card. Fold both into short notes as in the mock-up, so there are only 3 offers.\" The card is \"Technology Builds\" again. This entry is kept rather than deleted so the removal is on the record, per PENDING-COPY 1f6.",
       "route": "/",
       "element": "h3"
+    },
+    {
+      "text": "How fractional leadership works",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own wording for the lead card's link in her v3 mockup. It replaces \"How the fractional leadership works\", which is the spec 3.4 label: she dropped the article. Transcribed from a screenshot of her v3 deck of 30 September 2026 rather than copied from a file she sent, so it is her wording at one remove. PENDING-COPY 1f6 records it as transcribed rather than verbatim so it can be checked against her original.",
+      "route": "/",
+      "element": "link"
+    },
+    {
+      "text": "See what we can build",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own wording for the build card's link in her v3 mockup. It replaces \"See what tech we can build\", which is the spec 3.4 label. Her 22 August revision had already asked for \"See what we build\" and the spec label was kept then, recorded in docs/REVISIONS-2208.md; this is the second time she has written it shorter, so it is hers twice over. Transcribed from a screenshot of her v3 deck of 30 September 2026 rather than copied from a file she sent, so it is her wording at one remove. PENDING-COPY 1f6 records it as transcribed rather than verbatim so it can be checked against her original.",
+      "route": "/",
+      "element": "link"
+    },
+    {
+      "text": "Meet the full team",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own wording for the founder section's button in her v3 slide 3, \"Meet the CEO\". It replaces the spec 3.7 label \"Meet the team\". The destination is unchanged, /about#team. Transcribed from a screenshot of her v3 deck of 30 September 2026 rather than copied from a file she sent, so it is her wording at one remove. PENDING-COPY 1f6 records it as transcribed rather than verbatim so it can be checked against her original.",
+      "route": "/",
+      "element": "link"
+    },
+    {
+      "text": "Iram Kauser has spent sixteen years running operations inside billion-dollar organisations. Pivot Prime is built from that.",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own heading for the founder section, her v3 slide 3. It replaces the spec 3.7 heading \"Pivot Prime is led by a Mathematician, and that changes how the work gets done.\", which is preserved with both of its paragraphs in PENDING-COPY 1f5. RECORDED HERE EVEN THOUGH THE REVERSE AUDIT DOES NOT INSPECT IT: the findings loop skips anything longer than fourteen words, and this is twenty, so the audit's silence about it is a limit of the tool rather than a trace. The staleness check does read it, so this entry is what notices if the heading is reworded. Transcribed from a screenshot of her v3 deck of 30 September 2026 rather than copied from a file she sent, so it is her wording at one remove. PENDING-COPY 1f6 records it as transcribed rather than verbatim so it can be checked against her original.",
+      "route": "/",
+      "element": "h2"
+    },
+    {
+      "text": "Meet the CEO & Founder",
+      "status": "traced",
+      "kind": "client-file",
+      "mustAppear": false,
+      "why": "Her own eyebrow for the founder section, her v3 slide 3. The section had no eyebrow at all before, so this is a new element rather than a changed string. HER MOCKUP IMAGE AND HER WRITTEN NOTE DISAGREE: the image shows \"Our CEO and Founder\" and the written note says \"Meet the CEO & Founder\". The written wording is used and the discrepancy is in PENDING-COPY 1f5 for her to settle. mustAppear is false because the eyebrow renders as a <p>, which the audit does not collect, so a staleness check on it would report it missing forever. Transcribed from a screenshot of her v3 deck of 30 September 2026 rather than copied from a file she sent, so it is her wording at one remove. PENDING-COPY 1f6 records it as transcribed rather than verbatim so it can be checked against her original.",
+      "route": "/",
+      "element": "p"
     }
   ]
 }

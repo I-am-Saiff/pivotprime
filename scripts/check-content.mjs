@@ -92,8 +92,15 @@ const EXPECTATIONS = [
       { spec: "3.5", text: "These are the patterns before growth stalls", why: "patterns heading" },
       { spec: "3.5", text: "Sales sells things operations cannot deliver", why: "first pattern" },
       { spec: "3.5", text: "You keep losing customers", why: "tenth pattern, proves the whole list is served" },
-      { spec: "3.7", text: "Pivot Prime is led by a Mathematician", why: "founder section heading" },
-      { spec: "3.7", text: "roughly 75,000 qualified actuaries worldwide", why: "founder credential" },
+      // 3.7 WAS REPLACED WHOLESALE BY HER v3 SLIDE 3, "Meet the CEO". The
+      // Mathematician heading and the actuary credential are both gone from the
+      // page, so asserting them would assert the copy she replaced. Preserved in
+      // PENDING-COPY 1f5. Her three new elements are asserted instead, including
+      // the eyebrow, which the section did not have at all before.
+      { spec: "her v3 slide 3", text: "Meet the CEO & Founder", why: "founder eyebrow, a new element in this section" },
+      { spec: "her v3 slide 3", text: "Iram Kauser has spent sixteen years running operations inside billion-dollar organisations", why: "founder heading" },
+      { spec: "her v3 slide 3", text: "She moved to Dubai from the UK ten years ago", why: "founder paragraph two, which proves both paragraphs are served" },
+      { spec: "her v3 slide 3", text: "Meet the full team", why: "founder button, relabelled from \"Meet the team\"" },
       { spec: "3.8", text: "What we have achieved", why: "case studies heading" },
       // The anonymised three moved to /about on 26 August, because her own
       // pp-case-studies.html numbers Cinnacare and Scentmatic as case studies 1
@@ -750,43 +757,149 @@ const DECISIONS = [
     },
   },
   {
-    what: "the homepage services section is three cards and still links all five service pages",
-    where: "PENDING-COPY 1f3",
+    what: "the services section is her three offers on / and /services alike, and the two folded pages are still reachable",
+    where: "PENDING-COPY 1f6",
     run: async (get) => {
       /**
-       * HER SLIDE 4: five cards become three, grouped under diagnose, lead and
-       * build, with the diagnostic lifted out of the grid into a full-width
-       * panel beneath them.
+       * HER v3 SLIDE 2, 30 September. THIS ASSERTION HAS BEEN MOVED, NOT
+       * DELETED, AND THE MOVE IS THE POINT OF IT.
        *
-       * THE HALF THAT MATTERS IS THE LINKS, NOT THE COUNT. Build and Place and
-       * UAE Market Entry came off the header dropdown on her slide 10, so the
-       * homepage is now one of the few places either is reachable from, and
-       * they are reachable only from INSIDE cards two and three. Dropping a
-       * block while reorganising a card would strand a page, which is exactly
-       * how /services/how-we-work became linked from nowhere. check-links
-       * walks the site and would catch it; this says so in one line, here.
+       * It used to read "the homepage services section is three cards and still
+       * links all five service pages", and it asserted
+       * href="/services/build-and-place" on the homepage, because her slide 4 of
+       * 26 September put Build and Place inside card two as a full sub-offer with
+       * its own link. Her v3 slide 2 says that was not three offers: "Build and
+       * Place is still a full offer inside the Lead card, and UAE Market Entry is
+       * still a full offer inside the Build card. Fold both into short notes as
+       * in the mock-up, so there are only 3 offers." So the old assertion now
+       * asserts the opposite of her instruction, and asserting a link from the
+       * homepage would hold the sub-block in place.
        *
-       * Three h3 card titles, her three, and six links out of the section.
+       * SO IT ASSERTS REACHABILITY WHERE SHE PUT IT INSTEAD. Both pages are
+       * still live, and they are reached from the two cross-link blocks she asked
+       * for on slides 11 and 12: the UAE Market Entry block on the audit page and
+       * the Need other staff block on the fractional page. Those two pages are
+       * themselves linked from the cards here, so neither route is stranded. This
+       * is the half that can lose a whole page without anything else noticing,
+       * which is how /services/how-we-work came to be linked from nowhere at all
+       * while every check passed on it.
+       *
+       * AND IT NOW COVERS /services AS WELL, which is her second instruction:
+       * "Make /services render the same three cards and diagnostic panel as the
+       * homepage, from the same component, so the two cannot drift again." Every
+       * assertion below runs against both routes, so a card edited into one and
+       * not the other fails here rather than being found by reading two files.
        */
-      const html = await (await get("/")).text();
-      for (const title of ["Operational Clarity Audit", "Fractional COO, CFO and Chief of Staff", "Technology and Market Entry"]) {
-        if (!textOf(html).includes(title)) return `the homepage services section has lost the "${title}" card`;
-      }
-      for (const slug of ["operational-clarity-audit", "fractional-leadership", "build-and-place", "technology-builds", "uae-market-entry"]) {
-        if (!html.includes(`href="/services/${slug}"`)) {
-          return `/services/${slug} is no longer linked from the homepage, and it is off the header dropdown too`;
+      const TITLES = [
+        "Operational Clarity Audit",
+        "Fractional COO, CFO and Chief of Staff",
+        "Technology Builds",
+      ];
+      const LABELS = [
+        "See what the audit covers",
+        "How fractional leadership works",
+        "See what we can build",
+      ];
+      // The notes the two folded offers became. First clause only, matched on
+      // the tag-stripped page.
+      const NOTES = [
+        "we include UAE market entry feasibility as part of the audit scope",
+        "We also source, vet and manage Project Managers, Software Engineers and Operations Leads",
+      ];
+
+      /**
+       * EVERY ASSERTION BELOW IS SCOPED TO THE GRID, NOT TO THE PAGE, AND BOTH
+       * DIRECTIONS NEEDED IT. Twice, measured rather than reasoned:
+       *
+       *   THE PRESENCE CHECKS PASSED WITH A CARD BROKEN ON PURPOSE. Card three's
+       *   title was changed back to "Technology and Market Entry" to prove this
+       *   assertion still fails, and it did not: "Technology Builds" is a label
+       *   in the header services dropdown, so it is in the served HTML of every
+       *   page whatever the cards say. A check the navigation can satisfy is not
+       *   a check on the cards. The heading-order list caught the break; this did
+       *   not, and it is the one that is supposed to.
+       *
+       *   THE ABSENCE CHECKS FAILED ON COPY THEY ARE NOT ABOUT. "UAE Market
+       *   Entry" matched the Scentmatic case study's tag row on the homepage,
+       *   "UAE Market Entry · Financial modelling", which is hers and has nothing
+       *   to do with the service cards.
+       *
+       * data-services-grid is on the shared component itself, so it means the
+       * same thing on both routes. The homepage's own id="services" sits on a
+       * section /services has not got.
+       */
+      const gridOf = (html) => {
+        const at = html.indexOf("data-services-grid");
+        if (at === -1) return null;
+        const end = html.indexOf("</section>", at);
+        return end === -1 ? null : html.slice(at, end);
+      };
+
+      for (const route of ["/", "/services"]) {
+        const html = await (await get(route)).text();
+        const grid = gridOf(html);
+        if (!grid) return `${route} is not rendering the shared services grid at all`;
+        const text = textOf(grid);
+
+        for (const needle of [...TITLES, ...LABELS, ...NOTES, "From AED 15,000"]) {
+          if (!text.includes(needle)) return `the services grid on ${route} has lost ${JSON.stringify(needle)}`;
         }
+        // Folded into notes means no sub-heading and no link. Her card one says
+        // "UAE market entry feasibility" in lower case, so these capitalised
+        // names inside the grid can only be the offer blocks coming back.
+        for (const gone of ["Build and Place", "UAE Market Entry"]) {
+          if (text.includes(gone)) return `${route} shows "${gone}" as an offer again, and her v3 slide 2 folded it into a note`;
+        }
+        if (text.includes("Scoped per engagement")) {
+          return `${route} has "Scoped per engagement" back on a card, and her mockup gives cards two and three no price line`;
+        }
+        // The sub-blocks each had their own h4. One link per card is the shape
+        // she asked for, so the grid carries no sub-heading at all now.
+        if (/<h4[\s>]/.test(grid)) {
+          return `${route} has a sub-heading back inside a service card, which is the sub-offer shape her v3 slide 2 removed`;
+        }
+        for (const slug of ["build-and-place", "uae-market-entry"]) {
+          if (grid.includes(`href="/services/${slug}"`)) return `${route} links /services/${slug} from a card again`;
+        }
+        for (const slug of ["operational-clarity-audit", "fractional-leadership", "technology-builds"]) {
+          if (!grid.includes(`href="/services/${slug}"`)) return `the services grid on ${route} no longer links /services/${slug}`;
+        }
+        // Three cards, counted rather than inferred from three titles matching.
+        const cards = grid.split("<li ").length - 1;
+        if (cards !== 3) return `${route} renders ${cards} service cards, and her v3 slide 2 asks for three`;
       }
-      for (const sub of ["Build and Place", "Technology Builds", "UAE Market Entry"]) {
-        if (!textOf(html).includes(sub)) return `the "${sub}" block has gone from inside its card`;
+
+      // REACHABILITY, which is what this assertion was moved to hold.
+      const reachable = [
+        ["/services/uae-market-entry", "/services/operational-clarity-audit", "Find out more about UAE Market Entry"],
+        ["/services/build-and-place", "/services/fractional-leadership", "Find out more about Build and Place"],
+      ];
+      const sitemap = await (await get("/sitemap.xml")).text();
+      for (const [target, from, button] of reachable) {
+        const res = await get(target);
+        if (res.status !== 200) return `${target} answers ${res.status}, and it is meant to stay live`;
+        if (!sitemap.includes(target)) return `${target} has fallen out of the sitemap`;
+        const parent = await (await get(from)).text();
+        if (!parent.includes(`href="${target}"`)) {
+          return `${target} is linked from nowhere: it came off the cards and ${from} no longer links it either`;
+        }
+        if (!textOf(parent).includes(button)) return `the "${button}" block has gone from ${from}, which is the route to ${target} now`;
       }
+
       if (!DIAGNOSTIC_ENABLED) return null;
-      // The panel, not a sixth card: its heading has to be OUTSIDE the card
-      // list, which is the one structural thing her slide changed about it.
-      const list = html.indexOf("Operational Clarity Audit");
-      const panel = html.indexOf("Start with the diagnostic");
-      if (panel === -1) return "the diagnostic panel is not on the homepage";
-      return panel > list ? null : "the diagnostic sits above the three cards rather than in a panel beneath them";
+      // The panel, not a card inside the grid: its heading has to sit AFTER the
+      // card list on both routes, which is the structural thing her slide 4
+      // changed about it and her v3 slide 2 left alone.
+      for (const route of ["/", "/services"]) {
+        const grid = gridOf(await (await get(route)).text());
+        const list = grid.indexOf("Operational Clarity Audit");
+        const panel = grid.indexOf("Start with the diagnostic");
+        if (panel === -1) return `the diagnostic panel is not on ${route}`;
+        if (panel < list) return `the diagnostic sits above the three cards on ${route} rather than in a panel beneath them`;
+        // Beneath the cards means outside the card list, not a fourth <li>.
+        if (grid.lastIndexOf("</ul>") > panel) return `the diagnostic is back inside the card list on ${route}`;
+      }
+      return null;
     },
   },
   {
@@ -827,8 +940,8 @@ const DECISIONS = [
     },
   },
   {
-    what: "both the About card and the homepage say 120, after her slide 7 settled it",
-    where: "PENDING-COPY 1i and 1f2",
+    what: "both the About card and the homepage say 120, in the form each of her slides uses",
+    where: "PENDING-COPY 1i, 1f2, 1f4 and 1f5",
     run: async (get) => {
       /**
        * THIS DECISION HAS FLIPPED, AND THE GUARD IS WHAT CAUGHT IT.
@@ -866,11 +979,21 @@ const DECISIONS = [
       if (!about.includes("$120M book")) {
         return "the About card no longer says $120M, which is her slide 7 wording";
       }
-      if (home.includes("$120 million")) {
-        return "the homepage is back to $120 million, and her follow-up levelled it to her own $120M";
+      // FOURTH POSITION, AND THIS MOVE REVERSES THE THIRD. Her v3 slide 3 of 30
+      // September rewrites the homepage founder paragraph and writes the figure
+      // out in full: "a book worth more than $120 million". That is later than
+      // the 27 September instruction that levelled the homepage to "$120M", so
+      // it wins on the homepage. SHE HAS NOT TOUCHED THE ABOUT BIOGRAPHY, so
+      // that keeps "$120M" and the two forms differ again, deliberately. The
+      // number is what this pair is really for, and both still say 120.
+      if (home.includes("more than $120M")) {
+        return "the homepage is back to $120M, and her v3 slide 3 writes the figure out as $120 million";
       }
-      if (!home.includes("more than $120M")) {
-        return "the homepage no longer says $120M, which is the form her slide 7 uses on the About card";
+      if (!home.includes("more than $120 million")) {
+        return "the homepage no longer says $120 million, which is her v3 slide 3 wording";
+      }
+      if (home.includes("$100 million")) {
+        return "the homepage has picked up $100 million, which is the figure her slide 7 replaced";
       }
       return null;
     },
@@ -1192,7 +1315,10 @@ const HEADING_ORDER = [
       "You don", // 3.9 Who we serve, contraction differs by apostrophe encoding
       "This is what our team has delivered", // 3.3, her "Measured Impact"
       "What do we actually do", // 3.4
-      "Pivot Prime is led by a Mathematician", // 3.7, her "Meet Iram"
+      // 3.7's heading was replaced wholesale by her v3 slide 3. The section has
+      // not moved: it is still her "Meet Iram" position, with her own heading in
+      // it and an eyebrow above it that the section did not have before.
+      "Iram Kauser has spent sixteen years running operations", // her v3 slide 3, "Meet the CEO"
       "What we have achieved", // 3.8 Case Studies
       // 27 August: the authored SEO H2 was cut with the rest of the fees
       // explanation on the client's verbal instruction, so the spine heading is
@@ -1209,17 +1335,23 @@ const HEADING_ORDER = [
   {
     route: "/services",
     spec: "4",
-    // The five card titles are H2 here and H3 on the homepage, from the same
-    // component via headingLevel. On the homepage the section already carries
-    // its own H2 above the cards; here the page heading is the H1 and there was
-    // no H2 at all, so the cards sat under an H1 with a level skipped, which
-    // spec 4.5 forbids.
+    // THREE CARD TITLES, NOT FIVE, SINCE HER v3 SLIDE 2. This page rendered
+    // ServiceCards until then, so this list held the five titles plus nothing for
+    // the diagnostic, which was a card with an H3 inside the grid. It now renders
+    // HomeServices, the same component as the homepage, so the diagnostic is a
+    // full-width panel whose heading takes the same level as the cards.
+    //
+    // The titles are H2 here and H3 on the homepage, from the one component via
+    // headingLevel. On the homepage the section already carries its own H2 above
+    // the cards; here the page heading is the H1 and there would be no H2 at
+    // all, so the cards would sit under an H1 with a level skipped, which spec
+    // 4.5 forbids.
     h2: [
       "Operational Clarity Audit",
       "Fractional COO, CFO and Chief of Staff",
-      "Build and Place",
       "Technology Builds",
-      "UAE Market Entry",
+      // Gated with the panel it belongs to, as the card it replaced was.
+      ...(DIAGNOSTIC_ENABLED ? ["Start with the diagnostic"] : []),
     ],
   },
 ];

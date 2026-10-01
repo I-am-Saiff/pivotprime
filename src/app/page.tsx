@@ -399,6 +399,13 @@ export default function Home() {
         <div className="mx-auto max-w-6xl grid items-center gap-7 sm:gap-12 md:grid-cols-2">
           {/* Copy column — left on desktop */}
           <div>
+            {/* HER v3 SLIDE 3 ADDS AN EYEBROW. There was none here: the section
+                went straight into its H2, so this is a new element rather than a
+                changed string. Same treatment as the other section eyebrows on
+                this page, which is where the capitals come from. */}
+            <p className="mb-4 text-xs font-semibold tracking-[0.18em] text-mid uppercase">
+              {FOUNDER.eyebrow}
+            </p>
             <h2 className="mb-8 text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
               {FOUNDER.heading}
             </h2>

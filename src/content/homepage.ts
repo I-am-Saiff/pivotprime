@@ -358,13 +358,42 @@ export const ACCOUNTABLE = {
 };
 
 // 3.7 THE PERSON BEHIND IT
+/**
+ * HER SLIDE 3 OF THE v3 DECK, 30 September, "Meet the CEO".
+ *
+ * WHAT IT REPLACES IS PRESERVED IN PENDING-COPY 1f5: the heading "Pivot Prime is
+ * led by a Mathematician, and that changes how the work gets done.", the actuary
+ * paragraph, and the numbers-led paragraph beginning "People will tell you a
+ * process is fine". Hers is about the operating record rather than the
+ * qualification, so it replaces them rather than joining them. The portrait and
+ * the section's position on the page are unchanged, as she asked.
+ *
+ * THE EYEBROW IS HER WRITTEN WORDING, NOT HER IMAGE, AND THE SECTION HAD NONE.
+ * Her mockup image shows "Our CEO and Founder"; her written instruction says
+ * "Meet the CEO & Founder". The written wording wins and the discrepancy is
+ * recorded in PENDING-COPY 1f5 rather than settled on her behalf. Stored in
+ * sentence case because the eyebrow treatment uppercases it in CSS.
+ *
+ * "$120 million", NOT "$120M", AND THAT REVERSES SOMETHING WE DID ON HER
+ * INSTRUCTION. The homepage was levelled from "$120 million" to "$120M" on 27
+ * September so it matched the form in her About biography. This copy is later and
+ * writes the figure out in full, so it wins here. HER ABOUT BIOGRAPHY KEEPS
+ * "$120M": she has not changed that, so the two forms differ again, deliberately.
+ * The check holding the pair is moved rather than deleted, for the fourth time,
+ * and every move has been hers.
+ *
+ * TRANSCRIBED FROM A SCREENSHOT of her mockup rather than copied from a file,
+ * like her slide 2 copy. PENDING-COPY 1f5 records that.
+ */
 export const FOUNDER = {
-  heading: "Pivot Prime is led by a Mathematician, and that changes how the work gets done.",
+  eyebrow: "Meet the CEO & Founder",
+  heading:
+    "Iram Kauser has spent sixteen years running operations inside billion-dollar organisations. Pivot Prime is built from that.",
   body: [
-    "Iram Kauser is one of roughly 75,000 qualified actuaries worldwide. She spent sixteen years in senior operating roles at AIG, MetLife and Gallagher across the UK, the Middle East and Africa: Chief of Staff to a regional CEO across more than 150 staff, and pricing and portfolio strategy for a multi-line book worth more than $120M.",
-    "People will tell you a process is fine, or that the real problem is headcount. A numbers-led approach takes the emotion out of it. We measure how long each step actually takes, the pass and fail rates, the man hours per function and the cost per transaction, before anyone argues about what to change.",
+    "Senior operating roles at AIG, MetLife and Gallagher, across the UK, the Middle East and Africa. Chief of Staff to a regional CEO, managing priorities across more than 150 staff. Pricing and portfolio strategy for a book worth more than $120 million. Her background spans the full breadth of what it actually takes to run a business: compliance, finance, IT, HR and transactional processing. Not strategy or theory, but the execution itself. Iram knows how to diagnose, lead and build.",
+    "She moved to Dubai from the UK ten years ago. The team around her reflects the same depth, with real experience across the same disciplines and the same region.",
   ],
-  ctaLabel: "Meet the team",
+  ctaLabel: "Meet the full team",
   ctaHref: "/about#team",
   /**
    * Supplied by the client on 22 August 2026 and dropped in at

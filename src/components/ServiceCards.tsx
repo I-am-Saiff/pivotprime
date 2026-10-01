@@ -6,11 +6,23 @@ import { DIAGNOSTIC_CARD, SERVICES } from "@/content/services";
 import { DIAGNOSTIC_ENABLED } from "@/lib/flags";
 
 /**
- * The service card grid, spec 3.4.
+ * The five-card service grid, spec 3.4. NOTHING RENDERS THIS ANY MORE.
  *
- * Shared between the homepage section and the /services parent page, because
- * spec 4 defines the parent as "a copy of the services section from the home
- * page" with "no new copy needed for it". Two implementations would drift.
+ * It is kept in the tree rather than deleted, like the four diagnostic persona
+ * cards, because it is the only rendering of SERVICES and DIAGNOSTIC_CARD and
+ * both are transcribed spec copy. Switch it back on by importing it in place of
+ * HomeServices.
+ *
+ * HOW IT LOST ITS LAST CONSUMER. It was shared between the homepage section and
+ * /services. Her slide 4 of 26 September replaced it on the homepage with
+ * HomeServices, three cards instead of five; her v3 slide 2 of 30 September
+ * points /services at the same component so the two pages cannot drift. SERVICES
+ * itself is still live code: src/app/sitemap.ts maps it for the five service
+ * page URLs, so all five routes stay in the sitemap.
+ *
+ * Originally shared because spec 4 defines the parent as "a copy of the services
+ * section from the home page" with "no new copy needed for it". Two
+ * implementations would drift.
  *
  * On mobile (< md): Renders as a smooth, horizontal swipeable snap-track to
  * prevent excessive vertical scrolling.

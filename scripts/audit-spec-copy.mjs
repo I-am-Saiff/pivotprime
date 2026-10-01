@@ -80,6 +80,20 @@ const stripInstructions = (block) =>
  */
 const EXPECTED_ABSENT = [
   {
+    section: "3.7",
+    // The founder section as a unit. Her slide 3 replaced the heading and both
+    // paragraphs in one instruction, so it is one entry with one condition.
+    match: [
+      "Pivot Prime is led by a Mathematician",
+      // startsWith, so the needle is the head of the block, not a phrase in it.
+      "Iram Kauser is one of roughly 75,000",
+      "People will tell you a process is fine",
+    ],
+    why: "her slide 3 of the v3 deck, 30 September, replaces the whole founder section: \"Meet the CEO\". Her version is about the operating record rather than the actuarial qualification, so it replaces 3.7 rather than joining it. The section itself has not moved and her photograph is unchanged; the eyebrow, heading and both paragraphs are hers. The deck is later than the copy document, which is the precedence rule already used for spec 3.6 and section 6",
+    appearsWhen: "Iram asks for the Mathematician heading back, at which point every word of 3.7 is in PENDING-COPY 1f5",
+    tracked: "PENDING-COPY 1f5",
+  },
+  {
     section: "6.1",
     // One decision, every block it removed. `match` takes a list so a section
     // that goes as a unit is one entry with one condition, rather than four
