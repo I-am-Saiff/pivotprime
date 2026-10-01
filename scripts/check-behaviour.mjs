@@ -253,6 +253,38 @@ const openPanels = (page) =>
   );
 }
 
+// EVERY LOGO IS VISIBLE WHEN MOTION IS REDUCED. The rows scroll; a device that
+// asks for less movement used to get them frozen at their start, so the logos
+// her v3 slide 1 asked for, which sit at the end of each row, never appeared.
+// Each named logo in the announced copy must lie inside its row's visible box.
+{
+  for (const [label, width, mobile] of [["desktop", 1440, false], ["touch", 375, true]]) {
+    const context = await browser.newContext({ viewport: { width, height: 900 }, isMobile: mobile, hasTouch: mobile, reducedMotion: "reduce" });
+    const page = await context.newPage();
+    await page.goto(BASE, { waitUntil: "load" });
+    const hidden = await page.evaluate(() => {
+      const out = [];
+      // The announced copy only: the second copy exists for the loop and is
+      // aria-hidden, and it carries its own heading.
+      for (const h of document.querySelectorAll("[aria-hidden='false'] h3")) {
+        const row = h.closest(".overflow-hidden");
+        if (!row || !row.querySelector("img, svg[role='img']")) continue;
+        const r = row.getBoundingClientRect();
+        const copy = h.closest("[aria-hidden='false']");
+        for (const el of copy.querySelectorAll("img[alt]:not([alt='']), svg[aria-label]")) {
+          // The tile, not the image: a lazy image far below the fold can
+          // measure 0 wide before it loads while its tile is fully in view.
+          const b = (el.closest(".flex-shrink-0") || el).getBoundingClientRect();
+          if (b.left < r.left - 1 || b.right > r.right + 1 || b.width === 0) out.push(el.getAttribute("alt") || el.getAttribute("aria-label"));
+        }
+      }
+      return out;
+    });
+    expect(`${label}: with reduced motion every logo in both rows is visible`, hidden.length === 0, `out of view: ${hidden.join(", ")}`);
+    await context.close();
+  }
+}
+
 // NO GREY BAND UNDER THE CASE STUDIES. Her v3 slide 11: "remove the band". The
 // band was the case study cards' soft shadow, cut square on every side by the
 // sideways-scrolling list that holds them. It survived one fix that only gave

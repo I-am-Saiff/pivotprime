@@ -6404,6 +6404,18 @@ with Iram" in the picture. The email is unchanged and still carries the same wor
 The advice document (all six versions) now quotes your slide exactly, as your two
 paragraphs, and its "Shown when" lines say what the screen now does.
 
+### The logos, for visitors who ask for less movement
+
+> **Slide 1:** "Ford, Dubizzle and OSN are missing." and "The "Companies we have
+> delivered for" strip has none of Cinnacare, Nurture UAE, Scentmatic or
+> BookMeetings yet."
+
+The close-out check found that a visitor whose phone or computer is set to reduce
+movement saw both logo rows standing still at their start, so the seven logos you
+asked for, which sit at the end of the rows, never appeared for them. For those
+visitors the rows now wrap onto as many lines as they need and every logo shows.
+Everyone else sees the rows moving as before.
+
 ### "START THE DIAGNOSTIC →", and the bright green dots
 
 > **Slide 7:** "Keep wording as shown in this picture" and "start the diagnostic

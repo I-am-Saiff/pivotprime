@@ -253,12 +253,21 @@ export default function Home() {
                   rowIndex % 2 === 0
                     ? "animate-[marquee_46s_linear_infinite]"
                     : "animate-[marquee-reverse_46s_linear_infinite]"
-                } motion-reduce:animate-none`}
+                } motion-reduce:animate-none motion-reduce:w-full`}
               >
+                {/* WRAPPED, NOT STOPPED, WHEN MOTION IS REDUCED, 2 October. A
+                    visitor whose device asks for less movement used to get the
+                    row frozen at its start, so only the label and the first few
+                    tiles ever showed, and the logos her v3 slide 1 asked for,
+                    all at the end of the rows, never appeared for them. Now the
+                    first copy wraps onto as many lines as it needs and the
+                    second copy, which exists only for the loop, is hidden. */}
                 {[0, 1].map((copy) => (
                   <div
                     key={copy}
-                    className="flex items-center space-x-12 px-6"
+                    className={`flex items-center space-x-12 px-6 motion-reduce:flex-wrap motion-reduce:gap-4 motion-reduce:space-x-0 motion-reduce:px-0 ${
+                      copy === 1 ? "motion-reduce:hidden" : ""
+                    }`}
                     aria-hidden={copy === 1}
                   >
                     {/* MIST FILL, the fourth and current state, on the client's
