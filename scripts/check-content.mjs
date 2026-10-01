@@ -658,7 +658,17 @@ const DECISIONS = [
       }
 
       // The two behind client state, read out of the chunk the page loads.
-      const chunks = [...new Set([...html.matchAll(/src="(\/_next\/static\/chunks\/[^"]+\.js)"/g)].map((m) => m[1]))];
+      /**
+       * THE PATH DIFFERS BETWEEN A LOCAL BUILD AND PRODUCTION, and this check was
+       * written against the local one only. `next start` serves
+       * /_next/static/chunks/..., Vercel serves /_next/static/immutable/chunks/...,
+       * so the first version of this found zero chunks on the live site and would
+       * have failed there with "the diagnostic's own script is not among the
+       * chunks the page loads" while the buttons were perfectly correct. Caught by
+       * running it against production rather than by reading it. Matched on
+       * /_next/static/ and a .js ending, which covers both.
+       */
+      const chunks = [...new Set([...html.matchAll(/src="(\/_next\/static\/[^"]+\.js)"/g)].map((m) => m[1]))];
       let js = null;
       for (const c of chunks) {
         const body = await (await get(c)).text();
