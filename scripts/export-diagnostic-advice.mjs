@@ -70,7 +70,13 @@ if (problems.length) { console.error("PARSE FAILED:\n  " + problems.join("\n  ")
 const out = [];
 out.push("# The diagnostic advice, all six versions");
 out.push("");
-out.push("**For Iram.** Your v3 slide 8: *\"I have to read all the different versions of advice we give, can you share the data all shown here.\"*");
+// Her slide 8, quoted as she wrote it: two paragraphs, the second starting
+// with a capital. The first version ran them together into one sentence.
+out.push("**For Iram.** Your v3 slide 8:");
+out.push("");
+out.push("> [1] I have to read all the different versions of advice we give, can you share");
+out.push(">");
+out.push("> The data all shown here, it will all pop up on screen when they enter their email address in, and look basically like this - https://claude.ai/code/artifact/e38bc4c5-1a88-4015-bed0-0016d663ae84");
 out.push("");
 out.push("This is every word of advice the diagnostic can produce. **It is generated straight from the file the website reads**, so it is what a reader sees, not a retyping of it.");
 out.push("");
@@ -99,7 +105,8 @@ for (const id of DOMAIN_ORDER) {
   out.push("");
   out.push(`## ${n}. ${names[id]}`);
   out.push("");
-  out.push(`**Shown when:** ${names[id]} is the reader's lowest scoring domain. On screen it is tagged *${L.constraint}*.`);
+  // True from 2 October: the section is on screen again once the email is in.
+  out.push(`**Shown when:** ${names[id]} is the reader's lowest scoring domain. Once the email address is entered it appears on screen under *${L.constraint}*, and the emailed report carries the same words.`);
   out.push("");
   out.push(`### ${L.means}`);
   out.push("");

@@ -141,11 +141,12 @@ export const DIAGNOSTIC_RESULTS = {
    * SHORTENED FROM "Book a call with Iram" ON 26 SEPTEMBER, her instruction,
    * everywhere the string appeared.
    *
-   * THE EMAIL IS THE ONLY THING THAT READS THIS NOW. The results screen stopped
-   * rendering the constraint section on 18 September, so this label reaches a
-   * reader through buildReportEmail and nowhere else. It is in her scope for
-   * that reason: she asked for the email included deliberately, so the site and
-   * the emailed report do not disagree on what the button says.
+   * THE SCREEN AND THE EMAIL BOTH READ THIS. The results screen stopped
+   * rendering the constraint section on 18 September and shows it again after
+   * unlock from 2 October, on her v3 slide 8, so this label reaches a reader on
+   * screen and through buildReportEmail. She asked for the email included
+   * deliberately, so the site and the emailed report do not disagree on what
+   * the button says.
    *
    * The site's own three instances live in src/content/insights.ts.
    * PENDING-COPY 1e4.

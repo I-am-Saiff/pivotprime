@@ -655,8 +655,11 @@ const DECISIONS = [
           return `a button on /diagnostic is a 100px pill again: ${tag.slice(0, 90)}`;
         }
       }
-      if (!html.includes("rounded-xl bg-neon px-10 py-4")) {
-        return "the Start the diagnostic button is no longer at the site's 12px radius";
+      // Capitals and the arrow from 2 October, her slide 7 picture. Matched on
+      // the whole class run so the Unlock button's "px-8 py-3.5" cannot stand
+      // in for it.
+      if (!html.includes("rounded-xl bg-neon px-8 py-3 font-sans text-xs font-bold tracking-wider text-forest uppercase")) {
+        return "the Start the diagnostic button is no longer at the site's 12px radius, set like the other green buttons";
       }
 
       // The two behind client state, read out of the chunk the page loads.
@@ -1580,7 +1583,9 @@ const DECISIONS = [
         ["/services/fractional-leadership", "Next step", "Find out which seat is actually missing."],
         ["/services/build-and-place", "The difference", "A consultant tells you what to do."],
         ["/services/technology-builds", "Bring us the problem", "An app you want built"],
-        ["/services/uae-market-entry", "Straight answer", "will not make money here."],
+        // Her own heading again from 2 October, her 23 August slide 16; the
+        // 31 August rebuild had brought back the older line. PENDING-COPY 1g4.
+        ["/services/uae-market-entry", "Straight answer", "We are not interested in launching a business in the UAE which will fail."],
       ];
       for (const [route, eyebrow, heading] of closers) {
         const html = await (await get(route)).text();

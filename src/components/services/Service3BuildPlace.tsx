@@ -223,9 +223,11 @@ export default function Service3BuildPlace() {
             </div>
             </div>
 
-            <p className="text-[14px] text-[#5e6f68] mt-6 min-h-[44px] max-w-2xl">
-              Six seats we can fill. You never take all six. The audit says which ones the business actually needs, and that is what gets placed.
-            </p>
+            {/* THE CAPTION UNDER THE DIAGRAM IS GONE, 2 October. Her 23 August
+                slide 14: "Text on the animation at the bottom, remove that."
+                It read "Six seats we can fill. You never take all six. The
+                audit says which ones the business actually needs, and that is
+                what gets placed." PENDING-COPY 1g4. */}
           </div>
         </div>
       </section>

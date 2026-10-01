@@ -1,6 +1,10 @@
 # The diagnostic advice, all six versions
 
-**For Iram.** Your v3 slide 8: *"I have to read all the different versions of advice we give, can you share the data all shown here."*
+**For Iram.** Your v3 slide 8:
+
+> [1] I have to read all the different versions of advice we give, can you share
+>
+> The data all shown here, it will all pop up on screen when they enter their email address in, and look basically like this - https://claude.ai/code/artifact/e38bc4c5-1a88-4015-bed0-0016d663ae84
 
 This is every word of advice the diagnostic can produce. **It is generated straight from the file the website reads**, so it is what a reader sees, not a retyping of it.
 
@@ -27,7 +31,7 @@ The band and the advice are independent: any of the four bands can appear with a
 
 ## 1. Founder dependency
 
-**Shown when:** Founder dependency is the reader's lowest scoring domain. On screen it is tagged *Primary constraint*.
+**Shown when:** Founder dependency is the reader's lowest scoring domain. Once the email address is entered it appears on screen under *Primary constraint*, and the emailed report carries the same words.
 
 ### What this means for your business
 
@@ -49,7 +53,7 @@ The Operational Clarity Audit begins by mapping every decision that sits with th
 
 ## 2. Process and delivery
 
-**Shown when:** Process and delivery is the reader's lowest scoring domain. On screen it is tagged *Primary constraint*.
+**Shown when:** Process and delivery is the reader's lowest scoring domain. Once the email address is entered it appears on screen under *Primary constraint*, and the emailed report carries the same words.
 
 ### What this means for your business
 
@@ -71,7 +75,7 @@ The Operational Clarity Audit maps how work actually flows through your business
 
 ## 3. Commercial and margin
 
-**Shown when:** Commercial and margin is the reader's lowest scoring domain. On screen it is tagged *Primary constraint*.
+**Shown when:** Commercial and margin is the reader's lowest scoring domain. Once the email address is entered it appears on screen under *Primary constraint*, and the emailed report carries the same words.
 
 ### What this means for your business
 
@@ -93,7 +97,7 @@ The Operational Clarity Audit includes a structured margin review: mapping prici
 
 ## 4. Data and visibility
 
-**Shown when:** Data and visibility is the reader's lowest scoring domain. On screen it is tagged *Primary constraint*.
+**Shown when:** Data and visibility is the reader's lowest scoring domain. Once the email address is entered it appears on screen under *Primary constraint*, and the emailed report carries the same words.
 
 ### What this means for your business
 
@@ -115,7 +119,7 @@ The Operational Clarity Audit designs the reporting infrastructure your business
 
 ## 5. People and accountability
 
-**Shown when:** People and accountability is the reader's lowest scoring domain. On screen it is tagged *Primary constraint*.
+**Shown when:** People and accountability is the reader's lowest scoring domain. Once the email address is entered it appears on screen under *Primary constraint*, and the emailed report carries the same words.
 
 ### What this means for your business
 
@@ -137,7 +141,7 @@ The Operational Clarity Audit restructures how outcomes are owned inside your bu
 
 ## 6. Technology leverage
 
-**Shown when:** Technology leverage is the reader's lowest scoring domain. On screen it is tagged *Primary constraint*.
+**Shown when:** Technology leverage is the reader's lowest scoring domain. Once the email address is entered it appears on screen under *Primary constraint*, and the emailed report carries the same words.
 
 ### What this means for your business
 

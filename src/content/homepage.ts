@@ -448,7 +448,10 @@ export const LOGOS_NEED_ALT_TEXT = true;
 // 3.3 RESULTS
 export const RESULTS = {
   heading: "This is what our team has delivered",
-  standfirst: "We do not measure success in slide decks, we measure what changed.",
+  // "has" added 2 October, her 23 August slide 3 comment: "we do not measure
+  // success in slide decks, we measure what has changed." Spec 3.3 reads
+  // "what changed"; her comment is later. Only the comma had been applied.
+  standfirst: "We do not measure success in slide decks, we measure what has changed.",
 };
 
 export type Metric = {

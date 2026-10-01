@@ -73,15 +73,23 @@ export default function Service4TechBuilds() {
           <span className="mb-4 block font-sans text-[10.5px] font-semibold tracking-[0.24em] text-neon uppercase">
             Service four
           </span>
+          {/* "Keep the top bit", her 23 August slide 15. Her picture of it, and
+              her own service pages file, read "Technology Builds." with the
+              green word and the full stop, like the other four service pages.
+              The 24 August rebuild dropped both; restored 2 October. */}
           <h1 className="font-sans text-4xl font-extrabold tracking-tight md:text-6xl">
-            {TECH_BUILDS.heading}
+            Technology <span className="text-neon">Builds.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-mist md:text-xl">
             {TECH_BUILDS.standfirst}
           </p>
 
           <div className="mt-7 sm:mt-10 border-t border-neon/20 pt-8">
-            <p className="font-sans text-xl font-bold text-neon">{TECH_BUILDS.priceLabel}</p>
+            {/* Her second line beside the price, from the same picture and file. */}
+            <div className="flex flex-wrap items-baseline gap-x-6 gap-y-1">
+              <p className="font-sans text-xl font-bold text-neon">{TECH_BUILDS.priceLabel}</p>
+              <p className="text-sm text-white/60">{TECH_BUILDS.priceNote}</p>
+            </div>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base">
               {TECH_BUILDS.priceDetail}
             </p>

@@ -130,7 +130,14 @@ export default function CaseStudies({
       <ul
         ref={scrollRef}
         onScroll={handleScroll}
-        className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 pt-2 scroll-smooth"
+        // pb-16 with -mb-10, 2 OCTOBER: her v3 slide 11, "remove the band".
+        // The band was this list cutting off the cards' soft shadow. A list
+        // that scrolls sideways clips top and bottom too, and pb-6 left 24px,
+        // so the shadow stopped in a straight line: #EDEBE6 down to #F2EFE9,
+        // then the page colour in one step. 64px lets the 16px offset and 48px
+        // blur fade out fully; the -40px margin gives back the 40px added, so
+        // the space to the next element is what it was.
+        className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-16 -mb-10 pt-2 scroll-smooth"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {studies.map((study, i) => (
@@ -139,7 +146,7 @@ export default function CaseStudies({
             // Modest breathing room under the results panel, from 30 August,
             // and one class so it is the same on every card rather than three
             // cards that happen to look similar.
-            className="flex flex-shrink-0 w-full snap-center frosted-card-light rounded-[28px] p-5 pb-9 sm:p-8 sm:pb-12 md:p-9 md:pb-14 shadow-sm"
+            className="flex flex-shrink-0 w-full snap-center frosted-card-light rounded-[28px] p-5 pb-9 sm:p-8 sm:pb-12 md:px-12 md:pt-9 md:pb-14 shadow-sm"
           >
             {/* ONE COLUMN OF ARGUMENT, THE PICTURE BESIDE IT.
 

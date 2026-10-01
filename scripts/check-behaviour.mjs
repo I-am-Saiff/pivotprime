@@ -253,6 +253,73 @@ const openPanels = (page) =>
   );
 }
 
+// THE DIAGNOSTIC'S ADVICE APPEARS ON SCREEN AFTER UNLOCK, AND NOT BEFORE.
+//
+// Her v3 slide 8: "The data all shown here, it will all pop up on screen when
+// they enter their email address in". Taken off the screen on 18 September and
+// restored on 2 October. Asserted both ways, because the two ways it can break
+// are opposite: the section vanishing again, or showing before the email is in.
+//
+// NOTHING IS SENT. Every POST to /api/ is answered in the browser with
+// { ok: true }, so this runs safely against production: no email reaches the
+// team or anyone else. The intercept is itself asserted, so a renamed endpoint
+// cannot quietly let a real submission through.
+//
+// Skipped when the diagnostic is switched off, since the route then 404s.
+if (process.env.NEXT_PUBLIC_ENABLE_DIAGNOSTIC === "true") {
+  const { readFileSync } = await import("node:fs");
+  const quiz = readFileSync(new URL("../src/content/diagnostic-quiz.ts", import.meta.url), "utf8");
+  const questions = [...quiz.matchAll(/\{\s*domain:\s*"(\w+)",\s*text:\s*"([^"]+)"/g)].map((m) => ({ d: m[1], t: m[2] }));
+  for (const [label, width, mobile] of [["desktop", 1440, false], ["touch", 375, true]]) {
+    const context = await browser.newContext({ viewport: { width, height: mobile ? 812 : 900 }, isMobile: mobile, hasTouch: mobile });
+    const page = await context.newPage();
+    const posts = [];
+    await page.route("**/api/**", (r) => {
+      if (r.request().method() !== "POST") return r.continue();
+      posts.push(r.request().url());
+      return r.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({ ok: true }) });
+    });
+    await page.goto(`${BASE}/diagnostic`, { waitUntil: "load" });
+    await page.getByRole("button", { name: /start the diagnostic/i }).click();
+    // Low on the two Data and visibility statements only, so it is the
+    // constraint, which is the area her slide 8 pictures show.
+    for (let i = 0; i < questions.length; i++) {
+      const heading = (await page.locator("h2").first().innerText()).trim();
+      const q = questions.find((x) => heading.includes(x.t.slice(0, 40)));
+      await page.getByRole("button", { name: q?.d === "dv" ? "Strongly disagree" : "Strongly agree", exact: true }).click();
+      await page.getByRole("button", { name: i === questions.length - 1 ? "See my results" : "Next" }).click();
+    }
+    await page.waitForSelector("[data-diagnostic-capture]");
+    expect(`${label}: the diagnostic advice is not on screen before the email is in`, (await page.locator("[data-diagnostic-advice]").count()) === 0);
+    await page.fill("#d-name", "Test Person");
+    await page.fill("#d-biz", "Test Business");
+    await page.fill("#d-email", "test@example.com");
+    await page.selectOption("#d-industry", { index: 1 });
+    await page.selectOption("#d-role", { index: 1 });
+    await page.getByRole("button", { name: "Unlock my score" }).click();
+    const shown = await page.waitForSelector("[data-diagnostic-advice]", { timeout: 8000 }).then(() => true, () => false);
+    expect(`${label}: the diagnostic advice appears on screen after unlock`, shown);
+    expect(`${label}: the unlock was answered in the browser, so nothing was sent`, posts.length === 1 && posts[0].endsWith("/api/diagnostic"), `intercepted ${posts.length}`);
+    if (shown) {
+      const advice = await page.locator("[data-diagnostic-advice]").evaluate((el) => ({
+        constraint: el.querySelector("[data-diagnostic-constraint]")?.textContent?.trim(),
+        checks: el.querySelectorAll("ol > li").length,
+        buttons: [...el.querySelectorAll("a")].map((a) => ({
+          text: a.textContent.trim(),
+          href: a.getAttribute("href"),
+          pill: parseFloat(getComputedStyle(a).borderTopLeftRadius) >= a.getBoundingClientRect().height / 2,
+        })),
+      }));
+      expect(`${label}: the advice names the constraint`, advice.constraint === "Data and visibility", `got "${advice.constraint}"`);
+      expect(`${label}: the advice carries her three checks`, advice.checks === 3, `found ${advice.checks}`);
+      const book = advice.buttons.find((b) => b.text === "Book a call");
+      expect(`${label}: "Book a call" goes to /contact`, book?.href === "/contact", JSON.stringify(advice.buttons));
+      expect(`${label}: the advice buttons are rectangular, not pills`, advice.buttons.length === 2 && advice.buttons.every((b) => !b.pill), JSON.stringify(advice.buttons));
+    }
+    await context.close();
+  }
+}
+
 await browser.close();
 
 if (failures.length === 0) {

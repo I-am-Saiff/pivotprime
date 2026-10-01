@@ -59,7 +59,9 @@ export const BENCH = {
   ],
   pill: "One point of contact. Zero coordination overhead.",
   capabilities: [
-    "Project management",
+    // Capital M as in her file; the 1 September capitalisation revert lowered
+    // it by mistake, the only one of the twenty that lost its capitals.
+    "Project Management",
     "Data Analytics",
     "AI & Automation",
     "Legal & Compliance",
@@ -80,4 +82,6 @@ export const BENCH = {
     "Research & Insights",
     "Investor Relations",
   ],
+  /** Her file marks these five "btag hi": green on a green tint. */
+  highlighted: ["Project Management", "Data Analytics", "AI & Automation", "Finance & Accounting", "Executive Advisory"],
 };

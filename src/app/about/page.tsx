@@ -320,7 +320,10 @@ export default function About() {
               left at 38% of the card, text right, stacking below 680 where the
               photo takes the same 4/4.2 box as the three above it. */}
           <article className="mt-7 flex flex-col overflow-hidden rounded-[28px] border border-forest/20 card-dark shadow-[0_16px_48px_rgba(1,51,37,0.06)] min-[680px]:flex-row">
-            <div className="aspect-[4/4.2] min-[680px]:aspect-auto min-[680px]:w-[38%] min-[680px]:flex-none">
+            {/* min-h-0 is her file's "min-height: 0" below 680: without it the
+                photograph's own height overrides the 4/4.2 box and the card is
+                taller than the three above it. */}
+            <div className="aspect-[4/4.2] min-h-0 min-[680px]:aspect-auto min-[680px]:w-[38%] min-[680px]:flex-none">
               <Portrait person={WIDE_PERSON} className="h-full w-full" />
             </div>
             <div className="flex flex-1 flex-col justify-center gap-3.5 p-6 sm:p-8 min-[680px]:p-10">
@@ -332,9 +335,12 @@ export default function About() {
               <h3 className="text-2xl font-extrabold text-forest">{WIDE_PERSON.name}</h3>
               <Bio blocks={WIDE_PERSON.bio} className="max-w-[62ch] text-neutral-600" />
               <Tags tags={WIDE_PERSON.tags} />
-              {/* mt-auto would push it to the foot of a card that is as tall as
-                  a photograph, so the wide card lets it sit under the chips. */}
-              <div className="mt-2">
+              {/* AT THE FOOT, as her file has it: her .connect is margin-top:
+                  auto, which outranks the column's centring, so the text starts
+                  at the top and the button sits at the bottom. mt-auto on this
+                  wrapper does the same here. Her v3 slide 5, "see attached
+                  html". */}
+              <div className="mt-auto pt-2">
                 <LinkedInButton person={WIDE_PERSON} />
               </div>
             </div>
@@ -391,7 +397,13 @@ export default function About() {
                 {BENCH.capabilities.map((capability) => (
                   <li
                     key={capability}
-                    className="rounded-full border border-white/15 bg-white/[0.04] px-4 py-2 text-sm text-white/90"
+                    // Her five highlighted chips: her .btag.hi, neon at 10% fill,
+                    // 25% border and 90% text, from her emailed About design.
+                    className={`rounded-full border px-4 py-2 text-sm ${
+                      BENCH.highlighted.includes(capability)
+                        ? "border-neon/25 bg-neon/10 text-neon/90"
+                        : "border-white/15 bg-white/[0.04] text-white/90"
+                    }`}
                   >
                     {capability}
                   </li>

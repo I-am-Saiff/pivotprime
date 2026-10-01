@@ -6377,3 +6377,115 @@ Publishing an article does not send anything to Insights subscribers by itself.
 There is still no new screenshot at the agreed place, so the Nurture case study
 image is unchanged. Everything in 1g2 about why it cannot be cropped or edited
 still holds.
+
+## 1g4 The close-out audit, and what it put right
+
+**2 October.** Every comment in your v3 deck, and every earlier comment that v3
+did not change, was checked against the live site at phone and computer width,
+then checked again by a second, independent pass. The full report is in
+docs/closeout. This entry records what was changed as a result, and corrects
+three things earlier entries told you that were not true.
+
+### On screen after the email: your three advice sections
+
+> **Slide 8:** "The data all shown here, it will all pop up on screen when they
+> enter their email address in, and look basically like this"
+
+Your 26 September deck said the same ("Then after they give email address, then
+it gets unlocked and also shows the sections from next page"). The advice had been
+taken off the screen on 18 September and was going by email only. It now appears
+on screen the moment the details are sent, never before, in the layout your three
+slide 8 pictures show: the dark card with "Primary constraint", the three numbered
+checks, and the pale green "What Pivot Prime would do about it" card. The two
+buttons under it read "Book a call" and "Talk to us on WhatsApp" and are
+rectangular, following your later instructions rather than the round "Book a call
+with Iram" in the picture. The email is unchanged and still carries the same words.
+
+The advice document (all six versions) now quotes your slide exactly, as your two
+paragraphs, and its "Shown when" lines say what the screen now does.
+
+### "START THE DIAGNOSTIC →", and the bright green dots
+
+> **Slide 7:** "Keep wording as shown in this picture" and "start the diagnostic
+> button to be rectangular like all other buttons and example shown below"
+
+The button now reads in capitals with the arrow, as your picture shows, and is set
+like the site's other green buttons. The four dots under the paragraph are the
+bright green from your picture.
+
+### One left edge on the homepage, and the grey band
+
+> **Slide 11:** "Please use one content width for every section, so all headings,
+> cards and buttons start on the same left edge." and "Pick one colour for all
+> boxes and remove the band."
+
+Five things still left the shared edge, and all five now sit on it: the two logo
+rows (they ran almost the full width of the page), the five results cards (held
+narrower by an older limit), the "More case studies" button (centred), the "As
+featured in" line (centred, which your 23 August slide 2 had also asked to change),
+and the inside margin of the three white boxes, which differed from box to box.
+
+**Correction to 1g0.** It said there was no grey band. There was. It was the case
+studies box's soft shadow, cut off in a straight line by the sliding panel that
+holds the cards, and it measured #EDEBE6 to #F2EFE9, with your #EFEEE7 inside it.
+The shadow now fades out fully and the band is gone, with the space between
+sections unchanged.
+
+Two boxes keep their insides as your own designs draw them: the "Start with the
+diagnostic" panel keeps its button on the right, as in your services mock-up, and
+the closing "Find out what is holding your business back." block keeps its centred
+heading and buttons.
+
+### Earlier comments that had not been done, or had been undone
+
+**UAE Market Entry, your 23 August slide 16.** "We are not interested in launching
+a business in the UAE which will fail." and your line beneath it are back. They
+were live from 25 August, went with the whole panel when the service pages were
+cut back on 28 August, and on 31 August the panel was rebuilt from your earlier
+22 August file, with the older wording. **Correction to 1v**, which went on saying
+your words were there.
+
+**Technology Builds, your 23 August slide 15: "Keep the top bit".** The heading
+reads "Technology Builds." again with "Builds." in green, and "Own it outright, or
+we maintain it" is back beside the price, as in your picture of it. Both had been
+lost when the page was rebuilt on 24 August. The showcase of Saif's own work that
+the same comment asks for is still to come, and needs his projects and pictures.
+
+**Build and Place, your 23 August slide 14:** "Text on the animation at the
+bottom, remove that." The line under the diagram is gone. It read "Six seats we can
+fill. You never take all six. The audit says which ones the business actually
+needs, and that is what gets placed."
+
+**The results line, your 23 August slide 3:** "we measure what has changed." The
+word "has" is in now; only the comma had been applied before. Your copy document
+reads "what changed", and your comment is later.
+
+**The bench on About, from your emailed About design.** Your five highlighted
+labels, Project Management, Data Analytics, AI & Automation, Finance & Accounting
+and Executive Advisory, are in green as your design has them, and "Project
+Management" has its capital M back.
+
+**Khushi's card, your v3 slide 5 file.** On a computer her text now starts at the
+top with the LinkedIn button at the foot, and on a phone her photograph is the same
+shape as the three above it, as your file lays it out.
+
+### Correction to 1g1: two measurements were misread
+
+1g1 gave the diagnostic paragraph as 17.89 to 1 and the small note under the
+button as 16.99 to 1. Measured properly they are 7.13 to 1 and 4.33 to 1. The
+paragraph is comfortably readable; the note is a little under the usual 4.5 to 1
+for text that small. Neither was changed, because neither is tied to a comment of
+yours; your own picture's note is lighter still.
+
+### Still open, and what each needs
+
+- **The Nurture screenshot** (v3 slide 6): a new screenshot of the live app, from a
+  demo account, as described in 1g2. Nothing has been supplied yet.
+- **The test email to subscribers** (v3 slide 9): nothing on the site emails
+  subscribers when an article is published, and no list of subscribers is kept;
+  each sign-up arrives as an email in the hello@pivotprime.ae inbox. Sending the
+  September articles to them, and testing that the link opens, needs a sending
+  method chosen and the existing sign-ups gathered from that inbox.
+- **From your August deck:** the video behind the hero (no file yet), the wording
+  for the second hero button (your note was a starting point, not a final line),
+  and Saif's showcase on Technology Builds (his projects and pictures).

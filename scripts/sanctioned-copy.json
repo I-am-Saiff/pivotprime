@@ -546,9 +546,10 @@
     },
     {
       "text": "We are not interested in launching a business in the UAE which will fail.",
-      "status": "removed",
+      "status": "traced",
       "kind": "client-supplied",
-      "why": "Supplied by the client verbatim in a comment on slide 16 of Website Revisions 2208v3, 22 August. Replaces spec 5.x copy, which her comment postdates. PENDING-COPY 1v. REMOVED 28 August 2026: the client had every service page cut back to its hero and the one section beneath it. The words are preserved in docs/PENDING-COPY.md 1ar, and this entry is kept rather than deleted so the removal is on the record."
+      "why": "Supplied by the client verbatim in a comment on slide 16 of Website Revisions 2208v3, 22 August. Replaces spec 5.x copy, which her comment postdates. PENDING-COPY 1v. Removed with the whole panel on 28 August, when the client had every service page cut back; the 31 August rebuild then brought the panel back from her earlier 22 August file, with the older heading. RESTORED 2 October 2026 as the close-out audit found it undone: her comment is her latest word on this heading. PENDING-COPY 1g4.",
+      "route": "/services/uae-market-entry"
     },
     {
       "text": "Senior judgment, on call",

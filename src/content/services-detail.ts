@@ -67,8 +67,13 @@ export const SERVICE_CLOSERS = {
   },
   marketEntry: {
     eyebrow: "Straight answer",
-    heading: "We are not interested in launching a business here that will not make money here.",
-    body: "If the model says it will not, we would rather tell you before you spend the money than after.",
+    // HER WORDS, RESTORED 2 October. Her 23 August slide 16 comment: "Change to
+    // we are not interested in launching a business in the UAE which will
+    // fail. Then subheading - if after assessment, ...". Live from 25 August,
+    // cut with the panel on 28 August, and brought back on 31 August from her
+    // older 22 August file with the earlier wording. PENDING-COPY 1v and 1g4.
+    heading: "We are not interested in launching a business in the UAE which will fail.",
+    body: "If after assessment, we feel your business will fail here, we will tell you to save your money and not enter this market or most of the time we will show you how you can make it work.",
   },
 };
 
@@ -314,6 +319,8 @@ export const TECH_BUILDS = {
   heading: "Technology Builds",
   standfirst: "Software, automation and AI, built after the diagnosis rather than instead of it.",
   priceLabel: "Scoped per engagement",
+  /** Her 23 August slide 15 picture and her service pages file. */
+  priceNote: "Own it outright, or we maintain it",
   priceDetail: "Priced on the build itself, the systems it has to connect to, and whether you want us to run it afterwards.",
   argument: {
     claim: "We do not sprinkle AI over a business and call it transformation.",

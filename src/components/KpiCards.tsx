@@ -40,7 +40,10 @@ export default function KpiCards() {
     <KpiRotator labels={cards.map((m) => m.kpiLabel)}>
     <ul
       data-metric-cards
-      className="mx-auto grid max-w-[1080px] grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3"
+      // The full content width, 2 OCTOBER. The 1080px cap came from her August
+      // KPI card file; her v3 slide 11 is later: "use one content width for
+      // every section", and the cap held these cards 36px in from both edges.
+      className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3"
     >
       {cards.map((metric, i) => (
         <li

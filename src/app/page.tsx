@@ -199,7 +199,10 @@ export default function Home() {
               her earlier document, so the assertion on it has moved to
               check-content's FORBIDDEN list rather than being dropped. The rest
               of this bar is untouched. PENDING-COPY 1e7. */}
-          <p className="mx-auto mt-3 max-w-3xl text-center text-sm text-neutral-500">
+          {/* LEFT-ALIGNED, 2 OCTOBER. Her 23 August slide 2: "If rest is not
+              centre aligned then this also shouldn't be as it looks off against
+              next sections." Her v3 slide 11 asks the same of every section. */}
+          <p className="mt-3 max-w-3xl text-sm text-neutral-500">
             {PROOF.featuredPrefix}
             {PROOF.publications.map((pub, i) => (
               <span key={pub.href}>
@@ -216,7 +219,6 @@ export default function Home() {
               </span>
             ))}
           </p>
-        </div>
 
         {/* TWO ROWS, OPPOSITE DIRECTIONS, each carrying one labelled group.
             Matching the live site, where both label cards travel in the row
@@ -237,6 +239,12 @@ export default function Home() {
 
             Only the first copy is announced, so every logo and every label is in
             the accessibility tree exactly once. */}
+        {/* INSIDE THE SHARED CONTAINER, 2 OCTOBER. The rows sat outside it and
+            ran edge to edge of the section, 32 to 1408 at 1440, while every
+            other section sits at 144 to 1296. Her v3 slide 11: "use one
+            content width for every section". The rows still scroll; they are
+            clipped at the content edges now instead of the page edges, and the
+            section keeps one container, which the layout check counts. */}
         <div className="mt-7 sm:mt-10 space-y-5">
           {LOGO_GROUPS.map((group, rowIndex) => (
             <div key={group.label} className="w-full overflow-hidden">
@@ -375,6 +383,7 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </div>
         </div>
       </section>
 
@@ -550,7 +559,9 @@ export default function Home() {
               link to them", with a "more case studies" button here. */}
           <CaseStudies scope="homepage" />
 
-          <div className="mt-8 sm:mt-12 text-center">
+          {/* On the shared left edge, her v3 slide 11: "all headings, cards and
+              buttons start on the same left edge". It was centred. */}
+          <div className="mt-8 sm:mt-12">
             <Link
               href="/about#case-studies"
               className="inline-flex min-h-11 items-center justify-center rounded-xl bg-neon px-5 py-2.5 font-sans text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
@@ -589,7 +600,7 @@ export default function Home() {
               keep the fills they have. The dot grid is what separates the white
               traditional-model box from the white panel behind it: the panel is
               textured, the box is flat with a border. */}
-          <div className="relative overflow-hidden rounded-3xl border border-forest/10 bg-white px-5 py-8 sm:px-10 sm:py-12 md:px-14 md:py-14">
+          <div className="relative overflow-hidden rounded-3xl border border-forest/10 bg-white px-5 py-8 sm:px-8 sm:py-12 md:px-12 md:py-14">
             {/* Dot-grid texture */}
             <div
               aria-hidden="true"

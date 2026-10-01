@@ -1,8 +1,16 @@
 "use client";
 
 import { useEffect, useState, type SubmitEvent } from "react";
+import Link from "next/link";
 import { INDUSTRIES } from "@/content/industries";
-import { DOMAIN_NAME, DOMAIN_ORDER, QUESTIONS, SCALE } from "@/content/diagnostic-quiz";
+import { HAS_WHATSAPP, WHATSAPP_URL } from "@/lib/flags";
+import {
+  DOMAIN_CONTENT,
+  DOMAIN_NAME,
+  DOMAIN_ORDER,
+  QUESTIONS,
+  SCALE,
+} from "@/content/diagnostic-quiz";
 import {
   DIAGNOSTIC_CAPTURE,
   DIAGNOSTIC_INTRO,
@@ -38,10 +46,21 @@ import { scoreDiagnostic } from "@/lib/diagnostic-score";
  *   September build showed everything immediately with the form underneath;
  *   this reverses that on her instruction.
  *
- *   THE CONSTRAINT SECTION IS OFF THE SCREEN ENTIRELY. The heading, the
- *   commentary, the three checks and the offer paragraph do not render at any
- *   point, blurred or unlocked. They are in the email and nowhere else. The
- *   constraint still tags its row in the breakdown, as her screenshot shows.
+ *   THE CONSTRAINT SECTION WAS TAKEN OFF THE SCREEN on 18 September, on her
+ *   13 September screenshots, and lived only in the email.
+ *
+ * THE CONSTRAINT SECTION IS BACK ON SCREEN AFTER UNLOCK, 2 OCTOBER, on her later
+ * instruction. Her 26 September deck, slide 18: "Then after they give email
+ * address, then it gets unlocked and also shows the sections from next page".
+ * Her v3 deck of 30 September, slide 8: "The data all shown here, it will all
+ * pop up on screen when they enter their email address in". The pictures on
+ * that slide are this section as the 12 September build drew it, so it is
+ * restored in that layout: the constraint card, the three checks, the offer.
+ * It renders only once the form has been sent, never blurred beforehand, so
+ * none of it is in the page until then. Two things differ from her pictures,
+ * both on her own later instructions: the booking button says "Book a call"
+ * (26 September, slides 15 and 22) and both buttons are rectangular like every
+ * other button on the site (v3 slides 3, 7 and 8). The email is unchanged.
  *
  * THE BLUR IS FRICTION, NOT SECURITY. The score is computed in the browser from
  * answers the browser holds, so anyone who opens developer tools can read it
@@ -224,9 +243,10 @@ export default function QuizApp() {
           <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-7 gap-y-2">
             {DIAGNOSTIC_INTRO.stats.map((s) => (
               <li key={s} className="flex items-center gap-2 text-sm text-neutral-600">
-                {/* The dot is mid rather than neon for the same reason the
-                    heading accent is: neon on cream is close to invisible. */}
-                <span aria-hidden="true" className="h-[5px] w-[5px] rounded-full bg-mid" />
+                {/* Neon, as her slide 7 picture draws them, 2 October. They
+                    were mid for visibility; they are decorative and carry no
+                    meaning, so her picture decides. */}
+                <span aria-hidden="true" className="h-[5px] w-[5px] rounded-full bg-neon" />
                 {s}
               </li>
             ))}
@@ -239,9 +259,16 @@ export default function QuizApp() {
           <button
             type="button"
             onClick={start}
-            className="mt-7 inline-flex min-h-11 items-center justify-center rounded-xl bg-neon px-10 py-4 text-sm font-bold text-forest transition-opacity hover:opacity-90"
+            // CAPITALS AND THE ARROW, 2 October: her slide 7 picture reads
+            // "START THE DIAGNOSTIC →", her note says "Keep wording as shown in
+            // this picture", and the site's other green buttons are set the
+            // same way. The arrow is decoration, so it is hidden from readers.
+            className="mt-7 inline-flex min-h-11 items-center justify-center rounded-xl bg-neon px-8 py-3 font-sans text-xs font-bold tracking-wider text-forest uppercase transition-opacity hover:opacity-90"
           >
             {DIAGNOSTIC_INTRO.startLabel}
+            <span aria-hidden="true" className="ml-2 text-base leading-none">
+              →
+            </span>
           </button>
           {/* neutral-500, the site's grey for a small note. Her image puts this
               line at #7A8D83, which is lighter than anything in the palette and
@@ -558,8 +585,84 @@ export default function QuizApp() {
             </>
           )}
         </div>
+
+        {/* ---- her three sections, on screen once the form is sent ---- */}
+        {unlocked ? <ConstraintAdvice constraint={constraint} /> : null}
       </div>
     </section>
+  );
+}
+
+/**
+ * The advice for the primary constraint: her v3 slide 8 pictures, in order.
+ * The same words the email carries, from the same DOMAIN_CONTENT.
+ */
+function ConstraintAdvice({ constraint }: { constraint: keyof typeof DOMAIN_CONTENT }) {
+  const content = DOMAIN_CONTENT[constraint];
+  return (
+    <div data-diagnostic-advice>
+      <div className="mt-12 rounded-2xl bg-forest p-7 text-white sm:p-9">
+        <p className="text-[10px] font-bold tracking-[0.2em] text-neon uppercase">
+          {DIAGNOSTIC_RESULTS.constraintLabel}
+        </p>
+        <h2
+          className="mt-2 text-2xl font-extrabold tracking-tight md:text-3xl"
+          data-diagnostic-constraint
+        >
+          {DOMAIN_NAME[constraint]}
+        </h2>
+        <p className="mt-5 text-[12px] font-semibold text-neon">
+          {DIAGNOSTIC_RESULTS.meansLabel}
+        </p>
+        <p className="mt-2 leading-relaxed text-white/80">{content.commentary}</p>
+      </div>
+
+      <p className="mt-12 text-[10px] font-bold tracking-[0.2em] text-mid uppercase">
+        {DIAGNOSTIC_RESULTS.checksLabel}
+      </p>
+      <ol className="mt-5 grid gap-3.5">
+        {content.checks.map((check, i) => (
+          <li
+            key={check.slice(0, 40)}
+            className="flex gap-4 rounded-2xl border border-forest/10 bg-white p-5 sm:p-6"
+          >
+            <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-mid/10 text-[12px] font-bold text-mid">
+              {i + 1}
+            </span>
+            <p className="text-[14px] leading-relaxed text-forest/80">{check}</p>
+          </li>
+        ))}
+      </ol>
+
+      <div className="mt-12 rounded-2xl border-l-[3px] border-mid bg-mist px-6 py-6 sm:px-7">
+        <p className="text-[10px] font-bold tracking-[0.2em] text-mid uppercase">
+          {DIAGNOSTIC_RESULTS.offerTag}
+        </p>
+        <p className="mt-2 text-lg font-bold text-forest">{DIAGNOSTIC_RESULTS.offerTitle}</p>
+        <p className="mt-2.5 text-[14px] leading-relaxed text-forest/80">{content.offer}</p>
+      </div>
+
+      {/* Rectangular, rounded-xl, like every other button: her v3 slides 3, 7
+          and 8. "Book a call" goes where the site's other "Book a call"
+          buttons go. WhatsApp reads the same variable every other WhatsApp
+          button does, degrading to /contact when it is unset. */}
+      <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <Link
+          href="/contact"
+          className="inline-flex min-h-11 items-center justify-center rounded-xl border border-transparent bg-neon px-8 py-3.5 text-[13px] font-bold text-forest transition-opacity hover:opacity-88"
+        >
+          {DIAGNOSTIC_RESULTS.bookLabel}
+        </Link>
+        <a
+          href={WHATSAPP_URL}
+          target={HAS_WHATSAPP ? "_blank" : undefined}
+          rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined}
+          className="inline-flex min-h-11 items-center justify-center rounded-xl border border-forest/15 px-8 py-3.5 text-[13px] font-bold text-forest transition-colors hover:bg-forest/5"
+        >
+          {DIAGNOSTIC_RESULTS.whatsappLabel}
+        </a>
+      </div>
+    </div>
   );
 }
 
