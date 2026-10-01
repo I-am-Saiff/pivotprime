@@ -1175,17 +1175,29 @@ nothing else changes.
 
 The rest of your slide 8, the results moving above the product link, is done.
 
-### LinkedIn links under each person, slide 7
+### LinkedIn links under each person: built, except yours
 
-**27 September.** Your slide 7 asks for a LinkedIn link under every team member,
-reading **"Connect with Iram on LinkedIn"** and the same for the others.
+**27 September, your slide 7**, asking for a LinkedIn link under every team
+member reading **"Connect with Iram on LinkedIn"** and the same for the others.
+We could not build it then, because we had none of the addresses.
 
-**We have not built it, because we do not have the addresses.** We need four
-LinkedIn profile URLs: yours, Justin's, Saif's and Ali's. Guessing a profile
-address is the one thing worse than not having the link, because it could point
-at a stranger.
+**Your own meet-the-team file of 30 September supplied four of them**, so this is
+now built and live: Justin, Nisha, Saif and Khushi each have a button in your
+wording, in neon with the LinkedIn mark, opening in a new tab.
 
-**Send the four and it is a short job.** The wording will be yours, with each
-person's first name in it.
+**Yours is the only one missing.** Your file gives a profile for the other four
+and none for you.
 
-The rest of your slide 7, your biography and the tag line, is done and live.
+We searched before asking: every file in the site, your old site records, the
+whole working folder, and both PowerPoint decks unpacked rather than just
+searched, because a packed deck hides its own text from a plain search. The only
+LinkedIn address anywhere is the **company page**, which is in the footer.
+
+**So your card is the one without a button.** We will not point a button carrying
+your name at a company page, and we will not guess a profile address: a guess
+lands on a real person who may not be you.
+
+**Send the URL and it is a one-line change.** Nothing else about your card moves.
+
+> Note: your slide 7 asked for Ali, who is not in your new team file. Nisha Barot
+> and Khushi Popat are the people on the site now. Say if Ali should be there.

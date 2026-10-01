@@ -1,27 +1,38 @@
 /**
- * The team section. Anchor: #team.
+ * THE TEAM SECTION IS REBUILT FROM HER OWN FILE, req/meet-the-team.html.
  *
- * SOURCE: slide 21 of *Website Revisions 2208v3* and the client's own About
- * redesign `req/pp-about-v2_2.html`. Copy is verbatim from that file.
+ * Her v3 deck slides 4 and 5 come with a working HTML page, found at
+ * ~/Downloads/meet-the-team.html and copied into req/ so the source travels with
+ * the repository. Every string below is read out of that file rather than
+ * retyped, and the four biographies were compared against it before the content
+ * was written: all four match it character for character.
  *
- * WHAT THIS REPLACED. Spec 6.3 built the section in two layers: five roles that
- * never change, under the heading "How we staff an engagement", and named people
- * beneath them. Her redesign has one layer, four named people, and no roles
- * heading. The five role descriptions are kept word for word in
- * docs/PENDING-COPY.md 1ab.
+ * SO THIS IS NOT TRANSCRIBED COPY, unlike her slide 2 and slide 3 work. It is a
+ * file she sent, which is the strongest provenance this project has.
  *
- * $100 MILLION HERE, $120 MILLION ON THE HOMEPAGE, DELIBERATELY.
+ * HER HOUSE RULES COST HER COPY NOTHING AT ALL. No em dash, no en dash, no
+ * double hyphen and no American spelling anywhere in it; "programmes" is already
+ * British. One non-ASCII character, the acute in "cafés", which is correct.
  *
- * This file said $120m until now, because spec 3.7 and the live site both say
- * $120m while spec 6.3 says $100m, and standardising upward was the safer of
- * two guesses about a factual claim. Slide 21 is a third source and it says
- * **over $100 million**, agreeing with 6.3. Two of three now say $100m.
+ * BRAND CASING IS HERS: dubizzle lower case, Bookmeetings.io, BitOasis, xAI,
+ * OpenAI, NKD Studios, Vibe FM. None of it is normalised.
  *
- * The instruction is to build her card as her slide has it and to log the
- * disagreement rather than resolve it a second time, so the two pages disagree
- * on purpose and visibly: PENDING-COPY 1i, and section 3 of
- * docs/FOR-IRAM-outstanding.md. It is a claim about a named person and hers to
- * settle. Do not quietly align them.
+ * WHAT IT REPLACES, all preserved in PENDING-COPY 1f9:
+ *
+ *   THE ROLE EYEBROWS. "Finance Seat", "Technology Seat" and "Content & Social
+ *   Seat" are gone. Her file puts the job title in that position instead, and
+ *   the old job titles were in a pill at the foot of the card.
+ *
+ *   THE PILL ITSELF, which carried "Fractional CFO", "AI & Technology Lead" and
+ *   "Digital Storyteller & Social Media Strategist". Her cards carry a row of
+ *   tag chips instead, as the founder card already did.
+ *
+ *   ALL THREE BIOGRAPHIES, which were one short paragraph each.
+ *
+ * NISHA BAROT IS NEW. Her photograph was supplied as a 1920x2880 full-length
+ * standing portrait and is prepared the way Saif's was: cropped at prepare time
+ * to the card box so the browser crops nothing. PENDING-COPY 1f9 records the
+ * crop.
  */
 
 export const TEAM_ANCHOR = "team";
@@ -31,78 +42,81 @@ export const TEAM_INTRO = {
   heading: "The people you work with directly.",
 };
 
+/**
+ * Saif's biography is a paragraph, a list of four builds, then a paragraph, so
+ * a biography is a list of blocks rather than a list of strings. The other three
+ * are a single paragraph block each.
+ */
+export type BioBlock = { kind: "p"; text: string } | { kind: "ul"; items: string[] };
+
 export type Person = {
   name: string;
-  /** The seat label above the name. */
+  /** The job title above the name. Her file calls this the role. */
   role: string;
-  /** One or two paragraphs of biography. */
-  body: string[];
-  /** The pill under the biography. The founder has none; she has tags instead. */
-  seat?: string;
+  bio: BioBlock[];
+  /** The chips under the biography. */
+  tags: string[];
   /**
-   * A portrait, or null. Her slide draws all four as initials; we hold real
-   * photographs for all four now, Saif's having arrived on 1 September.
-   *
-   * STILL NULLABLE ON PURPOSE. The monogram below is the generic fallback for
-   * anyone added without a photograph, not something built for one card, so the
-   * branch stays even though no person currently takes it.
+   * The LinkedIn profile, or null when we do not have one we can stand behind.
+   * Never guessed, and never the company page in a person's place.
    */
-  photo: { src: string; alt: string } | null;
+  linkedin: { url: string; label: string } | null;
+  /**
+   * A portrait, or null. Her slide draws all five as initials; we hold real
+   * photographs for all five now.
+   *
+   * `focusY` is her own vertical focus for the photo, as a percentage from the
+   * top, used when the source is not already the card's shape. Her file sets
+   * Justin 12, Nisha 6, Saif 22, Khushi 25.
+   *
+   * STILL NULLABLE ON PURPOSE. The monogram is the generic fallback for anyone
+   * added without a photograph, not something built for one card.
+   */
+  photo: { src: string; alt: string; focusY: number } | null;
   /** Fallback monogram, used when photo is null. */
   initials: string;
 };
 
 /**
- * HER BIOGRAPHY, slide 7 of the 26 September deck, verbatim.
+ * HER BIOGRAPHY, slide 7 of the 26 September deck, verbatim. UNCHANGED BY THIS
+ * PASS: the brief for the team rebuild is explicit that Iram's biography text is
+ * not to be touched, so only the LinkedIn item below is new.
  *
  * WHAT IT REPLACES is preserved in PENDING-COPY 1f2: two paragraphs opening
  * "Fellow of the Institute and Faculty of Actuaries. One of roughly 75,000
  * qualified actuaries worldwide..." and closing "Founded Pivot Prime to close
  * the gap between what a business decides and what it actually delivers."
- * Hers says more and says it in her own voice, so it replaces rather than joins
- * it.
  *
- * THREE THINGS ABOUT HER WORDING, none of them a silent change.
+ * "$120M" IS HERS AND STAYS. It is a book size rather than a price, so the
+ * one-price rule does not reach it. The homepage founder section writes the same
+ * figure out in full as "$120 million" since her v3 slide 3, which is her later
+ * instruction there and not here. PENDING-COPY 1f5.
  *
- *   "Actuaries,and holds" IS "Actuaries, and holds". Her deck runs the two
- *   together with no space, which is a text box artefact rather than her
- *   intent, and Saif said so when sending the slide.
- *
- *   "$120M" IS HERS AND STAYS. The old paragraph said "$100 million"; she
- *   writes $120M and the figure and the form are both hers. It is a book size
- *   rather than a price, so the one-price rule does not reach it.
- *
- *   THE HOUSE RULES COST HER COPY NOTHING ELSE. No em dash anywhere in it, and
- *   no American spelling: lint-copy is clean on both after the change.
+ * HER TAG LINE, slide 7, split on her own middle dot: eight chips, in her order.
+ * The four-chip alternative is in PENDING-COPY 1f2.
  */
-export const FOUNDER: Person & { tags: string[] } = {
+export const FOUNDER: Person = {
   name: "Iram Kauser",
   role: "Founder & CEO",
-  body: [
-    "Iram has held the roles that Pivot Prime now provides for its clients.",
-    "Chief of Staff to the CEO of AIG GCCNA. Head of Operations at Gallagher's Middle East brokerage, with full accountability for compliance, finance, IT, HR, claims and offshore delivery. Head of Pricing and Portfolio Management for a $120M book spanning the Middle East, Africa and Israel. She has not studied these functions from the outside. She has run them.",
-    "Over sixteen years at AIG, MetLife and Gallagher, she built operating models from scratch, led enterprise transformation aligned with DFSA standards, scaled delivery capability across borders, and closed major commercial partnerships in the region. She has been based in Dubai for ten years and understands the market the way only someone who has operated inside it does.",
-    "She is a Fellow of the Institute and Faculty of Actuaries, and holds an MSc in Mathematics with Distinction from the University of Birmingham.",
-    "She founded Pivot Prime on one conviction: the people best placed to fix a business are those who have run one.",
+  bio: [
+    { kind: "p", text: "Iram has held the roles that Pivot Prime now provides for its clients." },
+    {
+      kind: "p",
+      text: "Chief of Staff to the CEO of AIG GCCNA. Head of Operations at Gallagher's Middle East brokerage, with full accountability for compliance, finance, IT, HR, claims and offshore delivery. Head of Pricing and Portfolio Management for a $120M book spanning the Middle East, Africa and Israel. She has not studied these functions from the outside. She has run them.",
+    },
+    {
+      kind: "p",
+      text: "Over sixteen years at AIG, MetLife and Gallagher, she built operating models from scratch, led enterprise transformation aligned with DFSA standards, scaled delivery capability across borders, and closed major commercial partnerships in the region. She has been based in Dubai for ten years and understands the market the way only someone who has operated inside it does.",
+    },
+    {
+      kind: "p",
+      text: "She is a Fellow of the Institute and Faculty of Actuaries, and holds an MSc in Mathematics with Distinction from the University of Birmingham.",
+    },
+    {
+      kind: "p",
+      text: "She founded Pivot Prime on one conviction: the people best placed to fix a business are those who have run one.",
+    },
   ],
-  photo: { src: "/iram-kauser.jpg", alt: "Iram Kauser" },
-  initials: "IK",
-  /**
-   * HER TAG LINE, slide 7, split on her own separator.
-   *
-   * She wrote it as one line: "Fellow, IFoA · Gallagher · AIG · MetLife · UK ·
-   * Middle East · Africa · 16 years senior leadership", and the brief says it
-   * is a list of chips rather than a sentence. The middle dot is what divides
-   * her items, so it divides them here: eight chips, in her order.
-   *
-   * THAT IS EIGHT WHERE THERE WERE FOUR. The old row grouped the companies into
-   * one chip and the regions into another, with the dots living INSIDE a chip.
-   * Reading her line that way would have meant choosing her grouping for her,
-   * and it would also have lost her reordering, which puts Gallagher first.
-   * Flagged in PENDING-COPY 1f2 with the four-chip alternative.
-   *
-   * The chip treatment itself is the card's own and is untouched.
-   */
   tags: [
     "Fellow, IFoA",
     "Gallagher",
@@ -113,50 +127,135 @@ export const FOUNDER: Person & { tags: string[] } = {
     "Africa",
     "16 years senior leadership",
   ],
+  /**
+   * NULL BECAUSE WE DO NOT HAVE HER PROFILE, AND A GUESS IS NOT A LINK.
+   *
+   * Her own file gives a LinkedIn for the other four and none for her. Searched
+   * before concluding: every file in the repository, req/ including the old site
+   * records, the whole ~/pivotprime working folder, and both PowerPoint decks
+   * extracted rather than grepped as archives, since a zipped deck hides its own
+   * text from a plain search. The only LinkedIn anywhere is
+   * linkedin.com/company/pivotprimeconsultancy in the footer, which is the
+   * company page and is explicitly not to stand in for a person.
+   *
+   * So her card carries no button and docs/FOR-IRAM-outstanding.md asks for the
+   * URL. The card renders exactly as it did before, rather than showing a
+   * disabled or placeholder button.
+   */
+  linkedin: null,
+  photo: { src: "/iram-kauser.jpg", alt: "Iram Kauser", focusY: 50 },
+  initials: "IK",
 };
 
+/** The LinkedIn label pattern, so four cards cannot word it four ways. */
+const connect = (firstName: string, url: string) => ({
+  url,
+  // Sentence case in the string: the button uppercases in CSS, as every other
+  // button label on this site does.
+  label: `Connect with ${firstName} on LinkedIn`,
+});
+
 /**
- * The three seats, in her slide's order.
- *
- * Saif Ur Rehman was deliberately absent until now, on his own instruction. He
- * is on the slide with a title and a biography, and is included on instruction.
- *
- * HIS PHOTOGRAPH ARRIVED 1 SEPTEMBER and the card carries it, so all three seats
- * are photographs and none renders a monogram. The source was 1023x1537, a 2:3
- * portrait against the card's 4:5 box, so it was cropped to 4:5 at prepare time
- * rather than left for the browser: 17% off the bottom, which is the table and
- * his hands. The crop was measured against the face before it was made, not
- * after. PENDING-COPY 1d8.
+ * The three tall portrait cards, in her file's order: Justin, Nisha, Saif.
  */
 export const PEOPLE: Person[] = [
   {
     name: "Justin Ford",
-    role: "Finance Seat",
-    seat: "Fractional CFO",
-    body: [
-      "Fractional CFO bringing senior finance leadership without the full-time cost. Cash management, forecasting, investor reporting and readiness for the next raise. The layer that turns a growing business into one that can prove it.",
+    role: "Fractional CFO",
+    bio: [
+      {
+        kind: "p",
+        text: "Justin has run the finance function inside global corporates and fast-growing Gulf scale-ups for more than fifteen years. He trained at KPMG and managed a $650M+ inventory balance at Ford Motor Company. In Dubai he has held senior finance roles at OSN, dubizzle, International SOS and BitOasis, where he built the plan behind its Series C raise. Since 2023 he has been a fractional CFO to founder-led businesses, and he runs his own UAE wellness brand, Life Within.",
+      },
     ],
-    photo: { src: "/justin-ford.jpg", alt: "Justin Ford" },
+    tags: ["KPMG", "Ford", "OSN", "dubizzle", "BitOasis", "15+ years"],
+    linkedin: connect("Justin", "https://www.linkedin.com/in/justinford84/"),
+    photo: { src: "/justin-ford.jpg", alt: "Justin Ford, Fractional CFO", focusY: 12 },
     initials: "JF",
   },
   {
-    name: "Saif Ur Rehman",
-    role: "Technology Seat",
-    seat: "AI & Technology Lead",
-    body: [
-      "AI and technology solutions lead. Scoped after the diagnosis so we build at the constraint, not over the parts that already work. Custom automation, workflow design, CRM build and reporting systems that actually get used.",
+    name: "Nisha Barot",
+    role: "Strategic Execution & Transformation Consultant",
+    bio: [
+      {
+        kind: "p",
+        text: "Nisha turns strategic priorities into delivered outcomes. Over more than ten years she has led programmes, PMOs and governance at Morgan Stanley, Capgemini, Meridiam and Imperial College London, across London, Toronto and Dubai. She is also an investor and board member across more than 20 companies, including OpenAI and xAI. She works with leadership teams on a fractional or project basis, bringing the structure and delivery discipline that carry initiatives through to results.",
+      },
     ],
-    photo: { src: "/saif-ur-rehman.jpg", alt: "Saif Ur Rehman Khan" },
-    initials: "SR",
+    tags: ["Morgan Stanley", "Capgemini", "Meridiam", "Imperial College London", "10+ years"],
+    linkedin: connect("Nisha", "https://www.linkedin.com/in/nishabarot/"),
+    /**
+     * focusY 50 RATHER THAN HER 6, BECAUSE THE CROP IS ALREADY BAKED IN.
+     *
+     * Her file sets 6% because it points at an uncropped source and lets the
+     * browser do the work. This file is 837x879, which is the card box exactly,
+     * so there is nothing for the browser to crop and any focus value is a no-op.
+     * Her 6% was the starting point for choosing the crop, not a value to carry
+     * through. PENDING-COPY 1f9 has the crop.
+     */
+    photo: {
+      src: "/nisha-barot.jpg",
+      alt: "Nisha Barot, Strategic Execution and Transformation Consultant",
+      focusY: 50,
+    },
+    initials: "NB",
   },
   {
-    name: "Khushi Popat",
-    role: "Content & Social Seat",
-    seat: "Digital Storyteller & Social Media Strategist",
-    body: [
-      "Digital storyteller and social media strategist. Fixing the operation raises the ceiling. Khushi makes sure it gets filled. Positioning, visual storytelling and the client-facing presence that carries the business at scale.",
+    name: "Saif Ur Rehman",
+    role: "AI and Technology Solutions Lead",
+    bio: [
+      {
+        kind: "p",
+        text: "Saif builds the systems that let a business grow without endlessly adding headcount. He leads backend, AI and automation engineering, and his builds include:",
+      },
+      {
+        kind: "ul",
+        items: [
+          "Nurture UAE, a family childcare app live on the App Store",
+          "A coaching platform linking a UAE national junior boxer with coaches in Russia and the US",
+          "AI stock systems for Chaiiwala's UK cafés",
+          "Bookmeetings.io, his own outreach platform",
+        ],
+      },
+      { kind: "p", text: "He also rebuilt pivotprime.ae and its business diagnostic." },
     ],
-    photo: { src: "/khushi-popat.jpg", alt: "Khushi Popat" },
-    initials: "KP",
+    tags: ["Nurture UAE", "Chaiiwala", "Bookmeetings.io", "AI, automation and apps"],
+    linkedin: connect("Saif", "https://www.linkedin.com/in/saif-bookmeetings/"),
+    photo: {
+      src: "/saif-ur-rehman.jpg",
+      alt: "Saif Ur Rehman, AI and Technology Solutions Lead",
+      focusY: 22,
+    },
+    initials: "SR",
   },
 ];
+
+/**
+ * Khushi, in one wide card beneath the three: photograph left, text right,
+ * stacking on a phone. Her file's `.card.wide`.
+ *
+ * SHE IS A SEPARATE EXPORT RATHER THAN A FLAG ON A PERSON, because the row and
+ * the wide card are two different layouts and a boolean inside PEOPLE would mean
+ * the grid had to filter her out of itself. Her mockup draws four people in two
+ * shapes; this is those two shapes.
+ */
+export const WIDE_PERSON: Person = {
+  name: "Khushi Popat",
+  role: "Digital Storyteller & Social Media Strategist",
+  bio: [
+    {
+      kind: "p",
+      text: "Khushi has spent more than four years building audiences and brands in the UAE's creator and consumer economy. As Business Manager to Nidhi Kumar, the UAE's biggest dance YouTuber, she ran social media, brand partnerships and content production, and launched NKD Studios. At Danube Group she ran social media for Milano by Danube and led commercial shoots with brand ambassador Chitrangda Singh. At Pivot Prime she shapes positioning and visual storytelling.",
+    },
+  ],
+  // "Vibe FM" is in her chips and not in her biography. That is hers and is left
+  // alone rather than reconciled.
+  tags: ["Danube Group", "NKD Studios", "Vibe FM", "4+ years"],
+  linkedin: connect("Khushi", "https://www.linkedin.com/in/khushi-popat-44464b1ab/"),
+  photo: {
+    src: "/khushi-popat.jpg",
+    alt: "Khushi Popat, Digital Storyteller and Social Media Strategist",
+    focusY: 25,
+  },
+  initials: "KP",
+};

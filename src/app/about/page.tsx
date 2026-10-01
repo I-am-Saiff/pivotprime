@@ -1,6 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FOUNDER, PEOPLE, TEAM_ANCHOR, TEAM_INTRO, type Person } from "@/content/team";
+import {
+  FOUNDER,
+  PEOPLE,
+  TEAM_ANCHOR,
+  TEAM_INTRO,
+  WIDE_PERSON,
+  type BioBlock,
+  type Person,
+} from "@/content/team";
 import CaseStudies from "@/components/CaseStudies";
 import { CASE_STUDIES_PULLQUOTE } from "@/content/case-studies";
 import { ABOUT_HERO, BENCH, WHO_WE_ARE } from "@/content/about";
@@ -10,16 +18,24 @@ import { pageMetadata } from "@/content/metadata";
 export const metadata: Metadata = pageMetadata("about");
 
 /**
- * The portrait tile. Her slide draws all four as initials on a dark tile; we
- * hold real photographs for all four, so the tile takes a photo when there is
+ * The portrait tile. Her slide draws everyone as initials on a dark tile; we
+ * hold real photographs for all five, so the tile takes a photo when there is
  * one and the monogram when there is not. Same shape either way, so a card with
  * initials does not read as a card that failed to load.
  *
- * THE MONOGRAM BRANCH IS UNREACHABLE TODAY, since Saif's photograph arrived on
- * 1 September and he was the last card without one. It stays: it is the generic
- * fallback for anyone added to the team without a photograph, keyed on
- * person.photo rather than hardcoded to a name, and deleting it would mean the
- * next such card renders an empty frame. PENDING-COPY 1d8.
+ * objectPosition CARRIES HER OWN VERTICAL FOCUS, which her file sets per person:
+ * Justin 12%, Saif 22%, Khushi 25%. Those three source files are 4:5, 4:5 and
+ * 3:4 against her 4:4.2 card box, so the browser does crop them and her focus
+ * value decides what it keeps. It replaced a blanket object-top, which is 0% and
+ * is not what she drew for any of them.
+ *
+ * NISHA'S VALUE IS 50 AND DOES NOTHING, which is the point: her file is already
+ * the card's shape, so there is nothing to crop. PENDING-COPY 1f9.
+ *
+ * THE MONOGRAM BRANCH IS UNREACHABLE TODAY. It stays: it is the generic fallback
+ * for anyone added to the team without a photograph, keyed on person.photo
+ * rather than hardcoded to a name, and deleting it would mean the next such card
+ * renders an empty frame. PENDING-COPY 1d8.
  */
 function Portrait({ person, className }: { person: Person; className: string }) {
   if (person.photo) {
@@ -28,9 +44,10 @@ function Portrait({ person, className }: { person: Person; className: string }) 
         src={person.photo.src}
         alt={person.photo.alt}
         width={640}
-        height={800}
-        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 28rem, 100vw"
-        className={`${className} object-cover object-top`}
+        height={672}
+        sizes="(min-width: 1000px) 33vw, (min-width: 680px) 50vw, 100vw"
+        style={{ objectPosition: `50% ${person.photo.focusY}%` }}
+        className={`${className} object-cover`}
       />
     );
   }
@@ -45,6 +62,111 @@ function Portrait({ person, className }: { person: Person; className: string }) 
         {person.initials}
       </span>
     </div>
+  );
+}
+
+/** Her file's LinkedIn mark, path data and all, so nothing is fetched for it. */
+function LinkedInMark() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 flex-none">
+      <path
+        fill="currentColor"
+        d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"
+      />
+    </svg>
+  );
+}
+
+/**
+ * The LinkedIn button, her file's `.connect`: neon fill, forest text, the site's
+ * 12px radius, the mark before the label.
+ *
+ * mt-auto PINS IT TO THE FOOT OF THE CARD so the buttons line up across the row
+ * however long the biographies run, which is what her `margin-top: auto` does.
+ * w-fit keeps it the width of its own words rather than the width of the card.
+ *
+ * NOTHING RENDERS WHEN THERE IS NO PROFILE. Iram has none in any source we hold,
+ * so her card gets no button rather than a dead one or a link to the company
+ * page. A guessed profile URL would point at a real person who may not be her.
+ *
+ * The label is the accessible name on its own and the mark is aria-hidden. The
+ * capitals are a CSS text-transform, so the stored string is sentence case, as
+ * every other button label on this site is.
+ */
+function LinkedInButton({ person }: { person: Person }) {
+  if (!person.linkedin) return null;
+  return (
+    <a
+      href={person.linkedin.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      /* data-on-light IS LOAD-BEARING, AND IT WAS FOUND BY LOOKING RATHER THAN
+         BY READING. The card is .card-dark, whose remap repaints every
+         text-forest descendant white so light-on-dark copy stays readable. This
+         button is the opposite case: a NEON panel inside the dark card, where
+         forest is correct and white is close to unreadable. Measured on the
+         first build, the label rendered rgb(255,255,255) on rgb(0,215,109).
+
+         globals.css already carries this exact exception for the light nodes
+         inside the dark diagram panels, where the same remap put white on white
+         at 1.1:1, so this reuses that mechanism rather than adding a second one.
+         The mark inherits it through fill="currentColor". */
+      data-on-light=""
+      className="mt-auto inline-flex min-h-11 w-fit items-center gap-2.5 rounded-xl bg-neon px-4 py-3 text-xs font-bold tracking-wider text-forest uppercase transition-colors hover:bg-neon/90 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none"
+    >
+      <LinkedInMark />
+      {person.linkedin.label}
+    </a>
+  );
+}
+
+/** A biography: paragraphs, and for Saif a bulleted list of four builds. */
+function Bio({ blocks, className }: { blocks: BioBlock[]; className: string }) {
+  return (
+    <div className={className}>
+      {blocks.map((block) =>
+        block.kind === "p" ? (
+          <p key={block.text.slice(0, 40)} className="leading-relaxed [&+p]:mt-2">
+            {block.text}
+          </p>
+        ) : (
+          /* my-2 RATHER THAN HER mt-2. Her file sets .bio ul { margin: 8px 0
+             0 } and .bio p + p { margin-top: 8px }, and a p following a ul
+             matches neither rule, so "He also rebuilt pivotprime.ae and its
+             business diagnostic." ran straight into the last bullet with no
+             space at all. It does the same in her own file. One line of spacing
+             added and no copy touched; PENDING-COPY 1f9 tells her it was. */
+          <ul key={block.items[0]} className="my-2 grid list-disc gap-1 pl-[1.1em] marker:text-neon">
+            {block.items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        ),
+      )}
+    </div>
+  );
+}
+
+/**
+ * The chip row, her `.tags`.
+ *
+ * THE CLASSES ARE THE FOUNDER CARD'S OWN, not her file's rgba values, so all
+ * five cards carry one chip treatment. card-dark remaps border-forest and
+ * bg-forest/ to white alpha on a dark card, which is what her file writes
+ * literally; going through the token keeps it inside the palette rule.
+ */
+function Tags({ tags }: { tags: string[] }) {
+  return (
+    <ul className="flex flex-wrap gap-2">
+      {tags.map((tag) => (
+        <li
+          key={tag}
+          className="rounded-full border border-forest/15 bg-forest/[0.04] px-3 py-1.5 text-xs font-semibold text-forest"
+        >
+          {tag}
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -100,7 +222,23 @@ export default function About() {
         </div>
       </section>
 
-      {/* MEET THE TEAM, slide 21. Anchor target for /about#team. */}
+      {/* MEET THE TEAM. Anchor target for /about#team.
+
+          REBUILT FROM HER OWN FILE, req/meet-the-team.html, which came with her
+          v3 deck slides 4 and 5. The layout below is that file's: a section
+          header, three tall portrait cards in a row, then one wide card for
+          Khushi beneath them, with Iram's card above the three and unchanged.
+
+          THE BREAKPOINTS ARE HERS, not the site's usual ones. She writes 3
+          columns above 1000px, 2 columns from 680 to 1000, and 1 column below
+          680, so they are arbitrary values rather than md and lg, which fall at
+          768 and 1024 and would put the step in the wrong place.
+
+          THAT REVERSES A DELIBERATE DECISION OF OURS, and it is hers to reverse.
+          The old grid went straight from one column to three because "three in a
+          two-column row would strand the third". Her file has the two-column
+          step, so from 680 to 1000 the third card does sit alone on its own row.
+          It is her layout; PENDING-COPY 1f9 shows her what it looks like. */}
       <section className="px-4 pb-12 sm:pb-20 sm:px-6 lg:px-8" id={TEAM_ANCHOR}>
         <div className="mx-auto max-w-6xl">
           <span className="mb-4 block text-xs font-bold tracking-[0.22em] text-mid uppercase">
@@ -110,87 +248,93 @@ export default function About() {
             {TEAM_INTRO.heading}
           </h2>
 
-          {/* The founder card runs the full width, photograph beside the text,
-              as the slide draws it. */}
+          {/* IRAM'S CARD IS UNCHANGED apart from the LinkedIn item, which is the
+              brief. It runs the full width, photograph beside the text, as her
+              slide draws it, and her portrait keeps its own 4/5 box rather than
+              the 4/4.2 the team cards take: the team box is her new file's and
+              this card is not in that file. Her biography text is untouched. */}
           <article className="mt-8 sm:mt-12 overflow-hidden rounded-[28px] border border-forest/20 card-dark shadow-[0_16px_48px_rgba(1,51,37,0.06)]">
             <div className="grid grid-cols-1 gap-5 sm:gap-8 p-6 md:grid-cols-12 md:gap-10 md:p-10">
               <div className="md:col-span-4 lg:col-span-3">
                 <Portrait person={FOUNDER} className="aspect-[4/5] w-full rounded-2xl" />
               </div>
-              <div className="md:col-span-8 lg:col-span-9">
+              <div className="flex flex-col md:col-span-8 lg:col-span-9">
                 <p className="text-xs font-bold tracking-[0.18em] text-mid uppercase">
                   {FOUNDER.role}
                 </p>
                 <h3 className="mt-2 text-2xl font-extrabold text-forest md:text-3xl">
                   {FOUNDER.name}
                 </h3>
-                <div className="mt-4 space-y-4">
-                  {FOUNDER.body.map((paragraph) => (
-                    <p key={paragraph.slice(0, 40)} className="leading-relaxed text-neutral-600">
-                      {paragraph}
-                    </p>
-                  ))}
+                <Bio blocks={FOUNDER.bio} className="mt-4 space-y-4 text-neutral-600" />
+                <div className="mt-6">
+                  <Tags tags={FOUNDER.tags} />
                 </div>
-                <ul className="mt-6 flex flex-wrap gap-2">
-                  {FOUNDER.tags.map((tag) => (
-                    <li
-                      key={tag}
-                      className="rounded-full border border-forest/15 bg-forest/[0.04] px-3 py-1.5 text-xs font-semibold text-forest"
-                    >
-                      {tag}
-                    </li>
-                  ))}
-                </ul>
+                {/* Renders nothing today: we have no LinkedIn for her. The slot
+                    is here so the URL is a one-line change when it arrives, and
+                    docs/FOR-IRAM-outstanding.md asks for it. */}
+                <LinkedInButton person={FOUNDER} />
               </div>
             </div>
           </article>
 
-          {/* Three across at 1440, one at 360. Three in a two-column row would
-              strand the third, so the middle step is skipped. */}
-          <ul className="mx-auto mt-8 grid max-w-md grid-cols-1 gap-6 lg:max-w-none lg:grid-cols-3">
+          <ul className="mt-6 grid grid-cols-1 gap-7 min-[680px]:grid-cols-2 min-[1000px]:grid-cols-3">
             {PEOPLE.map((person) => (
               <li
                 key={person.name}
                 className="flex flex-col overflow-hidden rounded-[28px] border border-forest/20 card-dark shadow-[0_16px_48px_rgba(1,51,37,0.06)]"
               >
-                {/* PORTRAIT ASPECT AT EVERY WIDTH, from 1 September. This was
-                      aspect-[16/10] below sm and aspect-[4/5] above it, which is
-                      the wrong way round for portrait photographs: measured on
-                      live, the box was 1.6 under 640 against source ratios of
-                      0.80 and 0.75, so 50% of Justin's photograph and 53% of
-                      Khushi's were being discarded, top-anchored. At 640 and up
-                      the same photographs lose 0% and 6%.
-
-                      4/5 everywhere matches the source files, matches the founder
-                      card directly above, which has always been aspect-[4/5] at
-                      every width, and is the shape Saif's photograph will need
-                      when it arrives; his card renders initials until then and
-                      was going to inherit the same bad crop. The cards are taller
-                      on a phone as a result, which is the cost of not cutting the
-                      subject in half. */}
-                <Portrait person={person} className="aspect-[4/5] w-full" />
-                <div className="flex flex-1 flex-col p-6 md:p-8">
-                  <p className="text-xs font-bold tracking-[0.18em] text-mid uppercase">
+                {/* 4/4.2, her file's box. It was 4/5. */}
+                <Portrait person={person} className="aspect-[4/4.2] w-full" />
+                <div className="flex flex-1 flex-col gap-3.5 p-6 sm:p-8">
+                  {/* TWO LINES RESERVED FROM 680 UP, her `min-height: 3em`, so the
+                      names line up across the row whether a title wraps or not.
+                      Nisha's is the one that wraps. Below 680 the cards are
+                      stacked and there is nothing to line up with, so her file
+                      drops it there and so does this. */}
+                  {/* THREE LINES RESERVED IN THE THREE-COLUMN RANGE, not her
+                      two, and the difference was measured rather than guessed.
+                      At 1024 her min-height of 3em reserves two lines; Nisha is
+                      the only title long enough to take three at that card
+                      width, and her name sat 18px below the other two. The
+                      reserve exists to align the names, so it is sized to the
+                      longest title at the narrowest width it has to hold rather
+                      than to the common case. Two lines is still right from 680
+                      to 1000, where the cards are wider. PENDING-COPY 1f9. */}
+                  <p className="text-xs font-bold tracking-[0.16em] text-neon uppercase min-[680px]:min-h-[3em] min-[680px]:leading-[1.5] min-[1000px]:min-h-[4.5em]">
                     {person.role}
                   </p>
-                  <h3 className="mt-2 text-xl font-extrabold text-forest">{person.name}</h3>
-                  {person.body.map((paragraph) => (
-                    <p
-                      key={paragraph.slice(0, 40)}
-                      className="mt-4 leading-relaxed text-neutral-600"
-                    >
-                      {paragraph}
-                    </p>
-                  ))}
-                  {person.seat ? (
-                    <p className="mt-6 inline-flex w-fit rounded-full border border-forest/15 bg-forest/[0.04] px-3 py-1.5 text-xs font-semibold text-forest lg:mt-auto lg:pt-1.5">
-                      {person.seat}
-                    </p>
-                  ) : null}
+                  <h3 className="text-2xl font-extrabold text-forest">{person.name}</h3>
+                  <Bio blocks={person.bio} className="text-neutral-600" />
+                  <Tags tags={person.tags} />
+                  <LinkedInButton person={person} />
                 </div>
               </li>
             ))}
           </ul>
+
+          {/* KHUSHI, ONE WIDE CARD BENEATH THE THREE, her `.card.wide`: photo
+              left at 38% of the card, text right, stacking below 680 where the
+              photo takes the same 4/4.2 box as the three above it. */}
+          <article className="mt-7 flex flex-col overflow-hidden rounded-[28px] border border-forest/20 card-dark shadow-[0_16px_48px_rgba(1,51,37,0.06)] min-[680px]:flex-row">
+            <div className="aspect-[4/4.2] min-[680px]:aspect-auto min-[680px]:w-[38%] min-[680px]:flex-none">
+              <Portrait person={WIDE_PERSON} className="h-full w-full" />
+            </div>
+            <div className="flex flex-1 flex-col justify-center gap-3.5 p-6 sm:p-8 min-[680px]:p-10">
+              {/* No reserved second line on the wide card, as her file has it:
+                  there is no card beside it to align with. */}
+              <p className="text-xs font-bold tracking-[0.16em] text-neon uppercase">
+                {WIDE_PERSON.role}
+              </p>
+              <h3 className="text-2xl font-extrabold text-forest">{WIDE_PERSON.name}</h3>
+              <Bio blocks={WIDE_PERSON.bio} className="max-w-[62ch] text-neutral-600" />
+              <Tags tags={WIDE_PERSON.tags} />
+              {/* mt-auto would push it to the foot of a card that is as tall as
+                  a photograph, so the wide card lets it sit under the chips. */}
+              <div className="mt-2">
+                <LinkedInButton person={WIDE_PERSON} />
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 

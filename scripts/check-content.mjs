@@ -757,6 +757,60 @@ const DECISIONS = [
     },
   },
   {
+    what: "every team member carries her own LinkedIn, and Iram carries none rather than a guess",
+    where: "PENDING-COPY 1f9 and FOR-IRAM-outstanding",
+    run: async (get) => {
+      /**
+       * HER v3 SLIDES 4 AND 5, delivered as req/meet-the-team.html.
+       *
+       * A WRONG PROFILE URL IS THE WORST DEFECT THIS SECTION CAN HAVE. It does
+       * not look broken: the button works, the page is fine, and it sends a
+       * reader to a stranger who shares a name. Nothing else on the site would
+       * notice. So the four URLs are asserted literally, each paired with the
+       * person whose card it must sit in, rather than counting four links.
+       *
+       * IRAM'S ABSENCE IS ASSERTED TOO, and that is the half most likely to be
+       * "fixed" by someone later. Her file gives a LinkedIn for the other four
+       * and none for her; the repository, req/, the whole working folder and
+       * both PowerPoint decks were searched, extracted rather than grepped as
+       * archives, and there is none. The only LinkedIn on the site is the
+       * company page in the footer, which must never stand in for a person. So
+       * this fails if a fifth personal profile appears on the page before
+       * docs/FOR-IRAM-outstanding.md is answered, and it fails if the company
+       * page turns up inside the team section.
+       */
+      const html = await (await get("/about")).text();
+      const team = html.slice(html.indexOf('id="team"'), html.indexOf("</section>", html.indexOf('id="team"')));
+      if (!team) return "/about has lost the team section";
+
+      const cards = [
+        ["Justin Ford", "https://www.linkedin.com/in/justinford84/"],
+        ["Nisha Barot", "https://www.linkedin.com/in/nishabarot/"],
+        ["Saif Ur Rehman", "https://www.linkedin.com/in/saif-bookmeetings/"],
+        ["Khushi Popat", "https://www.linkedin.com/in/khushi-popat-44464b1ab/"],
+      ];
+      for (const [name, url] of cards) {
+        if (!textOf(team).includes(name)) return `the team section has lost ${name}`;
+        if (!team.includes(`href="${url}"`)) return `${name} no longer links ${url}, which is the profile in her own file`;
+        const first = name.split(" ")[0];
+        if (!textOf(team).includes(`Connect with ${first} on LinkedIn`)) {
+          return `${name}'s button has lost her label, "Connect with ${first} on LinkedIn"`;
+        }
+      }
+      // Opened in a new tab, and never without the opener protection.
+      const links = [...team.matchAll(/<a[^>]*href="https:\/\/www\.linkedin\.com\/in\/[^"]*"[^>]*>/g)].map((m) => m[0]);
+      if (links.length !== 4) return `the team section has ${links.length} personal LinkedIn links, and her file gives four`;
+      for (const a of links) {
+        if (!a.includes('target="_blank"')) return "a LinkedIn button no longer opens in a new tab";
+        if (!a.includes('rel="noopener noreferrer"')) return "a LinkedIn button has lost rel=noopener noreferrer";
+      }
+      if (team.includes("linkedin.com/company")) {
+        return "the company LinkedIn page is inside the team section, and it must never stand in for a person's profile";
+      }
+      return null;
+    },
+  },
+  {
     what: "the services section is her three offers on / and /services alike, and the two folded pages are still reachable",
     where: "PENDING-COPY 1f6",
     run: async (get) => {

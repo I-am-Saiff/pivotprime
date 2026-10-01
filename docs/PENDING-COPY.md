@@ -5766,3 +5766,131 @@ You wrote "pill". We have used the **12px corner** the rest of the site uses,
 which is the same shape as the seat tags on your Fractional Leadership page,
 rather than a fully round capsule. A fully round one would be the only round
 thing on the page. Say if you want it rounder.
+
+---
+
+## 1f9 The team section, rebuilt from your own file
+
+**30 September, your v3 slides 4 and 5, and your meet-the-team HTML file.**
+
+**We found your file** and copied it into the repository as
+`req/meet-the-team.html`, so it travels with the site. **Every word below is read
+out of that file rather than retyped**, and all four biographies were compared
+against it before anything was written: they match character for character. This
+is the strongest provenance anything on this site has, and unlike your slide 2
+and slide 3 copy, none of it is transcribed from a screenshot.
+
+**Your house rules cost your copy nothing at all.** No em dash, no en dash, no
+double hyphen, no American spelling. "programmes" was already British. The only
+unusual character is the acute in "cafés", which is correct.
+
+**Your brand casing is kept exactly:** dubizzle lower case, Bookmeetings.io,
+BitOasis, xAI, OpenAI, NKD Studios, Vibe FM.
+
+### Nisha Barot is new
+
+| | |
+|---|---|
+| Photograph supplied | 1920 x 2880, a full-length standing portrait |
+| Crop used | **836 x 878**, taken from (596, 379) |
+| Why that size | it is the card's own shape, so the browser crops nothing |
+| Zoom | chosen by eye to match Justin's, then measured: her head fills the frame within a few percent of his |
+| What was cut | background and the shelving behind her, never her head |
+
+Your file sets her vertical focus at 6% from the top. **That was the starting
+point for choosing the crop rather than a value we could keep**: once the picture
+is cropped to the card's shape there is nothing left for a focus value to move.
+Justin at 12%, Saif at 22% and Khushi at 25% are all still live, because their
+photographs are not the card's shape and the browser does crop them.
+
+### What was replaced, preserved here
+
+**The role lines above each name.** They were seat labels:
+
+> Justin: **Finance Seat** · Saif: **Technology Seat** · Khushi: **Content &
+> Social Seat**
+
+Your file puts the job title there instead.
+
+**The pill at the foot of each card**, which carried the job titles:
+
+> **Fractional CFO** · **AI & Technology Lead** · **Digital Storyteller & Social
+> Media Strategist**
+
+Your cards carry a row of tag chips instead, like Iram's card already did.
+
+**All three biographies**, which were one short paragraph each:
+
+> **Justin:** "Fractional CFO bringing senior finance leadership without the
+> full-time cost. Cash management, forecasting, investor reporting and readiness
+> for the next raise. The layer that turns a growing business into one that can
+> prove it."
+>
+> **Saif:** "AI and technology solutions lead. Scoped after the diagnosis so we
+> build at the constraint, not over the parts that already work. Custom
+> automation, workflow design, CRM build and reporting systems that actually get
+> used."
+>
+> **Khushi:** "Digital storyteller and social media strategist. Fixing the
+> operation raises the ceiling. Khushi makes sure it gets filled. Positioning,
+> visual storytelling and the client-facing presence that carries the business at
+> scale."
+
+**Iram's card is untouched**, as you asked. Same photograph, same position, same
+biography, same chips.
+
+### ⚠️ Your LinkedIn is the one thing missing
+
+Your file gives a profile for Justin, Nisha, Saif and Khushi, and none for you.
+We searched everywhere before concluding: every file in the site, your old site
+records, the whole working folder, and both PowerPoint decks unpacked rather than
+just searched, because a deck hides its own text from a plain search.
+
+The only LinkedIn anywhere is the **company page** in the footer.
+
+**So your card has no button.** We will not point a button with your name on it at
+a company page, and we will not guess a profile address, because a guess lands on
+a real person who may not be you. **Send us the URL and it is a one-line change.**
+It is also in `docs/FOR-IRAM-outstanding.md`.
+
+### Three things we changed that your file does not do
+
+1. **The button text colour.** Your file asks for forest green on the neon
+   button, which is right. The site's dark-card rule repaints forest text white
+   automatically, so on the first build the labels came out white on green and
+   were close to unreadable. Fixed with the exception the site already uses for
+   the same situation elsewhere. Measured after: **7.29 : 1**, comfortably
+   readable.
+
+2. **A line of space after Saif's bullet list.** Your CSS spaces paragraph after
+   paragraph, and list after paragraph, but not paragraph after list, so "He also
+   rebuilt pivotprime.ae and its business diagnostic." ran straight into the last
+   bullet with no gap. It does the same in your own file. **No copy touched.**
+
+3. **The reserved space above the names.** Your CSS holds two lines so the names
+   line up across the row. At 1024px wide, Nisha's title is long enough to take
+   **three** lines, so her name sat lower than Justin's and Saif's. We hold three
+   lines in the three-column range. Two is still right on a tablet.
+
+### One thing worth your eye
+
+**Your layout puts two cards in a row between 680px and 1000px wide**, which
+leaves the third card alone on its own row at those widths. The site previously
+went straight from one column to three for exactly that reason. **We have
+followed your file**, because it is your design and it is explicit. Say if you
+would rather the third card not sit alone.
+
+### One observation about your photograph, no action taken
+
+Your portrait file is **4099 x 6149 and 4MB**. Every other team photograph has
+been prepared: Justin's is 223KB, Khushi's 126KB, Saif's 67KB, Nisha's 87KB.
+Yours is about thirty times the size of any of them.
+
+**It is not broken and nothing is wrong on the live site**, which re-sizes it on
+delivery and serves a 26KB version in under a fifth of a second. It only shows up
+when the site is run on a laptop, where re-sizing a file that large can take
+minutes. That is a local inconvenience for us, not something a visitor sees.
+
+**We have not touched it**, because your card is explicitly unchanged in this
+pass apart from the LinkedIn item. Preparing it the way the other four are
+prepared is a ten-minute job whenever you want it.

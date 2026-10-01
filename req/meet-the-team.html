@@ -1,0 +1,220 @@
+<title>Pivot Prime Meet the Team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+<style>
+  /* Layout: site section header, three tall portrait cards (Justin, Nisha, Saif), one wide card (Khushi) beneath.
+     Single light look on purpose: it mirrors pivotprime.ae, which has no dark mode. */
+  :root {
+    --page: #f8f4ee;      /* site cream */
+    --forest: #03302a;    /* card green */
+    --forest-2: #0a3f36;  /* pill / hover fill */
+    --neon: #00d76d;      /* site accent */
+    --eyebrow: #009f50;   /* accent on cream */
+    --ink: #0a1a12;
+    --muted: #4a6657;
+    --on-dark: #ffffff;
+    --on-dark-soft: rgba(255,255,255,0.78);
+    --line-dark: rgba(255,255,255,0.22);
+    --font: 'Poppins', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --radius-card: 28px;
+    --radius-btn: 12px;
+    color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--font); }
+
+  .team {
+    max-width: 1240px;
+    margin-inline: auto;
+    padding-inline: clamp(16px, 4vw, 40px);
+    padding-block: clamp(48px, 8vw, 96px);
+    display: grid;
+    gap: 28px;
+  }
+
+  .head { display: grid; gap: 10px; margin-bottom: 12px; }
+  .eyebrow {
+    margin: 0;
+    font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--eyebrow);
+  }
+  .head h2 {
+    margin: 0;
+    font-size: clamp(2rem, 4.2vw, 3rem); font-weight: 800;
+    line-height: 1.08; letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+
+  .card {
+    background: var(--forest);
+    color: var(--on-dark);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    min-width: 0;
+  }
+  .photo { aspect-ratio: 4 / 4.2; max-width: 100%; background: var(--forest-2); }
+  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .body { padding: 30px 32px 34px; display: flex; flex-direction: column; gap: 14px; flex: 1; min-width: 0; }
+  .role {
+    margin: 0;
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--neon);
+    line-height: 1.5;
+    min-height: 3em; /* two lines, so names align across cards */
+  }
+  .card.wide .role { min-height: 0; }
+  .name { margin: 0; font-size: 1.6rem; font-weight: 800; line-height: 1.15; }
+  .bio { margin: 0; font-size: 0.98rem; line-height: 1.7; color: var(--on-dark-soft); }
+  .bio ul { margin: 8px 0 0; padding-left: 1.1em; display: grid; gap: 4px; }
+  .bio li::marker { color: var(--neon); }
+  .bio p { margin: 0; }
+  .bio p + p { margin-top: 8px; }
+
+  .tags { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .tags li {
+    font-size: 0.78rem; font-weight: 600;
+    padding: 6px 12px;
+    border: 1px solid var(--line-dark);
+    border-radius: 999px;
+    color: var(--on-dark);
+  }
+
+  .connect {
+    margin-top: auto;
+    align-self: flex-start;
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 18px;
+    border-radius: var(--radius-btn);
+    background: var(--neon);
+    color: var(--forest);
+    font-size: 0.8rem; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color .15s ease;
+  }
+  .connect svg { width: 16px; height: 16px; flex: none; }
+  .connect:hover { background: #33e28c; }
+  .connect:focus-visible { outline: 3px solid var(--on-dark); outline-offset: 3px; }
+  .spacer { height: 6px; }
+
+  /* Wide card for Khushi */
+  .card.wide { flex-direction: row; }
+  .card.wide .photo { aspect-ratio: auto; flex: 0 0 38%; min-height: 380px; }
+  .card.wide .body { padding: 40px 44px; justify-content: center; }
+  .card.wide .bio { max-width: 62ch; }
+
+  @media (max-width: 1000px) {
+    .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 680px) {
+    .grid { grid-template-columns: minmax(0, 1fr); }
+    .card.wide { flex-direction: column; }
+    .card.wide .photo { flex: none; aspect-ratio: 4 / 4.2; min-height: 0; }
+    .card.wide .body, .body { padding: 26px 22px 28px; }
+    .role { min-height: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) { .connect { transition: none; } }
+</style>
+
+<section class="team" aria-labelledby="team-heading">
+  <div class="head">
+    <p class="eyebrow">Meet the team</p>
+    <h2 id="team-heading">The people you work with directly.</h2>
+  </div>
+
+  <div class="grid">
+    <!-- Justin -->
+    <article class="card">
+      <div class="photo"><img src="team/justin.jpg" alt="Justin Ford, Fractional CFO" style="object-position: 50% 12%"></div>
+      <div class="body">
+        <p class="role">Fractional CFO</p>
+        <h3 class="name">Justin Ford</h3>
+        <div class="bio">
+          <p>Justin has run the finance function inside global corporates and fast-growing Gulf scale-ups for more than fifteen years. He trained at KPMG and managed a $650M+ inventory balance at Ford Motor Company. In Dubai he has held senior finance roles at OSN, dubizzle, International SOS and BitOasis, where he built the plan behind its Series C raise. Since 2023 he has been a fractional CFO to founder-led businesses, and he runs his own UAE wellness brand, Life Within.</p>
+        </div>
+        <ul class="tags">
+          <li>KPMG</li><li>Ford</li><li>OSN</li><li>dubizzle</li><li>BitOasis</li><li>15+ years</li>
+        </ul>
+        <div class="spacer"></div>
+        <a class="connect" href="https://www.linkedin.com/in/justinford84/" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          Connect with Justin on LinkedIn
+        </a>
+      </div>
+    </article>
+
+    <!-- Nisha -->
+    <article class="card">
+      <div class="photo"><img src="team/nisha.jpg" alt="Nisha Barot, Strategic Execution and Transformation Consultant" style="object-position: 50% 6%"></div>
+      <div class="body">
+        <p class="role">Strategic Execution &amp; Transformation Consultant</p>
+        <h3 class="name">Nisha Barot</h3>
+        <div class="bio">
+          <p>Nisha turns strategic priorities into delivered outcomes. Over more than ten years she has led programmes, PMOs and governance at Morgan Stanley, Capgemini, Meridiam and Imperial College London, across London, Toronto and Dubai. She is also an investor and board member across more than 20 companies, including OpenAI and xAI. She works with leadership teams on a fractional or project basis, bringing the structure and delivery discipline that carry initiatives through to results.</p>
+        </div>
+        <ul class="tags">
+          <li>Morgan Stanley</li><li>Capgemini</li><li>Meridiam</li><li>Imperial College London</li><li>10+ years</li>
+        </ul>
+        <div class="spacer"></div>
+        <a class="connect" href="https://www.linkedin.com/in/nishabarot/" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          Connect with Nisha on LinkedIn
+        </a>
+      </div>
+    </article>
+
+    <!-- Saif -->
+    <article class="card">
+      <div class="photo"><img src="team/saif.jpg" alt="Saif Ur Rehman, AI and Technology Solutions Lead" style="object-position: 50% 22%"></div>
+      <div class="body">
+        <p class="role">AI and Technology Solutions Lead</p>
+        <h3 class="name">Saif Ur Rehman</h3>
+        <div class="bio">
+          <p>Saif builds the systems that let a business grow without endlessly adding headcount. He leads backend, AI and automation engineering, and his builds include:</p>
+          <ul>
+            <li>Nurture UAE, a family childcare app live on the App Store</li>
+            <li>A coaching platform linking a UAE national junior boxer with coaches in Russia and the US</li>
+            <li>AI stock systems for Chaiiwala's UK cafés</li>
+            <li>Bookmeetings.io, his own outreach platform</li>
+          </ul>
+          <p>He also rebuilt pivotprime.ae and its business diagnostic.</p>
+        </div>
+        <ul class="tags">
+          <li>Nurture UAE</li><li>Chaiiwala</li><li>Bookmeetings.io</li><li>AI, automation and apps</li>
+        </ul>
+        <div class="spacer"></div>
+        <a class="connect" href="https://www.linkedin.com/in/saif-bookmeetings/" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          Connect with Saif on LinkedIn
+        </a>
+      </div>
+    </article>
+  </div>
+
+  <!-- Khushi, wide card -->
+  <article class="card wide">
+    <div class="photo"><img src="team/khushi.jpg" alt="Khushi Popat, Digital Storyteller and Social Media Strategist" style="object-position: 50% 25%"></div>
+    <div class="body">
+      <p class="role">Digital Storyteller &amp; Social Media Strategist</p>
+      <h3 class="name">Khushi Popat</h3>
+      <div class="bio">
+        <p>Khushi has spent more than four years building audiences and brands in the UAE's creator and consumer economy. As Business Manager to Nidhi Kumar, the UAE's biggest dance YouTuber, she ran social media, brand partnerships and content production, and launched NKD Studios. At Danube Group she ran social media for Milano by Danube and led commercial shoots with brand ambassador Chitrangda Singh. At Pivot Prime she shapes positioning and visual storytelling.</p>
+      </div>
+      <ul class="tags">
+        <li>Danube Group</li><li>NKD Studios</li><li>Vibe FM</li><li>4+ years</li>
+      </ul>
+      <div class="spacer"></div>
+      <a class="connect" href="https://www.linkedin.com/in/khushi-popat-44464b1ab/" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        Connect with Khushi on LinkedIn
+      </a>
+    </div>
+  </article>
+</section>
