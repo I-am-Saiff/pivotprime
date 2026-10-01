@@ -6428,8 +6428,11 @@ and the inside margin of the three white boxes, which differed from box to box.
 **Correction to 1g0.** It said there was no grey band. There was. It was the case
 studies box's soft shadow, cut off in a straight line by the sliding panel that
 holds the cards, and it measured #EDEBE6 to #F2EFE9, with your #EFEEE7 inside it.
-The shadow now fades out fully and the band is gone, with the space between
-sections unchanged.
+The soft shadow is now taken off the case studies box, so the page directly under
+it is the plain page colour, as it is under the Our fees box, and the band is
+gone. A first attempt that only gave the shadow room to fade still left its two
+ends cut square at the sides, which the re-check caught. The space between
+sections is unchanged, and the box keeps its fine border.
 
 Two boxes keep their insides as your own designs draw them: the "Start with the
 diagnostic" panel keeps its button on the right, as in your services mock-up, and
@@ -6464,6 +6467,11 @@ reads "what changed", and your comment is later.
 labels, Project Management, Data Analytics, AI & Automation, Finance & Accounting
 and Executive Advisory, are in green as your design has them, and "Project
 Management" has its capital M back.
+
+**Nisha's photograph, your v3 slide 5 file.** The crop cut into the top of her
+hair, where your picture shows a little space above her head. It is re-cut from
+the photograph you sent, the same size and shape, starting 59 pixels higher, at
+(596, 320) of the 1920 by 2880 original instead of (596, 379).
 
 **Khushi's card, your v3 slide 5 file.** On a computer her text now starts at the
 top with the LinkedIn button at the foot, and on a phone her photograph is the same

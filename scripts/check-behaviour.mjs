@@ -253,6 +253,34 @@ const openPanels = (page) =>
   );
 }
 
+// NO GREY BAND UNDER THE CASE STUDIES. Her v3 slide 11: "remove the band". The
+// band was the case study cards' soft shadow, cut square on every side by the
+// sideways-scrolling list that holds them. It survived one fix that only gave
+// the shadow room below, so the assertion is on the cause: the cards carry no
+// shadow at all, on both pages the slider appears on.
+{
+  const page = await browser.newPage();
+  await page.setViewportSize({ width: 1440, height: 900 });
+  for (const route of ["/", "/about"]) {
+    await page.goto(`${BASE}${route}`, { waitUntil: "load" });
+    const shadows = await page.$$eval(".snap-x > li", (cards) => cards.map((c) => getComputedStyle(c).boxShadow));
+    expect(
+      `${route}: the case study cards carry no shadow, so no band shows under them`,
+      // Tailwind composes box-shadow from several layers and a card with no
+      // shadow still computes a list of transparent zero layers rather than
+      // "none", so a layer counts only if it has a visible colour and a
+      // non-zero length.
+      shadows.length > 0 &&
+        shadows.every((v) =>
+          v === "none" ||
+          v.split(/,(?![^(]*\))/).every((layer) => layer.includes("rgba(0, 0, 0, 0)") || !/[1-9]/.test(layer.replace(/rgba?\([^)]*\)/, ""))),
+        ),
+      shadows.length ? `box-shadow ${[...new Set(shadows)].join(" | ")}` : "no case study cards found",
+    );
+  }
+  await page.close();
+}
+
 // THE DIAGNOSTIC'S ADVICE APPEARS ON SCREEN AFTER UNLOCK, AND NOT BEFORE.
 //
 // Her v3 slide 8: "The data all shown here, it will all pop up on screen when

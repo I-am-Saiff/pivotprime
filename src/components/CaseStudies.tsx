@@ -130,14 +130,11 @@ export default function CaseStudies({
       <ul
         ref={scrollRef}
         onScroll={handleScroll}
-        // pb-16 with -mb-10, 2 OCTOBER: her v3 slide 11, "remove the band".
-        // The band was this list cutting off the cards' soft shadow. A list
-        // that scrolls sideways clips top and bottom too, and pb-6 left 24px,
-        // so the shadow stopped in a straight line: #EDEBE6 down to #F2EFE9,
-        // then the page colour in one step. 64px lets the 16px offset and 48px
-        // blur fade out fully; the -40px margin gives back the 40px added, so
-        // the space to the next element is what it was.
-        className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-16 -mb-10 pt-2 scroll-smooth"
+        // Her v3 slide 11, "remove the band": the band was this list cutting
+        // off the cards' soft shadow, since a list that scrolls sideways clips
+        // on every side. The cards now carry no shadow (see shadow-none! on
+        // them), so there is nothing here to cut and the padding is as it was.
+        className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 pt-2 scroll-smooth"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {studies.map((study, i) => (
@@ -146,7 +143,15 @@ export default function CaseStudies({
             // Modest breathing room under the results panel, from 30 August,
             // and one class so it is the same on every card rather than three
             // cards that happen to look similar.
-            className="flex flex-shrink-0 w-full snap-center frosted-card-light rounded-[28px] p-5 pb-9 sm:p-8 sm:pb-12 md:px-12 md:pt-9 md:pb-14 shadow-sm"
+            //
+            // NO SHADOW, 2 OCTOBER, her v3 slide 11: "remove the band". The
+            // sliding list clips a shadow on all four sides, so it showed as a
+            // grey strip with square ends, close to her #EFEEE7. Giving it room
+            // below still left the sides cut. Without it the page under the box
+            // is plain #F8F4EE, as it is under the Our fees box, and the white
+            // box is still edged by its border. The important marker is needed
+            // because frosted-card-light sets the shadow in the same layer.
+            className="flex flex-shrink-0 w-full snap-center frosted-card-light rounded-[28px] p-5 pb-9 sm:p-8 sm:pb-12 md:px-12 md:pt-9 md:pb-14 shadow-none!"
           >
             {/* ONE COLUMN OF ARGUMENT, THE PICTURE BESIDE IT.
 
