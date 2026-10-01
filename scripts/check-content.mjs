@@ -26,6 +26,8 @@
  *   CHECK_BASE_URL=http://localhost:3987 node scripts/check-content.mjs
  */
 
+import { createHash } from "node:crypto";
+
 const BASE = process.argv[2] ?? process.env.CHECK_BASE_URL ?? "http://localhost:3000";
 
 /**
@@ -844,7 +846,7 @@ const DECISIONS = [
     },
   },
   {
-    what: "the four logos sourced from the companies' own sites are referenced and served",
+    what: "every logo sourced from a company's own site is referenced, named, served, and still the file they served",
     where: "PENDING-COPY 1g2",
     run: async (get) => {
       /**
@@ -863,29 +865,105 @@ const DECISIONS = [
        * the company's own, unaltered; the URL it was taken from is in the
        * content beside it and in PENDING-COPY 1g2.
        *
-       * FORD, DUBIZZLE AND OSN ARE NOT ASSERTED, because they are not on the
-       * page: all three refuse an automated request, and the rule is official
-       * sources only. That is recorded, not asserted away.
+       * PASS 6 ADDS FORD, OSN AND DUBIZZLE GROUP to the institutions row, and
+       * with them a check the first four did not have: THE HASH. Each of the
+       * three was saved as the exact bytes its company served, and a second,
+       * independent browser load confirmed those bytes. The sha256 here is that
+       * confirmed value, and the guard hashes what this site serves today. A
+       * file re-exported, optimised, recoloured or "tidied" by anyone later
+       * fails here, which is the mechanical form of "used as published". The
+       * pass 5 four were recorded before this existed and are left as they were.
+       *
+       * FORD IS DRAWN WITH <use>, NOT AN <img>, because ford.com only serves
+       * its logo as a symbol inside an inline sprite. So for Ford the reference
+       * is the href into the sprite, the name is the aria-label on the svg, and
+       * the served sprite must still contain the symbol it points at.
        */
       const html = await (await get("/")).text();
       const logos = [
-        ["/logos/cinnacare.png", "Cinnacare", "image/"],
-        ["/logos/scentmatic.png", "Scentmatic", "image/"],
-        ["/logos/bookmeetings.svg", "BookMeetings", "image/svg"],
-        ["/logos/nurture-uae.png", "Nurture UAE", "image/"],
+        { path: "/logos/cinnacare.png", name: "Cinnacare", type: "image/" },
+        { path: "/logos/scentmatic.png", name: "Scentmatic", type: "image/" },
+        { path: "/logos/bookmeetings.svg", name: "BookMeetings", type: "image/svg" },
+        { path: "/logos/nurture-uae.png", name: "Nurture UAE", type: "image/" },
+        {
+          path: "/logos/ford-sprite.svg",
+          name: "Ford",
+          type: "image/svg",
+          use: "navigation-menu-ford-logo",
+          sha256: "bd3255a78363498e550ede3c4d8cb3cfe646867d0775e7159c99f94f10783e7b",
+        },
+        {
+          path: "/logos/osn.svg",
+          name: "OSN",
+          type: "image/svg",
+          sha256: "37c7b7e721c9844df05202293efe7a5f6f9b70536225cf66a23feaf6146e40ac",
+        },
+        {
+          path: "/logos/dubizzle-group.png",
+          name: "Dubizzle Group",
+          type: "image/png",
+          sha256: "6b5dba202415e5ec50a678e4e4234677cc9dd2eefb3e9b37c3433d90f57f1aee",
+        },
       ];
-      for (const [path, alt, type] of logos) {
-        // next/image rewrites the src into /_next/image?url=%2Flogos%2F..., and
-        // an SVG is passed through as the raw path, so both spellings count.
-        const encoded = encodeURIComponent(path);
-        if (!html.includes(path) && !html.includes(encoded)) {
-          return `the homepage no longer references ${path}, so the ${alt} logo is gone from the strip`;
+      /**
+       * MARKUP ONLY, WITH EVERY <script> REMOVED, and tied to the element. An
+       * independent review found the first version of this check satisfied by
+       * the React flight payload: page.tsx passes each src as a prop and uses it
+       * in a key, so the path sits in a <script> four times over whether or not
+       * an <img> exists. With the OSN <img> deleted the check still saw the path
+       * and reported "lost its alt text"; with an unrelated alt="OSN" elsewhere
+       * it passed outright. So the reference is found in an <img> or <svg> tag,
+       * and the name is asserted on that same tag.
+       */
+      const markup = html.replace(/<script\b[\s\S]*?<\/script>/gi, "");
+      const imgTags = markup.match(/<img\b[^>]*>/g) || [];
+      const svgTags = markup.match(/<svg\b[^>]*>[\s\S]*?<\/svg>/g) || [];
+      for (const logo of logos) {
+        const { path, name, type } = logo;
+        if (logo.use) {
+          const drawn = svgTags.filter((t) => t.includes(`href="${path}#${logo.use}"`));
+          if (!drawn.length) {
+            return `the homepage no longer draws ${name} from ${path}#${logo.use}, so the ${name} logo is gone from the strip`;
+          }
+          if (!drawn.some((t) => t.includes(`aria-label="${name}"`))) {
+            return `the ${name} logo is drawn but has lost its accessible name`;
+          }
+        } else {
+          // next/image rewrites an optimised src into /_next/image?url=%2Flogos%2F...
+          // (the & is &amp; in markup); a raw or SVG src keeps the plain path.
+          const encoded = encodeURIComponent(path);
+          const tags = imgTags.filter((t) => t.includes(`src="${path}"`) || t.includes(`url=${encoded}&`));
+          if (!tags.length) {
+            return `the homepage no longer has an <img> for ${path}, so the ${name} logo is gone from the strip`;
+          }
+          if (!tags.some((t) => t.includes(`alt="${name}"`))) return `the ${name} logo <img> has lost its alt text`;
+          /**
+           * A HASH IS ONLY WORTH CHECKING ON THE FILE THE TILE LOADS. Under the
+           * image optimiser a tile loads a re-encoded WebP and never requests
+           * the original, so hashing the original would stay green through an
+           * optimiser fault. The review found exactly that for Dubizzle, which is
+           * now served raw. Any hashed logo must be loaded by its own path.
+           */
+          if (logo.sha256 && !tags.some((t) => t.includes(`src="${path}"`))) {
+            return `the ${name} tile no longer loads ${path} itself but an optimised copy, so the hash would check a file the tile never requests`;
+          }
         }
-        if (!html.includes(`alt="${alt}"`)) return `the ${alt} logo has lost its alt text`;
         const res = await get(path);
         const ct = res.headers.get("content-type") || "";
-        if (res.status !== 200) return `${path} answers ${res.status}, so the ${alt} tile renders empty`;
-        if (!ct.startsWith(type)) return `${path} is served as ${ct}, not as an image`;
+        if (res.status !== 200) return `${path} answers ${res.status}, so the ${name} tile renders empty`;
+        if (!ct.startsWith(type)) return `${path} is served as ${ct || "no content-type"}, expected ${type}`;
+        if (logo.sha256 || logo.use) {
+          const bytes = Buffer.from(await res.arrayBuffer());
+          if (logo.sha256) {
+            const got = createHash("sha256").update(bytes).digest("hex");
+            if (got !== logo.sha256) {
+              return `${path} is no longer the file ${name} served: sha256 ${got.slice(0, 12)}..., expected ${logo.sha256.slice(0, 12)}...`;
+            }
+          }
+          if (logo.use && !bytes.toString("utf8").includes(`id="${logo.use}"`)) {
+            return `${path} no longer contains the symbol ${logo.use}, so the ${name} tile draws nothing`;
+          }
+        }
       }
       return null;
     },

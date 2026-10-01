@@ -122,6 +122,12 @@ export type Logo = {
   tile?: boolean;
   /** False only where the monochrome filter would destroy the mark. */
   mono?: boolean;
+  /**
+   * Serve the company's file exactly as it is, with no optimiser re-encode and
+   * no srcSet. For a source smaller than the srcSet widths next/image would
+   * claim for it. See the Dubizzle entry for the defect this prevents.
+   */
+  raw?: boolean;
   /** Where the file came from. Recorded so provenance travels with the asset. */
   source?: string;
   /** The file's own pixel size, so the layout box is reserved before it loads. */
@@ -135,6 +141,18 @@ export type Logo = {
    * which is an edit to someone else's logo.
    */
   size?: string;
+  /**
+   * sha256 of the file exactly as the company's site served it. The guard
+   * hashes what this site serves and fails if the two ever differ, which is the
+   * mechanical form of "the company's file, unaltered".
+   */
+  sha256?: string;
+  /**
+   * For a logo that exists only as a symbol inside an SVG sprite. The sprite is
+   * shipped byte for byte as the company served it and the tile draws the symbol
+   * with <use>, so no new SVG is ever built out of someone else's artwork.
+   */
+  use?: { symbol: string; viewBox: string };
 };
 
 export type LogoGroup = { label: string; logos: Logo[] };
@@ -149,6 +167,125 @@ export const LOGO_GROUPS: LogoGroup[] = [
       { src: "/logos/clogo5a.jpg", alt: "Willis Towers Watson" },
       { src: "/logos/clogo2a.jpg", alt: "KPMG" },
       { src: "/logos/clogo6a.jpg", alt: "AIG" },
+
+      /**
+       * HER v3 SLIDE 1: "Ford, Dubizzle and OSN are missing." Pass 6.
+       *
+       * Last pass all three refused curl. This pass each official site was
+       * opened in a real, headed Chrome on this Mac with its default user agent
+       * and nothing altered, and an independent second agent then loaded the
+       * same page in a fresh browser and confirmed the bytes were identical. Any
+       * page that showed a bot challenge was stopped on, not worked around. Each
+       * page was acquired with a single load, except dubizzlegroup.com, which
+       * took two: see the Dubizzle entry below for why.
+       * Sources and outcomes are in PENDING-COPY 1g2.
+       */
+      {
+        /**
+         * FORD, AND WHY IT IS DRAWN WITH <use> AND IN COLOUR.
+         *
+         * ford.com does not serve its logo as a file. The header draws it with
+         * <svg aria-label="Ford Home Page"><use href="#navigation-menu-ford-logo">
+         * against a hidden sprite of twenty-three symbols inlined in the page
+         * HTML. That sprite is shipped here exactly as ford.com served it, cut
+         * from the raw document response and confirmed byte-identical by a second
+         * independent load. Lifting the one symbol out into a new SVG of its own
+         * would be building a file out of Ford's artwork, so the tile references
+         * the symbol inside the unaltered sprite instead, the same way Ford's own
+         * header does. The other twenty-two symbols are Ford's UI icons; they
+         * ship unused, 16.5KB, as the price of not editing the file.
+         *
+         * IN COLOUR, LIKE NURTURE. The oval is filled. brightness(0) invert(1)
+         * turns the whole oval white and the script and inner ring, which are
+         * white knockouts, vanish into it: a plain white ellipse. Rendered to
+         * check, not assumed. In Ford's own navy with the white script it reads
+         * clearly on the near-black panel.
+         *
+         * SMALLER THAN THE DEFAULT LIMITS ON PURPOSE. A solid filled oval carries
+         * far more visual weight than a light wordmark. Three sizings went through
+         * the whole row at one zoom: at 44% it was the heaviest mark in the strip,
+         * at 34% it read light, and at 38% it sits level with KPMG.
+         */
+        src: "/logos/ford-sprite.svg",
+        alt: "Ford",
+        tile: true,
+        mono: false,
+        use: { symbol: "navigation-menu-ford-logo", viewBox: "0 0 80 30" },
+        w: 80,
+        h: 30,
+        size: "max-h-[38%] max-w-[52%]",
+        sha256: "bd3255a78363498e550ede3c4d8cb3cfe646867d0775e7159c99f94f10783e7b",
+        source:
+          "https://www.ford.com/ (inline sprite in the page HTML, symbol navigation-menu-ford-logo)",
+      },
+      {
+        /**
+         * OSN, the plain OSN mark and not OSN+. osn.com redirects to
+         * /en-ae/home on its own domain; the header carries three marks, the red
+         * OSN logo, OSNtv and OSN+, and this is the first, with alt="OSN" in
+         * their own markup. Its own file, served as image/svg+xml, single colour,
+         * so the strip's white treatment applies cleanly.
+         */
+        src: "/logos/osn.svg",
+        alt: "OSN",
+        tile: true,
+        w: 46,
+        h: 30,
+        /**
+         * GIVEN A HEIGHT, because this file is tiny rather than padded. Its
+         * viewBox is 46x30, so the shared limits, which only ever scale the big
+         * files DOWN, left it at its natural 46x30 beside marks twice that size.
+         * 36% of the tile was chosen by putting three candidates through the
+         * whole row at one zoom: a bold compact mark like this balances against
+         * the bold "sky" at that height, and at 40% it became the heaviest thing
+         * in the row.
+         */
+        size: "h-[36%] max-w-[60%]",
+        sha256: "37c7b7e721c9844df05202293efe7a5f6f9b70536225cf66a23feaf6146e40ac",
+        source: "https://www.osn.com/osn/media/OSNMedia/osntv/images/common/osn-red-logo.svg",
+      },
+      {
+        /**
+         * DUBIZZLE GROUP, AND IT SAYS SO. dubizzle.com, the UAE consumer site,
+         * put up an Imperva challenge and then a 403 "Access denied, Error 15";
+         * that page was stopped on, with no click and no retry. The parent group,
+         * dubizzlegroup.com, which the brief names as an official source, served
+         * its header normally, and this is the logo from it: a transparent PNG
+         * on the group's own CDN subdomain, at 2x for a 121x60 header slot.
+         *
+         * THE MARK READS "dubizzle group", NOT "dubizzle". Justin's biography
+         * names dubizzle, the brand he worked for, and this is its parent
+         * company's mark. The alt names what the picture actually says.
+         * PENDING-COPY 1g2 puts it to her.
+         *
+         * The site serves no SVG of it. Its scroll-state white variant,
+         * logo_main_light.png, was left alone: this is the one the header shows
+         * on arrival, and the strip's filter makes it white anyway.
+         */
+        src: "/logos/dubizzle-group.png",
+        alt: "Dubizzle Group",
+        tile: true,
+        /**
+         * RAW, BECAUSE IT SHRANK TO ABOUT 61% ON A 3x PHONE. Found by an
+         * independent review, then measured. The file is 242px wide, and
+         * next/image still builds a srcSet up to 3840w. The optimiser never
+         * enlarges, so every candidate from 256w up is the same 242px picture,
+         * but the browser computes density from the w descriptor: on a 3x screen
+         * it takes the 640w candidate for a 150px slot and treats a 242px image
+         * as 4.27x, so it lays out at about 57px instead of filling the tile.
+         *
+         * Served raw there is no srcSet and no density guess: 2,751 bytes, the
+         * exact file dubizzlegroup.com served, laid out from its own 242x120 and
+         * clamped by the tile limits to the same size at every pixel density. It
+         * also means the file the guard hashes is the file the tile loads; under
+         * the optimiser the tile was loading a q=75 WebP re-encode of it.
+         */
+        raw: true,
+        w: 242,
+        h: 120,
+        sha256: "6b5dba202415e5ec50a678e4e4234677cc9dd2eefb3e9b37c3433d90f57f1aee",
+        source: "https://cdn.dubizzlegroup.com/wp-content/uploads/2024/08/logo_main.png",
+      },
     ],
   },
   {
@@ -246,23 +383,32 @@ export const LOGO_GROUPS: LogoGroup[] = [
 ];
 
 /**
- * FORD, DUBIZZLE AND OSN ARE NOT HERE, AND NOT FOR WANT OF TRYING.
+ * FORD, OSN AND DUBIZZLE: MISSING AFTER PASS 5, ALL THREE ON THE PAGE AFTER PASS 6.
  *
- * Her slide 1 also asks for them in the institutions row above. The rule for
- * this work is that a logo comes from the company's own site or its official
- * brand page and from nowhere else, and all three refuse an automated request:
+ * In pass 5 all three refused curl: ford.com 403, osn.com 406, dubizzle.com a
+ * bot interstitial. A logo aggregator would have had them in a minute and was
+ * ruled out, and they were left absent.
  *
- *   ford.com, corporate.ford.com and media.ford.com   HTTP 403
- *   osn.com and www.osn.com/en-ae                      HTTP 406
- *   dubizzle.com and uae.dubizzle.com                  HTTP 200, serving a bot
- *                                                      interstitial rather than
- *                                                      the site
+ * In pass 6 each official site was opened in a real, headed Chrome on this Mac
+ * with its default user agent and nothing altered: no stealth, no spoofing, no
+ * banner clicked. A page that showed a challenge was stopped on and never loaded
+ * again. ONE PAGE WAS LOADED TWICE, AND THAT IS RECORDED RATHER THAN SMOOTHED
+ * OVER: the first load of dubizzlegroup.com finished, then the acquiring
+ * script's own screenshot call timed out and it exited before saving anything,
+ * so the site was never actually observed. It had shown no challenge. One more
+ * load with a fixed script captured the logo. That is a retry after our own
+ * crash, not a second attempt at a page that had refused us.
+ * An independent second agent then loaded the same page in a fresh browser,
+ * found the header logo for itself, and confirmed the saved file was
+ * byte-identical to what it received. The hashes are on the entries above and
+ * the guard checks the served files against them.
  *
- * An aggregator would have all three in a minute. That is the one source ruled
- * out, because what it hands back is of unknown provenance and often wrong or
- * out of date. So the three are left exactly as they are, which is absent, and
- * recorded in PENDING-COPY 1g2 and docs/FOR-IRAM-outstanding.md with what is
- * needed: a file from each company's brand page, or permission to use one.
+ *   Ford      ford.com, no challenge. The logo is a symbol in an inline sprite.
+ *   OSN       osn.com -> /en-ae/home, no challenge. The plain OSN mark.
+ *   Dubizzle  dubizzle.com challenged and was stopped on. dubizzlegroup.com,
+ *             the parent group, served normally; its mark reads "dubizzle group".
+ *
+ * Sources and the decisions they leave her are in PENDING-COPY 1g2.
  */
 
 /**

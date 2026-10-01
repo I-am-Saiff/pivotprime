@@ -1180,6 +1180,15 @@ picture's phone shape also takes the greeting, the owl, and 94 pixels off each
 side, cutting into the summary tiles. So it is unchanged, and **nothing has been
 painted over**. PENDING-COPY 1g2 has the detail.
 
+**Please send it from a demo account, not a real family's.** We earlier asked for
+"a real name", and that was wrong of us. A child's name, a parent's name or a
+family's day on a public website is personal information, so a screenshot showing
+real family details would have to be turned away. A demo account with a made-up
+family is exactly right.
+
+**Still not supplied as of the second logo pass**, so the current image is
+unchanged.
+
 The rest of your slide 8, the results moving above the product link, is done.
 
 ### LinkedIn links under each person: built, except yours
@@ -1210,33 +1219,54 @@ lands on a real person who may not be you.
 > and Khushi Popat are the people on the site now. Say if Ali should be there.
 
 
-### Three logos we could not get, from your v3 slide 1
+### Your client and employer logos: all seven are in, and four decisions are yours
 
-**30 September.** Your slide 1 asks for Ford, Dubizzle and OSN in the "Experience
-inside global institutions" strip, and Cinnacare, Nurture UAE, Scentmatic and
-BookMeetings in "Companies we have delivered for".
+**30 September, your v3 slide 1.** Ford, Dubizzle and OSN for "Experience inside
+global institutions"; Cinnacare, Nurture UAE, Scentmatic and BookMeetings for
+"Companies we have delivered for".
 
-**The four in the second strip are done**, each taken from the company's own
-website:
+**All seven are now on the site**, each taken from the company's own website and
+nowhere else:
 
-| Logo | Source |
+| Logo | Taken from |
 |---|---|
 | Cinnacare | https://cinnacare.com/cdn/shop/files/slice17.png |
 | Scentmatic | https://scentmatic.co.uk/cdn/shop/files/scentmatic_logo.png |
 | BookMeetings | https://bookmeetings.io/logo.svg |
 | Nurture UAE | https://nurtureuae.com/assets/img/nurture-icon-1024.png |
+| **Ford** | https://www.ford.com/ (the logo is built into the page, there is no separate file) |
+| **OSN** | https://www.osn.com/osn/media/OSNMedia/osntv/images/common/osn-red-logo.svg |
+| **Dubizzle** | https://cdn.dubizzlegroup.com/wp-content/uploads/2024/08/logo_main.png |
 
-**Ford, Dubizzle and OSN are not**, because all three companies' websites refuse
-an automated request, and we only take logos from a company's own site:
+Ford, OSN and Dubizzle refused us the first time. They were added on a second
+attempt that opened each site in an ordinary browser and stopped wherever a site
+asked us to prove we were human. (One site, dubizzlegroup.com, was opened twice,
+because our own capture tool crashed the first time before saving anything.) dubizzle.com did ask, so we stopped there,
+and the Dubizzle logo comes from its parent company's own site instead.
 
-- **Ford:** ford.com, corporate.ford.com and media.ford.com all refused
-- **OSN:** osn.com refused
-- **Dubizzle:** dubizzle.com showed a "verify you are human" page instead
+**Decisions that are yours:**
 
-**What we need for each:** the logo file from the company's own brand or press
-page, or a copy you already hold with permission to use it. Each goes in the day
-it arrives, with the same treatment as the others.
+1. **Nurture: colour, white, or out?** Nurture's logo is a word inside a filled
+   purple badge, and the white treatment turns the whole badge white and erases the
+   word. So it shows in its own colours. Either leave it, **send a white or
+   transparent Nurture wordmark** so it matches the others, or take it out.
 
-**Nurture is in its own colour** in the strip, because its logo is a word inside a
-filled badge and the white treatment erases it. A white or transparent Nurture
-wordmark would let it match the others. PENDING-COPY 1g2.
+2. **Ford: colour, or out?** The same thing happens to Ford's filled oval: in white
+   it becomes a blank shape. So Ford shows in its own blue. Leave it, or take it
+   out.
+
+3. **Permission to use Ford, OSN and Dubizzle.** These are Justin's former
+   employers, not clients, and big companies often have rules about their logos
+   appearing on someone else's website, because it can be read as an endorsement.
+   Showing where a team member has worked is common, but it is your call. **Do you
+   have, or want to ask for, permission from each?** Their press or brand teams are
+   the people to ask.
+
+4. **"dubizzle group" or "dubizzle"?** The logo on the site now reads "dubizzle
+   group", the parent company, from the top of its own site. Justin's biography
+   says dubizzle. **We already have a plain "dubizzle" logo too**, from the same
+   official page's "our brands" section. Tell us which and it is a one-line change;
+   nothing needs to be requested from anyone.
+
+**Still missing: none of the seven.** If you decline permission for any of them, or
+choose to drop Nurture or Ford, they come off in one line each.

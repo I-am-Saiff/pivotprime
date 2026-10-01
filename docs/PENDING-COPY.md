@@ -6145,7 +6145,8 @@ speaker notes were checked as well and are empty.
 
 **Every logo comes from the company's own website and nowhere else.** No logo
 collection sites, no redrawing, no recolouring of anyone's file. Where we could not
-reach a company's own site, the logo is left out and listed below.
+reach a company's own site, we either left the logo out or, where the brief named
+one, used its parent company's own site instead, and said which below.
 
 ### Four added, to "Companies we have delivered for"
 
@@ -6176,21 +6177,56 @@ panel. Your three options:
    white like the others.
 3. Take it out of the strip.
 
-### ⚠️ Ford, Dubizzle and OSN could not be added
+### Ford, OSN and Dubizzle: blocked at first, all three added in a second pass
 
-All three companies' websites refuse an automated request:
+**First attempt (pass 5).** All three websites refused a plain automated request:
+Ford and OSN with an error, Dubizzle with a "please verify you are human" page. A
+logo collection site would have had them in a minute and is the one source we
+will not use, so all three were left out.
 
-| Logo | What happened |
-|---|---|
-| **Ford** | ford.com, corporate.ford.com and media.ford.com all refused (403) |
-| **OSN** | osn.com refused (406) |
-| **Dubizzle** | dubizzle.com returned a "please verify you are human" page instead of the site |
+**Second attempt (pass 6).** Each company's own site was opened in an ordinary
+Chrome browser on this computer, with nothing disguised and nothing clicked. Where
+a site asked us to prove we were human, we stopped there and did not try to get
+past it. Every site was opened once, except dubizzlegroup.com, which was opened
+twice: the first time our own capture tool crashed before saving anything, so we
+had seen nothing, and the site had not asked us to prove anything. A second, independent check then opened each page again
+from scratch and confirmed the saved logo was **byte for byte** what the company's
+site serves.
 
-A logo collection site would have all three in a minute, and that is the one
-source we will not use: what it gives you is of unknown origin and often out of
-date. **So all three are left out**, exactly as before. To add them we need, for
-each, **either the logo file from the company's own brand or press page, or a copy
-you already hold with permission to use it.**
+| Logo | Taken from | Logo file | Result |
+|---|---|---|---|
+| **Ford** | https://www.ford.com/ | Built into the page itself, as the "Ford Home Page" logo in the header (there is no separate logo file) | **Added, in colour** |
+| **OSN** | https://www.osn.com/en-ae/home | https://www.osn.com/osn/media/OSNMedia/osntv/images/common/osn-red-logo.svg | **Added**, white like the rest |
+| **Dubizzle** | dubizzle.com **asked us to prove we were human, so we stopped**. Then https://www.dubizzlegroup.com/, the parent group's own site | https://cdn.dubizzlegroup.com/wp-content/uploads/2024/08/logo_main.png | **Added**, white like the rest, **but it is the "dubizzle group" logo** |
+
+**Three things to know about them:**
+
+1. **Ford is in its own blue**, like Nurture. Ford's oval is a filled shape, and
+   the white treatment turns the whole oval into a plain white blob with the
+   word gone. In Ford's own navy, with the white script, it reads clearly on the
+   dark panel.
+
+2. **Ford's logo had to be used in an unusual way, and nothing was changed.**
+   ford.com does not have a separate logo file. The logo is one drawing inside a
+   bundle of 23 small drawings (the rest are icons such as search and cart) that
+   is built into the page. Cutting the logo out into a file of its own would mean
+   making a new file out of Ford's artwork, so we did not. **We use Ford's whole
+   bundle exactly as Ford serves it** and show only the logo from it, the same way
+   Ford's own site does.
+
+3. **The Dubizzle logo reads "dubizzle group", not "dubizzle".** Justin worked for
+   dubizzle; this is the parent company's logo, from the top of the parent
+   company's own site, because dubizzle.com itself would not let us in. **A plain
+   "dubizzle" logo is also available, and we already have it:** the same page shows
+   it in its "our brands" section, at
+   https://cdn.dubizzlegroup.com/wp-content/uploads/2024/09/about_our_brands_logo_01.png,
+   and both of our checks received the identical file. We used the one at the top
+   of the page because that was the rule we were given. **Which would you like?**
+   Changing it is one line.
+
+**Each one is checked.** If any of these three files is ever edited, re-saved or
+"optimised", the site's own checks now fail, because they compare each file with
+what the company served.
 
 ### One thing worth knowing before these go further
 
@@ -6198,7 +6234,7 @@ Ford, OSN and Dubizzle sit under **"Experience inside global institutions"** and
 are Justin's former employers. A company's logo on a business website is often
 read as an endorsement, and large companies usually have rules about it. Using
 them for where someone has worked is common, but it is your call, and it may be
-worth asking each company's press office when you request the files.
+worth asking each company's press office for permission.
 
 ### The Nurture screenshot is unchanged, and needs a new one
 
@@ -6215,7 +6251,14 @@ row. That is not a clean crop; it damages the screen you are showing.
 **We have not painted over the name**, and will not: an edited screenshot of a
 real product is not something to put on a website.
 
-**What we need:** a fresh screenshot of the live Nurture home screen with a real
-family's name, or a demo account with a sensible name, at the same phone size.
-It goes straight in, same card, same place. This was already on your outstanding
-list and stays there.
+**What we need:** a fresh screenshot of the live Nurture home screen, **from a demo
+account**, at the same phone size. It goes straight in, same card, same place.
+
+**A correction to what we asked for before.** We first asked for a screenshot
+"with a real family's name". Please do not send that. A child's name, a parent's
+name, a photo of a child or a family's day on a public website is personal data we
+should not publish, so a screenshot showing any real family's details would be
+turned away. A demo account with a made-up family is what is needed.
+
+**Still not supplied as of pass 6.** We looked for the new screenshot at the agreed
+place and it is not there yet, so nothing about the current image has changed.

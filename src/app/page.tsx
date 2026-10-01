@@ -326,16 +326,38 @@ export default function Home() {
                               homepage reaching networkidle locally, which is how
                               it was found. With sizes the browser picks a variant
                               by the tile's real width instead. */}
+                          {logo.use ? (
+                            /* A LOGO THAT ONLY EXISTS AS A SPRITE SYMBOL, Ford.
+                               The sprite file is the exact bytes ford.com
+                               served and <use> draws one symbol out of it, as
+                               Ford's own header does. No next/image: this is not
+                               an image element, so there is no srcSet and no
+                               sizes to set, and the 16.5KB file is fetched once
+                               and cached. The accessible name sits on the svg,
+                               and the marquee's second copy hides it, the same
+                               as the alt does for every other tile. */
+                            <svg
+                              viewBox={logo.use.viewBox}
+                              role={copy === 0 ? "img" : undefined}
+                              aria-label={copy === 0 ? logo.alt : undefined}
+                              aria-hidden={copy === 0 ? undefined : true}
+                              className={`${logo.size ?? "max-h-[58%] max-w-[76%]"} h-full w-auto`}
+                            >
+                              <use href={`${logo.src}#${logo.use.symbol}`} />
+                            </svg>
+                          ) : (
                           <Image
                             src={logo.src}
                             alt={copy === 0 ? logo.alt : ""}
                             width={logo.w ?? 345}
                             height={logo.h ?? 185}
                             sizes="(min-width: 768px) 180px, 150px"
+                            unoptimized={logo.raw}
                             className={`${logo.size ?? "max-h-[58%] max-w-[76%]"} w-auto object-contain ${
                               logo.mono === false ? "" : "brightness-0 invert"
                             }`}
                           />
+                          )}
                         </div>
                       ) : (
                         <Image
