@@ -305,6 +305,8 @@ const DECISIONS = [
       // It asserted her intro heading until 18 September, when she had the
       // intro removed and the quiz opened on question one; it asserted her
       // first statement from then until 26 September, when she reversed that.
+      // FOURTH POSITION, 30 September: her v3 slide 7 replaces the intro heading
+      // with the one in her own picture, so the needle moves with her copy.
       //
       // Both her heading and her start button, because the intro is the only
       // screen in the served HTML now and a heading with no way out of it is
@@ -313,7 +315,17 @@ const DECISIONS = [
       // server output: it renders as "Question <!-- -->1<!-- --> of <!-- -->12"
       // and a literal search for the readable string finds nothing.
       const html = await res.text();
-      if (!html.includes("What is your business")) {
+      // HER BODY AND HER NOTE AS WELL AS HER HEADING, FROM 30 SEPTEMBER. The
+      // heading alone stopped being enough when her slide 7 rewrote the whole
+      // screen: a page serving her heading over the old deck and the old note
+      // would pass a heading-only check while showing two retired sentences.
+      for (const [needle, what] of [
+        ["one specific constraint and tell you exactly how to start fixing it", "her intro body"],
+        ["your personalised results are on screen straight away", "her note under the button"],
+      ]) {
+        if (!textOf(html).includes(needle)) return `the route serves but ${what} is not in it`;
+      }
+      if (!html.includes("What is stopping your")) {
         return "the route serves but her intro copy is not in it";
       }
       return html.includes("Start the diagnostic")
@@ -574,10 +586,12 @@ const DECISIONS = [
        * the class next to its neighbours rather than on "rounded-xl" alone,
        * which appears dozens of times per page and would pass on any of them.
        *
-       * AND THE DIAGNOSTIC IS ASSERTED STILL PILL-SHAPED, because she put that
-       * route out of scope explicitly. A later sweep that "finished the job"
-       * would be undoing her decision, not completing it, and this is the line
-       * that says so.
+       * THE DIAGNOSTIC USED TO BE ASSERTED STILL PILL-SHAPED HERE, because she
+       * put that route out of scope on 26 September. Her v3 slides 7 and 8 take
+       * it back in: "start the diagnostic button to be rectangular like all
+       * other buttons" and "The 'Unlock my score' button is still a round pill.
+       * Make it rectangular." So that half of this assertion is inverted and
+       * moved to the decision below, rather than deleted. PENDING-COPY 1g1.
        */
       const pages = [
         ["/insights", "inline-flex items-center rounded-xl bg-neon px-[30px]", "the /insights closer button"],
@@ -593,11 +607,74 @@ const DECISIONS = [
         const html = await (await get(route)).text();
         if (!html.includes(needle)) return `${name} on ${route} is not at the hero button's radius`;
       }
+      return null;
+    },
+  },
+  {
+    what: "no button on the diagnostic route is a 100px pill any more",
+    where: "PENDING-COPY 1g1",
+    run: async (get) => {
+      /**
+       * HER v3 SLIDES 7 AND 8. THIS ASSERTION IS THE INVERSE OF THE ONE ABOVE
+       * IT, AND THE INVERSION IS THE POINT.
+       *
+       * Until now the check two entries up asserted that the diagnostic start
+       * button WAS a pill, because on 26 September she took that route out of
+       * the button sweep by name. Her v3 deck takes it back in on two slides:
+       * "start the diagnostic button to be rectangular like all other buttons
+       * and example shown below", and "The 'Unlock my score' button is still a
+       * round pill. Make it rectangular." The example she pasted on slide 7 is
+       * the site's own neon button, which is 12px.
+       *
+       * ONLY ONE OF THE THREE IS IN THE SERVED HTML. The intro is what the page
+       * renders; the question screen and the results screen are client state, so
+       * "Next", "See my results" and "Unlock my score" never appear in the
+       * markup this check can fetch. Driving the quiz to reach them belongs in
+       * check-behaviour, not here.
+       *
+       * SO THE OTHER TWO ARE READ OUT OF THE SERVED JAVASCRIPT, which is still
+       * output rather than source: the chunk the page actually loads carries the
+       * class strings verbatim. The chunk is found by its content rather than by
+       * name, because the filename is a content hash and changes every build.
+       *
+       * THE THREE PILLS LEFT ON THE ROUTE ARE NOT BUTTONS and are deliberately
+       * not asserted away: the domain tag on the question screen, the score band
+       * chip, and the constraint tag. Her instruction names buttons, the standing
+       * rule on this branch is to leave non-buttons alone, and a rounded chip is
+       * a different object from a rounded button. They are listed in
+       * PENDING-COPY 1g1 for her to rule on.
+       */
       if (!DIAGNOSTIC_ENABLED) return null;
-      const diag = await (await get("/diagnostic")).text();
-      return diag.includes("rounded-[100px] bg-neon px-10 py-4")
-        ? null
-        : "the diagnostic start button lost its own radius, and that route is out of scope";
+      const html = await (await get("/diagnostic")).text();
+
+      // The one button in the markup: rectangular, and no pill anywhere near it.
+      for (const tag of html.match(/<button\b[^>]*>/g) || []) {
+        if (tag.includes("rounded-[100px]")) {
+          return `a button on /diagnostic is a 100px pill again: ${tag.slice(0, 90)}`;
+        }
+      }
+      if (!html.includes("rounded-xl bg-neon px-10 py-4")) {
+        return "the Start the diagnostic button is no longer at the site's 12px radius";
+      }
+
+      // The two behind client state, read out of the chunk the page loads.
+      const chunks = [...new Set([...html.matchAll(/src="(\/_next\/static\/chunks\/[^"]+\.js)"/g)].map((m) => m[1]))];
+      let js = null;
+      for (const c of chunks) {
+        const body = await (await get(c)).text();
+        if (body.includes("Unlock my score")) { js = body; break; }
+      }
+      if (!js) return "the diagnostic's own script is not among the chunks the page loads, so its buttons cannot be checked";
+
+      const buttons = [
+        ["rounded-xl bg-neon px-8 py-3.5", "rounded-[100px] bg-neon px-8 py-3.5", "Unlock my score"],
+        ["rounded-xl bg-forest px-8 py-3", "rounded-[100px] bg-forest px-8 py-3", "Next / See my results"],
+      ];
+      for (const [want, pill, name] of buttons) {
+        if (js.includes(pill)) return `the "${name}" button is a 100px pill again`;
+        if (!js.includes(want)) return `the "${name}" button is no longer at the site's 12px radius`;
+      }
+      return null;
     },
   },
   {

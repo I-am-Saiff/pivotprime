@@ -1101,6 +1101,41 @@
       "why": "Her own eyebrow for the founder section, her v3 slide 3. The section had no eyebrow at all before, so this is a new element rather than a changed string. HER MOCKUP IMAGE AND HER WRITTEN NOTE DISAGREE: the image shows \"Our CEO and Founder\" and the written note says \"Meet the CEO & Founder\". The written wording is used and the discrepancy is in PENDING-COPY 1f5 for her to settle. mustAppear is false because the eyebrow renders as a <p>, which the audit does not collect, so a staleness check on it would report it missing forever. Transcribed from a screenshot of her v3 deck of 30 September 2026 rather than copied from a file she sent, so it is her wording at one remove. PENDING-COPY 1f6 records it as transcribed rather than verbatim so it can be checked against her original.",
       "route": "/",
       "element": "p"
+    },
+    {
+      "text": "What is stopping your business from growing?",
+      "status": "traced",
+      "kind": "client-file",
+      "why": "Her own wording for the diagnostic intro, slide 7 of req/Last_Bits_with_comments_v3.pptx, 30 September. Her note on that slide reads \"Main page to look like second pic shown here ... Keep wording as shown in this picture\", so THE WORDING IS IN HER PICTURE RATHER THAN IN A SENTENCE OF HERS: it is read off ppt/media/image13.png on that slide. PENDING-COPY 1g1 reproduces the image's wording so she can check it against her original. It replaces \"What is your business actually running on?\", which is preserved in PENDING-COPY 1g1. The two halves are separate block spans so the heading can be two colours, as her picture draws it.",
+      "route": "/diagnostic",
+      "element": "h1"
+    },
+    {
+      "text": "Answer questions about how the business actually runs and you get a clear view of where you can improve. We will name at least one specific constraint and tell you exactly how to start fixing it.",
+      "status": "traced",
+      "kind": "client-file",
+      "mustAppear": false,
+      "why": "Her own wording for the diagnostic intro, slide 7 of req/Last_Bits_with_comments_v3.pptx, 30 September. Her note on that slide reads \"Main page to look like second pic shown here ... Keep wording as shown in this picture\", so THE WORDING IS IN HER PICTURE RATHER THAN IN A SENTENCE OF HERS: it is read off ppt/media/image13.png on that slide. PENDING-COPY 1g1 reproduces the image's wording so she can check it against her original. It replaces \"Twelve questions. Four minutes. A clear picture of what is holding your operations back, and the one constraint worth fixing first.\" mustAppear is false because the reverse audit collects headings and calls to action, not paragraphs, so a staleness check on this would report it missing for ever.",
+      "route": "/diagnostic",
+      "element": "p"
+    },
+    {
+      "text": "Complete the diagnostic and your personalised results are on screen straight away. No waiting, no sales call.",
+      "status": "traced",
+      "kind": "client-file",
+      "mustAppear": false,
+      "why": "Her own wording for the diagnostic intro, slide 7 of req/Last_Bits_with_comments_v3.pptx, 30 September. Her note on that slide reads \"Main page to look like second pic shown here ... Keep wording as shown in this picture\", so THE WORDING IS IN HER PICTURE RATHER THAN IN A SENTENCE OF HERS: it is read off ppt/media/image13.png on that slide. PENDING-COPY 1g1 reproduces the image's wording so she can check it against her original. THIS LINE HAS HAD THREE WORDINGS AND TWO OF THEM WERE HERS. The first was \"No email required until the end. Free, always.\"; the second was ours, written on 30 August when the score came before the form, and retired on 26 September when her own line became true again. This is her third and it describes the same flow from the other end. All three are in PENDING-COPY 1g1. mustAppear is false for the same reason as the paragraph above.",
+      "route": "/diagnostic",
+      "element": "p"
+    },
+    {
+      "text": "Free diagnostic",
+      "status": "traced",
+      "kind": "client-file",
+      "mustAppear": false,
+      "why": "Her own wording for the diagnostic intro, slide 7 of req/Last_Bits_with_comments_v3.pptx, 30 September. Her note on that slide reads \"Main page to look like second pic shown here ... Keep wording as shown in this picture\", so THE WORDING IS IN HER PICTURE RATHER THAN IN A SENTENCE OF HERS: it is read off ppt/media/image13.png on that slide. PENDING-COPY 1g1 reproduces the image's wording so she can check it against her original. Her picture shows the eyebrow as \"FREE DIAGNOSTIC\" alone, where the screen carried \"Pivot Prime · Free diagnostic\", so the prefix goes. Her note [1] on the same slide asks for it \"SLIGHTLY BIGGER, OR HIGHLIGHTED\". Stored sentence case because the eyebrow treatment uppercases in CSS. mustAppear is false because it renders as a <p>.",
+      "route": "/diagnostic",
+      "element": "p"
     }
   ]
 }

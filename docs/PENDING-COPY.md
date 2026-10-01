@@ -6008,3 +6008,118 @@ the same size as Justin's.
 cropping it, so both the homepage and your About card show exactly what they
 showed before, pixel for pixel. The only difference is that the file is
 eighteen times smaller.
+
+---
+
+## 1g1 The diagnostic intro, rebuilt from your slide 7
+
+**30 September, your v3 slide 7.** Your three notes on it:
+
+> [1] FREE DIAGNOSTIC, SLIGHTLY BIGGER, OR HIGHLIGHTED
+>
+> [2] Main page to look like second pic shown here, remove all the stretched
+> founder stuff etc, and have the lighter background similar to most of the
+> website. Keep wording as shown in this picture
+>
+> [3] start the diagnostic button to be rectangular like all other buttons and
+> example shown below
+
+**Your deck is now in the repository** as `req/Last_Bits_with_comments_v3.pptx`,
+so the source travels with the site.
+
+### ⚠️ The wording came out of your picture, not out of a sentence
+
+"Keep wording as shown in this picture" means the words are in the image rather
+than typed anywhere. **We read them off the image on that slide.** Here is exactly
+what we took, so you can check it against your original:
+
+| | |
+|---|---|
+| Eyebrow | FREE DIAGNOSTIC |
+| Heading, line 1 | What is stopping your |
+| Heading, line 2 | business from growing? |
+| Body | Answer questions about how the business actually runs and you get a clear view of where you can improve. We will name at least one specific constraint and tell you exactly how to start fixing it. |
+| Meta line | 12 questions · 4 minutes · 6 operational domains · Personalised report |
+| Button | Start the diagnostic |
+| Note | Complete the diagnostic and your personalised results are on screen straight away. No waiting, no sales call. |
+
+**The meta line is the one thing your redesign does not change.** Your picture
+carries the same four items the screen already had, in the same order, so it is
+untouched.
+
+### What it replaces, preserved here
+
+> **Eyebrow:** Pivot Prime · Free diagnostic
+>
+> **Heading:** What is your business / actually running on?
+>
+> **Body:** Twelve questions. Four minutes. A clear picture of what is holding
+> your operations back, and the one constraint worth fixing first.
+>
+> **Note:** No email required until the end. Free, always.
+
+**That note has now had three wordings and two of them were yours.** The first is
+above. The second was ours, written on 30 August when the score appeared before
+the form, and retired on 26 September when your own line became true again. This
+is your third, and it says the same thing from the other end: what the reader
+gets rather than what they are not asked for.
+
+### The background
+
+**#F8F4EE**, which is the colour every section of every other page of the site
+sits on. That is the literal answer to "the lighter background similar to most of
+the website".
+
+**Your picture is #F5F5F3**, sampled from the image rather than guessed at. The
+site has four light colours: #FEFBF8, **#F8F4EE**, #E8F4EC and #EFEAE0. #F8F4EE is
+both the closest of them to yours and the one that means "most of the website". No
+new colour was added.
+
+The dark green panel and its dot pattern are gone, and the screen now sits on the
+same left edge and content width as the rest of the site, from your slide 11.
+
+### The eyebrow: bigger and highlighted, both
+
+It is in the **pale mist pill** your services cards use, one size step up from
+theirs. So it is larger and it is highlighted, rather than one or the other.
+
+**One change you did not ask for, and the reason.** Your picture shows the eyebrow
+in mid green. On the pale pill that measures **3.06 : 1**, below the 4.5 : 1 that
+text this size needs to be readable, and it is the same problem already reported
+to you in 1f8. We used the **dark green** from your palette instead, which is
+still green and measures **12.38 : 1**. Nothing else about it changed.
+
+### Every colour on the new screen, measured
+
+| Element | Colour on colour | Measured | Needs |
+|---|---|---|---|
+| FREE DIAGNOSTIC | dark green on mist | **12.38 : 1** | 4.5 |
+| Heading line 1 | dark green on page | **12.76 : 1** | 3 |
+| Heading line 2 | mid green on page | **3.15 : 1** | 3 |
+| Body | grey on page | **17.89 : 1** | 4.5 |
+| Meta line | grey on page | **17.89 : 1** | 4.5 |
+| Button label | dark green on neon | **7.29 : 1** | 4.5 |
+| Note | grey on page | **16.99 : 1** | 4.5 |
+
+**Everything passes.** The green second line of the heading is the closest at
+3.15 : 1, and it passes because a heading at this size only needs 3 : 1. This is
+not the same case as the service card titles in 1f8: those are 18px, just under
+the size where the standard relaxes, and this is 36px on a phone and 60px on a
+desktop.
+
+### The buttons
+
+**Three became rectangular**, at the same 12px as every other button on the site,
+which is the shape of the example you pasted:
+
+- **Start the diagnostic** (your slide 7)
+- **Unlock my score** (your slide 8)
+- **Next / See my results**, which you did not name but which is the only other
+  button on the route
+
+### ⚠️ Three rounded things are left, and they are not buttons
+
+The **domain tag** on each question, the **score band chip** on your results, and
+the **Constraint tag** in the breakdown are all still fully rounded. They are
+labels rather than buttons, and the standing rule here is to leave anything that
+is not a button alone rather than guess. **Say the word and they square off too.**

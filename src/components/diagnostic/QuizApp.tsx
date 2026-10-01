@@ -151,20 +151,60 @@ export default function QuizApp() {
    */
   if (stage === "intro") {
     return (
-      <section className="relative flex min-h-[100svh] items-center overflow-hidden bg-forest px-4 pt-28 pb-16 text-white sm:px-6 sm:pt-32 sm:pb-24 md:pt-40 lg:px-8">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.038)_1px,transparent_1px)] [background-size:26px_26px]"
-        />
-        <div className="relative mx-auto w-full max-w-3xl text-center">
-          <p className="mb-5 text-[10px] font-bold tracking-[0.22em] text-neon uppercase">
+      /**
+       * LIGHT, FROM HER SLIDE 7: "have the lighter background similar to most of
+       * the website."
+       *
+       * surface-page, which is --page-ground, #F8F4EE. HER OWN IMAGE IS #F5F5F3,
+       * sampled off ppt/media/image13.png rather than guessed at, and the four
+       * light tokens this site has are shell #FEFBF8, page-ground #F8F4EE, mist
+       * #E8F4EC and linen #EFEAE0. page-ground is both the nearest of them to her
+       * value and the literal answer to "similar to most of the website": it is
+       * what every section of every other page sits on. No token is added.
+       *
+       * THE DARK GROUND AND ITS DOT GRID GO. The grid was white at 3.8% and is
+       * invisible on cream; it was drawn for the forest panel it sat on.
+       *
+       * THE PAGE WRAPPER ALREADY CARRIES surface-page, so this section no longer
+       * sets a background at all and simply lets the page show through, which is
+       * why there is no second declaration of the same colour here.
+       *
+       * flex min-h-[100svh] items-center stays: it is the homepage hero's own
+       * treatment and it is what stopped this screen leaving a strip of bare page
+       * under it when the persona cards came off. svh rather than vh because on a
+       * phone with browser chrome showing, 100vh is taller than the screen and
+       * would push the start button under the fold.
+       */
+      <section className="relative flex min-h-[100svh] items-center px-4 pt-28 pb-16 sm:px-6 sm:pt-32 sm:pb-24 md:pt-40 lg:px-8">
+        {/* THE SHARED CONTAINER FROM HER SLIDE 11, so this screen's left edge is
+            the site's left edge. It is centred text inside a 1152 box rather
+            than a 768 one, which is the one structural thing that changed when
+            max-w-3xl went. */}
+        <div className="page-container relative text-center">
+          {/* HER NOTE [1]: "FREE DIAGNOSTIC, SLIGHTLY BIGGER, OR HIGHLIGHTED."
+              Both: the mist pill from the services cards, which is the site's
+              existing way of highlighting an eyebrow, and one size step up from
+              the services pill's text-xs to text-sm.
+
+              FOREST TEXT, NOT MID, AND THAT IS A CONTRAST FIX RATHER THAN A
+              PREFERENCE. The services pill is mid green on mist and measures
+              3.06:1, which is below the 4.5:1 this size of text needs; it is
+              already reported to her in PENDING-COPY 1f8. Her image shows a green
+              eyebrow, and forest IS the palette's dark green, so the pill stays
+              green on mist and becomes readable at the same time. Measured after:
+              see PENDING-COPY 1g1. */}
+          <p className="mb-6 inline-block rounded-xl bg-mist px-3.5 py-1.5 text-sm font-bold tracking-[0.2em] text-forest uppercase">
             {DIAGNOSTIC_INTRO.eyebrow}
           </p>
-          <h1 className="text-4xl font-extrabold tracking-tight text-balance md:text-6xl">
+          {/* Two tone, as her image draws it: the first line near black, the
+              second green. mid rather than neon, because neon on a light ground
+              is barely visible; mid measures over the 3:1 a heading this size
+              needs. */}
+          <h1 className="text-4xl font-extrabold tracking-tight text-balance text-forest md:text-6xl">
             <span className="block">{DIAGNOSTIC_INTRO.headingLead}</span>
-            <span className="block text-neon">{DIAGNOSTIC_INTRO.headingAccent}</span>
+            <span className="block text-mid">{DIAGNOSTIC_INTRO.headingAccent}</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-xl leading-relaxed text-white/55">
+          <p className="mx-auto mt-6 max-w-2xl leading-relaxed text-neutral-600">
             {DIAGNOSTIC_INTRO.deck}
           </p>
 
@@ -182,21 +222,32 @@ export default function QuizApp() {
               the button and its note read as one cluster under the heading. */}
           <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-7 gap-y-2">
             {DIAGNOSTIC_INTRO.stats.map((s) => (
-              <li key={s} className="flex items-center gap-2 text-xs text-white/45">
-                <span aria-hidden="true" className="h-[5px] w-[5px] rounded-full bg-neon/60" />
+              <li key={s} className="flex items-center gap-2 text-sm text-neutral-600">
+                {/* The dot is mid rather than neon for the same reason the
+                    heading accent is: neon on cream is close to invisible. */}
+                <span aria-hidden="true" className="h-[5px] w-[5px] rounded-full bg-mid" />
                 {s}
               </li>
             ))}
           </ul>
 
+          {/* HER NOTE [3]: "start the diagnostic button to be rectangular like
+              all other buttons and example shown below." The example she pasted
+              is the site's own neon button at rounded-xl, which is 12px, so this
+              is that radius rather than square. */}
           <button
             type="button"
             onClick={start}
-            className="mt-7 inline-flex min-h-11 items-center justify-center rounded-[100px] bg-neon px-10 py-4 text-sm font-bold text-forest transition-opacity hover:opacity-90"
+            className="mt-7 inline-flex min-h-11 items-center justify-center rounded-xl bg-neon px-10 py-4 text-sm font-bold text-forest transition-opacity hover:opacity-90"
           >
             {DIAGNOSTIC_INTRO.startLabel}
           </button>
-          <p className="mt-4 text-[11px] text-white/30">{DIAGNOSTIC_INTRO.note}</p>
+          {/* neutral-500, the site's grey for a small note. Her image puts this
+              line at #7A8D83, which is lighter than anything in the palette and
+              would not clear 4.5:1 at this size. */}
+          <p className="mx-auto mt-4 max-w-xl text-xs leading-relaxed text-neutral-500">
+            {DIAGNOSTIC_INTRO.note}
+          </p>
         </div>
       </section>
     );
@@ -297,7 +348,7 @@ export default function QuizApp() {
               type="button"
               onClick={advance}
               disabled={answers[current] === null}
-              className="inline-flex min-h-11 items-center justify-center rounded-[100px] bg-forest px-8 py-3 text-[13px] font-bold text-neon transition-opacity hover:opacity-85 disabled:pointer-events-none disabled:opacity-0"
+              className="inline-flex min-h-11 items-center justify-center rounded-xl bg-forest px-8 py-3 text-[13px] font-bold text-neon transition-opacity hover:opacity-85 disabled:pointer-events-none disabled:opacity-0"
             >
               {isLast ? "See my results" : "Next"}
             </button>
@@ -495,7 +546,7 @@ export default function QuizApp() {
                 <button
                   type="submit"
                   disabled={sendState === "sending"}
-                  className="mt-1 inline-flex min-h-11 cursor-pointer items-center justify-center rounded-[100px] bg-neon px-8 py-3.5 text-[13px] font-bold text-forest transition-opacity hover:opacity-88 disabled:opacity-70"
+                  className="mt-1 inline-flex min-h-11 cursor-pointer items-center justify-center rounded-xl bg-neon px-8 py-3.5 text-[13px] font-bold text-forest transition-opacity hover:opacity-88 disabled:opacity-70"
                 >
                   {sendState === "sending" ? "Sending" : DIAGNOSTIC_CAPTURE.submitLabel}
                 </button>

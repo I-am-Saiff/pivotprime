@@ -94,6 +94,10 @@ const KNOWN_ABSENT = [
     why: "spec 3.4 block 33 gives this button as \"What market entry includes\", a green block, and that is what the site carries",
   },
   {
+    match: "What is your business actually running on?",
+    why: "her v3 slide 7 of 30 September replaces the diagnostic intro headline with the one in her own picture on that slide: \"What is stopping your business from growing?\". Her note reads \"Main page to look like second pic shown here ... Keep wording as shown in this picture\". The retired heading is preserved in PENDING-COPY 1g1",
+  },
+  {
     match: "Real problems. Real results.",
     why: "pp-case-studies.html is later and words it \"Real problems, real execution, real results\", which is what the site carries",
   },
