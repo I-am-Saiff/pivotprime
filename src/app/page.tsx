@@ -269,16 +269,85 @@ export default function Home() {
                     <h3 className="flex h-20 w-56 flex-shrink-0 items-center justify-center rounded-lg bg-mist px-5 text-center font-sans text-xs font-bold tracking-[0.14em] text-forest uppercase md:h-24 md:w-64">
                       {group.label}
                     </h3>
-                    {group.logos.map((logo) => (
-                      <Image
-                        key={`${copy}-${logo.src}`}
-                        src={logo.src}
-                        alt={copy === 0 ? logo.alt : ""}
-                        width={345}
-                        height={185}
-                        className="h-20 w-auto flex-shrink-0 rounded-lg object-contain contrast-[1.18] md:h-24"
-                      />
-                    ))}
+                    {/* TWO KINDS OF LOGO IN ONE ROW, from her slide 1 of the v3
+                        deck, and the difference is in the files rather than in
+                        the design.
+
+                        THE ORIGINAL SIX ARE PRE-BAKED PANELS: 345x185 JPGs with a
+                        near-black ground and a white logo flattened into the
+                        picture. They carry their own panel, so they are drawn as
+                        they always were.
+
+                        THE FOUR SHE ASKED FOR ARE THE COMPANIES' OWN FILES,
+                        unaltered, so the panel and the monochrome are applied
+                        here instead. That is the whole reason for the branch: an
+                        official logo is used as published or not at all, and
+                        flattening one onto a dark panel in an image editor means
+                        recolouring someone's trademark by hand.
+
+                        THE PANEL IS THE OLD TILES' OWN COLOUR, SAMPLED FROM ONE
+                        OF THEM. Every existing JPEG is a near-black ground that
+                        reads #121212 across most of its area, with a faint green
+                        lift at the foot. bg-forest was tried first because it is
+                        the site's dark surface and is on the palette: against the
+                        old tiles it is visibly greener, and the row reads as two
+                        batches rather than one strip. Her instruction is that
+                        these carry the treatment the strip already uses, so the
+                        strip's own value wins.
+
+                        #121212 IS NOT IN THE PALETTE and is in
+                        scripts/palette-allow.json with that reason. It is a
+                        reviewed exception rather than a new token: no token is
+                        added, changed or removed, and the entry goes the day the
+                        six legacy JPEGs are replaced by files that carry no
+                        ground of their own. PENDING-COPY 1g2.
+
+                        aspect-[345/185] gives the new tiles the exact footprint
+                        of the old ones, so the row's rhythm and the marquee's
+                        travel are unchanged. max-h and max-w together are what
+                        balances a wide wordmark against a square mark: the
+                        wordmark meets the width limit first and the square meets
+                        the height limit first, so neither ends up optically
+                        larger than the other. */}
+                    {group.logos.map((logo) =>
+                      logo.tile ? (
+                        <div
+                          key={`${copy}-${logo.src}`}
+                          className="flex h-20 flex-shrink-0 items-center justify-center rounded-lg bg-[#121212] aspect-[345/185] md:h-24"
+                        >
+                          {/* sizes IS LOAD-BEARING, AND ITS ABSENCE WAS A FAULT OF
+                              MINE THAT COST EVERY VISITOR. width and height carry
+                              each file's own pixel size so the box is reserved
+                              before it loads, and without sizes next/image takes
+                              that as the display width: it built a 1x/2x srcSet
+                              of 1200 and 3840 for Cinnacare and 1080 and 2048 for
+                              Nurture, to fill a slot about 136px wide. Eight of
+                              those requested at once is also what stopped the
+                              homepage reaching networkidle locally, which is how
+                              it was found. With sizes the browser picks a variant
+                              by the tile's real width instead. */}
+                          <Image
+                            src={logo.src}
+                            alt={copy === 0 ? logo.alt : ""}
+                            width={logo.w ?? 345}
+                            height={logo.h ?? 185}
+                            sizes="(min-width: 768px) 180px, 150px"
+                            className={`${logo.size ?? "max-h-[58%] max-w-[76%]"} w-auto object-contain ${
+                              logo.mono === false ? "" : "brightness-0 invert"
+                            }`}
+                          />
+                        </div>
+                      ) : (
+                        <Image
+                          key={`${copy}-${logo.src}`}
+                          src={logo.src}
+                          alt={copy === 0 ? logo.alt : ""}
+                          width={345}
+                          height={185}
+                          className="h-20 w-auto flex-shrink-0 rounded-lg object-contain contrast-[1.18] md:h-24"
+                        />
+                      ),
+                    )}
                   </div>
                 ))}
               </div>

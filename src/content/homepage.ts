@@ -112,7 +112,32 @@ export const PROOF = {
  * words; a screen reader announced them as client logos and a crawler read
  * nothing at all. Both files stay unused.
  */
-export type LogoGroup = { label: string; logos: { src: string; alt: string }[] };
+export type Logo = {
+  src: string;
+  alt: string;
+  /**
+   * True when the file is the company's own logo rather than one of the older
+   * pre-baked panels, so the strip has to draw the panel around it.
+   */
+  tile?: boolean;
+  /** False only where the monochrome filter would destroy the mark. */
+  mono?: boolean;
+  /** Where the file came from. Recorded so provenance travels with the asset. */
+  source?: string;
+  /** The file's own pixel size, so the layout box is reserved before it loads. */
+  w?: number;
+  h?: number;
+  /**
+   * Overrides the default size limits inside the panel. Needed where a file
+   * carries a lot of transparent margin of its own: object-contain measures the
+   * whole file including that margin, so the mark lands smaller than its
+   * neighbours. Sizing it up in CSS is the alternative to trimming the file,
+   * which is an edit to someone else's logo.
+   */
+  size?: string;
+};
+
+export type LogoGroup = { label: string; logos: Logo[] };
 
 export const LOGO_GROUPS: LogoGroup[] = [
   {
@@ -138,9 +163,107 @@ export const LOGO_GROUPS: LogoGroup[] = [
       { src: "/logos/man-cave-with-bg.jpg", alt: "Man Cave" },
       { src: "/logos/bop-foundation-with-bg-white.jpg", alt: "Birds of Paradise Foundation" },
       { src: "/logos/nivishe.jpg", alt: "Nivishe" },
+
+      /**
+       * HER SLIDE 1 OF THE v3 DECK, 30 September: "The 'Companies we have
+       * delivered for' strip has none of Cinnacare, Nurture UAE, Scentmatic or
+       * BookMeetings yet."
+       *
+       * All four are case studies the site already carries in words, and three
+       * of the four URLs below are the ones the case studies themselves link to.
+       *
+       * SOURCED FROM EACH COMPANY'S OWN SITE AND NOWHERE ELSE. No aggregator, no
+       * redrawing, no AI, no recolouring of a file. The exact source URL for each
+       * is in PENDING-COPY 1g2 and in docs/FOR-IRAM-outstanding.md.
+       *
+       * THESE FOUR ARE NOT PRE-BAKED TILES, which is the one way they differ from
+       * the six above. Those six are 345x185 JPGs with a near-black panel and a
+       * white logo flattened into the picture. These are the companies' own
+       * files, unaltered, and the panel and the monochrome are applied in CSS at
+       * render time. That is the only way to use an official file without editing
+       * it.
+       */
+      {
+        src: "/logos/cinnacare.png",
+        w: 1200,
+        h: 259,
+        alt: "Cinnacare",
+        tile: true,
+        source: "https://cinnacare.com/cdn/shop/files/slice17.png",
+      },
+      {
+        src: "/logos/scentmatic.png",
+        w: 1200,
+        h: 670,
+        /**
+         * SCENTMATIC'S FILE IS MOSTLY EMPTY SPACE. The wordmark occupies a band
+         * across the middle of a 1200x670 canvas, so the default limits sized the
+         * padded canvas rather than the mark and it rendered about half the
+         * height of Cinnacare's beside it. Measured by looking at the row, not by
+         * reading the file. The limits are raised here instead of trimming the
+         * transparent margin out of the PNG, because the rule for this work is
+         * that the company's file is used as published.
+         */
+        size: "max-h-[88%] max-w-[92%]",
+        alt: "Scentmatic",
+        tile: true,
+        source: "https://scentmatic.co.uk/cdn/shop/files/scentmatic_logo.png",
+      },
+      {
+        src: "/logos/bookmeetings.svg",
+        w: 200,
+        h: 40,
+        alt: "BookMeetings",
+        tile: true,
+        source: "https://bookmeetings.io/logo.svg",
+      },
+      {
+        /**
+         * THE ONE THAT CANNOT TAKE THE MONOCHROME, and it is left in colour
+         * rather than altered.
+         *
+         * Nurture's mark is a wordmark inside a filled badge. Every other logo
+         * here is line art on transparency, so brightness(0) invert(1) turns it
+         * white and it reads. Run over a filled badge the same filter turns the
+         * WHOLE BADGE white and the wordmark disappears into it, which was
+         * measured by rendering it rather than assumed. Repainting the badge by
+         * hand is exactly what we do not do to a logo.
+         *
+         * So this one renders in its own colours on the same panel as the rest.
+         * PENDING-COPY 1g2 puts three options to her: leave it, send a
+         * transparent white wordmark, or drop it from the strip.
+         */
+        src: "/logos/nurture-uae.png",
+        w: 1024,
+        h: 1024,
+        alt: "Nurture UAE",
+        tile: true,
+        mono: false,
+        source: "https://nurtureuae.com/assets/img/nurture-icon-1024.png",
+      },
     ],
   },
 ];
+
+/**
+ * FORD, DUBIZZLE AND OSN ARE NOT HERE, AND NOT FOR WANT OF TRYING.
+ *
+ * Her slide 1 also asks for them in the institutions row above. The rule for
+ * this work is that a logo comes from the company's own site or its official
+ * brand page and from nowhere else, and all three refuse an automated request:
+ *
+ *   ford.com, corporate.ford.com and media.ford.com   HTTP 403
+ *   osn.com and www.osn.com/en-ae                      HTTP 406
+ *   dubizzle.com and uae.dubizzle.com                  HTTP 200, serving a bot
+ *                                                      interstitial rather than
+ *                                                      the site
+ *
+ * An aggregator would have all three in a minute. That is the one source ruled
+ * out, because what it hands back is of unknown provenance and often wrong or
+ * out of date. So the three are left exactly as they are, which is absent, and
+ * recorded in PENDING-COPY 1g2 and docs/FOR-IRAM-outstanding.md with what is
+ * needed: a file from each company's brand page, or permission to use one.
+ */
 
 /**
  * ALL FOUR PLACEHOLDER ENTRIES ARE RESOLVED, by opening the files rather than

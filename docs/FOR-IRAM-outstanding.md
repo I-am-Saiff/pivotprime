@@ -1173,6 +1173,13 @@ substitute and cropping the current one does not remove the name. **Send a
 screenshot of the live app** and it goes straight in: same card, same place,
 nothing else changes.
 
+**Checked again on 30 September, against your v3 slide 6**, and measured this time
+rather than judged. "Test App" sits inside the purple greeting next to the owl,
+not in the phone's status bar. The only crop that removes it and keeps the
+picture's phone shape also takes the greeting, the owl, and 94 pixels off each
+side, cutting into the summary tiles. So it is unchanged, and **nothing has been
+painted over**. PENDING-COPY 1g2 has the detail.
+
 The rest of your slide 8, the results moving above the product link, is done.
 
 ### LinkedIn links under each person: built, except yours
@@ -1201,3 +1208,35 @@ lands on a real person who may not be you.
 
 > Note: your slide 7 asked for Ali, who is not in your new team file. Nisha Barot
 > and Khushi Popat are the people on the site now. Say if Ali should be there.
+
+
+### Three logos we could not get, from your v3 slide 1
+
+**30 September.** Your slide 1 asks for Ford, Dubizzle and OSN in the "Experience
+inside global institutions" strip, and Cinnacare, Nurture UAE, Scentmatic and
+BookMeetings in "Companies we have delivered for".
+
+**The four in the second strip are done**, each taken from the company's own
+website:
+
+| Logo | Source |
+|---|---|
+| Cinnacare | https://cinnacare.com/cdn/shop/files/slice17.png |
+| Scentmatic | https://scentmatic.co.uk/cdn/shop/files/scentmatic_logo.png |
+| BookMeetings | https://bookmeetings.io/logo.svg |
+| Nurture UAE | https://nurtureuae.com/assets/img/nurture-icon-1024.png |
+
+**Ford, Dubizzle and OSN are not**, because all three companies' websites refuse
+an automated request, and we only take logos from a company's own site:
+
+- **Ford:** ford.com, corporate.ford.com and media.ford.com all refused
+- **OSN:** osn.com refused
+- **Dubizzle:** dubizzle.com showed a "verify you are human" page instead
+
+**What we need for each:** the logo file from the company's own brand or press
+page, or a copy you already hold with permission to use it. Each goes in the day
+it arrives, with the same treatment as the others.
+
+**Nurture is in its own colour** in the strip, because its logo is a word inside a
+filled badge and the white treatment erases it. A white or transparent Nurture
+wordmark would let it match the others. PENDING-COPY 1g2.

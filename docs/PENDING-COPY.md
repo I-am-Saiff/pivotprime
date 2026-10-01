@@ -6123,3 +6123,99 @@ The **domain tag** on each question, the **score band chip** on your results, an
 the **Constraint tag** in the breakdown are all still fully rounded. They are
 labels rather than buttons, and the standing rule here is to leave anything that
 is not a button alone rather than guess. **Say the word and they square off too.**
+
+---
+
+## 1g2 Client logos and the Nurture screenshot
+
+**30 September, your v3 slides 1 and 6.**
+
+> **Slide 1:** "The institutions strip still shows MetLife, Gallagher, Sky,
+> Willis Towers Watson, KPMG and AIG. Ford, Dubizzle and OSN are missing. The
+> 'Companies we have delivered for' strip has none of Cinnacare, Nurture UAE,
+> Scentmatic or BookMeetings yet."
+>
+> **Slide 6:** "the Nurture screenshot still says 'Good morning, Test App'.
+> Replace it with a live screenshot showing a real name."
+
+Those are the only two slides in the deck about logos or screenshots. The deck's
+speaker notes were checked as well and are empty.
+
+### The rule we followed
+
+**Every logo comes from the company's own website and nowhere else.** No logo
+collection sites, no redrawing, no recolouring of anyone's file. Where we could not
+reach a company's own site, the logo is left out and listed below.
+
+### Four added, to "Companies we have delivered for"
+
+| Logo | Taken from |
+|---|---|
+| **Cinnacare** | https://cinnacare.com/cdn/shop/files/slice17.png (the logo in their own site header) |
+| **Scentmatic** | https://scentmatic.co.uk/cdn/shop/files/scentmatic_logo.png |
+| **BookMeetings** | https://bookmeetings.io/logo.svg |
+| **Nurture UAE** | https://nurtureuae.com/assets/img/nurture-icon-1024.png |
+
+Three of the four addresses are the same sites your case studies already link to.
+
+**How they look in the strip.** The six logos already there are pictures with the
+dark panel built into them. The four new ones are the companies' own files,
+untouched, so the dark panel and the white treatment are added by the website
+instead of by editing their logos. The panel is the exact near-black of the
+existing tiles, sampled from one of them, so the row reads as one strip.
+
+### ⚠️ Nurture is in colour, and that is deliberate
+
+Nurture's logo is a wordmark inside a filled badge. The white treatment that works
+for the other three turns that whole badge white and the word disappears into it.
+We checked by trying it. **So Nurture shows in its own purple**, on the same dark
+panel. Your three options:
+
+1. Leave it as it is.
+2. **Send a white or transparent version of the Nurture wordmark**, and it goes
+   white like the others.
+3. Take it out of the strip.
+
+### ⚠️ Ford, Dubizzle and OSN could not be added
+
+All three companies' websites refuse an automated request:
+
+| Logo | What happened |
+|---|---|
+| **Ford** | ford.com, corporate.ford.com and media.ford.com all refused (403) |
+| **OSN** | osn.com refused (406) |
+| **Dubizzle** | dubizzle.com returned a "please verify you are human" page instead of the site |
+
+A logo collection site would have all three in a minute, and that is the one
+source we will not use: what it gives you is of unknown origin and often out of
+date. **So all three are left out**, exactly as before. To add them we need, for
+each, **either the logo file from the company's own brand or press page, or a copy
+you already hold with permission to use it.**
+
+### One thing worth knowing before these go further
+
+Ford, OSN and Dubizzle sit under **"Experience inside global institutions"** and
+are Justin's former employers. A company's logo on a business website is often
+read as an endorsement, and large companies usually have rules about it. Using
+them for where someone has worked is common, but it is your call, and it may be
+worth asking each company's press office when you request the files.
+
+### The Nurture screenshot is unchanged, and needs a new one
+
+**Where "Test App" is:** inside the purple greeting at the top of the app's home
+screen, as the name under "Good morning", beside the owl. It is part of the app's
+own content, not the phone's status bar.
+
+**Why we could not crop it out.** The picture has to keep its tall phone shape
+(738 by 1600) for the case study card. The only crop that removes the name and
+keeps that shape takes away the whole greeting and the owl, **and** 94 pixels from
+each side, which cuts through the Activities and Photos tiles and the Quick Access
+row. That is not a clean crop; it damages the screen you are showing.
+
+**We have not painted over the name**, and will not: an edited screenshot of a
+real product is not something to put on a website.
+
+**What we need:** a fresh screenshot of the live Nurture home screen with a real
+family's name, or a demo account with a sensible name, at the same phone size.
+It goes straight in, same card, same place. This was already on your outstanding
+list and stays there.

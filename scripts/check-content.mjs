@@ -844,6 +844,53 @@ const DECISIONS = [
     },
   },
   {
+    what: "the four logos sourced from the companies' own sites are referenced and served",
+    where: "PENDING-COPY 1g2",
+    run: async (get) => {
+      /**
+       * HER v3 SLIDE 1: "The 'Companies we have delivered for' strip has none of
+       * Cinnacare, Nurture UAE, Scentmatic or BookMeetings yet."
+       *
+       * BOTH HALVES, BECAUSE EITHER CAN FAIL ALONE. A file deleted from public/
+       * leaves the page referencing a 404 and the strip shows an empty dark tile,
+       * which looks like a styling choice rather than a fault. A reference
+       * dropped from the content leaves the file sitting unused, and nothing
+       * anywhere complains. So the homepage markup must reference each file and
+       * each file must come back as an image.
+       *
+       * THE ALT TEXT IS ASSERTED WITH IT, because a logo strip is the one place a
+       * missing alt is invisible to everyone who can see the screen. Each file is
+       * the company's own, unaltered; the URL it was taken from is in the
+       * content beside it and in PENDING-COPY 1g2.
+       *
+       * FORD, DUBIZZLE AND OSN ARE NOT ASSERTED, because they are not on the
+       * page: all three refuse an automated request, and the rule is official
+       * sources only. That is recorded, not asserted away.
+       */
+      const html = await (await get("/")).text();
+      const logos = [
+        ["/logos/cinnacare.png", "Cinnacare", "image/"],
+        ["/logos/scentmatic.png", "Scentmatic", "image/"],
+        ["/logos/bookmeetings.svg", "BookMeetings", "image/svg"],
+        ["/logos/nurture-uae.png", "Nurture UAE", "image/"],
+      ];
+      for (const [path, alt, type] of logos) {
+        // next/image rewrites the src into /_next/image?url=%2Flogos%2F..., and
+        // an SVG is passed through as the raw path, so both spellings count.
+        const encoded = encodeURIComponent(path);
+        if (!html.includes(path) && !html.includes(encoded)) {
+          return `the homepage no longer references ${path}, so the ${alt} logo is gone from the strip`;
+        }
+        if (!html.includes(`alt="${alt}"`)) return `the ${alt} logo has lost its alt text`;
+        const res = await get(path);
+        const ct = res.headers.get("content-type") || "";
+        if (res.status !== 200) return `${path} answers ${res.status}, so the ${alt} tile renders empty`;
+        if (!ct.startsWith(type)) return `${path} is served as ${ct}, not as an image`;
+      }
+      return null;
+    },
+  },
+  {
     what: "every homepage section sits in the one shared container, on the one left edge",
     where: "PENDING-COPY 1g0",
     run: async (get) => {
