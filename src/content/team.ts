@@ -95,6 +95,20 @@ export type Person = {
  * HER TAG LINE, slide 7, split on her own middle dot: eight chips, in her order.
  * The four-chip alternative is in PENDING-COPY 1f2.
  */
+/**
+ * The LinkedIn label pattern, so five cards cannot word it five ways.
+ *
+ * DECLARED ABOVE FOUNDER ON PURPOSE. It sat below it while Iram's card had no
+ * link; FOUNDER now calls it, and a const arrow used before its declaration
+ * throws at module load rather than at render, which would take /about down.
+ */
+const connect = (firstName: string, url: string) => ({
+  url,
+  // Sentence case in the string: the button uppercases in CSS, as every other
+  // button label on this site does.
+  label: `Connect with ${firstName} on LinkedIn`,
+});
+
 export const FOUNDER: Person = {
   name: "Iram Kauser",
   role: "Founder & CEO",
@@ -128,32 +142,19 @@ export const FOUNDER: Person = {
     "16 years senior leadership",
   ],
   /**
-   * NULL BECAUSE WE DO NOT HAVE HER PROFILE, AND A GUESS IS NOT A LINK.
+   * HER OWN PROFILE, SUPPLIED BY SAIF IN PASS 7 and used exactly as given.
    *
-   * Her own file gives a LinkedIn for the other four and none for her. Searched
-   * before concluding: every file in the repository, req/ including the old site
-   * records, the whole ~/pivotprime working folder, and both PowerPoint decks
-   * extracted rather than grepped as archives, since a zipped deck hides its own
-   * text from a plain search. The only LinkedIn anywhere is
-   * linkedin.com/company/pivotprimeconsultancy in the footer, which is the
-   * company page and is explicitly not to stand in for a person.
-   *
-   * So her card carries no button and docs/FOR-IRAM-outstanding.md asks for the
-   * URL. The card renders exactly as it did before, rather than showing a
-   * disabled or placeholder button.
+   * Her slide 4 asked for "Connect with Iram on LinkedIn" under her bio. Her
+   * team file gave a profile for the other four and none for her, and every
+   * source we held was searched without finding one, so until now this was null
+   * rather than a guess: a guessed profile URL lands on a stranger. The footer's
+   * linkedin.com/company/pivotprimeconsultancy is the company page and still
+   * does not stand in for a person.
    */
-  linkedin: null,
+  linkedin: connect("Iram", "https://www.linkedin.com/in/iram-kauser-79539938/"),
   photo: { src: "/iram-kauser.jpg", alt: "Iram Kauser", focusY: 50 },
   initials: "IK",
 };
-
-/** The LinkedIn label pattern, so four cards cannot word it four ways. */
-const connect = (firstName: string, url: string) => ({
-  url,
-  // Sentence case in the string: the button uppercases in CSS, as every other
-  // button label on this site does.
-  label: `Connect with ${firstName} on LinkedIn`,
-});
 
 /**
  * The three tall portrait cards, in her file's order: Justin, Nisha, Saif.

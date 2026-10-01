@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Segments } from "@/components/insights/Segments";
 import { ARTICLES, articleBySlug } from "@/content/insights";
 import { SITE_NAME, OG_IMAGE } from "@/content/metadata";
+import { DIAGNOSTIC_ENABLED } from "@/lib/flags";
 
 /**
  * One article, built from her pp-blog-1 through pp-blog-4.
@@ -13,7 +14,7 @@ import { SITE_NAME, OG_IMAGE } from "@/content/metadata";
  * wrote them rather than regenerated, which is why this page does not use
  * pageMetadata(): that helper holds our wording, and hers is already done.
  *
- * STATICALLY GENERATED, ALL FOUR. generateStaticParams enumerates her slugs, so
+ * STATICALLY GENERATED, ALL SEVEN. generateStaticParams enumerates her slugs, so
  * each article is prerendered rather than rendered per request, and
  * dynamicParams is false so an unknown slug is a 404 at the routing layer
  * instead of a rendered empty page.
@@ -69,6 +70,12 @@ export default async function ArticlePage({
   const { slug } = await params;
   const article = articleBySlug(slug);
   if (!article) notFound();
+
+  /* Her September CTA describes the diagnostic and links to it. With the
+     diagnostic off that route 404s and nothing in her words could be honoured
+     by a contact form, so the box is left out, as the services panel is. */
+  const ctaHref = article.cta.href ?? "/contact";
+  const showCta = ctaHref !== "/diagnostic" || DIAGNOSTIC_ENABLED;
 
   return (
     <div className="surface-page flex min-h-screen flex-col">
@@ -153,6 +160,7 @@ export default async function ArticlePage({
           geometry. One file, so all four articles move together. The dot
           texture and overflow-hidden move inside the box with the fill they
           belong to. Nothing inside changes. PENDING-COPY 1d5. */}
+      {showCta && (
       <section className="surface-page px-4 pb-12 text-center sm:px-6 sm:pb-20 lg:px-8">
         <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl bg-forest p-7 sm:p-10 md:p-11">
         <div
@@ -165,7 +173,7 @@ export default async function ArticlePage({
           </h2>
           <p className="mb-7 text-[15px] leading-[1.65] text-white/50">{article.cta.body}</p>
           <Link
-            href="/contact"
+            href={ctaHref}
             className="inline-flex items-center rounded-xl bg-neon px-[30px] py-3.5 text-[13px] font-bold text-forest transition-opacity hover:opacity-88"
           >
             {article.cta.button}
@@ -173,6 +181,7 @@ export default async function ArticlePage({
         </div>
         </div>
       </section>
+      )}
 
       {/* MORE */}
       <div className="mx-auto w-full max-w-[700px] px-4 py-10 sm:px-6 sm:py-20 lg:px-8">

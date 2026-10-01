@@ -186,14 +186,15 @@ export default function QuizApp() {
               existing way of highlighting an eyebrow, and one size step up from
               the services pill's text-xs to text-sm.
 
-              FOREST TEXT, NOT MID, AND THAT IS A CONTRAST FIX RATHER THAN A
-              PREFERENCE. The services pill is mid green on mist and measures
-              3.06:1, which is below the 4.5:1 this size of text needs; it is
-              already reported to her in PENDING-COPY 1f8. Her image shows a green
-              eyebrow, and forest IS the palette's dark green, so the pill stays
-              green on mist and becomes readable at the same time. Measured after:
-              see PENDING-COPY 1g1. */}
-          <p className="mb-6 inline-block rounded-xl bg-mist px-3.5 py-1.5 text-sm font-bold tracking-[0.2em] text-forest uppercase">
+              MID GREEN, AS HER SLIDE 7 PICTURE SHOWS IT. Pass 4 set this in forest
+              because mid on mist measures 3.06:1 against the 4.5:1 that text of
+              this size needs, and recorded the swap. Pass 7 restores her colour on
+              her instruction: her picture draws this eyebrow in the mid green, and
+              that is the direction she gave. The pill, the size and everything
+              else from pass 4 are unchanged. The measured contrast is recorded in
+              PENDING-COPY 1g3 as her decision. check-card-contrast does not walk
+              /diagnostic, so it has no exception to carry for this. */}
+          <p className="mb-6 inline-block rounded-xl bg-mist px-3.5 py-1.5 text-sm font-bold tracking-[0.2em] text-mid uppercase">
             {DIAGNOSTIC_INTRO.eyebrow}
           </p>
           {/* Two tone, as her image draws it: the first line near black, the

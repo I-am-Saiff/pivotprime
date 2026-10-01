@@ -18,6 +18,10 @@
  * so each heading is an array: { t } is plain text, { em } is the green phrase,
  * { br } is her line break. The renderer walks it.
  *
+ * THE THREE SEPTEMBER ARTICLES CAME LATER, from her v3 slide 10 and the page it
+ * links to. They are generated from that page the same way; see the comment
+ * above them in ARTICLES. Their slugs are the ids her page gives them.
+ *
  * SLUGS ARE HERS. Her own cross-links between the four articles already use
  * /blog/consultant-leaves, /blog/technology-process, /blog/decisions-layers and
  * /blog/margin-revenue. Those four slugs are kept exactly and moved under
@@ -40,12 +44,14 @@ export type Article = {
   readTime: string;
   metaTitle: string;
   metaDescription: string;
-  metaKeywords: string;
+  /** Optional: her August files carry keywords; her September page carries none. */
+  metaKeywords?: string;
   headline: Segment[];
   deck: string;
   author: { initials: string; name: string; role: string };
   body: ArticleBlock[];
-  cta: { headline: Segment[]; body: string; button: string };
+  /** href defaults to /contact. The September CTA points at the diagnostic. */
+  cta: { headline: Segment[]; body: string; button: string; href?: string };
   moreLabel: string;
   more: { slug: string; tag: string; title: string; cta: string }[];
 };
@@ -221,6 +227,158 @@ export const ARTICLES: Article[] = [
       { slug: "decisions-layers", tag: "Leadership", title: "Why your decisions don't survive the layers", cta: "Read →" },
     ],
   },
+
+  /**
+   * THE THREE SEPTEMBER ARTICLES, HER v3 SLIDE 10: "Add the three articles
+   * shown below, for September – find full articles at –" her artifact link.
+   *
+   * GENERATED FROM HER PAGE, NOT RETYPED. Her page was opened in a real, headed
+   * Chrome and each card was clicked open; the text in her article view is
+   * byte-identical to what is below, block for block, and a second, independent
+   * agent got the same text from its own load. Body word counts: 887, 680, 762.
+   * Her apostrophes in these three are straight, and are kept so.
+   *
+   * WHERE HER PAGE LEAVES A FIELD OF THIS FORMAT EMPTY, nothing is written for
+   * it. Her article view has no standfirst, so the deck is her own card excerpt.
+   * She gives no role and no keywords: the role is the one each person already
+   * carries on the August articles, and keywords are omitted. Her headings are
+   * one colour with no line break, so each headline is one plain segment. Her
+   * page shows no images and supplies none.
+   *
+   * THE CFO PIECE IS JUSTIN'S. Her page's own data credits Iram; her slide 10
+   * says "fractional CFO (by Justin Ford)" and its picture shows his name on the
+   * card. The slide is the instruction, so it wins. PENDING-COPY 1g3.
+   *
+   * HER CTA IS THE SAME ON ALL THREE and goes to the diagnostic, so it carries
+   * an href, and the article page shows it only while the diagnostic is on.
+   * "More from Pivot Prime" links each to the other two September pieces.
+   */
+  {
+    slug: "uae-market-entry",
+    tag: "UAE Market Entry",
+    date: "September 2026",
+    readTime: "9 min read",
+    metaTitle: "What it actually takes to launch a consumer product in Dubai | Pivot Prime",
+    metaDescription: "From entity formation to first retail sales: what market entry in the UAE really involves, and why the timeline is almost always longer than founders expect.",
+    headline: [{ t: "What it actually takes to launch a consumer product in Dubai" }],
+    deck: "From entity formation to first retail sales: what market entry in the UAE really involves, and why the timeline is almost always longer than founders expect.",
+    author: { initials: "IK", name: "Iram Kauser", role: "Founder and CEO, Pivot Prime" },
+    body: [
+    { type: "lead", text: "Most founders who have successfully built a consumer brand in the UK or Europe arrive in Dubai with a reasonable product, a clear market thesis, and a timeline that is too short by roughly six months. Not because the market is hostile. The UAE actively courts foreign business and has invested heavily in making the process accessible. But the rules are different, the approval bodies are unfamiliar, and the sequence in which you do things matters more than most people expect." },
+    { type: "p", text: "This article walks through what a real market entry looks like, using the example of a UK-based functional drinks brand we took through the process: a matcha and mushroom product with proven domestic traction, entering Dubai for the first time. The steps, costs and timelines are real." },
+    { type: "h2", text: "The entity question comes first, and it shapes everything else" },
+    { type: "p", text: "Before a product can legally be imported or sold in the UAE, there must be a registered entity in the country. Founders often treat this as a formality. It is not. The entity structure you choose determines what you can do commercially, who you need to hire, and how much operational friction you will carry for years." },
+    { type: "p", text: "The two main options are a mainland company and a free zone company. A mainland licence allows direct trading in the UAE market, direct government dealings, and unlimited retail and distribution activity. A free zone company is faster and cheaper to set up and permits full foreign ownership, but it cannot trade directly in the UAE mainland without routing through a local distributor. For a consumer product going into retail or food service, that additional layer creates cost and reduces control over customer relationships." },
+    { type: "p", text: "For the functional drinks brand, we established a mainland LLC in Dubai. Total cost for entity formation, including professional fees and government charges, came to approximately AED 35,000 to 45,000." },
+    { type: "h2", text: "Product registration takes longer than the timeline assumes" },
+    { type: "p", text: "The matcha and mushroom formulation included lion's mane and reishi, both of which sit at the edge of what UAE regulators consider established food ingredients versus health supplements. We sought ingredient-level pre-clearance before the client committed to a full production run. This added three weeks at the front of the process but avoided a costly reformulation later." },
+    { type: "p", text: "Labelling adds another layer. UAE labelling requirements include Arabic-language text, metric net weight, country of origin, shelf life, a specific nutritional information format, and both manufacturer and importer contact details. The label requires regulatory approval before customs clearance can be obtained. From initial product registration to first import clearance, the realistic timeline for a clean product with complete documentation is three to five months." },
+    { type: "h2", text: "Import logistics require decisions that compound later" },
+    { type: "p", text: "The UAE is an open and well-functioning import environment. Duties on food products are generally five percent on the customs value. Every food import requires a health certificate from an accredited authority in the country of origin. For UK products, this involves the relevant local authority or an approved third-party certifier. The certificate must accompany the shipment, not follow it." },
+    { type: "p", text: "Many first-time UAE exporters default to DDP (Delivered Duty Paid) because it appears to simplify the import process. In practice, it transfers control of customs clearance to a third party with limited accountability. We recommended DAP (Delivered At Place) with a UAE-based agent of the client's choosing, which kept control of the clearance process on the right side of the relationship." },
+    { type: "h2", text: "The operational footprint in year one should be intentional, not inherited" },
+    { type: "p", text: "For early-stage market entry, third-party logistics is almost always the correct answer. A 3PL removes the commitment of a long-term warehouse lease and a dedicated logistics team. The functional drinks brand worked with a 3PL in Al Quoz at approximately AED 4,000 to 6,000 per month at launch volumes, covering ambient storage, pick-and-pack, and delivery to around 150 retail doors." },
+    { type: "h2", text: "People and compliance cannot be sequenced separately" },
+    { type: "p", text: "The entity needs a senior person on the ground with authority to act. The UAE introduced a nine percent corporate tax in 2023, and VAT at five percent applies to most products. Both must be registered and managed correctly from the first trading period. For the functional drinks brand, we hired a Country Manager on the client's behalf and arranged an outsourced finance and compliance function through a local accounting firm, which handled the regulatory and fiscal requirements without the cost of a dedicated finance hire in year one." },
+    { type: "h2", text: "Channel strategy determines what the next three years look like" },
+    { type: "p", text: "The Dubai retail landscape for a functional consumer product divides into three distinct channels. Specialty and health retail is where most functional brands prove their concept in Dubai, with shorter decision cycles and accessible buyers. Premium supermarkets require a structured pitch, category data, and in many cases a listing fee. Hospitality and food service represents the highest-value channel in the long run, but procurement cycles are slower. For most brands, this is a year-two priority." },
+    { type: "h2", text: "What the numbers look like" },
+    { type: "p", text: "Full market entry for the functional drinks brand, from LLC formation to first meaningful retail sales, required approximately AED 350,000 to 400,000 over twelve months. The founders who navigate this process well treat Dubai as a real business operation and not a remote distribution experiment. Understanding the constraints in detail before capital is deployed is the entire value of a proper market entry assessment." },
+    ],
+    cta: {
+      headline: [{ t: "Want to understand where your business is losing capacity?" }],
+      body: "The four-minute diagnostic scores your operations and names the constraint directly.",
+      button: "Take the diagnostic →",
+      href: "/diagnostic",
+    },
+    moreLabel: "More from Pivot Prime",
+    more: [
+      { slug: "fractional-leadership", tag: "Operations", title: "The case for fractional leadership in a Dubai growth business", cta: "Read →" },
+      { slug: "fractional-cfo", tag: "Finance", title: "Why growing businesses in Dubai need a CFO before they think they do", cta: "Read →" },
+    ],
+  },
+  {
+    slug: "fractional-leadership",
+    tag: "Operations",
+    date: "September 2026",
+    readTime: "7 min read",
+    metaTitle: "The case for fractional leadership in a Dubai growth business | Pivot Prime",
+    metaDescription: "Why a growing business at the wrong stage for a permanent COO hire can still access senior operational capability, and why the handover determines whether it holds.",
+    headline: [{ t: "The case for fractional leadership in a Dubai growth business" }],
+    deck: "Why a growing business at the wrong stage for a permanent COO hire can still access senior operational capability, and why the handover determines whether it holds.",
+    author: { initials: "IK", name: "Iram Kauser", role: "Founder and CEO, Pivot Prime" },
+    body: [
+    { type: "lead", text: "There is a version of operational leadership that most growing businesses need and very few actually have: someone with the seniority and experience to design the operating model from the ground up, run the weekly execution, and then step back once the structure is in place and a capable team is running it." },
+    { type: "p", text: "The challenge is that this describes a role with a natural end point. The job is to build something that works without the person who built it. A permanent C-suite hire is not designed for that. A consultant who writes a report does not do it either. The fractional executive model exists precisely in the gap between those two." },
+    { type: "h2", text: "What the permanent senior hire actually costs" },
+    { type: "p", text: "Founders tend to calculate the cost of a senior hire as a salary number. The real number is larger. A genuine COO in Dubai commands AED 40,000 to 80,000 per month depending on background and industry. On top of that salary sits the cost of the hiring process, the three to six months before a new executive is genuinely productive in a new environment, and the UAE end-of-service gratuity as an exit cost. A senior hire that does not work out costs far more than the salary." },
+    { type: "p", text: "This is not an argument against permanent senior hires. It is an argument for being precise about whether the role requires a long-term occupant or a focused, time-limited builder." },
+    { type: "h2", text: "The distinction that matters: part-time versus fractional" },
+    { type: "p", text: "A part-time executive does a reduced version of the role on an ongoing basis. A fractional executive is fully engaged during a defined engagement period, working toward a specific outcome: build the operating model, install the infrastructure, develop the team that will sustain it, and hand over. The measure of success is whether the business can operate at the same level after the engagement ends." },
+    { type: "h2", text: "What the engagement actually looks like" },
+    { type: "p", text: "A typical fractional COO engagement runs through three phases. The first sixty to ninety days are diagnostic and design: mapping where the business is losing time and capacity, where money is leaving without clear return, and which processes depend on a single person's knowledge rather than a documented system. The build phase is where the operational work happens: the operating model is designed and installed, the reporting infrastructure is set up, and the cadence of how the business runs week to week is established. This is execution, not advice. The transition phase is where the engagement either justifies itself or does not." },
+    { type: "h2", text: "The operations lead: why the handover determines whether it holds" },
+    { type: "p", text: "The most common failure mode in fractional leadership is the handover. An experienced executive joins, builds something well-designed, and then leaves. Several months later, the business has quietly reverted because the person who built the system was the only person who understood why it worked." },
+    { type: "p", text: "Designing against this starts at the beginning. From the first week, there is an identified operations lead in the business. They are present for every significant design decision, they understand the logic behind every process, and they are progressively taking on ownership of the system during the engagement rather than inheriting it afterwards." },
+    { type: "h2", text: "Why the Dubai market makes this model particularly relevant" },
+    { type: "p", text: "The salary ranges for senior operational executives in Dubai are high relative to the stage at which many fast-growing companies need serious operational capability. The most capable operational leaders in Dubai frequently prefer fractional engagements to permanent roles. And businesses setting up in the UAE from another market need operational capability from the first week of meaningful trading, not after a lengthy hiring process." },
+    { type: "h2", text: "When fractional is the right answer" },
+    { type: "p", text: "The model works best when growth has outrun the operating structure, when a funding event creates immediate expectations of operational maturity, or when a new market entry requires intensive, bounded build work. It is not the right answer where the business needs a cultural anchor over many years, or where the complexity of operations genuinely requires a full-time senior leader from the outset. Knowing which situation you are in before committing either way is the more important question." },
+    ],
+    cta: {
+      headline: [{ t: "Want to understand where your business is losing capacity?" }],
+      body: "The four-minute diagnostic scores your operations and names the constraint directly.",
+      button: "Take the diagnostic →",
+      href: "/diagnostic",
+    },
+    moreLabel: "More from Pivot Prime",
+    more: [
+      { slug: "uae-market-entry", tag: "UAE Market Entry", title: "What it actually takes to launch a consumer product in Dubai", cta: "Read →" },
+      { slug: "fractional-cfo", tag: "Finance", title: "Why growing businesses in Dubai need a CFO before they think they do", cta: "Read →" },
+    ],
+  },
+  {
+    slug: "fractional-cfo",
+    tag: "Finance",
+    date: "September 2026",
+    readTime: "7 min read",
+    metaTitle: "Why growing businesses in Dubai need a CFO before they think they do | Pivot Prime",
+    metaDescription: "Most businesses in the UAE have finance management. Fewer have financial leadership. The gap between the two costs more than the salary difference suggests.",
+    headline: [{ t: "Why growing businesses in Dubai need a CFO before they think they do" }],
+    deck: "Most businesses in the UAE have finance management. Fewer have financial leadership. The gap between the two costs more than the salary difference suggests.",
+    author: { initials: "JF", name: "Justin Ford", role: "Fractional CFO, Pivot Prime" },
+    body: [
+    { type: "lead", text: "Most founders of fast-growing businesses in the UAE know they need better financial management. What they underestimate is how far the gap between their current capability and what they actually need has already grown by the time they start looking." },
+    { type: "p", text: "The typical picture: the business has a bookkeeper, or a part-time accountant, or a finance manager skilled at processing transactions but who has never built a financial model the board would trust. Revenue is growing. Cash is tighter than the revenue number suggests it should be. The founder cannot explain with precision why. This is not a bookkeeping problem. It is a financial leadership problem." },
+    { type: "h2", text: "What a CFO actually does that a finance manager does not" },
+    { type: "p", text: "A finance manager handles the operational finance function: accounts payable and receivable, payroll, bank reconciliation, VAT filing, management accounts production. These are execution tasks. A CFO is a strategic financial leader. The role includes designing the financial architecture of the business, building the reporting infrastructure that gives the leadership team genuine visibility, managing banking and investor relationships, and making the financial decisions that shape the trajectory of the business." },
+    { type: "p", text: "In the UAE context, the role also covers regulatory complexity that many founders do not fully anticipate. Corporate tax at nine percent was introduced in 2023. Transfer pricing rules apply to businesses with group structures or intercompany transactions. Banking relationships require more active management than in many other markets." },
+    { type: "h2", text: "Why the fractional model fits this stage" },
+    { type: "p", text: "A business doing AED 20 to 60 million in annual revenue often needs CFO-level capability and cannot yet absorb a full-time CFO cost comfortably. A senior CFO with genuine regional experience commands AED 35,000 to 70,000 per month in the current market. The fractional model addresses this directly: an engagement for a defined period with a specific mandate, at a fraction of the permanent hire cost during the build phase." },
+    { type: "p", text: "There is also a quality-of-access argument. The most experienced financial executives in Dubai frequently prefer fractional engagements to permanent roles. A fractional engagement reaches this tier of talent. A permanent hire at the equivalent level, with the salary expectations and equity discussions that come with it, often cannot." },
+    { type: "h2", text: "What the engagement builds" },
+    { type: "p", text: "The first phase is diagnostic: assessing the quality of the management accounts, the reliability of the cash flow forecast, the state of banking relationships, and the completeness of regulatory compliance. In most businesses at this stage, this surfaces at least one significant gap the founder was not fully aware of." },
+    { type: "p", text: "The build phase constructs what is missing: a financial model rebuilt to a standard that supports genuine decision-making, a reporting cadence that gives the leadership team information on a timetable that allows them to act on it, and a control environment that prevents both inadvertent errors and the more deliberate ones that become possible when a business handles larger sums without adequate oversight." },
+    { type: "p", text: "The transition phase installs the ongoing capability, typically a finance manager or financial controller hired or developed during the engagement, who can sustain the function at the level the fractional CFO established." },
+    { type: "h2", text: "The fundraising case" },
+    { type: "p", text: "For businesses considering a raise, the case for fractional CFO engagement is particularly strong. Investors reviewing a UAE business assess the quality of financial information as a proxy for the quality of the business overall. Management accounts that are delayed or formatted inconsistently create a negative signal that is difficult to recover from in a process. The cost of the engagement is almost always small relative to the difference in outcome between a well-run fundraising process and a poorly-run one." },
+    { type: "h2", text: "The UAE regulatory environment adds a specific premium to experience" },
+    { type: "p", text: "Corporate tax compliance requires understanding what constitutes a taxable entity, how group structures are treated, and how to approach the transition accounting from a pre-tax to a post-tax position. Businesses that treated their UAE entity as a tax-free holding structure and have not reviewed that assumption since the corporate tax introduction are carrying risk they may not have quantified. A fractional CFO with regional experience navigates all of this with a familiarity that takes years to develop from a standing start." },
+    { type: "h2", text: "The question most founders avoid" },
+    { type: "p", text: "Financial leadership is the function that founders most often underinvest in during the growth phase. Its failures are invisible until they are not. A business that reaches a fundraising conversation without investor-ready financials, or that discovers a VAT exposure during due diligence, pays for that underinvestment at the worst possible moment. If you want to understand the state of your finance function before it becomes an obstacle, the operational diagnostic is where the conversation starts." },
+    ],
+    cta: {
+      headline: [{ t: "Want to understand where your business is losing capacity?" }],
+      body: "The four-minute diagnostic scores your operations and names the constraint directly.",
+      button: "Take the diagnostic →",
+      href: "/diagnostic",
+    },
+    moreLabel: "More from Pivot Prime",
+    more: [
+      { slug: "uae-market-entry", tag: "UAE Market Entry", title: "What it actually takes to launch a consumer product in Dubai", cta: "Read →" },
+      { slug: "fractional-leadership", tag: "Operations", title: "The case for fractional leadership in a Dubai growth business", cta: "Read →" },
+    ],
+  },
 ];
 
 export const ARTICLE_SLUGS = ARTICLES.map((a) => a.slug);
@@ -329,6 +487,40 @@ export const POSTS: PostCard[] = [
     authorName: "Justin Ford",
     date: "Aug 2026",
     readTime: "6 min",
+    cta: "→",
+  },
+  // September, in the order her slide 10 picture shows them. See ARTICLES.
+  {
+    slug: "uae-market-entry",
+    tag: "UAE Market Entry",
+    title: "What it actually takes to launch a consumer product in Dubai",
+    deck: "From entity formation to first retail sales: what market entry in the UAE really involves, and why the timeline is almost always longer than founders expect.",
+    authorInitials: "IK",
+    authorName: "Iram Kauser",
+    date: "Sep 2026",
+    readTime: "9 min",
+    cta: "→",
+  },
+  {
+    slug: "fractional-leadership",
+    tag: "Operations",
+    title: "The case for fractional leadership in a Dubai growth business",
+    deck: "Why a growing business at the wrong stage for a permanent COO hire can still access senior operational capability, and why the handover determines whether it holds.",
+    authorInitials: "IK",
+    authorName: "Iram Kauser",
+    date: "Sep 2026",
+    readTime: "7 min",
+    cta: "→",
+  },
+  {
+    slug: "fractional-cfo",
+    tag: "Finance",
+    title: "Why growing businesses in Dubai need a CFO before they think they do",
+    deck: "Most businesses in the UAE have finance management. Fewer have financial leadership. The gap between the two costs more than the salary difference suggests.",
+    authorInitials: "JF",
+    authorName: "Justin Ford",
+    date: "Sep 2026",
+    readTime: "7 min",
     cta: "→",
   },
 ];

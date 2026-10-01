@@ -269,10 +269,14 @@ export default function About() {
                 <div className="mt-6">
                   <Tags tags={FOUNDER.tags} />
                 </div>
-                {/* Renders nothing today: we have no LinkedIn for her. The slot
-                    is here so the URL is a one-line change when it arrives, and
-                    docs/FOR-IRAM-outstanding.md asks for it. */}
-                <LinkedInButton person={FOUNDER} />
+                {/* The same button the four team cards use. mt-6 rather than
+                    their gap, because this column is not a gapped flex column:
+                    it would otherwise sit flush under the chips. Its own mt-auto
+                    does nothing here, since her text is always taller than her
+                    photograph. */}
+                <div className="mt-6">
+                  <LinkedInButton person={FOUNDER} />
+                </div>
               </div>
             </div>
           </article>

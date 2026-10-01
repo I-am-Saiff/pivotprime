@@ -246,45 +246,52 @@ export const LOGO_GROUPS: LogoGroup[] = [
       },
       {
         /**
-         * DUBIZZLE GROUP, AND IT SAYS SO. dubizzle.com, the UAE consumer site,
-         * put up an Imperva challenge and then a 403 "Access denied, Error 15";
-         * that page was stopped on, with no click and no retry. The parent group,
-         * dubizzlegroup.com, which the brief names as an official source, served
-         * its header normally, and this is the logo from it: a transparent PNG
-         * on the group's own CDN subdomain, at 2x for a 121x60 header slot.
+         * PLAIN "dubizzle", ON HER INSTRUCTION IN PASS 7. Pass 6 put up the
+         * "dubizzle group" header logo, the parent company's mark, because the
+         * rule then was the logo at the top of the company's own site, and
+         * dubizzle.com itself put up an Imperva challenge and then a 403 that
+         * was stopped on, with no click and no retry. Justin's biography names
+         * dubizzle, the brand he worked for, and this is that brand's own mark.
          *
-         * THE MARK READS "dubizzle group", NOT "dubizzle". Justin's biography
-         * names dubizzle, the brand he worked for, and this is its parent
-         * company's mark. The alt names what the picture actually says.
-         * PENDING-COPY 1g2 puts it to her.
+         * FROM THE SAME OFFICIAL PAGE. dubizzlegroup.com shows it in its "Our
+         * Brands" block as <img class="dubizzle_logo" alt="Dubizzle">, on the
+         * group's own CDN subdomain. Loaded once in a real, headed Chrome with
+         * nothing altered and nothing clicked; no challenge. An independent second
+         * agent loaded the page in a fresh browser, found the same element for
+         * itself, and received the identical 3,941 bytes. Not redrawn, not
+         * recoloured: a transparent palette PNG, charcoal with a red flame, and
+         * the strip's own filter makes it white as it does every institution.
          *
-         * The site serves no SVG of it. Its scroll-state white variant,
-         * logo_main_light.png, was left alone: this is the one the header shows
-         * on arrival, and the strip's filter makes it white anyway.
+         * THE ALT IS LOWER CASE because her copy keeps the brand's casing
+         * exactly, as Justin's biography does, and the mark itself reads so.
          */
-        src: "/logos/dubizzle-group.png",
-        alt: "Dubizzle Group",
+        src: "/logos/dubizzle.png",
+        alt: "dubizzle",
         tile: true,
         /**
-         * RAW, BECAUSE IT SHRANK TO ABOUT 61% ON A 3x PHONE. Found by an
-         * independent review, then measured. The file is 242px wide, and
-         * next/image still builds a srcSet up to 3840w. The optimiser never
-         * enlarges, so every candidate from 256w up is the same 242px picture,
-         * but the browser computes density from the w descriptor: on a 3x screen
-         * it takes the 640w candidate for a 150px slot and treats a 242px image
-         * as 4.27x, so it lays out at about 57px instead of filling the tile.
-         *
-         * Served raw there is no srcSet and no density guess: 2,751 bytes, the
-         * exact file dubizzlegroup.com served, laid out from its own 242x120 and
-         * clamped by the tile limits to the same size at every pixel density. It
-         * also means the file the guard hashes is the file the tile loads; under
-         * the optimiser the tile was loading a q=75 WebP re-encode of it.
+         * RAW, FOR THE REASON PASS 6 FOUND. Under the optimiser the tile would
+         * load a q=75 WebP re-encode, never this file, so the hash below would
+         * check something no visitor receives; and next/image would build a
+         * srcSet up to 3840w for a 530px picture, which the browser divides by
+         * the w descriptor and lays out smaller than the tile allows. Served raw
+         * there is no srcSet and no guess: 3,941 bytes, the exact file the group
+         * served, laid out from its own 530x170 and clamped by the tile limits.
          */
         raw: true,
-        w: 242,
-        h: 120,
-        sha256: "6b5dba202415e5ec50a678e4e4234677cc9dd2eefb3e9b37c3433d90f57f1aee",
-        source: "https://cdn.dubizzlegroup.com/wp-content/uploads/2024/08/logo_main.png",
+        w: 530,
+        h: 170,
+        /**
+         * NARROWER THAN THE SHARED LIMIT, chosen by measuring, not by eye
+         * alone. The ink fills this file edge to edge (3px of air under it), so
+         * the shared 76% width let it lay out at 136x44, the heaviest mark in the
+         * row by a distance. Four widths were put through all nine institution
+         * tiles at one zoom: 76%, 64%, 56% and 50%. At 56% it is 100x32 on
+         * desktop and 83x27 on a phone, level with the Ford oval and KPMG beside
+         * it; at 50% the long, thin wordmark starts to read as the smallest.
+         */
+        size: "max-h-[58%] max-w-[56%]",
+        sha256: "e62ec73d4c67799f0af5b14ff836cfd6a3e7cc75f15238891c16c62482b5994a",
+        source: "https://cdn.dubizzlegroup.com/wp-content/uploads/2024/09/about_our_brands_logo_01.png",
       },
     ],
   },
@@ -406,9 +413,15 @@ export const LOGO_GROUPS: LogoGroup[] = [
  *   Ford      ford.com, no challenge. The logo is a symbol in an inline sprite.
  *   OSN       osn.com -> /en-ae/home, no challenge. The plain OSN mark.
  *   Dubizzle  dubizzle.com challenged and was stopped on. dubizzlegroup.com,
- *             the parent group, served normally; its mark reads "dubizzle group".
+ *             the parent group, served normally; its header mark reads
+ *             "dubizzle group", and that was the logo shown after pass 6.
  *
- * Sources and the decisions they leave her are in PENDING-COPY 1g2.
+ * PASS 7 SWAPPED DUBIZZLE FOR THE PLAIN "dubizzle" MARK, on her instruction,
+ * from the "Our Brands" block of the same official page, loaded once with no
+ * challenge and confirmed byte-identical by a second, independent load. The
+ * group file was deleted, since nothing referenced it any more.
+ *
+ * Sources are in PENDING-COPY 1g2, and the pass 7 change in 1g3.
  */
 
 /**

@@ -865,7 +865,7 @@ const DECISIONS = [
        * the company's own, unaltered; the URL it was taken from is in the
        * content beside it and in PENDING-COPY 1g2.
        *
-       * PASS 6 ADDS FORD, OSN AND DUBIZZLE GROUP to the institutions row, and
+       * PASS 6 ADDS FORD, OSN AND DUBIZZLE to the institutions row, and
        * with them a check the first four did not have: THE HASH. Each of the
        * three was saved as the exact bytes its company served, and a second,
        * independent browser load confirmed those bytes. The sha256 here is that
@@ -899,10 +899,13 @@ const DECISIONS = [
           sha256: "37c7b7e721c9844df05202293efe7a5f6f9b70536225cf66a23feaf6146e40ac",
         },
         {
-          path: "/logos/dubizzle-group.png",
-          name: "Dubizzle Group",
+          // Pass 7: the plain brand mark replaced the "dubizzle group" header
+          // logo, from the same official page, re-acquired independently and
+          // byte-identical. See PENDING-COPY 1g3.
+          path: "/logos/dubizzle.png",
+          name: "dubizzle",
           type: "image/png",
-          sha256: "6b5dba202415e5ec50a678e4e4234677cc9dd2eefb3e9b37c3433d90f57f1aee",
+          sha256: "e62ec73d4c67799f0af5b14ff836cfd6a3e7cc75f15238891c16c62482b5994a",
         },
       ];
       /**
@@ -1113,8 +1116,8 @@ const DECISIONS = [
     },
   },
   {
-    what: "every team member carries her own LinkedIn, and Iram carries none rather than a guess",
-    where: "PENDING-COPY 1f9 and FOR-IRAM-outstanding",
+    what: "all five people on /about carry their own LinkedIn, Iram's included",
+    where: "PENDING-COPY 1f9 and 1g3",
     run: async (get) => {
       /**
        * HER v3 SLIDES 4 AND 5, delivered as req/meet-the-team.html.
@@ -1125,21 +1128,20 @@ const DECISIONS = [
        * notice. So the four URLs are asserted literally, each paired with the
        * person whose card it must sit in, rather than counting four links.
        *
-       * IRAM'S ABSENCE IS ASSERTED TOO, and that is the half most likely to be
-       * "fixed" by someone later. Her file gives a LinkedIn for the other four
-       * and none for her; the repository, req/, the whole working folder and
-       * both PowerPoint decks were searched, extracted rather than grepped as
-       * archives, and there is none. The only LinkedIn on the site is the
-       * company page in the footer, which must never stand in for a person. So
-       * this fails if a fifth personal profile appears on the page before
-       * docs/FOR-IRAM-outstanding.md is answered, and it fails if the company
-       * page turns up inside the team section.
+       * IRAM'S IS NOW ASSERTED PRESENT, AND THIS IS THE FLIP OF WHAT IT USED TO
+       * HOLD. Until pass 7 this guard asserted her button was ABSENT: her file
+       * gave a LinkedIn for the other four and none for her, nothing we held had
+       * one, and a guessed profile lands on a stranger. Saif supplied her own
+       * profile URL in pass 7, so it is asserted literally, like the other four,
+       * and the count is five. The company page in the footer must still never
+       * turn up inside the team section in a person's place.
        */
       const html = await (await get("/about")).text();
       const team = html.slice(html.indexOf('id="team"'), html.indexOf("</section>", html.indexOf('id="team"')));
       if (!team) return "/about has lost the team section";
 
       const cards = [
+        ["Iram Kauser", "https://www.linkedin.com/in/iram-kauser-79539938/"],
         ["Justin Ford", "https://www.linkedin.com/in/justinford84/"],
         ["Nisha Barot", "https://www.linkedin.com/in/nishabarot/"],
         ["Saif Ur Rehman", "https://www.linkedin.com/in/saif-bookmeetings/"],
@@ -1147,7 +1149,7 @@ const DECISIONS = [
       ];
       for (const [name, url] of cards) {
         if (!textOf(team).includes(name)) return `the team section has lost ${name}`;
-        if (!team.includes(`href="${url}"`)) return `${name} no longer links ${url}, which is the profile in her own file`;
+        if (!team.includes(`href="${url}"`)) return `${name} no longer links ${url}, the profile supplied for them`;
         const first = name.split(" ")[0];
         if (!textOf(team).includes(`Connect with ${first} on LinkedIn`)) {
           return `${name}'s button has lost her label, "Connect with ${first} on LinkedIn"`;
@@ -1155,7 +1157,7 @@ const DECISIONS = [
       }
       // Opened in a new tab, and never without the opener protection.
       const links = [...team.matchAll(/<a[^>]*href="https:\/\/www\.linkedin\.com\/in\/[^"]*"[^>]*>/g)].map((m) => m[0]);
-      if (links.length !== 4) return `the team section has ${links.length} personal LinkedIn links, and her file gives four`;
+      if (links.length !== 5) return `the team section has ${links.length} personal LinkedIn links, and there are five people`;
       for (const a of links) {
         if (!a.includes('target="_blank"')) return "a LinkedIn button no longer opens in a new tab";
         if (!a.includes('rel="noopener noreferrer"')) return "a LinkedIn button has lost rel=noopener noreferrer";

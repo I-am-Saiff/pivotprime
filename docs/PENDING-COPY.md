@@ -6262,3 +6262,118 @@ turned away. A demo account with a made-up family is what is needed.
 
 **Still not supplied as of pass 6.** We looked for the new screenshot at the agreed
 place and it is not there yet, so nothing about the current image has changed.
+
+## 1g3 The remaining items, closed on your own instructions
+
+**1 October, from your v3 deck.** Where your deck gave a direction, it has been
+applied. Where it did not, the site stays as it was. Nothing in this entry needs an
+answer.
+
+### Your LinkedIn button is on the About page
+
+> **Slide 4:** "Below add my linked in page, and say connect with Iram on Linkedin,
+> do this for all staff."
+
+Your button now sits under your biography: **"Connect with Iram on LinkedIn"**,
+linking to https://www.linkedin.com/in/iram-kauser-79539938/, exactly as supplied.
+It is the same button the other four have, worded the way your team file words
+theirs. All five people on the page now have one. The company page in the footer
+still never stands in for a person.
+
+### "FREE DIAGNOSTIC" is in the mid green your slide 7 picture shows
+
+In 1g1 this label was set in the dark forest green, because mid green on the pale
+mist pill is hard to read at this size. Your slide 7 picture draws it in the mid
+green, so it is now mid green, as your picture shows. The pill behind it, the size
+and the weight are unchanged. No other colour on the site has changed.
+
+**Measured contrast: 3.06 to 1**, mid green (#009f50) on mist (#e8f4ec). The
+usual accessibility guideline for text of this size is 4.5 to 1; the forest green
+it replaces measured 12.38 to 1. **This is recorded as your instruction from v3
+slide 7.** The site's automatic contrast check covers the dark cards on the main
+pages and does not cover the diagnostic, so it needed no exception for this.
+
+### Dubizzle now shows the plain "dubizzle" logo
+
+This settles point 3 in 1g2. The logo is the one in the **"Our Brands"** section of
+dubizzlegroup.com, the group's own site:
+https://cdn.dubizzlegroup.com/wp-content/uploads/2024/09/about_our_brands_logo_01.png
+
+It was taken the same way as before: the page opened once in an ordinary Chrome
+browser, nothing disguised, nothing clicked, and no "prove you are human" page. A
+second, separate check opened the page again, found the same logo for itself and
+received the identical file, 3,941 bytes. It is not redrawn or recoloured. It sits
+on the same dark tile as the other institutions and is shown white like them.
+
+**Sized by comparison, not by eye alone.** At the size the other files use it came
+out as the heaviest logo in the row, because the wordmark fills its file edge to
+edge. Four sizes were laid out beside all nine institution logos at once; the one
+chosen sits level with the Ford oval and KPMG (100 by 32 on a computer, 83 by 27 on
+a phone). The old "dubizzle group" file is no longer used anywhere and has been
+removed from the site. The site's checks now hold the new file to the bytes
+dubizzlegroup.com served.
+
+### Unchanged, as asked
+
+The Ford and Nurture logos stay in their own colours. The fees box width, the
+divider, the box colours and the grey band are as they were.
+
+### The three September articles are on Insights
+
+> **Slide 10:** "Add the three articles shown below, for September – find full
+> articles at – https://claude.ai/code/artifact/374a7554-969c-4e4f-bb74-a4056085bd13"
+
+**The full text was there, and it is on the site word for word.** Your page was
+opened in an ordinary Chrome browser, with nothing disguised and no sign-in, and
+each card was clicked open. The text in your article view and the text on the site
+match exactly, paragraph by paragraph and heading by heading, and a second,
+separate check of your page returned the same text.
+
+| Article | Author | Category | Date | Read time | Words in the body |
+|---|---|---|---|---|---|
+| What it actually takes to launch a consumer product in Dubai | Iram Kauser | UAE Market Entry | September 2026 | 9 min | 887 |
+| The case for fractional leadership in a Dubai growth business | Iram Kauser | Operations | September 2026 | 7 min | 680 |
+| Why growing businesses in Dubai need a CFO before they think they do | **Justin Ford** | Finance | September 2026 | 7 min | 762 |
+
+They are at /insights/uae-market-entry, /insights/fractional-leadership and
+/insights/fractional-cfo, using the names your page gives them, and they appear on
+the Insights page after the three August cards, in the order your slide shows.
+
+**The CFO article is credited to Justin.** Your articles page credits it to you;
+your slide 10 says "fractional CFO (by Justin Ford)" and its picture shows his name
+on the card. The slide is the instruction, so the slide wins.
+
+**How the rest of each page is filled, using only what already exists:**
+
+- **Under the headline**, the article pages carry a short line. Your article view
+  has none, so it is each article's own card summary, word for word.
+- **Under each author's name**, the role they already carry on the August
+  articles: "Founder and CEO, Pivot Prime" and "Fractional CFO, Pivot Prime".
+- **The headlines** are one colour with no line break, as on your page.
+- **The closing box** is your own: "**Want to understand where your business is
+  losing capacity?** The four-minute diagnostic scores your operations and names
+  the constraint directly.", with your "Take the diagnostic →" button, which opens
+  the diagnostic. It shows while the diagnostic is live, which it is.
+- **"More from Pivot Prime"** at the foot of each links to the other two September
+  articles.
+- **Pictures:** your page has none for these three, and the article pages do not
+  use one.
+- **Search keywords:** your August files gave each article its own; your September
+  page gives none, so none are set.
+
+**Two things that follow from your own categories.** Your six category tabs on the
+Insights page are unchanged. "UAE Market Entry" and "Operations" are not among them,
+so those two articles show under "All"; the CFO article also shows under "Finance".
+
+**The figures in AED are yours, as written.** The site normally allows only one
+price, the audit's "AED 15,000". The amounts in these articles (setup costs,
+salaries, revenue bands) are market figures you cite, not prices we charge, so they
+stay exactly as you wrote them.
+
+Publishing an article does not send anything to Insights subscribers by itself.
+
+### The Nurture screenshot: still not supplied
+
+There is still no new screenshot at the agreed place, so the Nurture case study
+image is unchanged. Everything in 1g2 about why it cannot be cropped or edited
+still holds.
