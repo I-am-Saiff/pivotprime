@@ -201,6 +201,36 @@
     background-color: var(--page-ground);
   }
 
+  /* ONE CONTENT WIDTH FOR THE WHOLE HOMEPAGE, her v3 slide 11.
+     "Please use one content width for every section, so all headings, cards and
+     buttons start on the same left edge."
+
+     SHE IS RIGHT, AND IT WAS THREE EDGES. Measured at 1440 before this existed:
+     the content left edge was 80px on five sections (max-w-7xl), 144px on four
+     (max-w-6xl) and 208px on the patterns section (max-w-5xl). The horizontal
+     padding was already identical everywhere, px-4 sm:px-6 lg:px-8, so the
+     max-width was the only thing out of step.
+
+     WHY 1152 AND NOT 1280, WHICH MORE SECTIONS USED. 1280 was on five sections
+     against 1152 on four, so it had the count. 1152 has the two anchors a reader
+     actually sees: the floating header pill is max-w-6xl, and so is the hero. An
+     overlay of all three candidate edges on the rendered page settles it, the
+     144px line passes through the nav logo, the hero eyebrow, the hero heading,
+     both hero buttons and the hero standfirst. Taking 1280 would have pushed
+     every section 64px to the LEFT of the header it sits under.
+
+     There was no container class to reuse, only the pattern repeated by hand ten
+     times, so this is that pattern named once rather than a parallel to it.
+
+     THE HORIZONTAL PADDING STAYS ON THE SECTION, not in here, which is why this
+     is width only. A section paints a full-bleed background and pads its own
+     edges; the wrapper centres the content inside that. Folding px-4 sm:px-6
+     lg:px-8 into this class would make the padding part of the 1152 and shift
+     every left edge 32px inward from where the hero and the header sit. */
+  .page-container {
+    @apply mx-auto w-full max-w-6xl;
+  }
+
   /* INSIGHTS CATEGORY FILTER.
      
      Every article card is in the served HTML at every moment. The tabs set
@@ -252,8 +282,32 @@
     @apply bg-forest/85 backdrop-blur-xl border border-neon/30 shadow-[0_8px_24px_rgba(0,0,0,0.4)];
   }
 
+  /* ONE COLOUR FOR EVERY BOXED CARD, her v3 slide 11: "Use one background
+     colour for boxed sections (case studies #FEF9F6 vs fees #FFFFFF). Pick one
+     colour for all boxes."
+
+     SHE IS RIGHT ABOUT THE SPLIT AND NEARLY RIGHT ABOUT THE VALUE. Read off the
+     rendered pixels rather than the stylesheet, the case study cards were
+     #FEFBF7 and the fees card #FFFFFF. #FEFBF7 is what bg-shell/90 composites to
+     over the #F8F4EE page ground, so it was never written anywhere as a hex,
+     which is why it reads as a mystery colour: it is shell at nine tenths.
+
+     bg-white settles it on her value. The border is already on this class, so a
+     white card still separates from the page without inventing anything.
+
+     backdrop-blur-md GOES WITH IT. It can have no effect behind an opaque fill,
+     and it was costing a compositing layer on every card on the site. The class
+     keeps its name because it is used in nine files and renaming it is a
+     separate change with no visual result.
+
+     THIS REACHES FURTHER THAN THE HOMEPAGE AND HAS TO. The homepage's boxed
+     cards come from HomeServices, CaseStudies and PersonaSwitcher, which also
+     render on /services, /contact and the four Who it's for pages. Changing the
+     class rather than the homepage call sites is what stops the same card being
+     two colours on two pages, which is the drift she asked us to end on her
+     slide 2. PENDING-COPY 1g0. */
   .frosted-card-light {
-    @apply bg-shell/90 backdrop-blur-md border border-neutral-200/80 shadow-[0_16px_48px_rgba(1,51,37,0.06)];
+    @apply bg-white border border-neutral-200/80 shadow-[0_16px_48px_rgba(1,51,37,0.06)];
   }
 }
 

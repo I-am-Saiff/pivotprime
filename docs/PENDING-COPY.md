@@ -5894,3 +5894,117 @@ minutes. That is a local inconvenience for us, not something a visitor sees.
 **We have not touched it**, because your card is explicitly unchanged in this
 pass apart from the LinkedIn item. Preparing it the way the other four are
 prepared is a ten-minute job whenever you want it.
+
+---
+
+## 1g0 One content width, one rhythm, one box colour
+
+**30 September, your v3 slide 11.** "Please use one content width for every
+section, so all headings, cards and buttons start on the same left edge. Use the
+same spacing between every section, and remove the thin divider line above Who we
+serve. Use one background colour for boxed sections."
+
+**You were right on every count, and here is what it actually was.**
+
+### The left edge was three edges, not one
+
+Measured at 1440 before anything changed:
+
+| Section | Width | Left edge |
+|---|---|---|
+| Hero | 1152 | **144** |
+| Logos and press | 1280 | **80** |
+| Recognise any of these | **1024** | **208** |
+| Who we serve | 1152 | **144** |
+| Measured impact | 1280 | **80** |
+| Our services | 1280 | **80** |
+| Meet the CEO | 1152 | **144** |
+| Case studies | 1280 | **80** |
+| Our fees | 1280 | **80** |
+| Closing CTA | 1152 | **144** |
+
+The side padding was already the same everywhere. The width was the whole fault.
+
+**Now every section is 1152 wide with its left edge at 144.**
+
+### Why 1152 and not 1280, which more sections used
+
+1280 had the count, five sections against four. **1152 has the two edges a reader
+actually sees**: your floating header bar is 1152, and so is the hero. We drew all
+three candidate edges over the live page and looked: the 144 line passes through
+the header logo, the hero eyebrow, the hero heading, both hero buttons and the
+hero paragraph. Choosing 1280 would have pushed every section 64px further left
+than the header sitting above it.
+
+### The spacing was between 48 and 192 pixels
+
+Gap between consecutive sections at 1440, before: **168, 56, 192, 144, 48, 192,
+96, 160, 144**. Now every one of them is **192** (96 top and 96 bottom).
+
+**96 is the value the page already used most**, as both paddings on Who we serve
+and Meet the CEO and as the bottom padding on three more. On a phone it is 56.
+
+**The hero keeps its own spacing and that is deliberate.** It is a full-height
+panel rather than a band of content, and its top padding is what clears the
+floating header. Giving it the shared value would put your eyebrow underneath the
+header at every width.
+
+### The divider is gone, and there was a second one
+
+The line above Who we serve is removed. **There was another one** you did not
+mention, under the logos strip, and we removed that too: leaving it would have
+left the page with exactly the thing you objected to, one section fenced off by a
+hairline while none of the others are. **Say if you want either back.**
+
+### The box colour, with one correction
+
+| | You wrote | Actually |
+|---|---|---|
+| Case study cards | #FEF9F6 | **#FEFBF7** |
+| Fees card | #FFFFFF | #FFFFFF ✓ |
+
+Your reading was one shade out because **that colour was never written anywhere**:
+it is the cream card at nine tenths opacity over the page, so it only exists once
+the browser has mixed it. **Both are #FFFFFF now.**
+
+### ⚠️ There is no grey band
+
+You asked us to remove an **#EFEEE7** band under the case studies. **We cannot find
+one, and we looked properly:** every pixel down the left edge of the whole page,
+and every colour inside the case studies section. From the logos strip to the
+footer the page is one flat **#F8F4EE**, which is the page background everywhere
+and has no edge anywhere.
+
+Our best guess is that #F8F4EE read as a grey band against the near-white cards
+sitting on it. **That contrast is now larger, not smaller**, because the cards went
+to pure white. If a band is still visible to you, send a screenshot with it
+circled and we will find it.
+
+### Two things we did not make consistent
+
+1. **The footer still starts at 80, not 144.** It is on every page of the site, and
+   other pages genuinely use the wider content width, so moving it would fix the
+   homepage and break the alignment everywhere else. **Your call.**
+2. **The pain accordion rows and one panel inside the fees box are still cream**
+   (#FEFBF8), not white. They are controls and inner panels rather than boxed
+   sections, so we read them as outside "boxed sections". **Say the word and they
+   go white too.**
+
+### One instruction of yours this reverses
+
+On **29 August** you asked for the fees box to run **full width**, and it was the
+widest thing on the page at 1280. One content width cannot hold if one section
+stays wider than the rest, so **the fees box is now 1152, 128px narrower than it
+was.** Your slide 11 is the later instruction, but this was your own word, so it is
+written down rather than changed quietly.
+
+### Your photograph, while we were here
+
+It was **4099 x 6149 and 4MB**, the one portrait never prepared, and it was slow
+enough to stall the site when run on a laptop. It is now **1280 x 1920 and 224KB**,
+the same size as Justin's.
+
+**Your crop has not changed at all.** We resized the whole frame rather than
+cropping it, so both the homepage and your About card show exactly what they
+showed before, pixel for pixel. The only difference is that the file is
+eighteen times smaller.

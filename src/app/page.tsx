@@ -63,7 +63,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_70%_at_0%_50%,rgba(1,51,37,0.35),transparent)]" />
         </div>
 
-        <div className="relative z-10 mx-auto w-full max-w-6xl text-white">
+        <div className="page-container relative z-10 text-white">
           {/* Eyebrow. HER WORDS AND HER ORDER, from the slide 1 comment:
               "Strategy, Operations, technology, execution at the top." The four
               words replace an "Operations · Strategy · Execution" that was ours:
@@ -187,8 +187,8 @@ export default function Home() {
 
       {/* 3.2 Proof bar. MOVE: the logo rows sat buried inside a later section
           and belong directly under the hero. */}
-      <section className="border-b border-neutral-100 surface-page py-14">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="surface-page px-4 sm:px-6 lg:px-8 py-14 sm:py-24">
+        <div className="page-container">
           {/* THE SECOND TRUSTED-BY LINE IS GONE TOO, and it is the one worth
               noticing: {PROOF.trusted} read "Trusted by businesses across
               insurance, wellness, retail, fragrance, fintech and consumer
@@ -303,8 +303,8 @@ export default function Home() {
           here. globals.css already gives every [id] a 7rem scroll-margin-top so
           a target does not land under the floating nav; scroll-mt-28 is the same
           7rem stated locally, which is how #services carries it. */}
-      <section id="patterns" className="scroll-mt-28 surface-page px-4 pb-14 sm:pb-24 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-5xl">
+      <section id="patterns" className="scroll-mt-28 surface-page px-4 sm:px-6 lg:px-8 py-14 sm:py-24">
+        <div className="page-container">
           {/* The heading is black again, on her 31 August instruction. It was
               black over cream chips, went green on 28 August with the chips,
               and is black over the white chips now. The eyebrow stays green:
@@ -321,8 +321,8 @@ export default function Home() {
       </section>
 
       {/* Audiences Section / Chapter 03 — Who We Serve */}
-      <section className="py-14 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-forest/[0.06]">
-        <div className="max-w-6xl mx-auto">
+      <section className="px-4 sm:px-6 lg:px-8 py-14 sm:py-24">
+        <div className="page-container">
           <PersonaSwitcher />
         </div>
       </section>
@@ -341,8 +341,8 @@ export default function Home() {
           heading grew rather than collapsed. PENDING-COPY 1f0. */}
       {/* pb-28 below sm: clears the floating WhatsApp button so the last
           card does not end underneath it. PENDING-COPY 1ak. */}
-      <section className="surface-page px-4 pt-8 pb-8 sm:px-6 sm:pt-12 sm:pb-12 lg:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section className="surface-page px-4 sm:px-6 lg:px-8 py-14 sm:py-24">
+        <div className="page-container">
           <header className="mb-3 sm:mb-4 max-w-3xl">
             <span className="block font-sans font-semibold text-xs tracking-[0.22em] uppercase text-mid mb-3">
               MEASURED IMPACT
@@ -358,8 +358,8 @@ export default function Home() {
       </section>
 
       {/* 3.4 What do we actually do. NEW. The hero's secondary CTA anchors here. */}
-      <section id="services" className="scroll-mt-28 surface-page px-4 pb-14 sm:pb-24 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section id="services" className="scroll-mt-28 surface-page px-4 sm:px-6 lg:px-8 py-14 sm:py-24">
+        <div className="page-container">
           <header className="mb-9 sm:mb-14 max-w-3xl">
             <p className="mb-4 text-xs font-semibold tracking-[0.18em] text-mid uppercase">
               {SERVICES_EYEBROW}
@@ -395,8 +395,8 @@ export default function Home() {
           the layout does not collapse and the two-column intent is preserved.
           Spec 8.2: nothing is better than stock, so the placeholder uses
           initials + brand colour rather than any photography. Spec 3.7. */}
-      <section className="surface-page px-4 py-14 sm:py-24 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-6xl grid items-center gap-7 sm:gap-12 md:grid-cols-2">
+      <section className="surface-page px-4 sm:px-6 lg:px-8 py-14 sm:py-24">
+        <div className="page-container grid items-center gap-7 sm:gap-12 md:grid-cols-2">
           {/* Copy column — left on desktop */}
           <div>
             {/* HER v3 SLIDE 3 ADDS AN EYEBROW. There was none here: the section
@@ -453,8 +453,8 @@ export default function Home() {
           after the founder section and before the personas, so the founder
           section establishes who is behind the work, the case studies prove it,
           and the personas then ask the visitor to place themselves. */}
-      <section className="surface-page px-4 pb-14 sm:pb-24 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section className="surface-page px-4 sm:px-6 lg:px-8 py-14 sm:py-24">
+        <div className="page-container">
           {/* Slide 8: the anonymised ones "sit only on the about page and you
               link to them", with a "more case studies" button here. */}
           <CaseStudies scope="homepage" />
@@ -476,12 +476,16 @@ export default function Home() {
       {/* 3.10 How we are paid. Dark card treatment — the performance-linked
           model is a differentiator and deserves visual weight. No percentage
           or formula published per spec 3.10. */}
-      <section className="px-4 py-12 sm:px-6 sm:py-16 lg:px-8 surface-page">
-        {/* max-w-7xl, not 6xl: her instruction of 29 August was that this box
-            runs the full width horizontally. 7xl is the widest container the
-            page already uses, on the results section directly above, so it goes
-            as wide as this layout goes rather than to an invented width. */}
-        <div className="mx-auto max-w-7xl">
+      <section className="surface-page px-4 sm:px-6 lg:px-8 py-14 sm:py-24">
+        {/* THE SHARED CONTAINER NOW, AND THAT REVERSES AN EARLIER INSTRUCTION
+            OF HERS. This box was deliberately max-w-7xl: on 29 August she asked
+            for it to run the full width horizontally, and 7xl was the widest
+            container the page used. Her v3 slide 11 is later and asks for one
+            content width on every section, which cannot hold if this one stays
+            wider than the rest. So it is 1152 like everything else and is 128px
+            narrower than it was. Flagged in PENDING-COPY 1g0 rather than changed
+            quietly, because "full width" was her own word for it. */}
+        <div className="page-container">
           {/* CREAM, from 29 August. She marked this box by its bright green bar
               and asked for the background to change; the bar and its writing are
               kept. Everything on it was written for a dark ground, so the
@@ -605,8 +609,8 @@ export default function Home() {
       </section>
 
       {/* 3.11 Close / Banner Card (Chapter 05 Style) */}
-      <section className="px-4 py-12 sm:py-20 sm:px-6 lg:px-8 surface-page">
-        <div className="mx-auto max-w-6xl rounded-[32px] bg-forest text-white p-10 sm:p-14 md:p-20 relative overflow-hidden border border-white/10 shadow-2xl text-center">
+      <section className="surface-page px-4 sm:px-6 lg:px-8 py-14 sm:py-24">
+        <div className="page-container rounded-[32px] bg-forest text-white p-10 sm:p-14 md:p-20 relative overflow-hidden border border-white/10 shadow-2xl text-center">
           <div aria-hidden="true" className="absolute inset-0 z-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none" />
 
           <div className="relative z-10 mx-auto w-full max-w-4xl text-center text-white">

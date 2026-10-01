@@ -757,6 +757,150 @@ const DECISIONS = [
     },
   },
   {
+    what: "every homepage section sits in the one shared container, on the one left edge",
+    where: "PENDING-COPY 1g0",
+    run: async (get) => {
+      /**
+       * HER v3 SLIDE 11: "Please use one content width for every section, so all
+       * headings, cards and buttons start on the same left edge."
+       *
+       * IT WAS THREE EDGES. Measured at 1440 before the change: five sections at
+       * max-w-7xl put their content 80px in, four at max-w-6xl put it 144px in,
+       * and the patterns section at max-w-5xl put it 208px in. The horizontal
+       * padding was already identical everywhere, so the max-width was the whole
+       * fault.
+       *
+       * ASSERTED ON THE CLASS, NOT ON A PIXEL. check-content reads served HTML
+       * with JavaScript off and cannot measure a layout, so it checks the thing
+       * that produces the layout: every section's own content wrapper carries
+       * .page-container, and no homepage section carries a max-w-* of its own,
+       * which is how the three edges got there in the first place. A new section
+       * pasted in with mx-auto max-w-7xl fails here rather than at a reader.
+       */
+      const html = await (await get("/")).text();
+      const main = html.slice(html.indexOf("<main"), html.indexOf("</main>"));
+      if (!main) return "the homepage has no <main>";
+
+      const sections = [...main.matchAll(/<section\b[^>]*>/g)].map((m) => m[0]);
+      if (sections.length < 9) return `found ${sections.length} homepage sections, which is fewer than the nine her order lists`;
+
+      // One container per section, and nothing else setting its own width.
+      const containers = (main.match(/class="[^"]*\bpage-container\b[^"]*"/g) || []).length;
+      if (containers !== sections.length) {
+        return `${sections.length} sections but ${containers} page-container wrappers, so at least one section sets its own width`;
+      }
+      /**
+       * ONLY A SECTION'S OWN WRAPPER MAY SET A WIDTH, and the first run of this
+       * check is why that is spelt out. Written against every element on the
+       * page, it failed on the hero h1, which carries max-w-4xl. That is a TEXT
+       * MEASURE, the line length of a heading, and has nothing to do with the
+       * left edge of a section; max-w-2xl and max-w-xl do the same job on the
+       * hero paragraphs. Flagging those would be flagging typography and would
+       * make the check unpassable without damaging the hero.
+       *
+       * So this reads the element immediately inside each <section>, which is the
+       * wrapper her instruction is about, and goes no deeper.
+       */
+      for (const m of main.matchAll(/<section\b[^>]*>\s*<(\w+)([^>]*)>/g)) {
+        const cls = (m[2].match(/class="([^"]*)"/) || [, ""])[1];
+        if (/\bmax-w-/.test(cls) && !/\bpage-container\b/.test(cls)) {
+          return `a section wrapper sets its own width again: class="${cls.slice(0, 70)}"`;
+        }
+      }
+      return null;
+    },
+  },
+  {
+    what: "no divider rule sits above Who we serve",
+    where: "PENDING-COPY 1g0",
+    run: async (get) => {
+      /**
+       * HER v3 SLIDE 11: "remove the thin divider line above Who we serve."
+       *
+       * It was border-t border-forest/[0.06] on that section. A second rule, a
+       * border-b on the logos section, went with the same pass and is asserted
+       * here too so neither comes back: she named one, and leaving the other
+       * would have left the page with exactly the thing she objected to, one
+       * section separated from its neighbour by a hairline while none of the
+       * others are. Reported to her in PENDING-COPY 1g0.
+       *
+       * MATCHED ON THE SECTION TAGS ONLY, not on the whole page: borders inside
+       * cards, between table rows and under the footer headings are a different
+       * thing and are not hers to lose.
+       */
+      const html = await (await get("/")).text();
+      const main = html.slice(html.indexOf("<main"), html.indexOf("</main>"));
+      for (const tag of main.match(/<section\b[^>]*>/g) || []) {
+        const cls = (tag.match(/class="([^"]*)"/) || [, ""])[1];
+        const rule = cls.split(/\s+/).find((c) => /^border-[tb]$/.test(c) || /^border-[tb]-/.test(c));
+        if (rule) return `a homepage section carries "${rule}" again, which is the divider her slide 11 removed`;
+      }
+      return null;
+    },
+  },
+  {
+    what: "one box colour on the homepage, and neither of the two she named survives",
+    where: "PENDING-COPY 1g0",
+    run: async (get) => {
+      /**
+       * HER v3 SLIDE 11: "Use one background colour for boxed sections (case
+       * studies #FEF9F6 vs fees #FFFFFF). Pick one colour for all boxes and
+       * remove the band."
+       *
+       * SHE IS RIGHT ABOUT THE SPLIT. Read off the rendered pixels rather than
+       * the stylesheet, the case study cards were #FEFBF7 and the fees card
+       * #FFFFFF. #FEFBF7 is what bg-shell/90 composites to over the page ground,
+       * which is why no hex for it existed anywhere to search for. Both of her
+       * written values are asserted absent anyway, because they are what she
+       * will look for.
+       *
+       * THERE WAS NO #EFEEE7 BAND. The whole page ground is one flat #F8F4EE
+       * from the top of the logos section to the footer, sampled every 8px down
+       * the rendered page at the left gutter and again across the case studies
+       * section. Nothing grey sits under the case studies. Asserting its absence
+       * costs nothing and records that it was looked for.
+       *
+       * THE REAL CHECK IS THE CARD FILL, since the two hexes above are composites
+       * and would never appear as literals: the stylesheet must set the shared
+       * card class to plain white, and must not set it back to a translucent
+       * shell.
+       */
+      const html = await (await get("/")).text();
+      for (const banned of ["#FEF9F6", "#fef9f6", "#EFEEE7", "#efeee7"]) {
+        if (html.includes(banned)) return `${banned} is back on the homepage, and her slide 11 asked for one box colour`;
+      }
+      /**
+       * EVERY STYLESHEET THE PAGE LINKS, NOT THE FIRST. Next splits CSS across
+       * chunks and the homepage links two of them. Reading only the first passed
+       * while the rule happened to land there, and then, on the run that broke
+       * the fill on purpose to prove this check, reported "the shared card class
+       * is gone from the stylesheet": the class had simply moved to the other
+       * chunk. The check was right to fail and wrong about why, which is the
+       * worse half. All of them are fetched and joined.
+       */
+      const hrefs = [...new Set([...html.matchAll(/href="(\/_next\/static\/[^"]+\.css)"/g)].map((m) => m[1]))];
+      if (!hrefs.length) return "the homepage links no stylesheet, so the card fill cannot be checked";
+      const css = (await Promise.all(hrefs.map(async (h) => (await get(h)).text()))).join("\n");
+      /**
+       * EVERY RULE FOR THE CLASS, NOT THE FIRST ONE. Tailwind splits an @apply
+       * across several rules by property group, and it emits three for this
+       * class: two for the border and one for the fill and shadow. Matching the
+       * first one found the border rule and reported the card as not white while
+       * it was perfectly white, which is this check being wrong about the right
+       * thing. The declarations are joined and read as one.
+       */
+      const decls = [...css.matchAll(/\.frosted-card-light\s*\{([^}]*)\}/g)].map((m) => m[1]).join(";");
+      if (!decls) return "the shared card class is gone from the stylesheet";
+      if (!/background-color:\s*(#fff(fff)?\b|var\(--color-white\)|rgb\(255[, ]+255[, ]+255\))/i.test(decls)) {
+        return `the shared card class no longer fills white: ${decls.slice(0, 120)}`;
+      }
+      if (/background-color:\s*(var\(--color-shell\)|#fefbf8|color-mix)/i.test(decls)) {
+        return "the shared card class is back on a translucent shell fill, which is the #FEFBF7 she asked us to end";
+      }
+      return null;
+    },
+  },
+  {
     what: "every team member carries her own LinkedIn, and Iram carries none rather than a guess",
     where: "PENDING-COPY 1f9 and FOR-IRAM-outstanding",
     run: async (get) => {
