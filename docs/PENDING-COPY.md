@@ -6643,8 +6643,9 @@ differences, and each has been removed:
   lines closer together; the two paragraphs with your more open line spacing;
   your spacing between heading, paragraphs and button; and the "MEET THE FULL
   TEAM" button in your heavier lettering with your short arrow and no shadow,
-  still rectangular as your note on that slide asks. Every other heading on the
-  homepage is unchanged.
+  still rectangular as your note on that slide asks. Its arrow is drawn into the
+  page at the size of yours, long and thin, one space after the words. Every
+  other heading on the homepage is unchanged.
 - **The team cards (slide 5)** no longer have a thin dark line round their edge,
   so each photograph runs to the edge of its card as in your file, and the tags
   sit your small extra space below each biography.

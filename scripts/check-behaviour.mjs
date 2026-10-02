@@ -488,11 +488,13 @@ const openPanels = (page) =>
     const e = [...document.querySelectorAll("p")].find((x) => /^Meet the CEO/i.test(x.textContent.trim()));
     const h = e.nextElementSibling; const ps = [...h.nextElementSibling.querySelectorAll("p")]; const a = h.nextElementSibling.nextElementSibling;
     h.setAttribute("data-check-founder-h", ""); a.setAttribute("data-check-founder-a", "");
-    return { ls: getComputedStyle(h).letterSpacing, lh: ps.map((p) => getComputedStyle(p).lineHeight), btnShadow: getComputedStyle(a).boxShadow, btnSize: getComputedStyle(a).fontSize };
+    const arrow = a.querySelector("[data-founder-arrow]"); const svg = arrow?.querySelector("svg");
+    return { ls: getComputedStyle(h).letterSpacing, lh: ps.map((p) => getComputedStyle(p).lineHeight), btnShadow: getComputedStyle(a).boxShadow, btnSize: getComputedStyle(a).fontSize,
+      arrow: arrow && svg && !arrow.textContent.trim() ? `${Math.round(svg.getBoundingClientRect().width)}x${Math.round(svg.getBoundingClientRect().height)}` : "typed" };
   });
   const fh = await drawn("[data-check-founder-h]"), fa = await drawn("[data-check-founder-a]");
-  expect("homepage: the founder section follows her second picture (ExtraBold heading, untightened, paragraphs at 1.8, ExtraBold button with no shadow)",
-    /^Poppins-ExtraBold$/.test(fh[0] || "") && /Poppins-ExtraBold/.test(fa[0] || "") && f.ls === "normal" && f.lh.length === 2 && f.lh.every((v) => v === "28.8px") && !/[1-9]\d*px [1-9]/.test(f.btnShadow.replace(/rgba?\([^)]*\)/g, "")) && f.btnSize === "13px",
+  expect("homepage: the founder section follows her second picture (ExtraBold heading, untightened, paragraphs at 1.8, ExtraBold button with no shadow and her drawn arrow)",
+    /^Poppins-ExtraBold$/.test(fh[0] || "") && /^Poppins-ExtraBold$/.test(fa[0] || "") && f.arrow === "12x8" && f.ls === "normal" && f.lh.length === 2 && f.lh.every((v) => v === "28.8px") && !/[1-9]\d*px [1-9]/.test(f.btnShadow.replace(/rgba?\([^)]*\)/g, "")) && f.btnSize === "13px",
     `${fh.join(",")} | ${fa.join(",")} | ${JSON.stringify(f)}`);
   await page.goto(`${BASE}/about`, { waitUntil: "load" });
   await page.waitForTimeout(400);

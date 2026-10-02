@@ -537,16 +537,21 @@ export default function Home() {
                 link: 12px radius, neon fill, forest text, the header CTA's
                 padding scale. The other homepage arrow link, "More case
                 studies", already carries it. */}
-            {/* Her second picture's button, in ExtraBold with her short arrow
-                and no shadow, at her size scaled to this heading. Its shape
-                stays rectangular, her note [3] on the same slide. */}
+            {/* Her second picture's button, in ExtraBold with no shadow, at
+                her size scaled to this heading. Its shape stays rectangular,
+                her note [3] on the same slide. THE ARROW IS DRAWN at hers: a
+                long thin arrow one space after the words (her markup has no
+                gap, just a space), where a typed one came from each visitor's
+                own system font with a large head. */}
             <Link
               href={FOUNDER.ctaHref}
-              className="mt-11 inline-flex min-h-11 items-center justify-center gap-[11px] rounded-xl bg-neon px-8 py-[18px] font-heavy text-[13px] leading-[1.5] font-extrabold tracking-[0.08em] text-forest uppercase transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
+              className="mt-11 inline-flex min-h-11 items-center justify-center rounded-xl bg-neon px-8 py-[18px] font-heavy text-[13px] leading-[1.5] font-extrabold tracking-[0.08em] text-forest uppercase transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
             >
               {FOUNDER.ctaLabel}
-              <span aria-hidden="true" className="font-arrow leading-none">
-                &rarr;
+              <span aria-hidden="true" data-founder-arrow="" className="ml-[3.5px]">
+                <svg width="12.4" height="8" viewBox="0 0 12.4 8" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="block">
+                  <path d="M0.7 4h11M9.55 2.35 11.7 4 9.55 5.65" />
+                </svg>
               </span>
             </Link>
           </div>
