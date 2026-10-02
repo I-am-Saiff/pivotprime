@@ -253,7 +253,7 @@ export default async function InsightsPage({
                   </span>
                   <span
                     aria-hidden="true"
-                    className="text-base leading-none text-mid transition-transform duration-150 group-hover:translate-x-[3px] motion-reduce:transition-none"
+                    className="font-arrow text-base leading-none text-mid transition-transform duration-150 group-hover:translate-x-[3px] motion-reduce:transition-none"
                   >
                     {post.cta}
                   </span>

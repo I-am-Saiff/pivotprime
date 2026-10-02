@@ -225,7 +225,7 @@ export default function QuizApp() {
               second green. mid rather than neon, because neon on a light ground
               is barely visible; mid measures over the 3:1 a heading this size
               needs. */}
-          <h1 className="text-4xl leading-[1.03] font-extrabold text-balance text-forest md:text-6xl">
+          <h1 className="font-heavy text-4xl leading-[1.03] font-black text-balance text-forest md:text-6xl">
             <span className="block text-black/90">{DIAGNOSTIC_INTRO.headingLead}</span>
             <span className="block text-mid">{DIAGNOSTIC_INTRO.headingAccent}</span>
           </h1>
@@ -268,7 +268,7 @@ export default function QuizApp() {
             // "START THE DIAGNOSTIC →", her note says "Keep wording as shown in
             // this picture", and the site's other green buttons are set the
             // same way. The arrow is decoration, so it is hidden from readers.
-            className="mt-12 inline-flex min-h-13.5 items-center justify-center rounded-xl bg-neon px-9 py-3 font-sans text-xs font-bold tracking-[0.08em] text-forest uppercase transition-opacity hover:opacity-90 md:mt-18.5 md:min-h-20.75 md:px-13.5 md:text-[19px]"
+            className="mt-12 inline-flex min-h-13.5 items-center justify-center rounded-xl bg-neon px-9 py-3 font-heavy text-xs font-extrabold tracking-[0.08em] text-forest uppercase transition-opacity hover:opacity-90 md:mt-18.5 md:min-h-20.75 md:px-13.5 md:text-[19px]"
           >
             {DIAGNOSTIC_INTRO.startLabel}
             <span aria-hidden="true" className="ml-1 text-[0.86em] leading-none">

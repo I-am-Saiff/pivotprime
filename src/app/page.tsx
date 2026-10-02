@@ -513,7 +513,10 @@ export default function Home() {
                 went straight into its H2, so this is a new element rather than a
                 changed string. Same treatment as the other section eyebrows on
                 this page, which is where the capitals come from. */}
-            <p className="mb-4 text-xs font-semibold tracking-[0.18em] text-mid uppercase">
+            {/* Her slide 3 picture, measured 2 October: a little more space
+                under it on a computer and slightly closer letters. This line
+                only; the What we do eyebrow keeps its own. */}
+            <p className="mb-4 text-xs font-semibold tracking-[0.16em] text-mid uppercase md:mb-[22px]">
               {FOUNDER.eyebrow}
             </p>
             <h2 className="mb-8 text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">

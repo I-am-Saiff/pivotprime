@@ -81,15 +81,19 @@ export default function HomeServices({
       <ul className="grid gap-5 md:grid-cols-3 md:items-stretch">
         {HOME_SERVICES.map((service) => (
           <li key={service.title} className="flex">
-            <div className="frosted-card-light flex w-full flex-col rounded-2xl p-6 sm:p-7">
+            <div className="frosted-card-light flex w-full flex-col rounded-[20px] px-5 pt-6 pb-5 sm:px-7 sm:pt-8 sm:pb-7">
               {/* HER SLIDE 2 PICTURE, measured, 2 October: a full-width pale green
                   bar with round ends and dark bold lettering. It was a short
-                  mid-green capsule the width of its words. Weight 700, the
-                  heaviest the site loads; hers is 800, about 6% heavier. */}
-              <span className="rounded-full bg-mid/12 px-3.5 py-1.5 text-xs leading-[17px] font-bold tracking-[0.08em] text-forest uppercase">
+                  mid-green capsule the width of its words. Weight 800, as
+                  hers. */}
+              <span className="rounded-full bg-mid/12 px-3.5 py-1.5 font-heavy text-xs leading-[17px] font-extrabold tracking-[0.08em] text-forest uppercase">
                 {service.eyebrow}
               </span>
-              <CardHeading className="mt-3.5 text-lg font-bold text-mid">
+              {/* text-wrap! undoes the site-wide balancing for these three
+                  titles only: hers break where the line runs out, so We Lead
+                  reads "Fractional COO, CFO and Chief of / Staff" as in her
+                  picture rather than breaking after "CFO". */}
+              <CardHeading className="mt-3.5 text-lg font-bold text-wrap! text-mid">
                 {service.title}
               </CardHeading>
 
@@ -100,7 +104,7 @@ export default function HomeServices({
                 </p>
               )}
 
-              <p className="mt-4 text-sm leading-relaxed text-neutral-600">{service.body}</p>
+              <p className="mt-4 text-sm leading-[1.75] text-neutral-600">{service.body}</p>
 
               {/* The rule is a border on the note rather than an <hr>, so a card
                   without a note cannot render a rule with nothing under it. */}
@@ -126,7 +130,7 @@ export default function HomeServices({
                 {service.ctaLabel}
                 <span
                   aria-hidden="true"
-                  className="ml-2 text-lg leading-none transition-transform group-hover:translate-x-1"
+                  className="ml-[7px] font-arrow leading-none transition-transform group-hover:translate-x-1"
                 >
                   &rarr;
                 </span>
@@ -142,23 +146,27 @@ export default function HomeServices({
           what she drew. Unchanged by her v3 slide 2: "The full-width diagnostic
           panel beneath the cards stays as it is." */}
       {DIAGNOSTIC_ENABLED && (
-        <div className="mt-5 rounded-2xl bg-forest p-6 text-white sm:p-8">
-          <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between md:gap-10">
-            <div className="max-w-3xl">
-              <span className="block text-xs font-semibold tracking-[0.2em] text-neon uppercase">
+        /* HER PICTURE'S PROPORTIONS, 2 October, from the page her note links:
+           48/52 inside on a computer (28/20 on a phone), a smaller label, a
+           heavier heading and a narrower, smaller body, so the panel stands
+           taller. The button stays rectangular, her 26 September note. */
+        <div className="mt-5 rounded-[20px] bg-forest px-5 py-7 text-white sm:px-7 sm:py-9 lg:px-[52px] lg:py-12">
+          <div className="flex flex-col gap-7 md:flex-row md:items-center md:justify-between md:gap-12">
+            <div className="min-w-0 flex-1">
+              <span className="block text-[0.68rem] font-bold tracking-[0.13em] text-neon uppercase">
                 {HOME_DIAGNOSTIC_PANEL.eyebrow}
               </span>
-              <PanelHeading className="mt-2.5 text-xl font-bold sm:text-2xl">
+              <PanelHeading className="mt-2.5 font-heavy text-[1.55rem] leading-[1.2] font-extrabold">
                 {HOME_DIAGNOSTIC_PANEL.heading}
               </PanelHeading>
-              <p className="mt-3 text-sm leading-relaxed text-white/80 sm:text-base">
+              <p className="mt-3.5 max-w-[580px] text-[0.88rem] leading-[1.75] text-white/68">
                 {HOME_DIAGNOSTIC_PANEL.body}
               </p>
             </div>
 
             <Link
               href={HOME_DIAGNOSTIC_PANEL.href}
-              className="inline-flex min-h-11 flex-shrink-0 items-center justify-center rounded-xl bg-neon px-7 py-3.5 text-xs font-bold tracking-wider text-forest uppercase shadow-lg transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none"
+              className="inline-flex min-h-11 flex-shrink-0 items-center justify-center rounded-xl bg-neon px-[30px] py-4 font-heavy text-[0.72rem] font-extrabold tracking-[0.08em] text-forest uppercase shadow-lg transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none"
             >
               {/* The arrow her picture and her linked page both show. One run with
                   the label, so the flex button keeps the space before it. */}

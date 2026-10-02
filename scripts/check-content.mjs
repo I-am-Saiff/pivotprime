@@ -659,8 +659,8 @@ const DECISIONS = [
       // the whole class run so the Unlock button's "px-8 py-3.5" cannot stand
       // in for it.
       // Her slide 7 picture's size from 2 October (PENDING-COPY 1g5).
-      if (!html.includes("rounded-xl bg-neon px-9 py-3 font-sans text-xs font-bold tracking-[0.08em] text-forest uppercase")) {
-        return "the Start the diagnostic button is no longer at the site's 12px radius, set like the other green buttons";
+      if (!html.includes("rounded-xl bg-neon px-9 py-3 font-heavy text-xs font-extrabold tracking-[0.08em] text-forest uppercase")) {
+        return "the Start the diagnostic button is no longer set as her slide 7 picture: the site's 12px radius, in ExtraBold capitals";
       }
 
       // The two behind client state, read out of the chunk the page loads.

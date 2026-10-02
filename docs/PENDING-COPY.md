@@ -6583,3 +6583,50 @@ with the subject "Insights subscription: delivered+test-please-ignore@resend.dev
 The Nurture screenshot, the email to subscribers when an article is published,
 and from your August deck the video for the top of the homepage, the wording of
 the second button there, and Saif's showcase on Technology Builds.
+
+## 1g6 The last small differences from your pictures
+
+**2 October, later the same day.** A second check against your pictures found a
+handful of smaller differences still left. Each has been removed, measured
+against your picture or your own file.
+
+### The heavier lettering
+
+Your pictures and your files set a few things in a heavier weight than the
+site had ever loaded, so they always came out in its ordinary bold. That weight
+is now loaded and used only where your picture shows it: the service card
+labels, the heading and button of the dark "Not sure" panel, every name on the
+team cards (yours included, so the five match), and the heading and button of
+the diagnostic opening screen. Every other heading on the site is unchanged.
+
+### The service cards and the panel (your v3 slide 2)
+
+- The card corners are rounded as yours, and the label sits as far from the top
+  of the card as in your picture.
+- The We Lead title breaks after "Chief of", as yours does.
+- The lines of text in the cards are spaced as yours.
+- The arrows after the three card links are the size of yours.
+- The dark panel has your margins, your smaller label, your heavier heading and
+  your narrower, smaller text, so it stands as tall as yours. Its button stays
+  rectangular, as your 26 September note asked.
+
+### The founder section (your v3 slide 3)
+
+On a computer, the "MEET THE CEO & FOUNDER" line has the space under it and the
+letter spacing of your picture.
+
+### The team (your v3 slide 5 and your team file)
+
+The names, job titles, biographies, tags and LinkedIn buttons are the sizes in
+your file, with your extra space above each button, and none of the five cards
+carries a shadow. As in your own file at that width, the LinkedIn button on
+Justin's and Nisha's cards now runs onto two lines on a computer.
+
+### The Insights cards (your v3 slide 10)
+
+The arrow at the foot of each card is the size in your picture.
+
+### Spacing (your v3 slide 11)
+
+On a phone, the space under the small dots beneath the results cards now
+matches every other gap between sections.

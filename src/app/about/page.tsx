@@ -112,7 +112,7 @@ function LinkedInButton({ person }: { person: Person }) {
          at 1.1:1, so this reuses that mechanism rather than adding a second one.
          The mark inherits it through fill="currentColor". */
       data-on-light=""
-      className="mt-auto inline-flex min-h-11 w-fit items-center gap-2.5 rounded-xl bg-neon px-4 py-3 text-xs font-bold tracking-wider text-forest uppercase transition-colors hover:bg-neon/90 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none"
+      className="mt-auto inline-flex min-h-11 w-fit items-center gap-2.5 rounded-xl bg-neon px-[18px] py-3 text-[0.8rem] font-bold tracking-[0.06em] text-forest uppercase transition-colors hover:bg-neon/90 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none"
     >
       <LinkedInMark />
       {person.linkedin.label}
@@ -126,7 +126,7 @@ function Bio({ blocks, className }: { blocks: BioBlock[]; className: string }) {
     <div className={className}>
       {blocks.map((block) =>
         block.kind === "p" ? (
-          <p key={block.text.slice(0, 40)} className="leading-relaxed [&+p]:mt-2">
+          <p key={block.text.slice(0, 40)} className="[&+p]:mt-2">
             {block.text}
           </p>
         ) : (
@@ -162,7 +162,7 @@ function Tags({ tags }: { tags: string[] }) {
         <li
           key={tag}
           // Her file's tags: an outline only, white at 22%, no fill.
-          className="rounded-full border border-white/22 px-3 py-1.5 text-xs font-semibold text-white"
+          className="rounded-full border border-white/22 px-3 py-1.5 text-[0.78rem] font-semibold text-white"
         >
           {tag}
         </li>
@@ -254,7 +254,7 @@ export default function About() {
               slide draws it, and her portrait keeps its own 4/5 box rather than
               the 4/4.2 the team cards take: the team box is her new file's and
               this card is not in that file. Her biography text is untouched. */}
-          <article className="mt-8 sm:mt-12 overflow-hidden rounded-[28px] border border-forest/20 card-dark shadow-[0_16px_48px_rgba(1,51,37,0.06)]">
+          <article className="mt-8 sm:mt-12 overflow-hidden rounded-[28px] border border-forest/20 card-dark">
             <div className="grid grid-cols-1 gap-5 sm:gap-8 p-6 md:grid-cols-12 md:gap-10 md:p-10">
               <div className="md:col-span-4 lg:col-span-3">
                 <Portrait person={FOUNDER} className="aspect-[4/5] w-full rounded-2xl" />
@@ -263,10 +263,10 @@ export default function About() {
                 <p className="text-xs font-bold tracking-[0.18em] text-mid uppercase">
                   {FOUNDER.role}
                 </p>
-                <h3 className="mt-2 text-2xl font-extrabold text-forest md:text-3xl">
+                <h3 className="mt-2 font-heavy text-2xl font-extrabold text-forest md:text-3xl">
                   {FOUNDER.name}
                 </h3>
-                <Bio blocks={FOUNDER.bio} className="mt-4 space-y-4 text-neutral-600" />
+                <Bio blocks={FOUNDER.bio} className="mt-4 space-y-4 leading-relaxed text-neutral-600" />
                 <div className="mt-6">
                   <Tags tags={FOUNDER.tags} />
                 </div>
@@ -286,7 +286,7 @@ export default function About() {
             {PEOPLE.map((person) => (
               <li
                 key={person.name}
-                className="flex flex-col overflow-hidden rounded-[28px] border border-forest/20 card-dark shadow-[0_16px_48px_rgba(1,51,37,0.06)]"
+                className="flex flex-col overflow-hidden rounded-[28px] border border-forest/20 card-dark"
               >
                 {/* 4/4.2, her file's box. It was 4/5. */}
                 <Portrait person={person} className="aspect-[4/4.2] w-full" />
@@ -306,12 +306,15 @@ export default function About() {
                       longest title at the narrowest width it has to hold rather
                       than to the common case. Two lines is still right from 680
                       to 1000, where the cards are wider. PENDING-COPY 1f9. */}
-                  <p className="text-xs font-bold tracking-[0.16em] text-neon uppercase min-[680px]:min-h-[3em] min-[680px]:leading-[1.5]">
+                  <p className="text-[0.72rem] font-bold tracking-[0.16em] text-neon uppercase min-[680px]:min-h-[3em] min-[680px]:leading-[1.5]">
                     {person.role}
                   </p>
-                  <h3 className="text-2xl font-extrabold text-forest">{person.name}</h3>
-                  <Bio blocks={person.bio} className="text-white/78" />
+                  {/* Her file's .name, .bio and spacer, 2 October: 1.6rem at
+                      800, 0.98rem at 1.7, and 6px more above the button. */}
+                  <h3 className="font-heavy text-[1.6rem] leading-[1.15] font-extrabold text-forest">{person.name}</h3>
+                  <Bio blocks={person.bio} className="text-[0.98rem] leading-[1.7] text-white/78" />
                   <Tags tags={person.tags} />
+                  <div aria-hidden="true" className="h-1.5" />
                   <LinkedInButton person={person} />
                 </div>
               </li>
@@ -321,7 +324,7 @@ export default function About() {
           {/* KHUSHI, ONE WIDE CARD BENEATH THE THREE, her `.card.wide`: photo
               left at 38% of the card, text right, stacking below 680 where the
               photo takes the same 4/4.2 box as the three above it. */}
-          <article className="mt-7 flex flex-col overflow-hidden rounded-[28px] border border-forest/20 card-dark shadow-[0_16px_48px_rgba(1,51,37,0.06)] min-[680px]:flex-row">
+          <article className="mt-7 flex flex-col overflow-hidden rounded-[28px] border border-forest/20 card-dark min-[680px]:flex-row">
             {/* min-h-0 is her file's "min-height: 0" below 680: without it the
                 photograph's own height overrides the 4/4.2 box and the card is
                 taller than the three above it. */}
@@ -331,18 +334,18 @@ export default function About() {
             <div className="flex flex-1 flex-col justify-center gap-3.5 px-[22px] pt-[26px] pb-7 min-[680px]:px-11 min-[680px]:py-10">
               {/* No reserved second line on the wide card, as her file has it:
                   there is no card beside it to align with. */}
-              <p className="text-xs font-bold tracking-[0.16em] text-neon uppercase">
+              <p className="text-[0.72rem] font-bold tracking-[0.16em] text-neon uppercase">
                 {WIDE_PERSON.role}
               </p>
-              <h3 className="text-2xl font-extrabold text-forest">{WIDE_PERSON.name}</h3>
-              <Bio blocks={WIDE_PERSON.bio} className="max-w-[62ch] text-white/78" />
+              <h3 className="font-heavy text-[1.6rem] leading-[1.15] font-extrabold text-forest">{WIDE_PERSON.name}</h3>
+              <Bio blocks={WIDE_PERSON.bio} className="max-w-[62ch] text-[0.98rem] leading-[1.7] text-white/78" />
               <Tags tags={WIDE_PERSON.tags} />
               {/* AT THE FOOT, as her file has it: her .connect is margin-top:
                   auto, which outranks the column's centring, so the text starts
                   at the top and the button sits at the bottom. mt-auto on this
                   wrapper does the same here. Her v3 slide 5, "see attached
                   html". */}
-              <div className="mt-auto pt-2">
+              <div className="mt-auto pt-5">
                 <LinkedInButton person={WIDE_PERSON} />
               </div>
             </div>

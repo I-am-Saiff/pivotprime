@@ -289,12 +289,24 @@ const openPanels = (page) =>
 // slide 11: "Use the same spacing between every section". Measured from the
 // lowest painted thing in one section to the highest in the next, 192 on a
 // computer and 112 on a phone, within 2px. Movement is reduced so the logo
-// rows wrap and stand still.
+// rows wrap and stand still, and then measured once more on a phone with
+// movement on, which is how phones come set: there the results become a swipe
+// row with dots under it, and the dots' empty tap area made that one gap 130
+// (pass 9 re-audit, 2 October). The page is scrolled through first so every
+// section has revealed before anything is measured.
 {
-  for (const [label, width, mobile, want] of [["desktop", 1440, false, 192], ["touch", 375, true, 112]]) {
-    const context = await browser.newContext({ viewport: { width, height: 900 }, isMobile: mobile, hasTouch: mobile, reducedMotion: "reduce" });
+  for (const [label, width, mobile, want, motion] of [["desktop", 1440, false, 192, "reduce"], ["touch", 375, true, 112, "reduce"], ["touch, movement on", 375, true, 112, "no-preference"]]) {
+    const context = await browser.newContext({ viewport: { width, height: 900 }, isMobile: mobile, hasTouch: mobile, reducedMotion: motion });
     const page = await context.newPage();
     await page.goto(BASE, { waitUntil: "load" });
+    if (motion !== "reduce") {
+      const total = await page.evaluate(() => document.documentElement.scrollHeight);
+      for (let y = 0; y < total; y += 600) { await page.evaluate((v) => scrollTo(0, v), y); await page.waitForTimeout(120); }
+      await page.waitForTimeout(1200);
+      // The swipe row must be there, or this run measures nothing new.
+      const dots = await page.$$eval("button[aria-label^='Show ']", (b) => b.length);
+      expect(`${label}: the results swipe row and its dots are on the page`, dots >= 5, `${dots} dot buttons`);
+    }
     const gaps = await page.evaluate(() => {
       const secs = [...document.querySelectorAll("section")].filter((x) => x.offsetHeight > 0 && !x.closest("footer"));
       // What actually shows: each box is clipped by any ancestor that hides
@@ -374,6 +386,77 @@ const openPanels = (page) =>
       initialsWhite: cards.every((c) => getComputedStyle(c.querySelector(".rounded-full")).color === "rgb(255, 255, 255)") };
   });
   expect("insights: the cards follow her picture (white, 1180 grid, date under the name, white initials)", ins.n >= 6 && ins.gridW === 1180 && ins.white && ins.metaBelow && ins.initialsWhite, JSON.stringify(ins));
+  await page.close();
+}
+
+// HER PICTURES, THE SECOND ROUND, 2 October (pass 9b). The weights are asserted
+// on the face the browser actually drew, not on the CSS: font-extrabold drew
+// in Poppins Bold for the whole life of this site, because 800 was never
+// loaded, and a computed font-weight of 800 said otherwise. Chrome names the
+// face it used for each element through the DevTools protocol.
+{
+  const page = await browser.newPage();
+  await page.setViewportSize({ width: 1440, height: 900 });
+  const cdp = await page.context().newCDPSession(page);
+  const drawn = async (selector) => {
+    await cdp.send("DOM.enable"); await cdp.send("CSS.enable");
+    const { root } = await cdp.send("DOM.getDocument", { depth: -1 });
+    const { nodeIds } = await cdp.send("DOM.querySelectorAll", { nodeId: root.nodeId, selector });
+    const faces = [];
+    for (const nodeId of nodeIds) faces.push((await cdp.send("CSS.getPlatformFontsForNode", { nodeId })).fonts.map((f) => f.postScriptName || f.familyName).join("+"));
+    return faces;
+  };
+  const all = (faces, re) => faces.length > 0 && faces.every((f) => re.test(f));
+
+  await page.goto(`${BASE}/#services`, { waitUntil: "load" });
+  await page.waitForTimeout(400);
+  const card = await page.evaluate(() => {
+    const cards = [...document.querySelectorAll("#services ul > li > div")];
+    const lead = cards[1].querySelector("h3, h2"); const t = lead.firstChild; const r = document.createRange();
+    let firstLine = ""; let top0 = null;
+    for (let i = 0; i < t.textContent.length; i++) { r.setStart(t, i); r.setEnd(t, i + 1); const top = Math.round(r.getBoundingClientRect().top); if (top0 === null) top0 = top; if (top > top0 + 3) break; firstLine += t.textContent[i]; }
+    return { radius: cards.map((c) => getComputedStyle(c).borderRadius), padTop: getComputedStyle(cards[0]).paddingTop, bodyLH: getComputedStyle(cards[0].querySelectorAll("p")[1] || cards[0].querySelector("p")).lineHeight, firstLine: firstLine.trim(),
+      arrowW: Math.max(...cards.map((c) => c.querySelector("a span[aria-hidden]").getBoundingClientRect().width)) };
+  });
+  expect("services: her corners, padding, line spacing and title breaks (We Lead breaks after \"Chief of\")",
+    card.radius.every((r) => r === "20px") && card.padTop === "32px" && card.bodyLH === "24.5px" && card.firstLine === "Fractional COO, CFO and Chief of", JSON.stringify(card));
+  const arrows = await drawn("#services ul > li > div a span[aria-hidden]");
+  expect("services: the card arrows are drawn at the link's size from the system font, not Arial", card.arrowW < 15 && arrows.length === 3 && !arrows.some((f) => /Arial/.test(f)), `${card.arrowW}px, ${arrows.join(", ")}`);
+  expect("services: the labels are drawn in Poppins ExtraBold", all(await drawn("#services ul > li > div > span"), /^Poppins-ExtraBold$/), (await drawn("#services ul > li > div > span")).join(", "));
+  if (process.env.NEXT_PUBLIC_ENABLE_DIAGNOSTIC === "true") {
+    const panel = await page.evaluate(() => { const p = document.querySelector("[data-services-grid] > div.bg-forest"); const cs = getComputedStyle(p); const body = p.querySelector("p"); return { pad: `${cs.paddingTop} ${cs.paddingLeft}`, bodyW: Math.round(body.getBoundingClientRect().width), bodyFS: getComputedStyle(body).fontSize }; });
+    const heavy = [...await drawn("[data-services-grid] > div.bg-forest :is(h2, h3)"), ...await drawn("[data-services-grid] > div.bg-forest a > span")];
+    expect("services: the diagnostic panel is spaced as her picture, its heading and button in ExtraBold", panel.pad === "48px 52px" && panel.bodyW <= 580 && panel.bodyFS === "14.08px" && heavy.length === 2 && heavy.every((f) => /Poppins-ExtraBold/.test(f)), `${JSON.stringify(panel)} ${heavy.join(", ")}`);
+  }
+
+  const founder = await page.evaluate(() => { const e = [...document.querySelectorAll("p")].find((x) => /^Meet the CEO/i.test(x.textContent.trim())); return e && { mb: getComputedStyle(e).marginBottom, ls: getComputedStyle(e).letterSpacing }; });
+  expect("homepage: the founder eyebrow has her spacing (22px under it, letters at 0.16em)", founder?.mb === "22px" && founder?.ls === "1.92px", JSON.stringify(founder));
+
+  await page.goto(`${BASE}/about`, { waitUntil: "load" });
+  await page.waitForTimeout(400);
+  const team = await page.evaluate(() => [...document.querySelectorAll("#team ul > li.flex, #team article")].map((c) => ({
+    name: getComputedStyle(c.querySelector("h3")).fontSize, shadow: getComputedStyle(c).boxShadow,
+    tag: getComputedStyle(c.querySelector("ul.flex li")).fontSize, btn: getComputedStyle(c.querySelector("a[href*='linkedin.com/in']")).fontSize,
+    bio: getComputedStyle(c.querySelector("h3 + div")).fontSize })));
+  const flat = (v) => v === "none" || v.split(/,(?![^(]*\))/).every((l) => l.includes("rgba(0, 0, 0, 0)") || !/[1-9]/.test(l.replace(/rgba?\([^)]*\)/, "")));
+  const four = team.slice(1);
+  expect("about: the team cards carry her file's sizes and no shadow",
+    team.length === 5 && team.every((c) => flat(c.shadow) && c.tag === "12.48px" && c.btn === "12.8px") && four.every((c) => c.name === "25.6px" && c.bio === "15.68px"), JSON.stringify(team));
+  expect("about: every name on the team cards is drawn in Poppins ExtraBold", all(await drawn("#team h3"), /^Poppins-ExtraBold$/), (await drawn("#team h3")).join(", "));
+
+  if (process.env.NEXT_PUBLIC_ENABLE_DIAGNOSTIC === "true") {
+    await page.goto(`${BASE}/diagnostic`, { waitUntil: "load" });
+    await page.waitForTimeout(400);
+    const h1 = await drawn("h1");
+    const btnId = await page.evaluate(() => { const b = [...document.querySelectorAll("button")].find((x) => /start the diagnostic/i.test(x.textContent)); b.setAttribute("data-check-start", ""); return true; });
+    const btn = btnId ? await drawn("[data-check-start]") : [];
+    expect("diagnostic: the heading is drawn in Poppins Black and the button in ExtraBold, as her picture", all(h1, /^Poppins-Black$/) && btn.length === 1 && /Poppins-ExtraBold/.test(btn[0]), `${h1.join(", ")} | ${btn.join(", ")}`);
+  }
+
+  await page.goto(`${BASE}/insights`, { waitUntil: "load" });
+  await page.waitForTimeout(400);
+  const ia = await drawn("[data-post-group] a[data-post-tag] span.font-arrow");
+  expect("insights: the card arrows are drawn from the system font, as her page, not Arial", ia.length >= 6 && !ia.some((f) => /Arial/.test(f)), ia.slice(0, 3).join(", "));
   await page.close();
 }
 

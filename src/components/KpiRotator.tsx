@@ -136,7 +136,10 @@ export default function KpiRotator({
           with no key handling of our own. Absent when nothing rotates: there is
           nothing to step through when all five are on screen. */}
       {rotating && (
-        <div className="mt-5 flex items-center justify-center gap-1 sm:gap-3">
+        /* -mb-[18px] on a phone: the lower half of the dots' 44px tap area is
+           empty, and it made this one section gap 18px larger than the rest
+           (her v3 slide 11). From sm the arrows' boxes fill the row. */
+        <div className="mt-5 -mb-[18px] flex items-center justify-center gap-1 sm:mb-0 sm:gap-3">
           <button
             type="button"
             onClick={() => go(active - 1)}

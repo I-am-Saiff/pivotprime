@@ -2,6 +2,12 @@
 
 @theme {
   --font-sans: var(--font-poppins);
+  /* font-heavy: the 800 and 900 weights, opted into per element. */
+  --font-heavy: var(--font-poppins-heavy), var(--font-poppins);
+  /* font-arrow: the arrow after a link. Poppins has no right arrow, so the
+     browser borrowed one from Arial, about twice the size of hers; her pages
+     draw it from the system font, and so does this. */
+  --font-arrow: system-ui, sans-serif;
 
   /* The approved brand palette is ten values. The five below are the original
      swatch plate at the top of the copy spec; the five after them come from the
