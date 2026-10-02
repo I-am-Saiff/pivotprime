@@ -251,11 +251,18 @@ export default async function InsightsPage({
                       {post.date} · {post.readTime}
                     </span>
                   </span>
+                  {/* DRAWN, NOT TYPED, 2 October. Her picture's arrow is slim,
+                      about 10 by 4; a typed arrow comes from each visitor's own
+                      system font, and on a Mac its head is more than twice as
+                      tall. Drawn here, every computer shows hers. */}
                   <span
                     aria-hidden="true"
-                    className="font-arrow text-base leading-none text-mid transition-transform duration-150 group-hover:translate-x-[3px] motion-reduce:transition-none"
+                    data-card-arrow=""
+                    className="text-mid transition-transform duration-150 group-hover:translate-x-[3px] motion-reduce:transition-none"
                   >
-                    {post.cta}
+                    <svg width="10" height="8" viewBox="0 0 10 8" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="block">
+                      <path d="M0.65 4h8.7M6.9 1.9 9.35 4 6.9 6.1" />
+                    </svg>
                   </span>
                 </div>
               </Link>

@@ -455,8 +455,49 @@ const openPanels = (page) =>
 
   await page.goto(`${BASE}/insights`, { waitUntil: "load" });
   await page.waitForTimeout(400);
-  const ia = await drawn("[data-post-group] a[data-post-tag] span.font-arrow");
-  expect("insights: the card arrows are drawn from the system font, as her page, not Arial", ia.length >= 6 && !ia.some((f) => /Arial/.test(f)), ia.slice(0, 3).join(", "));
+  // DRAWN, NOT TYPED (pass 9c): a typed arrow comes from each visitor's own
+  // system font, and on a Mac its head was more than twice the height of hers.
+  const ia = await page.$$eval("[data-post-group] .grid.lg\\:grid-cols-3 > a[data-post-tag]", (cards) => cards.map((c) => {
+    const s = c.querySelector("[data-card-arrow]"); const svg = s?.querySelector("svg"); const r = svg?.getBoundingClientRect();
+    return s && svg && !s.textContent.trim() ? `${Math.round(r.width)}x${Math.round(r.height)}` : "typed";
+  }));
+  expect("insights: every card arrow is drawn at her picture's size (about 10 by 4, in an 8 tall box), not typed", ia.length >= 6 && ia.every((x) => x === "10x8"), ia.join(", "));
+  await page.close();
+}
+
+// HER PICTURES, THE THIRD ROUND, 2 October (pass 9c): the service card shadow
+// (slide 2), the founder section as her second picture (slide 3), and the team
+// cards without a border (slide 5).
+{
+  const page = await browser.newPage();
+  await page.setViewportSize({ width: 1440, height: 900 });
+  const cdp = await page.context().newCDPSession(page);
+  const drawn = async (selector) => {
+    await cdp.send("DOM.enable"); await cdp.send("CSS.enable");
+    const { root } = await cdp.send("DOM.getDocument", { depth: -1 });
+    const { nodeIds } = await cdp.send("DOM.querySelectorAll", { nodeId: root.nodeId, selector });
+    const faces = [];
+    for (const nodeId of nodeIds) faces.push((await cdp.send("CSS.getPlatformFontsForNode", { nodeId })).fonts.map((f) => f.postScriptName || f.familyName).join("+"));
+    return faces;
+  };
+  await page.goto(`${BASE}/`, { waitUntil: "load" });
+  await page.waitForTimeout(400);
+  const shadows = await page.$$eval("#services ul > li > div", (cards) => cards.map((c) => getComputedStyle(c).boxShadow));
+  expect("services: the cards carry her faint shadow, not the wide one", shadows.length === 3 && shadows.every((v) => /0px 1px 3px/.test(v) && /0px 4px 16px/.test(v) && !/48px/.test(v)), [...new Set(shadows)].join(" | "));
+  const f = await page.evaluate(() => {
+    const e = [...document.querySelectorAll("p")].find((x) => /^Meet the CEO/i.test(x.textContent.trim()));
+    const h = e.nextElementSibling; const ps = [...h.nextElementSibling.querySelectorAll("p")]; const a = h.nextElementSibling.nextElementSibling;
+    h.setAttribute("data-check-founder-h", ""); a.setAttribute("data-check-founder-a", "");
+    return { ls: getComputedStyle(h).letterSpacing, lh: ps.map((p) => getComputedStyle(p).lineHeight), btnShadow: getComputedStyle(a).boxShadow, btnSize: getComputedStyle(a).fontSize };
+  });
+  const fh = await drawn("[data-check-founder-h]"), fa = await drawn("[data-check-founder-a]");
+  expect("homepage: the founder section follows her second picture (ExtraBold heading, untightened, paragraphs at 1.8, ExtraBold button with no shadow)",
+    /^Poppins-ExtraBold$/.test(fh[0] || "") && /Poppins-ExtraBold/.test(fa[0] || "") && f.ls === "normal" && f.lh.length === 2 && f.lh.every((v) => v === "28.8px") && !/[1-9]\d*px [1-9]/.test(f.btnShadow.replace(/rgba?\([^)]*\)/g, "")) && f.btnSize === "13px",
+    `${fh.join(",")} | ${fa.join(",")} | ${JSON.stringify(f)}`);
+  await page.goto(`${BASE}/about`, { waitUntil: "load" });
+  await page.waitForTimeout(400);
+  const t = await page.evaluate(() => [...document.querySelectorAll("#team ul > li.flex, #team article")].map((c) => ({ border: getComputedStyle(c).borderTopWidth, tagsTop: getComputedStyle(c.querySelector("ul.flex")).marginTop })));
+  expect("about: no border round any team card, and her 4px above the tags on the four from her file", t.length === 5 && t.every((c) => c.border === "0px") && t.slice(1).every((c) => c.tagsTop === "4px"), JSON.stringify(t));
   await page.close();
 }
 

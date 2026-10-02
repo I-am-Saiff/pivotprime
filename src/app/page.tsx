@@ -519,12 +519,16 @@ export default function Home() {
             <p className="mb-4 text-xs font-semibold tracking-[0.16em] text-mid uppercase md:mb-[22px]">
               {FOUNDER.eyebrow}
             </p>
-            <h2 className="mb-8 text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
+            {/* HER SECOND PICTURE ON SLIDE 3, measured 2 October against the
+                page it was taken from: the heading in ExtraBold with no
+                tightening and close lines, the paragraphs at 1.8, and her
+                spacing scaled to this heading's size (hers is 32px, this 36). */}
+            <h2 className="mb-9 font-heavy text-3xl leading-[1.08] font-extrabold text-foreground md:text-4xl">
               {FOUNDER.heading}
             </h2>
-            <div className="space-y-5">
+            <div className="space-y-[22px]">
               {FOUNDER.body.map((paragraph) => (
-                <p key={paragraph.slice(0, 40)} className="leading-relaxed text-neutral-600">
+                <p key={paragraph.slice(0, 40)} className="leading-[1.8] text-neutral-600">
                   {paragraph}
                 </p>
               ))}
@@ -533,12 +537,15 @@ export default function Home() {
                 link: 12px radius, neon fill, forest text, the header CTA's
                 padding scale. The other homepage arrow link, "More case
                 studies", already carries it. */}
+            {/* Her second picture's button, in ExtraBold with her short arrow
+                and no shadow, at her size scaled to this heading. Its shape
+                stays rectangular, her note [3] on the same slide. */}
             <Link
               href={FOUNDER.ctaHref}
-              className="mt-8 inline-flex min-h-11 items-center justify-center rounded-xl bg-neon px-5 py-2.5 font-sans text-xs font-bold tracking-wider text-forest uppercase shadow-md transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
+              className="mt-11 inline-flex min-h-11 items-center justify-center gap-[11px] rounded-xl bg-neon px-8 py-[18px] font-heavy text-[13px] leading-[1.5] font-extrabold tracking-[0.08em] text-forest uppercase transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
             >
               {FOUNDER.ctaLabel}
-              <span aria-hidden="true" className="ml-2 text-base leading-none">
+              <span aria-hidden="true" className="font-arrow leading-none">
                 &rarr;
               </span>
             </Link>

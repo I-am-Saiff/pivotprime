@@ -81,7 +81,10 @@ export default function HomeServices({
       <ul className="grid gap-5 md:grid-cols-3 md:items-stretch">
         {HOME_SERVICES.map((service) => (
           <li key={service.title} className="flex">
-            <div className="frosted-card-light flex w-full flex-col rounded-[20px] px-5 pt-6 pb-5 sm:px-7 sm:pt-8 sm:pb-7">
+            {/* HER SHADOW, from the page her slide 2 note links: tight and faint, so
+                the gaps between the cards stay the colour of the page. The
+                site's card shadow is wider and greyed the gaps. */}
+            <div className="frosted-card-light flex w-full flex-col rounded-[20px] px-5 pt-6 pb-5 shadow-[0_1px_3px_rgba(1,51,37,0.06),0_4px_16px_rgba(1,51,37,0.04)]! sm:px-7 sm:pt-8 sm:pb-7">
               {/* HER SLIDE 2 PICTURE, measured, 2 October: a full-width pale green
                   bar with round ends and dark bold lettering. It was a short
                   mid-green capsule the width of its words. Weight 800, as

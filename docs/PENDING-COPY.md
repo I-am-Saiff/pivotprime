@@ -6630,3 +6630,25 @@ The arrow at the foot of each card is the size in your picture.
 
 On a phone, the space under the small dots beneath the results cards now
 matches every other gap between sections.
+
+### A further check, the same day
+
+An independent second check against your pictures found four more small
+differences, and each has been removed:
+
+- **The service cards (slide 2)** now carry the faint shadow of your page, so
+  the gaps between them stay the colour of the page instead of looking grey.
+- **The founder section (slide 3), as your second picture:** the main heading in
+  the same heavier lettering, with its letters at their natural spacing and its
+  lines closer together; the two paragraphs with your more open line spacing;
+  your spacing between heading, paragraphs and button; and the "MEET THE FULL
+  TEAM" button in your heavier lettering with your short arrow and no shadow,
+  still rectangular as your note on that slide asks. Every other heading on the
+  homepage is unchanged.
+- **The team cards (slide 5)** no longer have a thin dark line round their edge,
+  so each photograph runs to the edge of its card as in your file, and the tags
+  sit your small extra space below each biography.
+- **The Insights cards (slide 10):** the arrow at the foot of each card is now
+  drawn into the page at the size of yours, so it looks the same on every
+  computer and phone rather than taking whichever arrow the visitor's own
+  computer provides.

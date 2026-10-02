@@ -155,9 +155,9 @@ function Bio({ blocks, className }: { blocks: BioBlock[]; className: string }) {
  * bg-forest/ to white alpha on a dark card, which is what her file writes
  * literally; going through the token keeps it inside the palette rule.
  */
-function Tags({ tags }: { tags: string[] }) {
+function Tags({ tags, className = "" }: { tags: string[]; className?: string }) {
   return (
-    <ul className="flex flex-wrap gap-2">
+    <ul className={`flex flex-wrap gap-2 ${className}`}>
       {tags.map((tag) => (
         <li
           key={tag}
@@ -254,7 +254,7 @@ export default function About() {
               slide draws it, and her portrait keeps its own 4/5 box rather than
               the 4/4.2 the team cards take: the team box is her new file's and
               this card is not in that file. Her biography text is untouched. */}
-          <article className="mt-8 sm:mt-12 overflow-hidden rounded-[28px] border border-forest/20 card-dark">
+          <article className="mt-8 sm:mt-12 overflow-hidden rounded-[28px] card-dark">
             <div className="grid grid-cols-1 gap-5 sm:gap-8 p-6 md:grid-cols-12 md:gap-10 md:p-10">
               <div className="md:col-span-4 lg:col-span-3">
                 <Portrait person={FOUNDER} className="aspect-[4/5] w-full rounded-2xl" />
@@ -286,7 +286,7 @@ export default function About() {
             {PEOPLE.map((person) => (
               <li
                 key={person.name}
-                className="flex flex-col overflow-hidden rounded-[28px] border border-forest/20 card-dark"
+                className="flex flex-col overflow-hidden rounded-[28px] card-dark"
               >
                 {/* 4/4.2, her file's box. It was 4/5. */}
                 <Portrait person={person} className="aspect-[4/4.2] w-full" />
@@ -313,7 +313,7 @@ export default function About() {
                       800, 0.98rem at 1.7, and 6px more above the button. */}
                   <h3 className="font-heavy text-[1.6rem] leading-[1.15] font-extrabold text-forest">{person.name}</h3>
                   <Bio blocks={person.bio} className="text-[0.98rem] leading-[1.7] text-white/78" />
-                  <Tags tags={person.tags} />
+                  <Tags tags={person.tags} className="mt-1" />
                   <div aria-hidden="true" className="h-1.5" />
                   <LinkedInButton person={person} />
                 </div>
@@ -324,7 +324,7 @@ export default function About() {
           {/* KHUSHI, ONE WIDE CARD BENEATH THE THREE, her `.card.wide`: photo
               left at 38% of the card, text right, stacking below 680 where the
               photo takes the same 4/4.2 box as the three above it. */}
-          <article className="mt-7 flex flex-col overflow-hidden rounded-[28px] border border-forest/20 card-dark min-[680px]:flex-row">
+          <article className="mt-7 flex flex-col overflow-hidden rounded-[28px] card-dark min-[680px]:flex-row">
             {/* min-h-0 is her file's "min-height: 0" below 680: without it the
                 photograph's own height overrides the 4/4.2 box and the card is
                 taller than the three above it. */}
@@ -339,7 +339,7 @@ export default function About() {
               </p>
               <h3 className="font-heavy text-[1.6rem] leading-[1.15] font-extrabold text-forest">{WIDE_PERSON.name}</h3>
               <Bio blocks={WIDE_PERSON.bio} className="max-w-[62ch] text-[0.98rem] leading-[1.7] text-white/78" />
-              <Tags tags={WIDE_PERSON.tags} />
+              <Tags tags={WIDE_PERSON.tags} className="mt-1" />
               {/* AT THE FOOT, as her file has it: her .connect is margin-top:
                   auto, which outranks the column's centring, so the text starts
                   at the top and the button sits at the bottom. mt-auto on this
