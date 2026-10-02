@@ -161,4 +161,4 @@ The Operational Clarity Audit maps the technology stack against the actual proce
 
 ---
 
-*Generated from `src/content/diagnostic-quiz.ts`. If you change any wording here, send the change and we will put it into the site; editing this document does not alter the website.*
+*Generated from the same text the website itself uses. If you change any wording here, send the change and we will put it into the site; editing this document does not alter the website.*

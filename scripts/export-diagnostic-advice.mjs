@@ -125,7 +125,7 @@ for (const id of DOMAIN_ORDER) {
   out.push("---");
 }
 out.push("");
-out.push("*Generated from `src/content/diagnostic-quiz.ts`. If you change any wording here, send the change and we will put it into the site; editing this document does not alter the website.*");
+out.push("*Generated from the same text the website itself uses. If you change any wording here, send the change and we will put it into the site; editing this document does not alter the website.*");
 
 const md = out.join("\n") + "\n";
 writeFileSync("docs/FOR-IRAM-diagnostic-advice.md", md);
@@ -140,6 +140,9 @@ execFileSync("pandoc", [
      thirty advice strings failed a verbatim comparison because of it. This is a
      word-for-word document or it is nothing. */
   "--from", "markdown-smart", "--to", "docx",
-  "--metadata", "title=Pivot Prime diagnostic advice, all six versions",
+  /* NO TITLE METADATA. It made pandoc add a Title paragraph above the
+     document's own first heading, so the docx opened with its title twice
+     ("Pivot Prime diagnostic advice, all six versions", then "The diagnostic
+     advice, all six versions"). Found by the close-out evidence review. */
 ]);
 console.log("docx written");
