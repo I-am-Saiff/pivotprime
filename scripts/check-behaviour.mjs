@@ -285,6 +285,114 @@ const openPanels = (page) =>
   }
 }
 
+// ONE GAP BETWEEN EVERY HOMEPAGE SECTION, THE PHOTOGRAPH INCLUDED. Her v3
+// slide 11: "Use the same spacing between every section". Measured from the
+// lowest painted thing in one section to the highest in the next, 192 on a
+// computer and 112 on a phone, within 2px. Movement is reduced so the logo
+// rows wrap and stand still.
+{
+  for (const [label, width, mobile, want] of [["desktop", 1440, false, 192], ["touch", 375, true, 112]]) {
+    const context = await browser.newContext({ viewport: { width, height: 900 }, isMobile: mobile, hasTouch: mobile, reducedMotion: "reduce" });
+    const page = await context.newPage();
+    await page.goto(BASE, { waitUntil: "load" });
+    const gaps = await page.evaluate(() => {
+      const secs = [...document.querySelectorAll("section")].filter((x) => x.offsetHeight > 0 && !x.closest("footer"));
+      // What actually shows: each box is clipped by any ancestor that hides
+      // overflow (the photograph's slow drift scales its image past the
+      // section, which clips it), and text is measured by its lines, not by
+      // invisible padding around it (the publication links carry 14px).
+      const clip = (el, r, stop) => {
+        let t = r.top, b = r.bottom;
+        for (let a = el.parentElement; a && a !== stop.parentElement; a = a.parentElement) {
+          const cs = getComputedStyle(a);
+          if (cs.overflowY !== "visible" || cs.overflowX !== "visible") { const ar = a.getBoundingClientRect(); t = Math.max(t, ar.top); b = Math.min(b, ar.bottom); }
+        }
+        return [t, b];
+      };
+      const ext = (x) => {
+        let top = Infinity, bot = -Infinity;
+        x.querySelectorAll("*").forEach((el) => {
+          const cs = getComputedStyle(el);
+          if (cs.visibility === "hidden" || el.closest("[hidden]")) return;
+          const painted = cs.backgroundColor !== "rgba(0, 0, 0, 0)" || cs.borderTopWidth !== "0px" || cs.backgroundImage !== "none" || /^(IMG|SVG|svg|VIDEO)$/.test(el.tagName);
+          let r = null;
+          if (painted) r = el.getBoundingClientRect();
+          else if (el.children.length === 0 && el.textContent.trim()) { const rg = document.createRange(); rg.selectNodeContents(el); const rs = [...rg.getClientRects()]; if (rs.length) r = { top: Math.min(...rs.map((q) => q.top)), bottom: Math.max(...rs.map((q) => q.bottom)), width: 9, height: 9 }; }
+          if (!r || r.width < 2 || r.height < 2) return;
+          const [t, b] = clip(el, r, x);
+          if (b - t < 1) return;
+          top = Math.min(top, t + scrollY); bot = Math.max(bot, b + scrollY);
+        });
+        return [top, bot];
+      };
+      const e = secs.map(ext); const g = [];
+      for (let i = 1; i < e.length; i++) g.push(Math.round(e[i][0] - e[i - 1][1]));
+      return g;
+    });
+    const off = gaps.filter((g) => Math.abs(g - want) > 2);
+    expect(`${label}: every gap between homepage sections is ${want}`, gaps.length >= 8 && off.length === 0, `gaps ${gaps.join(", ")}`);
+    await context.close();
+  }
+}
+
+// HER PICTURES, MEASURED, 2 October: the services cards (v3 slide 2), the
+// diagnostic opening (slide 7) and the Insights cards (slide 10). Each value
+// was measured from her picture; these assert the shape of each, at 1440.
+{
+  const page = await browser.newPage();
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(`${BASE}/#services`, { waitUntil: "load" });
+  const svc = await page.evaluate(() => {
+    const cards = [...document.querySelectorAll("#services ul > li > div")];
+    return cards.map((c) => {
+      const label = c.firstElementChild, cs = getComputedStyle(c), ls = getComputedStyle(label);
+      const inner = c.getBoundingClientRect().width - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight) - 2;
+      const link = c.querySelector("a"); const price = [...c.querySelectorAll("p")].find((p) => /AED/.test(p.textContent));
+      return { fullWidth: Math.abs(label.getBoundingClientRect().width - inner) < 3, dark: ls.color === "rgb(1, 51, 37)", linkRule: getComputedStyle(link).borderTopWidth !== "0px", priceWeight: price ? getComputedStyle(price).fontWeight : null };
+    });
+  });
+  expect("services: every label is a full-width bar in dark lettering", svc.length === 3 && svc.every((c) => c.fullWidth && c.dark), JSON.stringify(svc));
+  expect("services: a rule above the link on We Diagnose and We Build, none on We Lead", svc.length === 3 && svc[0].linkRule && !svc[1].linkRule && svc[2].linkRule, JSON.stringify(svc.map((c) => c.linkRule)));
+  expect("services: the price line is plain, not bold", svc[0]?.priceWeight === "500", `weight ${svc[0]?.priceWeight}`);
+  if (process.env.NEXT_PUBLIC_ENABLE_DIAGNOSTIC === "true") {
+    const arrow = await page.evaluate(() => [...document.querySelectorAll("a[href='/diagnostic']")].some((a) => /TAKE THE DIAGNOSTIC\s*→/i.test(a.textContent.replace(/\s+/g, " "))));
+    expect("services: the diagnostic panel button carries the arrow", arrow);
+    await page.goto(`${BASE}/diagnostic`, { waitUntil: "load" });
+    const d = await page.evaluate(() => {
+      const h1 = document.querySelector("h1"); const para = h1.nextElementSibling; const btn = [...document.querySelectorAll("button")].find((b) => /start the diagnostic/i.test(b.textContent));
+      return { para: getComputedStyle(para).fontSize, btnH: Math.round(btn.getBoundingClientRect().height), btnSize: getComputedStyle(btn).fontSize };
+    });
+    expect("diagnostic: the opening is at her picture's size", d.para === "24px" && d.btnH >= 82 && d.btnSize === "19px", JSON.stringify(d));
+  }
+  await page.goto(`${BASE}/insights`, { waitUntil: "load" });
+  const ins = await page.evaluate(() => {
+    // The post grid only; the featured card above it has its own design.
+    const cards = [...document.querySelectorAll("[data-post-group] .grid.lg\\:grid-cols-3 > a[data-post-tag]")];
+    const grid = cards[0]?.closest(".grid");
+    return { n: cards.length, gridW: Math.round(grid?.getBoundingClientRect().width || 0), white: cards.every((c) => getComputedStyle(c).backgroundColor === "rgb(255, 255, 255)"),
+      metaBelow: cards.every((c) => { const spans = c.querySelector(".flex-col.gap-px"); return spans && spans.children.length === 2 && spans.children[1].getBoundingClientRect().top > spans.children[0].getBoundingClientRect().top; }),
+      initialsWhite: cards.every((c) => getComputedStyle(c.querySelector(".rounded-full")).color === "rgb(255, 255, 255)") };
+  });
+  expect("insights: the cards follow her picture (white, 1180 grid, date under the name, white initials)", ins.n >= 6 && ins.gridW === 1180 && ins.white && ins.metaBelow && ins.initialsWhite, JSON.stringify(ins));
+  await page.close();
+}
+
+// THE NEW LOGO TILES CARRY THE OLD TILES' GLOW. The four tiles drawn in CSS
+// (Ford, dubizzle, OSN and the delivered-for four) were a flat near-black
+// beside the six original pictures, which have a faint green glow at the foot.
+// Each CSS tile must paint the glow: a radial gradient over black.
+{
+  const page = await browser.newPage();
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(BASE, { waitUntil: "load" });
+  const flat = await page.$$eval("[aria-hidden='false'] .logo-tile, [aria-hidden='false'] .rounded-lg.aspect-\\[345\\/185\\]", (tiles) =>
+    tiles.filter((t) => !/radial-gradient/.test(getComputedStyle(t).backgroundImage)).map((t) => (t.querySelector("img, svg")?.getAttribute("alt") || t.querySelector("svg")?.getAttribute("aria-label") || "?")),
+  );
+  const count = await page.$$eval("[aria-hidden='false'] .logo-tile", (t) => t.length);
+  expect("every logo tile drawn on the page carries the glow", count === 7 && flat.length === 0, `${count} glow tiles, flat: ${flat.join(", ")}`);
+  await page.close();
+}
+
 // NO GREY BAND UNDER THE CASE STUDIES. Her v3 slide 11: "remove the band". The
 // band was the case study cards' soft shadow, cut square on every side by the
 // sideways-scrolling list that holds them. It survived one fix that only gave
@@ -295,7 +403,9 @@ const openPanels = (page) =>
   await page.setViewportSize({ width: 1440, height: 900 });
   for (const route of ["/", "/about"]) {
     await page.goto(`${BASE}${route}`, { waitUntil: "load" });
-    const shadows = await page.$$eval(".snap-x > li", (cards) => cards.map((c) => getComputedStyle(c).boxShadow));
+    // The Who we serve box on the homepage too, from 2 October, so no box on
+    // the page carries a shadow the others do not (her v3 slide 11).
+    const shadows = await page.$$eval(route === "/" ? ".snap-x > li, [data-persona-box]" : ".snap-x > li", (cards) => cards.map((c) => getComputedStyle(c).boxShadow));
     expect(
       `${route}: the case study cards carry no shadow, so no band shows under them`,
       // Tailwind composes box-shadow from several layers and a card with no

@@ -158,6 +158,9 @@ export type Logo = {
 export type LogoGroup = { label: string; logos: Logo[] };
 
 export const LOGO_GROUPS: LogoGroup[] = [
+  /* ORDER, 2 OCTOBER: the new logos follow the order her v3 slide 1 names
+     them, "Ford, Dubizzle and OSN" and "Cinnacare, Nurture UAE, Scentmatic
+     or BookMeetings", after the logos that were already in each row. */
   {
     label: "Experience inside global institutions",
     logos: [
@@ -220,32 +223,6 @@ export const LOGO_GROUPS: LogoGroup[] = [
       },
       {
         /**
-         * OSN, the plain OSN mark and not OSN+. osn.com redirects to
-         * /en-ae/home on its own domain; the header carries three marks, the red
-         * OSN logo, OSNtv and OSN+, and this is the first, with alt="OSN" in
-         * their own markup. Its own file, served as image/svg+xml, single colour,
-         * so the strip's white treatment applies cleanly.
-         */
-        src: "/logos/osn.svg",
-        alt: "OSN",
-        tile: true,
-        w: 46,
-        h: 30,
-        /**
-         * GIVEN A HEIGHT, because this file is tiny rather than padded. Its
-         * viewBox is 46x30, so the shared limits, which only ever scale the big
-         * files DOWN, left it at its natural 46x30 beside marks twice that size.
-         * 36% of the tile was chosen by putting three candidates through the
-         * whole row at one zoom: a bold compact mark like this balances against
-         * the bold "sky" at that height, and at 40% it became the heaviest thing
-         * in the row.
-         */
-        size: "h-[36%] max-w-[60%]",
-        sha256: "37c7b7e721c9844df05202293efe7a5f6f9b70536225cf66a23feaf6146e40ac",
-        source: "https://www.osn.com/osn/media/OSNMedia/osntv/images/common/osn-red-logo.svg",
-      },
-      {
-        /**
          * PLAIN "dubizzle", ON HER INSTRUCTION IN PASS 7. Pass 6 put up the
          * "dubizzle group" header logo, the parent company's mark, because the
          * rule then was the logo at the top of the company's own site, and
@@ -293,6 +270,32 @@ export const LOGO_GROUPS: LogoGroup[] = [
         sha256: "e62ec73d4c67799f0af5b14ff836cfd6a3e7cc75f15238891c16c62482b5994a",
         source: "https://cdn.dubizzlegroup.com/wp-content/uploads/2024/09/about_our_brands_logo_01.png",
       },
+      {
+        /**
+         * OSN, the plain OSN mark and not OSN+. osn.com redirects to
+         * /en-ae/home on its own domain; the header carries three marks, the red
+         * OSN logo, OSNtv and OSN+, and this is the first, with alt="OSN" in
+         * their own markup. Its own file, served as image/svg+xml, single colour,
+         * so the strip's white treatment applies cleanly.
+         */
+        src: "/logos/osn.svg",
+        alt: "OSN",
+        tile: true,
+        w: 46,
+        h: 30,
+        /**
+         * GIVEN A HEIGHT, because this file is tiny rather than padded. Its
+         * viewBox is 46x30, so the shared limits, which only ever scale the big
+         * files DOWN, left it at its natural 46x30 beside marks twice that size.
+         * 36% of the tile was chosen by putting three candidates through the
+         * whole row at one zoom: a bold compact mark like this balances against
+         * the bold "sky" at that height, and at 40% it became the heaviest thing
+         * in the row.
+         */
+        size: "h-[36%] max-w-[60%]",
+        sha256: "37c7b7e721c9844df05202293efe7a5f6f9b70536225cf66a23feaf6146e40ac",
+        source: "https://www.osn.com/osn/media/OSNMedia/osntv/images/common/osn-red-logo.svg",
+      },
     ],
   },
   {
@@ -336,6 +339,38 @@ export const LOGO_GROUPS: LogoGroup[] = [
         source: "https://cinnacare.com/cdn/shop/files/slice17.png",
       },
       {
+        /**
+         * THE ONE THAT CANNOT TAKE THE MONOCHROME, and it is left in colour
+         * rather than altered.
+         *
+         * Nurture's mark is a wordmark inside a filled badge. Every other logo
+         * here is line art on transparency, so brightness(0) invert(1) turns it
+         * white and it reads. Run over a filled badge the same filter turns the
+         * WHOLE BADGE white and the wordmark disappears into it, which was
+         * measured by rendering it rather than assumed. Repainting the badge by
+         * hand is exactly what we do not do to a logo.
+         *
+         * So this one renders in its own colours on the same panel as the rest.
+         * PENDING-COPY 1g2 puts three options to her: leave it, send a
+         * transparent white wordmark, or drop it from the strip.
+         */
+        src: "/logos/nurture-uae.png",
+        w: 1024,
+        h: 1024,
+        alt: "Nurture UAE",
+        tile: true,
+        mono: false,
+        /**
+         * 72% OF THE TILE, 2 October: 69px square on a computer, 58px on a
+         * phone. At the shared limit it was 56px, noticeably smaller than the
+         * wordmarks beside it. Four sizes were laid out across the whole row at
+         * one zoom (56, 63, 69, 75): 69 balances against Cinnacare and Nivishe,
+         * and at 75 the solid badge became the heaviest thing in the row.
+         */
+        size: "h-[72%] max-w-[72%]",
+        source: "https://nurtureuae.com/assets/img/nurture-icon-1024.png",
+      },
+      {
         src: "/logos/scentmatic.png",
         w: 1200,
         h: 670,
@@ -360,30 +395,6 @@ export const LOGO_GROUPS: LogoGroup[] = [
         alt: "BookMeetings",
         tile: true,
         source: "https://bookmeetings.io/logo.svg",
-      },
-      {
-        /**
-         * THE ONE THAT CANNOT TAKE THE MONOCHROME, and it is left in colour
-         * rather than altered.
-         *
-         * Nurture's mark is a wordmark inside a filled badge. Every other logo
-         * here is line art on transparency, so brightness(0) invert(1) turns it
-         * white and it reads. Run over a filled badge the same filter turns the
-         * WHOLE BADGE white and the wordmark disappears into it, which was
-         * measured by rendering it rather than assumed. Repainting the badge by
-         * hand is exactly what we do not do to a logo.
-         *
-         * So this one renders in its own colours on the same panel as the rest.
-         * PENDING-COPY 1g2 puts three options to her: leave it, send a
-         * transparent white wordmark, or drop it from the strip.
-         */
-        src: "/logos/nurture-uae.png",
-        w: 1024,
-        h: 1024,
-        alt: "Nurture UAE",
-        tile: true,
-        mono: false,
-        source: "https://nurtureuae.com/assets/img/nurture-icon-1024.png",
       },
     ],
   },

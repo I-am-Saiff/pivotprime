@@ -50,11 +50,6 @@
       "file": "src/lib/diagnostic-report-email.ts",
       "hex": "#ffffff",
       "reason": "Inline styles in a transactional email, the same constraint as the /api/enquiry entries. Email clients do not support CSS custom properties, so a token cannot be referenced and the literal is the only option. This file builds the diagnostic report email; keep these in step if the tokens change."
-    },
-    {
-      "file": "src/app/page.tsx",
-      "hex": "#121212",
-      "reason": "The logo strip's own panel colour, sampled from public/logos/clogo1a.jpg rather than chosen. The six original logos are 345x185 JPEGs with a near-black ground flattened into the picture, so that value is already on the page in a form this guard cannot see. The four logos added on her v3 slide 1 are the companies' own unaltered files, so their panel has to be drawn in CSS, and it has to be this colour or the row reads as two batches. bg-forest was tried first and is visibly greener beside the old tiles. Remove this entry when the six legacy JPEGs are replaced with files that carry no ground of their own, at which point the whole strip can move to a token."
     }
   ]
 }

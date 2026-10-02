@@ -186,8 +186,15 @@ export default function Home() {
       </section>
 
       {/* 3.2 Proof bar. MOVE: the logo rows sat buried inside a later section
-          and belong directly under the hero. */}
-      <section className="surface-page px-4 sm:px-6 lg:px-8 py-14 sm:py-24">
+          and belong directly under the hero.
+
+          THE GAP UNDER THE PHOTOGRAPH MATCHES EVERY OTHER GAP, 2 October. Her
+          v3 slide 11: "Use the same spacing between every section". Every gap
+          below is two section paddings, 192 on a computer and 112 on a phone,
+          but the photograph is a full-bleed block, so the space under its edge
+          was this section's padding alone plus the line's margin: 108 and 68.
+          The top padding is doubled instead, pt-28 and sm:pt-48. */}
+      <section className="surface-page px-4 sm:px-6 lg:px-8 pt-28 pb-14 sm:pt-48 sm:pb-24">
         <div className="page-container">
           {/* THE SECOND TRUSTED-BY LINE IS GONE TOO, and it is the one worth
               noticing: {PROOF.trusted} read "Trusted by businesses across
@@ -202,7 +209,7 @@ export default function Home() {
           {/* LEFT-ALIGNED, 2 OCTOBER. Her 23 August slide 2: "If rest is not
               centre aligned then this also shouldn't be as it looks off against
               next sections." Her v3 slide 11 asks the same of every section. */}
-          <p className="mt-3 max-w-3xl text-sm text-neutral-500">
+          <p className="max-w-3xl text-sm text-neutral-500">
             {PROOF.featuredPrefix}
             {PROOF.publications.map((pub, i) => (
               <span key={pub.href}>
@@ -302,22 +309,16 @@ export default function Home() {
                         flattening one onto a dark panel in an image editor means
                         recolouring someone's trademark by hand.
 
-                        THE PANEL IS THE OLD TILES' OWN COLOUR, SAMPLED FROM ONE
-                        OF THEM. Every existing JPEG is a near-black ground that
-                        reads #121212 across most of its area, with a faint green
-                        lift at the foot. bg-forest was tried first because it is
-                        the site's dark surface and is on the palette: against the
-                        old tiles it is visibly greener, and the row reads as two
-                        batches rather than one strip. Her instruction is that
-                        these carry the treatment the strip already uses, so the
-                        strip's own value wins.
-
-                        #121212 IS NOT IN THE PALETTE and is in
-                        scripts/palette-allow.json with that reason. It is a
-                        reviewed exception rather than a new token: no token is
-                        added, changed or removed, and the entry goes the day the
-                        six legacy JPEGs are replaced by files that carry no
-                        ground of their own. PENDING-COPY 1g2.
+                        THE PANEL MATCHES THE OLD TILES AS THEY RENDER, 2 October.
+                        The original JPEGs carry a near-black ground and a faint
+                        green glow at the foot, and the contrast filter on them
+                        takes the ground to black. These tiles had a flat
+                        near-black and no glow, so side by side they read as a
+                        second batch. They now use .logo-tile in globals.css:
+                        black with the glow drawn from palette tokens only, the
+                        values sampled from the old tiles on the live page. The
+                        near-black palette exception is gone with it.
+                        PENDING-COPY 1g2 and 1g5.
 
                         aspect-[345/185] gives the new tiles the exact footprint
                         of the old ones, so the row's rhythm and the marquee's
@@ -330,7 +331,7 @@ export default function Home() {
                       logo.tile ? (
                         <div
                           key={`${copy}-${logo.src}`}
-                          className="flex h-20 flex-shrink-0 items-center justify-center rounded-lg bg-[#121212] aspect-[345/185] md:h-24"
+                          className="flex h-20 flex-shrink-0 items-center justify-center rounded-lg logo-tile aspect-[345/185] md:h-24"
                         >
                           {/* sizes IS LOAD-BEARING, AND ITS ABSENCE WAS A FAULT OF
                               MINE THAT COST EVERY VISITOR. width and height carry

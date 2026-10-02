@@ -658,7 +658,8 @@ const DECISIONS = [
       // Capitals and the arrow from 2 October, her slide 7 picture. Matched on
       // the whole class run so the Unlock button's "px-8 py-3.5" cannot stand
       // in for it.
-      if (!html.includes("rounded-xl bg-neon px-8 py-3 font-sans text-xs font-bold tracking-wider text-forest uppercase")) {
+      // Her slide 7 picture's size from 2 October (PENDING-COPY 1g5).
+      if (!html.includes("rounded-xl bg-neon px-9 py-3 font-sans text-xs font-bold tracking-[0.08em] text-forest uppercase")) {
         return "the Start the diagnostic button is no longer at the site's 12px radius, set like the other green buttons";
       }
 
@@ -690,6 +691,50 @@ const DECISIONS = [
         if (!js.includes(want)) return `the "${name}" button is no longer at the site's 12px radius`;
       }
       return null;
+    },
+  },
+  {
+    what: "the logo rows run in the order her v3 slide 1 names the new logos",
+    where: "PENDING-COPY 1g5",
+    run: async (get) => {
+      // Her slide 1: "Ford, Dubizzle and OSN" and "Cinnacare, Nurture UAE,
+      // Scentmatic or BookMeetings", each after the logos already in the row.
+      // Read from the announced copy of each row in the served markup.
+      const html = (await (await get("/")).text()).replace(/<script\b[\s\S]*?<\/script>/gi, "");
+      const names = [...html.matchAll(/<(?:img|svg)\b[^>]*?(?:alt|aria-label)="([^"]+)"/g)].map((m) => m[1]);
+      const want = [
+        ["MetLife", "Gallagher", "Sky", "Willis Towers Watson", "KPMG", "AIG", "Ford", "dubizzle", "OSN"],
+        ["Democrance", "Insurance Hub", "studio88", "Women Who Thrive", "Man Cave", "Birds of Paradise Foundation", "Nivishe", "Cinnacare", "Nurture UAE", "Scentmatic", "BookMeetings"],
+      ];
+      for (const row of want) {
+        const at = names.indexOf(row[0]);
+        const got = names.slice(at, at + row.length);
+        if (at < 0 || got.join("|") !== row.join("|")) return `the row starting ${row[0]} reads ${got.join(", ")}`;
+      }
+      return null;
+    },
+  },
+  {
+    what: "the Services search description names her three offers in her words, not the five old ones",
+    where: "PENDING-COPY 1g5",
+    run: async (get) => {
+      const html = await (await get("/services")).text();
+      const d = (html.match(/<meta name="description" content="([^"]*)"/) || [])[1] || "";
+      const want = "Operational Clarity Audit, Fractional COO, CFO and Chief of Staff, and Technology Builds. We find what is holding your business back.";
+      if (d.replace(/&amp;/g, "&") !== want) return `the description reads "${d}"`;
+      return null;
+    },
+  },
+  {
+    what: "Nisha's photograph is the crop that matches her team file's picture",
+    where: "PENDING-COPY 1g5",
+    run: async (get) => {
+      // (535, 323, 893x938) of the original, scaled to 836x878, matched to her
+      // v3 slide 5 picture. A re-crop by eye would fail here.
+      const res = await get("/nisha-barot.jpg");
+      if (res.status !== 200) return `/nisha-barot.jpg answers ${res.status}`;
+      const got = createHash("sha256").update(Buffer.from(await res.arrayBuffer())).digest("hex");
+      return got === "08fd531568e02decc4bd5c4bc7f5ef1bfb8cca5dcc80f1e33df7b30cd7a0bc2b" ? null : `/nisha-barot.jpg is a different file: ${got.slice(0, 12)}...`;
     },
   },
   {

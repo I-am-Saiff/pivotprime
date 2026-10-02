@@ -44,7 +44,9 @@ export const PAGES = {
   services: {
     title: "Services | Pivot Prime",
     description:
-      "Operational audits, fractional leadership, embedded delivery teams, technology builds and UAE market entry. We find what is holding you back, then fix it.",
+      // Her words only, 2 October: her three card titles and the start of her
+      // homepage line. It listed the five services her v3 slide 2 folded into three.
+      "Operational Clarity Audit, Fractional COO, CFO and Chief of Staff, and Technology Builds. We find what is holding your business back.",
     path: "/services",
   },
   clarityAudit: {

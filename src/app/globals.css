@@ -306,6 +306,25 @@
      class rather than the homepage call sites is what stops the same card being
      two colours on two pages, which is the drift she asked us to end on her
      slide 2. PENDING-COPY 1g0. */
+  /* THE LOGO TILE FOR LOGOS DRAWN IN CSS, 2 October: black with the faint
+     green glow at the foot that the six original tiles carry in their own
+     pictures. Sampled from those tiles on the live page: black to the top, a
+     glow along the foot of about rgb(24, 50, 29) across the middle 40% of the
+     width, falling to about rgb(11, 29, 15) towards the sides and to black at
+     the corners, and fading upward to nothing by about half way. Built only
+     from palette tokens: mid and linen mixed, taken down to 26% over black,
+     which renders at about rgb(25, 49, 36); every palette colour is a touch bluer
+     than the old glow, so it cannot be closer without a new colour. */
+  .logo-tile {
+    background-color: black;
+    background-image: radial-gradient(
+      ellipse 56% 66% at 50% 100%,
+      color-mix(in srgb, color-mix(in srgb, var(--color-mid) 60%, var(--color-linen)) 26%, black) 0%,
+      color-mix(in srgb, color-mix(in srgb, var(--color-mid) 60%, var(--color-linen)) 26%, black) 38%,
+      transparent 100%
+    );
+  }
+
   .frosted-card-light {
     @apply bg-white border border-neutral-200/80 shadow-[0_16px_48px_rgba(1,51,37,0.06)];
   }

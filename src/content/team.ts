@@ -189,10 +189,14 @@ export const PEOPLE: Person[] = [
      * focusY 50 RATHER THAN HER 6, BECAUSE THE CROP IS ALREADY BAKED IN.
      *
      * Her file sets 6% because it points at an uncropped source and lets the
-     * browser do the work. This file is 837x879, which is the card box exactly,
+     * browser do the work. This file is 836x878, which is the card box exactly,
      * so there is nothing for the browser to crop and any focus value is a no-op.
-     * Her 6% was the starting point for choosing the crop, not a value to carry
-     * through. PENDING-COPY 1f9 has the crop.
+     *
+     * THE CROP MATCHES HER PICTURE, 2 October: (535, 323, 893x938) of the
+     * 1920x2880 original, scaled to 836x878. Found by matching her v3 slide 5
+     * picture against the original at many scales (correlation 0.997); the
+     * crop before it was about 6% tighter and cut off at her watch.
+     * PENDING-COPY 1f9 and 1g5.
      */
     photo: {
       src: "/nisha-barot.jpg",

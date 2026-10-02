@@ -213,18 +213,23 @@ export default function QuizApp() {
               else from pass 4 are unchanged. The measured contrast is recorded in
               PENDING-COPY 1g3 as her decision. check-card-contrast does not walk
               /diagnostic, so it has no exception to carry for this. */}
-          <p className="mb-6 inline-block rounded-xl bg-mist px-3.5 py-1.5 text-sm font-bold tracking-[0.2em] text-mid uppercase">
+          {/* HER SLIDE 7 PICTURE'S PROPORTIONS, 2 October. Measured from her
+              picture against her heading, then set so every element keeps her
+              ratio to the live 60px heading: checked on the page to within 2.5px
+              of her picture at 1440. Phone sizes keep her order, anchored to a
+              16px paragraph. Colours are the nearest palette tokens to hers. */}
+          <p className="mb-5 inline-block rounded-xl bg-mist px-3.5 py-1.5 text-sm font-semibold tracking-[0.16em] text-mid uppercase md:mb-9 md:px-4 md:text-base">
             {DIAGNOSTIC_INTRO.eyebrow}
           </p>
           {/* Two tone, as her image draws it: the first line near black, the
               second green. mid rather than neon, because neon on a light ground
               is barely visible; mid measures over the 3:1 a heading this size
               needs. */}
-          <h1 className="text-4xl font-extrabold tracking-tight text-balance text-forest md:text-6xl">
-            <span className="block">{DIAGNOSTIC_INTRO.headingLead}</span>
+          <h1 className="text-4xl leading-[1.03] font-extrabold text-balance text-forest md:text-6xl">
+            <span className="block text-black/90">{DIAGNOSTIC_INTRO.headingLead}</span>
             <span className="block text-mid">{DIAGNOSTIC_INTRO.headingAccent}</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl leading-relaxed text-neutral-600">
+          <p className="mx-auto mt-7.5 max-w-196 text-base leading-[1.75] text-forest/70 md:mt-12 md:text-2xl">
             {DIAGNOSTIC_INTRO.deck}
           </p>
 
@@ -240,13 +245,13 @@ export default function QuizApp() {
               32px above it and 36px below, near enough equal that it floated
               between the two. Back to 40 above and 28 below, so the meta line,
               the button and its note read as one cluster under the heading. */}
-          <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-7 gap-y-2">
+          <ul className="mt-12 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 md:mt-19 md:gap-x-6">
             {DIAGNOSTIC_INTRO.stats.map((s) => (
-              <li key={s} className="flex items-center gap-2 text-sm text-neutral-600">
+              <li key={s} className="flex items-center gap-2 text-[13px] leading-5 font-medium text-forest/70 md:gap-3 md:text-xl md:leading-7">
                 {/* Neon, as her slide 7 picture draws them, 2 October. They
                     were mid for visibility; they are decorative and carry no
                     meaning, so her picture decides. */}
-                <span aria-hidden="true" className="h-[5px] w-[5px] rounded-full bg-neon" />
+                <span aria-hidden="true" className="size-1.5 shrink-0 rounded-full bg-neon md:size-2.25" />
                 {s}
               </li>
             ))}
@@ -263,17 +268,17 @@ export default function QuizApp() {
             // "START THE DIAGNOSTIC →", her note says "Keep wording as shown in
             // this picture", and the site's other green buttons are set the
             // same way. The arrow is decoration, so it is hidden from readers.
-            className="mt-7 inline-flex min-h-11 items-center justify-center rounded-xl bg-neon px-8 py-3 font-sans text-xs font-bold tracking-wider text-forest uppercase transition-opacity hover:opacity-90"
+            className="mt-12 inline-flex min-h-13.5 items-center justify-center rounded-xl bg-neon px-9 py-3 font-sans text-xs font-bold tracking-[0.08em] text-forest uppercase transition-opacity hover:opacity-90 md:mt-18.5 md:min-h-20.75 md:px-13.5 md:text-[19px]"
           >
             {DIAGNOSTIC_INTRO.startLabel}
-            <span aria-hidden="true" className="ml-2 text-base leading-none">
+            <span aria-hidden="true" className="ml-1 text-[0.86em] leading-none">
               →
             </span>
           </button>
-          {/* neutral-500, the site's grey for a small note. Her image puts this
-              line at #7A8D83, which is lighter than anything in the palette and
-              would not clear 4.5:1 at this size. */}
-          <p className="mx-auto mt-4 max-w-xl text-xs leading-relaxed text-neutral-500">
+          {/* forest at 65%, the nearest palette colour to her grey-green note
+              that still reads at 4.5:1 on the cream (her own grey is lighter
+              and would not). */}
+          <p className="mx-auto mt-4 max-w-204 text-xs leading-4.5 text-forest/65 md:mt-6.5 md:text-[19px] md:leading-7">
             {DIAGNOSTIC_INTRO.note}
           </p>
         </div>

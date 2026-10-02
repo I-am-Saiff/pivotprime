@@ -6509,3 +6509,77 @@ yours; your own picture's note is lighter still.
 - **From your August deck:** the video behind the hero (no file yet), the wording
   for the second hero button (your note was a starting point, not a final line),
   and Saif's showcase on Technology Builds (his projects and pictures).
+
+## 1g5 The remaining differences from your pictures, closed
+
+**2 October.** The close-out check listed nineteen requests as done with a note.
+Every difference that could be removed without new material, and without going
+against a later instruction of yours or Saif's, has now been removed, measured
+against your own pictures rather than matched by eye.
+
+### The logos (your v3 slide 1)
+
+- **In the order your slide names them:** Ford, Dubizzle and OSN after AIG, and
+  Cinnacare, Nurture UAE, Scentmatic and BookMeetings after Nivishe.
+- **The same faint green glow** at the foot of every new tile as the original
+  tiles carry in their pictures. It was sampled from those tiles on the live site
+  and drawn from the site's own colours, so it is within a few shades of theirs.
+- **Nurture is larger,** 69 pixels square on a computer instead of 56, chosen by
+  laying four sizes across the whole row.
+
+### The service cards (your v3 slide 2)
+
+Measured from your picture: the label is a full-width pale green bar with dark
+bold lettering, the "From AED 15,000" line is plain and smaller, there is a thin
+line above the link on the We Diagnose and We Build cards and above the note on
+We Lead, and the "TAKE THE DIAGNOSTIC" button has its arrow. The dark panel keeps
+the wording of the page your note linked.
+
+The Services page's description for search engines listed the five old services.
+It now reads, in your words only: "Operational Clarity Audit, Fractional COO, CFO
+and Chief of Staff, and Technology Builds. We find what is holding your business
+back."
+
+### The team (your v3 slide 5 and your team file)
+
+- **Nisha's photograph** is re-cut from the photograph you sent so its framing
+  matches your picture: matched against it at many scales, it agrees almost
+  exactly, where the earlier crop was about 6% tighter.
+- **Your file's styling:** the biographies in a slightly softer white, the tags as
+  outlines, your spacing above the names and your padding inside the cards. The
+  cards keep the site's own dark green, which is a touch less blue-green than your
+  file's, because the site keeps to its palette.
+
+### The diagnostic opening screen (your v3 slide 7)
+
+It is now the size your picture shows. Every part, from the label to the note
+under the button, was measured in your picture against its heading and set to
+the same proportion, then checked on the page to within a few pixels. The
+colours of the text are the nearest the site's palette has to yours.
+
+### The Insights cards (your v3 slide 10)
+
+The cards follow the design in your picture: white, a wider grid so the titles
+break as yours do, no gap under a two-line title, the line above the author
+across the text only, white initials on a larger circle, and the date and
+reading time on the line under the author's name. All six cards share it, as in
+your picture, and the rest of the Insights page now sits on the same width.
+
+### Spacing and boxes (your v3 slide 11)
+
+The gap under the large photograph at the top of the homepage now matches every
+other gap between sections, and the Who we serve box no longer carries a shadow,
+so no box on the page differs from the others.
+
+### The newsletter sign-up (your v3 slide 9)
+
+One real sign-up was made on the live site on 2 October with a test address
+clearly labelled as a test, and it went through: the site confirmed it on screen
+and the mail service accepted the notice to hello@pivotprime.ae, which arrives
+with the subject "Insights subscription: delivered+test-please-ignore@resend.dev".
+
+### Still open, unchanged
+
+The Nurture screenshot, the email to subscribers when an article is published,
+and from your August deck the video for the top of the homepage, the wording of
+the second button there, and Saif's showcase on Technology Builds.

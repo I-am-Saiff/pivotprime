@@ -161,7 +161,8 @@ function Tags({ tags }: { tags: string[] }) {
       {tags.map((tag) => (
         <li
           key={tag}
-          className="rounded-full border border-forest/15 bg-forest/[0.04] px-3 py-1.5 text-xs font-semibold text-forest"
+          // Her file's tags: an outline only, white at 22%, no fill.
+          className="rounded-full border border-white/22 px-3 py-1.5 text-xs font-semibold text-white"
         >
           {tag}
         </li>
@@ -289,7 +290,8 @@ export default function About() {
               >
                 {/* 4/4.2, her file's box. It was 4/5. */}
                 <Portrait person={person} className="aspect-[4/4.2] w-full" />
-                <div className="flex flex-1 flex-col gap-3.5 p-6 sm:p-8">
+                {/* Her file's padding: 26/22/28 on a phone, 30/32/34 from 680. */}
+                <div className="flex flex-1 flex-col gap-3.5 px-[22px] pt-[26px] pb-7 min-[680px]:px-8 min-[680px]:pt-[30px] min-[680px]:pb-[34px]">
                   {/* TWO LINES RESERVED FROM 680 UP, her `min-height: 3em`, so the
                       names line up across the row whether a title wraps or not.
                       Nisha's is the one that wraps. Below 680 the cards are
@@ -304,11 +306,11 @@ export default function About() {
                       longest title at the narrowest width it has to hold rather
                       than to the common case. Two lines is still right from 680
                       to 1000, where the cards are wider. PENDING-COPY 1f9. */}
-                  <p className="text-xs font-bold tracking-[0.16em] text-neon uppercase min-[680px]:min-h-[3em] min-[680px]:leading-[1.5] min-[1000px]:min-h-[4.5em]">
+                  <p className="text-xs font-bold tracking-[0.16em] text-neon uppercase min-[680px]:min-h-[3em] min-[680px]:leading-[1.5]">
                     {person.role}
                   </p>
                   <h3 className="text-2xl font-extrabold text-forest">{person.name}</h3>
-                  <Bio blocks={person.bio} className="text-neutral-600" />
+                  <Bio blocks={person.bio} className="text-white/78" />
                   <Tags tags={person.tags} />
                   <LinkedInButton person={person} />
                 </div>
@@ -326,14 +328,14 @@ export default function About() {
             <div className="aspect-[4/4.2] min-h-0 min-[680px]:aspect-auto min-[680px]:w-[38%] min-[680px]:flex-none">
               <Portrait person={WIDE_PERSON} className="h-full w-full" />
             </div>
-            <div className="flex flex-1 flex-col justify-center gap-3.5 p-6 sm:p-8 min-[680px]:p-10">
+            <div className="flex flex-1 flex-col justify-center gap-3.5 px-[22px] pt-[26px] pb-7 min-[680px]:px-11 min-[680px]:py-10">
               {/* No reserved second line on the wide card, as her file has it:
                   there is no card beside it to align with. */}
               <p className="text-xs font-bold tracking-[0.16em] text-neon uppercase">
                 {WIDE_PERSON.role}
               </p>
               <h3 className="text-2xl font-extrabold text-forest">{WIDE_PERSON.name}</h3>
-              <Bio blocks={WIDE_PERSON.bio} className="max-w-[62ch] text-neutral-600" />
+              <Bio blocks={WIDE_PERSON.bio} className="max-w-[62ch] text-white/78" />
               <Tags tags={WIDE_PERSON.tags} />
               {/* AT THE FOOT, as her file has it: her .connect is margin-top:
                   auto, which outranks the column's centring, so the text starts

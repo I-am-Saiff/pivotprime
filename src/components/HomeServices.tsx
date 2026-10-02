@@ -82,17 +82,20 @@ export default function HomeServices({
         {HOME_SERVICES.map((service) => (
           <li key={service.title} className="flex">
             <div className="frosted-card-light flex w-full flex-col rounded-2xl p-6 sm:p-7">
-              {/* self-start so the capsule is the width of the words rather than
-                  the width of the card. */}
-              <span className="self-start rounded-xl bg-mist px-3 py-1 text-xs font-semibold tracking-[0.2em] text-mid uppercase">
+              {/* HER SLIDE 2 PICTURE, measured, 2 October: a full-width pale green
+                  bar with round ends and dark bold lettering. It was a short
+                  mid-green capsule the width of its words. Weight 700, the
+                  heaviest the site loads; hers is 800, about 6% heavier. */}
+              <span className="rounded-full bg-mid/12 px-3.5 py-1.5 text-xs leading-[17px] font-bold tracking-[0.08em] text-forest uppercase">
                 {service.eyebrow}
               </span>
-              <CardHeading className="mt-3 text-lg font-bold text-mid">
+              <CardHeading className="mt-3.5 text-lg font-bold text-mid">
                 {service.title}
               </CardHeading>
 
               {service.priceLine && (
-                <p className="mt-1.5 text-sm font-bold text-forest sm:text-base">
+                // Plain, small and grey-green, as her picture has it.
+                <p className="mt-1 mb-1 text-[0.78rem] leading-normal font-medium text-forest/75">
                   {service.priceLine}
                 </p>
               )}
@@ -105,7 +108,7 @@ export default function HomeServices({
                 <p
                   className={
                     service.note.dividedAbove
-                      ? "mt-5 border-t border-forest/10 pt-5 text-xs leading-relaxed text-neutral-500"
+                      ? "mt-px border-t border-forest/10 pt-[18.5px] text-xs leading-relaxed text-neutral-500"
                       : "mt-4 text-xs leading-relaxed text-neutral-500"
                   }
                 >
@@ -113,9 +116,12 @@ export default function HomeServices({
                 </p>
               )}
 
+              {/* Her picture: a rule above the link on the cards whose note has
+                  none (We Diagnose and We Build), and none on We Lead, whose
+                  rule sits above its note. */}
               <Link
                 href={service.href}
-                className="group mt-auto inline-flex items-center pt-6 text-sm font-bold text-forest transition-colors hover:text-mid focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none"
+                className={`group mt-auto inline-flex items-center pt-[18px] ${service.note?.dividedAbove ? "" : "border-t border-forest/15"} text-sm font-bold text-forest transition-colors hover:text-mid focus-visible:ring-2 focus-visible:ring-mid focus-visible:ring-offset-2 focus-visible:outline-none`}
               >
                 {service.ctaLabel}
                 <span
@@ -154,7 +160,14 @@ export default function HomeServices({
               href={HOME_DIAGNOSTIC_PANEL.href}
               className="inline-flex min-h-11 flex-shrink-0 items-center justify-center rounded-xl bg-neon px-7 py-3.5 text-xs font-bold tracking-wider text-forest uppercase shadow-lg transition-all hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none"
             >
-              {HOME_DIAGNOSTIC_PANEL.ctaLabel}
+              {/* The arrow her picture and her linked page both show. One run with
+                  the label, so the flex button keeps the space before it. */}
+              <span>
+                {HOME_DIAGNOSTIC_PANEL.ctaLabel}{" "}
+                <span aria-hidden="true" className="text-[10.25px] font-normal">
+                  &rarr;
+                </span>
+              </span>
             </Link>
           </div>
         </div>

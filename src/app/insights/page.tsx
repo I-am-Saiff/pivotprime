@@ -80,7 +80,7 @@ export default async function InsightsPage({
       {/* HERO */}
       <header className="relative overflow-hidden bg-forest px-4 pt-28 pb-12 sm:px-6 sm:pt-32 sm:pb-[76px] md:pt-40 lg:px-8">
         <div aria-hidden="true" className={`pointer-events-none absolute inset-0 ${DOT_GRID}`} />
-        <div className="relative mx-auto grid max-w-[1060px] items-end gap-6 md:grid-cols-[1fr_auto] md:gap-10">
+        <div className="relative mx-auto grid max-w-[1244px] items-end gap-6 md:grid-cols-[1fr_auto] md:gap-10">
           <div>
             <p className="mb-[18px] text-[10px] font-bold tracking-[0.22em] text-neon/60 uppercase">
               {INSIGHTS_HERO.eyebrow}
@@ -123,7 +123,7 @@ export default async function InsightsPage({
         <CategoryFilter targetId="insights-list" />
 
         {/* FEATURED */}
-        <div data-post-group className="mx-auto w-full max-w-[1060px] px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
+        <div data-post-group className="mx-auto w-full max-w-[1244px] px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
           <p className="mb-6 text-[10px] font-bold tracking-[0.2em] text-mid uppercase">
             {FEATURED.label}
           </p>
@@ -191,7 +191,7 @@ export default async function InsightsPage({
         </div>
 
         {/* POST GRID */}
-        <div data-post-group className="mx-auto w-full max-w-[1060px] px-4 pb-10 sm:px-6 sm:pb-16 lg:px-8">
+        <div data-post-group className="mx-auto w-full max-w-[1244px] px-4 pb-10 sm:px-6 sm:pb-16 lg:px-8">
           <p className="mb-6 text-[10px] font-bold tracking-[0.2em] text-mid uppercase">
             {POSTS_LABEL}
           </p>
@@ -209,46 +209,53 @@ export default async function InsightsPage({
 
               Literal class strings, same reason as ServiceCards: Tailwind scans
               source text, so an interpolated span never gets generated. */}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {/* HER SLIDE 10 PICTURE'S CARD, 2 October, measured from her picture
+              and her own page's styles: white, a 1.5px border, the padding on
+              the card itself, the title with no stretch under it so a two-line
+              title leaves no gap, the excerpt taking the spare height so the
+              dividers line up, the rule across the text column only, and the
+              author with the date and reading time on the line beneath, white
+              initials on a larger circle, a neon border on hover. The grid
+              takes her width, 1180 at 1440, so her titles break as hers do. */}
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {POSTS.map((post, i) => (
               <Link
                 key={post.slug}
                 href={`/insights/${post.slug}`}
                 data-post-tag={post.tag}
-                className={`group flex flex-col overflow-hidden rounded-[18px] border border-forest/12 bg-shell transition-[border-color,box-shadow] duration-250 hover:border-mid hover:shadow-[0_6px_28px_rgba(1,51,37,0.09)] ${
+                className={`group flex flex-col rounded-2xl border-[1.5px] border-black/15 bg-white px-[26px] pt-7 pb-6 transition-[border-color,box-shadow] duration-[180ms] hover:border-neon hover:shadow-[0_2px_16px_rgba(1,51,37,0.08)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neon ${
                   i === POSTS.length - 1 && POSTS.length % 2 === 1
                     ? "sm:col-span-2 lg:col-span-1"
                     : ""
                 }`}
               >
-                <div className="flex flex-1 flex-col px-6 pt-[26px] pb-5">
-                  <p className="mb-3.5 text-[10px] font-bold tracking-[0.18em] text-mid uppercase">
-                    {post.tag}
-                  </p>
-                  <p className="mb-3 flex-1 text-[17px] leading-[1.32] font-extrabold tracking-[-0.018em] text-balance text-forest">
-                    {post.title}
-                  </p>
-                  <p className="text-[13px] leading-[1.68] text-forest/75">{post.deck}</p>
-                </div>
-                <div className="flex items-center justify-between border-t border-forest/12 px-6 py-[18px]">
-                  <span className="flex items-center gap-[9px]">
-                    <span
-                      aria-hidden="true"
-                      className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-forest text-[9px] font-extrabold text-neon"
-                    >
-                      {post.authorInitials}
-                    </span>
-                    <span className="text-[11px] font-semibold text-forest/75">
+                <p className="mb-3 text-[0.67rem] leading-[normal] font-bold tracking-[0.12em] text-mid uppercase">
+                  {post.tag}
+                </p>
+                <p className="mb-4 text-[1.15rem] leading-[1.28] font-bold text-balance text-forest">
+                  {post.title}
+                </p>
+                <p className="flex-1 text-[0.855rem] leading-[1.65] text-forest/75">{post.deck}</p>
+                <div className="mt-[22px] flex items-center gap-2.5 border-t border-black/12 pt-[18px]">
+                  <span
+                    aria-hidden="true"
+                    className="flex size-9 shrink-0 items-center justify-center rounded-full bg-forest text-[0.68rem] font-bold text-white"
+                  >
+                    {post.authorInitials}
+                  </span>
+                  <span className="flex flex-1 flex-col gap-px">
+                    <span className="text-[0.82rem] leading-[1.2] font-semibold text-foreground">
                       {post.authorName}
                     </span>
-                  </span>
-                  <span className="flex items-center gap-2 text-[11px] text-forest/75">
-                    <span>{post.date}</span>
-                    <span aria-hidden="true" className="h-0.5 w-0.5 rounded-full bg-forest/75" />
-                    <span>{post.readTime}</span>
-                    <span aria-hidden="true" className="text-sm font-bold text-mid">
-                      {post.cta}
+                    <span className="text-[0.78rem] leading-[1.2] text-forest/75">
+                      {post.date} · {post.readTime}
                     </span>
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="text-base leading-none text-mid transition-transform duration-150 group-hover:translate-x-[3px] motion-reduce:transition-none"
+                  >
+                    {post.cta}
                   </span>
                 </div>
               </Link>
@@ -262,7 +269,7 @@ export default async function InsightsPage({
             the served HTML at all times, hidden by CSS, per the standing rule. */}
         <p
           data-no-matches
-          className="mx-auto hidden w-full max-w-[1060px] px-4 pb-10 text-[13px] leading-[1.68] text-forest/75 sm:px-6 sm:pb-16 lg:px-8"
+          className="mx-auto hidden w-full max-w-[1244px] px-4 pb-10 text-[13px] leading-[1.68] text-forest/75 sm:px-6 sm:pb-16 lg:px-8"
         >
           Nothing under this heading yet. The next piece may well be.
         </p>
@@ -270,7 +277,7 @@ export default async function InsightsPage({
 
       {/* TOPICS */}
       <div className="border-y border-forest/12 bg-shell px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-        <div className="mx-auto max-w-[1060px]">
+        <div className="mx-auto max-w-[1244px]">
           <p className="mb-5 text-[10px] font-bold tracking-[0.2em] text-mid uppercase">
             {TOPICS_LABEL}
           </p>

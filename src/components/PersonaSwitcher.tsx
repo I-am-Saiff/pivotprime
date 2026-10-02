@@ -153,7 +153,8 @@ export default function PersonaSwitcher() {
             <div
               key={persona.id}
               hidden={!isVisible}
-              className="frosted-card-light rounded-[28px] px-5 pt-8 pb-14 transition-all duration-300 sm:px-8 sm:pb-8 md:p-12"
+              data-persona-box
+              className="frosted-card-light shadow-none! rounded-[28px] px-5 pt-8 pb-14 transition-all duration-300 sm:px-8 sm:pb-8 md:p-12"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 items-start">
                 {/* Left Column: Heading, CTA, Quote */}
