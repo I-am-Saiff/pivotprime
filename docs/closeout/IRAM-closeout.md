@@ -2,57 +2,63 @@
 
 **2 October 2026** · https://pivotprime.ae
 
-**Your requests: 37.** Done: 16. Done with a note: 19. Open: 2.
+**Your requests: 37.** Done: 35. Done with a note: 0. Open: 2.
 
-Every request in your 30 September deck was checked on the live site, on a computer and on a phone, and then checked again by a second, independent review. Each request below quotes your own words. Where your slide showed what you wanted, your picture is on the left and the live site is on the right.
+Every request in your 30 September deck was checked on the live site, on a computer and on a phone, and then checked again by a second, independent review.
 
-**Done** means the live site matches your words. **Done with a note** means it is done and there is something you should know, set out under it. **Open** means it is not finished yet; what each needs is listed at the end.
+35 of the 37 are done, and 2 are open: the Nurture screenshot, which needs a new picture from you or Saif, and the email to subscribers when an article is published, which is a new feature that has not been built.
+
+Your earlier decks were checked as well: nothing they asked for has been undone, and 6 earlier requests were put right during this check.
+
+Each request quotes your own words. Where your slide showed what you wanted, your picture is on the left and the live site on the right.
+
+**Done** means the live site matches your words. **Done with a note** means it is done and a difference remains, set out under it. **Open** means it is not finished yet; what each needs is listed at the end.
 
 The document with every version of the diagnostic advice, one for each of the six areas, goes to you with this report.
 
-## Slide 1
+## Slide 1: The logos
 
-### 1.1 · Done with a note
+### 1.1 · Done
 
 > The institutions strip still shows MetLife, Gallagher, Sky, Willis Towers Watson, KPMG and AIG. Ford, Dubizzle and OSN are missing.
 
-**What was done:** Ford, OSN and dubizzle are now in the "Experience inside global institutions" row after AIG, on dark rounded tiles the same size as the others, with all six earlier logos still there and Ford in its own navy oval with white lettering, because showing it in white like the other logos would leave a blank oval. For visitors who have set their phone or computer to reduce movement, the row stands still and wraps onto extra lines so that every logo shows.
+**What was done:** Ford, dubizzle and OSN are now in the "Experience inside global institutions" row after AIG, in the order your slide names them, on dark rounded tiles the same size as the others with the same faint green glow at the foot, and all six earlier logos are still there. Ford keeps its own navy oval with white lettering, because in white the whole oval becomes a blank shape, and for visitors whose phone or computer is set to reduce movement the row stands still and wraps onto extra lines so every logo shows.
 
-**Note:** The three new tiles are a plain near-black and do not have the faint green glow at the foot of the older tiles, so side by side they look slightly greyer and plainer. The order is Ford, OSN, dubizzle, where your list said Ford, Dubizzle, OSN.
+**Whose instruction:** The glow at the foot of the new tiles is drawn in the site's own colours, which is Saif's rule, so it is a shade bluer than on the older tiles, and the row sits within the page's content width, as your slide 11 asked.
 
 **Live page:** https://pivotprime.ae/
 
-![On a computer, shown with movement turned off, so every logo is in view at once; otherwise the row scrolls](img/1-1.png)
-*On a computer, shown with movement turned off, so every logo is in view at once; otherwise the row scrolls: img/1-1.png*
+![On a computer](img/1-1.png)
+*On a computer: img/1-1.png*
 
-![On a phone, shown with movement turned off, so every logo is in view at once; otherwise the row scrolls](img/1-1-375.png)
-*On a phone, shown with movement turned off, so every logo is in view at once; otherwise the row scrolls: img/1-1-375.png*
+![On a phone](img/1-1-375.png)
+*On a phone: img/1-1-375.png*
 
-### 1.2 · Done with a note
+### 1.2 · Done
 
 > The "Companies we have delivered for" strip has none of Cinnacare, Nurture UAE, Scentmatic or BookMeetings yet.
 
-**What was done:** Cinnacare, Scentmatic, BookMeetings and Nurture UAE are now in the "Companies we have delivered for" row after Nivishe, on dark rounded tiles the same size as the others, with none of the existing companies gone and Nurture in its own purple app icon, because showing it in white like the other logos would hide the word. For visitors who have set their phone or computer to reduce movement, the row wraps onto extra lines so that every logo shows.
+**What was done:** Cinnacare, Nurture UAE, Scentmatic and BookMeetings are now in the "Companies we have delivered for" row after Nivishe, in the order your slide names them, on dark rounded tiles the same size as the others with the same faint green glow at the foot, and none of the existing companies has gone. Nurture keeps its own purple app icon, now shown larger, because in white the whole icon becomes a blank square, and for visitors whose phone or computer is set to reduce movement the row stands still and wraps onto extra lines so every logo shows.
 
-**Note:** As in the institutions row, the four new tiles do not have the faint green glow of the older ones, so side by side they look slightly greyer. The Nurture icon is noticeably smaller than the logos beside it, and the word "Nurture" on it is readable but small. The order is Cinnacare, Scentmatic, BookMeetings, Nurture UAE, where your list said Cinnacare, Nurture UAE, Scentmatic, BookMeetings.
+**Whose instruction:** The glow at the foot of the new tiles is drawn in the site's own colours, which is Saif's rule, so it is a shade bluer than on the older tiles, and the row sits within the page's content width, as your slide 11 asked.
 
 **Live page:** https://pivotprime.ae/
 
-![On a computer, shown with movement turned off, so every logo is in view at once; otherwise the row scrolls](img/1-2.png)
-*On a computer, shown with movement turned off, so every logo is in view at once; otherwise the row scrolls: img/1-2.png*
+![On a computer](img/1-2.png)
+*On a computer: img/1-2.png*
 
-![On a phone, shown with movement turned off, so every logo is in view at once; otherwise the row scrolls](img/1-2-375.png)
-*On a phone, shown with movement turned off, so every logo is in view at once; otherwise the row scrolls: img/1-2-375.png*
+![On a phone](img/1-2-375.png)
+*On a phone: img/1-2-375.png*
 
-## Slide 2
+## Slide 2: The services section
 
-### 2.1 · Done with a note
+### 2.1 · Done
 
 > [1] Have refined it so it reads as 3 cards under diagnose, lead and build.
 
-**What was done:** The services section on the homepage and on the Services page now shows three cards, headed "WE DIAGNOSE", "WE LEAD" and "WE BUILD" in pale green labels, with your three titles in green. On a computer they sit side by side at equal widths, and on a phone they stack one under another in the same order.
+**What was done:** The services section on the homepage and on the Services page shows three cards headed "WE DIAGNOSE", "WE LEAD" and "WE BUILD", each label a full-width pale green bar with heavier dark lettering above your titles in green, with your rounded corners and, on a computer, the We Lead title breaking after "Chief of" as yours does. The cards now carry the faint shadow of your page, so the gaps between them stay the colour of the page, and they sit side by side at equal widths on a computer and stack in the same order on a phone.
 
-**Note:** Two things differ from your picture. Each pale green label is only as wide as its words, where yours runs the full width of the card, and its lettering is a mid green rather than your bold dark forest green, which makes it harder to read. The label ends are fully rounded, as in your picture. An earlier update wrongly described them as square-cornered.
+**Whose instruction:** On the homepage the cards are a little narrower than in your picture because every section there now shares one width, as your slide 11 asked, and the colours, including the thin line round each card, are the site's own, which Saif keeps the same across the site.
 
 **Live page:** https://pivotprime.ae/#services
 
@@ -65,13 +71,13 @@ The document with every version of the diagnostic advice, one for each of the si
 ![On a phone](img/2-1-375.png)
 *On a phone: img/2-1-375.png*
 
-### 2.2 · Done with a note
+### 2.2 · Done
 
 > And only 3 offers now, see the html for this here - https://claude.ai/code/artifact/eeb21f42-35a9-4dce-ac61-a9c22f2faa19
 
-**What was done:** Build and Place is now a short note in the We Lead card, and UAE Market Entry is a sentence in the We Diagnose card's note, both worded as in your picture, so the section shows only three offers. The page you linked still shows both as full offers, so the site follows your picture and your 30 September note instead.
+**What was done:** Build and Place is a short note in the We Lead card and UAE market entry a sentence in the We Diagnose card's note, both worded as in your picture, so the section shows only three offers, with a price on the audit only, the thin lines where yours are, your line spacing, and arrows after the links that match those on the page your note links to. The dark panel beneath has your margins, your smaller label, your heavier heading and your narrower, smaller text, so it stands as tall as yours, and its button has the arrow.
 
-**Note:** In your picture the We Diagnose and We Build cards have a thin line above their link; on the site only the We Lead card has a line, above its note. The "From AED 15,000" line is bold and dark, and on a computer slightly larger than the text around it, where yours is plain, smaller and grey-green. The dark panel underneath uses the wording of the page you linked, "NOT SURE" and "...also some steps on how to improve, immediately", rather than your picture's "NOT SURE WHERE TO START" and "...along with specific steps on how to start fixing it". Its "TAKE THE DIAGNOSTIC" button has no arrow, although your picture and your linked page both show one.
+**Whose instruction:** The panel keeps the wording of the page your note links to, its button stays rectangular as your 26 September note asked, it shares the homepage's one width from your slide 11, and its colours are the site's own, which Saif keeps the same across the site.
 
 **Live page:** https://pivotprime.ae/#services
 
@@ -84,13 +90,13 @@ The document with every version of the diagnostic advice, one for each of the si
 ![On a phone](img/2-2-375.png)
 *On a phone: img/2-2-375.png*
 
-### 2.3 · Done with a note
+### 2.3 · Done
 
 > The Services page still says "which of the five you actually need". Change it to three.
 
-**What was done:** The Services page no longer says "five" anywhere. The sentence was in the old sixth card, which your diagnostic panel replaced, so it has gone rather than being reworded, and the line under the heading now begins "Three services, used on their own or together."
+**What was done:** The Services page no longer says "five" anywhere: it shows the same three cards and diagnostic panel as the homepage, and the line under its heading begins "Three services, used on their own or together." The short description search engines show for the page names your three services instead of the five old ones.
 
-**Note:** Because the sentence has gone, the page has no line saying "which of the three you actually need". The short description that search engines show for the Services page, which is not visible on the page itself, still lists the five old services: operational audits, fractional leadership, embedded delivery teams, technology builds and UAE market entry.
+**Whose instruction:** The sentence was in the old sixth card, which your diagnostic panel replaced, so following your design it has gone with that card rather than being reworded.
 
 **Live page:** https://pivotprime.ae/services
 
@@ -100,15 +106,15 @@ The document with every version of the diagnostic advice, one for each of the si
 ![On a phone](img/2-3-375.png)
 *On a phone: img/2-3-375.png*
 
-## Slide 3
+## Slide 3: Meet the CEO & Founder
 
-### 3.1 · Done with a note
+### 3.1 · Done
 
 > [1] Eyebrow heading - Meet the CEO & Founder
 
-**What was done:** The founder section on the homepage now opens with your eyebrow heading, "MEET THE CEO & FOUNDER", in small green capitals just above the main heading.
+**What was done:** Your eyebrow heading, "MEET THE CEO & FOUNDER", sits in small green capitals just above the main heading of the founder section on the homepage, on a computer and on a phone. It has the letter spacing of your picture, and on a computer the space under it is also as in your picture.
 
-**Note:** The wording follows your written note rather than the "Our CEO and Founder" shown in your picture. The green on the cream background has about the same contrast as in your picture, which is below the level usually recommended for small text, so some visitors may find it a little hard to read.
+**Whose instruction:** The words follow your written note rather than the "Our CEO and Founder" in your picture, and the green and the cream behind it are the site's own colours, which Saif keeps across the whole site.
 
 **Live page:** https://pivotprime.ae/
 
@@ -125,7 +131,9 @@ The document with every version of the diagnostic advice, one for each of the si
 
 > then as per second pic here
 
-**What was done:** The section now runs as in your second picture: the eyebrow heading, your main heading, your two paragraphs, then a "MEET THE FULL TEAM" button that opens the team section of the About page. Your photo stays on the right on a computer, and above the text on a phone.
+**What was done:** The section now follows your second picture: your eyebrow heading, your main heading in the same heavier lettering with its lines as close together as yours, your two paragraphs with your more open line spacing, then a "MEET THE FULL TEAM" button the size of yours, in your heavier lettering with your long thin arrow one space after the words and no shadow, which opens the team section of the About page. Your photo stays on the right on a computer and above the text on a phone.
+
+**Whose instruction:** The button stays rectangular as your note on this slide asks, your first paragraph runs one line longer because it sits beside your photo within the single width your slide 11 asked for, and the colours are the site's own, which Saif keeps across the whole site.
 
 **Live page:** https://pivotprime.ae/
 
@@ -159,7 +167,7 @@ The document with every version of the diagnostic advice, one for each of the si
 
 > [2] – Use right hand side text and heading please.
 
-**What was done:** The old heading about the mathematician and both old paragraphs are gone from the homepage. Your heading and two paragraphs from the right-hand picture are in place word for word, with "$120 million" written out in full.
+**What was done:** The old heading about the mathematician and both old paragraphs are gone from the homepage. Your heading and two paragraphs from the right-hand picture are in place word for word, with "$120 million" written out in full, on a computer and on a phone.
 
 **Live page:** https://pivotprime.ae/
 
@@ -176,12 +184,14 @@ The document with every version of the diagnostic advice, one for each of the si
 
 > [3) reminder buttons to remain rectangular as currently is
 
-**What was done:** The button in this section keeps its rectangular shape with small rounded corners, as before, and so does the "TALK TO US" button in the top bar. None of the homepage buttons has become pill-shaped.
+**What was done:** The button in this section keeps its rectangular shape with small rounded corners, and so does the "TALK TO US" button in the top bar and in the menu on a phone. None of the homepage buttons has become a pill shape.
+
+**Whose instruction:** Only its rectangular shape is kept from your first picture, as your note asks: its words, heavier lettering, size, long thin arrow and lack of a shadow now follow your second picture.
 
 **Live page:** https://pivotprime.ae/
 
-![Your slide and the live site: compare the button's shape; its wording changed on your later instruction](img/3-5-compare.png)
-*Your slide and the live site: compare the button's shape; its wording changed on your later instruction: img/3-5-compare.png*
+![Your slide and the live site](img/3-5-compare.png)
+*Your slide and the live site: img/3-5-compare.png*
 
 ![On a computer](img/3-5.png)
 *On a computer: img/3-5.png*
@@ -189,13 +199,15 @@ The document with every version of the diagnostic advice, one for each of the si
 ![On a phone](img/3-5-375.png)
 *On a phone: img/3-5-375.png*
 
-## Slide 4
+## Slide 4: Your biography and LinkedIn
 
 ### 4.1 · Done
 
 > [1] Below add my linked in page, and say connect with Iram on Linkedin
 
-**What was done:** Your card on the About page now has a green "Connect with Iram on LinkedIn" button under your biography and tags, in the same style as the rest of the team's buttons. It opens the LinkedIn address Saif supplied for you in a new tab, rather than the company page.
+**What was done:** Your card on the About page has a green "Connect with Iram on LinkedIn" button under your biography and tags, the same size and style as the team's buttons in your team file. It opens your LinkedIn profile in a new tab, on a computer and on a phone, where its words run onto two lines to fit the card.
+
+**Whose instruction:** The button goes to the LinkedIn address Saif supplied for you, because your slides and your team file do not give one.
 
 **Live page:** https://pivotprime.ae/about#team
 
@@ -209,12 +221,9 @@ The document with every version of the diagnostic advice, one for each of the si
 
 > do this for all staff.
 
-**What was done:** Justin, Nisha, Saif and Khushi each have the same green "Connect with ... on LinkedIn" button under their biography and tags. Each one opens that person's own LinkedIn address from your team file in a new tab.
+**What was done:** Justin, Nisha, Saif and Khushi each have the same green "Connect with ... on LinkedIn" button under their biography and tags, and each opens that person's own LinkedIn profile from your team file in a new tab. On a computer Justin's and Nisha's buttons run onto two lines, as in your team file, and on a phone every button fits inside its card on two lines.
 
 **Live page:** https://pivotprime.ae/about#team
-
-![Your slide and the live site](img/4-2-compare.png)
-*Your slide and the live site: img/4-2-compare.png*
 
 ![On a computer](img/4-2.png)
 *On a computer: img/4-2.png*
@@ -222,7 +231,7 @@ The document with every version of the diagnostic advice, one for each of the si
 ![On a phone](img/4-2-375.png)
 *On a phone: img/4-2-375.png*
 
-### 4.3 · Done with a note
+### 4.3 · Done
 
 > [2] Under the heading of my name, the text will be:
 > Iram has held the roles that Pivot Prime now provides for its clients.
@@ -231,9 +240,9 @@ The document with every version of the diagnostic advice, one for each of the si
 > She is a Fellow of the Institute and Faculty of Actuaries,and holds an MSc in Mathematics with Distinction from the University of Birmingham.
 > She founded Pivot Prime on one conviction: the people best placed to fix a business are those who have run one.
 
-**What was done:** Your new biography is under your name on the About page, in five paragraphs, in your order and word for word as you wrote it, on a computer and on a phone.
+**What was done:** Your new biography sits directly under your name on the About page, in five paragraphs, in your order and word for word as you wrote it, and the old wording is gone. On a phone your photograph sits above the text.
 
-**Note:** Your slide reads "Actuaries,and" with no space after the comma; the site reads "Actuaries, and", with one space added. Every other character matches your text exactly.
+**Whose instruction:** The only change to your text is a space added after the comma in "Actuaries, and", where your slide has none.
 
 **Live page:** https://pivotprime.ae/about#team
 
@@ -247,7 +256,9 @@ The document with every version of the diagnostic advice, one for each of the si
 
 > Tags: Fellow, IFoA · Gallagher · AIG · MetLife · UK · Middle East · Africa · 16 years senior leadership.
 
-**What was done:** The tags under your biography follow your line exactly and in your order, as eight separate tags from "Fellow, IFoA" to "16 years senior leadership", with Gallagher before AIG and MetLife. The old grouped tags are gone.
+**What was done:** The tags under your biography read exactly as your line, in your order, as eight tags from "Fellow, IFoA" to "16 years senior leadership", with Gallagher before AIG and MetLife. The old grouped tags are gone, and on a phone they wrap onto three rows inside your card.
+
+**Whose instruction:** The tags are drawn as outlines, at the size in the team file you sent with your next slide, so they match the tags on the rest of the team.
 
 **Live page:** https://pivotprime.ae/about#team
 
@@ -257,15 +268,13 @@ The document with every version of the diagnostic advice, one for each of the si
 ![On a phone](img/4-4-375.png)
 *On a phone: img/4-4-375.png*
 
-## Slide 5
+## Slide 5: The team
 
-### 5.1 · Done with a note
+### 5.1 · Done
 
 > We have to add Nisha to the website – her bio and details are attached
 
-**What was done:** Nisha is on the About page, second in the row between Justin and Saif. Her job title, biography, tags and LinkedIn button match your file on a computer and on a phone, and her photograph is the same picture, re-cut so there is space above her head as in yours.
-
-**Note:** Her photograph is framed very slightly closer than yours, by about six per cent. It ends at her watch, where yours shows a little more below it, down to her bracelet and belt, and she sits a touch nearer the centre.
+**What was done:** Nisha is on the About page, second in the row between Justin and Saif, with her job title, biography, tags and photograph as in your file and her photograph framed as in your picture. Her card no longer has a thin dark edge, so her photograph runs right to the edge of the card, and her tags sit a little further below her biography, as in your file.
 
 **Live page:** https://pivotprime.ae/about#team
 
@@ -278,13 +287,13 @@ The document with every version of the diagnostic advice, one for each of the si
 ![On a phone](img/5-1-375.png)
 *On a phone: img/5-1-375.png*
 
-### 5.2 · Done with a note
+### 5.2 · Done
 
 > Everyones bio sections to be updated a bit see attached html
 
-**What was done:** Justin's, Nisha's, Saif's and Khushi's biographies, job titles and tags now read exactly as in your file, and the old seat labels and short biographies are gone. Khushi's wide card follows your file too: on a computer her text starts at the top with the LinkedIn button at the foot, and on a phone her photo is the same shape as the three above.
+**What was done:** Every biography, job title and tag reads exactly as in your file, in your layout of three tall cards with Khushi's wide card beneath, with the names in your heavier lettering, the lettering sizes of your file and no card shadows. The thin dark line round each card is gone, so every photograph runs right to the edge of its card, and the tags sit a little further below each biography, as in your file.
 
-**Note:** A few small styling differences remain. The biography text is plain white where your file uses a slightly softer white; your tags are outlines where the site's have a faint fill; and your green panel is a touch more blue-green than the site's own dark green. On a computer there is a little more space between the job title and the name on Justin's, Nisha's and Saif's cards, which keeps the three names level on narrower screens, and Khushi's text sits slightly closer to the edge of her panel than in your file. Saif's photograph is framed wider than in your file, showing more of his jacket and the room behind him. It is the closer framing made on Saif's instruction on 3 September, and the tighter photo your file uses was not among the files we received.
+**Whose instruction:** The cards keep the site's own dark green and Saif's photograph keeps the framing he chose, both on Saif's instruction.
 
 **Live page:** https://pivotprime.ae/about#team
 
@@ -297,13 +306,13 @@ The document with every version of the diagnostic advice, one for each of the si
 ![On a phone](img/5-2-375.png)
 *On a phone: img/5-2-375.png*
 
-### 5.3 · Done with a note
+### 5.3 · Done
 
 > Add everyone’s linked in to the bottom of their bios
 
-**What was done:** Everyone on the team, including you, now has a green "Connect with [name] on LinkedIn" button at the foot of their biography, and each one opens that person's LinkedIn address in a new tab. Khushi's button now sits at the foot of her card, as in your picture.
+**What was done:** Everyone on the team, including you, has a green 'Connect with [name] on LinkedIn' button at the foot of their biography that opens their LinkedIn page in a new tab, with the lettering size and spacing of your file. As in your own file, the labels on Justin's and Nisha's buttons run onto two lines on a computer, and on a phone Saif's label now fits on one line.
 
-**Note:** Your own button goes to linkedin.com/in/iram-kauser-79539938. Your team file lists links for the other four people only, so your address is the one Saif supplied.
+**Whose instruction:** Your own button opens the LinkedIn address Saif supplied, because your team file gives addresses for the other four people only.
 
 **Live page:** https://pivotprime.ae/about#team
 
@@ -316,7 +325,7 @@ The document with every version of the diagnostic advice, one for each of the si
 ![On a phone](img/5-3-375.png)
 *On a phone: img/5-3-375.png*
 
-## Slide 6
+## Slide 6: The Nurture screenshot
 
 ### 6.1 · Open
 
@@ -334,15 +343,15 @@ The document with every version of the diagnostic advice, one for each of the si
 ![On a phone](img/6-1-375.png)
 *On a phone: img/6-1-375.png*
 
-## Slide 7
+## Slide 7: The diagnostic opening screen
 
-### 7.1 · Done with a note
+### 7.1 · Done
 
 > [1] FREE DIAGNOSTIC, SLIGHTLY BIGGER, OR HIGHLIGHTED,
 
-**What was done:** The label on the diagnostic page now reads "FREE DIAGNOSTIC", without the old "Pivot Prime" in front. It is bigger than before and bigger than the small labels above headings elsewhere on the site, with the words in the mid green from your picture on a pale green highlight.
+**What was done:** The label now reads FREE DIAGNOSTIC without the old Pivot Prime in front. On a computer it is the size your picture shows, which is bigger than before and bigger than the small labels elsewhere on the site, and it sits on a pale green highlight.
 
-**Note:** Your picture has no box behind the label; the pale green box was added to highlight it, as you asked. The mid green words on the pale green box are below the contrast usually recommended for text this size, and slightly lower than in your own picture, so some visitors may find the label a little hard to read.
+**Whose instruction:** The pale green box behind the label follows your note asking for the label to be bigger or highlighted; your picture shows it without one.
 
 **Live page:** https://pivotprime.ae/diagnostic
 
@@ -355,13 +364,13 @@ The document with every version of the diagnostic advice, one for each of the si
 ![On a phone](img/7-1-375.png)
 *On a phone: img/7-1-375.png*
 
-### 7.2 · Done with a note
+### 7.2 · Done
 
 > [2] Main page to look like second pic shown here
 
-**What was done:** The opening screen of the diagnostic now follows your second picture from top to bottom, centred: the label, the two-line heading, the paragraph, the four points with bright green dots, the "START THE DIAGNOSTIC" button with the arrow, and the small note underneath.
+**What was done:** The opening screen follows your second picture from top to bottom, centred, with every part from the label to the note under the button at the size and spacing your picture shows. The heading is now in the heaviest lettering and the button in the next heaviest, as in your picture.
 
-**Note:** Everything on the opening screen is smaller than in your picture: the paragraph, the four points and the note under the button are about two thirds of the size, and the button is the same size as the site's other green buttons. The button has slightly rounded corners rather than round ends, as your note [3] asks, and the label sits on a pale green highlight, following your note [1]. The first heading line and the paragraph use the site's own very dark green and neutral grey, where yours are near-black and grey-green, though they look almost the same.
+**Whose instruction:** The rectangular button, the pale green box behind the label and the cream background follow your own notes on this slide, and the text and the button use the site's own colours closest to yours, which Saif keeps to, with the small line under the button a shade darker so it stays easy to read.
 
 **Live page:** https://pivotprime.ae/diagnostic
 
@@ -378,7 +387,7 @@ The document with every version of the diagnostic advice, one for each of the si
 
 > remove all the stretched founder stuff etc
 
-**What was done:** The four reader cards, starting with "The stretched founder", are gone from the opening screen of the diagnostic. The paragraph now runs straight into the four points and the start button, with no gap left behind.
+**What was done:** The four reader cards, starting with "The stretched founder", are gone from the opening screen. The paragraph now leads straight into the four points and the start button, with the spacing your picture shows.
 
 **Live page:** https://pivotprime.ae/diagnostic
 
@@ -395,7 +404,9 @@ The document with every version of the diagnostic advice, one for each of the si
 
 > and have the lighter background similar to most of the website.
 
-**What was done:** The dark green background is gone from the diagnostic's opening screen. It now sits on the same light cream as most of the website, under the usual dark green top bar, with dark and green text as in your picture.
+**What was done:** The dark green background is gone: the opening screen now sits on the same light cream as most of the website, under the usual top bar, with near-black and green text as in your picture.
+
+**Whose instruction:** The cream is the background used across most of the website, as your note asked, so it is a touch warmer than the grey-white in your picture.
 
 **Live page:** https://pivotprime.ae/diagnostic
 
@@ -412,7 +423,7 @@ The document with every version of the diagnostic advice, one for each of the si
 
 > Keep wording as shown in this picture 
 
-**What was done:** Every line on the diagnostic's opening screen now uses the wording from your picture, including the button, which reads "START THE DIAGNOSTIC" with the arrow, as you drew it. The old heading and paragraph are gone.
+**What was done:** Every line on the opening screen uses the wording from your picture, including START THE DIAGNOSTIC with the arrow. On a computer the paragraph and the note also break onto new lines where yours do.
 
 **Live page:** https://pivotprime.ae/diagnostic
 
@@ -429,7 +440,9 @@ The document with every version of the diagnostic advice, one for each of the si
 
 > [3], start the diagnostic button to be rectangular like all other buttons and example shown below
 
-**What was done:** The start button now has the same slightly rounded rectangular corners, bright green fill and dark lettering as the homepage button in your example. It also uses the same capital lettering and size as the site's other green buttons.
+**What was done:** The start button now has the same slightly rounded rectangular corners as the homepage button in your example and every other green button on the site, in the same bright green with dark capital lettering.
+
+**Whose instruction:** It is larger than the button in your example, with larger and heavier lettering, because your note [2] asks for the page to look like your second picture, which draws it this way.
 
 **Live page:** https://pivotprime.ae/diagnostic
 
@@ -442,7 +455,7 @@ The document with every version of the diagnostic advice, one for each of the si
 ![On a phone](img/7-6-375.png)
 *On a phone: img/7-6-375.png*
 
-## Slide 8
+## Slide 8: The diagnostic results
 
 ### 8.1 · Done
 
@@ -455,13 +468,13 @@ The document with every version of the diagnostic advice, one for each of the si
 ![On a computer](img/8-1.png)
 *On a computer: img/8-1.png*
 
-### 8.2 · Done with a note
+### 8.2 · Done
 
 > The data all shown here, it will all pop up on screen when they enter their email address in, and look basically like this - https://claude.ai/code/artifact/e38bc4c5-1a88-4015-bed0-0016d663ae84
 
-**What was done:** Once someone fills in their details and presses "Unlock my score", your three sections appear on the same screen, in your order and word for word as in your pictures, and none of them shows before that.
+**What was done:** Once someone fills in their details and presses "Unlock my score", your three sections appear on the same screen, on a computer and on a phone, in your order and word for word as in your pictures. None of them shows before that.
 
-**Note:** The two buttons under them read "Book a call" and "Talk to us on WhatsApp" and are rectangular, following your later instructions rather than the round "Book a call with Iram" in your picture. The card above the sections still says the full report has been emailed and asks them to check their inbox. The site is still set to send that email, although no real report was sent during the check.
+**Whose instruction:** The two buttons read "Book a call" and "Talk to us on WhatsApp" and are rectangular, following your later instructions rather than the round "Book a call with Iram" in your picture, and the greens are the site's own colours, following Saif's rule for the site's palette.
 
 **Live page:** https://pivotprime.ae/diagnostic
 
@@ -488,15 +501,13 @@ The document with every version of the diagnostic advice, one for each of the si
 ![On a phone](img/8-3-375.png)
 *On a phone: img/8-3-375.png*
 
-## Slide 9
+## Slide 9: The Insights sign-up
 
-### 9.1 · Done with a note
+### 9.1 · Done
 
 > [1] Fix this, it doesn’t work when we subscribe
 
-**What was done:** The sign-up was failing because the form sent from an email address the mail service had not approved; it now uses the same approved address as the contact form and the diagnostic. In the check, where the sign-up was stopped and answered inside the browser so that no email went out, pressing "Subscribe" replaced the email field and button with "You are on the list. The next piece comes to you." instead of the error in your picture.
-
-**Note:** No real sign-up has been sent from start to finish, so that nobody was emailed: the form was checked on a computer and on a phone up to the point of sending. This means nobody has yet seen the two sign-up emails arrive, the confirmation to the subscriber and the notice to hello@pivotprime.ae. No list of subscribers is kept, so although the form promises "The next piece comes to you" and "Unsubscribe any time", nothing yet sends subscribers new articles or lets them unsubscribe (see 9.3 below).
+**What was done:** The sign-up failed because it sent from an email address the mail service had not approved; it now uses the same approved address as the contact form, and a real sign-up made on the live site on 2 October, with an address clearly marked as a test, showed "You are on the list. The next piece comes to you." instead of the error in your picture. The site only shows that message once the mail service has accepted the notice to hello@pivotprime.ae, which carries the subject "Insights subscription: delivered+test-please-ignore@resend.dev"; we could not see that inbox ourselves to confirm it arrived.
 
 **Live page:** https://pivotprime.ae/insights
 
@@ -524,9 +535,9 @@ The document with every version of the diagnostic advice, one for each of the si
 
 > When the next article is published, test that subscribers receive the email and that its link opens the article.
 
-**What was done:** This test has not been done yet: the September articles went live on 1 October, but the site has not emailed them to anyone, because nothing on the site emails subscribers when an article is published and no list of subscribers is kept. Each sign-up is only meant to produce a notice in the hello@pivotprime.ae inbox and a confirmation to the subscriber, and neither email has yet been seen arriving.
+**What was done:** This test has not been run yet. Each sign-up sends the new subscriber a confirmation and sends a notice to the hello@pivotprime.ae inbox, but the site does not email subscribers when an article is published, because that is a new feature that has not been built.
 
-**Still needed:** Needed from you or Saif: a way of emailing subscribers when a new article is published; the addresses of the people who have signed up so far, gathered from any sign-up notices in the hello@pivotprime.ae inbox; and a decision on whether the three September articles should now be sent to them. The test can then be run on the next article.
+**Still needed:** Emailing subscribers when an article is published is a new feature that has not been built. Once it is agreed and built, and the sign-ups so far are gathered from the notices in the hello@pivotprime.ae inbox, the test can be run on the next article.
 
 **Live page:** https://pivotprime.ae/insights
 
@@ -536,16 +547,16 @@ The document with every version of the diagnostic advice, one for each of the si
 ![On a phone](img/9-3-375.png)
 *On a phone: img/9-3-375.png*
 
-## Slide 10
+## Slide 10: The September articles
 
-### 10.1 · Done with a note
+### 10.1 · Done
 
 > [1] Add the three articles shown below, for September – find full articles at –
 > https://claude.ai/code/artifact/374a7554-969c-4e4f-bb74-a4056085bd13
 
-**What was done:** The three September articles are now on the Insights page, after the August ones and in the order your picture shows, and each opens its own page with the full article from your link, word for word. The four August articles are still there, so the page now lists seven.
+**What was done:** The three September articles are on the Insights page after the August ones, in the order your picture shows, and each opens its own page with the full article from your link, word for word. All six cards follow the design in your picture, and the small arrow at the foot of each card is now drawn into the page at the size of the one in your picture, so every computer and phone shows the same slim arrow.
 
-**Note:** The cards use the same design as the August cards, so a few details differ from your picture: the date and reading time sit beside the author's name rather than under it, the initials are bright green rather than white, and on a computer the cards are narrower, so "The case for fractional leadership in a Dubai growth business" runs to three lines instead of two. On a computer there is also a gap under the UAE Market Entry card's title, the line above the author runs the full width of the card, and the cards are a warm off-white on cream rather than your pure white on grey. The category tabs are unchanged ("All", "Execution", "Leadership", "Technology" and "Finance"), so the UAE Market Entry and fractional leadership articles appear only under "All", while the CFO article also appears under "Finance". Each article page shows the short summary from its card as a line under the headline, and the author's role, as used on the August articles, sits under each name.
+**Whose instruction:** The page behind the cards stays the site's own cream and the text and line colours are the nearest the site's colours allow, following Saif's rule that the site keeps to its own palette.
 
 **Live page:** https://pivotprime.ae/insights
 
@@ -558,13 +569,13 @@ The document with every version of the diagnostic advice, one for each of the si
 ![On a phone](img/10-1-375.png)
 *On a phone: img/10-1-375.png*
 
-### 10.2 · Done with a note
+### 10.2 · Done
 
 > fractional CFO (by Justin Ford)
 
 **What was done:** The CFO article is credited to Justin Ford, with his initials, both on its card on the Insights page and on the article page itself, where his role, "Fractional CFO, Pivot Prime", sits under his name.
 
-**Note:** This follows your slide 10 and its picture, which name Justin. The articles page you linked credits this article to you, so that page was not followed on this point.
+**Whose instruction:** This follows your slide 10 note and its picture, which name Justin, rather than the articles page you linked, which had it under your name.
 
 **Live page:** https://pivotprime.ae/insights/fractional-cfo
 
@@ -577,15 +588,15 @@ The document with every version of the diagnostic advice, one for each of the si
 ![On a phone](img/10-2-375.png)
 *On a phone: img/10-2-375.png*
 
-## Slide 11
+## Slide 11: The homepage as one flow
 
-### 11.1 · Done with a note
+### 11.1 · Done
 
 > Please use one content width for every section, so all headings, cards and buttons start on the same left edge.
 
-**What was done:** Every section of the homepage now uses the same width, from the logo rows down to the closing box. The headings, cards and buttons your red lines marked all start on one left edge, and the text inside the three white boxes (Who we serve, case studies and Our fees) starts on one inner edge.
+**What was done:** Every section of the homepage now uses one width, so headings, cards and buttons start on the same left edge, and every section stays within the same right edge, from the top of the page down to the closing box, on a computer and on a phone, including the places your red lines marked. Inside the three white boxes, the text and buttons start on one shared inner edge.
 
-**Note:** Two parts of the page still follow your earlier designs: the closing "Find out what is holding your business back." box has a centred heading and centred buttons, and on a computer the "TAKE THE DIAGNOSTIC" button sits on the right of the "Start with the diagnostic" panel. Inside the dark green panels and the service cards, the text starts slightly closer to the edge than inside the three white boxes.
+**Whose instruction:** The closing box keeps its centred layout, as in your 26 September picture of it, and on a computer the TAKE THE DIAGNOSTIC button stays on the right of the "Start with the diagnostic" panel, as in your slide 2 picture of that panel.
 
 **Live page:** https://pivotprime.ae/
 
@@ -595,13 +606,11 @@ The document with every version of the diagnostic advice, one for each of the si
 ![On a phone](img/11-1-375.png)
 *On a phone: img/11-1-375.png*
 
-### 11.2 · Done with a note
+### 11.2 · Done
 
 > Use the same spacing between every section
 
-**What was done:** The space between sections is now the same all the way down the homepage, on a computer and on a phone, including the three gaps you marked.
-
-**Note:** The one different gap is just under the large photograph at the top of the homepage, before the "As featured in" line, where the space is a little over half the size of the others.
+**What was done:** The space under the large photograph at the top of the homepage, and on a phone the space under the small dots beneath the results, now match every other gap, so all nine gaps between sections are the same, including the three you marked. This holds on a computer and on a phone, whether or not the phone is set to reduce movement.
 
 **Live page:** https://pivotprime.ae/
 
@@ -615,7 +624,7 @@ The document with every version of the diagnostic advice, one for each of the si
 
 > remove the thin divider line above Who we serve.
 
-**What was done:** The thin line above Who we serve has gone, on a computer and on a phone. Between the "Talk to us" button and Who we serve there is now only the page background, apart from the button's own soft shadow just beneath it, which fades out within about 10 pixels and on a phone runs the full width of the button.
+**What was done:** The thin line above Who we serve has gone, on a computer and on a phone. Between the Talk to us button and WHO WE SERVE there is now only the page background, apart from the button's own soft shadow, which fades away just below the button.
 
 **Live page:** https://pivotprime.ae/
 
@@ -625,13 +634,13 @@ The document with every version of the diagnostic advice, one for each of the si
 ![On a phone](img/11-3-375.png)
 *On a phone: img/11-3-375.png*
 
-### 11.4 · Done with a note
+### 11.4 · Done
 
 > Use one background colour for boxed sections.
 
-**What was done:** The Who we serve, case studies and Our fees boxes are now all the same pure white, on a computer and on a phone, and the service cards are pure white too.
+**What was done:** The Who we serve, case studies and Our fees boxes are all the same pure white on a computer and on a phone, and none of the three has a shadow any more.
 
-**Note:** The closing "Find out what is holding your business back." box is still dark green, as before. The smaller cream panels inside sections are also unchanged: the ten buttons in the list of symptoms and the fee calculator panel inside the Our fees box. The Who we serve box keeps a soft shadow that fades out evenly; the case studies and Our fees boxes have none.
+**Whose instruction:** The closing box stays dark green, as in your 26 September picture of it.
 
 **Live page:** https://pivotprime.ae/
 
@@ -645,7 +654,7 @@ The document with every version of the diagnostic advice, one for each of the si
 
 > remove the band.
 
-**What was done:** The grey band under the case studies box has gone. The area under and beside the box now matches the page background on a computer and on a phone, on the homepage and the About page, and the space between sections has not changed.
+**What was done:** The grey band under the case studies box has gone: under the box and beside it there is only the plain page background, on a computer and on a phone.
 
 **Live page:** https://pivotprime.ae/
 
@@ -657,7 +666,7 @@ The document with every version of the diagnostic advice, one for each of the si
 
 ## Your earlier comments
 
-Your 23 August and 26 September decks were checked too, to make sure nothing they asked for has been undone. Of the 86 earlier requests that your 30 September deck did not change, 74 are in place, 6 were put right during this check, 3 were changed by your later instructions and 3 are still to do.
+Your 23 August and 26 September decks were checked to make sure nothing they asked for has since been undone. Of the 86 earlier requests your 30 September deck did not change, 74 are in place, 6 were put right during this check, 3 were changed by your later instructions and 3 are still to do.
 
 ### Put right in this check
 
@@ -747,7 +756,7 @@ Your 23 August and 26 September decks were checked too, to make sure nothing the
 - **23 August deck, slide 1:** Put Strategy, Operations, Technology, Execution at the top. The line above the headline names Strategy, Operations, Technology and Execution in your order, on one line on a computer and on two lines on a phone.
 - **23 August deck, slide 1:** Set the "Most consultants" line apart with a different font or italics. The "Most consultants recommend the fix" line and the green, underlined line after it are both in italics, so they stand apart from the heading and paragraph around them.
 - **23 August deck, slide 1:** Cut the paragraph at the top of the homepage down to the sentence about finding what is holding your business back. The paragraph under the headline is now only that sentence, and it begins "We find what is holding", without the word "out" from your note.
-- **23 August deck, slide 2:** Improve the logo rows with proper logos. The logo rows use proper logo files, with the two group names shown as plain text tiles, and the two rows scroll in opposite directions. The older tiles carry a faint green glow at their foot and the seven newest are plain, and the Ford and Nurture logos keep their own colours.
+- **23 August deck, slide 2:** Improve the logo rows with proper logos. The logo rows use proper logo files, with the two group names shown as plain text tiles, and the two rows scroll in opposite directions. Every tile, old and new, now carries the same faint green glow at its foot, and the Ford and Nurture logos keep their own colours.
 - **23 August deck, slide 3:** Give each results figure its own visual style. Each of the five results cards has its own drawing, so no two look alike, and the old rotating ring chart is gone.
 - **23 August deck, slide 3:** Try warmer colour options, using the ivory instead of cold white. The pages sit on a warm cream instead of cold white, mixed from your ivory and linen rather than the ivory alone, with no gold or tan. White is used only inside boxes and cards, such as those described under 11.4, never for a whole section.
 - **23 August deck, slide 3:** Make the results cards from the HTML you sent. The five results cards follow your HTML file with your figures and drawings, one reads "Increase in profit" rather than your picture's "Increase in profit margin", and the short line under each figure is back because your file includes it.
@@ -787,7 +796,7 @@ Your 23 August and 26 September decks were checked too, to make sure nothing the
 ## Still open, and what each needs
 
 - **Slide 6:** A screenshot of the live Nurture app's home screen, the same screen as now, showing a real-looking name in place of "Test App", taken from a demo account, because a real family's name and details should not appear on a public website. It is needed from you or Saif, taken on a phone in the same tall shape, and it will simply replace the current picture on the same card.
-- **Slide 9:** Needed from you or Saif: a way of emailing subscribers when a new article is published; the addresses of the people who have signed up so far, gathered from any sign-up notices in the hello@pivotprime.ae inbox; and a decision on whether the three September articles should now be sent to them. The test can then be run on the next article.
+- **Slide 9:** Emailing subscribers when an article is published is a new feature that has not been built. Once it is agreed and built, and the sign-ups so far are gathered from the notices in the hello@pivotprime.ae inbox, the test can be run on the next article.
 - **23 August deck, slide 1:** From you: a video for the top of the homepage, which you have the rights to use.
 - **23 August deck, slide 1:** The exact words for the second button at the top of the homepage, from you. Until then it keeps "SEE WHAT WE ACTUALLY DO".
 - **23 August deck, slide 15:** From Saif: the list of projects to show, a screenshot or picture of each with client details blurred, and which client names can be shown. His profile on the About page already names four of his projects, but there are no pictures yet.
