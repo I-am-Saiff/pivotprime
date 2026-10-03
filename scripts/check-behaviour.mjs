@@ -503,20 +503,102 @@ const openPanels = (page) =>
   await page.close();
 }
 
-// THE NEW LOGO TILES CARRY THE OLD TILES' GLOW. The four tiles drawn in CSS
-// (Ford, dubizzle, OSN and the delivered-for four) were a flat near-black
-// beside the six original pictures, which have a faint green glow at the foot.
-// Each CSS tile must paint the glow: a radial gradient over black.
+// EVERY LOGO TILE IS THE SAME TILE, her note of 3 October: "Make the logos same
+// treatment sir u cant have it messy like this some colour and not" and "please
+// make all same size also the AIG became so small now?"
+//
+// Three assertions, each on what is drawn rather than on the CSS:
+//   one panel: all twenty tiles carry the .logo-tile glow (it was seven, the
+//     company files, beside thirteen pictures with their own ground baked in);
+//   no colour: in each tile's own pixels, no pixel of the mark (a pixel that
+//     changes when the mark is hidden) is coloured, which Ford's navy oval and
+//     Nurture's purple badge both were;
+//   one size: each mark's measured box fits inside 60% by 40% of its tile and
+//     fills that shared target to within 15% (src/lib/logo-mark.ts), at a
+//     phone's and a computer's width, with nothing touching a tile's edge.
+// Movement is reduced so the rows stand still and wrap; the second copy of each
+// row, which only exists for the loop, is not measured.
 {
-  const page = await browser.newPage();
-  await page.setViewportSize({ width: 1440, height: 900 });
-  await page.goto(BASE, { waitUntil: "load" });
-  const flat = await page.$$eval("[aria-hidden='false'] .logo-tile, [aria-hidden='false'] .rounded-lg.aspect-\\[345\\/185\\]", (tiles) =>
-    tiles.filter((t) => !/radial-gradient/.test(getComputedStyle(t).backgroundImage)).map((t) => (t.querySelector("img, svg")?.getAttribute("alt") || t.querySelector("svg")?.getAttribute("aria-label") || "?")),
-  );
-  const count = await page.$$eval("[aria-hidden='false'] .logo-tile", (t) => t.length);
-  expect("every logo tile drawn on the page carries the glow", count === 7 && flat.length === 0, `${count} glow tiles, flat: ${flat.join(", ")}`);
-  await page.close();
+  const { createRequire } = await import("node:module");
+  const sharp = createRequire(import.meta.url)("sharp");
+  for (const [label, width, mobile] of [["desktop", 1440, false], ["touch", 375, true]]) {
+    const context = await browser.newContext({ viewport: { width, height: 900 }, deviceScaleFactor: 2, isMobile: mobile, hasTouch: mobile, reducedMotion: "reduce" });
+    const page = await context.newPage();
+    await page.goto(BASE, { waitUntil: "load" });
+    await page.addStyleTag({ content: "header, nav, .fixed { visibility: hidden !important; }" });
+    const tiles = page.locator("[aria-hidden='false'] [data-logo-tile]");
+    const n = await tiles.count();
+    const flat = await page.$$eval("[aria-hidden='false'] [data-logo-tile]", (t) => t.filter((x) => !x.classList.contains("logo-tile") || !/radial-gradient/.test(getComputedStyle(x).backgroundImage)).length);
+    expect(`${label}: all twenty logo tiles are the same glow tile`, n === 20 && flat === 0, `${n} tiles, ${flat} without the glow`);
+    const coloured = [], offSize = [], sizes = [];
+    for (let i = 0; i < n; i++) {
+      const t = tiles.nth(i);
+      await t.scrollIntoViewIfNeeded();
+      await page.waitForFunction((el) => { const im = el.querySelector("img"); return !im || (im.complete && im.naturalWidth > 0); }, await t.elementHandle());
+      await page.waitForTimeout(80);
+      const name = await t.evaluate((el) => el.querySelector("img")?.alt || el.querySelector("svg")?.getAttribute("aria-label") || "?");
+      const shot = await sharp(await t.screenshot()).raw().toBuffer({ resolveWithObject: true });
+      await t.evaluate((el) => (el.firstElementChild.style.visibility = "hidden"));
+      const ground = await sharp(await t.screenshot()).raw().toBuffer();
+      await t.evaluate((el) => (el.firstElementChild.style.visibility = ""));
+      const { data, info } = shot; const ch = info.channels;
+      let x0 = 1e9, y0 = 1e9, x1 = -1, y1 = -1, worst = 0;
+      for (let y = 0; y < info.height; y++) for (let x = 0; x < info.width; x++) {
+        const o = (y * info.width + x) * ch;
+        if (Math.abs(data[o] - ground[o]) + Math.abs(data[o + 1] - ground[o + 1]) + Math.abs(data[o + 2] - ground[o + 2]) <= 45) continue;
+        x0 = Math.min(x0, x); y0 = Math.min(y0, y); x1 = Math.max(x1, x); y1 = Math.max(y1, y);
+        worst = Math.max(worst, Math.max(data[o], data[o + 1], data[o + 2]) - Math.min(data[o], data[o + 1], data[o + 2]));
+      }
+      // Chroma above 60 of 255 is a colour; the white marks' anti-aliased edges
+      // against the green glow measure 22 at most.
+      if (worst > 60) coloured.push(`${name} ${worst}`);
+      if (x1 < 0) { offSize.push(`${name}: no mark found`); continue; }
+      const w = (x1 - x0 + 1) / info.width, h = (y1 - y0 + 1) / info.height;
+      const fill = Math.max(w / 0.6, h / 0.4, Math.sqrt((w * h) / 0.11));
+      sizes.push(`${name} ${(w * 100).toFixed(0)}x${(h * 100).toFixed(0)}% ${fill.toFixed(2)}`);
+      const edge = x0 < 4 || y0 < 4 || x1 > info.width - 5 || y1 > info.height - 5;
+      if (w > 0.62 || h > 0.42 || fill < 0.85 || fill > 1.15 || edge) offSize.push(`${name} ${(w * 100).toFixed(1)}x${(h * 100).toFixed(1)}% fill ${fill.toFixed(2)}${edge ? " touches the edge" : ""}`);
+    }
+    expect(`${label}: no logo tile has a coloured pixel`, n === 20 && coloured.length === 0, coloured.join(", ") || "none coloured");
+    expect(`${label}: every logo mark is the shared size, inside the box and clear of the edge`, n === 20 && offSize.length === 0, offSize.join("; ") || sizes.join("; "));
+    await context.close();
+  }
+}
+
+// THE HERO LINE BELONGS TO THE FIRST BUTTON ON A PHONE, her note of 3 October:
+// "On the mobile this is still coming under both buttons so not clear but on
+// desktop its fine". Below 640px: the first button, then the line close under
+// it, then the second button further down. From 640px: exactly as before, the
+// two buttons side by side and the line under the first one only.
+{
+  const read = (page) => page.evaluate(() => {
+    const b1 = [...document.querySelectorAll("main a")].find((x) => /get your operations score/i.test(x.textContent));
+    const b2 = [...document.querySelectorAll("main a")].find((x) => /see what we actually do/i.test(x.textContent));
+    const line = b1 && [...b1.parentElement.querySelectorAll("p")].find((x) => /four-minute diagnostic/i.test(x.textContent));
+    const R = (e) => e && e.getBoundingClientRect();
+    return line ? { b1: R(b1).toJSON(), b2: R(b2).toJSON(), line: R(line).toJSON() } : null;
+  });
+  for (const width of [375, 390, 430]) {
+    const context = await browser.newContext({ viewport: { width, height: 900 }, isMobile: true, hasTouch: true, deviceScaleFactor: 2 });
+    const page = await context.newPage();
+    await page.goto(BASE, { waitUntil: "load" });
+    const g = await read(page);
+    if (process.env.NEXT_PUBLIC_ENABLE_DIAGNOSTIC !== "true") { await context.close(); continue; }
+    const under = g && g.line.top - g.b1.bottom, above = g && g.b2.top - g.line.bottom;
+    expect(`${width}: the hero line sits directly under GET YOUR OPERATIONS SCORE and above the second button`,
+      !!g && under >= 0 && under <= 12 && above >= 16 && Math.abs(g.line.left - g.b1.left) < 1, g ? `button 1 to line ${under.toFixed(1)}px, line to button 2 ${above.toFixed(1)}px` : "line not found");
+    await context.close();
+  }
+  if (process.env.NEXT_PUBLIC_ENABLE_DIAGNOSTIC === "true") {
+    const page = await browser.newPage();
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(BASE, { waitUntil: "load" });
+    const g = await read(page);
+    expect("1440: the hero buttons sit side by side with the line under the first one only, as before",
+      !!g && Math.abs(g.b1.top - g.b2.top) < 1 && g.b2.left > g.b1.right && Math.abs(g.line.left - g.b1.left) < 1 && Math.abs(g.line.top - g.b1.bottom - 16) < 1 && g.line.width <= g.b1.width + 1,
+      g ? JSON.stringify({ b1: [g.b1.left, g.b1.top], b2: [g.b2.left, g.b2.top], line: [g.line.left, g.line.top, g.line.width] }) : "line not found");
+    await page.close();
+  }
 }
 
 // NO GREY BAND UNDER THE CASE STUDIES. Her v3 slide 11: "remove the band". The

@@ -336,6 +336,40 @@
   }
 }
 
+/* ONE TREATMENT FOR EVERY LOGO, her note of 3 October. Each logo is a white
+   mark on the .logo-tile panel, done here so no company's file is edited.
+   Placed and sized by src/lib/logo-mark.ts; max-width:none undoes the base img
+   rule, which would otherwise hold a scaled-up picture to the tile's width.
+
+   line:   transparent line art; every inked pixel goes white.
+   filled: a filled shape with lettering knocked out of it (Ford's oval,
+           Nurture's badge): inverted, so the fill goes white and the lettering
+           dark, then screened onto the panel so the dark parts show the panel
+           itself rather than a black patch.
+   baked:  the older pictures, a dark ground with a white logo in it, clipped
+           to the logo. grayscale takes the last tint out; brightness and
+           contrast then put the black point at 55 of 255, just above the
+           brightest ground near any mark (53, measured in all thirteen files),
+           and the white point at 150, so white stays white, the one grey,
+           the half of Gallagher's emblem that forms its G, stays a mid grey
+           rather than merging with the white half, and the ground goes to pure
+           black, which screen then drops. */
+.logo-mark {
+  position: absolute;
+  max-width: none;
+}
+.logo-mark--line {
+  filter: brightness(0) invert(1);
+}
+.logo-mark--filled {
+  filter: grayscale(1) invert(1) contrast(4);
+  mix-blend-mode: screen;
+}
+.logo-mark--baked {
+  filter: grayscale(1) brightness(1.244) contrast(2.158);
+  mix-blend-mode: screen;
+}
+
 /* The strip runs as two rows moving in opposite directions, matching the live
    site. Each track holds its content twice, so translating exactly -50% lands
    the copy where the original started and the loop has no seam. */

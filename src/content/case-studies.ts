@@ -139,6 +139,14 @@ export const CASE_STUDIES: CaseStudy[] = [
     sector: "Nurture",
     subtitle: "Childcare Technology \u00b7 UAE",
     attribution: "Built by our technology team.",
+    /**
+     * A DEMO FAMILY, NOT A REAL ONE, since 3 October. Captured from the running
+     * app on this Mac against a fresh, empty local database holding one made-up
+     * family, "Sarah" with a child "Layla", and a few entries made for it, at a
+     * 393-point phone width and 738x1600 exactly, nothing stretched. It replaces
+     * the "Good morning, Test App" screenshot her v3 slide 6 asked to have
+     * replaced. No real account, parent or child was opened. PENDING-COPY 1g7.
+     */
     photo: {
       src: "/case-studies/nurture-app.jpg",
       alt: "The Nurture app home screen, showing a child profile, the day's summary of activities, meals, sleep and photos, and quick access tiles",

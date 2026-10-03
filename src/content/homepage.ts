@@ -120,7 +120,11 @@ export type Logo = {
    * pre-baked panels, so the strip has to draw the panel around it.
    */
   tile?: boolean;
-  /** False only where the monochrome filter would destroy the mark. */
+  /**
+   * False for a FILLED mark, Ford's oval and Nurture's badge, where making
+   * every pixel white would leave a blank shape. Those are inverted instead, so
+   * the fill turns white and the lettering knocked out of it stays dark.
+   */
   mono?: boolean;
   /**
    * Serve the company's file exactly as it is, with no optimiser re-encode and
@@ -130,17 +134,27 @@ export type Logo = {
   raw?: boolean;
   /** Where the file came from. Recorded so provenance travels with the asset. */
   source?: string;
-  /** The file's own pixel size, so the layout box is reserved before it loads. */
-  w?: number;
-  h?: number;
+  /** The file's own pixel size (or viewBox size), which the mark box is measured in. */
+  w: number;
+  h: number;
   /**
-   * Overrides the default size limits inside the panel. Needed where a file
-   * carries a lot of transparent margin of its own: object-contain measures the
-   * whole file including that margin, so the mark lands smaller than its
-   * neighbours. Sizing it up in CSS is the alternative to trimming the file,
-   * which is an edit to someone else's logo.
+   * WHERE THE MARK SITS INSIDE THE FILE, as [x, y, width, height] in the file's
+   * own pixels (viewBox units for an SVG), measured from the file itself.
+   *
+   * HER NOTE OF 3 OCTOBER: "please make all same size also the AIG became so
+   * small now?" AIG had not changed: its own picture is 345x184 with a 72x39
+   * mark in it, the smallest of any tile, and every tile used to be sized by
+   * its file's box, margin and all. From pass 10 every mark is sized by this
+   * box against one shared target (LOGO_MARK in page.tsx), so the margin a
+   * file happens to carry no longer decides how big its logo looks.
    */
-  size?: string;
+  mark: [number, number, number, number];
+  /**
+   * Optical correction against the shared target, chosen by laying the whole
+   * row out at phone and computer size. 1 is the target; leave it unset unless
+   * the row was looked at.
+   */
+  weight?: number;
   /**
    * sha256 of the file exactly as the company's site served it. The guard
    * hashes what this site serves and fails if the two ever differ, which is the
@@ -164,12 +178,12 @@ export const LOGO_GROUPS: LogoGroup[] = [
   {
     label: "Experience inside global institutions",
     logos: [
-      { src: "/logos/clogo1a.jpg", alt: "MetLife" },
-      { src: "/logos/clogo3a.jpg", alt: "Gallagher" },
-      { src: "/logos/sky.jpg", alt: "Sky" },
-      { src: "/logos/clogo5a.jpg", alt: "Willis Towers Watson" },
-      { src: "/logos/clogo2a.jpg", alt: "KPMG" },
-      { src: "/logos/clogo6a.jpg", alt: "AIG" },
+      { src: "/logos/clogo1a.jpg", alt: "MetLife", w: 345, h: 185, mark: [92, 76, 160, 34] },
+      { src: "/logos/clogo3a.jpg", alt: "Gallagher", w: 345, h: 185, mark: [123, 60, 99, 69] },
+      { src: "/logos/sky.jpg", alt: "Sky", w: 345, h: 185, mark: [124, 64, 97, 58], weight: 0.92 },
+      { src: "/logos/clogo5a.jpg", alt: "Willis Towers Watson", w: 345, h: 185, mark: [125, 43, 87, 99] },
+      { src: "/logos/clogo2a.jpg", alt: "KPMG", w: 345, h: 185, mark: [100, 64, 145, 58] },
+      { src: "/logos/clogo6a.jpg", alt: "AIG", w: 345, h: 184, mark: [123, 72, 72, 39], weight: 0.92 },
 
       /**
        * HER v3 SLIDE 1: "Ford, Dubizzle and OSN are missing." Pass 6.
@@ -198,16 +212,14 @@ export const LOGO_GROUPS: LogoGroup[] = [
          * header does. The other twenty-two symbols are Ford's UI icons; they
          * ship unused, 16.5KB, as the price of not editing the file.
          *
-         * IN COLOUR, LIKE NURTURE. The oval is filled. brightness(0) invert(1)
-         * turns the whole oval white and the script and inner ring, which are
-         * white knockouts, vanish into it: a plain white ellipse. Rendered to
-         * check, not assumed. In Ford's own navy with the white script it reads
-         * clearly on the near-black panel.
-         *
-         * SMALLER THAN THE DEFAULT LIMITS ON PURPOSE. A solid filled oval carries
-         * far more visual weight than a light wordmark. Three sizings went through
-         * the whole row at one zoom: at 44% it was the heaviest mark in the strip,
-         * at 34% it read light, and at 38% it sits level with KPMG.
+         * WHITE SINCE HER NOTE OF 3 OCTOBER, "Make the logos same treatment
+         * sir u cant have it messy like this some colour and not". The oval is
+         * filled, so brightness(0) invert(1), the treatment the line logos get,
+         * would turn the whole oval white and lose the script and inner ring,
+         * which are white knock-outs: a plain white ellipse. Inverting it instead
+         * (mono: false) turns the navy oval white and leaves the script dark, the
+         * tile's own ground showing through it. Done in CSS; the sprite is
+         * untouched and its hash still holds.
          */
         src: "/logos/ford-sprite.svg",
         alt: "Ford",
@@ -216,7 +228,8 @@ export const LOGO_GROUPS: LogoGroup[] = [
         use: { symbol: "navigation-menu-ford-logo", viewBox: "0 0 80 30" },
         w: 80,
         h: 30,
-        size: "max-h-[38%] max-w-[52%]",
+        // The oval fills the whole symbol.
+        mark: [0, 0, 80, 30],
         sha256: "bd3255a78363498e550ede3c4d8cb3cfe646867d0775e7159c99f94f10783e7b",
         source:
           "https://www.ford.com/ (inline sprite in the page HTML, symbol navigation-menu-ford-logo)",
@@ -257,16 +270,8 @@ export const LOGO_GROUPS: LogoGroup[] = [
         raw: true,
         w: 530,
         h: 170,
-        /**
-         * NARROWER THAN THE SHARED LIMIT, chosen by measuring, not by eye
-         * alone. The ink fills this file edge to edge (3px of air under it), so
-         * the shared 76% width let it lay out at 136x44, the heaviest mark in the
-         * row by a distance. Four widths were put through all nine institution
-         * tiles at one zoom: 76%, 64%, 56% and 50%. At 56% it is 100x32 on
-         * desktop and 83x27 on a phone, level with the Ford oval and KPMG beside
-         * it; at 50% the long, thin wordmark starts to read as the smallest.
-         */
-        size: "max-h-[58%] max-w-[56%]",
+        // The ink fills the file edge to edge, with 3px of air under it.
+        mark: [0, 0, 530, 167],
         sha256: "e62ec73d4c67799f0af5b14ff836cfd6a3e7cc75f15238891c16c62482b5994a",
         source: "https://cdn.dubizzlegroup.com/wp-content/uploads/2024/09/about_our_brands_logo_01.png",
       },
@@ -283,16 +288,9 @@ export const LOGO_GROUPS: LogoGroup[] = [
         tile: true,
         w: 46,
         h: 30,
-        /**
-         * GIVEN A HEIGHT, because this file is tiny rather than padded. Its
-         * viewBox is 46x30, so the shared limits, which only ever scale the big
-         * files DOWN, left it at its natural 46x30 beside marks twice that size.
-         * 36% of the tile was chosen by putting three candidates through the
-         * whole row at one zoom: a bold compact mark like this balances against
-         * the bold "sky" at that height, and at 40% it became the heaviest thing
-         * in the row.
-         */
-        size: "h-[36%] max-w-[60%]",
+        // The ink fills the viewBox.
+        mark: [0, 0, 46, 30],
+        weight: 0.9,
         sha256: "37c7b7e721c9844df05202293efe7a5f6f9b70536225cf66a23feaf6146e40ac",
         source: "https://www.osn.com/osn/media/OSNMedia/osntv/images/common/osn-red-logo.svg",
       },
@@ -301,15 +299,15 @@ export const LOGO_GROUPS: LogoGroup[] = [
   {
     label: "Companies we have delivered for",
     logos: [
-      { src: "/logos/Frame-17.jpg", alt: "Democrance" },
-      { src: "/logos/insurancehub-with-bg-white.jpg", alt: "Insurance Hub" },
+      { src: "/logos/Frame-17.jpg", alt: "Democrance", w: 345, h: 185, mark: [72, 75, 201, 38], weight: 1.06 },
+      { src: "/logos/insurancehub-with-bg-white.jpg", alt: "Insurance Hub", w: 345, h: 185, mark: [68, 66, 209, 53], weight: 1.05 },
       // The filename says stydio. The wordmark reads studio88.
-      { src: "/logos/stydio-with-bg.jpg", alt: "studio88" },
+      { src: "/logos/stydio-with-bg.jpg", alt: "studio88", w: 345, h: 185, mark: [93, 73, 159, 38], weight: 0.92 },
       // The filename says instagram. The image is the Women Who Thrive wordmark.
-      { src: "/logos/instagram.jpg", alt: "Women Who Thrive" },
-      { src: "/logos/man-cave-with-bg.jpg", alt: "Man Cave" },
-      { src: "/logos/bop-foundation-with-bg-white.jpg", alt: "Birds of Paradise Foundation" },
-      { src: "/logos/nivishe.jpg", alt: "Nivishe" },
+      { src: "/logos/instagram.jpg", alt: "Women Who Thrive", w: 345, h: 185, mark: [111, 62, 105, 57], weight: 0.92 },
+      { src: "/logos/man-cave-with-bg.jpg", alt: "Man Cave", w: 345, h: 185, mark: [75, 77, 178, 30] },
+      { src: "/logos/bop-foundation-with-bg-white.jpg", alt: "Birds of Paradise Foundation", w: 345, h: 185, mark: [83, 57, 170, 62], weight: 1.1 },
+      { src: "/logos/nivishe.jpg", alt: "Nivishe", w: 345, h: 185, mark: [136, 47, 74, 84] },
 
       /**
        * HER SLIDE 1 OF THE v3 DECK, 30 September: "The 'Companies we have
@@ -334,25 +332,21 @@ export const LOGO_GROUPS: LogoGroup[] = [
         src: "/logos/cinnacare.png",
         w: 1200,
         h: 259,
+        mark: [0, 0, 1200, 259],
         alt: "Cinnacare",
         tile: true,
         source: "https://cinnacare.com/cdn/shop/files/slice17.png",
       },
       {
         /**
-         * THE ONE THAT CANNOT TAKE THE MONOCHROME, and it is left in colour
-         * rather than altered.
+         * WHITE SINCE HER NOTE OF 3 OCTOBER, without touching the file.
          *
-         * Nurture's mark is a wordmark inside a filled badge. Every other logo
-         * here is line art on transparency, so brightness(0) invert(1) turns it
-         * white and it reads. Run over a filled badge the same filter turns the
-         * WHOLE BADGE white and the wordmark disappears into it, which was
-         * measured by rendering it rather than assumed. Repainting the badge by
-         * hand is exactly what we do not do to a logo.
-         *
-         * So this one renders in its own colours on the same panel as the rest.
-         * PENDING-COPY 1g2 puts three options to her: leave it, send a
-         * transparent white wordmark, or drop it from the strip.
+         * Nurture's file is a purple wordmark and bird on a white badge inside a
+         * purple square. brightness(0) invert(1) would turn the whole square
+         * white, so it is inverted instead (mono: false): the white badge turns
+         * dark, the purple wordmark turns white. The badge's edge and the
+         * square frame are left out by showing only the mark box below, which
+         * is the wordmark and bird inside the badge, measured from the file.
          */
         src: "/logos/nurture-uae.png",
         w: 1024,
@@ -360,14 +354,8 @@ export const LOGO_GROUPS: LogoGroup[] = [
         alt: "Nurture UAE",
         tile: true,
         mono: false,
-        /**
-         * 72% OF THE TILE, 2 October: 69px square on a computer, 58px on a
-         * phone. At the shared limit it was 56px, noticeably smaller than the
-         * wordmarks beside it. Four sizes were laid out across the whole row at
-         * one zoom (56, 63, 69, 75): 69 balances against Cinnacare and Nivishe,
-         * and at 75 the solid badge became the heaviest thing in the row.
-         */
-        size: "h-[72%] max-w-[72%]",
+        mark: [92, 281, 847, 380],
+        weight: 1.05,
         source: "https://nurtureuae.com/assets/img/nurture-icon-1024.png",
       },
       {
@@ -375,15 +363,11 @@ export const LOGO_GROUPS: LogoGroup[] = [
         w: 1200,
         h: 670,
         /**
-         * SCENTMATIC'S FILE IS MOSTLY EMPTY SPACE. The wordmark occupies a band
-         * across the middle of a 1200x670 canvas, so the default limits sized the
-         * padded canvas rather than the mark and it rendered about half the
-         * height of Cinnacare's beside it. Measured by looking at the row, not by
-         * reading the file. The limits are raised here instead of trimming the
-         * transparent margin out of the PNG, because the rule for this work is
-         * that the company's file is used as published.
+         * SCENTMATIC'S FILE IS MOSTLY EMPTY SPACE: the wordmark is a band across
+         * the middle of a 1200x670 canvas. The mark box is that band, so it is
+         * sized like the rest without trimming the company's file.
          */
-        size: "max-h-[88%] max-w-[92%]",
+        mark: [214, 258, 807, 116],
         alt: "Scentmatic",
         tile: true,
         source: "https://scentmatic.co.uk/cdn/shop/files/scentmatic_logo.png",
@@ -392,6 +376,9 @@ export const LOGO_GROUPS: LogoGroup[] = [
         src: "/logos/bookmeetings.svg",
         w: 200,
         h: 40,
+        // The ink ends well short of the viewBox's right edge.
+        mark: [0.7, 3.8, 161.3, 35.2],
+        weight: 0.96,
         alt: "BookMeetings",
         tile: true,
         source: "https://bookmeetings.io/logo.svg",

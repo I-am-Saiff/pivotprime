@@ -5036,6 +5036,9 @@ instead of three, which is the trade you asked for.
 
 ### On a phone, the line moved below both buttons
 
+*Reversed on your note of 3 October: on a phone the line now sits under the
+first button. See 1g7.*
+
 You asked us to look at it rather than apply a rule. **It read as an
 interruption.** With the buttons stacked full width, a paragraph between them
 stopped them looking like a pair and pushed the second button down the screen.
@@ -6167,6 +6170,9 @@ existing tiles, sampled from one of them, so the row reads as one strip.
 
 ### ⚠️ Nurture is in colour, and that is deliberate
 
+*Superseded on your note of 3 October: Nurture and Ford are now white like every
+other logo, done without editing either file. See 1g7.*
+
 Nurture's logo is a wordmark inside a filled badge. The white treatment that works
 for the other three turns that whole badge white and the word disappears into it.
 We checked by trying it. **So Nurture shows in its own purple**, on the same dark
@@ -6237,6 +6243,8 @@ them for where someone has worked is common, but it is your call, and it may be
 worth asking each company's press office for permission.
 
 ### The Nurture screenshot is unchanged, and needs a new one
+
+*Replaced on 3 October with a screenshot of a made-up demo family. See 1g7.*
 
 **Where "Test App" is:** inside the purple greeting at the top of the app's home
 screen, as the name under "Good morning", beside the owl. It is part of the app's
@@ -6653,3 +6661,71 @@ differences, and each has been removed:
   drawn into the page at the size of yours, so it looks the same on every
   computer and phone rather than taking whichever arrow the visitor's own
   computer provides.
+
+## 1g7 Your comments of 3 October, from your phone
+
+**3 October.** Your three comments, word for word:
+
+> (a) "Make the logos same treatment sir u cant have it messy like this some colour and not"
+>
+> (b) "When fixing logos please make all same size also the AIG became so small now?"
+>
+> (c) "On the mobile this is still coming under both buttons so not clear but on desktop its fine - can we do anything for mobile"
+
+### (a) One treatment for every logo
+
+Every logo in both rows is now a white mark on the same dark tile with the same
+faint green glow at its foot. Ford and Nurture UAE were the two still in colour.
+Ford is now a white oval with the "Ford" script showing dark through it, and
+Nurture is a white wordmark and bird with no badge behind it. The thirteen older
+logo pictures now sit on exactly the same tile as the seven newer ones, so no
+tile differs from the next.
+
+All of this is done in the page itself. **No company's logo file was edited**, and
+the checks that compare the Ford, OSN and dubizzle files with what their own
+sites served still pass.
+
+Gallagher's emblem is two-tone, a grey half and a white half forming its "G", so
+it stays white and grey rather than turning into a solid white shape that would
+lose the G.
+
+### (b) One size for every logo, and AIG
+
+**AIG had not changed.** Its own picture has the smallest logo of any tile: a mark
+72 pixels wide in a 345-pixel picture, unchanged since August and measured the
+same before and after the 2 October changes. It looked smaller next to the newer
+logos around it.
+
+Every logo is now sized from the logo itself rather than from the picture it
+comes in. Each one fits the same box inside its tile, no more than 60% of the
+tile's width and 40% of its height, and inside that box each covers about the
+same area, so long wordmarks and compact emblems carry the same weight. The
+whole row was laid out side by side at phone and computer size and a few were
+adjusted slightly by eye. AIG is now about one and a half times its old width,
+level with KPMG and Ford.
+
+### (c) The line under the first button, on a phone
+
+On a phone the line "A four-minute diagnostic that scores your business and
+tells you exactly where the constraint is. You get the result immediately." now
+sits directly under GET YOUR OPERATIONS SCORE, close to it, with more space
+before SEE WHAT WE ACTUALLY DO, so it reads as belonging to the first button.
+This reverses our 26 September choice in 1e8 to put it below both buttons on a
+phone.
+
+The computer layout is exactly as it was: the two buttons side by side, the line
+under the first one only. It was compared pixel for pixel with the live site at
+640, 768, 1024 and 1440 wide, and nothing differs. The phone layout applies below
+640 wide, which covers phones held upright; a tablet at 768 shows the computer
+layout.
+
+### The Nurture screenshot, replaced
+
+The Nurture case study's "Good morning, Test App" screenshot is replaced with a
+screenshot from the running app showing **"Sarah"** and her child **"Layla"**, with
+today's activities, meals, sleep and photos filled in. Both names and every
+entry are made up. It was taken on this Mac against a fresh, empty copy of the
+app's database holding only that demo family; no real parent's or child's account
+or details were opened. The greeting reads "Good afternoon" because that was the
+time it was taken. It is the same screen, at the same size, as before.
+

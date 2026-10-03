@@ -1,6 +1,6 @@
 # Where the website stands
 
-1 October 2026
+3 October 2026
 
 This is where the Pivot Prime website stands today: what has been done, and the few files that are still missing. Nothing in it needs an answer from you. Where you gave a direction it has been applied, and everything else is described as it is on the site now.
 
@@ -8,7 +8,6 @@ This is where the Pivot Prime website stands today: what has been done, and the 
 
 These are the only things the site is waiting on. Each has something in its place meanwhile.
 
-- **A live screenshot of the Nurture app.** No new screenshot of the live app's home screen has been supplied. It is for the Nurture case study on the homepage and on About. Meanwhile the study keeps the current screenshot, which shows "Test App" in the greeting, uncropped and unedited.
 - **A video for the homepage hero.** Your note on slide 1 of the August website revisions deck, "Use video in the back", is for the background behind the homepage headline. Meanwhile the hero uses a still photograph that drifts slowly. No stock footage is used.
 - **A short founder video.** Section 8.1 of your copy document lists a 45 to 60 second video of you speaking to camera, for the homepage under the headline or beside Meet the CEO & Founder. Meanwhile the homepage has no video and that section shows your photograph.
 - **A share picture.** No share picture has been supplied. This is the picture that appears when someone shares a Pivot Prime link on LinkedIn or WhatsApp. Meanwhile a shared link shows the page title and description with no picture.
@@ -32,7 +31,7 @@ These are the only things the site is waiting on. Each has something in its plac
 
 ### Homepage
 
-- The hero sits on a slowly drifting still photograph. The first button reads "Get your operations score", your wording from the 26 September slide 1, and opens the diagnostic, with a line beneath it describing the four-minute diagnostic. The second button, "See what we actually do", scrolls to the services section.
+- The hero sits on a slowly drifting still photograph. The first button reads "Get your operations score", your wording from the 26 September slide 1, and opens the diagnostic, with a line beneath it describing the four-minute diagnostic; on a phone that line sits directly under the first button, above the second. The second button, "See what we actually do", scrolls to the services section.
 - All ten patterns under "These are the patterns before growth stalls" are written into the page in full, so search engines and AI assistants can read them. Visitors tap the ones that sound familiar, a green bar counts them, and the "Talk to us" button carries the chosen ones into the contact form.
 - The "Who we serve" tabs run 01 Stretched founder, 02 Scaling SME leader, 03 Corporate innovator, 04 P&L owner, in your slide 9 order. The Scaling SME leader panel uses the line from your persona pages mockup, shown as "You're running an SME that is growing but not settled." (your mockup has "You are"). The other three headings are ours (see Wording we wrote).
 - The results band, "This is what our team has delivered", shows the five figures from your KPI card mockup, which you authorised on the 27 August call, each with its own drawing:
@@ -47,7 +46,7 @@ These are the only things the site is waiting on. Each has something in its plac
 - The "Our fees" section follows your verbal instruction of 28 August. It sets the traditional model beside the Pivot Prime model, which carries your line "Our fee has a smaller fixed part and then a bigger part linked to the results we achieve for your business." A fee slider lets a visitor set the saving or gain agreed, from AED 100,000 to AED 2,000,000 (starting at AED 400,000), and shows a fixed element of AED 20,000 and a results element of 10 to 20 percent of that figure. It ends with a dark green "Performance linked fees" box: "If we haven't moved your numbers, most of our fee doesn't get paid."
 - Every homepage section now shares one content width and one left edge, with the same space between sections, as your v3 slide 11 asked. The thin line above Who we serve is gone, and so is a second one under the logos. The case study cards and the fees box are both white. The fees box sits at the shared width rather than full width. The logo rows, the results cards and the "More case studies" button sit on the same left edge, and the three white boxes share one inner margin. The grey band under the case studies box was its soft shadow being cut off in straight lines; the shadow is taken off that box, so the page under it is plain and the band is gone.
 - "Meet the CEO & Founder" says "a book worth more than $120 million", from your v3 deck slide 3. Your About biography says "a $120M book", from slide 7 of the 26 September deck. The pages agree, and $100 million no longer appears anywhere.
-- Three case studies are shown, Nurture, Cinnacare and Scentmatic, each with its picture, and a "More case studies" button opens the rest on About.
+- Three case studies are shown, Nurture, Cinnacare and Scentmatic, each with its picture, and a "More case studies" button opens the rest on About. Nurture's picture is a screenshot of the app with a made-up demo family, "Sarah" and her child "Layla", in place of the "Test App" screenshot.
 - "Find out what is holding your business back." now heads the closing section, which offers a "Take the diagnostic" button and a "Talk to us" button that opens WhatsApp.
 
 ### Case studies
@@ -111,7 +110,7 @@ These are the only things the site is waiting on. Each has something in its plac
 - "Companies we have delivered for": Democrance, Insurance Hub, studio88, Women Who Thrive, Man Cave, Birds of Paradise Foundation, Nivishe, Cinnacare, Nurture UAE, Scentmatic and BookMeetings, the new four in the order your slide names them.
 - All seven logos from your v3 slide 1 are in, each taken unaltered from the company's own website. For dubizzle that is its group's site, dubizzlegroup.com, and for Ford it is the logo built into ford.com's own page.
 - Dubizzle is now the plain "dubizzle" wordmark, replacing the "dubizzle group" logo. It comes unaltered from the "Our Brands" section of dubizzlegroup.com, the group's own site, and is shown white on the same dark tile as the other institutions, sized to sit level with Ford and KPMG. The old "dubizzle group" file is no longer used and has been removed.
-- OSN, dubizzle, Cinnacare, Scentmatic and BookMeetings are shown white, and every new tile carries the same faint green glow at its foot as the existing ones. Ford and Nurture UAE stay in their own colours, because showing them in white turns their filled badges into blank shapes.
+- Every logo in both rows is a white mark on the same dark tile with the same faint green glow, Ford and Nurture UAE included, and every logo is sized to the same box, so AIG now sits level with KPMG and Ford. No company's logo file was edited.
 - Every logo is read aloud by its company name to visitors who use screen-reading software, including Democrance and Women Who Thrive, whose files had misleading names.
 
 ### Wording we wrote

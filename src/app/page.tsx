@@ -16,6 +16,7 @@ import {
 import { SERVICES_EYEBROW, SERVICES_HEADING } from "@/content/services";
 import HomeServices from "@/components/HomeServices";
 import PatternsList from "@/components/PatternsList";
+import { logoMarkStyle } from "@/lib/logo-mark";
 import CaseStudies from "@/components/CaseStudies";
 import PersonaSwitcher from "@/components/PersonaSwitcher";
 import FeeCalculator from "@/components/FeeCalculator";
@@ -126,18 +127,22 @@ export default function Home() {
               which is the button's. It wraps to four lines instead of three,
               which is what she asked for in preference to the gap.
 
-              AND AT 375 IT READS WRONG UNDER THE FIRST BUTTON. Judged by
-              looking, not by the rule: with the buttons stacked full width, a
-              paragraph between them stops them reading as a pair and pushes the
-              second one down the screen. She asked for it moved below both at
-              that width only if it looked that way, and it does.
+              ON A PHONE IT NOW SITS UNDER THE FIRST BUTTON TOO, her note of 3
+              October: "On the mobile this is still coming under both buttons so
+              not clear but on desktop its fine - can we do anything for mobile".
+              From 26 September to 3 October it sat below both buttons at phone
+              widths, on our judgement that a paragraph between stacked buttons
+              broke them up as a pair; she read it as explaining the wrong button,
+              and the line is about the first one. So it is now second in the
+              source, between the two buttons: one column below 640px puts it
+              straight under GET YOUR OPERATIONS SCORE, 8px under it and 20px
+              above the second button so it reads as belonging to the first.
 
-              A grid is what does both. One column at 375 with the line ordered
-              last, two columns above it with the line in row two under the
-              first button. Flex could not: order inside the first button's
-              column cannot move a child out of that column, and taking it out
-              of the column would make it a third button-row item at every
-              width. PENDING-COPY 1e8. */}
+              From 640px up nothing changed, because every item there has an
+              explicit column and row: two columns, the line in row two under the
+              first button. Measured pixel for pixel at 640, 768, 1024 and 1440.
+              A screen reader now hears the line straight after the button it
+              explains, at every width. PENDING-COPY 1e8 and 1g7. */}
           <div className="mt-7 grid grid-cols-1 gap-3 sm:mt-10 sm:grid-cols-[auto_auto] sm:justify-start sm:gap-4">
             {/* AnchorLink, not next/link, from 3 September. The green button
                 was a next/link and scrolled on the first click only; measured
@@ -148,16 +153,9 @@ export default function Home() {
                 work with JavaScript off. src/lib/anchor-scroll.ts. */}
             <AnchorLink
               href={HERO_CTA.href}
-              className="order-1 inline-flex items-center justify-center rounded-xl bg-neon px-7 py-3.5 text-xs font-bold tracking-wider text-forest uppercase shadow-lg transition-all duration-200 hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none sm:col-start-1 sm:row-start-1"
+              className="inline-flex items-center justify-center rounded-xl bg-neon px-7 py-3.5 text-xs font-bold tracking-wider text-forest uppercase shadow-lg transition-all duration-200 hover:bg-white hover:scale-105 focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-forest focus-visible:outline-none sm:col-start-1 sm:row-start-1"
             >
               {HERO_CTA.label}
-            </AnchorLink>
-
-            <AnchorLink
-              href={HERO.secondaryHref}
-              className="order-2 inline-flex items-center justify-center rounded-xl border border-white/20 bg-black px-7 py-3.5 text-xs font-bold tracking-wider text-white uppercase backdrop-blur-md transition-all duration-200 hover:border-white/45 hover:bg-black/85 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none sm:col-start-2 sm:row-start-1 sm:self-start"
-            >
-              {HERO.secondaryLabel}
             </AnchorLink>
 
             {/* w-0 min-w-full, NOT a max-width, and the two halves do different
@@ -167,13 +165,23 @@ export default function Home() {
                 alone. min-width:100% is what it is actually laid out at, which
                 is that same width, so it wraps rather than widening anything.
 
-                mt-2 tops the mobile row gap up from 12px to 20px, which is the
-                space the line had under the button row before any of this. */}
+                On a phone -mt-1 takes the 12px row gap above it down to 8px and
+                mb-2 takes the one below it up to 20px, so it sits with the
+                button above it. Both are undone from sm, where the grid places
+                it. */}
             {DIAGNOSTIC_ENABLED && (
-              <p className="order-3 mt-2 w-0 min-w-full text-sm leading-relaxed text-white/70 sm:col-start-1 sm:row-start-2 sm:mt-0">
+              <p className="-mt-1 mb-2 w-0 min-w-full text-sm leading-relaxed text-white/70 sm:col-start-1 sm:row-start-2 sm:mt-0 sm:mb-0">
                 {HERO.diagnosticExplainer}
               </p>
             )}
+
+            <AnchorLink
+              href={HERO.secondaryHref}
+              className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-black px-7 py-3.5 text-xs font-bold tracking-wider text-white uppercase backdrop-blur-md transition-all duration-200 hover:border-white/45 hover:bg-black/85 focus-visible:ring-2 focus-visible:ring-neon focus-visible:outline-none sm:col-start-2 sm:row-start-1 sm:self-start"
+            >
+              {HERO.secondaryLabel}
+            </AnchorLink>
+
           </div>
 
           {/* HER SOCIAL PROOF MICRO-LINE IS GONE, her slide 1, 26 September:
@@ -293,101 +301,75 @@ export default function Home() {
                     <h3 className="flex h-20 w-56 flex-shrink-0 items-center justify-center rounded-lg bg-mist px-5 text-center font-sans text-xs font-bold tracking-[0.14em] text-forest uppercase md:h-24 md:w-64">
                       {group.label}
                     </h3>
-                    {/* TWO KINDS OF LOGO IN ONE ROW, from her slide 1 of the v3
-                        deck, and the difference is in the files rather than in
-                        the design.
+                    {/* ONE TREATMENT AND ONE SIZE FOR EVERY TILE, her note of 3
+                        October: "Make the logos same treatment sir u cant have it
+                        messy like this some colour and not" and "please make all
+                        same size". Until then the row held two kinds of tile: the
+                        thirteen older pictures, a dark ground with a white logo
+                        baked in, drawn as they were; and the seven companies' own
+                        files on a CSS panel, two of them still in colour.
 
-                        THE ORIGINAL SIX ARE PRE-BAKED PANELS: 345x185 JPGs with a
-                        near-black ground and a white logo flattened into the
-                        picture. They carry their own panel, so they are drawn as
-                        they always were.
-
-                        THE FOUR SHE ASKED FOR ARE THE COMPANIES' OWN FILES,
-                        unaltered, so the panel and the monochrome are applied
-                        here instead. That is the whole reason for the branch: an
-                        official logo is used as published or not at all, and
-                        flattening one onto a dark panel in an image editor means
-                        recolouring someone's trademark by hand.
-
-                        THE PANEL MATCHES THE OLD TILES AS THEY RENDER, 2 October.
-                        The original JPEGs carry a near-black ground and a faint
-                        green glow at the foot, and the contrast filter on them
-                        takes the ground to black. These tiles had a flat
-                        near-black and no glow, so side by side they read as a
-                        second batch. They now use .logo-tile in globals.css:
-                        black with the glow drawn from palette tokens only, the
-                        values sampled from the old tiles on the live page. The
-                        near-black palette exception is gone with it.
-                        PENDING-COPY 1g2 and 1g5.
-
-                        aspect-[345/185] gives the new tiles the exact footprint
-                        of the old ones, so the row's rhythm and the marquee's
-                        travel are unchanged. max-h and max-w together are what
-                        balances a wide wordmark against a square mark: the
-                        wordmark meets the width limit first and the square meets
-                        the height limit first, so neither ends up optically
-                        larger than the other. */}
-                    {group.logos.map((logo) =>
-                      logo.tile ? (
+                        Now every tile is the same panel (.logo-tile, its glow
+                        sampled from the older pictures) and every logo is a white
+                        mark on it, by CSS alone, with no file edited:
+                          line art, most of the company files, is turned white;
+                          Ford's oval and Nurture's badge are filled shapes, so
+                          they are inverted, which turns the fill white and keeps
+                          the lettering knocked out of it dark;
+                          the older pictures are cut to their logo and blended onto
+                          the panel, so their own ground and glow fall away and the
+                          panel's glow is the only one.
+                        Every mark is then placed from its measured box in the file
+                        (src/lib/logo-mark.ts), so the margin a file happens to
+                        carry no longer decides how big its logo looks. Classes
+                        in globals.css, .logo-mark. PENDING-COPY 1g7. */}
+                    {group.logos.map((logo) => {
+                      const mark = logoMarkStyle(logo);
+                      const kind = !logo.tile ? "baked" : logo.mono === false ? "filled" : "line";
+                      return (
                         <div
                           key={`${copy}-${logo.src}`}
-                          className="flex h-20 flex-shrink-0 items-center justify-center rounded-lg logo-tile aspect-[345/185] md:h-24"
+                          data-logo-tile={kind}
+                          className="relative h-20 flex-shrink-0 overflow-hidden rounded-lg logo-tile aspect-[345/185] md:h-24"
                         >
-                          {/* sizes IS LOAD-BEARING, AND ITS ABSENCE WAS A FAULT OF
-                              MINE THAT COST EVERY VISITOR. width and height carry
-                              each file's own pixel size so the box is reserved
-                              before it loads, and without sizes next/image takes
-                              that as the display width: it built a 1x/2x srcSet
-                              of 1200 and 3840 for Cinnacare and 1080 and 2048 for
-                              Nurture, to fill a slot about 136px wide. Eight of
-                              those requested at once is also what stopped the
-                              homepage reaching networkidle locally, which is how
-                              it was found. With sizes the browser picks a variant
-                              by the tile's real width instead. */}
                           {logo.use ? (
                             /* A LOGO THAT ONLY EXISTS AS A SPRITE SYMBOL, Ford.
-                               The sprite file is the exact bytes ford.com
-                               served and <use> draws one symbol out of it, as
-                               Ford's own header does. No next/image: this is not
-                               an image element, so there is no srcSet and no
-                               sizes to set, and the 16.5KB file is fetched once
-                               and cached. The accessible name sits on the svg,
-                               and the marquee's second copy hides it, the same
-                               as the alt does for every other tile. */
+                               The sprite file is the exact bytes ford.com served
+                               and <use> draws one symbol out of it, as Ford's own
+                               header does. The accessible name sits on the svg,
+                               and the marquee's second copy hides it, the same as
+                               the alt does for every other tile. */
                             <svg
                               viewBox={logo.use.viewBox}
                               role={copy === 0 ? "img" : undefined}
                               aria-label={copy === 0 ? logo.alt : undefined}
                               aria-hidden={copy === 0 ? undefined : true}
-                              className={`${logo.size ?? "max-h-[58%] max-w-[76%]"} h-full w-auto`}
+                              className={`logo-mark logo-mark--${kind}`}
+                              style={mark.style}
                             >
                               <use href={`${logo.src}#${logo.use.symbol}`} />
                             </svg>
                           ) : (
-                          <Image
-                            src={logo.src}
-                            alt={copy === 0 ? logo.alt : ""}
-                            width={logo.w ?? 345}
-                            height={logo.h ?? 185}
-                            sizes="(min-width: 768px) 180px, 150px"
-                            unoptimized={logo.raw}
-                            className={`${logo.size ?? "max-h-[58%] max-w-[76%]"} w-auto object-contain ${
-                              logo.mono === false ? "" : "brightness-0 invert"
-                            }`}
-                          />
+                            /* sizes IS LOAD-BEARING. Without it next/image takes
+                               the file's own width as the display width and
+                               builds a srcSet of 1200 and 3840 for a mark about
+                               136px wide; eight of those at once also stopped the
+                               homepage reaching networkidle locally. It now
+                               carries the width the file is actually drawn at. */
+                            <Image
+                              src={logo.src}
+                              alt={copy === 0 ? logo.alt : ""}
+                              width={logo.w}
+                              height={logo.h}
+                              sizes={mark.sizes}
+                              unoptimized={logo.raw}
+                              className={`logo-mark logo-mark--${kind}`}
+                              style={mark.style}
+                            />
                           )}
                         </div>
-                      ) : (
-                        <Image
-                          key={`${copy}-${logo.src}`}
-                          src={logo.src}
-                          alt={copy === 0 ? logo.alt : ""}
-                          width={345}
-                          height={185}
-                          className="h-20 w-auto flex-shrink-0 rounded-lg object-contain contrast-[1.18] md:h-24"
-                        />
-                      ),
-                    )}
+                      );
+                    })}
                   </div>
                 ))}
               </div>

@@ -738,6 +738,23 @@ const DECISIONS = [
     },
   },
   {
+    what: "the Nurture case study shows the demo family's home screen, not the 'Test App' account",
+    where: "PENDING-COPY 1g7",
+    run: async (get) => {
+      // Captured 3 October from the running app on a fresh, empty local
+      // database holding one made-up family ("Sarah", child "Layla"), never a
+      // real account. The screenshot it replaced said "Good morning, Test App"
+      // (sha256 eef81f9d...), which her v3 slide 6 asked to have replaced.
+      const html = await (await get("/")).text();
+      if (!html.includes("case-studies%2Fnurture-app.jpg") && !html.includes("/case-studies/nurture-app.jpg")) return "the homepage no longer draws /case-studies/nurture-app.jpg";
+      const res = await get("/case-studies/nurture-app.jpg");
+      if (res.status !== 200) return `/case-studies/nurture-app.jpg answers ${res.status}`;
+      const got = createHash("sha256").update(Buffer.from(await res.arrayBuffer())).digest("hex");
+      if (got === "eef81f9d29706405341ec8a33bd4ec3fc594cce05a424403574ab07683eacde1") return "the 'Good morning, Test App' screenshot is back";
+      return got === "c96378ffe38bb50b033c20e8cfa7f1db49f2e0a7f625d643c8f867049746b1e2" ? null : `/case-studies/nurture-app.jpg is a different file: ${got.slice(0, 12)}...`;
+    },
+  },
+  {
     what: "every instance of the booking label reads 'Book a call'",
     where: "PENDING-COPY 1e4",
     run: async (get) => {
