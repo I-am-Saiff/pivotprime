@@ -513,7 +513,7 @@ const openPanels = (page) =>
 //   no colour: in each tile's own pixels, no pixel of the mark (a pixel that
 //     changes when the mark is hidden) is coloured, which Ford's navy oval and
 //     Nurture's purple badge both were;
-//   one size: each mark's measured box fits inside 60% by 40% of its tile and
+//   one size: each mark's measured box fits inside 60% by 46% of its tile and
 //     fills that shared target to within 15% (src/lib/logo-mark.ts), at a
 //     phone's and a computer's width, with nothing touching a tile's edge.
 // Movement is reduced so the rows stand still and wrap; the second copy of each
@@ -554,10 +554,10 @@ const openPanels = (page) =>
       if (worst > 60) coloured.push(`${name} ${worst}`);
       if (x1 < 0) { offSize.push(`${name}: no mark found`); continue; }
       const w = (x1 - x0 + 1) / info.width, h = (y1 - y0 + 1) / info.height;
-      const fill = Math.max(w / 0.6, h / 0.4, Math.sqrt((w * h) / 0.11));
+      const fill = Math.max(w / 0.6, h / 0.46, Math.sqrt((w * h) / 0.11));
       sizes.push(`${name} ${(w * 100).toFixed(0)}x${(h * 100).toFixed(0)}% ${fill.toFixed(2)}`);
       const edge = x0 < 4 || y0 < 4 || x1 > info.width - 5 || y1 > info.height - 5;
-      if (w > 0.62 || h > 0.42 || fill < 0.85 || fill > 1.15 || edge) offSize.push(`${name} ${(w * 100).toFixed(1)}x${(h * 100).toFixed(1)}% fill ${fill.toFixed(2)}${edge ? " touches the edge" : ""}`);
+      if (w > 0.62 || h > 0.48 || fill < 0.85 || fill > 1.15 || edge) offSize.push(`${name} ${(w * 100).toFixed(1)}x${(h * 100).toFixed(1)}% fill ${fill.toFixed(2)}${edge ? " touches the edge" : ""}`);
     }
     expect(`${label}: no logo tile has a coloured pixel`, n === 20 && coloured.length === 0, coloured.join(", ") || "none coloured");
     expect(`${label}: every logo mark is the shared size, inside the box and clear of the edge`, n === 20 && offSize.length === 0, offSize.join("; ") || sizes.join("; "));

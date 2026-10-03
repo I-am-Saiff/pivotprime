@@ -6698,7 +6698,7 @@ logos around it.
 
 Every logo is now sized from the logo itself rather than from the picture it
 comes in. Each one fits the same box inside its tile, no more than 60% of the
-tile's width and 40% of its height, and inside that box each covers about the
+tile's width and 46% of its height, and inside that box each covers about the
 same area, so long wordmarks and compact emblems carry the same weight. The
 whole row was laid out side by side at phone and computer size and a few were
 adjusted slightly by eye. AIG is now about one and a half times its old width,

@@ -8,7 +8,7 @@ import type { Logo } from "@/content/homepage";
  * Every mark is drawn from its measured box inside its own file (Logo.mark) and
  * scaled to one shared target, as fractions of the tile:
  *
- *   - no wider than maxWidth and no taller than maxHeight, the box every mark
+ *   - no wider than maxWidth (60%) and no taller than maxHeight (46%), the box every mark
  *     fits inside, so nothing comes near a tile's edge;
  *   - and, inside that box, the same area for every mark, so a long wordmark
  *     ("MANCAVE", "Scentmatic") and a compact emblem (AIG, OSN) carry about the
@@ -17,7 +17,12 @@ import type { Logo } from "@/content/homepage";
  * The numbers were chosen by laying all twenty tiles side by side at phone and
  * computer size and looking at the rows together. PENDING-COPY 1g7.
  */
-export const LOGO_MARK = { maxWidth: 0.6, maxHeight: 0.4, area: 0.11 } as const;
+/*
+ * maxHeight was 0.4 on the first pass and moved to 0.46 after looking at the
+ * rows: at 0.4 the two tall marks, Willis Towers Watson and Nivishe, were held
+ * well under the shared area and read as the smallest in the row.
+ */
+export const LOGO_MARK = { maxWidth: 0.6, maxHeight: 0.46, area: 0.11 } as const;
 
 /** Every tile has the older pictures' footprint, 345 by 185. */
 export const LOGO_TILE_ASPECT = 345 / 185;
