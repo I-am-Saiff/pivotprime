@@ -1,12 +1,12 @@
 # Your website comments, checked against the live site
 
-**2 October 2026** · https://pivotprime.ae
+**3 October 2026** · https://pivotprime.ae
 
-**Your requests: 37.** Done: 35. Done with a note: 0. Open: 2.
+**Your requests: 40.** Done: 39. Done with a note: 0. Open: 1. (Your 30 September deck: 37, of which 36 done and 1 open. Your comments of 3 October: 3, all done.)
 
-Every request in your 30 September deck was checked on the live site, on a computer and on a phone, and then checked again by a second, independent review.
+Every request in your 30 September deck and your three comments of 3 October was checked on the live site, on a computer and on a phone, and then checked again by a second, independent review.
 
-35 of the 37 are done, and 2 are open: the Nurture screenshot, which needs a new picture from you or Saif, and the email to subscribers when an article is published, which is a new feature that has not been built.
+39 of the 40 are done, and one is open: the email to subscribers when an article is published, which is a new feature that has not been built.
 
 Your earlier decks were checked as well: nothing they asked for has been undone, and 6 earlier requests were put right during this check.
 
@@ -22,9 +22,9 @@ The document with every version of the diagnostic advice, one for each of the si
 
 > The institutions strip still shows MetLife, Gallagher, Sky, Willis Towers Watson, KPMG and AIG. Ford, Dubizzle and OSN are missing.
 
-**What was done:** Ford, dubizzle and OSN are now in the "Experience inside global institutions" row after AIG, in the order your slide names them, on dark rounded tiles the same size as the others with the same faint green glow at the foot, and all six earlier logos are still there. Ford keeps its own navy oval with white lettering, because in white the whole oval becomes a blank shape, and for visitors whose phone or computer is set to reduce movement the row stands still and wraps onto extra lines so every logo shows.
+**What was done:** Ford, dubizzle and OSN are in the "Experience inside global institutions" row after AIG, in the order your slide names them, and all six earlier logos are still there. Every logo in the row is now white on the same dark rounded tile with the same faint green glow, sized to match the others, so Ford is a white oval and AIG is about one and a half times its old width, and when a phone or computer is set to reduce movement the row stands still and wraps so every logo shows.
 
-**Whose instruction:** The glow at the foot of the new tiles is drawn in the site's own colours, which is Saif's rule, so it is a shade bluer than on the older tiles, and the row sits within the page's content width, as your slide 11 asked.
+**Whose instruction:** Every logo is white and sized to match the others, as your note of 3 October asked, and the row sits within the page's content width, as your slide 11 asked.
 
 **Live page:** https://pivotprime.ae/
 
@@ -38,9 +38,9 @@ The document with every version of the diagnostic advice, one for each of the si
 
 > The "Companies we have delivered for" strip has none of Cinnacare, Nurture UAE, Scentmatic or BookMeetings yet.
 
-**What was done:** Cinnacare, Nurture UAE, Scentmatic and BookMeetings are now in the "Companies we have delivered for" row after Nivishe, in the order your slide names them, on dark rounded tiles the same size as the others with the same faint green glow at the foot, and none of the existing companies has gone. Nurture keeps its own purple app icon, now shown larger, because in white the whole icon becomes a blank square, and for visitors whose phone or computer is set to reduce movement the row stands still and wraps onto extra lines so every logo shows.
+**What was done:** Cinnacare, Nurture UAE, Scentmatic and BookMeetings are in the "Companies we have delivered for" row after Nivishe, in the order your slide names them, and none of the existing companies has gone. Every logo in the row is now white on the same dark rounded tile with the same faint green glow, sized to match the others, so Nurture shows as a white name with its owl instead of its purple icon, and when a phone or computer is set to reduce movement the row stands still and wraps so every logo shows.
 
-**Whose instruction:** The glow at the foot of the new tiles is drawn in the site's own colours, which is Saif's rule, so it is a shade bluer than on the older tiles, and the row sits within the page's content width, as your slide 11 asked.
+**Whose instruction:** Every logo is white and sized to match the others, as your note of 3 October asked, and the row sits within the page's content width, as your slide 11 asked.
 
 **Live page:** https://pivotprime.ae/
 
@@ -327,13 +327,11 @@ The document with every version of the diagnostic advice, one for each of the si
 
 ## Slide 6: The Nurture screenshot
 
-### 6.1 · Open
+### 6.1 · Done
 
 > Still to do: the Nurture screenshot still says "Good morning, Test App". Replace it with a live screenshot showing a real name.
 
-**What was done:** Nothing has changed yet: the Nurture card on the homepage and the About page still shows "Good morning, Test App", because no new screenshot from the app has arrived. The name has not been painted over or cut out, as that would spoil the picture of the app.
-
-**Still needed:** A screenshot of the live Nurture app's home screen, the same screen as now, showing a real-looking name in place of "Test App", taken from a demo account, because a real family's name and details should not appear on a public website. It is needed from you or Saif, taken on a phone in the same tall shape, and it will simply replace the current picture on the same card.
+**What was done:** The Nurture card on the homepage and on the About page now shows a new screenshot taken from the app's home screen, greeting "Sarah" with her child "Layla" and the day's activities, meals, sleep and photos filled in, and "Test App" appears nowhere on it. Sarah and Layla are a made-up family entered only for this picture, so no real parent's or child's name or details are on the website.
 
 **Live page:** https://pivotprime.ae/
 
@@ -664,6 +662,54 @@ The document with every version of the diagnostic advice, one for each of the si
 ![On a phone](img/11-5-375.png)
 *On a phone: img/11-5-375.png*
 
+## Your comments of 3 October
+
+Three comments you sent from your phone on 3 October, each checked on the live site on a phone.
+
+### Comment 1 · Done
+
+> Make the logos same treatment sir u cant have it messy like this some colour and not
+
+**What was done:** Every logo in both rows is now white on the same dark tile with the same faint green glow at its foot, including Ford, now a white oval with its name showing dark through it, and Nurture UAE, now a white name and bird with no coloured badge. Gallagher keeps the grey half of its own emblem that forms its G, and the rows look the same whether they are moving or, for visitors who ask for less movement, standing still.
+
+**Live page:** https://pivotprime.ae/
+
+![On a computer](img/oct3-1.png)
+*On a computer: img/oct3-1.png*
+
+![On a phone](img/oct3-1-375.png)
+*On a phone: img/oct3-1-375.png*
+
+### Comment 2 · Done
+
+> When fixing logos please make all same size also the AIG became so small now?
+
+**What was done:** Every logo is now sized from the logo itself, so each one fits the same space in its tile and covers about the same area, whether it is a long name or a compact emblem. AIG had not shrunk (its logo had always filled less of its own picture than any other), and it is now about one and a half times its old width and about the same height as KPMG beside it.
+
+**Live page:** https://pivotprime.ae/
+
+![On a computer](img/oct3-2.png)
+*On a computer: img/oct3-2.png*
+
+![On a phone](img/oct3-2-375.png)
+*On a phone: img/oct3-2-375.png*
+
+### Comment 3 · Done
+
+> On the mobile this is still coming under both buttons so not clear but on desktop its fine - can we do anything for mobile
+
+*You circled, on your phone, the line "A four-minute diagnostic that scores your business and tells you exactly where the constraint is. You get the result immediately." sitting under both buttons at the top of the homepage.*
+
+**What was done:** On a phone, the line about the four-minute diagnostic now sits directly under GET YOUR OPERATIONS SCORE, close to it, with more space before SEE WHAT WE ACTUALLY DO, so it reads as belonging to the first button. On a computer nothing has changed: the two buttons sit side by side with the line under the first one.
+
+**Live page:** https://pivotprime.ae/
+
+![On a computer](img/oct3-3.png)
+*On a computer: img/oct3-3.png*
+
+![On a phone](img/oct3-3-375.png)
+*On a phone: img/oct3-3-375.png*
+
 ## Your earlier comments
 
 Your 23 August and 26 September decks were checked to make sure nothing they asked for has since been undone. Of the 86 earlier requests your 30 September deck did not change, 74 are in place, 6 were put right during this check, 3 were changed by your later instructions and 3 are still to do.
@@ -795,7 +841,6 @@ Your 23 August and 26 September decks were checked to make sure nothing they ask
 
 ## Still open, and what each needs
 
-- **Slide 6:** A screenshot of the live Nurture app's home screen, the same screen as now, showing a real-looking name in place of "Test App", taken from a demo account, because a real family's name and details should not appear on a public website. It is needed from you or Saif, taken on a phone in the same tall shape, and it will simply replace the current picture on the same card.
 - **Slide 9:** Emailing subscribers when an article is published is a new feature that has not been built. Once it is agreed and built, and the sign-ups so far are gathered from the notices in the hello@pivotprime.ae inbox, the test can be run on the next article.
 - **23 August deck, slide 1:** From you: a video for the top of the homepage, which you have the rights to use.
 - **23 August deck, slide 1:** The exact words for the second button at the top of the homepage, from you. Until then it keeps "SEE WHAT WE ACTUALLY DO".

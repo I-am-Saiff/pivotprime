@@ -1,13 +1,13 @@
 {
   "title": "Your website comments, checked against the live site",
-  "date": "2 October 2026",
+  "date": "3 October 2026",
   "site": "https://pivotprime.ae",
   "deck": "Last_Bits_with_comments_v3 (30 September 2026)",
   "totals": {
     "asks": 37,
-    "done": 35,
+    "done": 36,
     "doneWithNote": 0,
-    "open": 2
+    "open": 1
   },
   "earlierTotals": {
     "checked": 86,
@@ -23,8 +23,8 @@
       "n": 1,
       "quote": "The institutions strip still shows MetLife, Gallagher, Sky, Willis Towers Watson, KPMG and AIG. Ford, Dubizzle and OSN are missing.",
       "status": "DONE",
-      "whatWasDone": "Ford, dubizzle and OSN are now in the \"Experience inside global institutions\" row after AIG, in the order your slide names them, on dark rounded tiles the same size as the others with the same faint green glow at the foot, and all six earlier logos are still there. Ford keeps its own navy oval with white lettering, because in white the whole oval becomes a blank shape, and for visitors whose phone or computer is set to reduce movement the row stands still and wraps onto extra lines so every logo shows.",
-      "note": "The glow at the foot of the new tiles is drawn in the site's own colours, which is Saif's rule, so it is a shade bluer than on the older tiles, and the row sits within the page's content width, as your slide 11 asked.",
+      "whatWasDone": "Ford, dubizzle and OSN are in the \"Experience inside global institutions\" row after AIG, in the order your slide names them, and all six earlier logos are still there. Every logo in the row is now white on the same dark rounded tile with the same faint green glow, sized to match the others, so Ford is a white oval and AIG is about one and a half times its old width, and when a phone or computer is set to reduce movement the row stands still and wraps so every logo shows.",
+      "note": "Every logo is white and sized to match the others, as your note of 3 October asked, and the row sits within the page's content width, as your slide 11 asked.",
       "stillNeeded": "",
       "liveUrl": "https://pivotprime.ae/",
       "screenshots": {
@@ -51,6 +51,14 @@
         {
           "hash": "26bff99",
           "subject": "Pass 9: the remaining differences from her pictures, removed"
+        },
+        {
+          "hash": "8dd1677",
+          "subject": "Pass 10: her three comments of 3 October, and the Nurture screenshot"
+        },
+        {
+          "hash": "fe71d58",
+          "subject": "Logos: the tall marks get room to match the rest"
         }
       ],
       "caption": "shown with movement turned off, so every logo is in view at once; otherwise the row scrolls"
@@ -61,8 +69,8 @@
       "n": 2,
       "quote": "The \"Companies we have delivered for\" strip has none of Cinnacare, Nurture UAE, Scentmatic or BookMeetings yet.",
       "status": "DONE",
-      "whatWasDone": "Cinnacare, Nurture UAE, Scentmatic and BookMeetings are now in the \"Companies we have delivered for\" row after Nivishe, in the order your slide names them, on dark rounded tiles the same size as the others with the same faint green glow at the foot, and none of the existing companies has gone. Nurture keeps its own purple app icon, now shown larger, because in white the whole icon becomes a blank square, and for visitors whose phone or computer is set to reduce movement the row stands still and wraps onto extra lines so every logo shows.",
-      "note": "The glow at the foot of the new tiles is drawn in the site's own colours, which is Saif's rule, so it is a shade bluer than on the older tiles, and the row sits within the page's content width, as your slide 11 asked.",
+      "whatWasDone": "Cinnacare, Nurture UAE, Scentmatic and BookMeetings are in the \"Companies we have delivered for\" row after Nivishe, in the order your slide names them, and none of the existing companies has gone. Every logo in the row is now white on the same dark rounded tile with the same faint green glow, sized to match the others, so Nurture shows as a white name with its owl instead of its purple icon, and when a phone or computer is set to reduce movement the row stands still and wraps so every logo shows.",
+      "note": "Every logo is white and sized to match the others, as your note of 3 October asked, and the row sits within the page's content width, as your slide 11 asked.",
       "stillNeeded": "",
       "liveUrl": "https://pivotprime.ae/",
       "screenshots": {
@@ -85,6 +93,14 @@
         {
           "hash": "26bff99",
           "subject": "Pass 9: the remaining differences from her pictures, removed"
+        },
+        {
+          "hash": "8dd1677",
+          "subject": "Pass 10: her three comments of 3 October, and the Nurture screenshot"
+        },
+        {
+          "hash": "fe71d58",
+          "subject": "Logos: the tall marks get room to match the rest"
         }
       ],
       "caption": "shown with movement turned off, so every logo is in view at once; otherwise the row scrolls"
@@ -586,10 +602,10 @@
       "slide": 6,
       "n": 1,
       "quote": "Still to do: the Nurture screenshot still says \"Good morning, Test App\". Replace it with a live screenshot showing a real name.",
-      "status": "OPEN",
-      "whatWasDone": "Nothing has changed yet: the Nurture card on the homepage and the About page still shows \"Good morning, Test App\", because no new screenshot from the app has arrived. The name has not been painted over or cut out, as that would spoil the picture of the app.",
+      "status": "DONE",
+      "whatWasDone": "The Nurture card on the homepage and on the About page now shows a new screenshot taken from the app's home screen, greeting \"Sarah\" with her child \"Layla\" and the day's activities, meals, sleep and photos filled in, and \"Test App\" appears nowhere on it. Sarah and Layla are a made-up family entered only for this picture, so no real parent's or child's name or details are on the website.",
       "note": "",
-      "stillNeeded": "A screenshot of the live Nurture app's home screen, the same screen as now, showing a real-looking name in place of \"Test App\", taken from a demo account, because a real family's name and details should not appear on a public website. It is needed from you or Saif, taken on a phone in the same tall shape, and it will simply replace the current picture on the same card.",
+      "stillNeeded": "",
       "liveUrl": "https://pivotprime.ae/",
       "screenshots": {
         "desktop": "img/6-1.png",
@@ -611,6 +627,10 @@
         {
           "hash": "0ec1dd6",
           "subject": "Pass 7: Iram's LinkedIn, her mid-green eyebrow, plain dubizzle, the September articles (records 'The Nurture screenshot: still not supplied')"
+        },
+        {
+          "hash": "8dd1677",
+          "subject": "Pass 10: her three comments of 3 October, and the Nurture screenshot"
         }
       ],
       "caption": ""
@@ -1048,6 +1068,10 @@
         {
           "hash": "64e80b9",
           "subject": "Pass 9b: the last differences from her pictures, removed (services panel inside margins 52 as her slide 2 picture; outer edges unchanged at 144/1296 and 16/359)"
+        },
+        {
+          "hash": "8dd1677",
+          "subject": "Pass 10: her three comments of 3 October, and the Nurture screenshot"
         }
       ],
       "caption": ""
@@ -1138,6 +1162,10 @@
         {
           "hash": "26bff99",
           "subject": "Pass 9: the remaining differences from her pictures, removed (Who we serve box without shadow)"
+        },
+        {
+          "hash": "8dd1677",
+          "subject": "Pass 10: her three comments of 3 October, and the Nurture screenshot"
         }
       ],
       "caption": ""
@@ -1168,6 +1196,10 @@
         {
           "hash": "b03ffb7",
           "subject": "Pass 8 follow-up: the band is gone for real (case study cards carry no shadow, slider padding back to 24px)"
+        },
+        {
+          "hash": "8dd1677",
+          "subject": "Pass 10: her three comments of 3 October, and the Nurture screenshot"
         }
       ],
       "caption": ""
@@ -2939,12 +2971,6 @@
   ],
   "stillOpen": [
     {
-      "from": "Slide 6",
-      "id": "6-1",
-      "quote": "Still to do: the Nurture screenshot still says \"Good morning, Test App\". Replace it with a live screenshot showing a real name.",
-      "needed": "A screenshot of the live Nurture app's home screen, the same screen as now, showing a real-looking name in place of \"Test App\", taken from a demo account, because a real family's name and details should not appear on a public website. It is needed from you or Saif, taken on a phone in the same tall shape, and it will simply replace the current picture on the same card."
-    },
-    {
       "from": "Slide 9",
       "id": "9-3",
       "quote": "When the next article is published, test that subscribers receive the email and that its link opens the article.",
@@ -2986,10 +3012,91 @@
     "11": "The homepage as one flow"
   },
   "pdfSummary": [
-    "Every request in your 30 September deck was checked on the live site, on a computer and on a phone, and then checked again by a second, independent review.",
-    "35 of the 37 are done, and 2 are open: the Nurture screenshot, which needs a new picture from you or Saif, and the email to subscribers when an article is published, which is a new feature that has not been built.",
+    "Every request in your 30 September deck and your three comments of 3 October was checked on the live site, on a computer and on a phone, and then checked again by a second, independent review.",
+    "39 of the 40 are done, and one is open: the email to subscribers when an article is published, which is a new feature that has not been built.",
     "Your earlier decks were checked as well: nothing they asked for has been undone, and 6 earlier requests were put right during this check."
   ],
   "pdfHow": "Each request quotes your own words. Where your slide showed what you wanted, your picture is on the left and the live site on the right.",
-  "earlierIntroPdf": "Your 23 August and 26 September decks were checked to make sure nothing they asked for has since been undone. Of the 86 earlier requests your 30 September deck did not change, 74 are in place, 6 were put right during this check, 3 were changed by your later instructions and 3 are still to do."
+  "earlierIntroPdf": "Your 23 August and 26 September decks were checked to make sure nothing they asked for has since been undone. Of the 86 earlier requests your 30 September deck did not change, 74 are in place, 6 were put right during this check, 3 were changed by your later instructions and 3 are still to do.",
+  "oct3": [
+    {
+      "id": "oct3-1",
+      "n": 1,
+      "quote": "Make the logos same treatment sir u cant have it messy like this some colour and not",
+      "context": "",
+      "status": "DONE",
+      "whatWasDone": "Every logo in both rows is now white on the same dark tile with the same faint green glow at its foot, including Ford, now a white oval with its name showing dark through it, and Nurture UAE, now a white name and bird with no coloured badge. Gallagher keeps the grey half of its own emblem that forms its G, and the rows look the same whether they are moving or, for visitors who ask for less movement, standing still.",
+      "note": "",
+      "liveUrl": "https://pivotprime.ae/",
+      "screenshots": {
+        "desktop": "img/oct3-1.png",
+        "mobile": "img/oct3-1-375.png"
+      },
+      "stillNeeded": "",
+      "commits": [
+        {
+          "hash": "8dd1677",
+          "subject": ""
+        }
+      ]
+    },
+    {
+      "id": "oct3-2",
+      "n": 2,
+      "quote": "When fixing logos please make all same size also the AIG became so small now?",
+      "context": "",
+      "status": "DONE",
+      "whatWasDone": "Every logo is now sized from the logo itself, so each one fits the same space in its tile and covers about the same area, whether it is a long name or a compact emblem. AIG had not shrunk (its logo had always filled less of its own picture than any other), and it is now about one and a half times its old width and about the same height as KPMG beside it.",
+      "note": "",
+      "liveUrl": "https://pivotprime.ae/",
+      "screenshots": {
+        "desktop": "img/oct3-2.png",
+        "mobile": "img/oct3-2-375.png"
+      },
+      "stillNeeded": "",
+      "commits": [
+        {
+          "hash": "8dd1677",
+          "subject": ""
+        },
+        {
+          "hash": "fe71d58",
+          "subject": ""
+        }
+      ]
+    },
+    {
+      "id": "oct3-3",
+      "n": 3,
+      "quote": "On the mobile this is still coming under both buttons so not clear but on desktop its fine - can we do anything for mobile",
+      "context": "You circled, on your phone, the line \"A four-minute diagnostic that scores your business and tells you exactly where the constraint is. You get the result immediately.\" sitting under both buttons at the top of the homepage.",
+      "status": "DONE",
+      "whatWasDone": "On a phone, the line about the four-minute diagnostic now sits directly under GET YOUR OPERATIONS SCORE, close to it, with more space before SEE WHAT WE ACTUALLY DO, so it reads as belonging to the first button. On a computer nothing has changed: the two buttons sit side by side with the line under the first one.",
+      "note": "",
+      "liveUrl": "https://pivotprime.ae/",
+      "screenshots": {
+        "desktop": "img/oct3-3.png",
+        "mobile": "img/oct3-3-375.png"
+      },
+      "stillNeeded": "",
+      "commits": [
+        {
+          "hash": "8dd1677",
+          "subject": ""
+        }
+      ]
+    }
+  ],
+  "oct3Totals": {
+    "asks": 3,
+    "done": 3,
+    "doneWithNote": 0,
+    "open": 0
+  },
+  "totalsAll": {
+    "asks": 40,
+    "done": 39,
+    "doneWithNote": 0,
+    "open": 1
+  }
 }
