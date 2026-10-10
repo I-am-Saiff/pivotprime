@@ -6729,3 +6729,20 @@ app's database holding only that demo family; no real parent's or child's accoun
 or details were opened. The greeting reads "Good afternoon" because that was the
 time it was taken. It is the same screen, at the same size, as before.
 
+
+## 1g8 The unsubscribe link in your outreach emails
+
+**10 October.** Every outreach email sent from saif@pivotprime.ae ends with a
+line telling the reader how to stop further emails. That link now points at
+your own website, https://pivotprime.ae/unsubscribe, rather than at the
+software that sends the emails, so nobody receiving one can see that a
+third-party tool is involved. The page it opens names Pivot Prime Consultancy
+FZ-LLC and your Ras Al Khaimah address, and the reader is removed from every
+future send at once.
+
+There is nothing on the site to look at: the page exists only for people who
+click that link. **It must not be removed.** No outreach email has gone out yet,
+but every one that does will carry the link for good, and the law on commercial
+email requires it to keep working after the email is sent. A
+check in this project's own tests fails if the page stops answering or stops
+naming Pivot Prime.

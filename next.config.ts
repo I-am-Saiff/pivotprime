@@ -110,6 +110,41 @@ const nextConfig: NextConfig = {
       { source: "/contact-us", destination: "/contact", permanent: true },
     ];
   },
+
+  /**
+   * The opt-out link in Pivot Prime's outreach email.
+   *
+   * Every cold email sent from saif@pivotprime.ae carries
+   * https://pivotprime.ae/unsubscribe?e=... in its footer, and its
+   * List-Unsubscribe header points at /unsubscribe/one-click for the mail
+   * client's own unsubscribe button. The opt-out itself lives on the sending
+   * platform's backend; these two rewrites serve it here, so a recipient never
+   * sees another product's domain. Remove them and every opt-out link in every
+   * email already delivered becomes a 404.
+   *
+   * The host travels in the destination path (/t/pivotprime.ae/...) because
+   * the backend's hosting replaces X-Forwarded-Host with its own name, and the
+   * page needs the host to show Pivot Prime's legal entity and address. The
+   * query string passes through unchanged.
+   *
+   * beforeFiles, so no page or later route can shadow them. Guarded in
+   * scripts/check-content.mjs DECISIONS; PENDING-COPY 1g8.
+   */
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: "/unsubscribe",
+          destination: "https://lead-gen-mvp-production.up.railway.app/t/pivotprime.ae/unsubscribe",
+        },
+        {
+          source: "/unsubscribe/one-click",
+          destination:
+            "https://lead-gen-mvp-production.up.railway.app/t/pivotprime.ae/unsubscribe/one-click",
+        },
+      ],
+    };
+  },
 };
 
 export default nextConfig;

@@ -1657,6 +1657,24 @@ const DECISIONS = [
       return null;
     },
   },
+  {
+    what: "/unsubscribe serves the outreach opt-out page, under Pivot Prime's own name",
+    where: "PENDING-COPY 1g8",
+    run: async (get) => {
+      // No address in the query, ever: with one, this check would unsubscribe
+      // it on the live backend. Without one the page renders and suppresses
+      // nothing. The rewrite proxies to production even from a local build.
+      const res = await get("/unsubscribe");
+      if (res.status !== 200) {
+        return `expected 200, got ${res.status}; every opt-out link in delivered email is broken`;
+      }
+      const html = await res.text();
+      if (!html.includes("Pivot Prime Consultancy FZ-LLC")) {
+        return "the page does not name Pivot Prime's legal entity; is the rewrite still carrying /t/pivotprime.ae/?";
+      }
+      return /bookmeetings/i.test(html) ? "the page names the sending platform" : null;
+    },
+  },
 ];
 
 
